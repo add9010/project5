@@ -516,16 +516,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
   canvas: {fileID: 5529660959833519805}
-  markPrefab: {fileID: 0}
+  markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   enemyName: 
-  maxHp: 10000
-  nowHp: 8000
+  maxHp: 1000
+  nowHp: 900
   atkDmg: 50
   moveSpeed: 2
   height: 2
   detectionRange: 10
-  markYOffset: 1
+  markYOffset: 6
   specialAttackCooldown: 5
+  PerformAreaAttackRange: 0
+  attackEffectPrefab: {fileID: 7226888052703040409, guid: 7ec363c8df426644ea85f8d6d570561c, type: 3}
 --- !u!1 &181694834
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,7 +808,7 @@ PrefabInstance:
       objectReference: {fileID: 5529660959859091935, guid: 821c1f84c07fddd4883e0c67dcf9651d, type: 3}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_attackPower
-      value: 50
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: attackDuration
@@ -11384,6 +11386,7 @@ MonoBehaviour:
   healthButton: {fileID: 1136471030}
   randomButton: {fileID: 1071083621}
   heroKnight: {fileID: 1166590654}
+  boss: {fileID: 180639592}
 --- !u!4 &1525058070
 Transform:
   m_ObjectHideFlags: 0
@@ -16890,7 +16893,7 @@ PrefabInstance:
       objectReference: {fileID: 906641412}
     - target: {fileID: 8700069849285178371, guid: 627db5257f4ac824eb1a8cc80b75c885, type: 3}
       propertyPath: spawnLoopTime
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4353598481041215923, guid: 627db5257f4ac824eb1a8cc80b75c885, type: 3}

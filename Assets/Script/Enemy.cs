@@ -173,8 +173,9 @@ public class Enemy : MonoBehaviour
             isChasing = false;
         }
     }
-    private void SpawnMark()
+    protected virtual void SpawnMark()
     {
+        //Debug.Log("스폰마크 호출");
         if (markPrefab != null)
         {
             // 마커를 생성할 위치를 적의 위치에서 markYOffset만큼 Y축으로 올림
@@ -190,14 +191,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private IEnumerator DestroyMarkAfterDelay(GameObject markInstance, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        if (markInstance != null)
-        {
-            Destroy(markInstance);
-        }
-    }
+   
 
 
     protected virtual void LookAtPlayer()
