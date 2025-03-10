@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public GameManager gameManager;  // °ÔÀÓ °ü¸® ½ºÅ©¸³Æ® ÂüÁ¶
-    public float maxSpeed;          // ÇÃ·¹ÀÌ¾îÀÇ ÃÖ´ë ¼Óµµ
-    public float jumpPower;         // Á¡ÇÁ ½Ã °¡ÇØÁö´Â ÈûÀÇ Å©±â
-    Rigidbody2D rigid;              // Rigidbody2D ÄÄÆ÷³ÍÆ® ÂüÁ¶
-    SpriteRenderer spriteRenderer;  // SpriteRenderer ÄÄÆ÷³ÍÆ® ÂüÁ¶
-    Animator anim;                  // Animator ÄÄÆ÷³ÍÆ® ÂüÁ¶
+    public GameManager gameManager;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+    public float maxSpeed;          // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Óµï¿½
+    public float jumpPower;         // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å©ï¿½ï¿½
+    Rigidbody2D rigid;              // Rigidbody2D ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+    SpriteRenderer spriteRenderer;  // SpriteRenderer ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+    Animator anim;                  // Animator ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 
-    // ÃÊ±âÈ­
+    // ï¿½Ê±ï¿½È­
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -21,23 +21,23 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        // Á¡ÇÁ Ã³¸®
+        // ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         if (Input.GetButtonDown("Jump") && !anim.GetBool("isJumping"))
         {
-            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);  // À§ÂÊÀ¸·Î ÈûÀ» °¡ÇÔ
-            anim.SetBool("isJumping", true);  // Á¡ÇÁ »óÅÂ ¼³Á¤
+            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            anim.SetBool("isJumping", true);  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
-        // ¼öÆò ÀÌµ¿ ¼Óµµ Á¶Àý (Å°¸¦ ¶ÃÀ» ¶§ °¨¼Ó)
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½ (Å°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         if (Input.GetButtonUp("Horizontal"))
-            rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
+            rigid.linearVelocity = new Vector2(rigid.linearVelocity.normalized.x * 0.5f, rigid.linearVelocity.y);
 
-        // ¹æÇâ¿¡ µû¸¥ ½ºÇÁ¶óÀÌÆ® ¹ÝÀü Ã³¸®
+        // ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
         if (Input.GetButton("Horizontal"))
             spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == -1;
 
-        // °È±â ¾Ö´Ï¸ÞÀÌ¼Ç »óÅÂ ÀüÈ¯
-        if (Mathf.Abs(rigid.velocity.x) < 0.4f)
+        // ï¿½È±ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+        if (Mathf.Abs(rigid.linearVelocity.x) < 0.4f)
             anim.SetBool("isWalking", false);
         else
             anim.SetBool("isWalking", true);
@@ -45,52 +45,52 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        // ¼öÆò ÀÔ·Â¿¡ µû¸¥ Èû °¡ÇÏ±â
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Â¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
         float h = Input.GetAxisRaw("Horizontal");
         rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
-        // ÃÖ´ë ¼Óµµ Á¦ÇÑ
-        if (rigid.velocity.x > maxSpeed)
-            rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
-        else if (rigid.velocity.x < -maxSpeed)
-            rigid.velocity = new Vector2(-maxSpeed, rigid.velocity.y);
+        // ï¿½Ö´ï¿½ ï¿½Óµï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (rigid.linearVelocity.x > maxSpeed)
+            rigid.linearVelocity = new Vector2(maxSpeed, rigid.linearVelocity.y);
+        else if (rigid.linearVelocity.x < -maxSpeed)
+            rigid.linearVelocity = new Vector2(-maxSpeed, rigid.linearVelocity.y);
 
-        // ³«ÇÏ Áß Á¡ÇÁ »óÅÂ ÇØÁ¦
-        if (rigid.velocity.y < 0)
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        if (rigid.linearVelocity.y < 0)
         {
-            Debug.DrawRay(rigid.position, Vector2.down, new Color(0, 1, 0)); // µð¹ö±×¿ë ·¹ÀÌ Ç¥½Ã
+            Debug.DrawRay(rigid.position, Vector2.down, new Color(0, 1, 0)); // ï¿½ï¿½ï¿½ï¿½×¿ï¿½ ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
             RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
 
             if (rayHit.collider != null)
             {
-                if (rayHit.distance < 0.5f)  // ÇÃ·§Æû°ú ÀÏÁ¤ °Å¸® ÀÌ³»ÀÌ¸é Á¡ÇÁ »óÅÂ ÇØÁ¦
+                if (rayHit.distance < 0.5f)  // ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½Ì³ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                     anim.SetBool("isJumping", false);
             }
         }
     }
 
-    // Àû°úÀÇ Ãæµ¹ Ã³¸®
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ Ã³ï¿½ï¿½
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            // ÀûÀ» ¹â¾ÒÀ» ¶§ °ø°Ý Ã³¸®
-            if (rigid.velocity.y < 0 && transform.position.y > collision.transform.position.y)
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
+            if (rigid.linearVelocity.y < 0 && transform.position.y > collision.transform.position.y)
             {
                 OnAttack(collision.transform);
             }
-            // ±×·¸Áö ¾ÊÀ¸¸é ÇÇÇØ Ã³¸®
+            // ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
             else
                 OnDamaged(collision.transform.position);
         }
     }
 
-    // ¾ÆÀÌÅÛ ¶Ç´Â ½ºÅ×ÀÌÁö ³¡°úÀÇ Ãæµ¹ Ã³¸®
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½æµ¹ Ã³ï¿½ï¿½
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Item")
         {
-            // ¾ÆÀÌÅÛ Á¾·ù¿¡ µû¸¥ Á¡¼ö Ãß°¡
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
             bool isBronze = collision.gameObject.name.Contains("Bronze");
             bool isSilver = collision.gameObject.name.Contains("Silver");
             bool isGold = collision.gameObject.name.Contains("Gold");
@@ -101,44 +101,44 @@ public class PlayerMove : MonoBehaviour
             else if (isGold)
                 gameManager.stagePoint += 300;
 
-            // ¾ÆÀÌÅÛ ºñÈ°¼ºÈ­
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
             collision.gameObject.SetActive(false);
         }
         else if (collision.gameObject.tag == "Finish")
         {
-            gameManager.NextStage();  // ½ºÅ×ÀÌÁö ÀüÈ¯ È£Ãâ
+            gameManager.NextStage();  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ È£ï¿½ï¿½
         }
     }
 
-    // Àû °ø°Ý Ã³¸®
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
     void OnAttack(Transform enemy)
     {
-        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);  // À§ÂÊÀ¸·Î ¹Ý¹ß·Â Àû¿ë
+        rigid.AddForce(Vector2.up * 5, ForceMode2D.Impulse);  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý¹ß·ï¿½ ï¿½ï¿½ï¿½ï¿½
         EnemyMove enemyMove = enemy.GetComponent<EnemyMove>();
-        enemyMove.OnDamaged();  // ÀûÀÇ ÇÇÇØ Ã³¸® ¸Þ¼­µå È£Ãâ
+        enemyMove.OnDamaged();  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½
     }
 
-    // ÇÃ·¹ÀÌ¾î ÇÇÇØ Ã³¸®
+    // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½
     void OnDamaged(Vector2 targetPos)
     {
-        gameManager.health--;  // Ã¼·Â °¨¼Ò
+        gameManager.health--;  // Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // ¹«Àû »óÅÂ ¼³Á¤
-        gameObject.layer = 11;  // ¹«Àû ·¹ÀÌ¾î·Î º¯°æ
-        spriteRenderer.color = new Color(1, 1, 1, 0.4f);  // ¹ÝÅõ¸í »ö»ó Àû¿ë
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        gameObject.layer = 11;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // ¹Ý¹ß·Â Àû¿ë
-        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1; // ÇÇÇØ ¹æÇâ °è»ê
+        // ï¿½Ý¹ß·ï¿½ ï¿½ï¿½ï¿½ï¿½
+        int dirc = transform.position.x - targetPos.x > 0 ? 1 : -1; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         rigid.AddForce(new Vector2(dirc, 1) * 7, ForceMode2D.Impulse);
 
-        anim.SetTrigger("doDamaged");  // ÇÇÇØ ¾Ö´Ï¸ÞÀÌ¼Ç Æ®¸®°Å
-        Invoke("OffDamaged", 1.5f);  // ÀÏÁ¤ ½Ã°£ ÈÄ ¹«Àû »óÅÂ ÇØÁ¦
+        anim.SetTrigger("doDamaged");  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ Æ®ï¿½ï¿½ï¿½ï¿½
+        Invoke("OffDamaged", 1.5f);  // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
-    // ¹«Àû »óÅÂ ÇØÁ¦
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     void OffDamaged()
     {
-        gameObject.layer = 10;  // ¿ø·¡ ·¹ÀÌ¾î·Î º¹¿ø
-        spriteRenderer.color = new Color(1, 1, 1, 1);  // ¿ø·¡ »ö»ó º¹¿ø
+        gameObject.layer = 10;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        spriteRenderer.color = new Color(1, 1, 1, 1);  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 }

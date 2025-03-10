@@ -93,10 +93,10 @@ public class HeroKnight1 : MonoBehaviour
 
         // 구르기 상태에서는 이동 불가
         if (!m_rolling)
-            m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y); // 좌우 이동 처리
+            m_body2d.linearVelocity = new Vector2(inputX * m_speed, m_body2d.linearVelocity.y); // 좌우 이동 처리
 
         // 공중에서의 속도 업데이트 (애니메이션용)
-        m_animator.SetFloat("AirSpeedY", m_body2d.velocity.y);
+        m_animator.SetFloat("AirSpeedY", m_body2d.linearVelocity.y);
     }
 
     private void HandleAnimations()
@@ -125,7 +125,7 @@ public class HeroKnight1 : MonoBehaviour
             m_animator.SetTrigger("Jump");
             m_grounded = false;
             m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce); // 점프 힘 적용
+            m_body2d.linearVelocity = new Vector2(m_body2d.linearVelocity.x, m_jumpForce); // 점프 힘 적용
             m_groundSensor.Disable(0.2f); // 잠시 바닥 감지 비활성화
         }
     }

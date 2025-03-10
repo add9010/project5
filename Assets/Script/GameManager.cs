@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
             HeroKnightUsing.singleton.Die();
 
 
-            collision.attachedRigidbody.velocity = Vector2.zero;
+            collision.attachedRigidbody.linearVelocity = Vector2.zero;
             collision.transform.position = new Vector3(0, 0, -1);
 
         }

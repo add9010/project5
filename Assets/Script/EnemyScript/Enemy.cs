@@ -26,10 +26,10 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 3f;
     public float detectionRange = 5f;
 
-    protected Vector3 patrolTarget;    // ¹èÈ¸
+    protected Vector3 patrolTarget;    // ï¿½ï¿½È¸
     public float patrolRange = 2f;
-    protected float patrolTimer = 0f;  // ¸ñÇ¥ ÁöÁ¡¿¡ µµ´ÞÇÑ ÈÄ ½Ã°£ ÃøÁ¤
-    public float maxPatrolTime = 3f;   // ¸ñÇ¥ ÁöÁ¡¿¡ µµ´ÞÇÏÁö ¸øÇÑ »óÅÂ¿¡¼­ ½Ã°£À» ¾ó¸¶³ª ±â´Ù¸±Áö ¼³Á¤ (ÃÊ ´ÜÀ§)
+    protected float patrolTimer = 0f;  // 
+    public float maxPatrolTime = 3f;   // ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ ï¿½ó¸¶³ï¿½ ï¿½ï¿½Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
 
 
 
@@ -57,25 +57,25 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Start()
     {
-        // Ã¼·Â ¹Ù ÃÊ±âÈ­
+        // Ã¼ï¿½ï¿½ ï¿½ï¿½ ï¿½Ê±ï¿½È­
         hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
 
-        SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; // Àû ÃÊ±âÈ­
+        SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; // ï¿½ï¿½ ï¿½Ê±ï¿½È­
 
-        // ÇÃ·¹ÀÌ¾î Ã£±â
+        // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ Ã£ï¿½ï¿½
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null) Debug.LogError("Player object not found!");
     }
 
     protected virtual void Update()
     {
-        // ÇÇ°Ý »óÅÂ°¡ ¾Æ´Ï°í, »ì¾ÆÀÖÀ¸¸ç, ÇÃ·¹ÀÌ¾î°¡ Á¸ÀçÇÑ´Ù¸é Ãß°Ý
+        // ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Æ´Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½ß°ï¿½
         if (!isInDamageState && nowHp > 0 && player != null)
             DetectAndChasePlayer();
 
 
-        // Ã¼·Â ¹Ù À§Ä¡,»óÅÂ °»½Å
+        // Ã¼ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ä¡,ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (hpBar != null)
         {
             Vector3 _hpBarPos = Camera.main.WorldToScreenPoint
@@ -98,14 +98,14 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        // ÇÇ°Ý ½Ã Ãß°Ý ÁßÁö
-        isInDamageState = true;  // ÇÇ°Ý »óÅÂ·Î ÀüÈ¯
+        // ï¿½Ç°ï¿½ ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ï¿½
+        isInDamageState = true;  // ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½È¯
         anim.SetBool("isHunt", true);
         Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.velocity = Vector2.zero;  // ³Ë¹é È¿°ú°¡ Á¦´ë·Î Àû¿ëµÇµµ·Ï ÃÊ±âÈ­
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);  // ³Ë¹é
+        rigid.linearVelocity = Vector2.zero;  // ï¿½Ë¹ï¿½ È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);  // ï¿½Ë¹ï¿½
 
-        // 0.5ÃÊ ÈÄ Ãß°ÝÀ» Àç°³
+        // 0.5ï¿½ï¿½ ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ç°³
         Invoke("ResumeChase", 0.5f);
 
         StartCoroutine(EndDamage());
@@ -113,7 +113,7 @@ public class Enemy : MonoBehaviour
 
     private void ResumeChase()
     {
-        isInDamageState = false;  // ÇÇ°Ý »óÅÂ ÇØÁ¦
+        isInDamageState = false;  // ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     protected virtual IEnumerator EndDamage()
@@ -129,19 +129,19 @@ public class Enemy : MonoBehaviour
         nowHp = 0;
         anim.SetBool("isDead", true);
 
-        if (hpBar != null) Destroy(hpBar.gameObject); // Ã¼·Â ¹Ù UI »èÁ¦
+        if (hpBar != null) Destroy(hpBar.gameObject); // Ã¼ï¿½ï¿½ ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
 
-        // Á×À» ¶§ ¾Ö´Ï¸ÞÀÌ¼Ç ±æÀÌ¸¦ È®ÀÎÇÑ ÈÄ ºñÈ°¼ºÈ­ Ã³¸®
-        // float deathAnimationLength = GetAnimationClipLengthByTag("Dead"); // ÅÂ±×°¡ DeadÀÎ »óÅÂÀÇ ¾Ö´Ï¸ÞÀÌ¼Ç ±æÀÌ ±¸ÇÏ±â
-        StartCoroutine(HandleDeath(0.8f)); // ÀÌºÎºÐ È®ÀÎ ºÎÅ¹µå¸²
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­ Ã³ï¿½ï¿½
+        // float deathAnimationLength = GetAnimationClipLengthByTag("Dead"); // ï¿½Â±×°ï¿½ Deadï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
+        StartCoroutine(HandleDeath(0.8f)); // ï¿½ÌºÎºï¿½ È®ï¿½ï¿½ ï¿½ï¿½Å¹ï¿½å¸²
 
         Debug.Log($"[{GetType().Name}] {enemyName} is dead.");
     }
 
     protected virtual IEnumerator HandleDeath(float delay)
     {
-        yield return new WaitForSeconds(delay); // ¾Ö´Ï¸ÞÀÌ¼Ç Àç»ý ½Ã°£¸¸Å­ ´ë±â
-        gameObject.SetActive(false); // ¿ÀºêÁ§Æ® ºñÈ°¼ºÈ­
+        yield return new WaitForSeconds(delay); // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½Å­ ï¿½ï¿½ï¿½
+        gameObject.SetActive(false); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È°ï¿½ï¿½È­
         Debug.Log($"[{GetType().Name}] {enemyName} has died.");
     }
 
@@ -156,69 +156,69 @@ public class Enemy : MonoBehaviour
         if (hitRight.collider == null || !hitRight.collider.CompareTag("Platform") ||
             hitLeft.collider == null || !hitLeft.collider.CompareTag("Platform"))
         {
-            return false;  // ¿À¸¥ÂÊ ¶Ç´Â ¿ÞÂÊ¿¡ ÇÃ·§ÆûÀÌ ¾øÀ¸¸é false
+            return false;  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ false
         }
-        // µÎ °÷ ¸ðµÎ ÇÃ·§ÆûÀÌ ÀÖÀ» °æ¿ì true ¹ÝÈ¯
+        // ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ true ï¿½ï¿½È¯
         return true;
     }
 
     protected virtual void Patrol()
     {
-        // ¸ñÇ¥ ÁöÁ¡¿¡ µµ´ÞÇß´ÂÁö È®ÀÎÇÏ°í, µµ´ÞÇÏÁö ¸øÇÏ¸é Å¸ÀÌ¸Ó ½ÃÀÛ
+        // ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï°ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½ Å¸ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (Vector2.Distance(transform.position, patrolTarget) < 0.2f)
         {
-            patrolTimer = 0f;  // ¸ñÇ¥ ÁöÁ¡¿¡ µµ´ÞÇÏ¸é Å¸ÀÌ¸Ó¸¦ ÃÊ±âÈ­
-            SetPatrolTarget();  // »õ·Î¿î ¸ñÇ¥ ¼³Á¤
+            patrolTimer = 0f;  // ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ Å¸ï¿½Ì¸Ó¸ï¿½ ï¿½Ê±ï¿½È­
+            SetPatrolTarget();  // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            patrolTimer += Time.deltaTime;  // ¸ñÇ¥ ÁöÁ¡¿¡ µµ´ÞÇÏÁö ¸øÇÏ¸é Å¸ÀÌ¸Ó Áõ°¡
+            patrolTimer += Time.deltaTime;  // ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½ Å¸ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
-        // ¸ñÇ¥ ÁöÁ¡¿¡ ÀÏÁ¤ ½Ã°£ µ¿¾È µµ´ÞÇÏÁö ¸øÇÏ¸é »õ·Î¿î ¸ñÇ¥ ÁöÁ¡ ¼³Á¤
+        // ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (patrolTimer >= maxPatrolTime)
         {
-            patrolTimer = 0f;  // Å¸ÀÌ¸Ó ÃÊ±âÈ­
-            SetPatrolTarget();  // »õ·Î¿î ¸ñÇ¥ ¼³Á¤
+            patrolTimer = 0f;  // Å¸ï¿½Ì¸ï¿½ ï¿½Ê±ï¿½È­
+            SetPatrolTarget();  // ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½
         }
 
-        if (!IsOnPlatform())  // ÇÃ·§ÆûÀÌ ¾øÀ¸¸é ¹Ý´ë ¹æÇâÀ¸·Î ÀÌµ¿{
+        if (!IsOnPlatform())  // ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ý´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½{
         {
             Vector3 reverseDirection = (transform.position - patrolTarget).normalized;
             patrolTarget = transform.position + reverseDirection * patrolRange;
-            rigid.velocity = Vector2.zero;  // ÀÌµ¿ ¸ØÃã
+            rigid.linearVelocity = Vector2.zero;  // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
         }
-        // ¸ñÇ¥ ÁöÁ¡À¸·Î ÀÌµ¿ (¹èÈ¸ ½Ã ÀÌµ¿ ¼Óµµ¸¦ 0.7¹è·Î ¼³Á¤)
+        // ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ (ï¿½ï¿½È¸ ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½Óµï¿½ï¿½ï¿½ 0.7ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
         float adjustedMoveSpeed = moveSpeed * 0.7f;
         transform.position = Vector2.MoveTowards(transform.position, patrolTarget, adjustedMoveSpeed * Time.deltaTime);
         anim.SetBool("isWalk", true);
-        LookAtPatrolTarget();  // ÀÌµ¿ ¹æÇâ¿¡ µû¶ó È¸Àü
+        LookAtPatrolTarget();  // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½
     }
 
-    // ¹èÈ¸ÇÒ ¸ñÇ¥ À§Ä¡¸¦ ·£´ýÇÏ°Ô ¼³Á¤
+    // ï¿½ï¿½È¸ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
     protected virtual void SetPatrolTarget()
     {
-        float randomX = Random.Range(-patrolRange, patrolRange); //xÃàÀ¸·Î¸¸ ¿òÁ÷ÀÓ
+        float randomX = Random.Range(-patrolRange, patrolRange); //xï¿½ï¿½ï¿½ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         patrolTarget = new Vector2(transform.position.x + randomX, transform.position.y);
     }
 
-    // ÀÌµ¿ ¹æÇâÀ» ±âÁØÀ¸·Î ¾Ö³Ê¹Ì È¸Àü ¼³Á¤
+    // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö³Ê¹ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     protected virtual void LookAtPatrolTarget()
     {
         Vector3 direction = patrolTarget - transform.position;
 
         if (direction.x > 0)
-            transform.rotation = Quaternion.Euler(0, 0, 0); // ¿À¸¥ÂÊ ¹æÇâ
+            transform.rotation = Quaternion.Euler(0, 0, 0); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         else if (direction.x < 0)
-            transform.rotation = Quaternion.Euler(0, 180, 0); // ¿ÞÂÊ ¹æÇâ
+            transform.rotation = Quaternion.Euler(0, 180, 0); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 
     protected virtual void DetectAndChasePlayer()
     {
-        if (player == null || isInDamageState) return;  // ÇÇ°Ý »óÅÂÀÏ °æ¿ì Ãß°ÝÇÏÁö ¾ÊÀ½
+        if (player == null || isInDamageState) return;  // ï¿½Ç°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         HeroKnightUsing playerScript = player.GetComponent<HeroKnightUsing>();
-        if (playerScript != null && playerScript.isDead) // ÇÃ·¹ÀÌ¾î »ç¸Á½Ã Ãß°ÝÇØÁ¦
+        if (playerScript != null && playerScript.isDead) // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½
         {
             isChasing = false;
             return;
@@ -230,25 +230,25 @@ public class Enemy : MonoBehaviour
             if (!isChasing) SpawnMark();
             isChasing = true;
 
-            if (!IsOnPlatform())  // Àýº®À» ¸¸³ª¸é ´õ ÀÌ»ó Ãß°ÝÇÏÁö ¾ÊÀ½
+            if (!IsOnPlatform())  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì»ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             {
-                rigid.velocity = Vector2.zero;  // ÀÌµ¿ ¸ØÃã
-                Debug.Log("Àýº® ¿ìÈ¸");
+                rigid.linearVelocity = Vector2.zero;  // ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
+                Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸");
             }
-            else  // Àýº®ÀÌ ¾øÀ¸¸é Ãß°Ý °è¼Ó
+            else  // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ï¿½
             {
                 anim.SetBool("isWalk", true);
-                Vector3 direction = (player.position - transform.position).normalized;  // ÇÃ·¹ÀÌ¾î¸¦ Ãß°Ý
+                Vector3 direction = (player.position - transform.position).normalized;  // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ß°ï¿½
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
                 
-                Debug.Log("ÇÃ·¹ÀÌ¾î ÃßÀû½ÃÀÛ");
+                Debug.Log("ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             }
 
             LookAtPlayer();
         }
         else
         {
-            Patrol();  // ÇÃ·¹ÀÌ¾î°¡ ¾øÀ» ¶§ ¹èÈ¸
+            Patrol();  // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¸
             isChasing = false;
         }
     }
@@ -257,15 +257,15 @@ public class Enemy : MonoBehaviour
     {
         if (markPrefab != null)
         {
-            // ¸¶Ä¿¸¦ »ý¼ºÇÒ À§Ä¡¸¦ ÀûÀÇ À§Ä¡¿¡¼­ markYOffset¸¸Å­ YÃàÀ¸·Î ¿Ã¸²
+            // ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½ markYOffsetï¿½ï¿½Å­ Yï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½
             Vector3 spawnPosition = transform.position + new Vector3(0, markYOffset, 0); 
             GameObject markInstance = Instantiate(markPrefab, spawnPosition, Quaternion.identity);
 
-            // ¸¶Ä¿ÀÇ Mark ½ºÅ©¸³Æ®¿¡¼­ ÀûÀÇ Á¤º¸¸¦ µî·Ï
+            // ï¿½ï¿½Ä¿ï¿½ï¿½ Mark ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
             Mark markScript = markInstance.GetComponent<Mark>();
             if (markScript != null)
             {
-                markScript.enemy = transform;  // ÇöÀç ÀûÀÇ TransformÀ» ¸¶Ä¿¿¡ ÇÒ´ç
+                markScript.enemy = transform;  // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Transformï¿½ï¿½ ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½Ò´ï¿½
             }
         }
     }
@@ -274,8 +274,8 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = player.position - transform.position;
 
-        if (direction.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0); // ¿À¸¥ÂÊ ¹æÇâ
-        else transform.rotation = Quaternion.Euler(0, 180, 0); // ¿ÞÂÊ ¹æÇâ (YÃà È¸Àü)
+        if (direction.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        else transform.rotation = Quaternion.Euler(0, 180, 0); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ (Yï¿½ï¿½ È¸ï¿½ï¿½)
     }
 
     protected virtual void OnDrawGizmosSelected()
@@ -286,16 +286,16 @@ public class Enemy : MonoBehaviour
 
     //protected float GetAnimationClipLengthByTag(string tag)
     //{
-    //    // ÇöÀç Animator »óÅÂ °¡Á®¿À±â
-    //    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0); // Layer 0 ±âÁØ
+    //    // ï¿½ï¿½ï¿½ï¿½ Animator ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    //    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0); // Layer 0 ï¿½ï¿½ï¿½ï¿½
     //    if (anim != null && stateInfo.IsTag(tag))
     //    {
-    //        // ÇöÀç »óÅÂ°¡ ÅÂ±×¿Í ÀÏÄ¡ÇÏ¸é ÇØ´ç »óÅÂÀÇ ±æÀÌ¸¦ ¹ÝÈ¯
+    //        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â°ï¿½ ï¿½Â±×¿ï¿½ ï¿½ï¿½Ä¡ï¿½Ï¸ï¿½ ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½È¯
     //        return stateInfo.length;
     //    }
 
     //    Debug.LogWarning($"Animation with tag '{tag}' not found!");
-    //    return 0f; // ÅÂ±×¸¦ Ã£Áö ¸øÇßÀ» ¶§ ±âº»°ª ¹ÝÈ¯
+    //    return 0f; // ï¿½Â±×¸ï¿½ Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ ï¿½ï¿½È¯
     //}
 
 }

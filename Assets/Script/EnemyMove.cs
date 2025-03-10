@@ -24,7 +24,7 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
+        rigid.linearVelocity = new Vector2(nextMove, rigid.linearVelocity.y);
 
         Vector2 frontVec = new Vector2(rigid.position.x + nextMove*0.2f, rigid.position.y);
         Debug.DrawRay(frontVec, Vector3.down, new Color(0, 1, 0));

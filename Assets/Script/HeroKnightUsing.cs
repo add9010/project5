@@ -56,9 +56,9 @@ public class HeroKnightUsing : MonoBehaviour
     [SerializeField] private float maxHealth = 100;      // 최대 체력
     private float currentHealth;                         // 현재 체력
 
-    [SerializeField] private float invincibilityDuration = 1.0f; // 무적 시간
-    private bool isInvincible = false;                 // 무적 상태 여부
-    private float invincibilityTimer = 0.0f;           // 무적 시간 타이머
+    //[SerializeField] private float invincibilityDuration = 1.0f; // 무적 시간
+    //private bool isInvincible = false;                 // 무적 상태 여부
+    //private float invincibilityTimer = 0.0f;           // 무적 시간 타이머
 
     [SerializeField] private CameraShake cameraShake;
 
@@ -253,7 +253,7 @@ public class HeroKnightUsing : MonoBehaviour
         // 구르기 중에 y축 속도를 0으로 고정
         if (m_rolling)
         {
-            m_body2d.velocity = new Vector2(m_facingDirection * m_rollForce * 3, 0f); // y축 속도 0으로 설정
+            m_body2d.linearVelocity = new Vector2(m_facingDirection * m_rollForce * 3, 0f); // y축 속도 0으로 설정
 
             // 구르기 중에 적 위로 올라가는지 확인
             Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
@@ -270,11 +270,11 @@ public class HeroKnightUsing : MonoBehaviour
         }
         else
         {
-            m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y); // 일반 이동 처리
+            m_body2d.linearVelocity = new Vector2(inputX * m_speed, m_body2d.linearVelocity.y); // 일반 이동 처리
         }
 
         // 공중에 있을 때의 애니메이션 처리
-        m_animator.SetFloat("AirSpeedY", m_body2d.velocity.y);
+        m_animator.SetFloat("AirSpeedY", m_body2d.linearVelocity.y);
     }
 
     // 애니메이션 처리 (방향 고정)
@@ -308,7 +308,7 @@ public class HeroKnightUsing : MonoBehaviour
 
             // 구르기 이동 속도 및 거리 조정 (기존 m_rollForce 값을 크게 설정)
             float enhancedRollSpeed = m_facingDirection * m_rollForce * 3;  // 기존보다 1.5배 더 빨리 이동
-            m_body2d.velocity = new Vector2(enhancedRollSpeed, m_body2d.velocity.y);
+            m_body2d.linearVelocity = new Vector2(enhancedRollSpeed, m_body2d.linearVelocity.y);
 
             // 구르기 지속 시간 늘리기 (기존 시간을 조금 늘려서 구를 때 더 멀리 이동)
             m_rollDuration = 0.25f; // 기존보다 약간 더 길게 (예시로 0.25초로 설정)
@@ -331,7 +331,7 @@ public class HeroKnightUsing : MonoBehaviour
             }
 
             // 점프 동작
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
+            m_body2d.linearVelocity = new Vector2(m_body2d.linearVelocity.x, m_jumpForce);
 
             // 바닥 센서를 약간 비활성화 (0.2초 동안)
             m_groundSensor.Disable(0.2f);
@@ -379,7 +379,7 @@ public class HeroKnightUsing : MonoBehaviour
 
             // 구르기 중이 아닐 때만 이동
             if (!m_rolling)
-                m_body2d.velocity = new Vector2(inputX * m_speed, m_body2d.velocity.y);
+                m_body2d.linearVelocity = new Vector2(inputX * m_speed, m_body2d.linearVelocity.y);
         }
 
         // 구르기 상태가 끝났을 때 충돌을 다시 활성화

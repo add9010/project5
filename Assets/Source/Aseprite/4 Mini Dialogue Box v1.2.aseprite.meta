@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -105,6 +106,7 @@ ScriptedImporter:
     pivot: {x: 0, y: 0}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 0
@@ -126,6 +128,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -146,6 +149,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -166,6 +170,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -186,6 +191,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -206,6 +212,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -226,6 +233,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -246,6 +254,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -266,6 +275,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -286,6 +296,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -306,6 +317,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -326,6 +338,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -346,6 +359,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -366,6 +380,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -386,6 +401,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -406,6 +422,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -426,6 +443,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 4
@@ -446,6 +464,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -466,6 +485,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -486,6 +506,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -506,6 +527,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -526,6 +548,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -546,6 +569,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -566,6 +590,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -586,6 +611,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -606,6 +632,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -626,6 +653,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -646,6 +674,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -666,6 +695,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -686,6 +716,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -706,6 +737,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -726,6 +758,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -746,6 +779,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 684
@@ -766,6 +800,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -786,6 +821,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -806,6 +842,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -826,6 +863,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -846,6 +884,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -866,6 +905,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -886,6 +926,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -906,6 +947,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -926,6 +968,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -946,6 +989,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -966,6 +1010,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -986,6 +1031,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -1006,6 +1052,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -1026,6 +1073,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -1046,6 +1094,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -1066,6 +1115,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 1364
@@ -1086,6 +1136,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1106,6 +1157,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1126,6 +1178,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1146,6 +1199,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1166,6 +1220,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1186,6 +1241,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1206,6 +1262,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1226,6 +1283,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1246,6 +1304,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1266,6 +1325,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1286,6 +1346,7 @@ ScriptedImporter:
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
     rect:
       serializedVersion: 2
       x: 2044
@@ -1304,13 +1365,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 319531393
+    guid: -821405499
     name: 4 Mini Dialogue Box v1.2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: 4 Mini Dialogue Box v1.2_Frame_0
+    - name: Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -1319,7 +1380,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 280bfb9bceee1004c851e4886bb4a9cf
-    - name: 4 Mini Dialogue Box v1.2_Frame_1
+    - name: Frame_1
       frameIndex: 1
       additiveSortOrder: 0
       cellRect:
@@ -1328,7 +1389,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: f9c139fe23a78b54da468a95d580eddd
-    - name: 4 Mini Dialogue Box v1.2_Frame_2
+    - name: Frame_2
       frameIndex: 2
       additiveSortOrder: 0
       cellRect:
@@ -1337,7 +1398,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 4d5e4a5a953563a43a00b41e44b8620f
-    - name: 4 Mini Dialogue Box v1.2_Frame_3
+    - name: Frame_3
       frameIndex: 3
       additiveSortOrder: 0
       cellRect:
@@ -1346,7 +1407,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 4d3b56a38150f2640bdd443cbb143f18
-    - name: 4 Mini Dialogue Box v1.2_Frame_4
+    - name: Frame_4
       frameIndex: 4
       additiveSortOrder: 0
       cellRect:
@@ -1355,7 +1416,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 1711875ff8ee49c4eb6328387a897c03
-    - name: 4 Mini Dialogue Box v1.2_Frame_5
+    - name: Frame_5
       frameIndex: 5
       additiveSortOrder: 0
       cellRect:
@@ -1364,7 +1425,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 859b0deb39bd34043a72958131454342
-    - name: 4 Mini Dialogue Box v1.2_Frame_6
+    - name: Frame_6
       frameIndex: 6
       additiveSortOrder: 0
       cellRect:
@@ -1373,7 +1434,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 19a496fc966cd214b8c9b378b34989d4
-    - name: 4 Mini Dialogue Box v1.2_Frame_7
+    - name: Frame_7
       frameIndex: 7
       additiveSortOrder: 0
       cellRect:
@@ -1382,7 +1443,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 6bd7c065d80ae3947bf864c4e1ed297c
-    - name: 4 Mini Dialogue Box v1.2_Frame_8
+    - name: Frame_8
       frameIndex: 8
       additiveSortOrder: 0
       cellRect:
@@ -1391,7 +1452,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 6af28cf69cf2932448cf8a5a6908a031
-    - name: 4 Mini Dialogue Box v1.2_Frame_9
+    - name: Frame_9
       frameIndex: 9
       additiveSortOrder: 0
       cellRect:
@@ -1400,7 +1461,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 7d7af70f591252248b90b1da3119897c
-    - name: 4 Mini Dialogue Box v1.2_Frame_10
+    - name: Frame_10
       frameIndex: 10
       additiveSortOrder: 0
       cellRect:
@@ -1409,7 +1470,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: a281052694ed8b04b8308e19da0a52a7
-    - name: 4 Mini Dialogue Box v1.2_Frame_11
+    - name: Frame_11
       frameIndex: 11
       additiveSortOrder: 0
       cellRect:
@@ -1418,7 +1479,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 4adb8f6e8866b3f45ac9f6090d0aa76e
-    - name: 4 Mini Dialogue Box v1.2_Frame_12
+    - name: Frame_12
       frameIndex: 12
       additiveSortOrder: 0
       cellRect:
@@ -1427,7 +1488,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 94d70af44c6edd84cadf16d1fc8b8ac6
-    - name: 4 Mini Dialogue Box v1.2_Frame_13
+    - name: Frame_13
       frameIndex: 13
       additiveSortOrder: 0
       cellRect:
@@ -1436,7 +1497,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 415ab2d61803c724a89e8c773eadc9c8
-    - name: 4 Mini Dialogue Box v1.2_Frame_14
+    - name: Frame_14
       frameIndex: 14
       additiveSortOrder: 0
       cellRect:
@@ -1445,7 +1506,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 9d527ffaf9166d94ba40b80f7aad1967
-    - name: 4 Mini Dialogue Box v1.2_Frame_15
+    - name: Frame_15
       frameIndex: 15
       additiveSortOrder: 0
       cellRect:
@@ -1454,7 +1515,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 2cc2060a20d70cb469f15692576373ba
-    - name: 4 Mini Dialogue Box v1.2_Frame_16
+    - name: Frame_16
       frameIndex: 16
       additiveSortOrder: 0
       cellRect:
@@ -1463,7 +1524,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 9bb6b2b8b7814b146b4148feda934a8a
-    - name: 4 Mini Dialogue Box v1.2_Frame_17
+    - name: Frame_17
       frameIndex: 17
       additiveSortOrder: 0
       cellRect:
@@ -1472,7 +1533,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 8fc5fbae9ee8f564d9c4d9b13fd6bebf
-    - name: 4 Mini Dialogue Box v1.2_Frame_18
+    - name: Frame_18
       frameIndex: 18
       additiveSortOrder: 0
       cellRect:
@@ -1481,7 +1542,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 9a295ab3aa8422a408054b0f62784bc2
-    - name: 4 Mini Dialogue Box v1.2_Frame_19
+    - name: Frame_19
       frameIndex: 19
       additiveSortOrder: 0
       cellRect:
@@ -1490,7 +1551,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: aa006847f4f922141ad398d28db26a5b
-    - name: 4 Mini Dialogue Box v1.2_Frame_20
+    - name: Frame_20
       frameIndex: 20
       additiveSortOrder: 0
       cellRect:
@@ -1499,7 +1560,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 4e9115add63a963469c6c614c77942ab
-    - name: 4 Mini Dialogue Box v1.2_Frame_21
+    - name: Frame_21
       frameIndex: 21
       additiveSortOrder: 0
       cellRect:
@@ -1508,7 +1569,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 3b334de6556292345a64b0a3fd43a790
-    - name: 4 Mini Dialogue Box v1.2_Frame_22
+    - name: Frame_22
       frameIndex: 22
       additiveSortOrder: 0
       cellRect:
@@ -1517,7 +1578,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 3d8ee6029f674304582e6d6e0c1d1d70
-    - name: 4 Mini Dialogue Box v1.2_Frame_23
+    - name: Frame_23
       frameIndex: 23
       additiveSortOrder: 0
       cellRect:
@@ -1526,7 +1587,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: f0ca919477611334f82cc38625a3d0ca
-    - name: 4 Mini Dialogue Box v1.2_Frame_24
+    - name: Frame_24
       frameIndex: 24
       additiveSortOrder: 0
       cellRect:
@@ -1535,7 +1596,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 5ad402c712ac411489dd8ec4b9751629
-    - name: 4 Mini Dialogue Box v1.2_Frame_25
+    - name: Frame_25
       frameIndex: 25
       additiveSortOrder: 0
       cellRect:
@@ -1544,7 +1605,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 5bc3b86acf272744a9eb7c33fb9e5ed3
-    - name: 4 Mini Dialogue Box v1.2_Frame_26
+    - name: Frame_26
       frameIndex: 26
       additiveSortOrder: 0
       cellRect:
@@ -1553,7 +1614,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 73e58644c267a844d8259cf6612b68af
-    - name: 4 Mini Dialogue Box v1.2_Frame_27
+    - name: Frame_27
       frameIndex: 27
       additiveSortOrder: 0
       cellRect:
@@ -1562,7 +1623,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 5ea0f4073d915c547acb9f28dd62620d
-    - name: 4 Mini Dialogue Box v1.2_Frame_28
+    - name: Frame_28
       frameIndex: 28
       additiveSortOrder: 0
       cellRect:
@@ -1571,7 +1632,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 5dc87c5cb3c2a034885e7e4dd0868370
-    - name: 4 Mini Dialogue Box v1.2_Frame_29
+    - name: Frame_29
       frameIndex: 29
       additiveSortOrder: 0
       cellRect:
@@ -1580,7 +1641,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 30d0a6059399c2b44bf45ee51685557b
-    - name: 4 Mini Dialogue Box v1.2_Frame_30
+    - name: Frame_30
       frameIndex: 30
       additiveSortOrder: 0
       cellRect:
@@ -1589,7 +1650,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 0304e9b0f90b00946a430544b262b5d6
-    - name: 4 Mini Dialogue Box v1.2_Frame_31
+    - name: Frame_31
       frameIndex: 31
       additiveSortOrder: 0
       cellRect:
@@ -1598,7 +1659,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 3fe390e6ff06f3b4b83c2d1ebdcd949a
-    - name: 4 Mini Dialogue Box v1.2_Frame_32
+    - name: Frame_32
       frameIndex: 32
       additiveSortOrder: 0
       cellRect:
@@ -1607,7 +1668,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: d907fee0cc1e99f41b921b8b2fdbfc2a
-    - name: 4 Mini Dialogue Box v1.2_Frame_33
+    - name: Frame_33
       frameIndex: 33
       additiveSortOrder: 0
       cellRect:
@@ -1616,7 +1677,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: bf28fd20fa3f1f64a8d44c9548238960
-    - name: 4 Mini Dialogue Box v1.2_Frame_34
+    - name: Frame_34
       frameIndex: 34
       additiveSortOrder: 0
       cellRect:
@@ -1625,7 +1686,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: dbc4d1aed98796941b50eaf44ce315db
-    - name: 4 Mini Dialogue Box v1.2_Frame_35
+    - name: Frame_35
       frameIndex: 35
       additiveSortOrder: 0
       cellRect:
@@ -1634,7 +1695,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 906a134a92799f94fa857072e0fab1a9
-    - name: 4 Mini Dialogue Box v1.2_Frame_36
+    - name: Frame_36
       frameIndex: 36
       additiveSortOrder: 0
       cellRect:
@@ -1643,7 +1704,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 6aff5399785ed904eabc87a3bf618999
-    - name: 4 Mini Dialogue Box v1.2_Frame_37
+    - name: Frame_37
       frameIndex: 37
       additiveSortOrder: 0
       cellRect:
@@ -1652,7 +1713,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 5feba4a240869ff41a4cfe7a01837e05
-    - name: 4 Mini Dialogue Box v1.2_Frame_38
+    - name: Frame_38
       frameIndex: 38
       additiveSortOrder: 0
       cellRect:
@@ -1661,7 +1722,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: e97fab30f07b6074d81a5933bbe72c67
-    - name: 4 Mini Dialogue Box v1.2_Frame_39
+    - name: Frame_39
       frameIndex: 39
       additiveSortOrder: 0
       cellRect:
@@ -1670,7 +1731,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 71019649def115842b8dec676cb4f19d
-    - name: 4 Mini Dialogue Box v1.2_Frame_40
+    - name: Frame_40
       frameIndex: 40
       additiveSortOrder: 0
       cellRect:
@@ -1679,7 +1740,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 22a324f5670d960479569749ae1543e2
-    - name: 4 Mini Dialogue Box v1.2_Frame_41
+    - name: Frame_41
       frameIndex: 41
       additiveSortOrder: 0
       cellRect:
@@ -1688,7 +1749,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 1fd3f4823e155974bb35882cd14a566f
-    - name: 4 Mini Dialogue Box v1.2_Frame_42
+    - name: Frame_42
       frameIndex: 42
       additiveSortOrder: 0
       cellRect:
@@ -1697,7 +1758,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 4ebe93c327bb8d644ae1105b7d59437d
-    - name: 4 Mini Dialogue Box v1.2_Frame_43
+    - name: Frame_43
       frameIndex: 43
       additiveSortOrder: 0
       cellRect:
@@ -1706,7 +1767,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 252867e5c8f071f46b527c50f24b23c7
-    - name: 4 Mini Dialogue Box v1.2_Frame_44
+    - name: Frame_44
       frameIndex: 44
       additiveSortOrder: 0
       cellRect:
@@ -1715,7 +1776,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 1dd9c1105b6880747a79281364443872
-    - name: 4 Mini Dialogue Box v1.2_Frame_45
+    - name: Frame_45
       frameIndex: 45
       additiveSortOrder: 0
       cellRect:
@@ -1724,7 +1785,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 136bcd5619b4c9546a94f0bf51b5eb67
-    - name: 4 Mini Dialogue Box v1.2_Frame_46
+    - name: Frame_46
       frameIndex: 46
       additiveSortOrder: 0
       cellRect:
@@ -1733,7 +1794,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 1c555a5d140767248974a4c51486aa76
-    - name: 4 Mini Dialogue Box v1.2_Frame_47
+    - name: Frame_47
       frameIndex: 47
       additiveSortOrder: 0
       cellRect:
@@ -1742,7 +1803,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 7cbc0687b1007164b89b3e6ba5b8e192
-    - name: 4 Mini Dialogue Box v1.2_Frame_48
+    - name: Frame_48
       frameIndex: 48
       additiveSortOrder: 0
       cellRect:
@@ -1751,7 +1812,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 14114673cadc7f7468ba040f6c000878
-    - name: 4 Mini Dialogue Box v1.2_Frame_49
+    - name: Frame_49
       frameIndex: 49
       additiveSortOrder: 0
       cellRect:
@@ -1760,7 +1821,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 69f4b3d45e2a8d34bb273cde219bbaca
-    - name: 4 Mini Dialogue Box v1.2_Frame_50
+    - name: Frame_50
       frameIndex: 50
       additiveSortOrder: 0
       cellRect:
@@ -1769,7 +1830,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: bd7af69d1f9dc8d46b20d68e382ecc1f
-    - name: 4 Mini Dialogue Box v1.2_Frame_51
+    - name: Frame_51
       frameIndex: 51
       additiveSortOrder: 0
       cellRect:
@@ -1778,7 +1839,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 5326e84a1f757874b941f09b5e8d8410
-    - name: 4 Mini Dialogue Box v1.2_Frame_52
+    - name: Frame_52
       frameIndex: 52
       additiveSortOrder: 0
       cellRect:
@@ -1787,7 +1848,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 09c40556e864c424195b3635822f6b9d
-    - name: 4 Mini Dialogue Box v1.2_Frame_53
+    - name: Frame_53
       frameIndex: 53
       additiveSortOrder: 0
       cellRect:
@@ -1796,7 +1857,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: cfba37cedbe1c3344af06cadc7321678
-    - name: 4 Mini Dialogue Box v1.2_Frame_54
+    - name: Frame_54
       frameIndex: 54
       additiveSortOrder: 0
       cellRect:
@@ -1805,7 +1866,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 0f056eae4a757a34b94ac75379a90ee5
-    - name: 4 Mini Dialogue Box v1.2_Frame_55
+    - name: Frame_55
       frameIndex: 55
       additiveSortOrder: 0
       cellRect:
@@ -1814,7 +1875,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 9161ef9af143a7c498b8bb7de4f2fb1a
-    - name: 4 Mini Dialogue Box v1.2_Frame_56
+    - name: Frame_56
       frameIndex: 56
       additiveSortOrder: 0
       cellRect:
@@ -1823,7 +1884,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 856a0738b515e014a850b81035e30271
-    - name: 4 Mini Dialogue Box v1.2_Frame_57
+    - name: Frame_57
       frameIndex: 57
       additiveSortOrder: 0
       cellRect:
@@ -1832,7 +1893,7 @@ ScriptedImporter:
         width: 672
         height: 480
       spriteId: 508bb90b878608d43abddbd58ef24fc1
-    - name: 4 Mini Dialogue Box v1.2_Frame_58
+    - name: Frame_58
       frameIndex: 58
       additiveSortOrder: 0
       cellRect:
@@ -1860,3 +1921,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 672, y: 480}
+  previousTextureSize: {x: 4096, y: 8192}
