@@ -30,7 +30,6 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
     public void OnClickNewGame()
     {
         Debug.Log("새 게임");
-        Debug.Log("새 게임");
         SceneManager.LoadScene("Floor3");
     }
 
