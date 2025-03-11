@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 70382c2e856ce5b4283e6197da8b7837
+guid: f4fa187568db2e743afbd3ac9e811cc6
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4941240919024178222
+    second: Box1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -93,27 +96,36 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Box1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e249f00af60d29440800000000000000
+      internalID: 4941240919024178222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: adecb9eaa6b75d7458a49f0c4f58cf13
     internalID: 0
     vertices: []
     indices: 
@@ -123,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GUI_0: -240524642
-      GUI_1: -1464676194
-      GUI_2: 1270902428
+      Box1_0: 4941240919024178222
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
