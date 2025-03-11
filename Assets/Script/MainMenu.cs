@@ -8,29 +8,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
 {
-    /*
-        public enum BTNType
-        {
-            New,
-            Contiune,
-            Option,
-            Sound,
-            Back,
-            Quit
-        }
-    
-    public Transform buttonScale;
-    Vector3 defaultScale;
-   
-    private void Start()
-    {
-        defaultScale = buttonScale.localScale;
-    }
-     */
+    public FadeManager fadeManager; // 페이드 매니저 연결
+
+
     public void OnClickNewGame()
     {
-        Debug.Log("새 게임");
-        SceneManager.LoadScene("Floor3");
+        Debug.Log("새 게임 시작");
+
+        // 페이드 아웃 시작
+        if (fadeManager != null)
+        {
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Floor3")); // 페이드 아웃 후 씬 이동
+            fadeManager.FadeOut();
+        }
+        else
+        {
+            SceneManager.LoadScene("Floor3"); // 페이드 매니저가 없으면 그냥 씬 이동
+        }
     }
 
     public void OnClickLoad()
@@ -42,28 +36,14 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
     {
         Debug.Log("옵션");
     }
+
     public void OnClickQuit()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-
 #else
         Application.Quit();
-
 #endif
-
-
     }
-    /*
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        buttonScale.localScale = defaultScale * 1.2f;
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        buttonScale.localScale = defaultScale;
-    }
-    */
 }
 
