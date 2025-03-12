@@ -18,12 +18,12 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
         // 페이드 아웃 시작
         if (fadeManager != null)
         {
-            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Floor3")); // 페이드 아웃 후 씬 이동
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Loding")); // 페이드 아웃 후 씬 이동
             fadeManager.FadeOut();
         }
         else
         {
-            SceneManager.LoadScene("Floor3"); // 페이드 매니저가 없으면 그냥 씬 이동
+            SceneManager.LoadScene("Loding"); // 페이드 매니저가 없으면 그냥 씬 이동
         }
     }
 
