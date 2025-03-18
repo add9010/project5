@@ -31,10 +31,6 @@ public class GameManager : MonoBehaviour
             collision.transform.position = new Vector3(0, 0, -1);
 
         }
-
-
-
-
     }
 
 
