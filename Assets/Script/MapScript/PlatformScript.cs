@@ -35,4 +35,4 @@ public class PlatformScript : MonoBehaviour
     {
         playerCheck = false;
     }
-} 
+}
