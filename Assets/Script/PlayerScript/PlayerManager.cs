@@ -2,36 +2,98 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
 
+    [Header("데이터")]
+    public PlayerData data;
 
+    [Header("컴포넌트")]
+    public Animator animator;
+    public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
+    public CameraShake cameraShake;
 
+    [Header("체력 UI")]
+    public GameObject prfHpBar;
+    public GameObject canvas;
+    private RectTransform hpBar;
+    private UnityEngine.UI.Image nowHpbar;
+
+    [Header("공격 위치")]
+    public Transform attackPos;
+
+    public PlayerHealth playerHealth { get; private set; }
+    public bool IsDead { get; private set; } = false;
+    public bool CanDoubleJump { get; set; } = false;
+    public bool CanPerformDoubleJump { get; set; } = false;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+
+        // 컴포넌트 캐싱
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     void Start()
     {
-        
-    }
+        // 체력바 UI 세팅
+        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
 
+        // PlayerHealth 초기화
+        playerHealth = new PlayerHealth(this);
+    }
 
     void Update()
     {
-        
+        if (IsDead) return;
+
+        // 체력바 UI 위치 갱신
+        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + data.heightOffset, 0));
+        hpBar.position = hpBarPos;
+
+        // UI 업데이트는 playerHealth 내부에서 처리됨
     }
 
-    private void FixedUpdate()
+    public void MarkAsDead()
     {
-        
+        IsDead = true;
     }
 
-
-    void PlayerMove()
+    public void ResetPlayer()
     {
-        
-
-
-
+        IsDead = false;
     }
 
+    public void UpdateHpUI(float currentHealth)
+    {
+        if (nowHpbar != null)
+            nowHpbar.fillAmount = currentHealth / data.maxHealth;
+    }
 
-
-
+    public void SetCharacterAttribute(string attribute)
+    {
+        switch (attribute)
+        {
+            case "speed":
+                data.speed *= 1.3f;
+                Debug.Log("이동 속도 1.3배 증가");
+                break;
+            case "attack":
+                data.attackPower *= 1.5f;
+                Debug.Log("공격력 1.5배 증가");
+                break;
+            case "health":
+                data.maxHealth *= 1.3f;
+                Debug.Log("체력 1.3배 증가");
+                break;
+            case "random":
+                CanDoubleJump = true;
+                Debug.Log("축하합니다! 더블점프 해금");
+                break;
+        }
+    }
 }
