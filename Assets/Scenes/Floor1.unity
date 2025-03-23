@@ -2748,6 +2748,7 @@ MonoBehaviour:
   prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
   canvas: {fileID: 655671640}
   attackPos: {fileID: 808285541}
+  groundSensor: {fileID: 0}
 --- !u!50 &352926687 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7020276498448082982, guid: c687608987866314b983fdf37afbba9f, type: 3}
@@ -6131,6 +6132,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 628187523675614401, guid: c687608987866314b983fdf37afbba9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1601852053168850133, guid: c687608987866314b983fdf37afbba9f, type: 3}
       propertyPath: orthographic
       value: 1
@@ -6149,11 +6154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7581067720466691853, guid: c687608987866314b983fdf37afbba9f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.019485
+      value: -41.62
       objectReference: {fileID: 0}
     - target: {fileID: 7581067720466691853, guid: c687608987866314b983fdf37afbba9f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7749871
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 7581067720466691853, guid: c687608987866314b983fdf37afbba9f, type: 3}
       propertyPath: m_LocalPosition.z
