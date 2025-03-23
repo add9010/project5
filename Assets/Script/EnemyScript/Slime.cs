@@ -30,10 +30,10 @@ public class Slime : Enemy
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerManager player = collision.gameObject.GetComponent<PlayerManager>();
-            if (player != null && !player.IsDead)
+            HeroKnightUsing playerScript = collision.gameObject.GetComponent<HeroKnightUsing>();
+            if (playerScript != null && !playerScript.isDead)
             {
-                player.playerHealth.TakeDamage(atkDmg);
+                playerScript.TakeDamage(atkDmg);
                 Debug.Log($"{enemyName} 공격: {atkDmg} 데미지");
             }
         }

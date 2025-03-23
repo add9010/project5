@@ -3,13 +3,7 @@ using UnityEngine;
 public class PlayerMove
 {
     private PlayerManager manager;
-    private bool isRolling = false;
-    private float rollTimer = 0f;
-
-    private bool IsGrounded()
-    {
-        return manager.groundSensor != null && manager.groundSensor.State();
-    }
+    private bool grounded = true;
 
     public PlayerMove(PlayerManager manager)
     {
@@ -18,49 +12,35 @@ public class PlayerMove
 
     public void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && !isRolling)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             manager.animator.SetTrigger("Jump");
             manager.rb.linearVelocity = new Vector2(manager.rb.linearVelocity.x, manager.data.jumpForce);
-            manager.groundSensor.Disable(0.2f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded() && !isRolling)
-        {
-            isRolling = true;
-            rollTimer = 0f;
-
-            manager.animator.SetTrigger("Roll");
-
-            float dir = manager.spriteRenderer.flipX ? -1 : 1;
-            manager.rb.linearVelocity = new Vector2(dir * manager.data.rollForce, 0f);
-
-            manager.GetComponent<PlayerCollision>()?.IgnoreEnemyCollisions(true);
+            grounded = false;
         }
     }
 
     public void HandleMovement()
     {
-        bool isGrounded = IsGrounded();
-        manager.animator.SetBool("Grounded", isGrounded);
-
-        if (isRolling)
-        {
-            rollTimer += Time.deltaTime;
-            if (rollTimer >= manager.data.rollDuration)
-            {
-                isRolling = false;
-                manager.GetComponent<PlayerCollision>()?.IgnoreEnemyCollisions(false);
-            }
-            return; // 구르는 중엔 조작 X
-        }
-
         float inputX = Input.GetAxis("Horizontal");
         manager.rb.linearVelocity = new Vector2(inputX * manager.data.speed, manager.rb.linearVelocity.y);
 
+        // 방향 반전
         if (inputX > 0)
+        {
             manager.spriteRenderer.flipX = false;
+        }
         else if (inputX < 0)
+        {
             manager.spriteRenderer.flipX = true;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            grounded = true;
+        }
     }
 }

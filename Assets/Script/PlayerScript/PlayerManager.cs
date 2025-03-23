@@ -22,9 +22,6 @@ public class PlayerManager : MonoBehaviour
     [Header("공격 위치")]
     public Transform attackPos;
 
-    [Header("센서")]
-    public Sensor_HeroKnight groundSensor;
-
     public PlayerHealth playerHealth { get; private set; }
     public PlayerMove playerMove { get; private set; }
     public PlayerAttack playerAttack { get; private set; }
@@ -46,7 +43,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
         hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         playerStateController = new PlayerStateController(this);  // 이렇게 수정
@@ -71,6 +67,12 @@ private void Update()
     playerAttack.Update(); // 새로 추가
     playerStateController.Update(); // 애니메이션 담당
 }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        playerMove.OnCollisionEnter2D(collision);
+    }
+
     public void MarkAsDead()
     {
         IsDead = true;

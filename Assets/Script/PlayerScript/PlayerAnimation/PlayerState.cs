@@ -1,13 +1,16 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerStateController
 {
     private PlayerManager pm;
-
-    private enum PlayerState { Idle, Move, Jump, Roll, Hurt, Dead }
+    private enum PlayerState { Idle, Move, Jump, Attack, Roll, Hurt, Dead }
     private PlayerState currentState = PlayerState.Idle;
 
+    private float timeSinceAttack;
     private float delayToIdle;
+    private int attackCount = 0;
+    private bool isAttacking = false;
     private bool grounded = true;
 
     public PlayerStateController(PlayerManager manager)
@@ -23,12 +26,25 @@ public class PlayerStateController
         UpdateStateLogic();
     }
 
+    void FixedUpdate()
+    {
+        if (currentState == PlayerState.Move)
+        {
+            float inputX = Input.GetAxisRaw("Horizontal");
+            pm.rb.linearVelocity = new Vector2(inputX * pm.data.speed, pm.rb.linearVelocity.y);
+
+            if (inputX != 0)
+                pm.spriteRenderer.flipX = inputX < 0;
+        }
+    }
+
     private void HandleInput()
     {
+        timeSinceAttack += Time.deltaTime;
+
         float inputX = Input.GetAxisRaw("Horizontal");
 
-        // ����
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && !isAttacking)
         {
             currentState = PlayerState.Jump;
             grounded = false;
@@ -37,30 +53,23 @@ public class PlayerStateController
             return;
         }
 
-        // ������
-        if (Input.GetKeyDown(KeyCode.LeftShift) && grounded)
+        if (Input.GetMouseButtonDown(0) && timeSinceAttack > pm.data.attackDuration && !isAttacking)
         {
-            currentState = PlayerState.Roll;
-            pm.animator.SetTrigger("Roll");
-
-            float dir = pm.spriteRenderer.flipX ? -1 : 1;
-            pm.rb.linearVelocity = new Vector2(dir * pm.data.rollForce, 0f);
-
-            // ������ �浹 ����
-            pm.GetComponent<PlayerCollision>()?.IgnoreEnemyCollisions(true);
-            pm.StartCoroutine(EndRollAfter(0.25f));
+            currentState = PlayerState.Attack;
+            pm.StartAttackCoroutine(AttackCoroutine());
             return;
         }
 
-        // �̵�
-        if (Mathf.Abs(inputX) > 0.1f)
+        if (Mathf.Abs(inputX) > 0.1f && grounded && !isAttacking)
         {
             currentState = PlayerState.Move;
             return;
         }
 
-        // �⺻ ����
-        currentState = PlayerState.Idle;
+        if (grounded && !isAttacking)
+        {
+            currentState = PlayerState.Idle;
+        }
     }
 
     private void UpdateStateLogic()
@@ -82,16 +91,65 @@ public class PlayerStateController
         }
     }
 
-    private System.Collections.IEnumerator EndRollAfter(float duration)
+    private IEnumerator AttackCoroutine()
     {
-        yield return new WaitForSeconds(duration);
-        pm.GetComponent<PlayerCollision>()?.IgnoreEnemyCollisions(false);
+        isAttacking = true;
+        attackCount++;
+        timeSinceAttack = 0f;
+
+        pm.animator.SetTrigger("Attack" + ((attackCount % 3) + 1));
+        yield return new WaitForSeconds(pm.data.attackDuration / 2f);
+        Attack();
+
+        yield return new WaitForSeconds(pm.data.attackDuration / 2f);
+        isAttacking = false;
+        if (attackCount >= 3) attackCount = 0;
+
         currentState = PlayerState.Idle;
     }
 
-    public void OnCollisionEnter2D(Collision2D col)
+    private void Attack()
     {
-        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Platform"))
+        Vector3 pos = pm.attackPos.position;
+        if (pm.spriteRenderer.flipX)
+            pos.x -= pm.data.attackBoxSize.x;
+
+        Collider2D[] hits = Physics2D.OverlapBoxAll(pos, pm.data.attackBoxSize, 0);
+        foreach (var hit in hits)
+        {
+            Enemy enemy = hit.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                float damage = (attackCount == 3) ? pm.data.attackPower * 1.5f : pm.data.attackPower;
+                float knockback = (attackCount == 3) ? pm.data.attackKnockbackThird : pm.data.attackKnockback;
+
+                enemy.TakeDamage(new ParameterPlayerAttack
+                {
+                    damage = damage,
+                    knockback = knockback
+                });
+
+                if (attackCount == 3)
+                    pm.cameraShake.ShakeCamera();
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Ground"))
             grounded = true;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (pm != null && pm.attackPos != null)
+        {
+            Gizmos.color = Color.red;
+            Vector3 pos = pm.attackPos.position;
+            if (pm.spriteRenderer != null && pm.spriteRenderer.flipX)
+                pos.x -= pm.data.attackBoxSize.x;
+            Gizmos.DrawWireCube(pos, pm.data.attackBoxSize);
+        }
     }
 }
