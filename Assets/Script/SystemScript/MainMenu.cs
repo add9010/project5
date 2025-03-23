@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,54 +8,70 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
 {
-    public FadeManager fadeManager; // ÆäÀÌµå ¸Å´ÏÀú ¿¬°á
+    public FadeManager fadeManager; // í˜ì´ë“œ ë§¤ë‹ˆì € ì—°ê²°
+
+
 
 
     public void OnClickNewGame()
     {
-        Debug.Log("»õ °ÔÀÓ ½ÃÀÛ");
+        Debug.Log("ìƒˆ ê²Œì„ ì‹œì‘");
 
-        // ÆäÀÌµå ¾Æ¿ô ½ÃÀÛ
+        // ìƒˆë¡œìš´ ê²Œì„ ë°ì´í„° ìƒì„± ë° ì €ì¥
+        GameManager.Instance.gameData = new Data(); // ìƒˆ ê²Œì„ ë°ì´í„° ì´ˆê¸°í™”
+        GameManager.Instance.SaveGame(); // ì´ˆê¸° ë°ì´í„° ì €ì¥
+
+        // ì”¬ ì´ë™ (ì˜ˆ: ë¡œë”© ì”¬ â†’ ê²Œì„ ì”¬)
         if (fadeManager != null)
         {
-            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Loding")); // ÆäÀÌµå ¾Æ¿ô ÈÄ ¾À ÀÌµ¿
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Loding"));
             fadeManager.FadeOut();
         }
         else
         {
-            SceneManager.LoadScene("Loding"); // ÆäÀÌµå ¸Å´ÏÀú°¡ ¾øÀ¸¸é ±×³É ¾À ÀÌµ¿
+            SceneManager.LoadScene("Loding");
         }
     }
 
     public void OnClickLoad()
     {
-        Debug.Log("ºÒ·¯¿À±â");
+        Debug.Log("ë¶ˆëŸ¬ì˜¤ê¸°");
 
-        // °ÔÀÓ µ¥ÀÌÅÍ ºÒ·¯¿À±â
-        DateManager.Instance.LoadGameData();
+        // ğŸ”¹ ì €ì¥ëœ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°
+        GameManager.Instance.LoadGame();
 
-        // ºÒ·¯¿Â µ¥ÀÌÅÍ°¡ Àû¿ëµÇ¾ú´ÂÁö È®ÀÎ
-        for (int i = 0; i < DateManager.Instance.data.isUnlock.Length; i++)
-        {
-            Debug.Log($"{i}¹ø Ã©ÅÍ Àá±İ ÇØÁ¦ ¿©ºÎ : " + DateManager.Instance.data.isUnlock[i]);
-        }
+        // ğŸ”¹ ì”¬ ì´ë™ í›„ ì¼ì • ì‹œê°„ ë’¤ ApplyGameState() ì‹¤í–‰
+        SceneManager.sceneLoaded += OnGameSceneLoaded;
 
-        // ¾À ÀüÈ¯ (¿¹: °ÔÀÓ ¾ÀÀ¸·Î ÀÌµ¿)
         if (fadeManager != null)
         {
-            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Floor1")); // ºÒ·¯¿Â ÈÄ °ÔÀÓ¾À ÀÌµ¿
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Floor1")); // âœ… íƒ€ì´í‹€ ì”¬ì—ì„œ ê²Œì„ ì”¬ìœ¼ë¡œ ì´ë™
             fadeManager.FadeOut();
         }
         else
         {
-            SceneManager.LoadScene("Floor1");
+            SceneManager.LoadScene("GameScene");
         }
     }
 
+    // ğŸ”¹ ì”¬ì´ ë¡œë“œëœ í›„ ì‹¤í–‰
+    private void OnGameSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Floor1") // GameSceneì´ ë¡œë“œë  ë•Œë§Œ ì‹¤í–‰
+        {
+            SceneManager.sceneLoaded -= OnGameSceneLoaded; // ì¤‘ë³µ ì‹¤í–‰ ë°©ì§€
+            Invoke(nameof(DelayedApplyGameState), 1.0f); //  1ì´ˆ í›„ ì‹¤í–‰ (í”Œë ˆì´ì–´ê°€ ë¡œë“œë  ì‹œê°„ í™•ë³´)
+        }
+    }
 
+    // ğŸ”¹ 1ì´ˆ í›„ ì‹¤í–‰ë  í•¨ìˆ˜
+    private void DelayedApplyGameState()
+    {
+        GameManager.Instance.ApplyGameState();
+    }
     public void OnClickOption()
     {
-        Debug.Log("¿É¼Ç");
+        Debug.Log("ì˜µì…˜");
     }
 
     public void OnClickQuit()
