@@ -15,7 +15,7 @@ namespace CartoonFX
                 {
                     return;
                 }
-            SessionState.SetBool("CFXR_WelcomeScreen_Shown", true);
+                SessionState.SetBool("CFXR_WelcomeScreen_Shown", true);
 
                 var importer = AssetImporter.GetAtPath(AssetDatabase.GUIDToAssetPath("bfd03f272fe010b4ba558a3bc456ffeb"));
                 if (importer != null && importer.userData == "dontshow")
@@ -43,13 +43,16 @@ namespace CartoonFX
             // UXML
             var uxmlDocument = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(AssetDatabase.GUIDToAssetPath("bfd03f272fe010b4ba558a3bc456ffeb"));
             root.Add(uxmlDocument.Instantiate());
+
             // USS
             var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(AssetDatabase.GUIDToAssetPath("f8b971f10a610844f968f582415df874"));
             root.styleSheets.Add(styleSheet);
 
             // Background image
             root.style.backgroundImage = new StyleBackground(AssetDatabase.LoadAssetAtPath<Texture2D>(AssetDatabase.GUIDToAssetPath("fed1b64fd853f994c8d504720a0a6d44")));
-            root.style.unityBackgroundScaleMode = ScaleMode.ScaleAndCrop;
+
+            // **수정된 부분** - unityBackgroundScaleMode 제거 후 backgroundSize 사용
+            root.style.backgroundSize = new StyleBackgroundSize(new BackgroundSize(Length.Percent(100), Length.Percent(100)));
 
             // Logo image
             var titleImage = root.Q<Image>("img_title");
