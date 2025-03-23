@@ -2732,8 +2732,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     attackPower: 10
-    speed: 4
-    jumpForce: 7.5
+    speed: 12
+    jumpForce: 15
     rollForce: 6
     attackKnockback: 8
     attackKnockbackThird: 800
@@ -2746,7 +2746,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 352926688}
   cameraShake: {fileID: 1518568044}
   prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
-  canvas: {fileID: 6079934107266682192, guid: 821c1f84c07fddd4883e0c67dcf9651d, type: 3}
+  canvas: {fileID: 655671640}
   attackPos: {fileID: 808285541}
 --- !u!50 &352926687 stripped
 Rigidbody2D:
@@ -3130,6 +3130,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &655671640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2592897407275622522, guid: 0083ad910f4ea934fba302feee8b2a63, type: 3}
+  m_PrefabInstance: {fileID: 1385764957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706686218
 GameObject:
   m_ObjectHideFlags: 0

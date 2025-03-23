@@ -1,27 +1,26 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class PlayerAttack : MonoBehaviour
+public class PlayerAttack
 {
     private PlayerManager manager;
     private float timeSinceAttack;
     private int attackCount;
     private bool isAttacking;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
-
-    private void Start()
+    public PlayerAttack(PlayerManager manager)
     {
-        manager = PlayerManager.Instance;
+        this.manager = manager;
     }
 
-    void Update()
+    public void Update()
     {
         timeSinceAttack += Time.deltaTime;
 
         if (Input.GetMouseButtonDown(0) && timeSinceAttack > manager.data.attackDuration && !isAttacking)
         {
             attackCount++;
-            StartCoroutine(AttackCoroutine());
+            manager.StartAttackCoroutine(AttackCoroutine());
         }
     }
 

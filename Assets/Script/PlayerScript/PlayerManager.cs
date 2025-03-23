@@ -1,61 +1,76 @@
-using UnityEngine;
-
+ï»¿using UnityEngine;
+using System.Collections;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
-    [Header("µ¥ÀÌÅÍ")]
+    [Header("ë°ì´í„°")]
     public PlayerData data;
 
-    [Header("ÄÄÆ÷³ÍÆ®")]
+    [Header("ì»´í¬ë„ŒíŠ¸")]
     public Animator animator;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
     public CameraShake cameraShake;
 
-    [Header("Ã¼·Â UI")]
+    [Header("UI")]
     public GameObject prfHpBar;
     public GameObject canvas;
     private RectTransform hpBar;
     private UnityEngine.UI.Image nowHpbar;
 
-    [Header("°ø°İ À§Ä¡")]
+    [Header("ê³µê²© ìœ„ì¹˜")]
     public Transform attackPos;
 
     public PlayerHealth playerHealth { get; private set; }
+    public PlayerMove playerMove { get; private set; }
+    public PlayerAttack playerAttack { get; private set; }
+    public PlayerStateController playerStateController { get; private set; }
+
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
-    public bool CanPerformDoubleJump { get; set; } = false;
+
+    
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
 
-        // ÄÄÆ÷³ÍÆ® Ä³½Ì
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    private void Start()
     {
-        // Ã¼·Â¹Ù UI ¼¼ÆÃ
         hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
-
-        // PlayerHealth ÃÊ±âÈ­
+        playerStateController = new PlayerStateController(this);  // ì´ë ‡ê²Œ ìˆ˜ì •
+        playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
+        playerMove = new PlayerMove(this); // â¬…ï¸ ëª¨ë“ˆí™”ëœ ì´ë™ í´ë˜ìŠ¤ ì‚¬ìš©
     }
 
-    void Update()
+private void Update()
+{
+    if (IsDead) return;
+
+    // ì²´ë ¥ë°” UI ê°±ì‹ 
+    Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
+    hpBar.position = hpBarPos;
+    UpdateHpUI(playerHealth.currentHealth);
+
+    // ê° ëª¨ë“ˆì˜ ì—…ë°ì´íŠ¸ ì²˜ë¦¬
+    playerMove.HandleInput();
+    playerMove.HandleMovement();
+
+    playerAttack.Update(); // ìƒˆë¡œ ì¶”ê°€
+    playerStateController.Update(); // ì• ë‹ˆë©”ì´ì…˜ ë‹´ë‹¹
+}
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (IsDead) return;
-
-        // Ã¼·Â¹Ù UI À§Ä¡ °»½Å
-        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + data.heightOffset, 0));
-        hpBar.position = hpBarPos;
-
-        // UI ¾÷µ¥ÀÌÆ®´Â playerHealth ³»ºÎ¿¡¼­ Ã³¸®µÊ
+        playerMove.OnCollisionEnter2D(collision);
     }
 
     public void MarkAsDead()
@@ -74,25 +89,30 @@ public class PlayerManager : MonoBehaviour
             nowHpbar.fillAmount = currentHealth / data.maxHealth;
     }
 
+    public void StartAttackCoroutine(IEnumerator routine)
+    {
+        StartCoroutine(routine); // ì´ê±´ MonoBehaviourë¼ ê°€ëŠ¥í•¨
+    }
+
     public void SetCharacterAttribute(string attribute)
     {
         switch (attribute)
         {
             case "speed":
                 data.speed *= 1.3f;
-                Debug.Log("ÀÌµ¿ ¼Óµµ 1.3¹è Áõ°¡");
+                Debug.Log("ì´ë™ ì†ë„ 1.3ë°° ì¦ê°€");
                 break;
             case "attack":
                 data.attackPower *= 1.5f;
-                Debug.Log("°ø°İ·Â 1.5¹è Áõ°¡");
+                Debug.Log("ê³µê²©ë ¥ 1.5ë°° ì¦ê°€");
                 break;
             case "health":
                 data.maxHealth *= 1.3f;
-                Debug.Log("Ã¼·Â 1.3¹è Áõ°¡");
+                Debug.Log("ì²´ë ¥ 1.3ë°° ì¦ê°€");
                 break;
             case "random":
                 CanDoubleJump = true;
-                Debug.Log("ÃàÇÏÇÕ´Ï´Ù! ´õºíÁ¡ÇÁ ÇØ±İ");
+                Debug.Log("ì¶•í•˜í•©ë‹ˆë‹¤! ë”ë¸”ì í”„ í•´ê¸ˆ");
                 break;
         }
     }

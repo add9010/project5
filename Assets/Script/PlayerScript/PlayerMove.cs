@@ -1,13 +1,13 @@
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove
 {
     private PlayerManager manager;
     private bool grounded = true;
 
-    private void Start()
+    public PlayerMove(PlayerManager manager)
     {
-        manager = PlayerManager.Instance;
+        this.manager = manager;
     }
 
     public void HandleInput()
@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             manager.animator.SetTrigger("Jump");
-            manager.rb.linearVelocity = new Vector2(manager.rb.linearVelocity.x, manager.data.jumpForce); // ¼öÁ¤
+            manager.rb.linearVelocity = new Vector2(manager.rb.linearVelocity.x, manager.data.jumpForce);
             grounded = false;
         }
     }
@@ -23,9 +23,9 @@ public class PlayerMove : MonoBehaviour
     public void HandleMovement()
     {
         float inputX = Input.GetAxis("Horizontal");
-        manager.rb.linearVelocity = new Vector2(inputX * manager.data.speed, manager.rb.linearVelocity.y); // ¼öÁ¤
+        manager.rb.linearVelocity = new Vector2(inputX * manager.data.speed, manager.rb.linearVelocity.y);
 
-        // ¹æÇâ ¹ÝÀü
+        // ë°©í–¥ ë°˜ì „
         if (inputX > 0)
         {
             manager.spriteRenderer.flipX = false;
@@ -33,6 +33,14 @@ public class PlayerMove : MonoBehaviour
         else if (inputX < 0)
         {
             manager.spriteRenderer.flipX = true;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            grounded = true;
         }
     }
 }
