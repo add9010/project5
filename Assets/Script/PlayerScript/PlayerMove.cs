@@ -5,7 +5,7 @@ public class PlayerMove
     private PlayerManager manager;
     private bool isRolling = false;
     private float rollTimer = 0f;
-
+   
     private bool IsGrounded()
     {
         return manager.groundSensor != null && manager.groundSensor.State();
@@ -18,6 +18,8 @@ public class PlayerMove
 
     public void HandleInput()
     {
+        //if (manager.isAction) return;// 대화 중엔 조작 X
+
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && !isRolling)
         {
             manager.animator.SetTrigger("Jump");
@@ -41,6 +43,12 @@ public class PlayerMove
 
     public void HandleMovement()
     {
+        //if (manager.isaction)
+        //{
+        //    manager.rb.linearvelocity = vector2.zero; // rigidbody 이동 멈춤
+        //    return;                        // 이후 이동 코드 실행 x
+        //}
+
         bool isGrounded = IsGrounded();
         manager.animator.SetBool("Grounded", isGrounded);
 
