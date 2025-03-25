@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
+
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
@@ -30,7 +32,13 @@ public class PlayerManager : MonoBehaviour
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
 
-    
+    [Header("대화")]
+    public DialogManager dialog;
+    public PlayerDialog playerDialog { get; private set; }
+    public bool isAction = false;
+
+
+
 
     private void Awake()
     {
@@ -49,6 +57,7 @@ public class PlayerManager : MonoBehaviour
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
+        playerDialog = new PlayerDialog(this);// 대화창
     }
 
 private void Update()
@@ -58,6 +67,8 @@ private void Update()
     // 체력바 UI 갱신
     Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
     hpBar.position = hpBarPos;
+
+    // 체력 UI 반영
     UpdateHpUI(playerHealth.currentHealth);
 
     // 각 모듈의 업데이트 처리
@@ -66,12 +77,15 @@ private void Update()
 
     playerAttack.Update(); // 새로 추가
     playerStateController.Update(); // 애니메이션 담당
+
+    playerDialog.HandleInput();  // 입력 처리
+    playerDialog.HandleScan();   // Raycast 감지
 }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        playerMove.OnCollisionEnter2D(collision);
-    }
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    playerMove.OnCollisionEnter2D(collision);
+}
 
     public void MarkAsDead()
     {

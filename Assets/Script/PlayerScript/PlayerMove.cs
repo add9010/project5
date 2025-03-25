@@ -3,7 +3,14 @@ using UnityEngine;
 public class PlayerMove
 {
     private PlayerManager manager;
-    private bool grounded = true;
+
+    private bool isRolling = false;
+    private float rollTimer = 0f;
+
+    private bool IsGrounded()
+    {
+        return manager.groundSensor != null && manager.groundSensor.State();
+    }
 
     public PlayerMove(PlayerManager manager)
     {
@@ -12,16 +19,37 @@ public class PlayerMove
 
     public void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (manager.isAction) return; // 대화 중엔 조작 X
+
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && !isRolling)
         {
             manager.animator.SetTrigger("Jump");
             manager.rb.linearVelocity = new Vector2(manager.rb.linearVelocity.x, manager.data.jumpForce);
-            grounded = false;
         }
     }
 
     public void HandleMovement()
     {
+        if (manager.isAction)
+        {
+            manager.rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        bool isGrounded = IsGrounded();
+        manager.animator.SetBool("Grounded", isGrounded);
+
+        if (isRolling)
+        {
+            rollTimer += Time.deltaTime;
+            if (rollTimer >= manager.data.rollDuration)
+            {
+                isRolling = false;
+                manager.GetComponent<PlayerCollision>()?.IgnoreEnemyCollisions(false);
+            }
+            return;
+        }
+
         float inputX = Input.GetAxis("Horizontal");
         manager.rb.linearVelocity = new Vector2(inputX * manager.data.speed, manager.rb.linearVelocity.y);
 
@@ -40,7 +68,8 @@ public class PlayerMove
     {
         if (collision.gameObject.CompareTag("Platform"))
         {
-            grounded = true;
+            // grounded = true; → grounded 사용 X
+            // 대신 IsGrounded()를 애니메이션 갱신용으로만 사용
         }
     }
 }

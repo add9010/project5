@@ -38,39 +38,46 @@ public class PlayerStateController
         }
     }
 
-    private void HandleInput()
+ private void HandleInput()
+{
+    //// 대화 중엔 조작 X
+    if (pm.isAction)
     {
-        timeSinceAttack += Time.deltaTime;
-
-        float inputX = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.Space) && grounded && !isAttacking)
-        {
-            currentState = PlayerState.Jump;
-            grounded = false;
-            pm.animator.SetTrigger("Jump");
-            pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, pm.data.jumpForce);
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0) && timeSinceAttack > pm.data.attackDuration && !isAttacking)
-        {
-            currentState = PlayerState.Attack;
-            pm.StartAttackCoroutine(AttackCoroutine());
-            return;
-        }
-
-        if (Mathf.Abs(inputX) > 0.1f && grounded && !isAttacking)
-        {
-            currentState = PlayerState.Move;
-            return;
-        }
-
-        if (grounded && !isAttacking)
-        {
-            currentState = PlayerState.Idle;
-        }
+        pm.rb.linearVelocity = Vector2.zero;
+        return;
     }
+
+    timeSinceAttack += Time.deltaTime;
+
+    float inputX = Input.GetAxisRaw("Horizontal");
+
+    if (Input.GetKeyDown(KeyCode.Space) && grounded && !isAttacking)
+    {
+        currentState = PlayerState.Jump;
+        grounded = false;
+        pm.animator.SetTrigger("Jump");
+        pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, pm.data.jumpForce);
+        return;
+    }
+
+    if (Input.GetMouseButtonDown(0) && timeSinceAttack > pm.data.attackDuration && !isAttacking)
+    {
+        currentState = PlayerState.Attack;
+        pm.StartAttackCoroutine(AttackCoroutine());
+        return;
+    }
+
+    if (Mathf.Abs(inputX) > 0.1f && grounded && !isAttacking)
+    {
+        currentState = PlayerState.Move;
+        return;
+    }
+
+    if (grounded && !isAttacking)
+    {
+        currentState = PlayerState.Idle;
+    }
+}
 
     private void UpdateStateLogic()
     {

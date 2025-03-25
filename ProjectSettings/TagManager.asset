@@ -8,6 +8,8 @@ TagManager:
   - Platform
   - Item
   - Boss
+  - Ground
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -21,6 +23,7 @@ TagManager:
   - Enemy
   - Player
   - PlayerDamage
+  - Object
   - 
   - 
   - 
