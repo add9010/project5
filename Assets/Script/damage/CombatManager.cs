@@ -1,41 +1,19 @@
 using UnityEngine;
 
-public class CombetManager : MonoBehaviour
+public static class CombatManager
 {
-    public float maxHealth;
-    protected float currentHealth;
-    protected bool isDead = false;
-    protected Rigidbody2D rb;
-    protected Animator animator;
-
-    protected virtual void Awake()
+    public static void ApplyDamage(IDamageable target, float damage, float knockback, Vector2 sourcePos)
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        currentHealth = maxHealth;
-    }
+        if (target == null) return;
 
-    public virtual void TakeDamage(float damage, float knockback, Vector2 direction)
-    {
-        if (isDead) return;
+        Vector2 knockbackDir = ((Vector2)target.Position - sourcePos).normalized;
 
-        currentHealth -= damage;
-        animator.SetTrigger("Hurt");
-
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(direction * knockback, ForceMode2D.Impulse);
-
-        if (currentHealth <= 0)
+        DamageInfo info = new DamageInfo
         {
-            Die();
-        }
-    }
+            damage = damage,
+            knockback = knockbackDir * knockback
+        };
 
-    protected virtual void Die()
-    {
-        isDead = true;
-        animator.SetTrigger("Death");
+        target.TakeDamage(info);
     }
-
-    public bool IsDead() => isDead;
 }
