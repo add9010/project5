@@ -26,11 +26,11 @@ public class PlayerStateController
     private void HandleInput()
     {
         //// 대화 중엔 조작 X
-        //if (pm.isAction)
-        //{
-        //    pm.rb.linearVelocity = Vector2.zero;
-        //    return;
-        //}
+        if (pm.isAction)
+        {
+            pm.rb.linearVelocity = Vector2.zero;
+            return;
+        }
         float inputX = Input.GetAxisRaw("Horizontal");
 
         // ����

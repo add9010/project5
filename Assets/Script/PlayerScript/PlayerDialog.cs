@@ -14,7 +14,7 @@ public class PlayerDialog
 
     public void HandleInput()
     {
-        /*if (manager.isAction) return*/;
+        if (manager.isAction) return;
 
         if (Input.GetKeyDown(KeyCode.A))
             dirVec = Vector3.left;

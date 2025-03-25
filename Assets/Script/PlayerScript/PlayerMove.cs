@@ -18,7 +18,7 @@ public class PlayerMove
 
     public void HandleInput()
     {
-        //if (manager.isAction) return;// 대화 중엔 조작 X
+        if (manager.isAction) return;// 대화 중엔 조작 X
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && !isRolling)
         {
@@ -43,11 +43,11 @@ public class PlayerMove
 
     public void HandleMovement()
     {
-        //if (manager.isaction)
-        //{
-        //    manager.rb.linearvelocity = vector2.zero; // rigidbody 이동 멈춤
-        //    return;                        // 이후 이동 코드 실행 x
-        //}
+        if (manager.isAction)
+        {
+            manager.rb.linearVelocity = Vector2.zero; // rigidbody 이동 멈춤
+            return;                        // 이후 이동 코드 실행 x
+        }
 
         bool isGrounded = IsGrounded();
         manager.animator.SetBool("Grounded", isGrounded);
