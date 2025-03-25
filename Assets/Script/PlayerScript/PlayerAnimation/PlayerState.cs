@@ -146,10 +146,9 @@ public class PlayerStateController
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    public void SetGrounded(bool isGrounded)
     {
-        if (col.gameObject.CompareTag("Ground"))
-            grounded = true;
+        grounded = isGrounded;
     }
 
     private void OnDrawGizmos()
