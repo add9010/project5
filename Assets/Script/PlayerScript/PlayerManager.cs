@@ -24,6 +24,9 @@ public class PlayerManager : MonoBehaviour
     [Header("공격 위치")]
     public Transform attackPos;
 
+    [Header("센서")]
+    public Sensor_HeroKnight groundSensor;
+
     public PlayerHealth playerHealth { get; private set; }
     public PlayerMove playerMove { get; private set; }
     public PlayerAttack playerAttack { get; private set; }
