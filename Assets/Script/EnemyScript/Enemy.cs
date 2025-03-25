@@ -217,8 +217,8 @@ public class Enemy : MonoBehaviour
     {
         if (player == null || isInDamageState) return;  // �ǰ� ������ ��� �߰����� ����
 
-        HeroKnightUsing playerScript = player.GetComponent<HeroKnightUsing>();
-        if (playerScript != null && playerScript.isDead) // �÷��̾� ����� �߰�����
+        PlayerManager playerManager = player.GetComponent<PlayerManager>();
+        if (playerManager != null && playerManager.IsDead) // �÷��̾� ����� �߰�����
         {
             isChasing = false;
             return;

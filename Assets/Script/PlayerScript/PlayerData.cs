@@ -17,7 +17,7 @@ public class PlayerData
     public float maxHealth = 100.0f;
 
     [Header("±‚≈∏")]
-    public Vector2 attackBoxSize = new Vector2(1.0f, 1.0f);
-    public Vector2 attackBoxOffset = new Vector2(1.0f, 1.0f);
+    public Vector2 attackBoxSize = new Vector2(1.5f, 1.5f);
+    public Vector2 attackBoxOffset = new Vector2(1.0f, 0f);
     public float heightOffset = 1.7f;
 }

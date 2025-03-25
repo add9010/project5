@@ -30,7 +30,7 @@ public class Slime : Enemy
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerManager playerManager = collision.gameObject.GetComponent<PlayerManager>();
+            PlayerManager playerManager = collision.collider.GetComponentInParent<PlayerManager>();
             if (playerManager != null && !playerManager.IsDead)
             {
                 playerManager.playerHealth.TakeDamage(atkDmg);

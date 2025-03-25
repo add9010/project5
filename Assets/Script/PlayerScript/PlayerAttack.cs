@@ -27,7 +27,6 @@ public class PlayerAttack
         bool mouseClicked = Input.GetMouseButtonDown(0);
         bool readyToAttack = timeSinceAttack >= manager.data.attackDuration;
         bool notCurrentlyAttacking = !isAttacking;
-
         return mouseClicked && readyToAttack && notCurrentlyAttacking;
     }
 
@@ -38,6 +37,7 @@ public class PlayerAttack
 
     private IEnumerator AttackCoroutine()
     {
+        Debug.Log("AttackCoroutine 시작!");
         isAttacking = true;
         hitEnemies.Clear();
 
@@ -73,17 +73,18 @@ public class PlayerAttack
             manager.cameraShake.ShakeCamera();
 
         Vector3 pos = manager.attackPos.position;
-        if (manager.spriteRenderer.flipX)
-            pos.x -= manager.data.attackBoxSize.x;
 
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, manager.data.attackBoxSize, 0);
+        int enemyLayerMask = LayerMask.GetMask("Enemy");
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, manager.data.attackBoxSize, 0, enemyLayerMask);
+
         foreach (Collider2D col in colliders)
         {
             if (hitEnemies.Contains(col)) continue;
 
-            Enemy enemy = col.GetComponent<Enemy>();
+            Enemy enemy = col.GetComponent<Enemy>() ?? col.GetComponentInParent<Enemy>();
             if (enemy != null)
             {
+                Debug.Log($"적 히트: {enemy.name}");
                 var arg = new ParameterPlayerAttack { damage = damage, knockback = knockback };
                 enemy.TakeDamage(arg);
                 hitEnemies.Add(col);
@@ -93,9 +94,6 @@ public class PlayerAttack
     public void UpdateAttackPosition()
     {
         Vector3 pos = manager.data.attackBoxOffset;
-        if (manager.spriteRenderer.flipX)
-            pos.x = -pos.x;
-
         manager.attackPos.localPosition = pos;
     }
 

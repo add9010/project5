@@ -74,12 +74,14 @@ public class PlayerManager : MonoBehaviour
         float inputX = playerMove.GetHorizontalInput();
         bool grounded = groundSensor != null && groundSensor.State();
         bool isAttacking = playerAttack.IsAttacking;
-        playerAttack.Update();
         playerAttack.UpdateAttackPosition();
-
+        playerAttack.Update();
+        bool clicked = Input.GetMouseButtonDown(0);
+        Debug.Log($"Update에서 클릭 감지: {clicked}");
         // 공격 처리 - 로그 추가
         if (!isAction && playerAttack.TryAttack())
         {
+            Debug.Log("공격 조건 충족!");
             playerAttack.DoAttack();
         }
 
@@ -108,7 +110,13 @@ public class PlayerManager : MonoBehaviour
     {
         IsDead = true;
     }
-
+    private void OnDrawGizmos()
+    {
+        if (playerAttack != null)
+        {
+            playerAttack.DrawGizmos();
+        }
+    }
     public void ResetPlayer()
     {
         IsDead = false;
