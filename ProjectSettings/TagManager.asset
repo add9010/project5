@@ -9,6 +9,7 @@ TagManager:
   - Item
   - Boss
   - Gound
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Enemy
   - Player
   - PlayerDamage
-  - 
+  - Object
   - 
   - 
   - 
