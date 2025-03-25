@@ -2749,7 +2749,7 @@ MonoBehaviour:
   prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
   canvas: {fileID: 655671640}
   attackPos: {fileID: 808285541}
-  groundSensor: {fileID: 0}
+  groundSensor: {fileID: 879041993}
   dialog: {fileID: 636063868}
   isAction: 0
 --- !u!50 &352926687 stripped
@@ -4847,6 +4847,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &879041993 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4990908526415796945, guid: c687608987866314b983fdf37afbba9f, type: 3}
+  m_PrefabInstance: {fileID: 1316829904}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f2a8bdc7f41b704693ad497097f30dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &916119974
 GameObject:
   m_ObjectHideFlags: 0
