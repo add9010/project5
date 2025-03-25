@@ -106,6 +106,24 @@ private void Update()
         StartCoroutine(routine); // 이건 MonoBehaviour라 가능함
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            playerStateController.SetGrounded(true);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            playerStateController.SetGrounded(false);
+        }
+    }
+
+
+
     public void SetCharacterAttribute(string attribute)
     {
         switch (attribute)
