@@ -85,11 +85,6 @@ private void Update()
     playerDialog.HandleScan();   // Raycast 감지
 }
 
-private void OnCollisionEnter2D(Collision2D collision)
-{
-    playerMove.OnCollisionEnter2D(collision);
-}
-
     public void MarkAsDead()
     {
         IsDead = true;
