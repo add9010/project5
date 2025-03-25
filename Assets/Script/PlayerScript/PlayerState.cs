@@ -17,10 +17,8 @@ public class PlayerStateController
         if (pm.isAction)
         {
             SetState(PlayerState.Dialog);
-            return;
         }
-
-        if (!isGrounded)
+        else if (!isGrounded)
         {
             SetState(PlayerState.Jump);
         }
@@ -37,6 +35,7 @@ public class PlayerStateController
             SetState(PlayerState.Idle);
         }
 
+        // 항상 호출!
         UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
     }
 

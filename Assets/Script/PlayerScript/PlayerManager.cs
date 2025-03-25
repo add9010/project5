@@ -40,9 +40,6 @@ public class PlayerManager : MonoBehaviour
     public PlayerDialog playerDialog { get; private set; }
     public bool isAction = false;
 
-
-
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -76,32 +73,25 @@ public class PlayerManager : MonoBehaviour
         bool isAttacking = playerAttack.IsAttacking;
         playerAttack.UpdateAttackPosition();
         playerAttack.Update();
+
+        if (isAction)
+            rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
+
         // 상태 업데이트 (애니메이션 및 상태 판단)
         playerStateController.UpdateState(inputX, grounded, isAttacking);
 
-        if (isAction)
-        {
-            rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
-        }
 
         // 점프 처리
         if (!isAction && playerMove.TryJump())
-        {
             playerMove.DoJump();
-        }
 
         // 이동 처리
         if (!isAction)
-        {
             playerMove.Move(inputX);
-        }
 
         // 공격 처리 - 로그 추가
         if (!isAction && playerAttack.TryAttack())
-        {
-            Debug.Log("공격 조건 충족!");
             playerAttack.DoAttack();
-        }
 
         // 대화 시스템
         playerDialog.HandleInput();
@@ -151,28 +141,26 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-
-
-    public void SetCharacterAttribute(string attribute)
-    {
-        switch (attribute)
-        {
-            case "speed":
-                data.speed *= 1.3f;
-                Debug.Log("이동 속도 1.3배 증가");
-                break;
-            case "attack":
-                data.attackPower *= 1.5f;
-                Debug.Log("공격력 1.5배 증가");
-                break;
-            case "health":
-                data.maxHealth *= 1.3f;
-                Debug.Log("체력 1.3배 증가");
-                break;
-            case "random":
-                CanDoubleJump = true;
-                Debug.Log("축하합니다! 더블점프 해금");
-                break;
-        }
-    }
+    //public void SetCharacterAttribute(string attribute)
+    //{
+    //    switch (attribute)
+    //    {
+    //        case "speed":
+    //            data.speed *= 1.3f;
+    //            Debug.Log("이동 속도 1.3배 증가");
+    //            break;
+    //        case "attack":
+    //            data.attackPower *= 1.5f;
+    //            Debug.Log("공격력 1.5배 증가");
+    //            break;
+    //        case "health":
+    //            data.maxHealth *= 1.3f;
+    //            Debug.Log("체력 1.3배 증가");
+    //            break;
+    //        case "random":
+    //            CanDoubleJump = true;
+    //            Debug.Log("축하합니다! 더블점프 해금");
+    //            break;
+    //    }
+    //}
 }
