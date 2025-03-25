@@ -2736,11 +2736,12 @@ MonoBehaviour:
     jumpForce: 15
     rollForce: 6
     rollDuration: 0.25
-    attackKnockback: 8
-    attackKnockbackThird: 800
+    attackKnockback: 12
+    attackKnockbackThird: 30
     attackDuration: 0.2
     maxHealth: 100
     attackBoxSize: {x: 1, y: 1}
+    attackBoxOffset: {x: 1, y: 1}
     heightOffset: 1.7
   animator: {fileID: 352926689}
   rb: {fileID: 352926687}
@@ -6566,12 +6567,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8269041874423622845, guid: c687608987866314b983fdf37afbba9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2541195550637190391, guid: c687608987866314b983fdf37afbba9f, type: 3}
-      insertIndex: -1
+      insertIndex: 1
       addedObject: {fileID: 352926684}
   m_SourcePrefab: {fileID: 100100000, guid: c687608987866314b983fdf37afbba9f, type: 3}
 --- !u!1 &1320900697

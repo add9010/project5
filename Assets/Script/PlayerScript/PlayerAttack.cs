@@ -90,16 +90,21 @@ public class PlayerAttack
             }
         }
     }
+    public void UpdateAttackPosition()
+    {
+        Vector3 pos = manager.data.attackBoxOffset;
+        if (manager.spriteRenderer.flipX)
+            pos.x = -pos.x;
+
+        manager.attackPos.localPosition = pos;
+    }
 
     public void DrawGizmos()
     {
         if (manager == null || manager.attackPos == null) return;
 
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.cyan;
         Vector3 pos = manager.attackPos.position;
-        if (manager.spriteRenderer.flipX)
-            pos.x -= manager.data.attackBoxSize.x;
-
         Gizmos.DrawWireCube(pos, manager.data.attackBoxSize);
     }
 }

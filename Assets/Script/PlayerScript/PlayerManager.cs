@@ -71,13 +71,14 @@ public class PlayerManager : MonoBehaviour
         Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
         hpBar.position = hpBarPos;
         UpdateHpUI(playerHealth.currentHealth);
-        playerAttack.Update();
         float inputX = playerMove.GetHorizontalInput();
         bool grounded = groundSensor != null && groundSensor.State();
         bool isAttacking = playerAttack.IsAttacking;
+        playerAttack.Update();
+        playerAttack.UpdateAttackPosition();
 
         // 공격 처리 - 로그 추가
-        if (playerAttack.TryAttack())
+        if (!isAction && playerAttack.TryAttack())
         {
             playerAttack.DoAttack();
         }
@@ -87,13 +88,16 @@ public class PlayerManager : MonoBehaviour
 
 
         // 점프 처리
-        if (playerMove.TryJump())
+        if (!isAction && playerMove.TryJump())
         {
             playerMove.DoJump();
         }
 
         // 이동 처리
-        playerMove.Move(inputX);
+        if (!isAction)
+        {
+            playerMove.Move(inputX);
+        }
 
         // 대화 시스템
         playerDialog.HandleInput();

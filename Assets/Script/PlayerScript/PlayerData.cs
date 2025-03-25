@@ -18,5 +18,6 @@ public class PlayerData
 
     [Header("±‚≈∏")]
     public Vector2 attackBoxSize = new Vector2(1.0f, 1.0f);
+    public Vector2 attackBoxOffset = new Vector2(1.0f, 1.0f);
     public float heightOffset = 1.7f;
 }
