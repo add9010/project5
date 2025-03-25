@@ -4,7 +4,7 @@ using System.Collections;
 public class PlayerStateController
 {
     private PlayerManager pm;
-    private enum PlayerState { Idle, Move, Jump, Attack, Roll, Hurt, Dead }
+    private enum PlayerState { Idle, Move, Jump, Attack, Roll, Hurt, Dead, Dialog }
     private PlayerState currentState = PlayerState.Idle;
 
     private float timeSinceAttack;
@@ -40,14 +40,14 @@ public class PlayerStateController
 
  private void HandleInput()
 {
-    //// 대화 중엔 조작 X
-    if (pm.isAction)
-    {
-        pm.rb.linearVelocity = Vector2.zero;
-        return;
-    }
-
-    timeSinceAttack += Time.deltaTime;
+        if (pm.isAction)
+        {
+            currentState = PlayerState.Dialog;
+            pm.rb.linearVelocity = Vector2.zero;
+            pm.animator.SetInteger("AnimState", 0); // Idle 애니메이션 유지
+            return;
+        }
+        timeSinceAttack += Time.deltaTime;
 
     float inputX = Input.GetAxisRaw("Horizontal");
 
@@ -94,6 +94,10 @@ public class PlayerStateController
             case PlayerState.Move:
                 delayToIdle = 0.05f;
                 pm.animator.SetInteger("AnimState", 1);
+                break;
+
+            case PlayerState.Dialog:
+                pm.animator.SetInteger("AnimState", 0); // 대화 중엔 항상 Idle
                 break;
         }
     }
