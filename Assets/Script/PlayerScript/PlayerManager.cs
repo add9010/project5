@@ -63,27 +63,42 @@ public class PlayerManager : MonoBehaviour
         playerDialog = new PlayerDialog(this);// 대화창
     }
 
-private void Update()
-{
-    if (IsDead) return;
+    private void Update()
+    {
+        if (IsDead) return;
 
-    // 체력바 UI 갱신
-    Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
-    hpBar.position = hpBarPos;
+        // 체력바 UI 갱신
+        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
+        hpBar.position = hpBarPos;
+        UpdateHpUI(playerHealth.currentHealth);
+        playerAttack.Update();
+        float inputX = playerMove.GetHorizontalInput();
+        bool grounded = groundSensor != null && groundSensor.State();
+        bool isAttacking = playerAttack.IsAttacking;
 
-    // 체력 UI 반영
-    UpdateHpUI(playerHealth.currentHealth);
+        // 공격 처리 - 로그 추가
+        if (playerAttack.TryAttack())
+        {
+            playerAttack.DoAttack();
+        }
 
-    // 각 모듈의 업데이트 처리
-    playerMove.HandleInput();
-    playerMove.HandleMovement();
+        // 상태 업데이트 (애니메이션 및 상태 판단)
+        playerStateController.UpdateState(inputX, grounded, isAttacking);
 
-    playerAttack.Update(); // 새로 추가
-    playerStateController.Update(); // 애니메이션 담당
 
-    playerDialog.HandleInput();  // 입력 처리
-    playerDialog.HandleScan();   // Raycast 감지
-}
+        // 점프 처리
+        if (playerMove.TryJump())
+        {
+            playerMove.DoJump();
+        }
+
+        // 이동 처리
+        playerMove.Move(inputX);
+
+        // 대화 시스템
+        playerDialog.HandleInput();
+        playerDialog.HandleScan();
+    }
 
     public void MarkAsDead()
     {

@@ -11,7 +11,7 @@ public class PlayerData
     public float rollDuration = 0.2f;
     public float attackKnockback = 8.0f;
     public float attackKnockbackThird = 800.0f;
-    public float attackDuration = 0.2f;
+    public float attackDuration = 0.4f;
 
     [Header("Ã¼·Â")]
     public float maxHealth = 100.0f;
