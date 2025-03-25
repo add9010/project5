@@ -24,9 +24,6 @@ public class PlayerManager : MonoBehaviour
     [Header("공격 위치")]
     public Transform attackPos;
 
-    [Header("센서")]
-    public Sensor_HeroKnight groundSensor;
-
     public PlayerHealth playerHealth { get; private set; }
     public PlayerMove playerMove { get; private set; }
     public PlayerAttack playerAttack { get; private set; }
@@ -54,7 +51,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        groundSensor = transform.Find("GroundSensor").GetComponent<Sensor_HeroKnight>();
         hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         playerStateController = new PlayerStateController(this);  // 이렇게 수정
@@ -64,28 +60,33 @@ public class PlayerManager : MonoBehaviour
         playerDialog = new PlayerDialog(this);// 대화창
     }
 
-    private void Update()
-    {
-        if (IsDead) return;
+private void Update()
+{
+    if (IsDead) return;
 
+    // 체력바 UI 갱신
+    Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
+    hpBar.position = hpBarPos;
 
-        // 체력바 UI 갱신
-        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
-        hpBar.position = hpBarPos;
+    // 체력 UI 반영
+    UpdateHpUI(playerHealth.currentHealth);
 
-        UpdateHpUI(playerHealth.currentHealth);
+    // 각 모듈의 업데이트 처리
+    playerMove.HandleInput();
+    playerMove.HandleMovement();
 
+    playerAttack.Update(); // 새로 추가
+    playerStateController.Update(); // 애니메이션 담당
 
-        // 각 모듈의 업데이트 처리
-        playerMove.HandleInput();
-        playerMove.HandleMovement();
+    playerDialog.HandleInput();  // 입력 처리
+    playerDialog.HandleScan();   // Raycast 감지
+}
 
-        playerAttack.Update(); // 새로 추가
-        playerStateController.Update(); // 애니메이션 담당
+private void OnCollisionEnter2D(Collision2D collision)
+{
+    playerMove.OnCollisionEnter2D(collision);
+}
 
-        playerDialog.HandleInput();  // 입력 처리
-        playerDialog.HandleScan();   // Raycast 감지
-    }
     public void MarkAsDead()
     {
         IsDead = true;

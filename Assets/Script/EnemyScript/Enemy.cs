@@ -217,19 +217,13 @@ public class Enemy : MonoBehaviour
     {
         if (player == null || isInDamageState) return;  // �ǰ� ������ ��� �߰����� ����
 
-        /*HeroKnightUsing playerScript = player.GetComponent<HeroKnightUsing>();
+        HeroKnightUsing playerScript = player.GetComponent<HeroKnightUsing>();
         if (playerScript != null && playerScript.isDead) // �÷��̾� ����� �߰�����
         {
             isChasing = false;
             return;
         }
-        */
-        PlayerManager playerScript = player.GetComponent<PlayerManager>();
-        if (playerScript != null && playerScript.IsDead)
-        {
-            isChasing = false;
-            return;
-        }
+
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (distanceToPlayer <= detectionRange)
         {
