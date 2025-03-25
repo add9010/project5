@@ -40,9 +40,6 @@ public class PlayerManager : MonoBehaviour
     public PlayerDialog playerDialog { get; private set; }
     public bool isAction = false;
 
-
-
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -63,33 +60,55 @@ public class PlayerManager : MonoBehaviour
         playerDialog = new PlayerDialog(this);// 대화창
     }
 
-private void Update()
-{
-    if (IsDead) return;
+    private void Update()
+    {
+        if (IsDead) return;
 
-    // 체력바 UI 갱신
-    Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
-    hpBar.position = hpBarPos;
+        // 체력바 UI 갱신
+        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
+        hpBar.position = hpBarPos;
+        UpdateHpUI(playerHealth.currentHealth);
+        float inputX = playerMove.GetHorizontalInput();
+        bool grounded = groundSensor != null && groundSensor.State();
+        bool isAttacking = playerAttack.IsAttacking;
+        playerAttack.UpdateAttackPosition();
+        playerAttack.Update();
 
-    // 체력 UI 반영
-    UpdateHpUI(playerHealth.currentHealth);
+        if (isAction)
+            rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
 
-    // 각 모듈의 업데이트 처리
-    playerMove.HandleInput();
-    playerMove.HandleMovement();
+        // 상태 업데이트 (애니메이션 및 상태 판단)
+        playerStateController.UpdateState(inputX, grounded, isAttacking);
 
-    playerAttack.Update(); // 새로 추가
-    playerStateController.Update(); // 애니메이션 담당
 
-    playerDialog.HandleInput();  // 입력 처리
-    playerDialog.HandleScan();   // Raycast 감지
-}
+        // 점프 처리
+        if (!isAction && playerMove.TryJump())
+            playerMove.DoJump();
+
+        // 이동 처리
+        if (!isAction)
+            playerMove.Move(inputX);
+
+        // 공격 처리 - 로그 추가
+        if (!isAction && playerAttack.TryAttack())
+            playerAttack.DoAttack();
+
+        // 대화 시스템
+        playerDialog.HandleInput();
+        playerDialog.HandleScan();
+    }
 
     public void MarkAsDead()
     {
         IsDead = true;
     }
-
+    private void OnDrawGizmos()
+    {
+        if (playerAttack != null)
+        {
+            playerAttack.DrawGizmos();
+        }
+    }
     public void ResetPlayer()
     {
         IsDead = false;
@@ -106,26 +125,42 @@ private void Update()
         StartCoroutine(routine); // 이건 MonoBehaviour라 가능함
     }
 
-    public void SetCharacterAttribute(string attribute)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        switch (attribute)
+        if (collision.gameObject.CompareTag("Ground"))
         {
-            case "speed":
-                data.speed *= 1.3f;
-                Debug.Log("이동 속도 1.3배 증가");
-                break;
-            case "attack":
-                data.attackPower *= 1.5f;
-                Debug.Log("공격력 1.5배 증가");
-                break;
-            case "health":
-                data.maxHealth *= 1.3f;
-                Debug.Log("체력 1.3배 증가");
-                break;
-            case "random":
-                CanDoubleJump = true;
-                Debug.Log("축하합니다! 더블점프 해금");
-                break;
+            playerStateController.SetGrounded(true);
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            playerStateController.SetGrounded(false);
+        }
+    }
+
+    //public void SetCharacterAttribute(string attribute)
+    //{
+    //    switch (attribute)
+    //    {
+    //        case "speed":
+    //            data.speed *= 1.3f;
+    //            Debug.Log("이동 속도 1.3배 증가");
+    //            break;
+    //        case "attack":
+    //            data.attackPower *= 1.5f;
+    //            Debug.Log("공격력 1.5배 증가");
+    //            break;
+    //        case "health":
+    //            data.maxHealth *= 1.3f;
+    //            Debug.Log("체력 1.3배 증가");
+    //            break;
+    //        case "random":
+    //            CanDoubleJump = true;
+    //            Debug.Log("축하합니다! 더블점프 해금");
+    //            break;
+    //    }
+    //}
 }
