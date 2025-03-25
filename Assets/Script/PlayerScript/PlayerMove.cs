@@ -28,24 +28,18 @@ public class PlayerMove
             manager.data.jumpForce
         );
     }
-
     public void Move(float inputX)
     {
-        // 수평 이동 속도 설정
+        if (manager.isAction) return;
+
         manager.rb.linearVelocity = new Vector2(
             inputX * manager.data.speed,
             manager.rb.linearVelocity.y
         );
-
-        // 스프라이트 방향 전환
         if (inputX > 0)
-        {
             manager.spriteRenderer.flipX = false;
-        }
         else if (inputX < 0)
-        {
             manager.spriteRenderer.flipX = true;
-        }
     }
 
     private bool IsGrounded()

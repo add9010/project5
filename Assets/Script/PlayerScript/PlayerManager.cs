@@ -76,18 +76,13 @@ public class PlayerManager : MonoBehaviour
         bool isAttacking = playerAttack.IsAttacking;
         playerAttack.UpdateAttackPosition();
         playerAttack.Update();
-        bool clicked = Input.GetMouseButtonDown(0);
-        Debug.Log($"Update에서 클릭 감지: {clicked}");
-        // 공격 처리 - 로그 추가
-        if (!isAction && playerAttack.TryAttack())
-        {
-            Debug.Log("공격 조건 충족!");
-            playerAttack.DoAttack();
-        }
-
         // 상태 업데이트 (애니메이션 및 상태 판단)
         playerStateController.UpdateState(inputX, grounded, isAttacking);
 
+        if (isAction)
+        {
+            rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
+        }
 
         // 점프 처리
         if (!isAction && playerMove.TryJump())
@@ -99,6 +94,13 @@ public class PlayerManager : MonoBehaviour
         if (!isAction)
         {
             playerMove.Move(inputX);
+        }
+
+        // 공격 처리 - 로그 추가
+        if (!isAction && playerAttack.TryAttack())
+        {
+            Debug.Log("공격 조건 충족!");
+            playerAttack.DoAttack();
         }
 
         // 대화 시스템

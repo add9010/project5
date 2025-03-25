@@ -2740,8 +2740,8 @@ MonoBehaviour:
     attackKnockbackThird: 30
     attackDuration: 0.2
     maxHealth: 100
-    attackBoxSize: {x: 1, y: 1}
-    attackBoxOffset: {x: 1, y: 0}
+    attackBoxSize: {x: 1.5, y: 2}
+    attackBoxOffset: {x: 1, y: -0.2}
     heightOffset: 1.7
   animator: {fileID: 352926689}
   rb: {fileID: 352926687}
@@ -6574,6 +6574,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8269041874423622845, guid: c687608987866314b983fdf37afbba9f, type: 3}
+    - {fileID: 810180697989995028, guid: c687608987866314b983fdf37afbba9f, type: 3}
+    - {fileID: 5100400068945503645, guid: c687608987866314b983fdf37afbba9f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -43,6 +43,10 @@ public class PlayerStateController
     private void SetState(PlayerState newState)
     {
         if (currentState == newState) return;
+
+        // 상태 전환 로그도 있으면 디버그에 좋아
+        Debug.Log($"상태 전환: {currentState} → {newState}");
+
         currentState = newState;
     }
     public void SetGrounded(bool isGrounded)
@@ -59,6 +63,7 @@ public class PlayerStateController
         switch (currentState)
         {
             case PlayerState.Idle:
+            case PlayerState.Dialog: // 둘 다 0번 상태로 고정
                 pm.animator.SetInteger("AnimState", 0);
                 break;
             case PlayerState.Move:
@@ -68,13 +73,9 @@ public class PlayerStateController
                 pm.animator.SetTrigger("Jump");
                 break;
             case PlayerState.Attack:
-                // 공격 애니메이션은 Trigger 기반으로 PlayerAttack에서 처리
                 break;
             case PlayerState.Roll:
                 pm.animator.SetTrigger("Roll");
-                break;
-            case PlayerState.Dialog:
-                pm.animator.SetInteger("AnimState", 0);
                 break;
         }
     }

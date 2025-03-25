@@ -93,10 +93,14 @@ public class PlayerAttack
     }
     public void UpdateAttackPosition()
     {
-        Vector3 pos = manager.data.attackBoxOffset;
-        manager.attackPos.localPosition = pos;
-    }
+        Vector3 offset = manager.data.attackBoxOffset;
 
+        // 왼쪽을 바라보면 x축 반전
+        if (manager.spriteRenderer.flipX)
+            offset.x *= -1;
+
+        manager.attackPos.localPosition = offset;
+    }
     public void DrawGizmos()
     {
         if (manager == null || manager.attackPos == null) return;
