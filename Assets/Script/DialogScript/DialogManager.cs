@@ -27,7 +27,7 @@ public class DialogManager : MonoBehaviour
         PlayerManager.Instance.isAction = true;
 
         scanObject = scanObj;
-        talkText.text = $"´ç½ÅÀÌ ¹Ù¶óº» °ÍÀº: <b>{scanObject.name}</b>";
+        talkText.text = $"ë‹¹ì‹ ì´ ë°”ë¼ë³¸ ê²ƒì€: <b>{scanObject.name}</b>";
         talkPanel.SetActive(true);
     }
 
