@@ -3,15 +3,15 @@ using UnityEngine.UI;
 using System.Collections;
 public class Mark : MonoBehaviour
 {
-    public Transform enemy; // ¿¡³Ê¹Ì¸¦ ÃßÀûÇÏ±â À§ÇÑ º¯¼ö
-    public float followSpeed = 3f; // ¸¶Ä¿°¡ ¿¡³Ê¹Ì¸¦ ÃßÀûÇÏ´Â ¼Óµµ
-    private float followTime = 1f; // ¸¶Ä¿°¡ Á¸ÀçÇÒ ½Ã°£ (1ÃÊ)
+    public Transform enemy; // ì—ë„ˆë¯¸ë¥¼ ì¶”ì í•˜ê¸° ìœ„í•œ ë³€ìˆ˜
+    public float followSpeed = 3f; // ë§ˆì»¤ê°€ ì—ë„ˆë¯¸ë¥¼ ì¶”ì í•˜ëŠ” ì†ë„
+    private float followTime = 1f; // ë§ˆì»¤ê°€ ì¡´ì¬í•  ì‹œê°„ (1ì´ˆ)
 
     private void Start()
     {
 
 
-        // ¿¡³Ê¹Ì¸¦ ÃßÀûÇÏ±â ½ÃÀÛÇÏ°í, 1ÃÊ ÈÄ¿¡ ¸¶Ä¿ »èÁ¦
+        // ì—ë„ˆë¯¸ë¥¼ ì¶”ì í•˜ê¸° ì‹œì‘í•˜ê³ , 1ì´ˆ í›„ì— ë§ˆì»¤ ì‚­ì œ
         StartCoroutine(DestroyMarkAfterDelay());
     }
 
@@ -19,7 +19,7 @@ public class Mark : MonoBehaviour
     {
         if (enemy != null)
         {
-            // ¿¡³Ê¹Ì¸¦ ÃßÀûÇÏ´Â ·ÎÁ÷ (YÃàÀº °íÁ¤)
+            // ì—ë„ˆë¯¸ë¥¼ ì¶”ì í•˜ëŠ” ë¡œì§ (Yì¶•ì€ ê³ ì •)
             Vector3 targetPosition = new Vector3(enemy.position.x, transform.position.y, enemy.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
         }
@@ -27,7 +27,7 @@ public class Mark : MonoBehaviour
 
     private IEnumerator DestroyMarkAfterDelay()
     {
-        yield return new WaitForSeconds(followTime); // 1ÃÊ ´ë±â ÈÄ
-        Destroy(gameObject); // ¸¶Ä¿ »èÁ¦
+        yield return new WaitForSeconds(followTime); // 1ì´ˆ ëŒ€ê¸° í›„
+        Destroy(gameObject); // ë§ˆì»¤ ì‚­ì œ
     }
 }

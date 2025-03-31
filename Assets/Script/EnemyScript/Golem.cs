@@ -5,17 +5,17 @@ using UnityEngine;
 public class Golem : Enemy
 {
     [Header("Golem Stats")]
-    public float attackAreaRadius = 3f;  // °ñ·¥ ¾ÕºÎºĞÀÇ °ø°İ ¹üÀ§ (¹İÁö¸§)
+    public float attackAreaRadius = 3f;  // ê³¨ë¨ ì•ë¶€ë¶„ì˜ ê³µê²© ë²”ìœ„ (ë°˜ì§€ë¦„)
     public float downAttackRange = 1.5f;
 
     protected override void Update()
     {
-        // ÇÇ°İ »óÅÂ°¡ ¾Æ´Ï°í, »ì¾ÆÀÖÀ¸¸ç, ÇÃ·¹ÀÌ¾î°¡ Á¸ÀçÇÑ´Ù¸é Ãß°İ
+        // í”¼ê²© ìƒíƒœê°€ ì•„ë‹ˆê³ , ì‚´ì•„ìˆìœ¼ë©°, í”Œë ˆì´ì–´ê°€ ì¡´ì¬í•œë‹¤ë©´ ì¶”ê²©
         if (!isInDamageState && nowHp > 0 && player != null&& !anim.GetBool("isAttack"))
             DetectAndChasePlayer();
 
 
-        // Ã¼·Â ¹Ù À§Ä¡,»óÅÂ °»½Å
+        // ì²´ë ¥ ë°” ìœ„ì¹˜,ìƒíƒœ ê°±ì‹ 
         if (hpBar != null)
         {
             Vector3 _hpBarPos = Camera.main.WorldToScreenPoint
@@ -24,33 +24,33 @@ public class Golem : Enemy
             nowHpbar.fillAmount = nowHp / maxHp;
         }
 
-        // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç »óÅÂ°¡ ¾Æ´Ï°í, ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸®°¡ °ø°İ ¹üÀ§ ³»ÀÌ¸é °ø°İ
+        // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ìƒíƒœê°€ ì•„ë‹ˆê³ , í”Œë ˆì´ì–´ì™€ì˜ ê±°ë¦¬ê°€ ê³µê²© ë²”ìœ„ ë‚´ì´ë©´ ê³µê²©
         if (player != null && !isEnemyDead && !isInDamageState && !anim.GetBool("isAttack"))
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
             if (distanceToPlayer <= attackAreaRadius)
             {
-                Attack();  // °ø°İ È£Ãâ
+                Attack();  // ê³µê²© í˜¸ì¶œ
             }
         }
     }
 
-    protected virtual void Attack() // °ñ·¥ÀÇ ÆÈÈÖµÎ¸£±â °ø°İ
+    protected virtual void Attack() // ê³¨ë¨ì˜ íŒ”íœ˜ë‘ë¥´ê¸° ê³µê²©
     {
-        Debug.Log("°ø°İÈ£Ãâ");
+        Debug.Log("ê³µê²©í˜¸ì¶œ");
 
-        // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç ¼³Á¤
+        // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì„¤ì •
         anim.SetBool("isAttack", true);
 
-        // °ø°İ ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ³¡³¯ ¶§±îÁö ´ë±â
-        StartCoroutine(WaitForAttackAnimation(1.4f));  // ¾Ö´Ï¸ŞÀÌ¼Ç ±æÀÌ(2ÃÊ)¿¡ ¸ÂÃç¼­ Á¶Àı
+        // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ì´ ëë‚  ë•Œê¹Œì§€ ëŒ€ê¸°
+        StartCoroutine(WaitForAttackAnimation(1.4f));  // ì• ë‹ˆë©”ì´ì…˜ ê¸¸ì´(2ì´ˆ)ì— ë§ì¶°ì„œ ì¡°ì ˆ
     }
 
     private IEnumerator WaitForAttackAnimation(float animationLength)
     {
-        yield return new WaitForSeconds(animationLength);  // ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ³¡³¯ ¶§±îÁö ´ë±â
+        yield return new WaitForSeconds(animationLength);  // ì• ë‹ˆë©”ì´ì…˜ì´ ëë‚  ë•Œê¹Œì§€ ëŒ€ê¸°
 
-        // °ø°İ ¹üÀ§ ³» ÇÃ·¹ÀÌ¾î¿¡°Ô ÇÇÇØ¸¦ ÁÖ±â
+        // ê³µê²© ë²”ìœ„ ë‚´ í”Œë ˆì´ì–´ì—ê²Œ í”¼í•´ë¥¼ ì£¼ê¸°
         Vector2 attackPosition = new Vector2(transform.position.x, transform.position.y - downAttackRange); 
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(attackPosition, attackAreaRadius);
 
@@ -61,13 +61,13 @@ public class Golem : Enemy
                 HeroKnightUsing playerScript = collider.GetComponent<HeroKnightUsing>();
                 if (playerScript != null)
                 {
-                    playerScript.TakeDamage(atkDmg);  // ÇÃ·¹ÀÌ¾î¿¡°Ô °ø°İ·Â¸¸Å­ ÇÇÇØ ÀÔÈ÷±â
+                    playerScript.TakeDamage(atkDmg);  // í”Œë ˆì´ì–´ì—ê²Œ ê³µê²©ë ¥ë§Œí¼ í”¼í•´ ì…íˆê¸°
                 }
             }
         }
 
 
-        // ¾Ö´Ï¸ŞÀÌ¼Ç ³¡³ª¸é °ø°İ »óÅÂ Á¾·á
+        // ì• ë‹ˆë©”ì´ì…˜ ëë‚˜ë©´ ê³µê²© ìƒíƒœ ì¢…ë£Œ
         anim.SetBool("isAttack", false);
         yield return new WaitForSeconds(1.7f);
     }
@@ -77,7 +77,7 @@ public class Golem : Enemy
         base.OnDrawGizmosSelected();
 
         Gizmos.color = Color.blue;
-        // °ø°İ ¹üÀ§ ½Ã°¢È­ (YÃàÀ¸·Î 2¸¸Å­ ³»¸° À§Ä¡¿¡ ¿øÀ» ±×¸²)
+        // ê³µê²© ë²”ìœ„ ì‹œê°í™” (Yì¶•ìœ¼ë¡œ 2ë§Œí¼ ë‚´ë¦° ìœ„ì¹˜ì— ì›ì„ ê·¸ë¦¼)
         Vector2 gizmoPosition = new Vector2(transform.position.x, transform.position.y - downAttackRange);
         Gizmos.DrawWireSphere(gizmoPosition, attackAreaRadius); 
     }

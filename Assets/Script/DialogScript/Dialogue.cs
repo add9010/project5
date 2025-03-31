@@ -11,7 +11,7 @@ public class DialogueOption
 public class Dialogue
 {
     public string speakerName;
-    public Sprite speakerPortrait; // Resources¿¡¼­ ·ÎµùÇÒ °æ¿ì stringÀ¸·Î ±³Ã¼ÇØµµ µË´Ï´Ù
+    public Sprite speakerPortrait; // Resourcesì—ì„œ ë¡œë”©í•  ê²½ìš° stringìœ¼ë¡œ êµì²´í•´ë„ ë©ë‹ˆë‹¤
     public string[] sentences;
     public DialogueOption[] options;
 }

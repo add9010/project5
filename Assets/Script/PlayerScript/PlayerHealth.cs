@@ -30,10 +30,10 @@ public class PlayerHealth
     private void Die()
     {
         manager.animator.SetTrigger("Death");
-        Debug.Log("ÇÃ·¹ÀÌ¾î »ç¸Á");
+        Debug.Log("í”Œë ˆì´ì–´ ì‚¬ë§");
         manager.MarkAsDead();
 
-        // ¾À ¸®¼Â
+        // ì”¬ ë¦¬ì…‹
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 

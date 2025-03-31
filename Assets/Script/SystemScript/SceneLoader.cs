@@ -5,23 +5,23 @@ using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour
 {
-    public float delayTime = 3f; // ´ë±â ½Ã°£ (3ÃÊ)
-    public Text loadingText; // UI ÅØ½ºÆ® ¿¬°á
+    public float delayTime = 3f; // ëŒ€ê¸° ì‹œê°„ (3ì´ˆ)
+    public Text loadingText; // UI í…ìŠ¤íŠ¸ ì—°ê²°
 
     private string[] tips =
     {
-        "½½¶óÀÓÀº ±âº» ¸ó½ºÅÍÀÔ´Ï´Ù.",
-        "°­ÇÑ ¹«±â¸¦ ¾òÀ¸·Á¸é ´øÀüÀ» Å½ÇèÇÏ¼¼¿ä!",
-        "Æ÷¼ÇÀ» »ç¿ëÇÏ¸é Ã¼·ÂÀ» È¸º¹ÇÒ ¼ö ÀÖ½À´Ï´Ù.",
-        "¾îµÎ¿î °÷¿¡¼­´Â Á¶¸íÀ» È°¿ëÇÏ¼¼¿ä.",
-        "¼Ó¼º °ø°İÀº Àû¿¡°Ô Ãß°¡ ÇÇÇØ¸¦ ÁÙ ¼ö ÀÖ½À´Ï´Ù.",
-        "Æ¯Á¤ ¸ó½ºÅÍ´Â Æ¯Á¤ ¾àÁ¡À» °¡Áö°í ÀÖ½À´Ï´Ù."
+        "ìŠ¬ë¼ì„ì€ ê¸°ë³¸ ëª¬ìŠ¤í„°ì…ë‹ˆë‹¤.",
+        "ê°•í•œ ë¬´ê¸°ë¥¼ ì–»ìœ¼ë ¤ë©´ ë˜ì „ì„ íƒí—˜í•˜ì„¸ìš”!",
+        "í¬ì…˜ì„ ì‚¬ìš©í•˜ë©´ ì²´ë ¥ì„ íšŒë³µí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.",
+        "ì–´ë‘ìš´ ê³³ì—ì„œëŠ” ì¡°ëª…ì„ í™œìš©í•˜ì„¸ìš”.",
+        "ì†ì„± ê³µê²©ì€ ì ì—ê²Œ ì¶”ê°€ í”¼í•´ë¥¼ ì¤„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.",
+        "íŠ¹ì • ëª¬ìŠ¤í„°ëŠ” íŠ¹ì • ì•½ì ì„ ê°€ì§€ê³  ìˆìŠµë‹ˆë‹¤."
     };
 
     void Start()
     {
-        ShowRandomTip(); // ·£´ı ¹®±¸ Ãâ·Â
-        StartCoroutine(LoadNextScene()); // ¾À ÀÌµ¿ ÄÚ·çÆ¾ ½ÇÇà
+        ShowRandomTip(); // ëœë¤ ë¬¸êµ¬ ì¶œë ¥
+        StartCoroutine(LoadNextScene()); // ì”¬ ì´ë™ ì½”ë£¨í‹´ ì‹¤í–‰
     }
 
     void ShowRandomTip()
@@ -33,13 +33,13 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            Debug.LogError("SceneLoader: UI ÅØ½ºÆ®°¡ ¿¬°áµÇÁö ¾Ê¾Ò½À´Ï´Ù!");
+            Debug.LogError("SceneLoader: UI í…ìŠ¤íŠ¸ê°€ ì—°ê²°ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤!");
         }
     }
 
     IEnumerator LoadNextScene()
     {
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene("Floor1"); // Floor1À¸·Î ÀÌµ¿
+        SceneManager.LoadScene("Floor1"); // Floor1ìœ¼ë¡œ ì´ë™
     }
 }

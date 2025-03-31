@@ -10,16 +10,16 @@ public class Slime : Enemy
     {
         while (!isEnemyDead)
         {
-            // ÀÌµ¿ ¼Óµµ 2¹è Áõ°¡
+            // ì´ë™ ì†ë„ 2ë°° ì¦ê°€
             moveSpeed *= 2;
-            Debug.Log("ÀÌµ¿ ¼Óµµ 2¹è Áõ°¡!");
+            Debug.Log("ì´ë™ ì†ë„ 2ë°° ì¦ê°€!");
 
-            // 2ÃÊ µ¿¾È À¯Áö
+            // 2ì´ˆ ë™ì•ˆ ìœ ì§€
             yield return new WaitForSeconds(1f);
 
-            // ÀÌµ¿ ¼Óµµ ¿ø·¡´ë·Î º¹±¸
+            // ì´ë™ ì†ë„ ì›ë˜ëŒ€ë¡œ ë³µêµ¬
             moveSpeed /= 2;
-            Debug.Log("ÀÌµ¿ ¼Óµµ º¹±¸.");
+            Debug.Log("ì´ë™ ì†ë„ ë³µêµ¬.");
             yield return new WaitForSeconds(5f); 
         }
     }
@@ -34,7 +34,7 @@ public class Slime : Enemy
             if (playerManager != null && !playerManager.IsDead)
             {
                 playerManager.playerHealth.TakeDamage(atkDmg);
-                Debug.Log($"{enemyName} °ø°İ: {atkDmg} µ¥¹ÌÁö");
+                Debug.Log($"{enemyName} ê³µê²©: {atkDmg} ë°ë¯¸ì§€");
             }
         }
     }
@@ -43,7 +43,7 @@ public class Slime : Enemy
     {
         base.SpawnMark();
         if (speedBoostCoroutine == null)
-            speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine());  // ÀÌµ¿ ¼Óµµ Áõ°¡ ÄÚ·çÆ¾ ½ÃÀÛ
+            speedBoostCoroutine = StartCoroutine(SpeedBoostRoutine());  // ì´ë™ ì†ë„ ì¦ê°€ ì½”ë£¨í‹´ ì‹œì‘
         
     }
 

@@ -7,7 +7,7 @@ public static class DialogueLoader
         TextAsset jsonFile = Resources.Load<TextAsset>("Dialogues/" + fileName);
         if (jsonFile == null)
         {
-            Debug.LogError($"Dialogues/{fileName}.json ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù!");
+            Debug.LogError($"Dialogues/{fileName}.json íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤!");
             return null;
         }
 

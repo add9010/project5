@@ -3,22 +3,22 @@ using System.Collections;
 
 public class Skill : MonoBehaviour
 {
-    public GameObject[] skillPrefabs;  // ¼­·Î ´Ù¸¥ 3°³ÀÇ ÇÁ¸®ÆÕ
-    public Transform pos;              // ±âÁØ ¼ÒÈ¯ À§Ä¡
-    public float spawnInterval = 0.4f; // ÇÁ¸®ÆÕ ¼ÒÈ¯ °£°İ
-    public float skillDamage = 10f;    // ½ºÅ³ µ¥¹ÌÁö
-    public float knockback = 5f;       // ½ºÅ³ ³Ë¹é °ª
-    public Vector2[] boxSizes;         // °¢ ÇÁ¸®ÆÕÀÇ ¹Ú½º »çÀÌÁî
-    public Animator animator;          // ¾Ö´Ï¸ŞÀÌÅÍ ÄÄÆ÷³ÍÆ® (½ºÅ³ ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Á¦¾î)
-    public float moveSpeed = 30f;      // ÃÖ´ë ¼Óµµ (ÃÊ±â°ª 80)
-    private float minSpeed = 0f;       // ÃÖ¼Ò ¼Óµµ (0À¸·Î ¼³Á¤)
-    public float speedDecay = 0.5f;    // ¼Óµµ °¨¼Ò °ª
-    private bool isCastingSkill;       // ½ºÅ³ ½ÃÀü ¿©ºÎ Ã¼Å©
-    private int m_facingDirection = 1; // 1: ¿À¸¥ÂÊ, -1: ¿ŞÂÊ
+    public GameObject[] skillPrefabs;  // ì„œë¡œ ë‹¤ë¥¸ 3ê°œì˜ í”„ë¦¬íŒ¹
+    public Transform pos;              // ê¸°ì¤€ ì†Œí™˜ ìœ„ì¹˜
+    public float spawnInterval = 0.4f; // í”„ë¦¬íŒ¹ ì†Œí™˜ ê°„ê²©
+    public float skillDamage = 10f;    // ìŠ¤í‚¬ ë°ë¯¸ì§€
+    public float knockback = 5f;       // ìŠ¤í‚¬ ë„‰ë°± ê°’
+    public Vector2[] boxSizes;         // ê° í”„ë¦¬íŒ¹ì˜ ë°•ìŠ¤ ì‚¬ì´ì¦ˆ
+    public Animator animator;          // ì• ë‹ˆë©”ì´í„° ì»´í¬ë„ŒíŠ¸ (ìŠ¤í‚¬ ì• ë‹ˆë©”ì´ì…˜ì„ ì œì–´)
+    public float moveSpeed = 30f;      // ìµœëŒ€ ì†ë„ (ì´ˆê¸°ê°’ 80)
+    private float minSpeed = 0f;       // ìµœì†Œ ì†ë„ (0ìœ¼ë¡œ ì„¤ì •)
+    public float speedDecay = 0.5f;    // ì†ë„ ê°ì†Œ ê°’
+    private bool isCastingSkill;       // ìŠ¤í‚¬ ì‹œì „ ì—¬ë¶€ ì²´í¬
+    private int m_facingDirection = 1; // 1: ì˜¤ë¥¸ìª½, -1: ì™¼ìª½
 
     void Update()
     {
-        // ¹æÇâ ÀüÈ¯ Ã³¸® (ÀÔ·Â °ª¿¡ µû¶ó ¿ŞÂÊ ¶Ç´Â ¿À¸¥ÂÊ)
+        // ë°©í–¥ ì „í™˜ ì²˜ë¦¬ (ì…ë ¥ ê°’ì— ë”°ë¼ ì™¼ìª½ ë˜ëŠ” ì˜¤ë¥¸ìª½)
         float inputX = Input.GetAxis("Horizontal");
         if (inputX > 0)
         {
@@ -36,16 +36,16 @@ public class Skill : MonoBehaviour
             StartCoroutine(SpawnSkillPrefabs());
         }
 
-        // ½ºÅ³ ½ÃÀü ÁßÀÌ¶ó¸é ÇÃ·¹ÀÌ¾î ÀÌµ¿
+        // ìŠ¤í‚¬ ì‹œì „ ì¤‘ì´ë¼ë©´ í”Œë ˆì´ì–´ ì´ë™
         if (isCastingSkill)
         {
-            MovePlayer(); // ÀÌµ¿ Ã³¸® (Update¿¡¼­ È£Ãâ)
+            MovePlayer(); // ì´ë™ ì²˜ë¦¬ (Updateì—ì„œ í˜¸ì¶œ)
         }
     }
 
     private IEnumerator SpawnSkillPrefabs()
     {
-        isCastingSkill = true;  // ½ºÅ³ ½ÃÀü ½ÃÀÛ
+        isCastingSkill = true;  // ìŠ¤í‚¬ ì‹œì „ ì‹œì‘
 
         string[] attackAnimations = { "Attack1", "Attack2", "Attack3" };
 
@@ -73,26 +73,26 @@ public class Skill : MonoBehaviour
                 skillSprite.flipX = m_facingDirection == -1;
             }
 
-            // ¾Ö´Ï¸ŞÀÌ¼Ç Æ®¸®°Å
+            // ì• ë‹ˆë©”ì´ì…˜ íŠ¸ë¦¬ê±°
             if (animator != null)
             {
                 animator.SetTrigger("Attack" + (i + 1));
             }
 
-            // ÀÌµ¿À» ½ÃÀÛÇÏ°í ±â´Ù¸®Áö ¾ÊÀ½ (Update¿¡¼­ ÀÌµ¿ Ã³¸®)
+            // ì´ë™ì„ ì‹œì‘í•˜ê³  ê¸°ë‹¤ë¦¬ì§€ ì•ŠìŒ (Updateì—ì„œ ì´ë™ ì²˜ë¦¬)
             yield return new WaitForSeconds(spawnInterval);
         }
 
-        isCastingSkill = false;  // ½ºÅ³ ½ÃÀü ¿Ï·á
+        isCastingSkill = false;  // ìŠ¤í‚¬ ì‹œì „ ì™„ë£Œ
     }
 
-    // ÇÃ·¹ÀÌ¾î¸¦ ÀÌµ¿½ÃÅ°´Â ÄÚ·çÆ¾
+    // í”Œë ˆì´ì–´ë¥¼ ì´ë™ì‹œí‚¤ëŠ” ì½”ë£¨í‹´
     private void MovePlayer()
     {
-        // ÀÌµ¿ ¼Óµµ °¨¼Ò (¸Å ÇÁ·¹ÀÓ¸¶´Ù -0.5¾¿ °¨¼Ò)
-        moveSpeed = Mathf.Max(minSpeed, moveSpeed - speedDecay * Time.deltaTime);  // ÃÖ¼Ò ¼Óµµ ÀÌÇÏ·Î °¨¼ÒÇÏÁö ¾Êµµ·Ï Ã³¸®
+        // ì´ë™ ì†ë„ ê°ì†Œ (ë§¤ í”„ë ˆì„ë§ˆë‹¤ -0.5ì”© ê°ì†Œ)
+        moveSpeed = Mathf.Max(minSpeed, moveSpeed - speedDecay * Time.deltaTime);  // ìµœì†Œ ì†ë„ ì´í•˜ë¡œ ê°ì†Œí•˜ì§€ ì•Šë„ë¡ ì²˜ë¦¬
 
-        // ÀÌµ¿ÇÒ À§Ä¡ °è»ê
+        // ì´ë™í•  ìœ„ì¹˜ ê³„ì‚°
         transform.position += new Vector3(m_facingDirection * moveSpeed * Time.deltaTime, 0, 0);
     }
 }

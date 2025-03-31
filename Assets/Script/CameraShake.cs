@@ -1,14 +1,14 @@
 using UnityEngine;
-using System.Collections;  // ÄÚ·çÆ¾À» »ç¿ëÇÏ±â À§ÇØ Ãß°¡
+using System.Collections;  // ì½”ë£¨í‹´ì„ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ì¶”ê°€
 
 public class CameraShake : MonoBehaviour
 {
-    private Vector3 originalPosition;  // Ä«¸Ş¶ó ¿ø·¡ À§Ä¡
-    public float shakeDuration = 0.1f; // ÂªÀº Èçµé¸² Áö¼Ó ½Ã°£ (º£±â ´À³¦)
-    public float shakeAmount = 0.2f;   // °­·ÄÇÑ Èçµé¸² °­µµ
-    public float shakeReturnSpeed = 5f; // ¿ø·¡ À§Ä¡·Î µ¹¾Æ°¡´Â ¼Óµµ
+    private Vector3 originalPosition;  // ì¹´ë©”ë¼ ì›ë˜ ìœ„ì¹˜
+    public float shakeDuration = 0.1f; // ì§§ì€ í”ë“¤ë¦¼ ì§€ì† ì‹œê°„ (ë² ê¸° ëŠë‚Œ)
+    public float shakeAmount = 0.2f;   // ê°•ë ¬í•œ í”ë“¤ë¦¼ ê°•ë„
+    public float shakeReturnSpeed = 5f; // ì›ë˜ ìœ„ì¹˜ë¡œ ëŒì•„ê°€ëŠ” ì†ë„
 
-    public Transform player;           // ÇÃ·¹ÀÌ¾îÀÇ Transform (ÇÃ·¹ÀÌ¾î¸¦ ÃßÀû)
+    public Transform player;           // í”Œë ˆì´ì–´ì˜ Transform (í”Œë ˆì´ì–´ë¥¼ ì¶”ì )
 
     private void Start()
     {
@@ -20,10 +20,10 @@ public class CameraShake : MonoBehaviour
 
     public void ShakeCamera()
     {
-        // Èçµé¸²À» ½ÃÀÛÇÏ±â Àü¿¡ ÇöÀç Ä«¸Ş¶ó À§Ä¡¸¦ ÀúÀå
+        // í”ë“¤ë¦¼ì„ ì‹œì‘í•˜ê¸° ì „ì— í˜„ì¬ ì¹´ë©”ë¼ ìœ„ì¹˜ë¥¼ ì €ì¥
         originalPosition = transform.position;
 
-        // °ø°İÇÒ ¶§¸¶´Ù Ä«¸Ş¶ó Èçµé¸² ¹ß»ı
+        // ê³µê²©í•  ë•Œë§ˆë‹¤ ì¹´ë©”ë¼ í”ë“¤ë¦¼ ë°œìƒ
         StartCoroutine(Shake());
     }
 
@@ -33,19 +33,19 @@ public class CameraShake : MonoBehaviour
 
         while (elapsedTime < shakeDuration)
         {
-            // Ä«¸Ş¶óÀÇ ¿ø·¡ À§Ä¡¿¡¼­ ·£´ıÇÑ À§Ä¡·Î ÀÌµ¿½ÃÄÑ °­·ÄÇÑ Èçµé¸² È¿°ú »ı¼º
+            // ì¹´ë©”ë¼ì˜ ì›ë˜ ìœ„ì¹˜ì—ì„œ ëœë¤í•œ ìœ„ì¹˜ë¡œ ì´ë™ì‹œì¼œ ê°•ë ¬í•œ í”ë“¤ë¦¼ íš¨ê³¼ ìƒì„±
             float shakeX = Random.Range(-shakeAmount, shakeAmount);
-            // YÃàÀº ¿ø·¡ À§Ä¡ À¯Áö
+            // Yì¶•ì€ ì›ë˜ ìœ„ì¹˜ ìœ ì§€
             float shakeY = Random.Range(-shakeAmount, shakeAmount);
 
-            // Ä«¸Ş¶ó´Â ÇÃ·¹ÀÌ¾î¸¦ µû¶ó°¡¸ç Èçµé¸² Àû¿ë
+            // ì¹´ë©”ë¼ëŠ” í”Œë ˆì´ì–´ë¥¼ ë”°ë¼ê°€ë©° í”ë“¤ë¦¼ ì ìš©
             transform.position = new Vector3(player.position.x + shakeX, originalPosition.y + shakeY, transform.position.z);
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Èçµé¸²ÀÌ ³¡³­ ÈÄ Ä«¸Ş¶ó´Â ¹Ù·Î ÇÃ·¹ÀÌ¾î¸¦ ÃßÀûÇÏµµ·Ï À¯Áö
+        // í”ë“¤ë¦¼ì´ ëë‚œ í›„ ì¹´ë©”ë¼ëŠ” ë°”ë¡œ í”Œë ˆì´ì–´ë¥¼ ì¶”ì í•˜ë„ë¡ ìœ ì§€
         transform.position = new Vector3(player.position.x, originalPosition.y, transform.position.z);
     }
 }

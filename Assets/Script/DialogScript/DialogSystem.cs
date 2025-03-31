@@ -8,20 +8,20 @@ using UnityEngine.EventSystems;
 public class DialogSystem : MonoBehaviour
 {
     [Header("UI Elements")]
-    public GameObject panel;                         // ÀüÃ¼ ´ëÈ­ ÆĞ³Î
-    public TextMeshProUGUI speakerNameText;          // ¸»ÇÏ´Â Ä³¸¯ÅÍ ÀÌ¸§
-    public TextMeshProUGUI sentenceText;             // ´ë»ç º»¹®
-    public Image portraitImage;                      // Ä³¸¯ÅÍ ÃÊ»óÈ­
-    public GameObject optionsPanel;                  // ¼±ÅÃÁö ¹öÆ°µéÀ» ´ã´Â ÆĞ³Î
-    public Button optionButtonPrefab;                // ¼±ÅÃÁö ¹öÆ° ÇÁ¸®ÆÕ
+    public GameObject panel;                         // ì „ì²´ ëŒ€í™” íŒ¨ë„
+    public TextMeshProUGUI speakerNameText;          // ë§í•˜ëŠ” ìºë¦­í„° ì´ë¦„
+    public TextMeshProUGUI sentenceText;             // ëŒ€ì‚¬ ë³¸ë¬¸
+    public Image portraitImage;                      // ìºë¦­í„° ì´ˆìƒí™”
+    public GameObject optionsPanel;                  // ì„ íƒì§€ ë²„íŠ¼ë“¤ì„ ë‹´ëŠ” íŒ¨ë„
+    public Button optionButtonPrefab;                // ì„ íƒì§€ ë²„íŠ¼ í”„ë¦¬íŒ¹
 
-    private Queue<string> sentences = new Queue<string>();  // ÇöÀç ´ëÈ­¿¡¼­ Ãâ·ÂÇÒ ¹®Àåµé
-    private Dialogue[] dialogues;                            // ÇöÀç ´ëÈ­ ÀüÃ¼ ±¸Á¶
-    private int currentDialogueIndex = 0;                    // ÇöÀç ÁøÇà ÁßÀÎ ´ëÈ­ ÀÎµ¦½º
-    private bool isTyping = false;                           // ÅØ½ºÆ® Å¸ÀÌÇÎ Áß ¿©ºÎ
-    private List<Button> currentOptionButtons = new List<Button>();// ¼±ÅÃÁö ¹öÆ°µéÀ» ÀÓ½Ã·Î ÀúÀåÇÏ´Â ¸®½ºÆ®
+    private Queue<string> sentences = new Queue<string>();  // í˜„ì¬ ëŒ€í™”ì—ì„œ ì¶œë ¥í•  ë¬¸ì¥ë“¤
+    private Dialogue[] dialogues;                            // í˜„ì¬ ëŒ€í™” ì „ì²´ êµ¬ì¡°
+    private int currentDialogueIndex = 0;                    // í˜„ì¬ ì§„í–‰ ì¤‘ì¸ ëŒ€í™” ì¸ë±ìŠ¤
+    private bool isTyping = false;                           // í…ìŠ¤íŠ¸ íƒ€ì´í•‘ ì¤‘ ì—¬ë¶€
+    private List<Button> currentOptionButtons = new List<Button>();// ì„ íƒì§€ ë²„íŠ¼ë“¤ì„ ì„ì‹œë¡œ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
 
-    // ´ëÈ­ ½ÃÀÛ ÁøÀÔÁ¡
+    // ëŒ€í™” ì‹œì‘ ì§„ì…ì 
     public void StartDialogue(Dialogue[] loadedDialogues)
     {
         dialogues = loadedDialogues;
@@ -30,7 +30,7 @@ public class DialogSystem : MonoBehaviour
         ShowCurrentDialogue();
     }
 
-    // ÇöÀç ÀÎµ¦½º¿¡ ÇØ´çÇÏ´Â ´ë»ç ³»¿ëÀ» UI¿¡ Ç¥½Ã
+    // í˜„ì¬ ì¸ë±ìŠ¤ì— í•´ë‹¹í•˜ëŠ” ëŒ€ì‚¬ ë‚´ìš©ì„ UIì— í‘œì‹œ
     void ShowCurrentDialogue()
     {
         if (currentDialogueIndex >= dialogues.Length)
@@ -41,7 +41,7 @@ public class DialogSystem : MonoBehaviour
 
         Dialogue dialogue = dialogues[currentDialogueIndex];
 
-        // UI ¿ä¼Ò ¾÷µ¥ÀÌÆ®
+        // UI ìš”ì†Œ ì—…ë°ì´íŠ¸
         speakerNameText.text = dialogue.speakerName;
         portraitImage.sprite = dialogue.speakerPortrait;
         sentences.Clear();
@@ -56,14 +56,14 @@ public class DialogSystem : MonoBehaviour
         DisplayNextSentence();
     }
 
-    // ´ÙÀ½ ¹®Àå Ãâ·Â or ¼±ÅÃÁö Ç¥½Ã
+    // ë‹¤ìŒ ë¬¸ì¥ ì¶œë ¥ or ì„ íƒì§€ í‘œì‹œ
     public void DisplayNextSentence()
     {
         if (isTyping) return;
 
         if (sentences.Count == 0)
         {
-            // ¼±ÅÃÁö°¡ ÀÖ´Â °æ¿ì Ç¥½Ã
+            // ì„ íƒì§€ê°€ ìˆëŠ” ê²½ìš° í‘œì‹œ
             if (dialogues[currentDialogueIndex].options != null &&
                 dialogues[currentDialogueIndex].options.Length > 0)
             {
@@ -71,20 +71,20 @@ public class DialogSystem : MonoBehaviour
             }
             else
             {
-                // ´ÙÀ½ ´ë»ç·Î ³Ñ¾î°¨
+                // ë‹¤ìŒ ëŒ€ì‚¬ë¡œ ë„˜ì–´ê°
                 currentDialogueIndex++;
                 ShowCurrentDialogue();
             }
             return;
         }
 
-        // ´ÙÀ½ ¹®Àå ÇÏ³ª ²¨³»¼­ Ãâ·Â
+        // ë‹¤ìŒ ë¬¸ì¥ í•˜ë‚˜ êº¼ë‚´ì„œ ì¶œë ¥
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
 
-    // ¹®ÀÚ¸¦ ÇÑ ±ÛÀÚ¾¿ Ãâ·ÂÇÏ´Â È¿°ú
+    // ë¬¸ìë¥¼ í•œ ê¸€ìì”© ì¶œë ¥í•˜ëŠ” íš¨ê³¼
     IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
@@ -93,12 +93,12 @@ public class DialogSystem : MonoBehaviour
         foreach (char letter in sentence)
         {
             sentenceText.text += letter;
-            yield return new WaitForSeconds(0.02f); // Ãâ·Â ¼Óµµ
+            yield return new WaitForSeconds(0.02f); // ì¶œë ¥ ì†ë„
         }
 
         isTyping = false;
 
-        // ¹®Àå ³¡³­ µÚ ¼±ÅÃÁö°¡ ÀÖ´Ù¸é ¹Ù·Î Ç¥½Ã
+        // ë¬¸ì¥ ëë‚œ ë’¤ ì„ íƒì§€ê°€ ìˆë‹¤ë©´ ë°”ë¡œ í‘œì‹œ
         if (sentences.Count == 0 &&
             dialogues[currentDialogueIndex].options != null &&
             dialogues[currentDialogueIndex].options.Length > 0)
@@ -107,65 +107,65 @@ public class DialogSystem : MonoBehaviour
         }
     }
 
-    // ¼±ÅÃÁö ¹öÆ°À» »ı¼ºÇÏ°í ÀÌº¥Æ® ¿¬°á
+    // ì„ íƒì§€ ë²„íŠ¼ì„ ìƒì„±í•˜ê³  ì´ë²¤íŠ¸ ì—°ê²°
     void ShowOptions(DialogueOption[] options)
     {
         optionsPanel.SetActive(true);
 
-        // ±âÁ¸ ¹öÆ° »èÁ¦
+        // ê¸°ì¡´ ë²„íŠ¼ ì‚­ì œ
         foreach (Transform child in optionsPanel.transform)
             Destroy(child.gameObject);
 
-        // ¹öÆ° ¸®½ºÆ® ÃÊ±âÈ­
+        // ë²„íŠ¼ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         currentOptionButtons.Clear();
 
         foreach (DialogueOption option in options)
         {
-            // ¹öÆ° »ı¼º
+            // ë²„íŠ¼ ìƒì„±
             Button btn = Instantiate(optionButtonPrefab, optionsPanel.transform);
 
             if (btn == null)
             {
-                Debug.LogError("¹öÆ° »ı¼º ½ÇÆĞ: ÇÁ¸®ÆÕÀÌ nullÀÔ´Ï´Ù.");
+                Debug.LogError("ë²„íŠ¼ ìƒì„± ì‹¤íŒ¨: í”„ë¦¬íŒ¹ì´ nullì…ë‹ˆë‹¤.");
                 continue;
             }
 
-            // ¹öÆ° ÅØ½ºÆ® ¼³Á¤
+            // ë²„íŠ¼ í…ìŠ¤íŠ¸ ì„¤ì •
             var tmp = btn.GetComponentInChildren<TextMeshProUGUI>();
             if (tmp != null)
                 tmp.text = option.optionText;
 
-            // Å¬¸¯ ½Ã ´ÙÀ½ ´ëÈ­ ÀÎµ¦½º·Î ÀÌµ¿
+            // í´ë¦­ ì‹œ ë‹¤ìŒ ëŒ€í™” ì¸ë±ìŠ¤ë¡œ ì´ë™
             int nextIndex = option.nextDialogueIndex;
             btn.onClick.AddListener(() =>
             {
-                Debug.Log($"¼±ÅÃÁö '{option.optionText}' ¼±ÅÃµÊ ¡æ ÀÎµ¦½º {nextIndex}");
+                Debug.Log($"ì„ íƒì§€ '{option.optionText}' ì„ íƒë¨ â†’ ì¸ë±ìŠ¤ {nextIndex}");
                 currentDialogueIndex = nextIndex;
                 ShowCurrentDialogue();
             });
 
-            //¼ıÀÚÅ° ÀÔ·ÂÀ» À§ÇÑ ¸®½ºÆ®¿¡ Ãß°¡
+            //ìˆ«ìí‚¤ ì…ë ¥ì„ ìœ„í•œ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
             currentOptionButtons.Add(btn);
         }
     }
 
-    // Space Å°·Î ´ë»ç ³Ñ±â±â (¼±ÅÃÁö°¡ ¶°ÀÖÁö ¾ÊÀ» ¶§¸¸)
+    // Space í‚¤ë¡œ ëŒ€ì‚¬ ë„˜ê¸°ê¸° (ì„ íƒì§€ê°€ ë– ìˆì§€ ì•Šì„ ë•Œë§Œ)
     void Update()
     {
-        // ´ë»ç ³Ñ±â±â
+        // ëŒ€ì‚¬ ë„˜ê¸°ê¸°
         if (Input.GetKeyDown(KeyCode.Space) && panel.activeSelf && !optionsPanel.activeSelf)
         {
             DisplayNextSentence();
         }
 
-        // ¼ıÀÚÅ°·Î ¼±ÅÃÁö °í¸£±â
+        // ìˆ«ìí‚¤ë¡œ ì„ íƒì§€ ê³ ë¥´ê¸°
         if (panel.activeSelf && optionsPanel.activeSelf)
         {
             for (int i = 0; i < currentOptionButtons.Count && i < 9; i++)
             {
                 if (Input.GetKeyDown(KeyCode.Alpha1 + i))
                 {
-                    Debug.Log($"¼ıÀÚÅ° {i + 1} ÀÔ·ÂµÊ");
+                    Debug.Log($"ìˆ«ìí‚¤ {i + 1} ì…ë ¥ë¨");
                     currentOptionButtons[i].onClick.Invoke();
                 }
             }
@@ -174,10 +174,10 @@ public class DialogSystem : MonoBehaviour
 
 
 
-    // ´ëÈ­ Á¾·á Ã³¸®
+    // ëŒ€í™” ì¢…ë£Œ ì²˜ë¦¬
     void EndDialogue()
     {
         panel.SetActive(false);
-        PlayerManager.Instance.isAction = false; // ÇÃ·¹ÀÌ¾î Çàµ¿ Àç°³
+        PlayerManager.Instance.isAction = false; // í”Œë ˆì´ì–´ í–‰ë™ ì¬ê°œ
     }
 }

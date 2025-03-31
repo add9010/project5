@@ -37,7 +37,7 @@ public class PlayerAttack
 
     private IEnumerator AttackCoroutine()
     {
-        Debug.Log("AttackCoroutine ½ÃÀÛ!");
+        Debug.Log("AttackCoroutine ì‹œì‘!");
         isAttacking = true;
         hitEnemies.Clear();
 
@@ -49,16 +49,16 @@ public class PlayerAttack
 
         timeSinceAttack = 0f;
 
-        // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç Æ®¸®°Å (1, 2, 3 ¼øÈ¯)
+        // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ íŠ¸ë¦¬ê±° (1, 2, 3 ìˆœí™˜)
         string animationTrigger = "Attack" + (attackCount + 1);
         manager.animator.SetTrigger(animationTrigger);
 
-        // °ø°İ ¾Ö´Ï¸ŞÀÌ¼Ç Àı¹İ ½Ã°£ ´ë±â
+        // ê³µê²© ì• ë‹ˆë©”ì´ì…˜ ì ˆë°˜ ì‹œê°„ ëŒ€ê¸°
         yield return new WaitForSeconds(manager.data.attackDuration / 2f);
 
         PerformAttack();
 
-        // ³ª¸ÓÁö ¾Ö´Ï¸ŞÀÌ¼Ç ½Ã°£ ´ë±â
+        // ë‚˜ë¨¸ì§€ ì• ë‹ˆë©”ì´ì…˜ ì‹œê°„ ëŒ€ê¸°
         yield return new WaitForSeconds(manager.data.attackDuration / 2f);
 
         isAttacking = false;
@@ -84,7 +84,7 @@ public class PlayerAttack
             Enemy enemy = col.GetComponent<Enemy>() ?? col.GetComponentInParent<Enemy>();
             if (enemy != null)
             {
-                Debug.Log($"Àû È÷Æ®: {enemy.name}");
+                Debug.Log($"ì  íˆíŠ¸: {enemy.name}");
                 var arg = new ParameterPlayerAttack { damage = damage, knockback = knockback };
                 enemy.TakeDamage(arg);
                 hitEnemies.Add(col);
@@ -95,7 +95,7 @@ public class PlayerAttack
     {
         Vector3 offset = manager.data.attackBoxOffset;
 
-        // ¿ŞÂÊÀ» ¹Ù¶óº¸¸é xÃà ¹İÀü
+        // ì™¼ìª½ì„ ë°”ë¼ë³´ë©´ xì¶• ë°˜ì „
         if (manager.spriteRenderer.flipX)
             offset.x *= -1;
 
