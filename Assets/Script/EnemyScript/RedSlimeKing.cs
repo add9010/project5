@@ -6,24 +6,24 @@ public class RedSlimeKing : Slime
 {
 
     public delegate void BossDeathHandler();
-    public event BossDeathHandler OnBossDeath;              // º¸½º°¡ Á×¾úÀ» ¶§ È£ÃâµÉ ÀÌº¥Æ®
+    public event BossDeathHandler OnBossDeath;              // ë³´ìŠ¤ê°€ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë  ì´ë²¤íŠ¸
 
-    public Text attackMessageText;                          // UI ÅØ½ºÆ®¸¦ ÂüÁ¶ÇÒ º¯¼ö (µğ¹ö±× ¸Ş½ÃÁö¸¦ Ç¥½ÃÇÒ ÅØ½ºÆ®)
-    public float specialAttackCooldown = 8f;                // Æ¯¼ö °ø°İ(ÆøÆÈ°ø°İ) Äğ´Ù¿î
-    public float PerformAreaAttackRange;                    // ¹üÀ§°ø°İ¹İ°æ
-    public GameObject attackEffectPrefab;                   // ÆøÆÈ °ø°İ ÀÌÆåÆ® PrefabÀ» ÂüÁ¶ÇÒ º¯¼ö
-    private bool canUseSpecialAttack = false;               // ±¤¿ª°ø°İ »ç¿ë ¿©ºÎ º¯¼ö
-    public Vector3 effectScale = new Vector3(1f, 1f, 1f);   // ÀÌÆåÆ®ÀÇ Å©±â Á¶Á¤ (ÀÎ½ºÆåÅÍ¿¡¼­ Á¶Á¤ °¡´É)
+    public Text attackMessageText;                          // UI í…ìŠ¤íŠ¸ë¥¼ ì°¸ì¡°í•  ë³€ìˆ˜ (ë””ë²„ê·¸ ë©”ì‹œì§€ë¥¼ í‘œì‹œí•  í…ìŠ¤íŠ¸)
+    public float specialAttackCooldown = 8f;                // íŠ¹ìˆ˜ ê³µê²©(í­íŒ”ê³µê²©) ì¿¨ë‹¤ìš´
+    public float PerformAreaAttackRange;                    // ë²”ìœ„ê³µê²©ë°˜ê²½
+    public GameObject attackEffectPrefab;                   // í­íŒ” ê³µê²© ì´í™íŠ¸ Prefabì„ ì°¸ì¡°í•  ë³€ìˆ˜
+    private bool canUseSpecialAttack = false;               // ê´‘ì—­ê³µê²© ì‚¬ìš© ì—¬ë¶€ ë³€ìˆ˜
+    public Vector3 effectScale = new Vector3(1f, 1f, 1f);   // ì´í™íŠ¸ì˜ í¬ê¸° ì¡°ì • (ì¸ìŠ¤í™í„°ì—ì„œ ì¡°ì • ê°€ëŠ¥)
 
-    private SpawnEnemy spawnEnemyScript;                    // SpawnEnemy ½ºÅ©¸³Æ®¸¦ ÂüÁ¶ÇÒ º¯¼ö
+    private SpawnEnemy spawnEnemyScript;                    // SpawnEnemy ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì°¸ì¡°í•  ë³€ìˆ˜
 
-    // Start ¸Ş¼­µå¸¦ override·Î ¼±¾ğ
+    // Start ë©”ì„œë“œë¥¼ overrideë¡œ ì„ ì–¸
     protected override void Start()
     {
-        base.Start(); // ºÎ¸ğ Å¬·¡½ºÀÇ Start È£Ãâ
+        base.Start(); // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ Start í˜¸ì¶œ
 
-        Debug.Log("·¹µå ½½¶óÀÓ Å·ÀÌ ¸ğ½ÀÀ» µå·¯³À´Ï´Ù..");
-        PerformAreaAttackRange = detectionRange * 0.9f; // ¹üÀ§°ø°İ¹İ°æ
+        Debug.Log("ë ˆë“œ ìŠ¬ë¼ì„ í‚¹ì´ ëª¨ìŠµì„ ë“œëŸ¬ëƒ…ë‹ˆë‹¤..");
+        PerformAreaAttackRange = detectionRange * 0.9f; // ë²”ìœ„ê³µê²©ë°˜ê²½
         spawnEnemyScript = GetComponent<SpawnEnemy>();
     }
 
@@ -31,7 +31,7 @@ public class RedSlimeKing : Slime
     {
         base.Update();
 
-        // º¸½º Æ¯¼ö Çàµ¿ Ãß°¡
+        // ë³´ìŠ¤ íŠ¹ìˆ˜ í–‰ë™ ì¶”ê°€
         if (canUseSpecialAttack && !isEnemyDead)
             StartCoroutine(UseSpecialAttack());
     }
@@ -41,7 +41,7 @@ public class RedSlimeKing : Slime
         if (player == null) return;
 
         HeroKnightUsing playerScript = player.GetComponent<HeroKnightUsing>();
-        if (playerScript != null && playerScript.isDead) // ÇÃ·¹ÀÌ¾î »ç¸Á½Ã Ãß°İÇØÁ¦
+        if (playerScript != null && playerScript.isDead) // í”Œë ˆì´ì–´ ì‚¬ë§ì‹œ ì¶”ê²©í•´ì œ
         {
             isChasing = false;
             return;
@@ -50,17 +50,17 @@ public class RedSlimeKing : Slime
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (distanceToPlayer <= detectionRange)
         {
-            if (!isChasing) // º¸½ºÆĞÅÏ½ÃÀÛ
+            if (!isChasing) // ë³´ìŠ¤íŒ¨í„´ì‹œì‘
             {
                 SpawnMark();
                 canUseSpecialAttack = true;
                 if (spawnEnemyScript != null) spawnEnemyScript.StartSpawning();
-                Debug.Log("º¸½º ÆĞÅÏ ½ÃÀÛ");
+                Debug.Log("ë³´ìŠ¤ íŒ¨í„´ ì‹œì‘");
             }
             isChasing = true;
 
             anim.SetBool("isWalk", true);
-            Vector3 direction = (player.position - transform.position).normalized;  // ÇÃ·¹ÀÌ¾î¸¦ Ãß°İ
+            Vector3 direction = (player.position - transform.position).normalized;  // í”Œë ˆì´ì–´ë¥¼ ì¶”ê²©
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
 
@@ -76,72 +76,72 @@ public class RedSlimeKing : Slime
     {
         canUseSpecialAttack = false;
 
-        // Æ¯¼ö °ø°İ ÁØºñ ¸Ş½ÃÁö¸¦ È­¸é¿¡ Ç¥½Ã
-        ShowAttackMessage("·¹µå ½½¶óÀÓÅ·ÀÌ °­ÇÑ °ø°İÀ» ÁØºñÇÕ´Ï´Ù.");
-        yield return new WaitForSeconds(2f);  // 2ÃÊ µ¿¾È ÅØ½ºÆ® À¯Áö
+        // íŠ¹ìˆ˜ ê³µê²© ì¤€ë¹„ ë©”ì‹œì§€ë¥¼ í™”ë©´ì— í‘œì‹œ
+        ShowAttackMessage("ë ˆë“œ ìŠ¬ë¼ì„í‚¹ì´ ê°•í•œ ê³µê²©ì„ ì¤€ë¹„í•©ë‹ˆë‹¤.");
+        yield return new WaitForSeconds(2f);  // 2ì´ˆ ë™ì•ˆ í…ìŠ¤íŠ¸ ìœ ì§€
         ShowAttackMessage("");
-        yield return new WaitForSeconds(5f);  // 3ÃÊ µÚ ±¤¿ª°ø°İ 
+        yield return new WaitForSeconds(5f);  // 3ì´ˆ ë’¤ ê´‘ì—­ê³µê²© 
         PerformAreaAttack();
 
-        // Äğ´Ù¿î ´ë±â
+        // ì¿¨ë‹¤ìš´ ëŒ€ê¸°
         yield return new WaitForSeconds(specialAttackCooldown);
         canUseSpecialAttack = true;
     }
 
     private void ShowAttackMessage(string message)
     {
-        // UI ÅØ½ºÆ®¿¡ ¸Ş½ÃÁö¸¦ ¼³Á¤
+        // UI í…ìŠ¤íŠ¸ì— ë©”ì‹œì§€ë¥¼ ì„¤ì •
         if (attackMessageText != null)
             attackMessageText.text = message;
     }
 
     private void PerformAreaAttack()
     {
-        // ¹üÀ§ ³»¿¡ ÀÖ´Â ¸ğµç Collider2D¸¦ Å½Áö
+        // ë²”ìœ„ ë‚´ì— ìˆëŠ” ëª¨ë“  Collider2Dë¥¼ íƒì§€
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, PerformAreaAttackRange);
 
-        // °ø°İ ¹üÀ§¿¡ ÀÌÆåÆ® »ı¼º (¹üÀ§ ÀüÃ¼¿¡ Ç¥½Ã)
+        // ê³µê²© ë²”ìœ„ì— ì´í™íŠ¸ ìƒì„± (ë²”ìœ„ ì „ì²´ì— í‘œì‹œ)
         if (attackEffectPrefab != null)
         {
             GameObject effectInstance = Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
-            // ÀÎ½ºÆåÅÍ¿¡¼­ ÁöÁ¤µÈ effectScale·Î Å©±â ¼³Á¤
+            // ì¸ìŠ¤í™í„°ì—ì„œ ì§€ì •ëœ effectScaleë¡œ í¬ê¸° ì„¤ì •
             effectInstance.transform.localScale = effectScale;
         }
 
         foreach (Collider2D hitObject in hitObjects)
         {
-            // ÇÃ·¹ÀÌ¾î ÅÂ±×¸¦ °¡Áø ¿ÀºêÁ§Æ®ÀÎÁö È®ÀÎ
+            // í”Œë ˆì´ì–´ íƒœê·¸ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ì¸ì§€ í™•ì¸
             if (hitObject.CompareTag("Player"))
             {
-                // ÇÃ·¹ÀÌ¾îÀÇ ½ºÅ©¸³Æ® °¡Á®¿À±â
+                // í”Œë ˆì´ì–´ì˜ ìŠ¤í¬ë¦½íŠ¸ ê°€ì ¸ì˜¤ê¸°
                 HeroKnightUsing playerScript = hitObject.GetComponent<HeroKnightUsing>();
 
                 if (playerScript != null && !playerScript.isDead)
                 {
                     playerScript.TakeDamage(atkDmg * 2);
-                    Debug.Log($"·¹µå½½¶óÀÓÅ·ÀÌ {hitObject.name}¿¡°Ô {atkDmg * 3}ÀÇ Æ¯¼ö °ø°İÀ¸·Î µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù!");
+                    Debug.Log($"ë ˆë“œìŠ¬ë¼ì„í‚¹ì´ {hitObject.name}ì—ê²Œ {atkDmg * 3}ì˜ íŠ¹ìˆ˜ ê³µê²©ìœ¼ë¡œ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤!");
                 }
             }
         }
     }
 
-    // ÀûÀÌ Á×¾úÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö
+    // ì ì´ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
     protected override void HandleWhenDead()
     {
-        base.HandleWhenDead();  // ±âº» EnemyÀÇ Á×À½ Ã³¸®
+        base.HandleWhenDead();  // ê¸°ë³¸ Enemyì˜ ì£½ìŒ ì²˜ë¦¬
 
         OnBossDeath?.Invoke();
-        Debug.Log("º¸½º Á×À½ ÀÌº¥Æ® È£ÃâµÊ");
+        Debug.Log("ë³´ìŠ¤ ì£½ìŒ ì´ë²¤íŠ¸ í˜¸ì¶œë¨");
 
         DropSpecialLoot();
     }
 
    
 
-    // º¸½º Àü¿ë Æ¯º° ¾ÆÀÌÅÛ µå¶ø ÇÔ¼ö
+    // ë³´ìŠ¤ ì „ìš© íŠ¹ë³„ ì•„ì´í…œ ë“œë í•¨ìˆ˜
     private void DropSpecialLoot()
     {
-        // ½ÇÁ¦ ¾ÆÀÌÅÛ ¿ÀºêÁ§Æ® »ı¼º (¿¹: InstantiationÀ» ÅëÇÑ ¾ÆÀÌÅÛ µå¶ø)
+        // ì‹¤ì œ ì•„ì´í…œ ì˜¤ë¸Œì íŠ¸ ìƒì„± (ì˜ˆ: Instantiationì„ í†µí•œ ì•„ì´í…œ ë“œë)
         Debug.Log("Special loot is dropped!");
     }
 

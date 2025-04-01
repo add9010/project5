@@ -6,13 +6,13 @@ public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] float spawnLoopTime;
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] float spawnOffset = 2f;  // ½ºÆù À§Ä¡ÀÇ ¿ÀÇÁ¼Â (¾ç¿·À¸·Î ¾ó¸¶³ª ¶³¾îÁúÁö)
-    private bool isSpawning = false;  // ½ºÆù ¿©ºÎ¸¦ Ã¼Å©ÇÏ´Â º¯¼ö
+    [SerializeField] float spawnOffset = 2f;  // ìŠ¤í° ìœ„ì¹˜ì˜ ì˜¤í”„ì…‹ (ì–‘ì˜†ìœ¼ë¡œ ì–¼ë§ˆë‚˜ ë–¨ì–´ì§ˆì§€)
+    private bool isSpawning = false;  // ìŠ¤í° ì—¬ë¶€ë¥¼ ì²´í¬í•˜ëŠ” ë³€ìˆ˜
 
-    // ½ºÆùÀ» ½ÃÀÛÇÏ´Â ¸Ş¼­µå
+    // ìŠ¤í°ì„ ì‹œì‘í•˜ëŠ” ë©”ì„œë“œ
     public void StartSpawning()
     {
-        if (!isSpawning)  // ÀÌ¹Ì ½ºÆùÀÌ ½ÃÀÛµÈ °æ¿ì ´Ù½Ã ½ÃÀÛÇÏÁö ¾Êµµ·Ï
+        if (!isSpawning)  // ì´ë¯¸ ìŠ¤í°ì´ ì‹œì‘ëœ ê²½ìš° ë‹¤ì‹œ ì‹œì‘í•˜ì§€ ì•Šë„ë¡
         {
             isSpawning = true;
             StartCoroutine(SpawnRoutine());
@@ -24,15 +24,15 @@ public class SpawnEnemy : MonoBehaviour
     {
         while (isSpawning)
         {
-            // ¿ŞÂÊ°ú ¿À¸¥ÂÊÀ¸·Î Àû ½ºÆù
+            // ì™¼ìª½ê³¼ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì  ìŠ¤í°
             Vector3 leftSpawnPosition = transform.position + Vector3.left * spawnOffset;
             Vector3 rightSpawnPosition = transform.position + Vector3.right * spawnOffset;
 
-            // ÀûÀ» ¿ŞÂÊ°ú ¿À¸¥ÂÊ¿¡ °¢°¢ ½ºÆù
+            // ì ì„ ì™¼ìª½ê³¼ ì˜¤ë¥¸ìª½ì— ê°ê° ìŠ¤í°
             Instantiate(enemyPrefab, leftSpawnPosition, Quaternion.identity);
             Instantiate(enemyPrefab, rightSpawnPosition, Quaternion.identity);
 
-            // ´ÙÀ½ ½ºÆù±îÁö ´ë±â
+            // ë‹¤ìŒ ìŠ¤í°ê¹Œì§€ ëŒ€ê¸°
             yield return new WaitForSeconds(spawnLoopTime);
         }
     }

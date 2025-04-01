@@ -4,12 +4,12 @@ using UnityEngine;
 [System.Serializable]
 public class Data
 {
-    // ?? ÇÃ·¹ÀÌ¾î À§Ä¡ ÀúÀå
+    // ?? í”Œë ˆì´ì–´ ìœ„ì¹˜ ì €ì¥
     public float playerX;
     public float playerY;
     public float playerZ;
 
-    // ?? ÇØ±İµÈ Ã©ÅÍ Á¤º¸ (¿¹Á¦)
+    // ?? í•´ê¸ˆëœ ì±•í„° ì •ë³´ (ì˜ˆì œ)
     public bool[] isUnlock = new bool[10];
 
     public Data()
@@ -17,7 +17,7 @@ public class Data
         playerX = 0f;
         playerY = 0f;
         playerZ = 0f;
-        isUnlock = new bool[10]; // ¸ğµç Ã©ÅÍ ±âº» Àá±İ »óÅÂ
-        isUnlock[0] = true; // 0¹ø Ã©ÅÍ¸¸ ±âº» ÇØ±İ
+        isUnlock = new bool[10]; // ëª¨ë“  ì±•í„° ê¸°ë³¸ ì ê¸ˆ ìƒíƒœ
+        isUnlock[0] = true; // 0ë²ˆ ì±•í„°ë§Œ ê¸°ë³¸ í•´ê¸ˆ
     }
 }

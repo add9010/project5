@@ -5,32 +5,32 @@ using System.Collections.Generic;
 
 public class BFGolem : Golem
 {
-    public Text attackMessageText;                       // UI ÅØ½ºÆ®¸¦ ÂüÁ¶ÇÒ º¯¼ö
+    public Text attackMessageText;                       // UI í…ìŠ¤íŠ¸ë¥¼ ì°¸ì¡°í•  ë³€ìˆ˜
 
     public delegate void BossDeathHandler();
-    public event BossDeathHandler OnBossDeath;           // º¸½º°¡ Á×¾úÀ» ¶§ È£ÃâµÉ ÀÌº¥Æ®
+    public event BossDeathHandler OnBossDeath;           // ë³´ìŠ¤ê°€ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë  ì´ë²¤íŠ¸
 
-    private bool canUseSpecialAttack = false;             // ±¤¿ª°ø°İ »ç¿ë ¿©ºÎ º¯¼ö
-    public float damageOutsideRange = 10f;                // °ø°İ ¹üÀ§ ¹Û¿¡ ³ª°¬À» ¶§ ÀÔÀ» ´ë¹ÌÁö
-    public float skillRange = 10f;                        // °ñ·¥ ÁÖº¯ÀÇ Å« ¿ø ¹üÀ§ (¹İÁö¸§)
-    public GameObject attackEffectPrefab;                 // ÀÌÆåÆ® Prefab
-    public Vector3 effectScale = new Vector3(1f, 1f, 1f); // ÀÌÆåÆ®ÀÇ Å©±â Á¶Á¤
+    private bool canUseSpecialAttack = false;             // ê´‘ì—­ê³µê²© ì‚¬ìš© ì—¬ë¶€ ë³€ìˆ˜
+    public float damageOutsideRange = 10f;                // ê³µê²© ë²”ìœ„ ë°–ì— ë‚˜ê°”ì„ ë•Œ ì…ì„ ëŒ€ë¯¸ì§€
+    public float skillRange = 10f;                        // ê³¨ë¨ ì£¼ë³€ì˜ í° ì› ë²”ìœ„ (ë°˜ì§€ë¦„)
+    public GameObject attackEffectPrefab;                 // ì´í™íŠ¸ Prefab
+    public Vector3 effectScale = new Vector3(1f, 1f, 1f); // ì´í™íŠ¸ì˜ í¬ê¸° ì¡°ì •
 
-    private Coroutine damageCoroutine;                    // ´ë¹ÌÁö¸¦ ÁÖ´Â ÄÚ·çÆ¾À» °ü¸®ÇÒ º¯¼ö
-    private GameObject currentAttackEffect;               // ÇöÀç È°¼ºÈ­µÈ °ø°İ ÀÌÆåÆ®
-    private Coroutine effectCoroutine;                     // ÀÌÆåÆ® ¹İº¹ È£ÃâÀ» À§ÇÑ ÄÚ·çÆ¾
+    private Coroutine damageCoroutine;                    // ëŒ€ë¯¸ì§€ë¥¼ ì£¼ëŠ” ì½”ë£¨í‹´ì„ ê´€ë¦¬í•  ë³€ìˆ˜
+    private GameObject currentAttackEffect;               // í˜„ì¬ í™œì„±í™”ëœ ê³µê²© ì´í™íŠ¸
+    private Coroutine effectCoroutine;                     // ì´í™íŠ¸ ë°˜ë³µ í˜¸ì¶œì„ ìœ„í•œ ì½”ë£¨í‹´
 
     protected override void Start()
     {
-        base.Start(); // ºÎ¸ğ Å¬·¡½ºÀÇ Start È£Ãâ
-        Debug.Log("BF°ñ·½ÀÌ ¸öÀ» ¿òÁ÷ÀÌ±â ½ÃÀÛÇÕ´Ï´Ù ");
+        base.Start(); // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ Start í˜¸ì¶œ
+        Debug.Log("BFê³¨ë ˜ì´ ëª¸ì„ ì›€ì§ì´ê¸° ì‹œì‘í•©ë‹ˆë‹¤ ");
     }
 
     protected override void Update()
     {
-        base.Update();  // ºÎ¸ğ Å¬·¡½ºÀÇ Update È£Ãâ
+        base.Update();  // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ Update í˜¸ì¶œ
 
-        // ¹üÀ§ ¹Û¿¡ ³ª°¡¸é ´ë¹ÌÁö ÀÔÈ÷±â
+        // ë²”ìœ„ ë°–ì— ë‚˜ê°€ë©´ ëŒ€ë¯¸ì§€ ì…íˆê¸°
         if (canUseSpecialAttack && !isEnemyDead)
             ApplyDamageOutsideRange();
     }
@@ -40,7 +40,7 @@ public class BFGolem : Golem
         if (player == null) return;
 
         HeroKnightUsing playerScript = player.GetComponent<HeroKnightUsing>();
-        if (playerScript != null && playerScript.isDead) // ÇÃ·¹ÀÌ¾î »ç¸Á½Ã Ãß°İÇØÁ¦
+        if (playerScript != null && playerScript.isDead) // í”Œë ˆì´ì–´ ì‚¬ë§ì‹œ ì¶”ê²©í•´ì œ
         {
             isChasing = false;
             return;
@@ -49,17 +49,17 @@ public class BFGolem : Golem
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
         if (distanceToPlayer <= detectionRange)
         {
-            if (!isChasing) // º¸½ºÆĞÅÏ½ÃÀÛ
+            if (!isChasing) // ë³´ìŠ¤íŒ¨í„´ì‹œì‘
             {
                 SpawnMark();
                 canUseSpecialAttack = true;
-                Debug.Log("º¸½º ÆĞÅÏ ½ÃÀÛ");
-                ShowAttackMessage("¿¡ÀÌ¼ÇÆ® °ñ·¥ÀÌ ¿µ¿ªÀ» ¼±Æ÷ÇÕ´Ï´Ù!!");
+                Debug.Log("ë³´ìŠ¤ íŒ¨í„´ ì‹œì‘");
+                ShowAttackMessage("ì—ì´ì…˜íŠ¸ ê³¨ë¨ì´ ì˜ì—­ì„ ì„ í¬í•©ë‹ˆë‹¤!!");
             }
             isChasing = true;
 
             anim.SetBool("isWalk", true);
-            Vector3 direction = (player.position - transform.position).normalized;  // ÇÃ·¹ÀÌ¾î¸¦ Ãß°İ
+            Vector3 direction = (player.position - transform.position).normalized;  // í”Œë ˆì´ì–´ë¥¼ ì¶”ê²©
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
             LookAtPlayer();
         }
@@ -69,14 +69,14 @@ public class BFGolem : Golem
         }
     }
 
-    // °ñ·¥ ¹üÀ§ ¹Û¿¡ ³ª°¡¸é ´ë¹ÌÁö¸¦ ÀÔÈ÷´Â ÇÔ¼ö
+    // ê³¨ë¨ ë²”ìœ„ ë°–ì— ë‚˜ê°€ë©´ ëŒ€ë¯¸ì§€ë¥¼ ì…íˆëŠ” í•¨ìˆ˜
     private void ApplyDamageOutsideRange()
     {
-        ShowAttackEffect();  // ½ºÅ³ ÀÌÆåÆ® Ç¥½Ã
-        // ¹üÀ§ ¹Û¿¡ ÀÖ´Â "Player" ÅÂ±×¸¦ °¡Áø ÇÃ·¹ÀÌ¾î Ã£±â
+        ShowAttackEffect();  // ìŠ¤í‚¬ ì´í™íŠ¸ í‘œì‹œ
+        // ë²”ìœ„ ë°–ì— ìˆëŠ” "Player" íƒœê·¸ë¥¼ ê°€ì§„ í”Œë ˆì´ì–´ ì°¾ê¸°
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, skillRange);
 
-        // ¹üÀ§ ¹Û¿¡ ÀÖ´Â ÇÃ·¹ÀÌ¾î¿¡ ´ë¹ÌÁö Àû¿ë
+        // ë²”ìœ„ ë°–ì— ìˆëŠ” í”Œë ˆì´ì–´ì— ëŒ€ë¯¸ì§€ ì ìš©
         foreach (var collider in hitColliders)
         {
             if (collider.CompareTag("Player") && !IsWithinSkillRange(collider))
@@ -84,7 +84,7 @@ public class BFGolem : Golem
                 HeroKnightUsing playerScript = collider.GetComponent<HeroKnightUsing>();
                 if (playerScript != null)
                 {
-                    // ¹üÀ§ ¹Û¿¡ ÀÖÀ¸¸é 1ÃÊ¸¶´Ù ´ë¹ÌÁö¸¦ ÀÔÈû
+                    // ë²”ìœ„ ë°–ì— ìˆìœ¼ë©´ 1ì´ˆë§ˆë‹¤ ëŒ€ë¯¸ì§€ë¥¼ ì…í˜
                     if (damageCoroutine == null)
                     {
                         damageCoroutine = StartCoroutine(DealDamageOverTime(playerScript));
@@ -94,31 +94,31 @@ public class BFGolem : Golem
         }
     }
 
-    // ¹üÀ§ ³»¿¡ ÀÖ´ÂÁö Ã¼Å©
+    // ë²”ìœ„ ë‚´ì— ìˆëŠ”ì§€ ì²´í¬
     private bool IsWithinSkillRange(Collider2D collider)
     {
         return Vector2.Distance(transform.position, collider.transform.position) <= skillRange;
     }
 
-    // ¹üÀ§ ¹Û¿¡ ÀÖÀ» ¶§ 1ÃÊ¸¶´Ù ´ë¹ÌÁö¸¦ ÀÔÈ÷´Â ÄÚ·çÆ¾
+    // ë²”ìœ„ ë°–ì— ìˆì„ ë•Œ 1ì´ˆë§ˆë‹¤ ëŒ€ë¯¸ì§€ë¥¼ ì…íˆëŠ” ì½”ë£¨í‹´
     private IEnumerator DealDamageOverTime(HeroKnightUsing playerScript)
     {
         while (playerScript != null && !IsWithinSkillRange(playerScript.GetComponent<Collider2D>()))
         {
-            playerScript.TakeDamage(damageOutsideRange); // ´ë¹ÌÁö ÀÔÈ÷±â
-            Debug.Log("¹üÀ§ ¹Û¿¡¼­ 1ÃÊ¸¶´Ù ´ë¹ÌÁö ÀÔÀ½!");
-            yield return new WaitForSeconds(1f); // 1ÃÊ¸¶´Ù ´ë¹ÌÁö
+            playerScript.TakeDamage(damageOutsideRange); // ëŒ€ë¯¸ì§€ ì…íˆê¸°
+            Debug.Log("ë²”ìœ„ ë°–ì—ì„œ 1ì´ˆë§ˆë‹¤ ëŒ€ë¯¸ì§€ ì…ìŒ!");
+            yield return new WaitForSeconds(1f); // 1ì´ˆë§ˆë‹¤ ëŒ€ë¯¸ì§€
         }
 
-        damageCoroutine = null; // ÄÚ·çÆ¾ Á¾·á ÈÄ null·Î ¼³Á¤
+        damageCoroutine = null; // ì½”ë£¨í‹´ ì¢…ë£Œ í›„ nullë¡œ ì„¤ì •
     }
 
-    // ½ºÅ³ ÀÌÆåÆ® Ç¥½Ã (0.5ÃÊ¸¶´Ù ¹İº¹ È£Ãâ)
+    // ìŠ¤í‚¬ ì´í™íŠ¸ í‘œì‹œ (0.5ì´ˆë§ˆë‹¤ ë°˜ë³µ í˜¸ì¶œ)
     private void ShowAttackEffect()
     {
         if (attackEffectPrefab != null)
         {
-            // 0.5ÃÊ¸¶´Ù ÀÌÆåÆ®¸¦ »õ·Î »ı¼º
+            // 0.5ì´ˆë§ˆë‹¤ ì´í™íŠ¸ë¥¼ ìƒˆë¡œ ìƒì„±
             if (effectCoroutine == null)
             {
                 effectCoroutine = StartCoroutine(SpawnEffect());
@@ -126,34 +126,34 @@ public class BFGolem : Golem
         }
     }
 
-    // 0.5ÃÊ¸¶´Ù ÀÌÆåÆ®¸¦ »õ·Î »ı¼ºÇÏ´Â ÄÚ·çÆ¾
+    // 0.5ì´ˆë§ˆë‹¤ ì´í™íŠ¸ë¥¼ ìƒˆë¡œ ìƒì„±í•˜ëŠ” ì½”ë£¨í‹´
     private IEnumerator SpawnEffect()
     {
         while (canUseSpecialAttack && !isEnemyDead)
         {
-            // »õ·Î¿î ÀÌÆåÆ®¸¦ »ı¼º
+            // ìƒˆë¡œìš´ ì´í™íŠ¸ë¥¼ ìƒì„±
             GameObject newEffect = Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
-            newEffect.transform.localScale = effectScale; // ÀÌÆåÆ® Å©±â Á¶Á¤
+            newEffect.transform.localScale = effectScale; // ì´í™íŠ¸ í¬ê¸° ì¡°ì •
 
-            // ÀÌÆåÆ®°¡ »ı¼ºµÈ ÈÄ 0.5ÃÊ¸¶´Ù ¹İº¹
+            // ì´í™íŠ¸ê°€ ìƒì„±ëœ í›„ 0.5ì´ˆë§ˆë‹¤ ë°˜ë³µ
             yield return new WaitForSeconds(0.3f);
         }
 
-        // ½ºÅ³ÀÌ Á¾·áµÇ¸é ÀÌÆåÆ®¸¦ ¸ğµÎ Á¦°Å
+        // ìŠ¤í‚¬ì´ ì¢…ë£Œë˜ë©´ ì´í™íŠ¸ë¥¼ ëª¨ë‘ ì œê±°
         EndSpecialAttack();
     }
 
-    // ½ºÅ³ÀÌ ³¡³ª¸é ÀÌÆåÆ®¸¦ ºñÈ°¼ºÈ­ÇÏ´Â ÇÔ¼ö
+    // ìŠ¤í‚¬ì´ ëë‚˜ë©´ ì´í™íŠ¸ë¥¼ ë¹„í™œì„±í™”í•˜ëŠ” í•¨ìˆ˜
     private void EndSpecialAttack()
     {
-        // ½ºÅ³ Á¾·á ½Ã ¹İº¹ ÄÚ·çÆ¾À» ¸ØÃß°í, »ı¼ºµÈ ÀÌÆåÆ®¸¦ ¸ğµÎ »èÁ¦
+        // ìŠ¤í‚¬ ì¢…ë£Œ ì‹œ ë°˜ë³µ ì½”ë£¨í‹´ì„ ë©ˆì¶”ê³ , ìƒì„±ëœ ì´í™íŠ¸ë¥¼ ëª¨ë‘ ì‚­ì œ
         if (effectCoroutine != null)
         {
-            StopCoroutine(effectCoroutine); // ¹İº¹ ÄÚ·çÆ¾ Á¾·á
+            StopCoroutine(effectCoroutine); // ë°˜ë³µ ì½”ë£¨í‹´ ì¢…ë£Œ
             effectCoroutine = null;
         }
 
-        // Ãß°¡µÈ ÀÌÆåÆ®µéÀÌ ³Ê¹« ¸¹¾ÆÁöÁö ¾Êµµ·Ï »èÁ¦
+        // ì¶”ê°€ëœ ì´í™íŠ¸ë“¤ì´ ë„ˆë¬´ ë§ì•„ì§€ì§€ ì•Šë„ë¡ ì‚­ì œ
         foreach (Transform child in transform)
         {
             if (child.CompareTag("AttackEffect"))
@@ -163,27 +163,27 @@ public class BFGolem : Golem
         }
     }
 
-    // ÀûÀÌ Á×¾úÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö
+    // ì ì´ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
     protected override void HandleWhenDead()
     {
-        ShowAttackMessage("¿¡ÀÌ¼ÇÆ® °ñ·¥À» Ã³Ä¡ÇÏ¿´½À´Ï´Ù!!");
-        base.HandleWhenDead();  // ±âº» EnemyÀÇ Á×À½ Ã³¸®
+        ShowAttackMessage("ì—ì´ì…˜íŠ¸ ê³¨ë¨ì„ ì²˜ì¹˜í•˜ì˜€ìŠµë‹ˆë‹¤!!");
+        base.HandleWhenDead();  // ê¸°ë³¸ Enemyì˜ ì£½ìŒ ì²˜ë¦¬
 
         OnBossDeath?.Invoke();
-        Debug.Log("º¸½º Á×À½ ÀÌº¥Æ® È£ÃâµÊ");
+        Debug.Log("ë³´ìŠ¤ ì£½ìŒ ì´ë²¤íŠ¸ í˜¸ì¶œë¨");
 
         DropSpecialLoot();
-        EndSpecialAttack();  // º¸½º Á×À» ¶§ ½ºÅ³ Á¾·á Ã³¸®
+        EndSpecialAttack();  // ë³´ìŠ¤ ì£½ì„ ë•Œ ìŠ¤í‚¬ ì¢…ë£Œ ì²˜ë¦¬
     }
 
-    // º¸½º Àü¿ë Æ¯º° ¾ÆÀÌÅÛ µå¶ø ÇÔ¼ö
+    // ë³´ìŠ¤ ì „ìš© íŠ¹ë³„ ì•„ì´í…œ ë“œë í•¨ìˆ˜
     private void DropSpecialLoot()
     {
-        // ½ÇÁ¦ ¾ÆÀÌÅÛ ¿ÀºêÁ§Æ® »ı¼º (¿¹: InstantiationÀ» ÅëÇÑ ¾ÆÀÌÅÛ µå¶ø)
+        // ì‹¤ì œ ì•„ì´í…œ ì˜¤ë¸Œì íŠ¸ ìƒì„± (ì˜ˆ: Instantiationì„ í†µí•œ ì•„ì´í…œ ë“œë)
         Debug.Log("Special loot is dropped!");
     }
 
-    // °ø°İ ¹üÀ§ ½Ã°¢È­ (µğ¹ö±ë¿ë)
+    // ê³µê²© ë²”ìœ„ ì‹œê°í™” (ë””ë²„ê¹…ìš©)
     protected override void OnDrawGizmosSelected()
     {
         base.OnDrawGizmosSelected();
@@ -191,14 +191,14 @@ public class BFGolem : Golem
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
 
-        // °ñ·¥ ÁÖº¯ÀÇ Å« ¿ø ¹üÀ§ ±×¸®±â (´ë¹ÌÁö¸¦ ÀÔÈ÷´Â ¹üÀ§)
+        // ê³¨ë¨ ì£¼ë³€ì˜ í° ì› ë²”ìœ„ ê·¸ë¦¬ê¸° (ëŒ€ë¯¸ì§€ë¥¼ ì…íˆëŠ” ë²”ìœ„)
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, skillRange);  // skillRange »ç¿ë (°ñ·¥ ÁÖº¯ Å« ¿ø)
+        Gizmos.DrawWireSphere(transform.position, skillRange);  // skillRange ì‚¬ìš© (ê³¨ë¨ ì£¼ë³€ í° ì›)
     }
 
     private void ShowAttackMessage(string message)
     {
-        // UI ÅØ½ºÆ®¿¡ ¸Ş½ÃÁö¸¦ ¼³Á¤
+        // UI í…ìŠ¤íŠ¸ì— ë©”ì‹œì§€ë¥¼ ì„¤ì •
         if (attackMessageText != null)
             attackMessageText.text = message;
     }

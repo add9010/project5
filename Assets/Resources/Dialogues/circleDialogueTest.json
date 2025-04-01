@@ -1,0 +1,31 @@
+﻿{
+  "dialogues": [
+    {
+      "speakerName": "초록",
+      "sentences": [
+        "안녕! 나는 말하는 초록이야.",
+        "모험가처럼 보이네? 어디 가는 길이야?"
+      ],
+      "options": [
+        {
+          "optionText": "던전 가는 길이야.",
+          "nextDialogueIndex": 1
+        },
+        {
+          "optionText": "그냥 지나가는 중이야.",
+          "nextDialogueIndex": 2
+        }
+      ]
+    },
+    {
+      "speakerName": "초록",
+      "sentences": ["던전? 위험하니까 조심해!"],
+      "options": []
+    },
+    {
+      "speakerName": "초록",
+      "sentences": ["아~ 잘 가~"],
+      "options": []
+    }
+  ]
+}

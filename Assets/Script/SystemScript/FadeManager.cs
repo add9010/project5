@@ -1,85 +1,85 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI; // Image »ç¿ëÀ» À§ÇØ Ãß°¡
+using UnityEngine.UI; // Image ì‚¬ìš©ì„ ìœ„í•´ ì¶”ê°€
 
 public class FadeManager : MonoBehaviour
 {
     public bool isFadeIn; // true=FadeIn, false=FadeOut
-    public GameObject panel; // ÆäÀÌµå ÆĞ³Î (Image ÄÄÆ÷³ÍÆ® ÇÊ¿ä)
-    private Action onCompleteCallback; // Fade ¿Ï·á ÈÄ ½ÇÇàÇÒ ÇÔ¼ö
-    private Image panelImage; // Image ÄÄÆ÷³ÍÆ® Ä³½Ì
+    public GameObject panel; // í˜ì´ë“œ íŒ¨ë„ (Image ì»´í¬ë„ŒíŠ¸ í•„ìš”)
+    private Action onCompleteCallback; // Fade ì™„ë£Œ í›„ ì‹¤í–‰í•  í•¨ìˆ˜
+    private Image panelImage; // Image ì»´í¬ë„ŒíŠ¸ ìºì‹±
 
     void Start()
     {
         if (!panel)
         {
-            Debug.LogError("Panel ¿ÀºêÁ§Æ®¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+            Debug.LogError("Panel ì˜¤ë¸Œì íŠ¸ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
             throw new MissingComponentException();
         }
 
-        panelImage = panel.GetComponent<Image>(); // Image ÄÄÆ÷³ÍÆ® °¡Á®¿À±â
+        panelImage = panel.GetComponent<Image>(); // Image ì»´í¬ë„ŒíŠ¸ ê°€ì ¸ì˜¤ê¸°
         if (panelImage == null)
         {
-            Debug.LogError("Panel¿¡ Image ÄÄÆ÷³ÍÆ®°¡ ¾ø½À´Ï´Ù!");
+            Debug.LogError("Panelì— Image ì»´í¬ë„ŒíŠ¸ê°€ ì—†ìŠµë‹ˆë‹¤!");
             throw new MissingComponentException();
         }
 
-        if (isFadeIn) // Fade In ¸ğµå
+        if (isFadeIn) // Fade In ëª¨ë“œ
         {
-            panel.SetActive(true); // ÆĞ³Î È°¼ºÈ­
+            panel.SetActive(true); // íŒ¨ë„ í™œì„±í™”
             StartCoroutine(CoFadeIn());
         }
         else
         {
-            panel.SetActive(false); // ÆĞ³Î ºñÈ°¼ºÈ­
+            panel.SetActive(false); // íŒ¨ë„ ë¹„í™œì„±í™”
         }
     }
 
     public void FadeOut()
     {
-        panel.SetActive(true); // ÆĞ³Î È°¼ºÈ­
-        Debug.Log("FadeCanvasController_ Fade Out ½ÃÀÛ");
+        panel.SetActive(true); // íŒ¨ë„ í™œì„±í™”
+        Debug.Log("FadeCanvasController_ Fade Out ì‹œì‘");
         StartCoroutine(CoFadeOut());
     }
 
     IEnumerator CoFadeIn()
     {
         float elapsedTime = 0f;
-        float fadeDuration = 1.2f; // ÆäÀÌµå ÀÎ ½Ã°£
+        float fadeDuration = 1.2f; // í˜ì´ë“œ ì¸ ì‹œê°„
 
         while (elapsedTime < fadeDuration)
         {
             float alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
-            panelImage.color = new Color(0f, 0f, 0f, alpha); // °ËÁ¤»ö ÆĞ³Î ¾ËÆÄ°ª Á¶Àı
+            panelImage.color = new Color(0f, 0f, 0f, alpha); // ê²€ì •ìƒ‰ íŒ¨ë„ ì•ŒíŒŒê°’ ì¡°ì ˆ
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        panelImage.color = new Color(0f, 0f, 0f, 0f); // ¿ÏÀüÈ÷ Åõ¸í
-        panel.SetActive(false); // ÆĞ³Î ºñÈ°¼ºÈ­
-        onCompleteCallback?.Invoke(); // Äİ¹é ½ÇÇà
+        panelImage.color = new Color(0f, 0f, 0f, 0f); // ì™„ì „íˆ íˆ¬ëª…
+        panel.SetActive(false); // íŒ¨ë„ ë¹„í™œì„±í™”
+        onCompleteCallback?.Invoke(); // ì½œë°± ì‹¤í–‰
     }
 
     IEnumerator CoFadeOut()
     {
         float elapsedTime = 0f;
-        float fadeDuration = 1.2f; // ÆäÀÌµå ¾Æ¿ô ½Ã°£
+        float fadeDuration = 1.2f; // í˜ì´ë“œ ì•„ì›ƒ ì‹œê°„
 
         while (elapsedTime < fadeDuration)
         {
             float alpha = Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration);
-            panelImage.color = new Color(0f, 0f, 0f, alpha); // °ËÁ¤»ö ÆĞ³Î ¾ËÆÄ°ª Á¶Àı
+            panelImage.color = new Color(0f, 0f, 0f, alpha); // ê²€ì •ìƒ‰ íŒ¨ë„ ì•ŒíŒŒê°’ ì¡°ì ˆ
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        panelImage.color = new Color(0f, 0f, 0f, 1f); // ¿ÏÀüÈ÷ °ËÁ¤»ö
-        Debug.Log("Fade Out ³¡");
-        onCompleteCallback?.Invoke(); // Äİ¹é ½ÇÇà
+        panelImage.color = new Color(0f, 0f, 0f, 1f); // ì™„ì „íˆ ê²€ì •ìƒ‰
+        Debug.Log("Fade Out ë");
+        onCompleteCallback?.Invoke(); // ì½œë°± ì‹¤í–‰
     }
 
-    public void RegisterCallback(Action callback) // ÆäÀÌµå ¾Æ¿ô ¿Ï·á ÈÄ ½ÇÇàÇÒ Äİ¹é µî·Ï
+    public void RegisterCallback(Action callback) // í˜ì´ë“œ ì•„ì›ƒ ì™„ë£Œ í›„ ì‹¤í–‰í•  ì½œë°± ë“±ë¡
     {
         onCompleteCallback = callback;
     }
