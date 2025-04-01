@@ -20,4 +20,9 @@ public class PlayerData
     public Vector2 attackBoxSize = new Vector2(1.5f, 1.5f);
     public Vector2 attackBoxOffset = new Vector2(1.0f, 0f);
     public float heightOffset = 1.7f;
+
+    [Header("카메라")]
+    public float cameraFollowSpeed = 5f;
+    public float cameraStopDistance = 2f;
+
 }

@@ -10,12 +10,11 @@ public class PlayerCamera
     private LayerMask wallLayer;
     private bool isNearWall = false;
 
-    public PlayerCamera(PlayerManager manager, float followSpeed, float stopDistance, LayerMask wallLayer)
+    public PlayerCamera(PlayerManager manager, float followSpeed, float stopDistance)
     {
         this.manager = manager;
         this.followSpeed = followSpeed;
         this.stopDistance = stopDistance;
-        this.wallLayer = wallLayer;
 
         cameraTransform = Camera.main.transform;
         offset = cameraTransform.position - manager.transform.position;
@@ -38,13 +37,15 @@ public class PlayerCamera
     {
         Vector3 direction = (cameraTransform.position - manager.transform.position).normalized;
 
-        if (Physics.Raycast(manager.transform.position, direction, out RaycastHit hit, stopDistance, wallLayer))
+        if (Physics.Raycast(manager.transform.position, direction, out RaycastHit hit, stopDistance))
         {
-            isNearWall = true;
+            if (hit.collider.CompareTag("Wall"))
+            {
+                isNearWall = true;
+                return;
+            }
         }
-        else
-        {
-            isNearWall = false;
-        }
+
+        isNearWall = false;
     }
 }

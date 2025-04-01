@@ -27,7 +27,7 @@ public class RemotePlayerManager : MonoBehaviour
         anim?.PlayAnimation(snapshot.animationState);
     }
 
-    // === Static °ü¸® ===
+    // === Static ê´€ë¦¬ ===
     public static Dictionary<string, RemotePlayerManager> RemotePlayers = new();
 
     public static RemotePlayerManager FindById(string id)
