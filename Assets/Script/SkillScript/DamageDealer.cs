@@ -8,8 +8,8 @@ public class DamageDealer : MonoBehaviour
     private float knockback;
     private float attackDuration;
     private int attackCount;
-    private Transform target;  // ÃßÀûÇÒ ´ë»ó (ÇÃ·¹ÀÌ¾î)
-    private Vector2 boxSize;   // °ø°İ ¹Ú½º Å©±â
+    private Transform target;  // ì¶”ì í•  ëŒ€ìƒ (í”Œë ˆì´ì–´)
+    private Vector2 boxSize;   // ê³µê²© ë°•ìŠ¤ í¬ê¸°
     private int currentAttack = 0;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
 
@@ -22,10 +22,10 @@ public class DamageDealer : MonoBehaviour
         this.target = target;
         this.boxSize = boxSize;
 
-        // Áï½Ã Ã¹ ¹øÂ° µ¥¹ÌÁö Àû¿ë
+        // ì¦‰ì‹œ ì²« ë²ˆì§¸ ë°ë¯¸ì§€ ì ìš©
         DealDamage();
 
-        // ÄÚ·çÆ¾ ½ÃÀÛ
+        // ì½”ë£¨í‹´ ì‹œì‘
         StartCoroutine(DealDamageCoroutine());
     }
 
@@ -33,7 +33,7 @@ public class DamageDealer : MonoBehaviour
     {
         if (target != null)
         {
-            // ´ë»óÀÇ À§Ä¡¸¦ µû¶ó ÀÌµ¿
+            // ëŒ€ìƒì˜ ìœ„ì¹˜ë¥¼ ë”°ë¼ ì´ë™
             transform.position = Vector2.Lerp(transform.position, target.position, Time.deltaTime * 5f);
         }
     }
@@ -43,17 +43,17 @@ public class DamageDealer : MonoBehaviour
         while (currentAttack < attackCount)
         {
 
-            // ÀÌÈÄ °ø°İ °£°İ ´ë±â
+            // ì´í›„ ê³µê²© ê°„ê²© ëŒ€ê¸°
             currentAttack++;
             yield return new WaitForSeconds(attackDuration);
         }
 
-        Destroy(gameObject); // °ø°İÀÌ ³¡³­ ÈÄ ÇÁ¸®ÆÕ Á¦°Å
+        Destroy(gameObject); // ê³µê²©ì´ ëë‚œ í›„ í”„ë¦¬íŒ¹ ì œê±°
     }
 
     private void DealDamage()
     {
-        // Àû°ú Ãæµ¹ Ã¼Å©
+        // ì ê³¼ ì¶©ëŒ ì²´í¬
         Collider2D[] colliders = Physics2D.OverlapBoxAll(transform.position, boxSize, 0);
         foreach (Collider2D collider in colliders)
         {
@@ -62,7 +62,7 @@ public class DamageDealer : MonoBehaviour
                 Enemy enemy = collider.GetComponent<Enemy>();
                 if (enemy != null)
                 {
-                    // µ¥¹ÌÁö ¹× ³Ë¹é Ã³¸®
+                    // ë°ë¯¸ì§€ ë° ë„‰ë°± ì²˜ë¦¬
                     Vector2 knockbackDirection = (collider.transform.position - transform.position).normalized;
                     ParameterPlayerAttack attackParams = new ParameterPlayerAttack
                     {
@@ -71,19 +71,19 @@ public class DamageDealer : MonoBehaviour
                         knockbackDirection = knockbackDirection
                     };
 
-                    enemy.TakeDamage(attackParams); // Àû¿¡°Ô µ¥¹ÌÁö ¹× ½ºÅÏ Àû¿ë
+                    enemy.TakeDamage(attackParams); // ì ì—ê²Œ ë°ë¯¸ì§€ ë° ìŠ¤í„´ ì ìš©
                     hitEnemies.Add(collider);
                 }
             }
         }
 
-        // Å¸°İ ´ë»ó ÃÊ±âÈ­
+        // íƒ€ê²© ëŒ€ìƒ ì´ˆê¸°í™”
         hitEnemies.Clear();
     }
 
     private void OnDrawGizmos()
     {
-        // °ø°İ ¹üÀ§¸¦ ½Ã°¢È­
+        // ê³µê²© ë²”ìœ„ë¥¼ ì‹œê°í™”
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, boxSize);
     }

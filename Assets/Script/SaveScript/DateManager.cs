@@ -12,7 +12,7 @@ public class DateManager : MonoBehaviour
             {
                 GameObject container = new GameObject("DateManager");
                 instance = container.AddComponent<DateManager>();
-                DontDestroyOnLoad(container); // ¾ÀÀÌ º¯°æµÇ¾îµµ À¯Áö
+                DontDestroyOnLoad(container); // ì”¬ì´ ë³€ê²½ë˜ì–´ë„ ìœ ì§€
             }
             return instance;
         }
@@ -20,7 +20,7 @@ public class DateManager : MonoBehaviour
 
     private string GameDateFileName = "GameData.json";
 
-    // ÆÄÀÏ¿¡¼­ µ¥ÀÌÅÍ ºÒ·¯¿À±â
+    // íŒŒì¼ì—ì„œ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°
     public Data LoadData()
     {
         string filePath = Application.persistentDataPath + "/" + GameDateFileName;
@@ -30,15 +30,15 @@ public class DateManager : MonoBehaviour
             string jsonData = File.ReadAllText(filePath);
             return JsonUtility.FromJson<Data>(jsonData);
         }
-        return new Data(); // ÆÄÀÏÀÌ ¾øÀ¸¸é »õ·Î¿î µ¥ÀÌÅÍ ¹İÈ¯
+        return new Data(); // íŒŒì¼ì´ ì—†ìœ¼ë©´ ìƒˆë¡œìš´ ë°ì´í„° ë°˜í™˜
     }
 
-    // µ¥ÀÌÅÍ¸¦ ÆÄÀÏ¿¡ ÀúÀå
+    // ë°ì´í„°ë¥¼ íŒŒì¼ì— ì €ì¥
     public void SaveData(Data data)
     {
         string jsonData = JsonUtility.ToJson(data, true);
         string filePath = Application.persistentDataPath + "/" + GameDateFileName;
         File.WriteAllText(filePath, jsonData);
-        Debug.Log("ÀúÀå ¿Ï·á!");
+        Debug.Log("ì €ì¥ ì™„ë£Œ!");
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    [Header("¼Ó¼º")]
+    [Header("ì†ì„±")]
     public float attackPower = 10.0f;
     public float speed = 4.0f;
     public float jumpForce = 7.5f;
@@ -13,10 +13,10 @@ public class PlayerData
     public float attackKnockbackThird = 800.0f;
     public float attackDuration = 0.4f;
 
-    [Header("Ã¼·Â")]
+    [Header("ì²´ë ¥")]
     public float maxHealth = 100.0f;
 
-    [Header("±âÅ¸")]
+    [Header("ê¸°íƒ€")]
     public Vector2 attackBoxSize = new Vector2(1.5f, 1.5f);
     public Vector2 attackBoxOffset = new Vector2(1.0f, 0f);
     public float heightOffset = 1.7f;

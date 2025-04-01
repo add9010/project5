@@ -1,110 +1,183 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Collections;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Net.Http.Headers;
+using UnityEngine.EventSystems;
 
 public class DialogSystem : MonoBehaviour
 {
-    [SerializeField]
-    private Speaker[] speakers;//´ëÈ­¿¡ Âü¿©ÇÏ´Â Ä³¸¯ÅÍµéÀÇ ui¹è¿­
-    [SerializeField]
-    private DialogData[] dialogs;//ÇöÀç ºĞ±âÀÇ ´ë»ç ¸ñ·Ï ¹è¿­
-    [SerializeField]
-    private bool isAutoStart = true;//ÀÚµ¿ ½ÃÀÛ ¿©ºÎ
-    private bool isFirst = true;//ÃÖÃÊ 1È¸¸¸ È£ÃâÇÏ±â À§ÇÑ º¯¼ö
-    private int currentDialogIndex = -1;//ÇöÀç ´ë»ç ¼ø¹ø
-    private int currentSpeakerIndex = 0;//ÇöÀç ¸»À»ÇÏ´Â È­ÀÚÀÇ speakers ¹è¿­ ¼ø¹ø\
+    [Header("UI Elements")]
+    public GameObject panel;                         // ì „ì²´ ëŒ€í™” íŒ¨ë„
+    public TextMeshProUGUI speakerNameText;          // ë§í•˜ëŠ” ìºë¦­í„° ì´ë¦„
+    public TextMeshProUGUI sentenceText;             // ëŒ€ì‚¬ ë³¸ë¬¸
+    public Image portraitImage;                      // ìºë¦­í„° ì´ˆìƒí™”
+    public GameObject optionsPanel;                  // ì„ íƒì§€ ë²„íŠ¼ë“¤ì„ ë‹´ëŠ” íŒ¨ë„
+    public Button optionButtonPrefab;                // ì„ íƒì§€ ë²„íŠ¼ í”„ë¦¬íŒ¹
 
-    private void Awake()
+    private Queue<string> sentences = new Queue<string>();  // í˜„ì¬ ëŒ€í™”ì—ì„œ ì¶œë ¥í•  ë¬¸ì¥ë“¤
+    private Dialogue[] dialogues;                            // í˜„ì¬ ëŒ€í™” ì „ì²´ êµ¬ì¡°
+    private int currentDialogueIndex = 0;                    // í˜„ì¬ ì§„í–‰ ì¤‘ì¸ ëŒ€í™” ì¸ë±ìŠ¤
+    private bool isTyping = false;                           // í…ìŠ¤íŠ¸ íƒ€ì´í•‘ ì¤‘ ì—¬ë¶€
+    private List<Button> currentOptionButtons = new List<Button>();// ì„ íƒì§€ ë²„íŠ¼ë“¤ì„ ì„ì‹œë¡œ ì €ì¥í•˜ëŠ” ë¦¬ìŠ¤íŠ¸
+
+    // ëŒ€í™” ì‹œì‘ ì§„ì…ì 
+    public void StartDialogue(Dialogue[] loadedDialogues)
     {
-        Setup();
+        dialogues = loadedDialogues;
+        currentDialogueIndex = 0;
+        panel.SetActive(true);
+        ShowCurrentDialogue();
     }
 
-    private void Setup()
+    // í˜„ì¬ ì¸ë±ìŠ¤ì— í•´ë‹¹í•˜ëŠ” ëŒ€ì‚¬ ë‚´ìš©ì„ UIì— í‘œì‹œ
+    void ShowCurrentDialogue()
     {
-        for (int i = 0; i < speakers.Length; i++)
+        if (currentDialogueIndex >= dialogues.Length)
         {
-            SetActiveObjects(speakers[i], false);
-            speakers[i].spriteRenderer.gameObject.SetActive(true);
+            EndDialogue();
+            return;
         }
+
+        Dialogue dialogue = dialogues[currentDialogueIndex];
+
+        // UI ìš”ì†Œ ì—…ë°ì´íŠ¸
+        speakerNameText.text = dialogue.speakerName;
+        portraitImage.sprite = dialogue.speakerPortrait;
+        sentences.Clear();
+
+        foreach (var sentence in dialogue.sentences)
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        sentenceText.text = "";
+        optionsPanel.SetActive(false);
+        DisplayNextSentence();
     }
 
-    public bool UpdateDialog()
+    // ë‹¤ìŒ ë¬¸ì¥ ì¶œë ¥ or ì„ íƒì§€ í‘œì‹œ
+    public void DisplayNextSentence()
     {
-        //´ë»ç ºĞ±â 1È¸¸¸ È£Ãâ
-        if (isFirst == true)
-        {
-            //ÃÊ±âÈ­ Ä³¸¯ÅÍ ÀÌ¹ÌÁö È°¼ºÈ­ °ü·Ã UI ºñÈ°¼ºÈ­
-            Setup();
-            //ÀÚµ¿Àç»ıÀ¸·Î ¼³Á¤µÇ¾î ÀÖÀ¸¸é Ã¹¹øÂ° ´ë»ç È£Ãâ
-            if (isAutoStart) SetNextDialog();
+        if (isTyping) return;
 
-            isFirst = false;
-        }
-
-        if(Input.GetMouseButtonDown(0))
+        if (sentences.Count == 0)
         {
-            //´ë»ç°¡ ³²À¸¸é ´ÙÀ½ ´ë»ç È£Ãâ
-            if (dialogs.Length>currentDialogIndex+1)
+            // ì„ íƒì§€ê°€ ìˆëŠ” ê²½ìš° í‘œì‹œ
+            if (dialogues[currentDialogueIndex].options != null &&
+                dialogues[currentDialogueIndex].options.Length > 0)
             {
-                SetNextDialog();
+                ShowOptions(dialogues[currentDialogueIndex].options);
             }
-            //´ë»ç°¡ ³¡³ª¸é ´ëÈ­ Á¾·á
             else
             {
-                for(int i = 0; i < speakers.Length; i++)
+                // ë‹¤ìŒ ëŒ€ì‚¬ë¡œ ë„˜ì–´ê°
+                currentDialogueIndex++;
+                ShowCurrentDialogue();
+            }
+            return;
+        }
+
+        // ë‹¤ìŒ ë¬¸ì¥ í•˜ë‚˜ êº¼ë‚´ì„œ ì¶œë ¥
+        string sentence = sentences.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    // ë¬¸ìë¥¼ í•œ ê¸€ìì”© ì¶œë ¥í•˜ëŠ” íš¨ê³¼
+    IEnumerator TypeSentence(string sentence)
+    {
+        isTyping = true;
+        sentenceText.text = "";
+
+        foreach (char letter in sentence)
+        {
+            sentenceText.text += letter;
+            yield return new WaitForSeconds(0.02f); // ì¶œë ¥ ì†ë„
+        }
+
+        isTyping = false;
+
+        // ë¬¸ì¥ ëë‚œ ë’¤ ì„ íƒì§€ê°€ ìˆë‹¤ë©´ ë°”ë¡œ í‘œì‹œ
+        if (sentences.Count == 0 &&
+            dialogues[currentDialogueIndex].options != null &&
+            dialogues[currentDialogueIndex].options.Length > 0)
+        {
+            ShowOptions(dialogues[currentDialogueIndex].options);
+        }
+    }
+
+    // ì„ íƒì§€ ë²„íŠ¼ì„ ìƒì„±í•˜ê³  ì´ë²¤íŠ¸ ì—°ê²°
+    void ShowOptions(DialogueOption[] options)
+    {
+        optionsPanel.SetActive(true);
+
+        // ê¸°ì¡´ ë²„íŠ¼ ì‚­ì œ
+        foreach (Transform child in optionsPanel.transform)
+            Destroy(child.gameObject);
+
+        // ë²„íŠ¼ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
+        currentOptionButtons.Clear();
+
+        foreach (DialogueOption option in options)
+        {
+            // ë²„íŠ¼ ìƒì„±
+            Button btn = Instantiate(optionButtonPrefab, optionsPanel.transform);
+
+            if (btn == null)
+            {
+                Debug.LogError("ë²„íŠ¼ ìƒì„± ì‹¤íŒ¨: í”„ë¦¬íŒ¹ì´ nullì…ë‹ˆë‹¤.");
+                continue;
+            }
+
+            // ë²„íŠ¼ í…ìŠ¤íŠ¸ ì„¤ì •
+            var tmp = btn.GetComponentInChildren<TextMeshProUGUI>();
+            if (tmp != null)
+                tmp.text = option.optionText;
+
+            // í´ë¦­ ì‹œ ë‹¤ìŒ ëŒ€í™” ì¸ë±ìŠ¤ë¡œ ì´ë™
+            int nextIndex = option.nextDialogueIndex;
+            btn.onClick.AddListener(() =>
+            {
+                Debug.Log($"ì„ íƒì§€ '{option.optionText}' ì„ íƒë¨ â†’ ì¸ë±ìŠ¤ {nextIndex}");
+                currentDialogueIndex = nextIndex;
+                ShowCurrentDialogue();
+            });
+
+            //ìˆ«ìí‚¤ ì…ë ¥ì„ ìœ„í•œ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+            currentOptionButtons.Add(btn);
+        }
+    }
+
+    // Space í‚¤ë¡œ ëŒ€ì‚¬ ë„˜ê¸°ê¸° (ì„ íƒì§€ê°€ ë– ìˆì§€ ì•Šì„ ë•Œë§Œ)
+    void Update()
+    {
+        // ëŒ€ì‚¬ ë„˜ê¸°ê¸°
+        if (Input.GetKeyDown(KeyCode.Space) && panel.activeSelf && !optionsPanel.activeSelf)
+        {
+            DisplayNextSentence();
+        }
+
+        // ìˆ«ìí‚¤ë¡œ ì„ íƒì§€ ê³ ë¥´ê¸°
+        if (panel.activeSelf && optionsPanel.activeSelf)
+        {
+            for (int i = 0; i < currentOptionButtons.Count && i < 9; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha1 + i))
                 {
-                    SetActiveObjects(speakers[i], false);
-                    speakers[i].spriteRenderer.gameObject.SetActive(false);
+                    Debug.Log($"ìˆ«ìí‚¤ {i + 1} ì…ë ¥ë¨");
+                    currentOptionButtons[i].onClick.Invoke();
                 }
-                //´ëÈ­ Á¾·á
-                return true;
             }
         }
-        return false;
     }
-    
-    private void SetNextDialog()
+
+
+
+    // ëŒ€í™” ì¢…ë£Œ ì²˜ë¦¬
+    void EndDialogue()
     {
-        SetActiveObjects(speakers[currentSpeakerIndex], false);
-        currentDialogIndex++;
-        currentSpeakerIndex = dialogs[currentDialogIndex].speakerIndex;
-        SetActiveObjects(speakers[currentSpeakerIndex], true);
-        speakers[currentSpeakerIndex].textName.text = dialogs[currentDialogIndex].name;
-        speakers[currentSpeakerIndex].textDialog.text = dialogs[currentDialogIndex].dialogue;
+        panel.SetActive(false);
+        PlayerManager.Instance.isAction = false; // í”Œë ˆì´ì–´ í–‰ë™ ì¬ê°œ
     }
-
-    private void SetActiveObjects(Speaker speaker, bool visible)
-    {
-        speaker.imageDialog.gameObject.SetActive(visible);
-        speaker.textName.gameObject.SetActive(visible);
-        speaker.textDialog.gameObject.SetActive(visible);
-
-        speaker.objectArrow.SetActive(false);
-
-        Color color = speaker.spriteRenderer.color;
-        color.a = visible == true ? 1 : 0.2f;
-        speaker.spriteRenderer.color = color;
-    }
-}
-
-[System.Serializable]
-public class Speaker
-{
-    public SpriteRenderer spriteRenderer;   //Ä³¸¯ÅÍ ÀÌ¹ÌÁö
-    public Image imageDialog;               //´ëÈ­Ã¢ ÀÌ¹ÌÁö
-    public TextMeshProUGUI textName;        //ÇöÀç ´ë»çÁßÀÎ Ä³¸¯ÅÍ ÀÌ¸§ Ãâ·Â ÅØ½ºÆ®
-    public TextMeshProUGUI textDialog;      //ÇöÀç ´ë»ç Ãâ·Â ÅØ½ºÆ®
-    public GameObject objectArrow;          //´ë»ç°¡ ¿Ï·á½Ã Ãâ·ÂµÇ´Â Ä¿¼­ ¿ÀºêÁ§Æ®
-}
-
-[System.Serializable]
-public class DialogData
-{
-    public int speakerIndex;//È­ÀÚÀÇ speakers ¹è¿­ ¼ø¹ø
-    public string name;//È­ÀÚ ÀÌ¸§
-    [TextArea(3, 5)]
-    public string dialogue;//´ë»ç
 }

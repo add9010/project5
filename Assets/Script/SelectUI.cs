@@ -5,72 +5,72 @@ using System.Collections.Generic;
 
 public class SelectUI : MonoBehaviour
 {
-    public Button speedButton;      // ÀÌµ¿ ¼Óµµ ¹öÆ°
-    public Button attackButton;     // °ø°İ·Â ¹öÆ°
-    public Button healthButton;     // ÃÖ´ë Ã¼·Â ¹öÆ°
-    public Button randomButton;     // ¹«ÀÛÀ§ ¹öÆ°
+    public Button speedButton;      // ì´ë™ ì†ë„ ë²„íŠ¼
+    public Button attackButton;     // ê³µê²©ë ¥ ë²„íŠ¼
+    public Button healthButton;     // ìµœëŒ€ ì²´ë ¥ ë²„íŠ¼
+    public Button randomButton;     // ë¬´ì‘ìœ„ ë²„íŠ¼
 
-    public HeroKnightUsing heroKnight;  // HeroKnightUsing ½ºÅ©¸³Æ® ÂüÁ¶
+    public HeroKnightUsing heroKnight;  // HeroKnightUsing ìŠ¤í¬ë¦½íŠ¸ ì°¸ì¡°
 
-    public RedSlimeKing F3Boss;       // F3 º¸½º ½ºÅ©¸³Æ® ÂüÁ¶
-    public BFGolem F2Boss;            // F2 º¸½º ½ºÅ©¸³Æ® ÂüÁ¶
+    public RedSlimeKing F3Boss;       // F3 ë³´ìŠ¤ ìŠ¤í¬ë¦½íŠ¸ ì°¸ì¡°
+    public BFGolem F2Boss;            // F2 ë³´ìŠ¤ ìŠ¤í¬ë¦½íŠ¸ ì°¸ì¡°
 
-    private List<Button> buttons;  // ¸ğµç ¹öÆ° ¸®½ºÆ®
+    private List<Button> buttons;  // ëª¨ë“  ë²„íŠ¼ ë¦¬ìŠ¤íŠ¸
 
     void Start()
     {
-        // ¹öÆ° ¸®½ºÆ® ÃÊ±âÈ­
+        // ë²„íŠ¼ ë¦¬ìŠ¤íŠ¸ ì´ˆê¸°í™”
         buttons = new List<Button> { speedButton, attackButton, healthButton, randomButton };
 
-        // ¹öÆ° Å¬¸¯ ÀÌº¥Æ®¿¡ ¸Ş¼Òµå ¿¬°á
+        // ë²„íŠ¼ í´ë¦­ ì´ë²¤íŠ¸ì— ë©”ì†Œë“œ ì—°ê²°
         speedButton.onClick.AddListener(() => OnAnyButtonClicked("speed"));
         attackButton.onClick.AddListener(() => OnAnyButtonClicked("attack"));
         healthButton.onClick.AddListener(() => OnAnyButtonClicked("health"));
         randomButton.onClick.AddListener(() => OnAnyButtonClicked("random"));
 
-        // µÎ º¸½ºÀÇ Á×À½À» °¨ÁöÇÏ´Â ÀÌº¥Æ® ¿¬°á
+        // ë‘ ë³´ìŠ¤ì˜ ì£½ìŒì„ ê°ì§€í•˜ëŠ” ì´ë²¤íŠ¸ ì—°ê²°
         if (F3Boss != null)
         {
             F3Boss.OnBossDeath += HandleBossDeath;
-            Debug.Log("F3 º¸½º ÀÌº¥Æ® ¿¬°áµÊ");
+            Debug.Log("F3 ë³´ìŠ¤ ì´ë²¤íŠ¸ ì—°ê²°ë¨");
         }
 
         if (F2Boss != null)
         {
             F2Boss.OnBossDeath += HandleBossDeath;
-            Debug.Log("F2 º¸½º ÀÌº¥Æ® ¿¬°áµÊ");
+            Debug.Log("F2 ë³´ìŠ¤ ì´ë²¤íŠ¸ ì—°ê²°ë¨");
         }
     }
 
     private void OnAnyButtonClicked(string attribute)
     {
-        // Ä³¸¯ÅÍ ¼Ó¼º ¼³Á¤
+        // ìºë¦­í„° ì†ì„± ì„¤ì •
         heroKnight.SetCharacterAttribute(attribute);
 
-        // ¸ğµç ¹öÆ° ¼û±â±â
+        // ëª¨ë“  ë²„íŠ¼ ìˆ¨ê¸°ê¸°
         foreach (Button button in buttons)
         {
             button.gameObject.SetActive(false);
         }
 
-        // ·Î±× Ãâ·Â (µğ¹ö±ë¿ë)
-        Debug.Log($"{attribute} ¹öÆ°ÀÌ Å¬¸¯µÇ¾î ¸ğµç ¹öÆ°ÀÌ ºñÈ°¼ºÈ­µÇ¾ú½À´Ï´Ù.");
+        // ë¡œê·¸ ì¶œë ¥ (ë””ë²„ê¹…ìš©)
+        Debug.Log($"{attribute} ë²„íŠ¼ì´ í´ë¦­ë˜ì–´ ëª¨ë“  ë²„íŠ¼ì´ ë¹„í™œì„±í™”ë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
 
-    // º¸½º°¡ Á×¾úÀ» ¶§ È£ÃâµÇ´Â ¸Ş¼Òµå
+    // ë³´ìŠ¤ê°€ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œ
     private void HandleBossDeath()
     {
-        // º¸½º¸¦ Á×¿´À» ¶§ ¹öÆ°À» ´Ù½Ã È°¼ºÈ­
+        // ë³´ìŠ¤ë¥¼ ì£½ì˜€ì„ ë•Œ ë²„íŠ¼ì„ ë‹¤ì‹œ í™œì„±í™”
         foreach (Button button in buttons)
         {
             button.gameObject.SetActive(true);
         }
 
-        // ·Î±× Ãâ·Â (µğ¹ö±ë¿ë)
-        Debug.Log("º¸½º°¡ Á×¾ú½À´Ï´Ù. ¹öÆ°µéÀÌ ´Ù½Ã È°¼ºÈ­µÇ¾ú½À´Ï´Ù.");
+        // ë¡œê·¸ ì¶œë ¥ (ë””ë²„ê¹…ìš©)
+        Debug.Log("ë³´ìŠ¤ê°€ ì£½ì—ˆìŠµë‹ˆë‹¤. ë²„íŠ¼ë“¤ì´ ë‹¤ì‹œ í™œì„±í™”ë˜ì—ˆìŠµë‹ˆë‹¤.");
     }
 
-    // OnDestroy ¶Ç´Â ´Ù¸¥ Á¾·á ·ÎÁ÷¿¡¼­ ÀÌº¥Æ® ÇØÁ¦ (¼±ÅÃ »çÇ×)
+    // OnDestroy ë˜ëŠ” ë‹¤ë¥¸ ì¢…ë£Œ ë¡œì§ì—ì„œ ì´ë²¤íŠ¸ í•´ì œ (ì„ íƒ ì‚¬í•­)
     void OnDestroy()
     {
         if (F3Boss != null) F3Boss.OnBossDeath -= HandleBossDeath;

@@ -6,34 +6,34 @@
 //{
 
 //    public delegate void BossDeathHandler();
-//    public event BossDeathHandler OnBossDeath;  // º¸½º°¡ Á×¾úÀ» ¶§ È£ÃâµÉ ÀÌº¥Æ®
+//    public event BossDeathHandler OnBossDeath;  // ë³´ìŠ¤ê°€ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë  ì´ë²¤íŠ¸
 
-//    public Text attackMessageText;                          // UI ÅØ½ºÆ®¸¦ ÂüÁ¶ÇÒ º¯¼ö (µğ¹ö±× ¸Ş½ÃÁö¸¦ Ç¥½ÃÇÒ ÅØ½ºÆ®)
-//    public float specialAttackCooldown = 8f;                // Æ¯¼ö °ø°İ(ÆøÆÈ°ø°İ) Äğ´Ù¿î
-//    public float PerformAreaAttackRange;                    // ¹üÀ§°ø°İ¹İ°æ
-//    public GameObject attackEffectPrefab;                   // ÆøÆÈ °ø°İ ÀÌÆåÆ® PrefabÀ» ÂüÁ¶ÇÒ º¯¼ö
-//    private bool canUseSpecialAttack = false;               // ±¤¿ª°ø°İ »ç¿ë ¿©ºÎ º¯¼ö
-//    private SpawnEnemy spawnEnemyScript;                    // SpawnEnemy ½ºÅ©¸³Æ®¸¦ ÂüÁ¶ÇÒ º¯¼ö
+//    public Text attackMessageText;                          // UI í…ìŠ¤íŠ¸ë¥¼ ì°¸ì¡°í•  ë³€ìˆ˜ (ë””ë²„ê·¸ ë©”ì‹œì§€ë¥¼ í‘œì‹œí•  í…ìŠ¤íŠ¸)
+//    public float specialAttackCooldown = 8f;                // íŠ¹ìˆ˜ ê³µê²©(í­íŒ”ê³µê²©) ì¿¨ë‹¤ìš´
+//    public float PerformAreaAttackRange;                    // ë²”ìœ„ê³µê²©ë°˜ê²½
+//    public GameObject attackEffectPrefab;                   // í­íŒ” ê³µê²© ì´í™íŠ¸ Prefabì„ ì°¸ì¡°í•  ë³€ìˆ˜
+//    private bool canUseSpecialAttack = false;               // ê´‘ì—­ê³µê²© ì‚¬ìš© ì—¬ë¶€ ë³€ìˆ˜
+//    private SpawnEnemy spawnEnemyScript;                    // SpawnEnemy ìŠ¤í¬ë¦½íŠ¸ë¥¼ ì°¸ì¡°í•  ë³€ìˆ˜
 
-//    public Vector3 effectScale = new Vector3(1f, 1f, 1f);  // ÀÌÆåÆ®ÀÇ Å©±â Á¶Á¤ (ÀÎ½ºÆåÅÍ¿¡¼­ Á¶Á¤ °¡´É)
+//    public Vector3 effectScale = new Vector3(1f, 1f, 1f);  // ì´í™íŠ¸ì˜ í¬ê¸° ì¡°ì • (ì¸ìŠ¤í™í„°ì—ì„œ ì¡°ì • ê°€ëŠ¥)
 
 
-//    // Start ¸Ş¼­µå¸¦ override·Î ¼±¾ğ
+//    // Start ë©”ì„œë“œë¥¼ overrideë¡œ ì„ ì–¸
 //    protected override void Start()
 //    {
-//        base.Start(); // ºÎ¸ğ Å¬·¡½ºÀÇ Start È£Ãâ
+//        base.Start(); // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ Start í˜¸ì¶œ
 
 //        Debug.Log("RedBoss Initialized");
-//        PerformAreaAttackRange = detectionRange * 0.9f; // ¹üÀ§°ø°İ¹İ°æ
+//        PerformAreaAttackRange = detectionRange * 0.9f; // ë²”ìœ„ê³µê²©ë°˜ê²½
 //        spawnEnemyScript = GetComponent<SpawnEnemy>();
 //    }
 
 //    protected override void Update()
 //    {
-//        // ±âº» EnemyÀÇ Update ±â´É À¯Áö
+//        // ê¸°ë³¸ Enemyì˜ Update ê¸°ëŠ¥ ìœ ì§€
 //        base.Update();
 
-//        // º¸½º Æ¯¼ö Çàµ¿ Ãß°¡
+//        // ë³´ìŠ¤ íŠ¹ìˆ˜ í–‰ë™ ì¶”ê°€
 //        if (canUseSpecialAttack && !isEnemyDead)
 //            StartCoroutine(UseSpecialAttack());
 //    }
@@ -52,12 +52,12 @@
 //        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 //        if (distanceToPlayer <= detectionRange)
 //        {
-//            if (!isChasing) // ÇÃ·¹ÀÌ¾î¸¦ Ã³À½ Å½ÁöÇßÀ» ¶§¸¸ ¸¶Å©¸¦ ¼ÒÈ¯
+//            if (!isChasing) // í”Œë ˆì´ì–´ë¥¼ ì²˜ìŒ íƒì§€í–ˆì„ ë•Œë§Œ ë§ˆí¬ë¥¼ ì†Œí™˜
 //            {
 //                SpawnMark();
 //                canUseSpecialAttack = true;
 
-//                // º¸½º°¡ ÇÃ·¹ÀÌ¾î¸¦ Å½ÁöÇßÀ» ¶§ Àû ½ºÆùÀ» ½ÃÀÛ
+//                // ë³´ìŠ¤ê°€ í”Œë ˆì´ì–´ë¥¼ íƒì§€í–ˆì„ ë•Œ ì  ìŠ¤í°ì„ ì‹œì‘
 //                if (spawnEnemyScript != null) spawnEnemyScript.StartSpawning();
 //                SpawnMark();
 //                canUseSpecialAttack = true;
@@ -77,19 +77,19 @@
 //    }
 //    protected override void SpawnMark()
 //    {
-//        Debug.Log("·¹µå ½½¶óÀÓÅ·ÀÌ ´ç½ÅÀ» ÁÖ½ÃÇÕ´Ï´Ù!!");
+//        Debug.Log("ë ˆë“œ ìŠ¬ë¼ì„í‚¹ì´ ë‹¹ì‹ ì„ ì£¼ì‹œí•©ë‹ˆë‹¤!!");
 //        if (markPrefab != null)
 //        {
-//            // ¸¶Ä¿¸¦ »ı¼ºÇÒ À§Ä¡¸¦ ÀûÀÇ À§Ä¡¿¡¼­ markYOffset¸¸Å­ YÃàÀ¸·Î ¿Ã¸²
-//            Vector3 spawnPosition = transform.position + new Vector3(0, 3f, 0); // markYOffset °ª¸¸Å­ YÃàÀ¸·Î ÀÌµ¿
+//            // ë§ˆì»¤ë¥¼ ìƒì„±í•  ìœ„ì¹˜ë¥¼ ì ì˜ ìœ„ì¹˜ì—ì„œ markYOffsetë§Œí¼ Yì¶•ìœ¼ë¡œ ì˜¬ë¦¼
+//            Vector3 spawnPosition = transform.position + new Vector3(0, 3f, 0); // markYOffset ê°’ë§Œí¼ Yì¶•ìœ¼ë¡œ ì´ë™
 //            GameObject markInstance = Instantiate(markPrefab, spawnPosition, Quaternion.identity);
-//            StartCoroutine(SpeedBoostRoutine());  // ÀÌµ¿ ¼Óµµ Áõ°¡ ÄÚ·çÆ¾ ½ÃÀÛ
+//            StartCoroutine(SpeedBoostRoutine());  // ì´ë™ ì†ë„ ì¦ê°€ ì½”ë£¨í‹´ ì‹œì‘
 
-//            // »ı¼ºµÈ ¸¶Ä¿°¡ ¿¡³Ê¹Ì¸¦ ÃßÀûÇÏµµ·Ï ¼³Á¤
+//            // ìƒì„±ëœ ë§ˆì»¤ê°€ ì—ë„ˆë¯¸ë¥¼ ì¶”ì í•˜ë„ë¡ ì„¤ì •
 //            Mark markScript = markInstance.GetComponent<Mark>();
 //            if (markScript != null)
 //            {
-//                markScript.enemy = transform; // ¸¶Ä¿°¡ ¿¡³Ê¹Ì¸¦ ÃßÀûÇÏµµ·Ï ¼³Á¤
+//                markScript.enemy = transform; // ë§ˆì»¤ê°€ ì—ë„ˆë¯¸ë¥¼ ì¶”ì í•˜ë„ë¡ ì„¤ì •
 //            }
 //        }
 //    }
@@ -98,16 +98,16 @@
 //    {
 //        canUseSpecialAttack = false;
 
-//        // Æ¯¼ö °ø°İ ÁØºñ ¸Ş½ÃÁö¸¦ È­¸é¿¡ Ç¥½Ã
-//        ShowAttackMessage("·¹µå ½½¶óÀÓÅ·ÀÌ °­ÇÑ °ø°İÀ» ÁØºñÇÕ´Ï´Ù.");
-//        Debug.Log("·¹µå ½½¶óÀÓÅ·ÀÌ °­ÇÑ °ø°İÀ» ÁØºñÇÕ´Ï´Ù.");
-//        yield return new WaitForSeconds(2f);  // 2ÃÊ µ¿¾È ÅØ½ºÆ® À¯Áö
+//        // íŠ¹ìˆ˜ ê³µê²© ì¤€ë¹„ ë©”ì‹œì§€ë¥¼ í™”ë©´ì— í‘œì‹œ
+//        ShowAttackMessage("ë ˆë“œ ìŠ¬ë¼ì„í‚¹ì´ ê°•í•œ ê³µê²©ì„ ì¤€ë¹„í•©ë‹ˆë‹¤.");
+//        Debug.Log("ë ˆë“œ ìŠ¬ë¼ì„í‚¹ì´ ê°•í•œ ê³µê²©ì„ ì¤€ë¹„í•©ë‹ˆë‹¤.");
+//        yield return new WaitForSeconds(2f);  // 2ì´ˆ ë™ì•ˆ í…ìŠ¤íŠ¸ ìœ ì§€
 //        ShowAttackMessage("");
-//        yield return new WaitForSeconds(5f);  // 3ÃÊ µÚ ±¤¿ª°ø°İ 
+//        yield return new WaitForSeconds(5f);  // 3ì´ˆ ë’¤ ê´‘ì—­ê³µê²© 
 //        PerformAreaAttack();
 
 
-//        // Äğ´Ù¿î ´ë±â
+//        // ì¿¨ë‹¤ìš´ ëŒ€ê¸°
 //        yield return new WaitForSeconds(specialAttackCooldown);
 
 
@@ -117,7 +117,7 @@
 
 //    private void ShowAttackMessage(string message)
 //    {
-//        // UI ÅØ½ºÆ®¿¡ ¸Ş½ÃÁö¸¦ ¼³Á¤
+//        // UI í…ìŠ¤íŠ¸ì— ë©”ì‹œì§€ë¥¼ ì„¤ì •
 //        if (attackMessageText != null)
 //        {
 //            attackMessageText.text = message;
@@ -126,53 +126,53 @@
 
 //    private void PerformAreaAttack()
 //    {
-//        // ¹üÀ§ ³»¿¡ ÀÖ´Â ¸ğµç Collider2D¸¦ Å½Áö
+//        // ë²”ìœ„ ë‚´ì— ìˆëŠ” ëª¨ë“  Collider2Dë¥¼ íƒì§€
 //        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, PerformAreaAttackRange);
 
-//        // °ø°İ ¹üÀ§¿¡ ÀÌÆåÆ® »ı¼º (¹üÀ§ ÀüÃ¼¿¡ Ç¥½Ã)
+//        // ê³µê²© ë²”ìœ„ì— ì´í™íŠ¸ ìƒì„± (ë²”ìœ„ ì „ì²´ì— í‘œì‹œ)
 //        if (attackEffectPrefab != null)
 //        {
 //            GameObject effectInstance = Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
-//            // ÀÎ½ºÆåÅÍ¿¡¼­ ÁöÁ¤µÈ effectScale·Î Å©±â ¼³Á¤
+//            // ì¸ìŠ¤í™í„°ì—ì„œ ì§€ì •ëœ effectScaleë¡œ í¬ê¸° ì„¤ì •
 //            effectInstance.transform.localScale = effectScale;
 //        }
 
 //        foreach (Collider2D hitObject in hitObjects)
 //        {
-//            // ÇÃ·¹ÀÌ¾î ÅÂ±×¸¦ °¡Áø ¿ÀºêÁ§Æ®ÀÎÁö È®ÀÎ
+//            // í”Œë ˆì´ì–´ íƒœê·¸ë¥¼ ê°€ì§„ ì˜¤ë¸Œì íŠ¸ì¸ì§€ í™•ì¸
 //            if (hitObject.CompareTag("Player"))
 //            {
-//                // ÇÃ·¹ÀÌ¾îÀÇ ½ºÅ©¸³Æ® °¡Á®¿À±â
+//                // í”Œë ˆì´ì–´ì˜ ìŠ¤í¬ë¦½íŠ¸ ê°€ì ¸ì˜¤ê¸°
 //                HeroKnightUsing playerScript = hitObject.GetComponent<HeroKnightUsing>();
 
 //                if (playerScript != null && !playerScript.isDead)
 //                {
 //                    playerScript.TakeDamage(atkDmg * 2);
-//                    Debug.Log($"·¹µåº¸½º°¡ {hitObject.name}¿¡°Ô {atkDmg * 3}ÀÇ Æ¯¼ö °ø°İÀ¸·Î µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù!");
+//                    Debug.Log($"ë ˆë“œë³´ìŠ¤ê°€ {hitObject.name}ì—ê²Œ {atkDmg * 3}ì˜ íŠ¹ìˆ˜ ê³µê²©ìœ¼ë¡œ ë°ë¯¸ì§€ë¥¼ ì…í˜”ìŠµë‹ˆë‹¤!");
 //                }
 //            }
 //        }
 //    }
 
-//    // ÀûÀÌ Á×¾úÀ» ¶§ È£ÃâµÇ´Â ÇÔ¼ö
+//    // ì ì´ ì£½ì—ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” í•¨ìˆ˜
 //    protected override void HandleWhenDead()
 //    {
-//        base.HandleWhenDead();  // ±âº» EnemyÀÇ Á×À½ Ã³¸®
+//        base.HandleWhenDead();  // ê¸°ë³¸ Enemyì˜ ì£½ìŒ ì²˜ë¦¬
 
-//        // RedBoss °íÀ¯ÀÇ Á×À½ Ã³¸®
+//        // RedBoss ê³ ìœ ì˜ ì£½ìŒ ì²˜ë¦¬
 //        Debug.Log("RedBoss defeated! Special loot dropped.");
 
 //        OnBossDeath?.Invoke();
-//        Debug.Log("º¸½º Á×À½ ÀÌº¥Æ® È£ÃâµÊ");
+//        Debug.Log("ë³´ìŠ¤ ì£½ìŒ ì´ë²¤íŠ¸ í˜¸ì¶œë¨");
 
 
 //        DropSpecialLoot();
 //    }
 
-//    // º¸½º Àü¿ë Æ¯º° ¾ÆÀÌÅÛ µå¶ø ÇÔ¼ö
+//    // ë³´ìŠ¤ ì „ìš© íŠ¹ë³„ ì•„ì´í…œ ë“œë í•¨ìˆ˜
 //    private void DropSpecialLoot()
 //    {
-//        // ½ÇÁ¦ ¾ÆÀÌÅÛ ¿ÀºêÁ§Æ® »ı¼º (¿¹: InstantiationÀ» ÅëÇÑ ¾ÆÀÌÅÛ µå¶ø)
+//        // ì‹¤ì œ ì•„ì´í…œ ì˜¤ë¸Œì íŠ¸ ìƒì„± (ì˜ˆ: Instantiationì„ í†µí•œ ì•„ì´í…œ ë“œë)
 //        Debug.Log("Special loot is dropped!");
 //    }
 //    protected override void OnDrawGizmosSelected()

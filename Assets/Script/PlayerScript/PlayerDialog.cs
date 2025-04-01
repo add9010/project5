@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerDialog
 {
     private PlayerManager manager;
-    public DialogManager dialog;// ´ëÈ­Ã¢ ¸Å´ÏÀú
-    private Vector3 dirVec = Vector3.zero;// ¹æÇâ º¤ÅÍ
+    public DialogManager dialog;// ëŒ€í™”ì°½ ë§¤ë‹ˆì €
+    private Vector3 dirVec = Vector3.zero;// ë°©í–¥ ë²¡í„°
     GameObject scanObject;
     
     public PlayerDialog(PlayerManager manager)
@@ -28,7 +28,7 @@ public class PlayerDialog
 
     public void HandleScan()
     {
-        // raycast¸¦ ÅëÇÑ ¿ÀºêÁ§Æ® ½ºÄµ
+        // raycastë¥¼ í†µí•œ ì˜¤ë¸Œì íŠ¸ ìŠ¤ìº”
         Debug.DrawRay(manager.rb.position, dirVec * 0.7f, Color.green);
 
         RaycastHit2D rayHit = Physics2D.Raycast(manager.rb.position, dirVec, 0.7f,
