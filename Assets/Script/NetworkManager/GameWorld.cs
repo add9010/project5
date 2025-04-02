@@ -15,9 +15,36 @@ public class GameWorld
         worldMutex = new object();
     }
 
+ 
+
     public void SetLocalPlayer(Player player) => localPlayer = player;
     public Player GetLocalPlayer() => localPlayer;
 
+    public struct PlayerSnapshot
+    {
+        public float x;
+        public float y;
+        //public string animationState;
+    }
+
+    public Dictionary<string, PlayerSnapshot> GetRemoteSnapshots()
+    {
+        lock (worldMutex)
+        {
+            var snapshots = new Dictionary<string, PlayerSnapshot>();
+            foreach (var kvp in remotePlayers)
+            {
+                var remote = kvp.Value;
+                snapshots[kvp.Key] = new PlayerSnapshot
+                {
+                    x = remote.GetPosX(),
+                    y = remote.GetPosY(),
+                    //animationState = "Idle" // Default or can be expanded later
+                };
+            }
+            return snapshots;
+        }
+    }
     public void SyncWorldData(Packet packet)
     {
         lock (worldMutex)

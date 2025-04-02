@@ -6,6 +6,8 @@ using System.Threading;
 
 public class NetworkClient : MonoBehaviour
 {
+    private RemotePlayerUpdater remoteUpdater; //추가
+
     public string playerName = "Player1"; // 인스펙터에서 설정 가능
     private Socket socket;
     private Player localPlayer;
@@ -29,6 +31,8 @@ public class NetworkClient : MonoBehaviour
 
 
         localPlayer.Init();
+
+        remoteUpdater = FindFirstObjectByType<RemotePlayerUpdater>(); //추가
 
         recvThread = new Thread(() => ReceiveData(gameWorld));
         recvThread.IsBackground = true;
@@ -103,6 +107,10 @@ public class NetworkClient : MonoBehaviour
                 if (dataType == PacketType.WorldUpdate)
                 {
                     gameWorld.SyncWorldData(recvPacket);
+
+                    // var snapshots = new gameWorld.GetRemoteSnapshots();
+                    // remoteUpdater.Apply(snapshots);
+
                 }
                 else
                 {
