@@ -109,7 +109,10 @@ public class NetworkClient : MonoBehaviour
                     gameWorld.SyncWorldData(recvPacket);
 
                     var snapshots = gameWorld.GetRemoteSnapshots();
-                    remoteUpdater.Apply(snapshots);
+                    MainThreadDispatcher.RunOnMainThread(() =>
+                    {
+                        remoteUpdater.Apply(snapshots);
+                    });
                 }
                 else
                 {

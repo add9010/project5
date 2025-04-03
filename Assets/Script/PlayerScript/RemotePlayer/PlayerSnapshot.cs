@@ -8,6 +8,6 @@ public class PlayerSnapshot
 
     public Vector3 GetPosition()
     {
-        return new Vector3(x, y, 0); // z는 0으로 고정
+        return new Vector3(x, y, -1); // z는 0으로 고정
     }
 }
