@@ -8,7 +8,7 @@ public class NetworkClient : MonoBehaviour
 {
     private RemotePlayerUpdater remoteUpdater; //추가
 
-    public string playerName = "Player1"; // 인스펙터에서 설정 가능
+    public string playerName; // 인스펙터에서 설정 가능
     private Socket socket;
     private Player localPlayer;
     private GameWorld gameWorld;
@@ -108,9 +108,8 @@ public class NetworkClient : MonoBehaviour
                 {
                     gameWorld.SyncWorldData(recvPacket);
 
-                    // var snapshots = new gameWorld.GetRemoteSnapshots();
-                    // remoteUpdater.Apply(snapshots);
-
+                    var snapshots = gameWorld.GetRemoteSnapshots();
+                    remoteUpdater.Apply(snapshots);
                 }
                 else
                 {

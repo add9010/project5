@@ -40,6 +40,6 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadNextScene()
     {
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene("Floor1"); // Floor1으로 이동
+        SceneManager.LoadScene("Boss1"); // Floor1으로 이동
     }
 }

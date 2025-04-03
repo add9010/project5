@@ -5,11 +5,9 @@ public class PlayerSnapshot
 {
     public float x;
     public float y;
-    public float z;
-    public string animationState;
 
     public Vector3 GetPosition()
     {
-        return new Vector3(x, y, z);
+        return new Vector3(x, y, 0); // z는 0으로 고정
     }
 }

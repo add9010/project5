@@ -7,8 +7,10 @@ public class RemotePlayerUpdater : MonoBehaviour
 
     public void Apply(Dictionary<string, PlayerSnapshot> data)
     {
+        Debug.Log($"[Apply] 리모트 {data.Count}명 적용 시도");
         foreach (var pair in data)
         {
+            Debug.Log($"[Apply] ID: {pair.Key}, 위치: {pair.Value.x}, {pair.Value.y}");
             string id = pair.Key;
             PlayerSnapshot snapshot = pair.Value;
 

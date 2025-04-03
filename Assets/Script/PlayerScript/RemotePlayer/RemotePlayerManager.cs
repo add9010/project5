@@ -24,7 +24,6 @@ public class RemotePlayerManager : MonoBehaviour
     public void UpdateFromSnapshot(PlayerSnapshot snapshot)
     {
         move?.UpdatePosition(snapshot.GetPosition());
-        anim?.PlayAnimation(snapshot.animationState);
     }
 
     // === Static 관리 ===
