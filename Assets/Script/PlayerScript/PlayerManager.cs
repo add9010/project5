@@ -20,7 +20,6 @@ public class PlayerManager : MonoBehaviour
     public GameObject canvas;
     private RectTransform hpBar;
     private UnityEngine.UI.Image nowHpbar;
-    private PlayerCamera playerCamera;
 
     [Header("공격 위치")]
     public Transform attackPos;
@@ -59,8 +58,9 @@ public class PlayerManager : MonoBehaviour
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
-        playerDialog = new PlayerDialog(this);// 대화창
-        playerCamera = new PlayerCamera(this, data.cameraFollowSpeed, data.cameraStopDistance);
+        playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
+        Camera.main.GetComponent<CameraFollow>().target = transform;
+
 
     }
 

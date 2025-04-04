@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floor3.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Boss1.unity
+    guid: 9539387b886651f4999f064f682d5aac
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

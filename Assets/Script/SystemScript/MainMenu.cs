@@ -10,9 +10,6 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
 {
     public FadeManager fadeManager; // 페이드 매니저 연결
 
-
-
-
     public void OnClickNewGame()
     {
         Debug.Log("새 게임 시작");
@@ -45,12 +42,12 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
 
         if (fadeManager != null)
         {
-            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Floor1")); // ✅ 타이틀 씬에서 게임 씬으로 이동
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Boss1"));
             fadeManager.FadeOut();
         }
         else
         {
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("Boss1");
         }
     }
 
