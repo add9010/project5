@@ -52,12 +52,15 @@ public class GameWorld
                 string playerName = packet.ReadString();
                 float posX = packet.ReadFloat();
                 float posY = packet.ReadFloat();
+                AnimType animType = (AnimType)packet.ReadByte();
+
                 Debug.Log($"[SyncWorldData] 서버에서 받은 이름: {playerName}");
                 if (playerName == myPlayerName || playerName == "UninitPlayer")
                 {
                     Debug.Log($"[SyncWorldData] 제외됨: {playerName}");
                     continue;
                 }
+
                 Debug.Log($"[SyncWorldData] 추가됨: {playerName} → remotePlayers에 저장");
                 Debug.Log($"Player {playerName} : move x{posX}, y{posY}");
 
@@ -65,12 +68,14 @@ public class GameWorld
                 {
                     // 기존 목록 최신화
                     remotePlayer.UpdatePosition(posX, posY);
+                    remotePlayer.SetAnimType(animType);
                 }
                 else
                 {
                     // 신규 플레이어 추가
                     var newPlayer = new RemotePlayer(playerName);
                     newPlayer.UpdatePosition(posX, posY);
+                    newPlayer.SetAnimType(animType);
                     remotePlayers[playerName] = newPlayer;
                 }
 

@@ -6,6 +6,7 @@ public class Player
     private ClientSession session;
     private string name;
     private float posX, posY;
+    private AnimType animType;
 
     public Player(Socket socket, string playerName)
     {
@@ -13,13 +14,17 @@ public class Player
         name = playerName;
         posX = 0f;
         posY = 0f;
+        animType = AnimType.Idle;
     }
     public ClientSession GetSession() => session;
     public string GetName() => name;
     public float GetPosX() => posX;
     public float GetPosY() => posY;
-    public void SetName(string playerName) => name = playerName;
+    public AnimType GetAnimType() => animType;
 
+
+    public void SetName(string playerName) => name = playerName;
+    public void SetAnimType(AnimType type) => animType = type;
     public void UpdatePosition(float x, float y)
     {
         posX = x;
@@ -50,6 +55,7 @@ public class Player
         };
         packet.Write(posX);
         packet.Write(posY);
+        packet.Write((byte)animType);
         session.SendData(packet);
     }
 

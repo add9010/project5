@@ -40,7 +40,7 @@ public class PlayerManager : MonoBehaviour
     public DialogManager dialog;
     public PlayerDialog playerDialog { get; private set; }
     public bool isAction = false;
-
+    private AnimType currentAnimState = AnimType.Idle;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -101,7 +101,10 @@ public class PlayerManager : MonoBehaviour
         playerDialog.HandleInput();
         playerDialog.HandleScan();
     }
-
+    public AnimType GetCurrentAnimState()
+    {
+        return currentAnimState; // 또는 animator.GetCurrentAnimatorStateInfo(0)...로부터 추론
+    }
     public void MarkAsDead()
     {
         IsDead = true;

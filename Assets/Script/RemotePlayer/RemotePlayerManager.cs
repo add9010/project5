@@ -9,6 +9,7 @@ public class RemotePlayerManager : MonoBehaviour
     public RemoteAnimation anim;
 
 
+
     void Start()
     {
         var rb = GetComponent<Rigidbody2D>();
@@ -59,9 +60,9 @@ public class RemotePlayerManager : MonoBehaviour
             Debug.Log($"[RemotePlayerManager] Removed {id}");
         }
     }
-
     public void UpdateFromSnapshot(PlayerSnapshot snapshot)
     {
         move?.UpdatePosition(snapshot.GetPosition());
+        anim?.PlayAnimation(snapshot.animType);
     }
 }
