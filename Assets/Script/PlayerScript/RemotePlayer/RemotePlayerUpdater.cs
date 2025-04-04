@@ -4,9 +4,11 @@ using UnityEngine;
 public class RemotePlayerUpdater : MonoBehaviour
 {
     [SerializeField] private GameObject remotePlayerPrefab;
-
+ 
     public void Apply(Dictionary<string, PlayerSnapshot> data)
     {
+        var currentIds = new HashSet<string>(data.Keys);
+
         Debug.Log($"[Apply] 리모트 {data.Count}명 적용 시도");
         foreach (var pair in data)
         {
@@ -27,5 +29,17 @@ public class RemotePlayerUpdater : MonoBehaviour
                 manager.UpdateFromSnapshot(snapshot);
             }
         }
+
+        var existingIds = new List<string>(RemotePlayerManager.GetAllIds());
+        foreach (var id in existingIds)
+        {
+            if (!currentIds.Contains(id))
+            {
+                RemotePlayerManager.RemoveById(id);
+            }
+        }
+
+
+
     }
 }
