@@ -5,7 +5,7 @@ using TMPro;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
-
+    
     [Header("데이터")]
     public PlayerData data;
 
@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("센서")]
     public Sensor_HeroKnight groundSensor;
+
 
     public PlayerHealth playerHealth { get; private set; }
     public PlayerMove playerMove { get; private set; }
@@ -57,7 +58,10 @@ public class PlayerManager : MonoBehaviour
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
-        playerDialog = new PlayerDialog(this);// 대화창
+        playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
+        Camera.main.GetComponent<CameraFollow>().target = transform;
+
+
     }
 
     private void Update()
