@@ -21,9 +21,14 @@ public class PlayerDialog
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && scanObject != null)
         {
-            manager.dialog.Action(scanObject);
+            DialogTrigger dt = scanObject.GetComponent<DialogTrigger>();
+            if (dt != null)
+            {
+                dt.TryStartDialogue();
+            }
         }
     }
+
 
 
     public void HandleScan()

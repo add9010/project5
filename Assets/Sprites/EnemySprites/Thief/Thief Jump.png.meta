@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thief Jump_0: -2201924232781415631
+      Thief Jump_1: -7878007201977281109
+      Thief Jump_2: 2785901347877104385
+      Thief Jump_3: 6498896632434052402
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

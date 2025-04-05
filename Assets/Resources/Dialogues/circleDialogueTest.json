@@ -2,29 +2,49 @@
   "dialogues": [
     {
       "speakerName": "초록",
+      "speakerPortraitPath": "Portraits/GreenPortrait",
       "sentences": [
-        "안녕! 나는 말하는 초록이야.",
-        "모험가처럼 보이네? 어디 가는 길이야?"
+        "안녕~ 나는 말하는 초록이야! 오늘은 던전으로 가는 길을 응원해주려고 왔어!",
+        "네가 준비됐으면 함께 출발해보자~",
+        "모험에는 언제나 신나는 일들이 가득하니까 말이야.",
+        "자, 이제 너의 선택을 기다릴게!"
       ],
       "options": [
         {
-          "optionText": "던전 가는 길이야.",
-          "nextDialogueIndex": 1
+          "optionText": "응, 던전으로 출발할게!",
+          "nextDialogueIndex": -1
         },
         {
-          "optionText": "그냥 지나가는 중이야.",
+          "optionText": "잠깐, 좀 더 얘기해줘!",
+          "nextDialogueIndex": 1
+        }
+      ]
+    },
+    {
+      "speakerName": "초록",
+      "speakerPortraitPath": "Portraits/GreenPortrait",
+      "sentences": [
+        "잘했어, 모험가야! 네 용기와 열정이 정말 대단해~",
+        "하지만 한 가지 경고할게. 던전 길목에 킹슬라임이 기다리고 있단다!",
+        "킹슬라임은 귀여워 보일지 모르지만, 정말 위험하니까 꼭 조심해.",
+        "이제 출발할 준비가 됐으면, 계속 진행하자!"
+      ],
+      "options": [
+        {
+          "optionText": "알겠어, 조심할게!",
           "nextDialogueIndex": 2
         }
       ]
     },
     {
       "speakerName": "초록",
-      "sentences": ["던전? 위험하니까 조심해!"],
-      "options": []
-    },
-    {
-      "speakerName": "초록",
-      "sentences": ["아~ 잘 가~"],
+      "speakerPortraitPath": "Portraits/GreenPortrait",
+      "sentences": [
+        "좋아~ 이제 너의 모험이 시작돼! 던전에서는 멋진 일들이 널 기다리고 있을 거야.",
+        "네 용기와 지혜로 모든 어려움을 극복할 수 있을 거라 믿어.",
+        "모험은 언제나 도전이지만, 그만큼 보람도 크단다.",
+        "행운을 빌며, 신나게 던전 탐험하자! 다음에 또 보자~"
+      ],
       "options": []
     }
   ]
