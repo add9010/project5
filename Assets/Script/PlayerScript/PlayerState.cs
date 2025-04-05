@@ -78,4 +78,31 @@ public class PlayerStateController
                 break;
         }
     }
+
+    public AnimType GetAnimType()
+    {
+        switch (currentState)
+        {
+            case PlayerState.Idle:
+            case PlayerState.Dialog:
+                return AnimType.Idle;
+            case PlayerState.Move:
+                return AnimType.Run;
+            case PlayerState.Jump:
+                return AnimType.Jump;
+            case PlayerState.Attack:
+                return AnimType.Attack;
+            case PlayerState.Roll:
+                return AnimType.Roll;
+            case PlayerState.Hurt:
+                return AnimType.Hit;
+            case PlayerState.Dead:
+                return AnimType.Die;
+            default:
+                return AnimType.Idle;
+        }
+    }
+
+
+
 }

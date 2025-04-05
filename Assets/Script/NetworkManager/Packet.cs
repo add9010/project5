@@ -18,10 +18,11 @@ public enum AnimType : byte
 {
     Idle = 0x00,
     Run = 0x01,
-    Attack = 0x02,
-    Roll = 0x03,
-    Hit = 0x04,
-    Die = 0x05
+    Jump = 0x02,
+    Attack = 0x03,
+    Roll = 0x04,
+    Hit = 0x05,
+    Die = 0x06
 }
 
 [StructLayout(LayoutKind.Sequential, Pack = 4)]

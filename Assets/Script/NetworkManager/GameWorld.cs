@@ -31,10 +31,11 @@ public class GameWorld
             snapshots[kvp.Key] = new PlayerSnapshot
             {
                 x = remote.GetPosX(),
-                y = remote.GetPosY()
+                y = remote.GetPosY(),
+                animType = remote.GetAnimType(),
+                isGrounded = remote.IsGrounded()  // 이 메소드도 RemotePlayer 클래스에 추가 필요
             };
         }
-        Debug.Log($"[GetRemoteSnapshots] 리모트 플레이어 수: {snapshots.Count}");
 
         return snapshots;
     }
@@ -43,26 +44,14 @@ public class GameWorld
         lock (worldMutex)
         {
             int playerCount = packet.Header.playerCount;
-            Debug.Log($"Player count: {playerCount}");
             var updatedPlayers = new Dictionary<string, bool>();
             string myPlayerName = localPlayer.GetName();
-            Debug.Log($"[SyncWorldData] 내 이름: {myPlayerName}");
             for (int i = 0; i < playerCount; ++i)
             {
                 string playerName = packet.ReadString();
                 float posX = packet.ReadFloat();
                 float posY = packet.ReadFloat();
                 AnimType animType = (AnimType)packet.ReadByte();
-
-                Debug.Log($"[SyncWorldData] 서버에서 받은 이름: {playerName}");
-                if (playerName == myPlayerName || playerName == "UninitPlayer")
-                {
-                    Debug.Log($"[SyncWorldData] 제외됨: {playerName}");
-                    continue;
-                }
-
-                Debug.Log($"[SyncWorldData] 추가됨: {playerName} → remotePlayers에 저장");
-                Debug.Log($"Player {playerName} : move x{posX}, y{posY}");
 
                 if (remotePlayers.TryGetValue(playerName, out var remotePlayer))
                 {
@@ -98,7 +87,6 @@ public class GameWorld
             }
         }
     }
-
     private void Cleanup()
     {
         remotePlayers.Clear();
