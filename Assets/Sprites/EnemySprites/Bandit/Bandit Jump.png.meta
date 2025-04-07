@@ -125,10 +125,10 @@ TextureImporter:
       name: Bandit Jump_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 52
-        width: 216
-        height: 298
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Bandit Jump_1
       rect:
         serializedVersion: 2
-        x: 638
-        y: 51
-        width: 216
-        height: 273
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Bandit Jump_2
       rect:
         serializedVersion: 2
-        x: 1139
-        y: 96
-        width: 215
-        height: 324
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Bandit Jump_3
       rect:
         serializedVersion: 2
-        x: 1638
-        y: 52
-        width: 216
-        height: 298
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 63d81d62659d7a740910b45943967f44
     internalID: 0
     vertices: []
     indices: 

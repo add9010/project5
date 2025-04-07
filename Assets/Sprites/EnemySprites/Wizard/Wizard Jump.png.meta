@@ -137,12 +137,12 @@ TextureImporter:
       name: Wizard Jump_2
       rect:
         serializedVersion: 2
-        x: 1178
-        y: 77
-        width: 120
-        height: 355
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: Wizard Jump_0
       rect:
         serializedVersion: 2
-        x: 196
-        y: 53
-        width: 118
-        height: 332
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Wizard Jump_1
       rect:
         serializedVersion: 2
-        x: 674
-        y: 52
-        width: 177
-        height: 231
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: Wizard Jump_3
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 59
-        width: 178
-        height: 315
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: Wizard Jump_4
       rect:
         serializedVersion: 2
-        x: 2174
-        y: 52
-        width: 177
-        height: 231
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

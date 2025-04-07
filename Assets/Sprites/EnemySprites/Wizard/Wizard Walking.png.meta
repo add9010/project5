@@ -140,37 +140,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wizard Walking_5
-      rect:
-        serializedVersion: 2
-        x: 196
-        y: 52
-        width: 118
-        height: 335
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c68f8add93530e70800000000000000
-      internalID: 9080193211150862016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Wizard Walking_0
       rect:
         serializedVersion: 2
-        x: 658
-        y: 55
-        width: 176
-        height: 325
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -187,12 +165,12 @@ TextureImporter:
       name: Wizard Walking_1
       rect:
         serializedVersion: 2
-        x: 1209
-        y: 53
-        width: 92
-        height: 330
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -209,12 +187,12 @@ TextureImporter:
       name: Wizard Walking_2
       rect:
         serializedVersion: 2
-        x: 1658
-        y: 56
-        width: 176
-        height: 320
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -231,12 +209,12 @@ TextureImporter:
       name: Wizard Walking_3
       rect:
         serializedVersion: 2
-        x: 2207
-        y: 54
-        width: 94
-        height: 330
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -245,6 +223,28 @@ TextureImporter:
       bones: []
       spriteID: 486958afa30ea1db0800000000000000
       internalID: -4820293907230910844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard Walking_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4590bbe3d79cf4893e05e56febeaa0
+      internalID: -2010715220
       vertices: []
       indices: 
       edges: []
@@ -267,7 +267,7 @@ TextureImporter:
       Wizard Walking_1: 2788023647174542109
       Wizard Walking_2: -4077606026931490554
       Wizard Walking_3: -4820293907230910844
-      Wizard Walking_5: 9080193211150862016
+      Wizard Walking_4: -2010715220
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -122,10 +122,10 @@ TextureImporter:
       name: Bandit Hit_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 52
-        width: 216
-        height: 298
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: Bandit Hit_1
       rect:
         serializedVersion: 2
-        x: 595
-        y: 65
-        width: 218
-        height: 317
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: Bandit Hit_2
       rect:
         serializedVersion: 2
-        x: 1037
-        y: 58
-        width: 214
-        height: 327
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b77779e54c3c4f646b3b14a33afb37d6
     internalID: 0
     vertices: []
     indices: 

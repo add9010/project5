@@ -134,12 +134,12 @@ TextureImporter:
       name: Thief Attack_0
       rect:
         serializedVersion: 2
-        x: 140
-        y: 52
-        width: 276
-        height: 250
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: Thief Attack_1
       rect:
         serializedVersion: 2
-        x: 655
-        y: 52
-        width: 200
-        height: 250
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: Thief Attack_2
       rect:
         serializedVersion: 2
-        x: 1153
-        y: 52
-        width: 339
-        height: 235
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: Thief Attack_3
       rect:
         serializedVersion: 2
-        x: 1653
-        y: 52
-        width: 341
-        height: 235
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,7 +236,6 @@ TextureImporter:
       Thief Attack_1: -1396778089166041252
       Thief Attack_2: 8225003050345882555
       Thief Attack_3: -2880972721873992808
-      Thief Attack_4: -7442229044157805707
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

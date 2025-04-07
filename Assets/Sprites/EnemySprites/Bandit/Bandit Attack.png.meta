@@ -134,12 +134,12 @@ TextureImporter:
       name: Bandit Attack_0
       rect:
         serializedVersion: 2
-        x: 117
-        y: 53
-        width: 237
-        height: 407
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: Bandit Attack_1
       rect:
         serializedVersion: 2
-        x: 637
-        y: 53
-        width: 298
-        height: 298
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: Bandit Attack_2
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 54
-        width: 400
-        height: 415
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: Bandit Attack_3
       rect:
         serializedVersion: 2
-        x: 1592
-        y: 54
-        width: 397
-        height: 319
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,12 +222,12 @@ TextureImporter:
       name: Bandit Attack_4
       rect:
         serializedVersion: 2
-        x: 2091
-        y: 54
-        width: 264
-        height: 319
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,7 +259,6 @@ TextureImporter:
       Bandit Attack_2: 2889510235466684973
       Bandit Attack_3: -7102652246756216414
       Bandit Attack_4: 8757451984750208363
-      Bandit Attack_5: 1858179749680790382
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

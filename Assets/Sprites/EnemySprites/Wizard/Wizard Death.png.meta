@@ -125,12 +125,12 @@ TextureImporter:
       name: Wizard Death_0
       rect:
         serializedVersion: 2
-        x: 196
-        y: 52
-        width: 118
-        height: 330
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Wizard Death_1
       rect:
         serializedVersion: 2
-        x: 630
-        y: 54
-        width: 190
-        height: 260
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: Wizard Death_2
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 52
-        width: 196
-        height: 163
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

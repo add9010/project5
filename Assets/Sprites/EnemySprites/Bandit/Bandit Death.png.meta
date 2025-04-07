@@ -125,12 +125,12 @@ TextureImporter:
       name: Bandit Death_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 52
-        width: 216
-        height: 299
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Bandit Death_1
       rect:
         serializedVersion: 2
-        x: 634
-        y: 52
-        width: 203
-        height: 250
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: Bandit Death_2
       rect:
         serializedVersion: 2
-        x: 1174
-        y: 52
-        width: 192
-        height: 205
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -204,7 +204,6 @@ TextureImporter:
       Bandit Death_0: -6477991776754472115
       Bandit Death_1: -5338037817649817696
       Bandit Death_2: -3440579680554836334
-      Bandit Death_3: 8262464786534353633
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

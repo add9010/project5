@@ -125,10 +125,10 @@ TextureImporter:
       name: Thief Jump_0
       rect:
         serializedVersion: 2
-        x: 140
-        y: 52
-        width: 244
-        height: 260
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Thief Jump_1
       rect:
         serializedVersion: 2
-        x: 640
-        y: 52
-        width: 245
-        height: 234
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Thief Jump_2
       rect:
         serializedVersion: 2
-        x: 1140
-        y: 85
-        width: 244
-        height: 291
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Thief Jump_3
       rect:
         serializedVersion: 2
-        x: 1640
-        y: 52
-        width: 245
-        height: 234
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c4466f2c226be1c41ae397753a5251e8
     internalID: 0
     vertices: []
     indices: 

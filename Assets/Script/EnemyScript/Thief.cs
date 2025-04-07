@@ -1,27 +1,14 @@
 using System.Collections;
 using UnityEngine;
 
-public class Wizard : Enemy
+public class Thief : Enemy
 {
-    public GameObject projectilePrefab;     // 마법 투사체 프리팹
-    public Transform firePoint;             // 발사 위치
-    public float attackCooldown = 2f;       // 공격 간격
-    public float attackRange = 4f;          // 마법 사거리
     protected bool isAttacking = false;
 
     protected override void Start()
     {
-        SetEnemyStatus("마법사", 100, 15, 3); // 마법사 전용 스탯 설정
-
-        anim = GetComponent<Animator>();
-        rigid = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
-
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        if (player == null) Debug.LogError("Player object not found!");
+        base.Start();
+        SetEnemyStatus("도적", 120, 10, 4);
     }
 
     protected override void DetectAndChasePlayer()
@@ -42,13 +29,13 @@ public class Wizard : Enemy
         {
             LookAtPlayer();
 
-            if (distanceToPlayer <= attackRange)
+            if (distanceToPlayer <= 1.2f) // 근거리 공격 범위
             {
                 rigid.linearVelocity = Vector2.zero;
                 anim.SetBool("isWalk", false);
 
                 if (!isAttacking)
-                    StartCoroutine(RangedAttack());
+                    StartCoroutine(MeleeAttack());
             }
             else if (!isAttacking)
             {
@@ -65,6 +52,28 @@ public class Wizard : Enemy
             Patrol();
             isChasing = false;
         }
+    }
+
+    protected IEnumerator MeleeAttack()
+    {
+        isAttacking = true;
+        anim.SetTrigger("attack");
+
+        yield return new WaitForSeconds(0.3f); // 애니메이션 타이밍 고려 (타격 타이밍)
+
+        PlayerManager playerManager = player.GetComponent<PlayerManager>();
+        if (playerManager != null && !playerManager.IsDead)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            if (distanceToPlayer <= 1.2f)
+            {
+                playerManager.playerHealth.TakeDamage(atkDmg);
+                Debug.Log($"{enemyName} 근거리 공격: {atkDmg} 데미지");
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f); // 쿨타임
+        isAttacking = false;
     }
 
     protected override void Patrol()
@@ -92,24 +101,6 @@ public class Wizard : Enemy
         LookAtPatrolTarget();
     }
 
-    protected IEnumerator RangedAttack()
-    {
-        isAttacking = true;
-        anim.SetTrigger("attack");
-
-        yield return new WaitForSeconds(0.5f);
-
-        if (projectilePrefab != null && firePoint != null && !isEnemyDead)
-        {
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-            Vector2 dir = (player.position - firePoint.position).normalized;
-            projectile.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
-        }
-
-        yield return new WaitForSeconds(attackCooldown);
-        isAttacking = false;
-    }
-
     public override void TakeDamage(ParameterPlayerAttack argument)
     {
         if (isTakingDamage || anim.GetBool("isDead")) return;
@@ -132,11 +123,5 @@ public class Wizard : Enemy
 
         Invoke("ResumeChase", 0.5f);
         StartCoroutine(EndDamage());
-    }
-
-    protected override void HandleWhenDead()
-    {
-        base.HandleWhenDead();
-        // 마법사 전용 사망 연출 또는 드랍 처리 가능
     }
 }

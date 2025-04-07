@@ -131,37 +131,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wizard Attack_0
-      rect:
-        serializedVersion: 2
-        x: 182
-        y: 42
-        width: 144
-        height: 341
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d67c7353279335d0800000000000000
-      internalID: -3083955141838342439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Wizard Attack_1
       rect:
         serializedVersion: 2
-        x: 723
-        y: 53
-        width: 147
-        height: 300
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +156,12 @@ TextureImporter:
       name: Wizard Attack_2
       rect:
         serializedVersion: 2
-        x: 1147
-        y: 53
-        width: 181
-        height: 325
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +178,12 @@ TextureImporter:
       name: Wizard Attack_3
       rect:
         serializedVersion: 2
-        x: 1660
-        y: 53
-        width: 334
-        height: 264
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -214,6 +192,28 @@ TextureImporter:
       bones: []
       spriteID: 366ef2ba2e25aa210800000000000000
       internalID: 1344978572211644003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7ea47093388354c93b720b545ca8b7
+      internalID: -936036971
       vertices: []
       indices: 
       edges: []
@@ -232,6 +232,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Wizard Attack_0: -936036971
       Wizard Attack_1: -8067515258067110730
       Wizard Attack_2: -7598747419173863593
       Wizard Attack_3: 1344978572211644003

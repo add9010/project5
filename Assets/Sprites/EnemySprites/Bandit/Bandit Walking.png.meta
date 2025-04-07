@@ -158,12 +158,12 @@ TextureImporter:
       name: Bandit Walking_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 52
-        width: 216
-        height: 299
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,12 +180,12 @@ TextureImporter:
       name: Bandit Walking_1
       rect:
         serializedVersion: 2
-        x: 662
-        y: 52
-        width: 192
-        height: 299
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: Bandit Walking_2
       rect:
         serializedVersion: 2
-        x: 1181
-        y: 52
-        width: 153
-        height: 299
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: Bandit Walking_3
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 52
-        width: 120
-        height: 308
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: Bandit Walking_4
       rect:
         serializedVersion: 2
-        x: 2162
-        y: 53
-        width: 192
-        height: 300
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: Bandit Walking_5
       rect:
         serializedVersion: 2
-        x: 2681
-        y: 52
-        width: 153
-        height: 305
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: Bandit Walking_6
       rect:
         serializedVersion: 2
-        x: 3181
-        y: 52
-        width: 153
-        height: 305
+        x: 3000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: Bandit Walking_7
       rect:
         serializedVersion: 2
-        x: 3692
-        y: 52
-        width: 120
-        height: 305
+        x: 3500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -346,16 +346,12 @@ TextureImporter:
     nameFileIdTable:
       Bandit Walking_0: -926275465150151037
       Bandit Walking_1: 8064269999272419692
-      Bandit Walking_10: -4158951526812990541
-      Bandit Walking_12: -6798606805455468301
-      Bandit Walking_14: 2771711953723876455
       Bandit Walking_2: 7559050052028829474
       Bandit Walking_3: -7223295924808046340
       Bandit Walking_4: 4012070118941154158
       Bandit Walking_5: 8921681405439153732
       Bandit Walking_6: 3199728119833181586
       Bandit Walking_7: -4593187587716587244
-      Bandit Walking_8: 6171256378423034465
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

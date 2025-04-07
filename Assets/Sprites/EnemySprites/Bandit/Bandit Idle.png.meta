@@ -125,10 +125,10 @@ TextureImporter:
       name: Bandit Idle_0
       rect:
         serializedVersion: 2
-        x: 137
-        y: 52
-        width: 217
-        height: 298
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Bandit Idle_1
       rect:
         serializedVersion: 2
-        x: 637
-        y: 52
-        width: 217
-        height: 301
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: Bandit Idle_2
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 52
-        width: 217
-        height: 303
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: Bandit Idle_3
       rect:
         serializedVersion: 2
-        x: 1637
-        y: 52
-        width: 217
-        height: 301
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8d09370d7971736469cb9fe2aaf99786
     internalID: 0
     vertices: []
     indices: 
