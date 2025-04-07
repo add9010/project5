@@ -40,7 +40,6 @@ public class PlayerManager : MonoBehaviour
     public DialogManager dialog;
     public PlayerDialog playerDialog { get; private set; }
     public bool isAction = false;
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -101,7 +100,10 @@ public class PlayerManager : MonoBehaviour
         playerDialog.HandleInput();
         playerDialog.HandleScan();
     }
-
+    public AnimType GetCurrentAnimState()
+    {
+        return playerStateController.GetAnimType();
+    }
     public void MarkAsDead()
     {
         IsDead = true;
