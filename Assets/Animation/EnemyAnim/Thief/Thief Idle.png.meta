@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a895eed2fac65f0458e776eee20d7131
+guid: eb69f18e8e3cdf74396aee5b415dc9dd
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -118,6 +118,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -222,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thief Idle_0: 8003577372901011977
+      Thief Idle_1: 2875305335081670405
+      Thief Idle_2: 1458080914885585641
+      Thief Idle_3: 3936057687360689538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
