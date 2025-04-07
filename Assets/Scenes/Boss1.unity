@@ -1925,6 +1925,10 @@ PrefabInstance:
       propertyPath: data.dashForce
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackDuration
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5739177417593549659, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.39
