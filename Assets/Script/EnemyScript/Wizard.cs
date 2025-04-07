@@ -117,7 +117,7 @@ public class Wizard : Enemy
         isTakingDamage = true;
         nowHp -= argument.damage;
 
-        anim.SetTrigger("Hit");
+        anim.SetTrigger("hit");
 
         if (nowHp <= 0)
         {
