@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 59cbf2d8e0198b44aa155fdd49812fb0
+guid: 5e68fcbf62ea9fb43a43a4dc370c9704
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4130917246343381058
-    second: UiExit_0
+      213: -9137258631874622311
+    second: AlarmBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UiExit_0
+      name: AlarmBackground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 400
-        height: 237
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ebffa27a6a80ca6c0800000000000000
-      internalID: -4130917246343381058
+      spriteID: 99ccd328fafe13180800000000000000
+      internalID: -9137258631874622311
       vertices: []
       indices: 
       edges: []

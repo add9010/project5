@@ -8,7 +8,7 @@ public class Thief : Enemy
     protected override void Start()
     {
         base.Start();
-        SetEnemyStatus("도적", 120, 10, 4);
+        SetEnemyStatus("좀도둑", 120, 10, 4);
     }
 
     protected override void DetectAndChasePlayer()
@@ -29,7 +29,7 @@ public class Thief : Enemy
         {
             LookAtPlayer();
 
-            if (distanceToPlayer <= 1.2f) // 근거리 공격 범위
+            if (distanceToPlayer <= 2.0f) // 근거리 공격 범위
             {
                 rigid.linearVelocity = Vector2.zero;
                 anim.SetBool("isWalk", false);
@@ -65,7 +65,7 @@ public class Thief : Enemy
         if (playerManager != null && !playerManager.IsDead)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            if (distanceToPlayer <= 1.2f)
+            if (distanceToPlayer <= 2.0f)
             {
                 playerManager.playerHealth.TakeDamage(atkDmg);
                 Debug.Log($"{enemyName} 근거리 공격: {atkDmg} 데미지");

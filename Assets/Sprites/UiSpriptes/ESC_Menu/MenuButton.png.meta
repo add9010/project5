@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2a3ae99a4f412df419560ff9b4b11d22
+guid: 58f82c2b4baef9e41bb6af3a4d7ee916
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7234707024426047032
-    second: UiESC_0
+      213: -3675728329477958583
+    second: MenuButton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UiESC_0
+      name: MenuButton_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 400
-        height: 355
+        width: 350
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83610f425b7d66460800000000000000
-      internalID: 7234707024426047032
+      spriteID: 94450a62f803dfcc0800000000000000
+      internalID: -3675728329477958583
       vertices: []
       indices: 
       edges: []

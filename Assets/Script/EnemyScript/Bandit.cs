@@ -8,7 +8,7 @@ public class Bandit : Enemy
     protected override void Start()
     {
         base.Start();
-        SetEnemyStatus("도적", 180, 20, 1);
+        SetEnemyStatus("강도", 180, 20, 1);
     }
 
     protected override void DetectAndChasePlayer()
@@ -29,7 +29,7 @@ public class Bandit : Enemy
         {
             LookAtPlayer();
 
-            if (distanceToPlayer <= 1.2f) // 근거리 공격 범위
+            if (distanceToPlayer <= 2.5f) // 근거리 공격 범위
             {
                 rigid.linearVelocity = Vector2.zero;
                 anim.SetBool("isWalk", false);
@@ -65,7 +65,7 @@ public class Bandit : Enemy
         if (playerManager != null && !playerManager.IsDead)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            if (distanceToPlayer <= 1.2f)
+            if (distanceToPlayer <= 2.5f)
             {
                 playerManager.playerHealth.TakeDamage(atkDmg);
                 Debug.Log($"{enemyName} 근거리 공격: {atkDmg} 데미지");
