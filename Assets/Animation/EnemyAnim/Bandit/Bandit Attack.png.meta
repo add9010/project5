@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bandit Attack_0: -7479906984071625297
+      Bandit Attack_1: 411065205192234293
+      Bandit Attack_2: 2889510235466684973
+      Bandit Attack_3: -1996833135150513873
+      Bandit Attack_4: -7102652246756216414
+      Bandit Attack_5: 1858179749680790382
+      Bandit Attack_6: 8757451984750208363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

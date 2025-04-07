@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wizard Jump_0: 2024388166820172640
+      Wizard Jump_1: -3043765577704820701
+      Wizard Jump_2: -1624325149617796019
+      Wizard Jump_3: -6017581924630510747
+      Wizard Jump_4: 537217143321184911
+      Wizard Jump_5: 2288816574971424341
+      Wizard Jump_6: 6115056211452537232
+      Wizard Jump_7: 5129861132383462631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

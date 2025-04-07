@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bandit Jump_0: -7560003854047929983
+      Bandit Jump_1: -3346382471355186006
+      Bandit Jump_2: 8170713814817487580
+      Bandit Jump_3: 603186401586290731
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
