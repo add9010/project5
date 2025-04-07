@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 20585fa52560feb43af8e620f91a3cd1
+guid: b7fe50e6d404e914fb005bb489d2c80e
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -119,6 +119,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -322,7 +335,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wizard Jump_0: 2024388166820172640
+      Wizard Jump_1: -3043765577704820701
+      Wizard Jump_2: -1624325149617796019
+      Wizard Jump_3: -6017581924630510747
+      Wizard Jump_4: 537217143321184911
+      Wizard Jump_5: 2288816574971424341
+      Wizard Jump_6: 6115056211452537232
+      Wizard Jump_7: 5129861132383462631
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

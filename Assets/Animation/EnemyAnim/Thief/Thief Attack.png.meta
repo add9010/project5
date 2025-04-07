@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fdc7cd8cc25910544a35a1575d3dc336
+guid: fd722f571752272499905b3392e7a241
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -116,6 +116,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -297,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thief Attack_0: 8859844305981957264
+      Thief Attack_1: -1396778089166041252
+      Thief Attack_2: 656739270627243265
+      Thief Attack_3: 7266394419913925449
+      Thief Attack_4: -7442229044157805707
+      Thief Attack_5: 8225003050345882555
+      Thief Attack_6: -2880972721873992808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

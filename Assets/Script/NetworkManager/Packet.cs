@@ -20,7 +20,7 @@ public enum AnimType : byte
     Run = 0x01,
     Jump = 0x02,
     Attack = 0x03,
-    Roll = 0x04,
+    Dash = 0x04,
     Hit = 0x05,
     Die = 0x06
 }

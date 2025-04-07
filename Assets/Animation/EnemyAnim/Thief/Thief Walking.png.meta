@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f686fba45edb4fb4ab40da2bb45615ad
+guid: 8b65caef26177be47a051795d6e53e20
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -137,6 +137,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -472,7 +485,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Thief Walking_0: 4126291849485513413
+      Thief Walking_1: 9107799200616348234
+      Thief Walking_10: -7941642395874622195
+      Thief Walking_11: -4899941527297714931
+      Thief Walking_12: 8900954132745064308
+      Thief Walking_13: -6500805994015516561
+      Thief Walking_2: -8426556867331278683
+      Thief Walking_3: -5099231093491727436
+      Thief Walking_4: -1024541402715851820
+      Thief Walking_5: 3018845896034609209
+      Thief Walking_6: -5694286687143121578
+      Thief Walking_7: 2136875603771141236
+      Thief Walking_8: 401023400927459619
+      Thief Walking_9: -2334284937450108176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

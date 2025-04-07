@@ -32,8 +32,7 @@ public class GameWorld
             {
                 x = remote.GetPosX(),
                 y = remote.GetPosY(),
-                animType = remote.GetAnimType(),
-                isGrounded = remote.IsGrounded()  // 이 메소드도 RemotePlayer 클래스에 추가 필요
+                animType = remote.GetAnimType()
             };
         }
 
