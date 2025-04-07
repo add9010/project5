@@ -14,6 +14,17 @@ public enum PacketType : byte
     WorldUpdate = 0x04
 }
 
+public enum AnimType : byte
+{
+    Idle = 0x00,
+    Run = 0x01,
+    Jump = 0x02,
+    Attack = 0x03,
+    Roll = 0x04,
+    Hit = 0x05,
+    Die = 0x06
+}
+
 [StructLayout(LayoutKind.Sequential, Pack = 4)]
 public struct PacketHeader
 {
@@ -51,6 +62,11 @@ public class Packet
         Data = data;
         readPos = 0;
     }
+    public void Write(byte value)
+    {
+        Data.Add(value);
+        Header.Length = (uint)(Data.Count + HEADER_SIZE);
+    }
 
     public void Write(int value)
     {
@@ -79,6 +95,15 @@ public class Packet
         Write(strLength);
         Data.AddRange(Encoding.UTF8.GetBytes(value));
         Header.Length = (uint)(Data.Count + HEADER_SIZE);
+    }
+    public byte ReadByte()
+    {
+        if (readPos + sizeof(byte) > Data.Count)
+            throw new InvalidOperationException("Lack of packet data!");
+
+        byte value = Data[readPos];
+        readPos += sizeof(byte);
+        return value;
     }
 
     public int ReadInt()

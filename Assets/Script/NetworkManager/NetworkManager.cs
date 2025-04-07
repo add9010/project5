@@ -53,6 +53,10 @@ public class NetworkClient : MonoBehaviour
             y = playerPos.y;
 
             localPlayer.UpdatePosition(x, y);
+            AnimType currentAnim = PlayerManager.Instance.GetCurrentAnimState();
+
+            localPlayer.SetAnimType(currentAnim);
+
             localPlayer.SendPlayerData();
 
             timer = 0f;

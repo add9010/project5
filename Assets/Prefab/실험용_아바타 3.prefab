@@ -54,7 +54,7 @@ Animator:
   m_GameObject: {fileID: 146553793279153113}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c2a5b7097b0fe44394328c0bdb9252e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0b8cca0631b62cf49a606ec8ff4baaa8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -161,8 +161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 
-  move: {fileID: 0}
-  anim: {fileID: 0}
+  move: {fileID: 666245990397864294}
+  anim: {fileID: -1019751403379137595}
+  groundSensor: {fileID: 0}
 --- !u!114 &666245990397864294
 MonoBehaviour:
   m_ObjectHideFlags: 0
