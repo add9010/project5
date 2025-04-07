@@ -32,14 +32,15 @@ public class PlayerManager : MonoBehaviour
     public PlayerMove playerMove { get; private set; }
     public PlayerAttack playerAttack { get; private set; }
     public PlayerStateController playerStateController { get; private set; }
-
+    public PlayerDash playerDash { get; private set; }
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
-
+    
     [Header("대화")]
     public DialogManager dialog;
     public PlayerDialog playerDialog { get; private set; }
     public bool isAction = false;
+    public bool isDashing = false;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -58,15 +59,14 @@ public class PlayerManager : MonoBehaviour
         playerHealth = new PlayerHealth(this);
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
         playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
+        playerDash = new PlayerDash(this);
         Camera.main.GetComponent<CameraFollow>().target = transform;
-
 
     }
 
     private void Update()
     {
         if (IsDead) return;
-
         // 체력바 UI 갱신
         Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
         hpBar.position = hpBarPos;
@@ -85,17 +85,21 @@ public class PlayerManager : MonoBehaviour
 
 
         // 점프 처리
-        if (!isAction && playerMove.TryJump())
+        // 점프 처리 (대시 중에는 금지)
+        if (!isAction && !isDashing && playerMove.TryJump())
             playerMove.DoJump();
 
-        // 이동 처리
-        if (!isAction)
+        // 이동 처리 (대시 중에는 금지)
+        if (!isAction && !isDashing)
             playerMove.Move(inputX);
 
-        // 공격 처리 - 로그 추가
-        if (!isAction && playerAttack.TryAttack())
+        // 공격 처리 (대시 중에는 금지)
+        if (!isAction && !isDashing && playerAttack.TryAttack())
             playerAttack.DoAttack();
 
+        // 대시 처리 (항상 가능해야 함)
+        if (!isAction && playerDash != null)
+            playerDash.TryDash();
         // 대화 시스템
         playerDialog.HandleInput();
         playerDialog.HandleScan();

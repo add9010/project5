@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a3086d3e9b767e14282042bee08620d9
+guid: aa8bcb0800ee57749bf38e942b611380
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -118,6 +118,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -222,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Wizard Death_0: -5389050261004615726
+      Wizard Death_1: -4613821015571597314
+      Wizard Death_2: 1570079492620042102
+      Wizard Death_3: 5683208935116719797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

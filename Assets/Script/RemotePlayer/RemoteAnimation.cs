@@ -4,32 +4,18 @@ public class RemoteAnimation : MonoBehaviour
 {
     private Animator animator;
     private AnimType currentAnimType = AnimType.Idle;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
     }
-    private void SetGroundedState(AnimType stateName)
-    {
-        bool isGrounded = stateName == AnimType.Idle || stateName == AnimType.Run;
-        animator.SetBool("Grounded", isGrounded);
-    }
-    public void SetGrounded(bool grounded)
-    {
-        animator.SetBool("Grounded", grounded);
-    }
+
     public void PlayAnimation(AnimType stateName)
     {
-        if (animator == null)
-        {
-            Debug.LogWarning("[RemoteAnimation] Animator가 null입니다.");
+        if (animator == null || currentAnimType == stateName)
             return;
-        }
 
-        if (currentAnimType == stateName) return; // 같은 상태 반복 방지
-
-        Debug.Log($"[RemoteAnimation] 애니 재생 시도: {stateName}");
-
-        SetGroundedState(stateName);
+        Debug.Log($"[RemoteAnimation] 애니 재생: {stateName}");
 
         switch (stateName)
         {
@@ -45,8 +31,8 @@ public class RemoteAnimation : MonoBehaviour
             case AnimType.Attack:
                 animator.SetTrigger("Attack1");
                 break;
-            case AnimType.Roll:
-                animator.SetTrigger("Roll");
+            case AnimType.Dash:
+                animator.SetTrigger("Dash");
                 break;
             case AnimType.Hit:
                 animator.SetTrigger("Hit");
