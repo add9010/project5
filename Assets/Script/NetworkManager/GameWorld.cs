@@ -35,7 +35,7 @@ public class GameWorld
                 animType = remote.GetAnimType()
             };
         }
-
+        //Debug.Log($"[Snapshots] 생성된 스냅샷 수: {snapshots.Count}");
         return snapshots;
     }
     public void SyncWorldData(Packet packet)
@@ -51,6 +51,8 @@ public class GameWorld
                 float posX = packet.ReadFloat();
                 float posY = packet.ReadFloat();
                 AnimType animType = (AnimType)packet.ReadByte();
+
+                if (playerName == myPlayerName) continue;
 
                 if (remotePlayers.TryGetValue(playerName, out var remotePlayer))
                 {
@@ -84,6 +86,7 @@ public class GameWorld
             {
                 remotePlayers.Remove(playerName);
             }
+            // Debug.Log($"현재 리모트 플레이어 수: {remotePlayers.Count}");
         }
     }
     private void Cleanup()
