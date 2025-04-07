@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: 4120429c1cd184b48b246619797dc6a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -926275465150151037
+    second: Bandit Walking_0
+  - first:
+      213: 8064269999272419692
+    second: Bandit Walking_1
+  - first:
+      213: -1084368380911802091
+    second: Bandit Walking_2
+  - first:
+      213: 7559050052028829474
+    second: Bandit Walking_3
+  - first:
+      213: 3603113021996979614
+    second: Bandit Walking_4
+  - first:
+      213: -7223295924808046340
+    second: Bandit Walking_5
+  - first:
+      213: -41966272463086040
+    second: Bandit Walking_6
+  - first:
+      213: 4012070118941154158
+    second: Bandit Walking_7
+  - first:
+      213: 6171256378423034465
+    second: Bandit Walking_8
+  - first:
+      213: 8921681405439153732
+    second: Bandit Walking_9
+  - first:
+      213: -4158951526812990541
+    second: Bandit Walking_10
+  - first:
+      213: 3199728119833181586
+    second: Bandit Walking_11
+  - first:
+      213: -6798606805455468301
+    second: Bandit Walking_12
+  - first:
+      213: -4593187587716587244
+    second: Bandit Walking_13
+  - first:
+      213: 2771711953723876455
+    second: Bandit Walking_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bandit Walking_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 52
+        width: 216
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386c09f3f553523f0800000000000000
+      internalID: -926275465150151037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_1
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 52
+        width: 192
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61e87786da0aef60800000000000000
+      internalID: 8064269999272419692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_2
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 52
+        width: 153
+        height: 299
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f839609f327e860800000000000000
+      internalID: 7559050052028829474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_3
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 52
+        width: 120
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf82a4680a2b1cb90800000000000000
+      internalID: -7223295924808046340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_4
+      rect:
+        serializedVersion: 2
+        x: 2162
+        y: 53
+        width: 192
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6b527d248cbda730800000000000000
+      internalID: 4012070118941154158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_5
+      rect:
+        serializedVersion: 2
+        x: 2681
+        y: 52
+        width: 153
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446986a18fd20db70800000000000000
+      internalID: 8921681405439153732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_6
+      rect:
+        serializedVersion: 2
+        x: 3181
+        y: 52
+        width: 153
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d3c78a5c7b76c20800000000000000
+      internalID: 3199728119833181586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bandit Walking_7
+      rect:
+        serializedVersion: 2
+        x: 3692
+        y: 52
+        width: 120
+        height: 305
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4116b678938b140c0800000000000000
+      internalID: -4593187587716587244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 326e66d39658579469468e2d34837319
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bandit Walking_0: -926275465150151037
+      Bandit Walking_1: 8064269999272419692
+      Bandit Walking_10: -4158951526812990541
+      Bandit Walking_12: -6798606805455468301
+      Bandit Walking_14: 2771711953723876455
+      Bandit Walking_2: 7559050052028829474
+      Bandit Walking_3: -7223295924808046340
+      Bandit Walking_4: 4012070118941154158
+      Bandit Walking_5: 8921681405439153732
+      Bandit Walking_6: 3199728119833181586
+      Bandit Walking_7: -4593187587716587244
+      Bandit Walking_8: 6171256378423034465
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

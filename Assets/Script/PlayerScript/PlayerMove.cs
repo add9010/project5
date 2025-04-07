@@ -16,13 +16,13 @@ public class PlayerMove
 
     public bool TryJump()
     {
-        // ½ºÆäÀÌ½º¹Ù ´­·¶°í ¶¥¿¡ ´ê¾Æ ÀÖÀ» ¶§
+        // ìŠ¤í˜ì´ìŠ¤ë°” ëˆŒë €ê³  ë•…ì— ë‹¿ì•„ ìˆì„ ë•Œ
         return Input.GetKeyDown(KeyCode.Space) && IsGrounded();
     }
 
     public void DoJump()
     {
-        // Á¡ÇÁ Èû¸¸Å­ ¼öÁ÷ ¼Óµµ ¼³Á¤
+        // ì í”„ í˜ë§Œí¼ ìˆ˜ì§ ì†ë„ ì„¤ì •
         manager.rb.linearVelocity = new Vector2(
             manager.rb.linearVelocity.x,
             manager.data.jumpForce
@@ -44,7 +44,7 @@ public class PlayerMove
 
     private bool IsGrounded()
     {
-        // Áö»ó ¼¾¼­°¡ ÀÖ°í ¶¥¿¡ ´ê¾Æ ÀÖ´ÂÁö È®ÀÎ
+        // ì§€ìƒ ì„¼ì„œê°€ ìˆê³  ë•…ì— ë‹¿ì•„ ìˆëŠ”ì§€ í™•ì¸
         return manager.groundSensor != null && manager.groundSensor.State();
     }
 }

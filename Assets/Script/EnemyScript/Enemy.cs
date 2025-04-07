@@ -26,11 +26,10 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 3f;
     public float detectionRange = 5f;
 
-    protected Vector3 patrolTarget;    // ��ȸ
+    protected Vector3 patrolTarget;   
     public float patrolRange = 2f;
-    protected float patrolTimer = 0f;  // 
-    public float maxPatrolTime = 3f;   // ��ǥ ������ �������� ���� ���¿��� �ð��� �󸶳� ��ٸ��� ���� (�� ����)
-
+    protected float patrolTimer = 0f;  
+    public float maxPatrolTime = 3f;   
 
 
     protected bool isInDamageState = false;
@@ -57,25 +56,24 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Start()
     {
-        // ü�� �� �ʱ�ȭ
+        
         hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
         nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
 
-        SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; // �� �ʱ�ȭ
-
-        // �÷��̾� ã��
+        SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; 
+       
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null) Debug.LogError("Player object not found!");
     }
 
     protected virtual void Update()
     {
-        // �ǰ� ���°� �ƴϰ�, ���������, �÷��̾ �����Ѵٸ� �߰�
+        
         if (!isInDamageState && nowHp > 0 && player != null)
             DetectAndChasePlayer();
 
 
-        // ü�� �� ��ġ,���� ����
+       
         if (hpBar != null)
         {
             Vector3 _hpBarPos = Camera.main.WorldToScreenPoint
@@ -98,14 +96,14 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        // �ǰ� �� �߰� ����
-        isInDamageState = true;  // �ǰ� ���·� ��ȯ
+        
+        isInDamageState = true;  
         anim.SetBool("isHunt", true);
         Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.linearVelocity = Vector2.zero;  // �˹� ȿ���� ����� ����ǵ��� �ʱ�ȭ
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);  // �˹�
+        rigid.linearVelocity = Vector2.zero;
+        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);
 
-        // 0.5�� �� �߰��� �簳
+        
         Invoke("ResumeChase", 0.5f);
 
         StartCoroutine(EndDamage());
@@ -113,7 +111,7 @@ public class Enemy : MonoBehaviour
 
     private void ResumeChase()
     {
-        isInDamageState = false;  // �ǰ� ���� ����
+        isInDamageState = false;  
     }
 
     protected virtual IEnumerator EndDamage()
@@ -129,19 +127,18 @@ public class Enemy : MonoBehaviour
         nowHp = 0;
         anim.SetBool("isDead", true);
 
-        if (hpBar != null) Destroy(hpBar.gameObject); // ü�� �� UI ����
+        if (hpBar != null) Destroy(hpBar.gameObject);
 
-        // ���� �� �ִϸ��̼� ���̸� Ȯ���� �� ��Ȱ��ȭ ó��
-        // float deathAnimationLength = GetAnimationClipLengthByTag("Dead"); // �±װ� Dead�� ������ �ִϸ��̼� ���� ���ϱ�
-        StartCoroutine(HandleDeath(0.8f)); // �̺κ� Ȯ�� ��Ź�帲
+
+        StartCoroutine(HandleDeath(0.8f)); 
 
         Debug.Log($"[{GetType().Name}] {enemyName} is dead.");
     }
 
     protected virtual IEnumerator HandleDeath(float delay)
     {
-        yield return new WaitForSeconds(delay); // �ִϸ��̼� ��� �ð���ŭ ���
-        gameObject.SetActive(false); // ������Ʈ ��Ȱ��ȭ
+        yield return new WaitForSeconds(delay); 
+        gameObject.SetActive(false); 
         Debug.Log($"[{GetType().Name}] {enemyName} has died.");
     }
 
@@ -156,69 +153,68 @@ public class Enemy : MonoBehaviour
         if (hitRight.collider == null || !hitRight.collider.CompareTag("Platform") ||
             hitLeft.collider == null || !hitLeft.collider.CompareTag("Platform"))
         {
-            return false;  // ������ �Ǵ� ���ʿ� �÷����� ������ false
+            return false; 
         }
-        // �� �� ��� �÷����� ���� ��� true ��ȯ
+      
         return true;
     }
 
     protected virtual void Patrol()
     {
-        // ��ǥ ������ �����ߴ��� Ȯ���ϰ�, �������� ���ϸ� Ÿ�̸� ����
         if (Vector2.Distance(transform.position, patrolTarget) < 0.2f)
         {
-            patrolTimer = 0f;  // ��ǥ ������ �����ϸ� Ÿ�̸Ӹ� �ʱ�ȭ
-            SetPatrolTarget();  // ���ο� ��ǥ ����
+            patrolTimer = 0f;  
+            SetPatrolTarget(); 
         }
         else
         {
-            patrolTimer += Time.deltaTime;  // ��ǥ ������ �������� ���ϸ� Ÿ�̸� ����
+            patrolTimer += Time.deltaTime;  
         }
 
-        // ��ǥ ������ ���� �ð� ���� �������� ���ϸ� ���ο� ��ǥ ���� ����
+       
         if (patrolTimer >= maxPatrolTime)
         {
-            patrolTimer = 0f;  // Ÿ�̸� �ʱ�ȭ
-            SetPatrolTarget();  // ���ο� ��ǥ ����
+            patrolTimer = 0f; 
+            SetPatrolTarget();  
         }
 
-        if (!IsOnPlatform())  // �÷����� ������ �ݴ� �������� �̵�{
+        if (!IsOnPlatform()) 
         {
             Vector3 reverseDirection = (transform.position - patrolTarget).normalized;
             patrolTarget = transform.position + reverseDirection * patrolRange;
-            rigid.linearVelocity = Vector2.zero;  // �̵� ����
+            rigid.linearVelocity = Vector2.zero; 
         }
-        // ��ǥ �������� �̵� (��ȸ �� �̵� �ӵ��� 0.7��� ����)
+      
         float adjustedMoveSpeed = moveSpeed * 0.7f;
         transform.position = Vector2.MoveTowards(transform.position, patrolTarget, adjustedMoveSpeed * Time.deltaTime);
         anim.SetBool("isWalk", true);
-        LookAtPatrolTarget();  // �̵� ���⿡ ���� ȸ��
+        LookAtPatrolTarget();
     }
 
-    // ��ȸ�� ��ǥ ��ġ�� �����ϰ� ����
+    
     protected virtual void SetPatrolTarget()
     {
-        float randomX = Random.Range(-patrolRange, patrolRange); //x�����θ� ������
+        float randomX = Random.Range(-patrolRange, patrolRange);
         patrolTarget = new Vector2(transform.position.x + randomX, transform.position.y);
     }
 
-    // �̵� ������ �������� �ֳʹ� ȸ�� ����
+   
     protected virtual void LookAtPatrolTarget()
     {
         Vector3 direction = patrolTarget - transform.position;
 
         if (direction.x > 0)
-            transform.rotation = Quaternion.Euler(0, 0, 0); // ������ ����
+            transform.rotation = Quaternion.Euler(0, 0, 0); 
         else if (direction.x < 0)
-            transform.rotation = Quaternion.Euler(0, 180, 0); // ���� ����
+            transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     protected virtual void DetectAndChasePlayer()
     {
-        if (player == null || isInDamageState) return;  // �ǰ� ������ ��� �߰����� ����
+        if (player == null || isInDamageState) return;
 
         PlayerManager playerManager = player.GetComponent<PlayerManager>();
-        if (playerManager != null && playerManager.IsDead) // �÷��̾� ����� �߰�����
+        if (playerManager != null && playerManager.IsDead)
         {
             isChasing = false;
             return;
@@ -230,15 +226,15 @@ public class Enemy : MonoBehaviour
             if (!isChasing) SpawnMark();
             isChasing = true;
 
-            if (!IsOnPlatform())  // ������ ������ �� �̻� �߰����� ����
+            if (!IsOnPlatform())
             {
-                rigid.linearVelocity = Vector2.zero;  // �̵� ����
+                rigid.linearVelocity = Vector2.zero;
                 Debug.Log("���� ��ȸ");
             }
-            else  // ������ ������ �߰� ���
+            else 
             {
                 anim.SetBool("isWalk", true);
-                Vector3 direction = (player.position - transform.position).normalized;  // �÷��̾ �߰�
+                Vector3 direction = (player.position - transform.position).normalized;
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
                 
                 Debug.Log("�÷��̾� ��������");
@@ -248,7 +244,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Patrol();  // �÷��̾ ���� �� ��ȸ
+            Patrol();
             isChasing = false;
         }
     }
@@ -257,15 +253,15 @@ public class Enemy : MonoBehaviour
     {
         if (markPrefab != null)
         {
-            // ��Ŀ�� ������ ��ġ�� ���� ��ġ���� markYOffset��ŭ Y������ �ø�
+           
             Vector3 spawnPosition = transform.position + new Vector3(0, markYOffset, 0); 
             GameObject markInstance = Instantiate(markPrefab, spawnPosition, Quaternion.identity);
 
-            // ��Ŀ�� Mark ��ũ��Ʈ���� ���� ������ ���
+           
             Mark markScript = markInstance.GetComponent<Mark>();
             if (markScript != null)
             {
-                markScript.enemy = transform;  // ���� ���� Transform�� ��Ŀ�� �Ҵ�
+                markScript.enemy = transform; 
             }
         }
     }
@@ -274,8 +270,8 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = player.position - transform.position;
 
-        if (direction.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0); // ������ ����
-        else transform.rotation = Quaternion.Euler(0, 180, 0); // ���� ���� (Y�� ȸ��)
+        if (direction.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
+        else transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     protected virtual void OnDrawGizmosSelected()
