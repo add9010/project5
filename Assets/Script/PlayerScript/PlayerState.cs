@@ -1,11 +1,14 @@
+using System;
 using UnityEngine;
 
 public class PlayerStateController
 {
     private PlayerManager pm;
 
-    private enum PlayerState { Idle, Move, Jump, Attack, Dash, Hurt, Dead, Dialog }
+    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AirAttack, Dash, Hurt, Dead, Dialog }
     private PlayerState currentState = PlayerState.Idle;
+    private float jumpTimer = 0f;
+    private const float fallTransitionTime = 0.2f; // 점프 후 이 시간 지나면 Fall로 간주
 
     public PlayerStateController(PlayerManager manager)
     {
@@ -14,7 +17,12 @@ public class PlayerStateController
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
-        if (pm.isDashing) // ← 가장 우선순위로 체크!
+        // 공격이 최우선
+        if (isAttacking)
+        {
+            SetState(PlayerState.Attack); // 공중 공격도 이걸로 처리
+        }
+        else if (pm.isDashing)
         {
             SetState(PlayerState.Dash);
         }
@@ -24,19 +32,20 @@ public class PlayerStateController
         }
         else if (!isGrounded)
         {
-            SetState(PlayerState.Jump);
-        }
-        else if (isAttacking)
-        {
-            SetState(PlayerState.Attack);
-        }
-        else if (Mathf.Abs(horizontalInput) > 0.1f)
-        {
-            SetState(PlayerState.Move);
+            jumpTimer += Time.deltaTime;
+            if (jumpTimer >= fallTransitionTime)
+                SetState(PlayerState.Fall);
+            else
+                SetState(PlayerState.Jump);
         }
         else
         {
-            SetState(PlayerState.Idle);
+            jumpTimer = 0f; // 착지하면 초기화
+
+            if (Mathf.Abs(horizontalInput) > 0.1f)
+                SetState(PlayerState.Move);
+            else
+                SetState(PlayerState.Idle);
         }
 
         UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
@@ -58,7 +67,14 @@ public class PlayerStateController
     public void ForceSetDash()
     {
         SetState(PlayerState.Dash);
+        pm.animator.SetTrigger("Dash"); 
     }
+    public void SetHurt()
+    {
+        SetState(PlayerState.Hurt);
+        pm.animator.SetTrigger("Hurt");
+    }
+
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
         pm.animator.SetFloat("AirSpeedY", verticalVelocity);
@@ -80,6 +96,12 @@ public class PlayerStateController
                 break;
             case PlayerState.Dash:
                 pm.animator.SetTrigger("Dash");
+                break;
+            case PlayerState.Hurt:
+                pm.animator.SetTrigger("Hurt");
+                break;
+            case PlayerState.Fall:
+                pm.animator.SetInteger("AnimState", 4); // 예시: Fall 상태 애니메이션 인덱스
                 break;
         }
     }

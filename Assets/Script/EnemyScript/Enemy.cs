@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
 
     protected RectTransform hpBar;
     protected Image nowHpbar;
-    public GameObject prfHpBar;
-    public GameObject canvas;
+   //public GameObject prfHpBar;
+   //public GameObject canvas;
 
     public GameObject markPrefab;
     public float markYOffset = 1f;
@@ -57,13 +57,12 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
     protected virtual void Start()
     {
         
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
+      // hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+      //  nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
 
         SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; 
        
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        if (player == null) Debug.LogError("Player object not found!");
     }
 
     protected virtual void Update()
@@ -221,6 +220,7 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
         if (distanceToPlayer <= detectionRange)
         {
             if (!isChasing) SpawnMark();

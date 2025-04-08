@@ -17,8 +17,8 @@ public class Wizard : Enemy
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+       // hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        // nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null) Debug.LogError("Player object not found!");
