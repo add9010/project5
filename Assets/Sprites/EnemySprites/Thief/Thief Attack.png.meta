@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e091d85bf85200c43b8a320c2bdecd27
+guid: 3d898e1df8f92c64c95661f78496df5c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,20 +134,20 @@ TextureImporter:
       name: Thief Attack_0
       rect:
         serializedVersion: 2
-        x: 140
-        y: 52
-        width: 276
-        height: 250
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 094625f647d74fa70800000000000000
-      internalID: 8859844305981957264
+      spriteID: c613fe1e1edb28e44991be44c5264899
+      internalID: 924745429
       vertices: []
       indices: 
       edges: []
@@ -156,20 +156,20 @@ TextureImporter:
       name: Thief Attack_1
       rect:
         serializedVersion: 2
-        x: 655
-        y: 52
-        width: 200
-        height: 250
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c5f85357ab5ad9ce0800000000000000
-      internalID: -1396778089166041252
+      spriteID: c0516fdba305cee43986bb6888c10b5b
+      internalID: 135947473
       vertices: []
       indices: 
       edges: []
@@ -178,20 +178,20 @@ TextureImporter:
       name: Thief Attack_2
       rect:
         serializedVersion: 2
-        x: 1153
-        y: 52
-        width: 339
-        height: 235
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bb3ee5442b4152270800000000000000
-      internalID: 8225003050345882555
+      spriteID: b53ebc09fbb60b944a8037e89dbcdc7b
+      internalID: 81500269
       vertices: []
       indices: 
       edges: []
@@ -200,20 +200,20 @@ TextureImporter:
       name: Thief Attack_3
       rect:
         serializedVersion: 2
-        x: 1653
-        y: 52
-        width: 341
-        height: 235
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8934c11d29ab408d0800000000000000
-      internalID: -2880972721873992808
+      spriteID: 33cc571b7ea6d2c4a90201b19d607237
+      internalID: -1563495813
       vertices: []
       indices: 
       edges: []
@@ -222,7 +222,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ab0827062143edc479400a61329252b2
+    spriteID: 2bc2edb5264617141a1f348f7ffe1485
     internalID: 0
     vertices: []
     indices: 
@@ -232,11 +232,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Attack_0: 8859844305981957264
-      Thief Attack_1: -1396778089166041252
-      Thief Attack_2: 8225003050345882555
-      Thief Attack_3: -2880972721873992808
-      Thief Attack_4: -7442229044157805707
+      Thief Attack_0: 924745429
+      Thief Attack_1: 135947473
+      Thief Attack_2: 81500269
+      Thief Attack_3: -1563495813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

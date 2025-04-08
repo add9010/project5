@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e30225e158a418d4fb19069766808771
+guid: ee54b76528f488740b8822bc6228537f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -134,20 +134,20 @@ TextureImporter:
       name: Bandit Attack_0
       rect:
         serializedVersion: 2
-        x: 117
-        y: 53
-        width: 237
-        height: 407
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fa5827d6a38023890800000000000000
-      internalID: -7479906984071625297
+      spriteID: cad1a6e4ee8992646bfce6f72685f6b4
+      internalID: -1921706354
       vertices: []
       indices: 
       edges: []
@@ -156,20 +156,20 @@ TextureImporter:
       name: Bandit Attack_1
       rect:
         serializedVersion: 2
-        x: 637
-        y: 53
-        width: 298
-        height: 298
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 535910f40a564b500800000000000000
-      internalID: 411065205192234293
+      spriteID: 26cb77342be5aa34b94fd47b431b26bc
+      internalID: 1408985635
       vertices: []
       indices: 
       edges: []
@@ -178,20 +178,20 @@ TextureImporter:
       name: Bandit Attack_2
       rect:
         serializedVersion: 2
-        x: 1091
-        y: 54
-        width: 400
-        height: 415
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d2ad8d7ff3a991820800000000000000
-      internalID: 2889510235466684973
+      spriteID: 444918eb74a59f44fae9d2a0a5ebf965
+      internalID: 1719955202
       vertices: []
       indices: 
       edges: []
@@ -200,20 +200,20 @@ TextureImporter:
       name: Bandit Attack_3
       rect:
         serializedVersion: 2
-        x: 1592
-        y: 54
-        width: 397
-        height: 319
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2a137fcb96f4e6d90800000000000000
-      internalID: -7102652246756216414
+      spriteID: 6c0d005f8639300469b6fbfa3206ea48
+      internalID: 1534590587
       vertices: []
       indices: 
       edges: []
@@ -222,20 +222,20 @@ TextureImporter:
       name: Bandit Attack_4
       rect:
         serializedVersion: 2
-        x: 2091
-        y: 54
-        width: 264
-        height: 319
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b6563906e28b88970800000000000000
-      internalID: 8757451984750208363
+      spriteID: 8176cfd38d2c6a74385322b68c6c3a41
+      internalID: -596654385
       vertices: []
       indices: 
       edges: []
@@ -244,7 +244,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e8757f2e33da82640bd93487d615f965
+    spriteID: 4ccd455fa0632524da4a713813ad7903
     internalID: 0
     vertices: []
     indices: 
@@ -254,12 +254,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bandit Attack_0: -7479906984071625297
-      Bandit Attack_1: 411065205192234293
-      Bandit Attack_2: 2889510235466684973
-      Bandit Attack_3: -7102652246756216414
-      Bandit Attack_4: 8757451984750208363
-      Bandit Attack_5: 1858179749680790382
+      Bandit Attack_0: -1921706354
+      Bandit Attack_1: 1408985635
+      Bandit Attack_2: 1719955202
+      Bandit Attack_3: 1534590587
+      Bandit Attack_4: -596654385
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

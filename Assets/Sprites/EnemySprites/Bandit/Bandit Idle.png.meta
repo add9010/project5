@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a33378b1e14f2c4ab3fe0cfbddc2985
+guid: 45784aab14f1116428958eaeab23e681
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -125,20 +125,20 @@ TextureImporter:
       name: Bandit Idle_0
       rect:
         serializedVersion: 2
-        x: 137
-        y: 52
-        width: 217
-        height: 298
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44d9358191bcf2680800000000000000
-      internalID: -8777573840079053500
+      spriteID: fe9bd9781f0804440952b814a2fc4b66
+      internalID: -554439592
       vertices: []
       indices: 
       edges: []
@@ -147,20 +147,20 @@ TextureImporter:
       name: Bandit Idle_1
       rect:
         serializedVersion: 2
-        x: 637
-        y: 52
-        width: 217
-        height: 301
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed6563048ef1b0d10800000000000000
-      internalID: 2092801534213904094
+      spriteID: c09766ea23deadf4684188116c4ea478
+      internalID: -1848774698
       vertices: []
       indices: 
       edges: []
@@ -169,20 +169,20 @@ TextureImporter:
       name: Bandit Idle_2
       rect:
         serializedVersion: 2
-        x: 1137
-        y: 52
-        width: 217
-        height: 303
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44cabd260ce790ee0800000000000000
-      internalID: -1294364053134922684
+      spriteID: dbbbe42a05355be4aa52466b6cfd6653
+      internalID: 474457173
       vertices: []
       indices: 
       edges: []
@@ -191,20 +191,20 @@ TextureImporter:
       name: Bandit Idle_3
       rect:
         serializedVersion: 2
-        x: 1637
-        y: 52
-        width: 217
-        height: 301
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 251cf117f3e292550800000000000000
-      internalID: 6136486817284735314
+      spriteID: 211c1c0786e29db48b81e405b32ca381
+      internalID: -343640703
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 82c6dac26f3391a4e96f7c795bea5551
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bandit Idle_0: -8777573840079053500
-      Bandit Idle_1: 2092801534213904094
-      Bandit Idle_2: -1294364053134922684
-      Bandit Idle_3: 6136486817284735314
+      Bandit Idle_0: -554439592
+      Bandit Idle_1: -1848774698
+      Bandit Idle_2: 474457173
+      Bandit Idle_3: -343640703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

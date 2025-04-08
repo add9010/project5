@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 63bd26776f39ddd459564ae23a9653de
+guid: 0328f676ff0d0234eb4d100bc57b71cc
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2322180950842035098
-    second: Bronze 0
+    second: Coins_0
   - first:
       213: -4893972260818282012
-    second: Bronze 1
+    second: Coins_1
   - first:
       213: -6323751108524238166
-    second: Bronze 2
+    second: Coins_2
   - first:
       213: 2722280177590742205
-    second: Bronze 3
+    second: Coins_3
   - first:
       213: 6582046967323461550
-    second: Silver 0
+    second: Coins_4
   - first:
       213: 1942777921290549423
-    second: Silver 1
+    second: Coins_5
   - first:
       213: 8793606821965667882
-    second: Silver 2
+    second: Coins_6
   - first:
       213: 3444832735345940322
-    second: Silver 3
+    second: Coins_7
   - first:
       213: -4986890610287934012
-    second: Gold 0
+    second: Coins_8
   - first:
       213: 6143208460787649835
-    second: Gold 1
+    second: Coins_9
   - first:
       213: 7609282858266732271
-    second: Gold 2
+    second: Coins_10
   - first:
       213: -6288512792030432889
-    second: Gold 3
+    second: Coins_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,12 +70,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,14 +101,14 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,12 +116,12 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,25 +129,12 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 128
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
+  - serializedVersion: 4
     buildTarget: WebGL
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -159,19 +146,20 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bronze 0
+      name: Coins_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 34
-        width: 16
-        height: 16
+        x: 3
+        y: 37
+        width: 10
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 664b1e88ab4f5cfd0800000000000000
       internalID: -2322180950842035098
@@ -180,19 +168,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bronze 1
+      name: Coins_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 34
-        width: 16
-        height: 16
+        x: 21
+        y: 37
+        width: 8
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 4e99f4d782e151cb0800000000000000
       internalID: -4893972260818282012
@@ -201,19 +190,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bronze 2
+      name: Coins_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 34
-        width: 16
-        height: 16
+        x: 39
+        y: 37
+        width: 6
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: aaa1e681fd58d38a0800000000000000
       internalID: -6323751108524238166
@@ -222,19 +212,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bronze 3
+      name: Coins_3
       rect:
         serializedVersion: 2
-        x: 51
-        y: 34
-        width: 16
-        height: 16
+        x: 55
+        y: 37
+        width: 8
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: dbc2264f56b77c520800000000000000
       internalID: 2722280177590742205
@@ -243,19 +234,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Silver 0
+      name: Coins_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 17
-        width: 16
-        height: 16
+        x: 3
+        y: 20
+        width: 10
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: ea78046f7d0285b50800000000000000
       internalID: 6582046967323461550
@@ -264,19 +256,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Silver 1
+      name: Coins_5
       rect:
         serializedVersion: 2
-        x: 17
-        y: 17
-        width: 16
-        height: 16
+        x: 21
+        y: 20
+        width: 8
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: fa8bef3e93226fa10800000000000000
       internalID: 1942777921290549423
@@ -285,19 +278,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Silver 2
+      name: Coins_6
       rect:
         serializedVersion: 2
-        x: 34
-        y: 17
-        width: 16
-        height: 16
+        x: 39
+        y: 20
+        width: 6
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: a2e17b560da290a70800000000000000
       internalID: 8793606821965667882
@@ -306,19 +300,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Silver 3
+      name: Coins_7
       rect:
         serializedVersion: 2
-        x: 51
-        y: 17
-        width: 16
-        height: 16
+        x: 55
+        y: 20
+        width: 8
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 2679eec0f118ecf20800000000000000
       internalID: 3444832735345940322
@@ -327,19 +322,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gold 0
+      name: Coins_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 3
+        y: 3
+        width: 10
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 4c58e0069610bcab0800000000000000
       internalID: -4986890610287934012
@@ -348,19 +344,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gold 1
+      name: Coins_9
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 16
-        height: 16
+        x: 21
+        y: 3
+        width: 8
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: b2d0c660c8f014550800000000000000
       internalID: 6143208460787649835
@@ -369,19 +366,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gold 2
+      name: Coins_10
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
-        width: 16
-        height: 16
+        x: 39
+        y: 3
+        width: 6
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: fe62572a17a999960800000000000000
       internalID: 7609282858266732271
@@ -390,19 +388,20 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gold 3
+      name: Coins_11
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
-        width: 16
-        height: 16
+        x: 55
+        y: 3
+        width: 8
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
       spriteID: 781b6810fe6bab8a0800000000000000
       internalID: -6288512792030432889
@@ -411,28 +410,31 @@ TextureImporter:
       edges: []
       weights: []
     outline: []
+    customData: 
     physicsShape: []
     bones: []
-    spriteID: 7e6a3458aea67d6468fc14ee8c46abba
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
     nameFileIdTable:
-      Bronze 0: -2322180950842035098
-      Bronze 1: -4893972260818282012
-      Bronze 2: -6323751108524238166
-      Bronze 3: 2722280177590742205
-      Gold 0: -4986890610287934012
-      Gold 1: 6143208460787649835
-      Gold 2: 7609282858266732271
-      Gold 3: -6288512792030432889
-      Silver 0: 6582046967323461550
-      Silver 1: 1942777921290549423
-      Silver 2: 8793606821965667882
-      Silver 3: 3444832735345940322
+      Coins_0: -2322180950842035098
+      Coins_1: -4893972260818282012
+      Coins_10: 7609282858266732271
+      Coins_11: -6288512792030432889
+      Coins_2: -6323751108524238166
+      Coins_3: 2722280177590742205
+      Coins_4: 6582046967323461550
+      Coins_5: 1942777921290549423
+      Coins_6: 8793606821965667882
+      Coins_7: 3444832735345940322
+      Coins_8: -4986890610287934012
+      Coins_9: 6143208460787649835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

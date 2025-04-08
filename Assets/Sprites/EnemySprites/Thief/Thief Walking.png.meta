@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ada315e35b4023408f4bd03df087c83
+guid: b1e6c43e0d78ebc4a972b1600076e179
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -155,20 +155,20 @@ TextureImporter:
       name: Thief Walking_0
       rect:
         serializedVersion: 2
-        x: 142
-        y: 53
-        width: 241
-        height: 260
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5c27c283398834930800000000000000
-      internalID: 4126291849485513413
+      spriteID: 76eac3ed8a8ca4c46a05cd3d40a07a0a
+      internalID: -1487701991
       vertices: []
       indices: 
       edges: []
@@ -177,20 +177,20 @@ TextureImporter:
       name: Thief Walking_1
       rect:
         serializedVersion: 2
-        x: 657
-        y: 53
-        width: 218
-        height: 265
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5a8371bcc2bde0b80800000000000000
-      internalID: -8426556867331278683
+      spriteID: 35f0528a01031e2449833d679bd29be1
+      internalID: 803189914
       vertices: []
       indices: 
       edges: []
@@ -199,20 +199,20 @@ TextureImporter:
       name: Thief Walking_2
       rect:
         serializedVersion: 2
-        x: 1187
-        y: 53
-        width: 190
-        height: 270
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4d3f071c50918c1f0800000000000000
-      internalID: -1024541402715851820
+      spriteID: 8fc5fe3423fa7354487c2393a145c202
+      internalID: -1243620364
       vertices: []
       indices: 
       edges: []
@@ -221,42 +221,42 @@ TextureImporter:
       name: Thief Walking_3
       rect:
         serializedVersion: 2
-        x: 1657
-        y: 53
-        width: 218
-        height: 265
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 65d299b7d64d9f0b0800000000000000
-      internalID: -5694286687143121578
+      spriteID: 32870ccdf5ec75d41a1ccfc512f10370
+      internalID: 1354964580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thief Walking_8
+      name: Thief Walking_4
       rect:
         serializedVersion: 2
-        x: 2187
-        y: 53
-        width: 190
-        height: 270
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 32976ee88a8b09500800000000000000
-      internalID: 401023400927459619
+      spriteID: 7075770e528b63a4b945f46e0b4b16dc
+      internalID: 2028968809
       vertices: []
       indices: 
       edges: []
@@ -265,7 +265,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9e55a16b7b9f7ef49a9239d8a80c6fc9
+    spriteID: 29efef4456231994dbb5b31f672a4bf8
     internalID: 0
     vertices: []
     indices: 
@@ -275,18 +275,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Walking_0: 4126291849485513413
-      Thief Walking_1: -8426556867331278683
-      Thief Walking_10: -7941642395874622195
-      Thief Walking_11: -4899941527297714931
-      Thief Walking_12: 8900954132745064308
-      Thief Walking_13: -6500805994015516561
-      Thief Walking_2: -1024541402715851820
-      Thief Walking_3: -5694286687143121578
-      Thief Walking_5: 3018845896034609209
-      Thief Walking_7: 2136875603771141236
-      Thief Walking_8: 401023400927459619
-      Thief Walking_9: -2334284937450108176
+      Thief Walking_0: -1487701991
+      Thief Walking_1: 803189914
+      Thief Walking_2: -1243620364
+      Thief Walking_3: 1354964580
+      Thief Walking_4: 2028968809
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
