@@ -16,9 +16,9 @@ public class PlayerManager : MonoBehaviour
     public CameraShake cameraShake;
 
     [Header("UI")]
-    public GameObject prfHpBar;
-    public GameObject canvas;
-    private RectTransform hpBar;
+    //public GameObject prfHpBar;
+    ////public GameObject canvas;
+    //private RectTransform hpBar;
     private UnityEngine.UI.Image nowHpbar;
 
     [Header("공격 위치")]
@@ -52,8 +52,8 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+        //hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        //nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         playerStateController = new PlayerStateController(this);  // 이렇게 수정
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
@@ -68,9 +68,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (IsDead) return;
         // 체력바 UI 갱신
-        Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
-        hpBar.position = hpBarPos;
-        UpdateHpUI(playerHealth.currentHealth);
+        //Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
+        //hpBar.position = hpBarPos;
+        //UpdateHpUI(playerHealth.currentHealth);
         float inputX = playerMove.GetHorizontalInput();
         bool grounded = groundSensor != null && groundSensor.State();
         bool isAttacking = playerAttack.IsAttacking;

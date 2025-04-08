@@ -460,6 +460,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -3072,7 +3085,125 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stalactite_0: 1032971629258815371
+      Stalactite_1: 1372644054229993510
+      Stalactite_10: -4949904383499238876
+      Stalactite_100: 5425007743938766663
+      Stalactite_101: -4448760277582262573
+      Stalactite_102: -1574946896408758763
+      Stalactite_103: 3331202671403403312
+      Stalactite_104: 1825592467461359749
+      Stalactite_105: 236380408821112998
+      Stalactite_106: -1839101361226597053
+      Stalactite_107: -2322369956875135076
+      Stalactite_108: -6524082117780550981
+      Stalactite_109: 660498651863762616
+      Stalactite_11: -960781106995606039
+      Stalactite_110: -5334718840368831484
+      Stalactite_111: 5806129148551996002
+      Stalactite_112: 3072174224226482036
+      Stalactite_113: 7678053551655140594
+      Stalactite_114: 5020468992985826216
+      Stalactite_115: 4365269569007061128
+      Stalactite_116: 5691349647883365888
+      Stalactite_117: 8088395710205423267
+      Stalactite_12: 6711836906051197486
+      Stalactite_13: -2793453130289493433
+      Stalactite_14: 8971418139937048642
+      Stalactite_15: -3334582380670860013
+      Stalactite_16: -6704682497777644308
+      Stalactite_17: 1611736442421691865
+      Stalactite_18: 8599246665168740112
+      Stalactite_19: 4478816690935717369
+      Stalactite_2: -2595344492182195288
+      Stalactite_20: -2844536071150372819
+      Stalactite_21: 6617604398397119893
+      Stalactite_22: 6810288020279097946
+      Stalactite_23: 6802022951085646571
+      Stalactite_24: 4984207459221561156
+      Stalactite_25: -5699768397810717524
+      Stalactite_26: -1041149456711265238
+      Stalactite_27: 2082154078945677672
+      Stalactite_28: -58233868606690377
+      Stalactite_29: -6831015680208637762
+      Stalactite_3: -3570480002992934581
+      Stalactite_30: -3699563328713941376
+      Stalactite_31: 7838517138095260554
+      Stalactite_32: -1132059842841522259
+      Stalactite_33: -4132548079182896427
+      Stalactite_34: -8280063680287439481
+      Stalactite_35: 3142416373597961298
+      Stalactite_36: 8474625213391127232
+      Stalactite_37: -5157212309217652856
+      Stalactite_38: -8679077534702765553
+      Stalactite_39: 5135584435355555728
+      Stalactite_4: -2684886259714046088
+      Stalactite_40: -1611467249239453357
+      Stalactite_41: 6602466286297274814
+      Stalactite_42: -8312962046565860178
+      Stalactite_43: 810525461454765654
+      Stalactite_44: 8026734932057339106
+      Stalactite_45: -6416931120553161221
+      Stalactite_46: -690054198509402267
+      Stalactite_47: -6114590091556977309
+      Stalactite_48: 527745928080257922
+      Stalactite_49: -8077629017287301599
+      Stalactite_5: 1501094983275798573
+      Stalactite_50: -3617632473355038961
+      Stalactite_51: -4073653807235736646
+      Stalactite_52: -6730107437313327556
+      Stalactite_53: 7723365463508677477
+      Stalactite_54: -3870959442721147070
+      Stalactite_55: 4411363304389378000
+      Stalactite_56: -7226000357890944844
+      Stalactite_57: 8223709856793396174
+      Stalactite_58: 5215784689743786298
+      Stalactite_59: 6084419145312977230
+      Stalactite_6: -6312034140880043070
+      Stalactite_60: 4209498142682008815
+      Stalactite_61: -262043334331271237
+      Stalactite_62: 7038027607977921810
+      Stalactite_63: -8528343381136834629
+      Stalactite_64: 8356325984561752106
+      Stalactite_65: 2370510353341589709
+      Stalactite_66: -8883976542219844968
+      Stalactite_67: -57717912849267535
+      Stalactite_68: -7208308855287002482
+      Stalactite_69: -8228202920822354178
+      Stalactite_7: -1726185527015644205
+      Stalactite_70: -6784028760855884908
+      Stalactite_71: -3614357340134981282
+      Stalactite_72: 3496019481471695001
+      Stalactite_73: -7766610999257561930
+      Stalactite_74: -4995961635319020787
+      Stalactite_75: -8716894348172562092
+      Stalactite_76: -4994345506728865544
+      Stalactite_77: -4991196249270191676
+      Stalactite_78: 4590420580065869151
+      Stalactite_79: 7601136013420277287
+      Stalactite_8: 4847850021745746878
+      Stalactite_80: 7599103744677254933
+      Stalactite_81: -5223978427702315567
+      Stalactite_82: 1828193207830605910
+      Stalactite_83: -6377791468767475312
+      Stalactite_84: 1976102317194990596
+      Stalactite_85: -1634447892610704199
+      Stalactite_86: 8758872183734857193
+      Stalactite_87: 8084612110538516261
+      Stalactite_88: -3950419613681250846
+      Stalactite_89: 1595386405000792842
+      Stalactite_9: 8323380109338853185
+      Stalactite_90: 5989184220583017766
+      Stalactite_91: -4186020646571654392
+      Stalactite_92: -5984444412003109840
+      Stalactite_93: 4419850025276934592
+      Stalactite_94: -7447912087736240277
+      Stalactite_95: 2075217057316525516
+      Stalactite_96: 1032728574845388235
+      Stalactite_97: -6550752289308810361
+      Stalactite_98: -8050050473571551475
+      Stalactite_99: 5216134806165481012
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
