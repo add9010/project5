@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
 {
     public FadeManager fadeManager; // 페이드 매니저 연결
+    public OptionMenu optionMenu; // 옵션 메뉴 연결
 
     public void OnClickNewGame()
     {
@@ -69,6 +70,10 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
     public void OnClickOption()
     {
         Debug.Log("옵션");
+        if (optionMenu != null)
+        {
+            optionMenu.OpenOption();
+        }
     }
 
     public void OnClickQuit()

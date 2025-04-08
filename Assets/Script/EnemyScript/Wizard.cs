@@ -126,7 +126,6 @@ public class Wizard : Enemy
         }
 
         isInDamageState = true;
-        anim.SetBool("isHunt", true);
         Vector2 knockbackDirection = (transform.position - player.position).normalized;
         rigid.linearVelocity = Vector2.zero;
         rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);

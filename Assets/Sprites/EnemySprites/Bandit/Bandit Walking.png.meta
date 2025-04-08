@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8924b37256bc17e4ab69b55bdff04eb0
+guid: ec519d2e4fc964f4f8e941273798c7f1
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -158,20 +158,20 @@ TextureImporter:
       name: Bandit Walking_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 52
-        width: 216
-        height: 299
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 386c09f3f553523f0800000000000000
-      internalID: -926275465150151037
+      spriteID: c5e60a07152adf449b0daf327d9e7741
+      internalID: 422953143
       vertices: []
       indices: 
       edges: []
@@ -180,20 +180,20 @@ TextureImporter:
       name: Bandit Walking_1
       rect:
         serializedVersion: 2
-        x: 662
-        y: 52
-        width: 192
-        height: 299
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c61e87786da0aef60800000000000000
-      internalID: 8064269999272419692
+      spriteID: 047aed832ed1a6141ab9787a7e510a18
+      internalID: -1973124936
       vertices: []
       indices: 
       edges: []
@@ -202,20 +202,20 @@ TextureImporter:
       name: Bandit Walking_2
       rect:
         serializedVersion: 2
-        x: 1181
-        y: 52
-        width: 153
-        height: 299
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 22f839609f327e860800000000000000
-      internalID: 7559050052028829474
+      spriteID: 9d058122700fe114b9d362e4c12b2c71
+      internalID: 302933905
       vertices: []
       indices: 
       edges: []
@@ -224,20 +224,20 @@ TextureImporter:
       name: Bandit Walking_3
       rect:
         serializedVersion: 2
-        x: 1692
-        y: 52
-        width: 120
-        height: 308
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cf82a4680a2b1cb90800000000000000
-      internalID: -7223295924808046340
+      spriteID: 29fb72cea171b134f875a1016c7769fe
+      internalID: -393361803
       vertices: []
       indices: 
       edges: []
@@ -246,20 +246,20 @@ TextureImporter:
       name: Bandit Walking_4
       rect:
         serializedVersion: 2
-        x: 2162
-        y: 53
-        width: 192
-        height: 300
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e6b527d248cbda730800000000000000
-      internalID: 4012070118941154158
+      spriteID: 37b8097c2163edd478372a35be3ac6bf
+      internalID: -230706395
       vertices: []
       indices: 
       edges: []
@@ -268,20 +268,20 @@ TextureImporter:
       name: Bandit Walking_5
       rect:
         serializedVersion: 2
-        x: 2681
-        y: 52
-        width: 153
-        height: 305
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 446986a18fd20db70800000000000000
-      internalID: 8921681405439153732
+      spriteID: 2865813f59d06c34aba68bcc713303f3
+      internalID: -1252062670
       vertices: []
       indices: 
       edges: []
@@ -290,20 +290,20 @@ TextureImporter:
       name: Bandit Walking_6
       rect:
         serializedVersion: 2
-        x: 3181
-        y: 52
-        width: 153
-        height: 305
+        x: 3000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 29d3c78a5c7b76c20800000000000000
-      internalID: 3199728119833181586
+      spriteID: be6785bd481e96041b7cd6ad34d95cd5
+      internalID: 613153029
       vertices: []
       indices: 
       edges: []
@@ -312,20 +312,20 @@ TextureImporter:
       name: Bandit Walking_7
       rect:
         serializedVersion: 2
-        x: 3692
-        y: 52
-        width: 120
-        height: 305
+        x: 3500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4116b678938b140c0800000000000000
-      internalID: -4593187587716587244
+      spriteID: 6eca9ee0f67b5e9418107100762c2c3e
+      internalID: -290265797
       vertices: []
       indices: 
       edges: []
@@ -334,7 +334,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 326e66d39658579469468e2d34837319
+    spriteID: 672c0571679a9174a844f48de0d639b1
     internalID: 0
     vertices: []
     indices: 
@@ -344,18 +344,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bandit Walking_0: -926275465150151037
-      Bandit Walking_1: 8064269999272419692
-      Bandit Walking_10: -4158951526812990541
-      Bandit Walking_12: -6798606805455468301
-      Bandit Walking_14: 2771711953723876455
-      Bandit Walking_2: 7559050052028829474
-      Bandit Walking_3: -7223295924808046340
-      Bandit Walking_4: 4012070118941154158
-      Bandit Walking_5: 8921681405439153732
-      Bandit Walking_6: 3199728119833181586
-      Bandit Walking_7: -4593187587716587244
-      Bandit Walking_8: 6171256378423034465
+      Bandit Walking_0: 422953143
+      Bandit Walking_1: -1973124936
+      Bandit Walking_2: 302933905
+      Bandit Walking_3: -393361803
+      Bandit Walking_4: -230706395
+      Bandit Walking_5: -1252062670
+      Bandit Walking_6: 613153029
+      Bandit Walking_7: -290265797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

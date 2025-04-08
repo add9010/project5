@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 07d1f8a2a5bd6de46a7bd94e6c754f47
+guid: 23533f9dfb01a1d448e5d3cd26abf60c
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -122,20 +122,20 @@ TextureImporter:
       name: Thief Hit_0
       rect:
         serializedVersion: 2
-        x: 140
-        y: 52
-        width: 244
-        height: 260
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 72fd91a29c2d2f8d0800000000000000
-      internalID: -2813955055716540633
+      spriteID: 26b11f683eeb3c44e815600ea8b31abd
+      internalID: -1385317179
       vertices: []
       indices: 
       edges: []
@@ -144,20 +144,20 @@ TextureImporter:
       name: Thief Hit_1
       rect:
         serializedVersion: 2
-        x: 569
-        y: 51
-        width: 206
-        height: 369
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 57b820c4a3de8b840800000000000000
-      internalID: 5240199001084693365
+      spriteID: 473933123d1b56d48811ff57716ff055
+      internalID: -919438992
       vertices: []
       indices: 
       edges: []
@@ -166,20 +166,20 @@ TextureImporter:
       name: Thief Hit_2
       rect:
         serializedVersion: 2
-        x: 1007
-        y: 68
-        width: 222
-        height: 363
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 97a9c82a37baf6e90800000000000000
-      internalID: -7030211980165342599
+      spriteID: be3717b62a3578746a71d91a3a3545ab
+      internalID: -1422319840
       vertices: []
       indices: 
       edges: []
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 51439fc0cf8927f4bbb11554a95cf22a
     internalID: 0
     vertices: []
     indices: 
@@ -198,9 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Hit_0: -2813955055716540633
-      Thief Hit_1: 5240199001084693365
-      Thief Hit_2: -7030211980165342599
+      Thief Hit_0: -1385317179
+      Thief Hit_1: -919438992
+      Thief Hit_2: -1422319840
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
