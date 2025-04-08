@@ -2946,8 +2946,8 @@ MonoBehaviour:
     attackPower: 10
     speed: 12
     jumpForce: 15
-    rollForce: 6
-    rollDuration: 0.25
+    dashForce: 10
+    dashDuration: 0.2
     attackKnockback: 12
     attackKnockbackThird: 30
     attackDuration: 0.2
@@ -2967,6 +2967,7 @@ MonoBehaviour:
   groundSensor: {fileID: 879041993}
   dialog: {fileID: 0}
   isAction: 0
+  isDashing: 0
 --- !u!50 &352926687 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 7020276498448082982, guid: c687608987866314b983fdf37afbba9f, type: 3}
@@ -5429,7 +5430,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1234601247121046392, guid: 085b3fb3462d9504e994630ed5e7078d, type: 3}
+  m_Sprite: {fileID: 1496088564, guid: 085b3fb3462d9504e994630ed5e7078d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7164,7 +7165,7 @@ Animator:
   m_GameObject: {fileID: 1216037962}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d8ac38e2740beb345a1a2504de1c2bea, type: 2}
+  m_Controller: {fileID: 9100000, guid: e971d68fcfba3aa4ab9ba1cf79d3c32c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7220,7 +7221,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8003577372901011977, guid: 426d326ef739a4843830d7851d6b4724, type: 3}
+  m_Sprite: {fileID: -769714202, guid: 426d326ef739a4843830d7851d6b4724, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -17813,7 +17814,7 @@ Animator:
   m_GameObject: {fileID: 2147231123}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ca6af6f38834c84fbd237337a480e00, type: 2}
+  m_Controller: {fileID: 9100000, guid: ee845116dfa07844da69861643c828a0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -17869,7 +17870,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8777573840079053500, guid: 45784aab14f1116428958eaeab23e681, type: 3}
+  m_Sprite: {fileID: -554439592, guid: 45784aab14f1116428958eaeab23e681, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
