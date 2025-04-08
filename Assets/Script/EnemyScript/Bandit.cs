@@ -101,27 +101,4 @@ public class Bandit : Enemy
         LookAtPatrolTarget();
     }
 
-    public override void TakeDamage(ParameterPlayerAttack argument)
-    {
-        if (isTakingDamage || anim.GetBool("isDead")) return;
-
-        isTakingDamage = true;
-        nowHp -= argument.damage;
-
-        anim.SetTrigger("hit");
-
-        if (nowHp <= 0)
-        {
-            HandleWhenDead();
-            return;
-        }
-
-        isInDamageState = true;
-        Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.linearVelocity = Vector2.zero;
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);
-
-        Invoke("ResumeChase", 0.5f);
-        StartCoroutine(EndDamage());
-    }
 }

@@ -3,40 +3,40 @@ using System.Collections;
 
 public class CircularSlash : MonoBehaviour
 {
-    public GameObject skillPrefab; // ½ºÅ³ ÇÁ¸®ÆÕ
-    public float skillDamage = 20f; // ½ºÅ³ µ¥¹ÌÁö
-    public Vector3 effectSize = new Vector3(7, 3, 1); // ÀÌÆåÆ® Å©±â (Å©±â¸¦ Á¶Á¤ÇÒ º¤ÅÍ)
+    public GameObject skillPrefab; // ìŠ¤í‚¬ í”„ë¦¬íŒ¹
+    public float skillDamage = 20f; // ìŠ¤í‚¬ ë°ë¯¸ì§€
+    public Vector3 effectSize = new Vector3(7, 3, 1); // ì´í™íŠ¸ í¬ê¸° (í¬ê¸°ë¥¼ ì¡°ì •í•  ë²¡í„°)
 
-    private Transform pos; // ½ºÅ³ ¼ÒÈ¯ À§Ä¡
-    public float skillRadius = 6f; // ¿øÇü ¹üÀ§ ¹İ°æ (±âÁî¸ğ¿Í °ü·ÃµÈ °ª)
+    private Transform pos; // ìŠ¤í‚¬ ì†Œí™˜ ìœ„ì¹˜
+    public float skillRadius = 6f; // ì›í˜• ë²”ìœ„ ë°˜ê²½ (ê¸°ì¦ˆëª¨ì™€ ê´€ë ¨ëœ ê°’)
 
-    private bool isSkillActive = false; // ½ºÅ³ È°¼ºÈ­ ¿©ºÎ
-    private float damageTimer = 0f; // ´ë¹ÌÁö Ã³¸® ½Ã°£ °£°İ
-    private Coroutine skillCoroutine; // ÄÚ·çÆ¾À» ÀúÀåÇÒ º¯¼ö
+    private bool isSkillActive = false; // ìŠ¤í‚¬ í™œì„±í™” ì—¬ë¶€
+    private float damageTimer = 0f; // ëŒ€ë¯¸ì§€ ì²˜ë¦¬ ì‹œê°„ ê°„ê²©
+    private Coroutine skillCoroutine; // ì½”ë£¨í‹´ì„ ì €ì¥í•  ë³€ìˆ˜
 
     void Start()
     {
-        // pos¸¦ ÀÚµ¿À¸·Î ÇÒ´ç (ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡)
-        pos = transform; // ½ºÅ³À» ¹ßµ¿ÇÏ´Â °´Ã¼°¡ ÀÌ ½ºÅ©¸³Æ®°¡ ºÙ¾î ÀÖ´Â °ÔÀÓ ¿ÀºêÁ§Æ®¶ó°í °¡Á¤
+        // posë¥¼ ìë™ìœ¼ë¡œ í• ë‹¹ (í”Œë ˆì´ì–´ì˜ ìœ„ì¹˜)
+        pos = transform; // ìŠ¤í‚¬ì„ ë°œë™í•˜ëŠ” ê°ì²´ê°€ ì´ ìŠ¤í¬ë¦½íŠ¸ê°€ ë¶™ì–´ ìˆëŠ” ê²Œì„ ì˜¤ë¸Œì íŠ¸ë¼ê³  ê°€ì •
     }
 
     void Update()
     {
-        // G Å°¸¦ ´­·¶À» ¶§ ½ºÅ³ ¹ßµ¿
+        // G í‚¤ë¥¼ ëˆŒë €ì„ ë•Œ ìŠ¤í‚¬ ë°œë™
         if (Input.GetKeyDown(KeyCode.G))StartSkill();
         
-        // G Å°¸¦ ¶¼¾úÀ» ¶§ ½ºÅ³ ÁßÁö
+        // G í‚¤ë¥¼ ë–¼ì—ˆì„ ë•Œ ìŠ¤í‚¬ ì¤‘ì§€
         if (Input.GetKeyUp(KeyCode.G))StopSkill();
         
 
-        // ½ºÅ³ÀÌ È°¼ºÈ­µÈ »óÅÂ¿¡¼­ °è¼Ó ´ë¹ÌÁö ÀÔÈ÷±â
+        // ìŠ¤í‚¬ì´ í™œì„±í™”ëœ ìƒíƒœì—ì„œ ê³„ì† ëŒ€ë¯¸ì§€ ì…íˆê¸°
         if (isSkillActive)
         {
             damageTimer += Time.deltaTime;
 
-            if (damageTimer >= 0.2f)  // 0.2ÃÊ¸¶´Ù ´ë¹ÌÁö Ã³¸®
+            if (damageTimer >= 0.2f)  // 0.2ì´ˆë§ˆë‹¤ ëŒ€ë¯¸ì§€ ì²˜ë¦¬
             {
-                damageTimer = 0f;  // Å¸ÀÌ¸Ó ÃÊ±âÈ­
+                damageTimer = 0f;  // íƒ€ì´ë¨¸ ì´ˆê¸°í™”
                 ApplyDamage();
             }
         }
@@ -44,20 +44,20 @@ public class CircularSlash : MonoBehaviour
 
     private void StartSkill()
     {
-        // ½ºÅ³À» È°¼ºÈ­ÇÏ°í ÀÌÆåÆ®¸¦ ¼ÒÈ¯
+        // ìŠ¤í‚¬ì„ í™œì„±í™”í•˜ê³  ì´í™íŠ¸ë¥¼ ì†Œí™˜
         if (!isSkillActive)
         {
-            isSkillActive = true;  // ½ºÅ³ È°¼ºÈ­
-            skillCoroutine = StartCoroutine(SpawnSkillPrefab());  // ÀÌÆåÆ® »ı¼º ½ÃÀÛ
+            isSkillActive = true;  // ìŠ¤í‚¬ í™œì„±í™”
+            skillCoroutine = StartCoroutine(SpawnSkillPrefab());  // ì´í™íŠ¸ ìƒì„± ì‹œì‘
         }
     }
 
     private void StopSkill()
     {
-        isSkillActive = false;  // ½ºÅ³ ºñÈ°¼ºÈ­
-        damageTimer = 0f;  // Å¸ÀÌ¸Ó ÃÊ±âÈ­
+        isSkillActive = false;  // ìŠ¤í‚¬ ë¹„í™œì„±í™”
+        damageTimer = 0f;  // íƒ€ì´ë¨¸ ì´ˆê¸°í™”
 
-        // ÀÌÆåÆ® »ı¼º ÄÚ·çÆ¾À» ÁßÁö
+        // ì´í™íŠ¸ ìƒì„± ì½”ë£¨í‹´ì„ ì¤‘ì§€
         if (skillCoroutine != null)
         {
             StopCoroutine(skillCoroutine);
@@ -67,24 +67,24 @@ public class CircularSlash : MonoBehaviour
 
     private void ApplyDamage()
     {
-        // Àû¿¡°Ô ´ë¹ÌÁö Ã³¸®
+        // ì ì—ê²Œ ëŒ€ë¯¸ì§€ ì²˜ë¦¬
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(pos.position, skillRadius);
         foreach (Collider2D collider in hitEnemies)
         {
-            if (collider.CompareTag("Enemy")) // "Enemy" ÅÂ±×¸¦ °¡Áø °´Ã¼µé¸¸ Ã³¸®
+            if (collider.CompareTag("Enemy")) // "Enemy" íƒœê·¸ë¥¼ ê°€ì§„ ê°ì²´ë“¤ë§Œ ì²˜ë¦¬
             {
-                // Enemy ½ºÅ©¸³Æ®°¡ ÀÖ´Ù¸é ´ë¹ÌÁö ÀÔÈ÷±â
+                // Enemy ìŠ¤í¬ë¦½íŠ¸ê°€ ìˆë‹¤ë©´ ëŒ€ë¯¸ì§€ ì…íˆê¸°
                 Enemy enemyScript = collider.GetComponent<Enemy>();
                 if (enemyScript != null)
                 {
-                    // ParameterPlayerAttack °´Ã¼ »ı¼º
+                    // ParameterPlayerAttack ê°ì²´ ìƒì„±
                     ParameterPlayerAttack attackParams = new ParameterPlayerAttack
                     {
                         damage = skillDamage,
                     };
 
-                    // TakeDamage ÇÔ¼ö È£Ãâ
-                    enemyScript.TakeDamage(attackParams);
+                    // TakeDamage í•¨ìˆ˜ í˜¸ì¶œ
+                   // enemyScript.TakeDamage(attackParams);
                 }
             }
         }
@@ -92,28 +92,28 @@ public class CircularSlash : MonoBehaviour
 
     private IEnumerator SpawnSkillPrefab()
     {
-        // ½ºÅ³ ÀÌÆåÆ®°¡ È°¼ºÈ­µÈ µ¿¾È °è¼Ó »ı¼º
+        // ìŠ¤í‚¬ ì´í™íŠ¸ê°€ í™œì„±í™”ëœ ë™ì•ˆ ê³„ì† ìƒì„±
         while (isSkillActive)
         {
-            // ½ºÅ³ ÇÁ¸®ÆÕ ¼ÒÈ¯
+            // ìŠ¤í‚¬ í”„ë¦¬íŒ¹ ì†Œí™˜
             Vector3 spawnPosition = pos.position + new Vector3(0, 0, -1);
             GameObject spawnedSkill = Instantiate(skillPrefab, spawnPosition, Quaternion.identity);
 
-            // ÀÌÆåÆ® Å©±â Á¶Á¤
+            // ì´í™íŠ¸ í¬ê¸° ì¡°ì •
             spawnedSkill.transform.localScale = effectSize;
 
-            // Àá½Ã ´ë±â (¼ÒÈ¯ °£°İ ´ë±â)
-            yield return new WaitForSeconds(0.18f);  // 0.2ÃÊ¸¶´Ù ÀÌÆåÆ® »ı¼º
+            // ì ì‹œ ëŒ€ê¸° (ì†Œí™˜ ê°„ê²© ëŒ€ê¸°)
+            yield return new WaitForSeconds(0.18f);  // 0.2ì´ˆë§ˆë‹¤ ì´í™íŠ¸ ìƒì„±
         }
     }
 
-    // Gizmos¸¦ »ç¿ëÇØ ¿øÇü ¹üÀ§¸¦ ½Ã°¢ÀûÀ¸·Î È®ÀÎ
+    // Gizmosë¥¼ ì‚¬ìš©í•´ ì›í˜• ë²”ìœ„ë¥¼ ì‹œê°ì ìœ¼ë¡œ í™•ì¸
     void OnDrawGizmosSelected()
     {
-        // ±âÁî¸ğ »ö»ó ¼³Á¤
+        // ê¸°ì¦ˆëª¨ ìƒ‰ìƒ ì„¤ì •
         Gizmos.color = Color.red;
 
-        // ¿øÇü ¹üÀ§ ½Ã°¢È­
+        // ì›í˜• ë²”ìœ„ ì‹œê°í™”
         Gizmos.DrawWireSphere(transform.position, skillRadius);
     }
 }

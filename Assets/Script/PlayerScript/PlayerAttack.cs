@@ -10,7 +10,7 @@ public class PlayerAttack
     private bool isAttacking;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
 
-    public bool IsAttacking { get { return isAttacking; } }
+    public bool IsAttacking => isAttacking;
 
     public PlayerAttack(PlayerManager manager)
     {
@@ -81,26 +81,23 @@ public class PlayerAttack
         {
             if (hitEnemies.Contains(col)) continue;
 
-            Enemy enemy = col.GetComponent<Enemy>() ?? col.GetComponentInParent<Enemy>();
-            if (enemy != null)
-            {
-                Debug.Log($"적 히트: {enemy.name}");
-                var arg = new ParameterPlayerAttack { damage = damage, knockback = knockback };
-                enemy.TakeDamage(arg);
-                hitEnemies.Add(col);
-            }
+            GameObject target = col.gameObject;
+            CombatManager.ApplyDamage(target, damage, knockback, manager.transform.position);
+            hitEnemies.Add(col);
         }
     }
+
     public void UpdateAttackPosition()
     {
         Vector3 offset = manager.data.attackBoxOffset;
 
-        // 왼쪽을 바라보면 x축 반전
-        if (manager.spriteRenderer.flipX)
+        // 반전된 스프라이트 방향 기준으로 x축 이동 반전
+        if (!manager.spriteRenderer.flipX)
             offset.x *= -1;
 
         manager.attackPos.localPosition = offset;
     }
+
     public void DrawGizmos()
     {
         if (manager == null || manager.attackPos == null) return;

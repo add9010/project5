@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
 {
     protected Rigidbody2D rigid;
     protected SpriteRenderer spriteRenderer;
@@ -83,12 +83,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(ParameterPlayerAttack argument)
+    public void TakeDamage(float damage)
     {
         if (isTakingDamage || anim.GetBool("isDead")) return;
 
         isTakingDamage = true;
-        nowHp -= argument.damage;
+        nowHp -= damage;
 
         if (nowHp <= 0)
         {
@@ -96,18 +96,18 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        
-        isInDamageState = true;  
+        isInDamageState = true;
         anim.SetBool("isHunt", true);
-        Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.linearVelocity = Vector2.zero;
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);
 
-        
         Invoke("ResumeChase", 0.5f);
-
         StartCoroutine(EndDamage());
     }
+    public void ApplyKnockback(Vector2 dir, float force)
+    {
+        rigid.linearVelocity = Vector2.zero;
+        rigid.AddForce(dir * force, ForceMode2D.Impulse);
+    }
+
 
     private void ResumeChase()
     {
