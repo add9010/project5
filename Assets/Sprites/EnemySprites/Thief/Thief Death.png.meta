@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6d80ab234cce40b4b98863bdaf321490
+guid: 78c370f127d90274cacdc56128220c57
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -143,42 +143,20 @@ TextureImporter:
       name: Thief Death_0
       rect:
         serializedVersion: 2
-        x: 142
-        y: 53
-        width: 241
-        height: 260
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99421659881a41af0800000000000000
-      internalID: -426538456699558759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thief Death_4
-      rect:
-        serializedVersion: 2
-        x: 363
-        y: 220
-        width: 21
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75a34f57b81656720800000000000000
-      internalID: 2838782391734254167
+      spriteID: 6e25530e5ae9ff14b9678f103f9b46fe
+      internalID: -200431241
       vertices: []
       indices: 
       edges: []
@@ -187,20 +165,20 @@ TextureImporter:
       name: Thief Death_1
       rect:
         serializedVersion: 2
-        x: 646
-        y: 53
-        width: 165
-        height: 290
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a7fe3ded04af15370800000000000000
-      internalID: 8309697943998558074
+      spriteID: c42b156cc51c8d14e82b5d5a149a8ef4
+      internalID: -1710886153
       vertices: []
       indices: 
       edges: []
@@ -209,64 +187,42 @@ TextureImporter:
       name: Thief Death_2
       rect:
         serializedVersion: 2
-        x: 1107
-        y: 54
-        width: 218
-        height: 272
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7087f976a711bf680800000000000000
-      internalID: -8720357036050647033
+      spriteID: e5ab5d7310d96654aa325e468fdbffec
+      internalID: 1959111941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Thief Death_7
+      name: Thief Death_3
       rect:
         serializedVersion: 2
-        x: 140
-        y: 153
-        width: 18
-        height: 19
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b8e137d181c51dec0800000000000000
-      internalID: -3543950173120815477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Thief Death_
-      rect:
-        serializedVersion: 2
-        x: 1525
-        y: 52
-        width: 345
-        height: 59
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d142499db8af78c0800000000000000
-      internalID: -3999292411808169512
+      spriteID: d099d210a98591a489ef7d179c46b2e1
+      internalID: 1806935946
       vertices: []
       indices: 
       edges: []
@@ -275,7 +231,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 459a2b619933cd34886790481e919e70
+    spriteID: 9e6c1debcb8a0f44f994d4d3db30061c
     internalID: 0
     vertices: []
     indices: 
@@ -285,13 +241,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Death_: -3999292411808169512
-      Thief Death_0: -426538456699558759
-      Thief Death_1: 8309697943998558074
-      Thief Death_2: -8720357036050647033
-      Thief Death_4: 2838782391734254167
-      Thief Death_7: -3543950173120815477
-      Thief Death_8: -6591264026307511600
+      Thief Death_0: -200431241
+      Thief Death_1: -1710886153
+      Thief Death_2: 1959111941
+      Thief Death_3: 1806935946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

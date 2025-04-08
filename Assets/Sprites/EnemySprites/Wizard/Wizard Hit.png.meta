@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 34a878411396a1d48b1bc1257ea0daff
+guid: 3aaabccc608bce647ad0720d1ae6eb7b
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -131,20 +131,20 @@ TextureImporter:
       name: Wizard Hit_0
       rect:
         serializedVersion: 2
-        x: 196
-        y: 47
-        width: 118
-        height: 332
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed75d47e515bb5990800000000000000
-      internalID: -7396118857346361378
+      spriteID: 45744e162a289c44e815abba8ab40b45
+      internalID: -652389368
       vertices: []
       indices: 
       edges: []
@@ -153,42 +153,42 @@ TextureImporter:
       name: Wizard Hit_1
       rect:
         serializedVersion: 2
-        x: 618
-        y: 62
-        width: 164
-        height: 340
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cbdf76bef588b53e0800000000000000
-      internalID: -2063906058666508868
+      spriteID: 7f572e8643e7c544aabb4ca459882ada
+      internalID: -1097668016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wizard Hit_5
+      name: Wizard Hit_2
       rect:
         serializedVersion: 2
-        x: 1077
-        y: 62
-        width: 172
-        height: 332
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0831cff70b9c23b20800000000000000
-      internalID: 3112772052365087616
+      spriteID: e6fff358bb7331b44a63ff7229eddd72
+      internalID: -1379559269
       vertices: []
       indices: 
       edges: []
@@ -197,7 +197,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 25a7aaf34620b5244a00252c9d701473
+    spriteID: 01c642629d973cc4e85b0a266f622c1d
     internalID: 0
     vertices: []
     indices: 
@@ -207,8 +207,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wizard Hit_0: -7396118857346361378
-      Wizard Hit_1: -2063906058666508868
+      Wizard Hit_0: -652389368
+      Wizard Hit_1: -1097668016
+      Wizard Hit_2: -1379559269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
