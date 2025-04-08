@@ -153,10 +153,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9be3029aceab64880800000000000000
-      internalID: -8627002510569095495
+      spriteID: 3f6e9cd9a77b21240ab4e14b8ed32f0a
+      internalID: -1713987907
       vertices: []
       indices: 
       edges: []
@@ -175,10 +175,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d134a3b4cbc01b620800000000000000
-      internalID: 2788023647174542109
+      spriteID: b624751bceb074e4eb62afbe7f9d5ab9
+      internalID: -707345102
       vertices: []
       indices: 
       edges: []
@@ -197,10 +197,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 601b1ce2cee6967c0800000000000000
-      internalID: -4077606026931490554
+      spriteID: 3eff0b7c43c5ad94caa37b2442043b6c
+      internalID: -1882363429
       vertices: []
       indices: 
       edges: []
@@ -219,10 +219,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 486958afa30ea1db0800000000000000
-      internalID: -4820293907230910844
+      spriteID: 834a0df929978984193d02b12633eeaf
+      internalID: 256934357
       vertices: []
       indices: 
       edges: []
@@ -243,8 +243,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce4590bbe3d79cf4893e05e56febeaa0
-      internalID: -2010715220
+      spriteID: 4249b8334417d614894f6119bd97897e
+      internalID: 20512499
       vertices: []
       indices: 
       edges: []
@@ -253,7 +253,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 364c591748991014dac7187a6fea1173
+    spriteID: ca92789dc0afa164bb153f691d3e9c73
     internalID: 0
     vertices: []
     indices: 
@@ -263,11 +263,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wizard Walking_0: -8627002510569095495
-      Wizard Walking_1: 2788023647174542109
-      Wizard Walking_2: -4077606026931490554
-      Wizard Walking_3: -4820293907230910844
-      Wizard Walking_4: -2010715220
+      Wizard Walking_0: -1713987907
+      Wizard Walking_1: -707345102
+      Wizard Walking_2: -1882363429
+      Wizard Walking_3: 256934357
+      Wizard Walking_4: 20512499
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

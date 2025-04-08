@@ -1,43 +1,49 @@
 fileFormatVersion: 2
-guid: 02c9b13408f87214f97e8d720c2f3042
+guid: 8b65caef26177be47a051795d6e53e20
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2322180950842035098
-    second: Coins_0
+      213: 4126291849485513413
+    second: Thief Walking_0
   - first:
-      213: -4893972260818282012
-    second: Coins_1
+      213: 9107799200616348234
+    second: Thief Walking_1
   - first:
-      213: -6323751108524238166
-    second: Coins_2
+      213: -8426556867331278683
+    second: Thief Walking_2
   - first:
-      213: 2722280177590742205
-    second: Coins_3
+      213: -5099231093491727436
+    second: Thief Walking_3
   - first:
-      213: 6582046967323461550
-    second: Coins_4
+      213: -1024541402715851820
+    second: Thief Walking_4
   - first:
-      213: 1942777921290549423
-    second: Coins_5
+      213: 3018845896034609209
+    second: Thief Walking_5
   - first:
-      213: 8793606821965667882
-    second: Coins_6
+      213: -5694286687143121578
+    second: Thief Walking_6
   - first:
-      213: 3444832735345940322
-    second: Coins_7
+      213: 2136875603771141236
+    second: Thief Walking_7
   - first:
-      213: -4986890610287934012
-    second: Coins_8
+      213: 401023400927459619
+    second: Thief Walking_8
   - first:
-      213: 6143208460787649835
-    second: Coins_9
+      213: -2334284937450108176
+    second: Thief Walking_9
   - first:
-      213: 7609282858266732271
-    second: Coins_10
+      213: -7941642395874622195
+    second: Thief Walking_10
   - first:
-      213: -6288512792030432889
-    second: Coins_11
+      213: -4899941527297714931
+    second: Thief Walking_11
+  - first:
+      213: 8900954132745064308
+    second: Thief Walking_12
+  - first:
+      213: -6500805994015516561
+    second: Thief Walking_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -142,17 +148,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Coins_0
+      name: Thief Walking_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 37
-        width: 10
-        height: 10
+        x: 142
+        y: 53
+        width: 241
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 664b1e88ab4f5cfd0800000000000000
-      internalID: -2322180950842035098
+      spriteID: 5c27c283398834930800000000000000
+      internalID: 4126291849485513413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_1
+      name: Thief Walking_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 37
-        width: 8
-        height: 10
+        x: 255
+        y: 255
+        width: 54
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e99f4d782e151cb0800000000000000
-      internalID: -4893972260818282012
+      spriteID: a4af2562e17656e70800000000000000
+      internalID: 9107799200616348234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_2
+      name: Thief Walking_2
       rect:
         serializedVersion: 2
-        x: 39
-        y: 37
-        width: 6
-        height: 10
+        x: 657
+        y: 53
+        width: 218
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: aaa1e681fd58d38a0800000000000000
-      internalID: -6323751108524238166
+      spriteID: 5a8371bcc2bde0b80800000000000000
+      internalID: -8426556867331278683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_3
+      name: Thief Walking_3
       rect:
         serializedVersion: 2
-        x: 55
-        y: 37
-        width: 8
-        height: 10
+        x: 790
+        y: 257
+        width: 57
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbc2264f56b77c520800000000000000
-      internalID: 2722280177590742205
+      spriteID: 4b38ccc5654eb39b0800000000000000
+      internalID: -5099231093491727436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_4
+      name: Thief Walking_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 20
-        width: 10
-        height: 10
+        x: 1187
+        y: 53
+        width: 107
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea78046f7d0285b50800000000000000
-      internalID: 6582046967323461550
+      spriteID: 4d3f071c50918c1f0800000000000000
+      internalID: -1024541402715851820
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_5
+      name: Thief Walking_5
       rect:
         serializedVersion: 2
-        x: 21
-        y: 20
-        width: 8
-        height: 10
+        x: 1293
+        y: 262
+        width: 57
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fa8bef3e93226fa10800000000000000
-      internalID: 1942777921290549423
+      spriteID: 938e9c0195815e920800000000000000
+      internalID: 3018845896034609209
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_6
+      name: Thief Walking_6
       rect:
         serializedVersion: 2
-        x: 39
-        y: 20
-        width: 6
-        height: 10
+        x: 1657
+        y: 53
+        width: 218
+        height: 219
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2e17b560da290a70800000000000000
-      internalID: 8793606821965667882
+      spriteID: 65d299b7d64d9f0b0800000000000000
+      internalID: -5694286687143121578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_7
+      name: Thief Walking_7
       rect:
         serializedVersion: 2
-        x: 55
-        y: 20
-        width: 8
-        height: 10
+        x: 1790
+        y: 257
+        width: 57
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,20 +334,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2679eec0f118ecf20800000000000000
-      internalID: 3444832735345940322
+      spriteID: 47c2afb3a05b7ad10800000000000000
+      internalID: 2136875603771141236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_8
+      name: Thief Walking_8
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 10
-        height: 10
+        x: 2187
+        y: 53
+        width: 107
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,20 +356,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c58e0069610bcab0800000000000000
-      internalID: -4986890610287934012
+      spriteID: 32976ee88a8b09500800000000000000
+      internalID: 401023400927459619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_9
+      name: Thief Walking_9
       rect:
         serializedVersion: 2
-        x: 21
-        y: 3
-        width: 8
-        height: 10
+        x: 2293
+        y: 262
+        width: 57
+        height: 59
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,20 +378,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2d0c660c8f014550800000000000000
-      internalID: 6143208460787649835
+      spriteID: 0facdba8734fa9fd0800000000000000
+      internalID: -2334284937450108176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_10
+      name: Thief Walking_10
       rect:
         serializedVersion: 2
-        x: 39
-        y: 3
-        width: 6
-        height: 10
+        x: 363
+        y: 220
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,20 +400,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fe62572a17a999960800000000000000
-      internalID: 7609282858266732271
+      spriteID: d0506bc415e99c190800000000000000
+      internalID: -7941642395874622195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Coins_11
+      name: Thief Walking_11
       rect:
         serializedVersion: 2
-        x: 55
-        y: 3
-        width: 8
-        height: 10
+        x: 1279
+        y: 183
+        width: 99
+        height: 68
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,8 +422,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 781b6810fe6bab8a0800000000000000
-      internalID: -6288512792030432889
+      spriteID: d051c355429effbb0800000000000000
+      internalID: -4899941527297714931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thief Walking_12
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 181
+        width: 99
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f805cdf9a868b70800000000000000
+      internalID: 8900954132745064308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thief Walking_13
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 153
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6899f4246f78c5a0800000000000000
+      internalID: -6500805994015516561
       vertices: []
       indices: 
       edges: []
@@ -423,18 +486,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Coins_0: -2322180950842035098
-      Coins_1: -4893972260818282012
-      Coins_10: 7609282858266732271
-      Coins_11: -6288512792030432889
-      Coins_2: -6323751108524238166
-      Coins_3: 2722280177590742205
-      Coins_4: 6582046967323461550
-      Coins_5: 1942777921290549423
-      Coins_6: 8793606821965667882
-      Coins_7: 3444832735345940322
-      Coins_8: -4986890610287934012
-      Coins_9: 6143208460787649835
+      Thief Walking_0: 4126291849485513413
+      Thief Walking_1: 9107799200616348234
+      Thief Walking_10: -7941642395874622195
+      Thief Walking_11: -4899941527297714931
+      Thief Walking_12: 8900954132745064308
+      Thief Walking_13: -6500805994015516561
+      Thief Walking_2: -8426556867331278683
+      Thief Walking_3: -5099231093491727436
+      Thief Walking_4: -1024541402715851820
+      Thief Walking_5: 3018845896034609209
+      Thief Walking_6: -5694286687143121578
+      Thief Walking_7: 2136875603771141236
+      Thief Walking_8: 401023400927459619
+      Thief Walking_9: -2334284937450108176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

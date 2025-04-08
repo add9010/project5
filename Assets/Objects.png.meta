@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 5906bf97ef802354cb439aac6dda8382
+guid: b4b95488a4ec29f4790156e49591df78
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7642980859614939925
-    second: Objects_0
+      213: -2813955055716540633
+    second: Thief Hit_0
   - first:
-      213: -174804484191063705
-    second: Objects_1
+      213: 5240199001084693365
+    second: Thief Hit_1
+  - first:
+      213: -7030211980165342599
+    second: Thief Hit_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,17 +115,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Objects_0
+      name: Thief Hit_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 17
-        height: 9
+        x: 140
+        y: 52
+        width: 244
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 51b457af892511a60800000000000000
-      internalID: 7642980859614939925
+      spriteID: 72fd91a29c2d2f8d0800000000000000
+      internalID: -2813955055716540633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Objects_1
+      name: Thief Hit_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 14
-        height: 16
+        x: 569
+        y: 51
+        width: 206
+        height: 369
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +169,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 76175ae6f38f29df0800000000000000
-      internalID: -174804484191063705
+      spriteID: 57b820c4a3de8b840800000000000000
+      internalID: 5240199001084693365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thief Hit_2
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 68
+        width: 222
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a9c82a37baf6e90800000000000000
+      internalID: -7030211980165342599
       vertices: []
       indices: 
       edges: []
@@ -173,8 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Objects_0: 7642980859614939925
-      Objects_1: -174804484191063705
+      Thief Hit_0: -2813955055716540633
+      Thief Hit_1: 5240199001084693365
+      Thief Hit_2: -7030211980165342599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

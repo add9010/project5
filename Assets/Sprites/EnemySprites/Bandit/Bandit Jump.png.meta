@@ -135,10 +135,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 18993e2ac88751790800000000000000
-      internalID: -7560003854047929983
+      spriteID: 42826687edcaebb4abf86b8ab9e54db0
+      internalID: -1451715261
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: aa4c7484fd24f81d0800000000000000
-      internalID: -3346382471355186006
+      spriteID: 68bdec2beeec8e841a8423d243caabcd
+      internalID: 471624377
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cdab29d9ce4346170800000000000000
-      internalID: 8170713814817487580
+      spriteID: f19c4f679a0c2a5489a704c6f71fa36d
+      internalID: 358832285
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b20a5ef16d2fe5800800000000000000
-      internalID: 603186401586290731
+      spriteID: f0ec5ccee3f43074a95f73649ceb4b41
+      internalID: 1137001262
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 63d81d62659d7a740910b45943967f44
+    spriteID: 33d8b5120daa84747b0c03a98b2d47c5
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bandit Jump_0: -7560003854047929983
-      Bandit Jump_1: -3346382471355186006
-      Bandit Jump_2: 8170713814817487580
-      Bandit Jump_3: 603186401586290731
+      Bandit Jump_0: -1451715261
+      Bandit Jump_1: 471624377
+      Bandit Jump_2: 358832285
+      Bandit Jump_3: 1137001262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

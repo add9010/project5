@@ -131,6 +131,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: Wizard Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7c46d22c865c14bb52f928334316f8
+      internalID: 2116586293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Wizard Attack_1
       rect:
         serializedVersion: 2
@@ -144,10 +166,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6b4bdd6cd9d6a0090800000000000000
-      internalID: -8067515258067110730
+      spriteID: be11b9913683e3948b704f59065372b5
+      internalID: -1375180108
       vertices: []
       indices: 
       edges: []
@@ -166,10 +188,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 75fb93e6b73db8690800000000000000
-      internalID: -7598747419173863593
+      spriteID: 9badbc0f1ce73f5438fd60dc13b441fe
+      internalID: 198417370
       vertices: []
       indices: 
       edges: []
@@ -188,32 +210,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 366ef2ba2e25aa210800000000000000
-      internalID: 1344978572211644003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wizard Attack_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d7ea47093388354c93b720b545ca8b7
-      internalID: -936036971
+      spriteID: 524cce099e7d4f2458d6346b5e8f89ca
+      internalID: -628881684
       vertices: []
       indices: 
       edges: []
@@ -222,7 +222,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1ba3b325c65583b4d894719f9aaae73a
+    spriteID: f5b550ee1d2376a4aa82127d76dfb94a
     internalID: 0
     vertices: []
     indices: 
@@ -232,10 +232,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wizard Attack_0: -936036971
-      Wizard Attack_1: -8067515258067110730
-      Wizard Attack_2: -7598747419173863593
-      Wizard Attack_3: 1344978572211644003
+      Wizard Attack_0: 2116586293
+      Wizard Attack_1: -1375180108
+      Wizard Attack_2: 198417370
+      Wizard Attack_3: -628881684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -135,10 +135,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d4be5a80dcc8916a0800000000000000
-      internalID: -6477991776754472115
+      spriteID: 49edccaf32d730a4982d93eeb36c8974
+      internalID: 1576369393
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0a7916113ea7be5b0800000000000000
-      internalID: -5338037817649817696
+      spriteID: dd1828d8a1b283c4790cb16318292204
+      internalID: -1539505519
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 29e1a1f620b9040d0800000000000000
-      internalID: -3440579680554836334
+      spriteID: 75d9a373f00fcfa43aca4fbf36d65b7a
+      internalID: 1846857768
       vertices: []
       indices: 
       edges: []
@@ -191,7 +191,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0b63b9dbf0f5d6d4099ed8e516f4a31c
+    spriteID: 2b5f17ffa81db124997e1e3114187c09
     internalID: 0
     vertices: []
     indices: 
@@ -201,9 +201,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bandit Death_0: -6477991776754472115
-      Bandit Death_1: -5338037817649817696
-      Bandit Death_2: -3440579680554836334
+      Bandit Death_0: 1576369393
+      Bandit Death_1: -1539505519
+      Bandit Death_2: 1846857768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

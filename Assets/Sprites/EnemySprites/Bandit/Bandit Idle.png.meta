@@ -135,10 +135,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44d9358191bcf2680800000000000000
-      internalID: -8777573840079053500
+      spriteID: fe9bd9781f0804440952b814a2fc4b66
+      internalID: -554439592
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ed6563048ef1b0d10800000000000000
-      internalID: 2092801534213904094
+      spriteID: c09766ea23deadf4684188116c4ea478
+      internalID: -1848774698
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 44cabd260ce790ee0800000000000000
-      internalID: -1294364053134922684
+      spriteID: dbbbe42a05355be4aa52466b6cfd6653
+      internalID: 474457173
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 251cf117f3e292550800000000000000
-      internalID: 6136486817284735314
+      spriteID: 211c1c0786e29db48b81e405b32ca381
+      internalID: -343640703
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8d09370d7971736469cb9fe2aaf99786
+    spriteID: 82c6dac26f3391a4e96f7c795bea5551
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bandit Idle_0: -8777573840079053500
-      Bandit Idle_1: 2092801534213904094
-      Bandit Idle_2: -1294364053134922684
-      Bandit Idle_3: 6136486817284735314
+      Bandit Idle_0: -554439592
+      Bandit Idle_1: -1848774698
+      Bandit Idle_2: 474457173
+      Bandit Idle_3: -343640703
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -135,10 +135,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9027e14473b621f60800000000000000
-      internalID: 8003577372901011977
+      spriteID: c523837f18d240340b94ea3b349738ac
+      internalID: -769714202
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 507145ed7f227e720800000000000000
-      internalID: 2875305335081670405
+      spriteID: 65bfb5ae7ce90ad46a3efb51d31cde1c
+      internalID: 101420346
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9ea2889edd42c3410800000000000000
-      internalID: 1458080914885585641
+      spriteID: b8f74ad9a4203aa4197ae1f05aebdb45
+      internalID: 636043381
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 285549ecc9faf9630800000000000000
-      internalID: 3936057687360689538
+      spriteID: e5c8a72c2a9c52249888cde23a16c223
+      internalID: -483782694
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8c1d64d63e1c7424e90114f04eb38246
+    spriteID: 70ad557069dbc4840b07b7a93e9cfaa9
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Idle_0: 8003577372901011977
-      Thief Idle_1: 2875305335081670405
-      Thief Idle_2: 1458080914885585641
-      Thief Idle_3: 3936057687360689538
+      Thief Idle_0: -769714202
+      Thief Idle_1: 101420346
+      Thief Idle_2: 636043381
+      Thief Idle_3: -483782694
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

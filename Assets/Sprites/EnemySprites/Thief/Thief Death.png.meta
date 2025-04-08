@@ -153,10 +153,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99421659881a41af0800000000000000
-      internalID: -426538456699558759
+      spriteID: 6e25530e5ae9ff14b9678f103f9b46fe
+      internalID: -200431241
       vertices: []
       indices: 
       edges: []
@@ -175,10 +175,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a7fe3ded04af15370800000000000000
-      internalID: 8309697943998558074
+      spriteID: c42b156cc51c8d14e82b5d5a149a8ef4
+      internalID: -1710886153
       vertices: []
       indices: 
       edges: []
@@ -197,10 +197,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7087f976a711bf680800000000000000
-      internalID: -8720357036050647033
+      spriteID: e5ab5d7310d96654aa325e468fdbffec
+      internalID: 1959111941
       vertices: []
       indices: 
       edges: []
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 238fec5b14468de43856e4934250e82c
-      internalID: 358361848
+      spriteID: d099d210a98591a489ef7d179c46b2e1
+      internalID: 1806935946
       vertices: []
       indices: 
       edges: []
@@ -231,7 +231,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 459a2b619933cd34886790481e919e70
+    spriteID: 9e6c1debcb8a0f44f994d4d3db30061c
     internalID: 0
     vertices: []
     indices: 
@@ -241,10 +241,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Death_0: -426538456699558759
-      Thief Death_1: 8309697943998558074
-      Thief Death_2: -8720357036050647033
-      Thief Death_3: 358361848
+      Thief Death_0: -200431241
+      Thief Death_1: -1710886153
+      Thief Death_2: 1959111941
+      Thief Death_3: 1806935946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

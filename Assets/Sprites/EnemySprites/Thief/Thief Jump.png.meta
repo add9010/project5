@@ -135,10 +135,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13b3dba93913171e0800000000000000
-      internalID: -2201924232781415631
+      spriteID: bb525896e57e8d141a80947bbf647533
+      internalID: 905722471
       vertices: []
       indices: 
       edges: []
@@ -157,10 +157,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ba5dc247032bba290800000000000000
-      internalID: -7878007201977281109
+      spriteID: e7e6dd4215dc8f44d833f6d41a4ff7d0
+      internalID: -1385307729
       vertices: []
       indices: 
       edges: []
@@ -179,10 +179,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 10b2f7bf38289a620800000000000000
-      internalID: 2785901347877104385
+      spriteID: 886e505203333bb4c9913f84298ec92c
+      internalID: 1104646022
       vertices: []
       indices: 
       edges: []
@@ -201,10 +201,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 23dc638fd08b03a50800000000000000
-      internalID: 6498896632434052402
+      spriteID: 0cb5dc1f54bea024ca44d2d768787e9f
+      internalID: 1633880847
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c4466f2c226be1c41ae397753a5251e8
+    spriteID: 8d599ec4e293c20428c18aa032635e0b
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Thief Jump_0: -2201924232781415631
-      Thief Jump_1: -7878007201977281109
-      Thief Jump_2: 2785901347877104385
-      Thief Jump_3: 6498896632434052402
+      Thief Jump_0: 905722471
+      Thief Jump_1: -1385307729
+      Thief Jump_2: 1104646022
+      Thief Jump_3: 1633880847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

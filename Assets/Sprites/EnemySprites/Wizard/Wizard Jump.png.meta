@@ -134,28 +134,6 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wizard Jump_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d4c4c49e1ec3579e0800000000000000
-      internalID: -1624325149617796019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Wizard Jump_0
       rect:
         serializedVersion: 2
@@ -169,10 +147,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8ac8e24524947700800000000000000
-      internalID: 537217143321184911
+      spriteID: e6f327a24d6cfe142a51ebd9c6c5c046
+      internalID: -90878732
       vertices: []
       indices: 
       edges: []
@@ -191,10 +169,32 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 55ea23b5c8283cf10800000000000000
-      internalID: 2288816574971424341
+      spriteID: 30fc1b3f52bf1af4c8a8d6133dd5b7c4
+      internalID: -1975490355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wizard Jump_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eceb55deec3bd9a4eb80ca15b9d942a4
+      internalID: 1734747701
       vertices: []
       indices: 
       edges: []
@@ -213,10 +213,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 099ac21b93b0dd450800000000000000
-      internalID: 6115056211452537232
+      spriteID: 46b99af38d0ee1f43b2fb8ade2b837d7
+      internalID: 1704670605
       vertices: []
       indices: 
       edges: []
@@ -235,10 +235,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7e4acce458de03740800000000000000
-      internalID: 5129861132383462631
+      spriteID: e84f00d4ea3885c48adc3c374bec796b
+      internalID: -1053792924
       vertices: []
       indices: 
       edges: []
@@ -247,7 +247,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7105aea8004471d44941300195baadc6
+    spriteID: 1f0a9fb9b89815047ad037fc00a89ac0
     internalID: 0
     vertices: []
     indices: 
@@ -257,11 +257,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Wizard Jump_0: 537217143321184911
-      Wizard Jump_1: 2288816574971424341
-      Wizard Jump_2: -1624325149617796019
-      Wizard Jump_3: 6115056211452537232
-      Wizard Jump_4: 5129861132383462631
+      Wizard Jump_0: -90878732
+      Wizard Jump_1: -1975490355
+      Wizard Jump_2: 1734747701
+      Wizard Jump_3: 1704670605
+      Wizard Jump_4: -1053792924
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

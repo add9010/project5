@@ -4,7 +4,7 @@ public class PlayerStateController
 {
     private PlayerManager pm;
 
-    private enum PlayerState { Idle, Move, Jump, Attack, Roll, Hurt, Dead, Dialog }
+    private enum PlayerState { Idle, Move, Jump, Attack, Dash, Hurt, Dead, Dialog }
     private PlayerState currentState = PlayerState.Idle;
 
     public PlayerStateController(PlayerManager manager)
@@ -14,7 +14,11 @@ public class PlayerStateController
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
-        if (pm.isAction)
+        if (pm.isDashing) // ← 가장 우선순위로 체크!
+        {
+            SetState(PlayerState.Dash);
+        }
+        else if (pm.isAction)
         {
             SetState(PlayerState.Dialog);
         }
@@ -35,10 +39,8 @@ public class PlayerStateController
             SetState(PlayerState.Idle);
         }
 
-        // 항상 호출!
         UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
     }
-
     private void SetState(PlayerState newState)
     {
         if (currentState == newState) return;
@@ -53,7 +55,10 @@ public class PlayerStateController
         // 이 grounded는 상태 판단에 사용됨 (점프 → 착지 등)
         pm.animator.SetBool("Grounded", isGrounded);
     }
-
+    public void ForceSetDash()
+    {
+        SetState(PlayerState.Dash);
+    }
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
         pm.animator.SetFloat("AirSpeedY", verticalVelocity);
@@ -73,8 +78,8 @@ public class PlayerStateController
                 break;
             case PlayerState.Attack:
                 break;
-            case PlayerState.Roll:
-                pm.animator.SetTrigger("Roll");
+            case PlayerState.Dash:
+                pm.animator.SetTrigger("Dash");
                 break;
         }
     }
@@ -92,8 +97,8 @@ public class PlayerStateController
                 return AnimType.Jump;
             case PlayerState.Attack:
                 return AnimType.Attack;
-            case PlayerState.Roll:
-                return AnimType.Roll;
+            case PlayerState.Dash:
+                return AnimType.Dash;
             case PlayerState.Hurt:
                 return AnimType.Hit;
             case PlayerState.Dead:

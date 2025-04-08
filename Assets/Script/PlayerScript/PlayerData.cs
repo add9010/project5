@@ -7,8 +7,8 @@ public class PlayerData
     public float attackPower = 10.0f;
     public float speed = 4.0f;
     public float jumpForce = 7.5f;
-    public float rollForce = 6.0f;
-    public float rollDuration = 0.2f;
+    public float dashForce = 10.0f;
+    public float dashDuration = 0.2f;
     public float attackKnockback = 8.0f;
     public float attackKnockbackThird = 800.0f;
     public float attackDuration = 0.4f;
