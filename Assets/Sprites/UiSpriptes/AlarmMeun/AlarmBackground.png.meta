@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AlarmBackground_0: -9137258631874622311
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

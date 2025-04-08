@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HDR_Bar_0: 3870346984246888062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

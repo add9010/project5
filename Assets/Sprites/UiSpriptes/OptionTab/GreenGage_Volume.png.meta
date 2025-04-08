@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GreenGage_Volume_0: -4121507438480879162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
