@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using System.Runtime.CompilerServices;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 {
     public static PlayerManager Instance;
     
@@ -10,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerData data;
 
     [Header("컴포넌트")]
-    public Animator animator;
+    [SerializeField] private Animator animator;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
     public CameraShake cameraShake;
@@ -19,7 +20,7 @@ public class PlayerManager : MonoBehaviour
     //public GameObject prfHpBar;
     ////public GameObject canvas;
     //private RectTransform hpBar;
-    private UnityEngine.UI.Image nowHpbar;
+    //private UnityEngine.UI.Image nowHpbar;
 
     [Header("공격 위치")]
     public Transform attackPos;
@@ -93,8 +94,8 @@ public class PlayerManager : MonoBehaviour
         if (!isAction && !isDashing)
             playerMove.Move(inputX);
 
-        // 공격 처리 (대시 중에는 금지)
-        if (!isAction && !isDashing && playerAttack.TryAttack())
+        // 공격 처리
+        if (!isAction && playerAttack.TryAttack())
             playerAttack.DoAttack();
 
         // 대시 처리 (항상 가능해야 함)
@@ -124,11 +125,11 @@ public class PlayerManager : MonoBehaviour
         IsDead = false;
     }
 
-    public void UpdateHpUI(float currentHealth)
-    {
-        if (nowHpbar != null)
-            nowHpbar.fillAmount = currentHealth / data.maxHealth;
-    }
+    //public void UpdateHpUI(float currentHealth)
+    //{
+    //    if (nowHpbar != null)
+    //        nowHpbar.fillAmount = currentHealth / data.maxHealth;
+    //}
 
     public void StartAttackCoroutine(IEnumerator routine)
     {
@@ -149,6 +150,32 @@ public class PlayerManager : MonoBehaviour
         {
             playerStateController.SetGrounded(false);
         }
+    }
+    public void TakeDamage(float damage)
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+    }
+
+    // IKnockbackable 인터페이스 구현
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        if (playerHealth != null)
+        {
+            playerHealth.ApplyKnockback(direction, force);
+        }
+    }
+
+    public Animator GetAnimator(
+        [CallerFilePath] string file = "",
+        [CallerLineNumber] int line = 0,
+        [CallerMemberName] string member = "")
+    {
+        //Debug.Log($">> TRACE_에니메이터 접근 위치 : {file}에서 {line}번째 줄, {member}에서 접근합니다.");
+
+        return animator;
     }
 
     //public void SetCharacterAttribute(string attribute)

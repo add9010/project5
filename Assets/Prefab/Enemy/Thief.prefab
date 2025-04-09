@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4008233784519659204
+--- !u!1 &789575952036209399
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7729144923493059997}
-  - component: {fileID: 6457379250432637038}
-  - component: {fileID: 4770041931435284387}
-  - component: {fileID: 1623494653882566143}
-  - component: {fileID: 7903941797336327466}
-  - component: {fileID: 4272043678272546556}
+  - component: {fileID: 7684690844849222973}
+  - component: {fileID: 873918156301734919}
+  - component: {fileID: 1391329030789031912}
+  - component: {fileID: 5713896992650261448}
+  - component: {fileID: 8560826248943235595}
+  - component: {fileID: 5907489634461105729}
   m_Layer: 9
   m_Name: Thief
   m_TagString: Enemy
@@ -21,13 +21,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7729144923493059997
+--- !u!4 &7684690844849222973
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008233784519659204}
+  m_GameObject: {fileID: 789575952036209399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.99, y: -2.88, z: 0}
@@ -36,13 +36,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6457379250432637038
+--- !u!212 &873918156301734919
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008233784519659204}
+  m_GameObject: {fileID: 789575952036209399}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -91,14 +91,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4770041931435284387
+--- !u!95 &1391329030789031912
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008233784519659204}
+  m_GameObject: {fileID: 789575952036209399}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e971d68fcfba3aa4ab9ba1cf79d3c32c, type: 2}
@@ -113,14 +113,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!50 &1623494653882566143
+--- !u!50 &5713896992650261448
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008233784519659204}
+  m_GameObject: {fileID: 789575952036209399}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -140,13 +140,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &7903941797336327466
+--- !u!61 &8560826248943235595
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008233784519659204}
+  m_GameObject: {fileID: 789575952036209399}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -186,20 +186,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.7522554, y: 2.9415581}
   m_EdgeRadius: 0
---- !u!114 &4272043678272546556
+--- !u!114 &5907489634461105729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4008233784519659204}
+  m_GameObject: {fileID: 789575952036209399}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64724e94c63a0ac45a98250b98f5d5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
-  canvas: {fileID: 0}
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   markYOffset: 1
   height: 1.7

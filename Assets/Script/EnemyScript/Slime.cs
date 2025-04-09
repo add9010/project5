@@ -30,12 +30,12 @@ public class Slime : Enemy
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerManager playerManager = collision.collider.GetComponentInParent<PlayerManager>();
-            if (playerManager != null && !playerManager.IsDead)
-            {
-                playerManager.playerHealth.TakeDamage(atkDmg);
-                Debug.Log($"{enemyName} 공격: {atkDmg} 데미지");
-            }
+            GameObject target = collision.gameObject;
+
+            // 넉백 방향 계산을 위해 slime 자신의 위치 사용
+            CombatManager.ApplyDamage(target, atkDmg, 8f, transform.position); // knockback은 예시 값
+
+            Debug.Log($"{enemyName} 공격: {atkDmg} 데미지");
         }
     }
 

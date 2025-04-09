@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
 {
     protected Rigidbody2D rigid;
     protected SpriteRenderer spriteRenderer;
@@ -11,8 +11,8 @@ public class Enemy : MonoBehaviour
 
     protected RectTransform hpBar;
     protected Image nowHpbar;
-    public GameObject prfHpBar;
-    public GameObject canvas;
+   //public GameObject prfHpBar;
+   //public GameObject canvas;
 
     public GameObject markPrefab;
     public float markYOffset = 1f;
@@ -57,13 +57,12 @@ public class Enemy : MonoBehaviour
     protected virtual void Start()
     {
         
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
+      // hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+      //  nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
 
         SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; 
        
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        if (player == null) Debug.LogError("Player object not found!");
     }
 
     protected virtual void Update()
@@ -83,12 +82,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(ParameterPlayerAttack argument)
+    public void TakeDamage(float damage)
     {
         if (isTakingDamage || anim.GetBool("isDead")) return;
 
         isTakingDamage = true;
-        nowHp -= argument.damage;
+        nowHp -= damage;
 
         if (nowHp <= 0)
         {
@@ -96,18 +95,18 @@ public class Enemy : MonoBehaviour
             return;
         }
 
-        
-        isInDamageState = true;  
-        anim.SetBool("isHunt", true);
-        Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.linearVelocity = Vector2.zero;
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);
+        isInDamageState = true;
+        anim.SetBool("hit", true);
 
-        
         Invoke("ResumeChase", 0.5f);
-
         StartCoroutine(EndDamage());
     }
+    public void ApplyKnockback(Vector2 dir, float force)
+    {
+        rigid.linearVelocity = Vector2.zero;
+        rigid.AddForce(dir * force, ForceMode2D.Impulse);
+    }
+
 
     private void ResumeChase()
     {
@@ -221,6 +220,7 @@ public class Enemy : MonoBehaviour
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
         if (distanceToPlayer <= detectionRange)
         {
             if (!isChasing) SpawnMark();

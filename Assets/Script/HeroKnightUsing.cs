@@ -443,7 +443,7 @@ public class HeroKnightUsing : MonoBehaviour
             Enemy enemy = collider.GetComponent<Enemy>();
             if (enemy != null) // Enemy를 상속받은 객체만 처리
             {
-                enemy.TakeDamage(attackArgument); // 피해 적용
+                //enemy.TakeDamage(attackArgument); // 피해 적용
                 hitEnemies.Add(collider);        // 타격된 적으로 등록
             }
         }

@@ -61,18 +61,18 @@ public class Bandit : Enemy
 
         yield return new WaitForSeconds(0.3f); // 애니메이션 타이밍 고려 (타격 타이밍)
 
-        PlayerManager playerManager = player.GetComponent<PlayerManager>();
-        if (playerManager != null && !playerManager.IsDead)
+        if (player != null)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
             if (distanceToPlayer <= 2.5f)
             {
-                playerManager.playerHealth.TakeDamage(atkDmg);
+                GameObject target = player.gameObject;
+                CombatManager.ApplyDamage(target, atkDmg, 0f, transform.position);  
                 Debug.Log($"{enemyName} 근거리 공격: {atkDmg} 데미지");
             }
         }
 
-        yield return new WaitForSeconds(1.0f); // 쿨타임
+            yield return new WaitForSeconds(1.0f); // 쿨타임
         isAttacking = false;
     }
 
@@ -101,27 +101,4 @@ public class Bandit : Enemy
         LookAtPatrolTarget();
     }
 
-    public override void TakeDamage(ParameterPlayerAttack argument)
-    {
-        if (isTakingDamage || anim.GetBool("isDead")) return;
-
-        isTakingDamage = true;
-        nowHp -= argument.damage;
-
-        anim.SetTrigger("hit");
-
-        if (nowHp <= 0)
-        {
-            HandleWhenDead();
-            return;
-        }
-
-        isInDamageState = true;
-        Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.linearVelocity = Vector2.zero;
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);
-
-        Invoke("ResumeChase", 0.5f);
-        StartCoroutine(EndDamage());
-    }
 }
