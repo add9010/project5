@@ -7142,6 +7142,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.dashDuration
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: data.attackKnockback
       value: 20
       objectReference: {fileID: 0}
@@ -15461,6 +15465,10 @@ PrefabInstance:
     - target: {fileID: 2625478790130785592, guid: 6f52b8d4cb342464b9977a3b0295b33f, type: 3}
       propertyPath: m_Name
       value: SlimeKing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2625478790130785592, guid: 6f52b8d4cb342464b9977a3b0295b33f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5032015092014949629, guid: 6f52b8d4cb342464b9977a3b0295b33f, type: 3}
       propertyPath: m_LocalScale.x

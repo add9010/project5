@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using System.Runtime.CompilerServices;
 
 public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 {
@@ -10,7 +11,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public PlayerData data;
 
     [Header("컴포넌트")]
-    public Animator animator;
+    [SerializeField] private Animator animator;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
     public CameraShake cameraShake;
@@ -165,6 +166,16 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         {
             playerHealth.ApplyKnockback(direction, force);
         }
+    }
+
+    public Animator GetAnimator(
+        [CallerFilePath] string file = "",
+        [CallerLineNumber] int line = 0,
+        [CallerMemberName] string member = "")
+    {
+        //Debug.Log($">> TRACE_에니메이터 접근 위치 : {file}에서 {line}번째 줄, {member}에서 접근합니다.");
+
+        return animator;
     }
 
     //public void SetCharacterAttribute(string attribute)

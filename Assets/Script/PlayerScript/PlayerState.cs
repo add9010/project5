@@ -62,46 +62,50 @@ public class PlayerStateController
     public void SetGrounded(bool isGrounded)
     {
         // 이 grounded는 상태 판단에 사용됨 (점프 → 착지 등)
-        pm.animator.SetBool("Grounded", isGrounded);
+        pm.GetAnimator().SetBool("Grounded", isGrounded);
     }
     public void ForceSetDash()
     {
         SetState(PlayerState.Dash);
-        pm.animator.SetTrigger("Dash"); 
+        pm.GetAnimator().SetTrigger("Dash"); 
     }
     public void SetHurt()
     {
         SetState(PlayerState.Hurt);
-        pm.animator.SetTrigger("Hurt");
+        pm.GetAnimator().SetTrigger("Hurt");
     }
 
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
-        pm.animator.SetFloat("AirSpeedY", verticalVelocity);
-        pm.animator.SetBool("Grounded", grounded);
+        pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);
+        pm.GetAnimator().SetBool("Grounded", grounded);
 
         switch (currentState)
         {
             case PlayerState.Idle:
             case PlayerState.Dialog: // 둘 다 0번 상태로 고정
-                pm.animator.SetInteger("AnimState", 0);
+                pm.GetAnimator().SetInteger("AnimState", 0);
                 break;
             case PlayerState.Move:
-                pm.animator.SetInteger("AnimState", 1);
+                pm.GetAnimator().SetInteger("AnimState", 1);
                 break;
             case PlayerState.Jump:
-                pm.animator.SetTrigger("Jump");
+                pm.GetAnimator().SetTrigger("Jump");
                 break;
             case PlayerState.Attack:
                 break;
             case PlayerState.Dash:
-                pm.animator.SetTrigger("Dash");
+#warning 대쉬 문제의 원인
+
+              //  Debug.Log($">> 현재 애니메이션 상태:{pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash")}");
+                if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash") == false)
+                    pm.GetAnimator().SetTrigger("Dash");
                 break;
             case PlayerState.Hurt:
-                pm.animator.SetTrigger("Hurt");
+                pm.GetAnimator().SetTrigger("Hurt");
                 break;
             case PlayerState.Fall:
-                pm.animator.SetInteger("AnimState", 4); // 예시: Fall 상태 애니메이션 인덱스
+                pm.GetAnimator().SetInteger("AnimState", 4); // 예시: Fall 상태 애니메이션 인덱스
                 break;
         }
     }

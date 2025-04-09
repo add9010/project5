@@ -28,10 +28,11 @@ public class PlayerDash
         float direction = manager.spriteRenderer.flipX ? -1f : 1f;
         manager.rb.linearVelocity = new Vector2(direction * manager.data.dashForce, 0);
 
-        yield return new WaitForSeconds(manager.data.dashDuration);
+        yield return new WaitForSeconds(manager.data.dashDuration); // <- 해당하는 기간동안 애니메이션 멈춤 // 조용히 해
+        
 
-        isDashing = false;
-        manager.isDashing = false;
+        isDashing = false; // <- 해당 값은 의심안해도 됨
+        manager.isDashing = false; // <- 해당 값이 true일 때, 애니메이션을 막는것으로 의심
     }
 
     private bool IsGrounded()

@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
         }
 
         isInDamageState = true;
-        anim.SetBool("isHunt", true);
+        anim.SetBool("hit", true);
 
         Invoke("ResumeChase", 0.5f);
         StartCoroutine(EndDamage());

@@ -51,7 +51,7 @@ public class PlayerAttack
 
         // 공격 애니메이션 트리거 (1, 2, 3 순환)
         string animationTrigger = "Attack" + (attackCount + 1);
-        manager.animator.SetTrigger(animationTrigger);
+        manager.GetAnimator().SetTrigger(animationTrigger);
 
         // 공격 애니메이션 절반 시간 대기
         yield return new WaitForSeconds(manager.data.attackDuration / 2f);

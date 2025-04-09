@@ -163,7 +163,7 @@ AnimatorStateMachine:
     m_Position: {x: 640, y: 130, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7559834003635143645}
-    m_Position: {x: 650, y: -320, z: 0}
+    m_Position: {x: 590, y: -300, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7561381207813002535}
@@ -226,7 +226,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 7.2102394e-11
+  m_ExitTime: 8.893119e-10
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -705,7 +705,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dash
-  m_Speed: 6.78
+  m_Speed: 6.26
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1019873906601900}
