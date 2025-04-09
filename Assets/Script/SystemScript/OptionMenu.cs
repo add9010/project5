@@ -1,22 +1,21 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using TMPro;
-using System.Collections.Generic;
-
 
 public class OptionMenu : MonoBehaviour
 {
+    // ------------------ 옵션 설정 관련 변수 ------------------
     [Header("옵션창")]
     public GameObject optionPanel;
     public GameObject warningPopup;
-    //------------------- 옵션창 초기화   -------------------
+
     private float savedMasterVol;
     private float savedBGMVol;
     private float savedSFXVol;
     private int savedResolutionIndex;
-
 
     [Header("슬라이더")]
     public Slider masterSlider;
@@ -38,7 +37,6 @@ public class OptionMenu : MonoBehaviour
     public string bgmParam = "BGMVolume";
     public string sfxParam = "SFXVolume";
 
-    // 내부 상태 저장
     private bool isMasterMuted = false;
     private bool isBGMMuted = false;
     private bool isSFXMuted = false;
@@ -47,31 +45,33 @@ public class OptionMenu : MonoBehaviour
     private float prevBGMVol = 1f;
     private float prevSFXVol = 1f;
 
+    private float masterRatio = 1f;
+    private float bgmBaseVolume = 1f;
+    private float sfxBaseVolume = 1f;
+
     public TextMeshProUGUI masterVolumeText;
     public TextMeshProUGUI bgmVolumeText;
     public TextMeshProUGUI sfxVolumeText;
 
+    // ------------------ 해상도 설정 ------------------
     [Header("해상도 설정")]
     public TMP_Dropdown resolutionDropdown;
     private Resolution[] resolutions;
     private List<Resolution> filteredResolutions = new List<Resolution>
     {
-    new Resolution { width = 2560, height = 1440 },
-    new Resolution { width = 1920, height = 1080 },
-    new Resolution { width = 1600, height = 900 },
-    new Resolution { width = 1280, height = 720 },
+        new Resolution { width = 2560, height = 1440 },
+        new Resolution { width = 1920, height = 1080 },
+        new Resolution { width = 1600, height = 900 },
+        new Resolution { width = 1280, height = 720 },
     };
 
-
-
+    // ------------------ 초기화 ------------------
     private void Start()
     {
         if (PlayerPrefs.HasKey("MasterVolume"))
             masterSlider.value = PlayerPrefs.GetFloat("MasterVolume");
-
         if (PlayerPrefs.HasKey("BGMVolume"))
             bgmSlider.value = PlayerPrefs.GetFloat("BGMVolume");
-
         if (PlayerPrefs.HasKey("SFXVolume"))
             sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
@@ -79,18 +79,12 @@ public class OptionMenu : MonoBehaviour
         {
             int index = PlayerPrefs.GetInt("ResolutionIndex");
             resolutionDropdown.value = index;
-            OnResolutionChange(index); // 즉시 적용
+            OnResolutionChange(index);
         }
         else
         {
-            // 기본 해상도 설정
             Screen.SetResolution(filteredResolutions[0].width, filteredResolutions[0].height, FullScreenMode.Windowed);
         }
-
-        // 초기 슬라이더 값
-        ApplySliderVolume(masterParam, masterSlider.value);
-        ApplySliderVolume(bgmParam, bgmSlider.value);
-        ApplySliderVolume(sfxParam, sfxSlider.value);
 
         prevMasterVol = masterSlider.value;
         prevBGMVol = bgmSlider.value;
@@ -101,12 +95,10 @@ public class OptionMenu : MonoBehaviour
         savedSFXVol = sfxSlider.value;
         savedResolutionIndex = resolutionDropdown.value;
 
-        // 음소거 상태 판단
         isMasterMuted = Mathf.Approximately(masterSlider.value, 0f);
         isBGMMuted = Mathf.Approximately(bgmSlider.value, 0f);
         isSFXMuted = Mathf.Approximately(sfxSlider.value, 0f);
 
-        // 아이콘 갱신
         UpdateMuteIcon(masterMuteIcon, isMasterMuted);
         UpdateMuteIcon(bgmMuteIcon, isBGMMuted);
         UpdateMuteIcon(sfxMuteIcon, isSFXMuted);
@@ -114,24 +106,20 @@ public class OptionMenu : MonoBehaviour
         if (optionPanel != null)
             optionPanel.SetActive(false);
 
-        // 필터링된 해상도 목록 가져오기
         InitResolutionDropdown();
 
-        // 텍스트 동기화 (볼륨 % 표시)
         OnMasterVolumeChange();
         OnBGMVolumeChange();
         OnSFXVolumeChange();
-
     }
 
     // ------------------ 옵션창 열고 닫기 ------------------
-
     public void OpenOption() => optionPanel?.SetActive(true);
     public void CloseOption() => optionPanel?.SetActive(false);
     public void TryCloseOption() => warningPopup.SetActive(true);
+
     public void ConfirmCloseOption()
     {
-        // 슬라이더 UI, 텍스트, 음소거 아이콘 복원
         masterSlider.SetValueWithoutNotify(savedMasterVol);
         bgmSlider.SetValueWithoutNotify(savedBGMVol);
         sfxSlider.SetValueWithoutNotify(savedSFXVol);
@@ -143,13 +131,11 @@ public class OptionMenu : MonoBehaviour
         UpdateMuteIcon(masterMuteIcon, isMasterMuted);
         UpdateMuteIcon(bgmMuteIcon, isBGMMuted);
         UpdateMuteIcon(sfxMuteIcon, isSFXMuted);
-     
-        // 해상도 복원
+
         resolutionDropdown.SetValueWithoutNotify(savedResolutionIndex);
         resolutionDropdown.RefreshShownValue();
-        OnResolutionChange(savedResolutionIndex); 
+        OnResolutionChange(savedResolutionIndex);
 
-        // AudioMixer에도 복원
         ApplySliderVolume(masterParam, savedMasterVol);
         ApplySliderVolume(bgmParam, savedBGMVol);
         ApplySliderVolume(sfxParam, savedSFXVol);
@@ -159,28 +145,36 @@ public class OptionMenu : MonoBehaviour
     }
 
     public void CancelCloseOption() => warningPopup.SetActive(false);
-    
-    // ------------------ 볼륨 조절 ------------------
 
+    // ------------------ 볼륨 조절 ------------------
     public void OnMasterVolumeChange()
     {
-        float value = masterSlider.value;
-        ApplySliderVolume(masterParam, value);
-        masterVolumeText.text = Mathf.RoundToInt(value * 100).ToString();
+        masterRatio = masterSlider.value;
+        masterVolumeText.text = Mathf.RoundToInt(masterRatio * 100).ToString();
+
+        // 시각적으로도 동기화: BGM/SFX 슬라이더 위치를 비례로 반영
+        bgmSlider.SetValueWithoutNotify(bgmBaseVolume * masterRatio);
+        sfxSlider.SetValueWithoutNotify(sfxBaseVolume * masterRatio);
+        // 실제 믹서     
+        ApplySliderVolume(bgmParam, bgmBaseVolume * masterRatio);
+        ApplySliderVolume(sfxParam, sfxBaseVolume * masterRatio);
+        // 텍스트도 같이 반영
+        bgmVolumeText.text = Mathf.RoundToInt(bgmBaseVolume * masterRatio * 100).ToString();
+        sfxVolumeText.text = Mathf.RoundToInt(sfxBaseVolume * masterRatio * 100).ToString();
     }
 
     public void OnBGMVolumeChange()
     {
-        float value = bgmSlider.value;
-        ApplySliderVolume(bgmParam, value);
-        bgmVolumeText.text = Mathf.RoundToInt(value * 100).ToString();
+        bgmBaseVolume = bgmSlider.value;
+        bgmVolumeText.text = Mathf.RoundToInt(bgmBaseVolume * 100).ToString();
+        ApplySliderVolume(bgmParam, bgmBaseVolume * masterRatio);
     }
 
     public void OnSFXVolumeChange()
     {
-        float value = sfxSlider.value;
-        ApplySliderVolume(sfxParam, value);
-        sfxVolumeText.text = Mathf.RoundToInt(value * 100).ToString();
+        sfxBaseVolume = sfxSlider.value;
+        sfxVolumeText.text = Mathf.RoundToInt(sfxBaseVolume * 100).ToString();
+        ApplySliderVolume(sfxParam, sfxBaseVolume * masterRatio);
     }
 
     private void ApplySliderVolume(string paramName, float value)
@@ -190,7 +184,6 @@ public class OptionMenu : MonoBehaviour
     }
 
     // ------------------ 음소거 토글 ------------------
-
     public void ToggleMasterMute()
     {
         isMasterMuted = !isMasterMuted;
@@ -204,6 +197,10 @@ public class OptionMenu : MonoBehaviour
             masterSlider.SetValueWithoutNotify(0f);
             bgmSlider.SetValueWithoutNotify(0f);
             sfxSlider.SetValueWithoutNotify(0f);
+
+            masterVolumeText.text = "0";
+            bgmVolumeText.text = "0";
+            sfxVolumeText.text = "0";
 
             ApplySliderVolume(masterParam, 0f);
             ApplySliderVolume(bgmParam, 0f);
@@ -222,6 +219,10 @@ public class OptionMenu : MonoBehaviour
             bgmSlider.SetValueWithoutNotify(prevBGMVol);
             sfxSlider.SetValueWithoutNotify(prevSFXVol);
 
+            masterVolumeText.text = Mathf.RoundToInt(prevMasterVol * 100).ToString();
+            bgmVolumeText.text = Mathf.RoundToInt(prevBGMVol * 100).ToString();
+            sfxVolumeText.text = Mathf.RoundToInt(prevSFXVol * 100).ToString();
+
             ApplySliderVolume(masterParam, prevMasterVol);
             ApplySliderVolume(bgmParam, prevBGMVol);
             ApplySliderVolume(sfxParam, prevSFXVol);
@@ -234,6 +235,7 @@ public class OptionMenu : MonoBehaviour
             isSFXMuted = false;
         }
     }
+
 
     public void ToggleBGMMute()
     {
@@ -252,6 +254,8 @@ public class OptionMenu : MonoBehaviour
         }
 
         UpdateMuteIcon(bgmMuteIcon, isBGMMuted);
+        bgmVolumeText.text = isBGMMuted ? "0" : Mathf.RoundToInt(prevBGMVol * 100).ToString();
+
     }
 
     public void ToggleSFXMute()
@@ -271,24 +275,24 @@ public class OptionMenu : MonoBehaviour
         }
 
         UpdateMuteIcon(sfxMuteIcon, isSFXMuted);
+        sfxVolumeText.text = isSFXMuted ? "0" : Mathf.RoundToInt(prevSFXVol * 100).ToString();
+
     }
 
     // ------------------ 아이콘 스프라이트 갱신 ------------------
-
     private void UpdateMuteIcon(Image targetImage, bool isMuted)
     {
         if (targetImage != null)
-        {
             targetImage.sprite = isMuted ? muteOffSprite : muteOnSprite;
-        }
     }
 
     // ------------------ 해상도 설정 ------------------
     public void OnResolutionChange(int index)
     {
         Resolution res = filteredResolutions[index];
-        Screen.SetResolution(res.width, res.height, FullScreenMode.Windowed); 
+        Screen.SetResolution(res.width, res.height, FullScreenMode.Windowed);
     }
+
     private void InitResolutionDropdown()
     {
         List<string> options = new List<string>();
@@ -311,7 +315,8 @@ public class OptionMenu : MonoBehaviour
         resolutionDropdown.value = currentIndex;
         resolutionDropdown.RefreshShownValue();
     }
-    // ------------------ 옵션 변경 저장 ------------------
+
+    // ------------------ 옵션 저장 ------------------
     public void SaveSettings()
     {
         PlayerPrefs.SetFloat("MasterVolume", masterSlider.value);
@@ -320,7 +325,6 @@ public class OptionMenu : MonoBehaviour
         PlayerPrefs.SetInt("ResolutionIndex", resolutionDropdown.value);
         PlayerPrefs.Save();
 
-        // 저장된 값도 덮어쓰기
         savedMasterVol = masterSlider.value;
         savedBGMVol = bgmSlider.value;
         savedSFXVol = sfxSlider.value;
@@ -328,5 +332,4 @@ public class OptionMenu : MonoBehaviour
 
         Debug.Log("옵션 저장 완료");
     }
-
 }

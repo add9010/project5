@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5553567924351009742}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,9 +45,9 @@ GameObject:
   - component: {fileID: 3683859902371945585}
   - component: {fileID: 3845743426801665391}
   - component: {fileID: 3280658155230605344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PY
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,12 +223,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
-    attackPower: 10
+    attackPower: 15
     speed: 12
     jumpForce: 14
-    rollForce: 6
-    rollDuration: 0.2
-    attackKnockback: 8
+    dashForce: 45
+    dashDuration: 0.2
+    attackKnockback: 15
     attackKnockbackThird: 800
     attackDuration: 0.4
     maxHealth: 100
@@ -241,12 +241,11 @@ MonoBehaviour:
   rb: {fileID: 3683859902371945585}
   spriteRenderer: {fileID: 4097594023563100635}
   cameraShake: {fileID: 0}
-  prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
-  canvas: {fileID: 0}
   attackPos: {fileID: 5553567924351009742}
   groundSensor: {fileID: 2142915325747246491}
   dialog: {fileID: 0}
   isAction: 0
+  isDashing: 0
 --- !u!1 &2811674562754187116
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +257,7 @@ GameObject:
   - component: {fileID: 2597999545186735427}
   - component: {fileID: 6839034419398691151}
   - component: {fileID: 2142915325747246491}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +313,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -1.9}
+  m_Offset: {x: 6, y: -1.9}
   m_Radius: 0.05
 --- !u!114 &2142915325747246491
 MonoBehaviour:

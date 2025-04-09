@@ -1,14 +1,14 @@
 using UnityEngine;
 
-public class PlayerHealth
+public class PlayerHealth : IDamageable, IKnockbackable
 {
-    private PlayerManager manager;
+    private PlayerManager pm;
     public float currentHealth { get; private set; }
     private bool isDead = false;
 
     public PlayerHealth(PlayerManager manager)
     {
-        this.manager = manager;
+        this.pm = manager;
         currentHealth = manager.data.maxHealth;
     }
 
@@ -17,8 +17,8 @@ public class PlayerHealth
         if (isDead) return;
 
         currentHealth -= damage;
-        manager.animator.SetTrigger("Hurt");
-        manager.UpdateHpUI(currentHealth);
+        pm.playerStateController.SetHurt();
+        // pm.UpdateHpUI(currentHealth);
 
         if (currentHealth <= 0)
         {
@@ -27,11 +27,16 @@ public class PlayerHealth
         }
     }
 
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        pm.rb.linearVelocity = Vector2.zero;
+        pm.rb.AddForce(direction * force, ForceMode2D.Impulse);
+    }
+
     private void Die()
     {
-        manager.animator.SetTrigger("Death");
         Debug.Log("플레이어 사망");
-        manager.MarkAsDead();
+        pm.MarkAsDead();
 
         // 씬 리셋
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
@@ -41,7 +46,7 @@ public class PlayerHealth
     {
         if (isDead) return;
 
-        currentHealth = Mathf.Min(currentHealth + amount, manager.data.maxHealth);
-        manager.UpdateHpUI(currentHealth);
+        currentHealth = Mathf.Min(currentHealth + amount, pm.data.maxHealth);
+        //pm.UpdateHpUI(currentHealth);
     }
 }

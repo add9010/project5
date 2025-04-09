@@ -17,8 +17,8 @@ public class Wizard : Enemy
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+       // hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        // nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null) Debug.LogError("Player object not found!");
@@ -110,29 +110,6 @@ public class Wizard : Enemy
         isAttacking = false;
     }
 
-    public override void TakeDamage(ParameterPlayerAttack argument)
-    {
-        if (isTakingDamage || anim.GetBool("isDead")) return;
-
-        isTakingDamage = true;
-        nowHp -= argument.damage;
-
-        anim.SetTrigger("hit");
-
-        if (nowHp <= 0)
-        {
-            HandleWhenDead();
-            return;
-        }
-
-        isInDamageState = true;
-        Vector2 knockbackDirection = (transform.position - player.position).normalized;
-        rigid.linearVelocity = Vector2.zero;
-        rigid.AddForce(knockbackDirection * argument.knockback, ForceMode2D.Impulse);
-
-        Invoke("ResumeChase", 0.5f);
-        StartCoroutine(EndDamage());
-    }
 
     protected override void HandleWhenDead()
     {

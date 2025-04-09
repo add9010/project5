@@ -71,7 +71,7 @@ public class DamageDealer : MonoBehaviour
                         knockbackDirection = knockbackDirection
                     };
 
-                    enemy.TakeDamage(attackParams); // 적에게 데미지 및 스턴 적용
+                    //enemy.TakeDamage(attackParams); // 적에게 데미지 및 스턴 적용
                     hitEnemies.Add(collider);
                 }
             }
