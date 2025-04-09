@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Groggy_Shake_0: 6145439915030366036
+      Groggy_Shake_1: 8931819706197965050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

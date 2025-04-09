@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Groggy_0: -7510661819361375658
+      Groggy_1: 8565198570531583096
+      Groggy_2: 9168731393742229135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

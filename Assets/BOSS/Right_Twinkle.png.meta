@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Right_Twinkle_0: 7943080921213113748
+      Right_Twinkle_1: -8607101935176958391
+      Right_Twinkle_2: 5291705102996182562
+      Right_Twinkle_3: -7624948942321044058
+      Right_Twinkle_4: -440215628829626044
+      Right_Twinkle_5: 2124792601193633172
+      Right_Twinkle_6: 5086906829756042975
+      Right_Twinkle_7: -2082510644094188893
+      Right_Twinkle_8: -7203827049974727273
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

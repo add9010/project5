@@ -38,13 +38,17 @@ public class GameWorld
         //Debug.Log($"[Snapshots] 생성된 스냅샷 수: {snapshots.Count}");
         return snapshots;
     }
+
     public void SyncWorldData(Packet packet)
     {
         lock (worldMutex)
         {
             int playerCount = packet.Header.playerCount;
+            byte bossActed = packet.Header.bossActed;
+
             var updatedPlayers = new Dictionary<string, bool>();
             string myPlayerName = localPlayer.GetName();
+
             for (int i = 0; i < playerCount; ++i)
             {
                 string playerName = packet.ReadString();
@@ -81,12 +85,19 @@ public class GameWorld
                     playersToDelete.Add(kvp.Key);
                 }
             }
-
             foreach (var playerName in playersToDelete)
             {
                 remotePlayers.Remove(playerName);
             }
             // Debug.Log($"현재 리모트 플레이어 수: {remotePlayers.Count}");
+
+            // 보스 행동 여부 처리
+            if (bossActed==1)
+            {
+                BossState bossState = (BossState)packet.ReadByte();
+               // Debug.Log($"[BossState] 보스 행동: {bossState}");
+                BossManager.Instance?.ApplyBossState(bossState);
+            }
         }
     }
     private void Cleanup()
@@ -94,9 +105,4 @@ public class GameWorld
         remotePlayers.Clear();
     }
 
-
-    ~GameWorld()
-    {
-        Cleanup();
-    }
 }
