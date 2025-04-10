@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum BossState : byte
 {
     IDLE = 0x00,  // 대기
-    LFD = 0x01,   // 왼손 내려치기
-    RFD = 0x02,   // 오른손 내려치기
-    DEAD = 0x03   // 죽음
+    LeftFistDown = 0x01,   // 왼손 내려치기
+    RightFistDown = 0x02,   // 오른손 내려치기
+    AllFistDown = 0x03,   // 양손 내려치기
+    DEAD = 0x04   // 죽음
 }
 
 public class BossManager : MonoBehaviour
@@ -17,12 +19,60 @@ public class BossManager : MonoBehaviour
     private Animator _bodyAnimator;
     private Animator _deathAnimator;
 
+    [Header("Boss HP Bar")]
+    public GameObject prfHpBar;
+    public GameObject canvas;
+    private RectTransform hpBar;
+    private Image nowHpbar;
+    public float height = 8f;
+
+    [Header("Boss Stats")]
+    public float maxHp = 300f;
+    public float nowHp = 300f;
+
     private void Awake()
     {
         Instance = this;
         _leftHandAnimator = transform.Find("LeftHand").GetComponent<Animator>();
         _rightHandAnimator = transform.Find("RightHand").GetComponent<Animator>();
     }
+
+
+    private void Start()
+    {
+        if (prfHpBar != null && canvas != null)
+        {
+            hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+            nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
+        }
+    }
+
+    private void Update()
+    {
+        if (hpBar != null)
+        {
+            Vector3 hpBarPos = Camera.main.WorldToScreenPoint
+                (new Vector3(transform.position.x, transform.position.y + height, 0));
+            hpBar.position = hpBarPos;
+            nowHpbar.fillAmount = nowHp / maxHp;
+        }
+    }
+
+    //public void TakeDamage(float damage)
+    //{
+    //    if (nowHp <= 0) return;
+
+    //    nowHp -= damage;
+
+    //    if (nowHp <= 0)
+    //    {
+    //        nowHp = 0;
+    //        ApplyBossState(BossState.DEAD);
+
+    //        if (hpBar != null)
+    //            Destroy(hpBar.gameObject);
+    //    }
+    //}
 
     public void ApplyBossState(BossState state)
     {
@@ -31,11 +81,14 @@ public class BossManager : MonoBehaviour
             case BossState.IDLE:
                 PlayIdle();
                 break;
-            case BossState.LFD:
+            case BossState.LeftFistDown:
                 MainThreadDispatcher.RunOnMainThread(() => PlayLeftFistDown());
                 break;
-            case BossState.RFD:
+            case BossState.RightFistDown:
                 MainThreadDispatcher.RunOnMainThread(() => PlayRightFistDown());
+                break;
+            case BossState.AllFistDown:
+                MainThreadDispatcher.RunOnMainThread(() => PlayAllFistDown());
                 break;
             case BossState.DEAD:
                 MainThreadDispatcher.RunOnMainThread(() => PlayDeath());
@@ -44,6 +97,16 @@ public class BossManager : MonoBehaviour
                 Debug.LogWarning($"Unknown boss state: {state}");
                 break;
         }
+    }
+
+    private void PlayAllFistDown()
+    {
+        Debug.Log("보스: 양손 내려치기!");
+        _leftHandAnimator.SetBool("LeftFistDown", true);
+        _rightHandAnimator.SetBool("RightFistDown", true);
+
+        Invoke("ResetLeftFistDown", 1f);
+        Invoke("ResetRightFistDown", 1f);
     }
 
     private void PlayLeftFistDown()
