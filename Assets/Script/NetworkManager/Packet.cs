@@ -30,14 +30,16 @@ public struct PacketHeader
 {
     public PacketType Type;   // 패킷의 타입 (예: 메시지, 명령 등)
     public byte playerCount;  // 플레이어 숫자 (월드 브로드 캐스트)
-    private ushort padding2;  // 2 byte (패딩)
+    public byte bossActed;      // 보스 행동 여부
+    public byte padding;       // reserved for future use
     public uint Length;       // 패킷의 총 데이터 길이
 
     public PacketHeader(PacketType type = PacketType.Unknown, uint length = 0)
     {
         Type = type;
         playerCount = 0;
-        padding2 = 0;
+        bossActed = 0;
+		padding = 0;
         Length = length;
     }
 }

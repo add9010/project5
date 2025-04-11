@@ -30,7 +30,7 @@ public class ClientSession
             PacketHeader header = Packet.FromBytes(receiveBuffer);
             int totalSize = (int)header.Length;
             totalBytesReceived += headerSize;
-
+           // Debug.Log($"[ClientSession] 헤더 수신 완료, 총 크기: {totalSize} 바이트");
             if (totalSize > headerSize) // 패킷 오류 확인
             {
                 int dataSize = totalSize - headerSize;
