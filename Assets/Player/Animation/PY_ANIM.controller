@@ -42,9 +42,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
-  m_TransitionOffset: 0
-  m_ExitTime: 0.000000008384666
+  m_TransitionDuration: 0.24
+  m_TransitionOffset: 0.01027347
+  m_ExitTime: 0.009878347
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -67,7 +67,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.29709402
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -188,7 +188,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attak3
-  m_Speed: 1.2
+  m_Speed: 1.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1378712907462136083}
@@ -240,7 +240,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attak2
-  m_Speed: 1.2
+  m_Speed: 1.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6269130565622173011}
@@ -476,7 +476,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.27358973
   m_TransitionOffset: 0
   m_ExitTime: 0
   m_HasExitTime: 0
@@ -597,7 +597,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Atteak1
-  m_Speed: 1.2
+  m_Speed: 1.15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2860393872224371192}
@@ -705,7 +705,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dash
-  m_Speed: 6.26
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -1019873906601900}
