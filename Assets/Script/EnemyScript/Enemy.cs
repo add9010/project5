@@ -117,7 +117,6 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
     {
         yield return new WaitForSeconds(0.5f);
         isTakingDamage = false;
-        anim.SetBool("isHunt", false);
     }
 
     protected virtual void HandleWhenDead()
