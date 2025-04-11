@@ -6,8 +6,6 @@ using System.Threading;
 
 public class NetworkClient : MonoBehaviour
 {
-    public static NetworkClient Instance { get; private set; }
-
     private RemotePlayerUpdater remoteUpdater; //추가
 
     public string playerName; // 인스펙터에서 설정 가능
@@ -127,6 +125,4 @@ public class NetworkClient : MonoBehaviour
             }
         }
     }
-
-
 }
