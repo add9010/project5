@@ -227,7 +227,7 @@ MonoBehaviour:
     speed: 12
     jumpForce: 14
     dashForce: 45
-    dashDuration: 0.15
+    dashDuration: 0.2
     attackKnockback: 15
     attackKnockbackThird: 800
     attackDuration: 0.4
