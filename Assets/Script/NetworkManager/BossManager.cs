@@ -24,11 +24,11 @@ public class BossManager : MonoBehaviour
     public GameObject canvas;
     private RectTransform hpBar;
     private Image nowHpbar;
-    public float height = 8f;
+    public float height = 5f;
 
     [Header("Boss Stats")]
-    public float maxHp = 300f;
-    public float nowHp = 300f;
+    public int maxHp = 3000;
+    public int nowHp = 3000;
 
     private void Awake()
     {
@@ -54,25 +54,32 @@ public class BossManager : MonoBehaviour
             Vector3 hpBarPos = Camera.main.WorldToScreenPoint
                 (new Vector3(transform.position.x, transform.position.y + height, 0));
             hpBar.position = hpBarPos;
-            nowHpbar.fillAmount = nowHp / maxHp;
+           // nowHpbar.fillAmount = nowHp / maxHp;
         }
     }
 
-    //public void TakeDamage(float damage)
-    //{
-    //    if (nowHp <= 0) return;
+    public void UpdateBossHp(int newHp)
+    {
+        MainThreadDispatcher.RunOnMainThread(() =>
+        {
+            nowHp = newHp;
 
-    //    nowHp -= damage;
+            if (nowHp <= 0)
+            {
+                nowHp = 0;
+                ApplyBossState(BossState.DEAD);
 
-    //    if (nowHp <= 0)
-    //    {
-    //        nowHp = 0;
-    //        ApplyBossState(BossState.DEAD);
+                if (hpBar != null)
+                    Destroy(hpBar.gameObject);
+            }
 
-    //        if (hpBar != null)
-    //            Destroy(hpBar.gameObject);
-    //    }
-    //}
+            if (hpBar != null)
+            {
+                nowHpbar.fillAmount = (float)nowHp / maxHp;
+            }
+        });
+    }
+
 
     public void ApplyBossState(BossState state)
     {

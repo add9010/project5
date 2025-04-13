@@ -51,10 +51,9 @@ public class NetworkClient : MonoBehaviour
             Vector2 playerPos = PlayerManager.Instance.rb.position;
             x = playerPos.x;
             y = playerPos.y;
-
             localPlayer.UpdatePosition(x, y);
-            AnimType currentAnim = PlayerManager.Instance.GetCurrentAnimState();
 
+            AnimType currentAnim = PlayerManager.Instance.GetCurrentAnimState();
             localPlayer.SetAnimType(currentAnim);
 
             localPlayer.SendPlayerData();

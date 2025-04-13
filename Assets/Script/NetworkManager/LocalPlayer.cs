@@ -59,6 +59,20 @@ public class Player
         session.SendData(packet);
     }
 
+    public void SendMonsterDamage(int damage)
+    {
+        Packet packet = new Packet
+        {
+            Header = new PacketHeader
+            {
+                Type = PacketType.MonsterUpdate,
+            }
+        };
+   
+        packet.Write(damage);
+        session.SendData(packet);
+    }
+
     // 플레이어 데이터 수신
     public bool ReceivePlayerData(out Packet packet)
     {

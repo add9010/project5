@@ -95,8 +95,12 @@ public class GameWorld
             if (bossActed==1)
             {
                 BossState bossState = (BossState)packet.ReadByte();
-               // Debug.Log($"[BossState] 보스 행동: {bossState}");
                 BossManager.Instance?.ApplyBossState(bossState);
+                // Debug.Log($"[BossState] 보스 행동: {bossState}");
+
+                int bossHp = packet.ReadInt();
+                BossManager.Instance?.UpdateBossHp(bossHp);
+                // Debug.Log($"[BossState] 보스 HP: {bossHp}");
             }
         }
     }
