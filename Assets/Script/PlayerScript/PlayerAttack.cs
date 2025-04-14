@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 public class PlayerAttack
 {
@@ -37,7 +38,7 @@ public class PlayerAttack
 
     private IEnumerator AttackCoroutine()
     {
-        Debug.Log("AttackCoroutine 시작!");
+        UnityEngine.Debug.Log("AttackCoroutine 시작!");
         isAttacking = true;
         hitEnemies.Clear();
 
@@ -82,7 +83,15 @@ public class PlayerAttack
             if (hitEnemies.Contains(col)) continue;
 
             GameObject target = col.gameObject;
-            CombatManager.ApplyDamage(target, damage, knockback, manager.transform.position);
+            if (NetworkClient.Instance.isConnected)
+            {
+                NetworkCombatManager.SendMonsterDamage((int)damage);
+                UnityEngine.Debug.Log($"데미지 전송: {damage}");
+            }
+            else
+            {
+                CombatManager.ApplyDamage(target, damage, knockback, manager.transform.position);
+            }
             hitEnemies.Add(col);
         }
     }

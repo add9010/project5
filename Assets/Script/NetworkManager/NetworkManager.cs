@@ -6,6 +6,13 @@ using System.Threading;
 
 public class NetworkClient : MonoBehaviour
 {
+    public static NetworkClient Instance { get; private set; }
+    void Awake()
+    {
+        Instance = this;
+    }
+
+
     private RemotePlayerUpdater remoteUpdater; //추가
 
     public string playerName; // 인스펙터에서 설정 가능
@@ -14,11 +21,12 @@ public class NetworkClient : MonoBehaviour
     private GameWorld gameWorld;
 
     private Thread recvThread;
-    private bool isConnected = false;
+    public bool isConnected = false;
 
     private float x = 0, y = 0;
     private float sendInterval = 0.03f; // 초
     private float timer = 0f;
+
 
     void Start()
     {
@@ -28,7 +36,7 @@ public class NetworkClient : MonoBehaviour
         localPlayer = new Player(socket, playerName);
         gameWorld = new GameWorld();
         gameWorld.SetLocalPlayer(localPlayer);
-
+        NetworkCombatManager.Initialize(localPlayer);
 
         localPlayer.Init();
 
@@ -58,6 +66,7 @@ public class NetworkClient : MonoBehaviour
 
             localPlayer.SendPlayerData();
 
+            //localPlayer.SendMonsterDamage(damage);
             timer = 0f;
         }
     }
@@ -90,7 +99,7 @@ public class NetworkClient : MonoBehaviour
         }
     }
 
-    void ReceiveData(GameWorld gameWorld)
+        void ReceiveData(GameWorld gameWorld)
     {
         Player localPlayer = gameWorld.GetLocalPlayer();
         Packet recvPacket = new Packet();
