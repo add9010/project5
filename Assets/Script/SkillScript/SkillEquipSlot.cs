@@ -34,8 +34,19 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
         if (draggedItem != null)
         {
             Equip(draggedItem.skillData);
-            draggedItem.transform.SetParent(this.transform, false); // worldPositionStays = false
-            draggedItem.transform.localPosition = Vector3.zero;
+
+            // UI 정확하게 정렬
+            RectTransform dragRect = draggedItem.GetComponent<RectTransform>();
+            RectTransform slotRect = this.GetComponent<RectTransform>();
+
+            draggedItem.transform.SetParent(this.transform, false); // 부모 변경 (레이아웃 영향 방지)
+            dragRect.anchorMin = new Vector2(0.5f, 0.5f);
+            dragRect.anchorMax = new Vector2(0.5f, 0.5f);
+            dragRect.pivot = new Vector2(0.5f, 0.5f); // 가운데 기준
+            dragRect.anchoredPosition = Vector2.zero; // 정확히 중앙 위치
+            dragRect.localScale = Vector3.one; // 크기 초기화
+
+            draggedItem.wasDroppedOnSlot = true;
 
             Debug.Log($"스킬 {draggedItem.skillData.skillName} 장착됨!");
         }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: skilldata
   m_EditorClassIdentifier: 
   skillName: Skill1Data
-  icon: {fileID: -4827201375843143100, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
-  skillLogicPrefab: {fileID: 2776277180469950990, guid: d79dab4161b53dc498b84b1f9f3fd6fd, type: 3}
+  icon: {fileID: -7179047578888565816, guid: 8cc278db526570b46be7a92f85f7d207, type: 3}
+  skillLogicPrefab: {fileID: 6503906234465774250, guid: e4fc78640ac3de94488307548b03e2c8, type: 3}

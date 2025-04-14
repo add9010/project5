@@ -7,7 +7,7 @@ public class SkillDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private CanvasGroup canvasGroup;
     private Transform originalParent;
-
+    public bool wasDroppedOnSlot = false;
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -16,7 +16,7 @@ public class SkillDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         originalParent = transform.parent;
-        transform.SetParent(transform.root); // 드래그 시 UI 최상단으로 이동
+        transform.SetParent(transform.root, true); // worldPosition 유지
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -27,8 +27,13 @@ public class SkillDragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(originalParent, false); // 원래 자리로 돌아감
-        transform.localPosition = Vector3.zero;
+        if (!wasDroppedOnSlot)
+        {
+            transform.SetParent(originalParent, false);
+            transform.localPosition = Vector3.zero;
+        }
+
         canvasGroup.blocksRaycasts = true;
+        wasDroppedOnSlot = false; // 다음 드래그를 위해 리셋
     }
 }
