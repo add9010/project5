@@ -7,6 +7,11 @@ public class GameWorld
 {
     private Player localPlayer; // 조작하는 사람 본인
     private Dictionary<string, RemotePlayer> remotePlayers; // 본인을 제외한 타 플레이어
+
+    //public GameObject trapPrefab;
+    private Dictionary<string, Trap> traps = new(); // 트랩 정보
+    public Dictionary<string, Trap> GetTraps() => traps;
+
     private readonly object worldMutex;        // 플레이어의 월드는 서버의 월드와 동기화 됨
 
     public GameWorld()
@@ -49,6 +54,8 @@ public class GameWorld
             var updatedPlayers = new Dictionary<string, bool>();
             string myPlayerName = localPlayer.GetName();
 
+
+            ///// 플레이어 정보 업데이트/////
             for (int i = 0; i < playerCount; ++i)
             {
                 string playerName = packet.ReadString();
@@ -75,7 +82,6 @@ public class GameWorld
 
                 updatedPlayers[playerName] = true;
             }
-
             // 기존 플레이어 중에서 업데이트되지 않은 플레이어 삭제
             var playersToDelete = new List<string>();
             foreach (var kvp in remotePlayers)
@@ -89,8 +95,59 @@ public class GameWorld
             {
                 remotePlayers.Remove(playerName);
             }
-            // Debug.Log($"현재 리모트 플레이어 수: {remotePlayers.Count}");
 
+
+            ///// 트랩 정보 업데이트 /////
+            int trapCount = packet.ReadByte();
+            var updatedTrapIds = new HashSet<string>();
+
+            for (int i = 0; i < trapCount; ++i)
+            {
+                string trapId = packet.ReadString();
+                float trapX = packet.ReadFloat();
+                float trapY = packet.ReadFloat();
+                Debug.Log($"[Trap Sync] trapId: {trapId}, pos: ({trapX}, {trapY})");
+                if (traps.TryGetValue(trapId, out var trap))
+                {
+                    trap.UpdatePosition(trapX, trapY);
+                }
+                else
+                {
+                    var newTrap = new Trap(trapId, trapX, trapY);
+                    traps[trapId] = newTrap;
+
+                    Debug.Log($"[Trap Created] trapId: {trapId}");
+                    MainThreadDispatcher.RunOnMainThread(() =>
+                    {
+                        newTrap.SpawnVisual(new Vector2(trapX, trapY));
+                    });
+                }
+
+
+                updatedTrapIds.Add(trapId);
+            }
+
+            // 서버에 없는 트랩 제거
+            var trapIdsToRemove = new List<string>();
+            foreach (var kvp in traps)
+            {
+                if (!updatedTrapIds.Contains(kvp.Key))
+                    trapIdsToRemove.Add(kvp.Key);
+            }
+
+            foreach (var id in trapIdsToRemove)
+            {
+                var trapToRemove = traps[id];
+                MainThreadDispatcher.RunOnMainThread(() =>
+                {
+                    trapToRemove.DestroyVisual(); // 트랩 제거 시 시각화 객체도 제거
+                });
+
+                traps.Remove(id);
+            }
+
+
+            //////// 보스 행동 업데이트 ///////
             // 보스 행동 여부 처리
             if (bossActed==1)
             {

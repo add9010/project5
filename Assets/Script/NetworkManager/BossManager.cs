@@ -17,7 +17,7 @@ public class BossManager : MonoBehaviour
     private Animator _leftHandAnimator;
     private Animator _rightHandAnimator;
     private Animator _bodyAnimator;
-    private Animator _deathAnimator;
+
 
     [Header("Boss HP Bar")]
     public GameObject prfHpBar;
@@ -35,6 +35,7 @@ public class BossManager : MonoBehaviour
         Instance = this;
         _leftHandAnimator = transform.Find("LeftHand").GetComponent<Animator>();
         _rightHandAnimator = transform.Find("RightHand").GetComponent<Animator>();
+        _bodyAnimator = transform.Find("Head").GetComponent<Animator>();
     }
 
 
@@ -54,7 +55,6 @@ public class BossManager : MonoBehaviour
             Vector3 hpBarPos = Camera.main.WorldToScreenPoint
                 (new Vector3(transform.position.x, transform.position.y + height, 0));
             hpBar.position = hpBarPos;
-           // nowHpbar.fillAmount = nowHp / maxHp;
         }
     }
 
@@ -68,9 +68,6 @@ public class BossManager : MonoBehaviour
             {
                 nowHp = 0;
                 ApplyBossState(BossState.DEAD);
-
-                if (hpBar != null)
-                    Destroy(hpBar.gameObject);
             }
 
             if (hpBar != null)
@@ -138,10 +135,15 @@ public class BossManager : MonoBehaviour
         Debug.Log("보스: 정지");
        
     }
+
     private void PlayDeath()
     {
         Debug.Log("보스: 사망!");
-        _deathAnimator.SetTrigger("Die");
+       _bodyAnimator.SetBool("isDead", true);
+        _leftHandAnimator.SetBool("LeftFistDown", false);
+        _rightHandAnimator.SetBool("RightFistDown", false);
+
+        if (hpBar != null) Destroy(hpBar.gameObject);
     }
 
     // 1초 후 "LeftFistDown"을 false로 설정
