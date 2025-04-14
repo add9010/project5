@@ -5,6 +5,5 @@ public class SkillData : ScriptableObject
 {
     public string skillName;
     public Sprite icon;
-    public float cooldown;
-    // 여기에 range, damage, effect 등 추가 가능
+    public GameObject skillLogicPrefab; // 여기서 Skill1 프리팹 연결
 }
