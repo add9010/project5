@@ -95,7 +95,7 @@ public class PlayerStateController
             case PlayerState.Attack:
                 break;
             case PlayerState.Dash:
-#warning 대쉬 문제의 원인
+//#warning 대쉬 문제의 원인
 
               //  Debug.Log($">> 현재 애니메이션 상태:{pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash")}");
                 if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash") == false)

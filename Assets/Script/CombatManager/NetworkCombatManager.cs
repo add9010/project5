@@ -1,19 +1,19 @@
-using UnityEngine;
+using System.Diagnostics;
 
 public static class NetworkCombatManager
 {
-    /// <summary>
-    /// 서버에 보스 데미지 요청을 전송합니다.
-    /// </summary>
-    public static void SendDamage(string targetId, float damage)
-    {
-        var net = NetworkClient.Instance;
-        if (net == null || string.IsNullOrEmpty(targetId))
-        {
-            Debug.LogWarning("[NetworkCombatManager] 네트워크 연결 또는 ID 없음");
-            return;
-        }
+    // Player 객체 참조를 저장할 정적 변수
+    private static Player _currentPlayer;
 
-       // net.SendAttack(targetId, damage);
+    // Player 참조 설정 메서드
+    public static void Initialize(Player player)
+    {
+        _currentPlayer = player;
+    }
+
+    // 플레이어가 몬스터에게 데미지를 입힐 때 호출
+    public static void SendMonsterDamage(int damage)
+    {
+            _currentPlayer.SendMonsterDamage(damage);
     }
 }
