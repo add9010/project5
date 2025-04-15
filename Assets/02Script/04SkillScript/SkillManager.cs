@@ -57,25 +57,30 @@ public class SkillManager : MonoBehaviour
     {
         if (slot == null || slot.EquippedSkill == null)
         {
-            Debug.Log(" 장착된 스킬이 없습니다.");
+            Debug.Log("장착된 스킬이 없습니다.");
             return;
         }
 
         var prefab = slot.EquippedSkill.skillLogicPrefab;
         if (prefab == null)
         {
-            Debug.LogWarning(" Skill Logic Prefab이 비어 있습니다.");
+            Debug.LogWarning("Skill Logic Prefab이 비어 있습니다.");
             return;
         }
 
         GameObject instance = Instantiate(prefab);
-        var logic = instance.GetComponent<Skill1>(); // 추후 인터페이스로 확장 가능
+
+        // PlayerManager 찾기 (최초 1회)
+        PlayerManager pm = GameObject.FindWithTag("Player")?.GetComponent<PlayerManager>();
+
+        var logic = instance.GetComponent<Skill1>();
         if (logic == null)
         {
-            Debug.LogWarning(" Skill1 컴포넌트를 찾지 못했습니다!");
+            Debug.LogWarning("Skill1 컴포넌트를 찾지 못했습니다!");
         }
         else
         {
+            logic.Initialize(pm); // PlayerManager를 넘겨줌
             logic.Activate();
         }
 
