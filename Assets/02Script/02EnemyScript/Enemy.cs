@@ -228,7 +228,7 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
             if (!IsOnPlatform())
             {
                 rigid.linearVelocity = Vector2.zero;
-                Debug.Log("���� ��ȸ");
+                Debug.Log("플랫폼 위가 아님 - 정지");
             }
             else 
             {
@@ -236,7 +236,7 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
                 Vector3 direction = (player.position - transform.position).normalized;
                 transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
                 
-                Debug.Log("�÷��̾� ��������");
+                Debug.Log("플레이어 추격");
             }
 
             LookAtPlayer();
@@ -281,16 +281,16 @@ public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
 
     //protected float GetAnimationClipLengthByTag(string tag)
     //{
-    //    // ���� Animator ���� ��������
-    //    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0); // Layer 0 ����
+    //    // 현재 Animator 상태 정보를 가져온다
+    //    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0); // Layer 0 기준
     //    if (anim != null && stateInfo.IsTag(tag))
     //    {
-    //        // ���� ���°� �±׿� ��ġ�ϸ� �ش� ������ ���̸� ��ȯ
+    //        // 현재 애니메이션 상태가 해당 태그와 일치하면 해당 애니메이션의 길이를 반환
     //        return stateInfo.length;
     //    }
 
     //    Debug.LogWarning($"Animation with tag '{tag}' not found!");
-    //    return 0f; // �±׸� ã�� ������ �� �⺻�� ��ȯ
+    //    return 0f; // 태그를 찾지 못했을 경우 기본값 반환
     //}
 
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6669325964136516987}
   - component: {fileID: 2895651016377425556}
   - component: {fileID: 6713423478088748958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 8668567964674131180}
   - component: {fileID: 195524066911300562}
   - component: {fileID: 5088937533209508194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5903871707430438436}
   - component: {fileID: 2440627486388120182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -14.274717, y: 11.461058}
+  m_Offset: {x: -14.274717, y: 11.394911}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -440,7 +440,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.6935158, y: 3.2937508}
+  m_Size: {x: 2.6935158, y: 3.161456}
   m_EdgeRadius: 0
 --- !u!1 &491398824311908578
 GameObject:
@@ -452,7 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7224045199079213527}
   - component: {fileID: 8414973931363395766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +508,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 12.985014, y: 23.643826}
+  m_Offset: {x: 12.944882, y: 23.446035}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -518,7 +518,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10.540638, y: 1.7268066}
+  m_Size: {x: 10.460375, y: 1.5032158}
   m_EdgeRadius: 0
 --- !u!1 &594219762111757484
 GameObject:
@@ -530,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4513060866579257938}
   - component: {fileID: 1935996371138347226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -586,7 +586,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 4.9622245, y: 24.232006}
+  m_Offset: {x: 4.962224, y: 24.103012}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -596,7 +596,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.2586794, y: 2.9031677}
+  m_Size: {x: 6.2586784, y: 2.6451817}
   m_EdgeRadius: 0
 --- !u!1 &596265521405802127
 GameObject:
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 1237409032799004422}
   - component: {fileID: 6464708822365274302}
   - component: {fileID: 6156824649566098137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 970811036901893643}
   - component: {fileID: 90051187135763205}
   - component: {fileID: 1870076943907607705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R1End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -924,7 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2048239317716508803}
   - component: {fileID: 2481859967556774294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.2919736, y: 17.38557}
+  m_Offset: {x: 1.2769239, y: 17.38557}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -990,7 +990,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.1293707, y: 11.420044}
+  m_Size: {x: 5.0992713, y: 11.420044}
   m_EdgeRadius: 0
 --- !u!1 &1598184643263500738
 GameObject:
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 3773580641384377363}
   - component: {fileID: 8577369324728225284}
   - component: {fileID: 8955232342716590833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_18 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1184,7 +1184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4565386402420345641}
   - component: {fileID: 1676860086311095417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 3.1882343, y: 11.106733}
+  m_Offset: {x: 3.1882343, y: 11.00908}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1250,7 +1250,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 18.228691, y: 2.585102}
+  m_Size: {x: 18.228691, y: 2.3897953}
   m_EdgeRadius: 0
 --- !u!1 &1908723663439599748
 GameObject:
@@ -1265,7 +1265,7 @@ GameObject:
   - component: {fileID: 1222401574713123335}
   - component: {fileID: 1388019778360066842}
   - component: {fileID: 4625435201060552084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1447,7 +1447,7 @@ GameObject:
   - component: {fileID: 5458657167998181171}
   - component: {fileID: 4492008382465471339}
   - component: {fileID: 4553930940502987394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745430821699611524}
   - component: {fileID: 2194919897970852987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1682,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -8.375515, y: 17.330782}
+  m_Offset: {x: -8.438396, y: 17.206406}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1692,7 +1692,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 9.103544, y: 1.326107}
+  m_Size: {x: 9.178997, y: 1.1779709}
   m_EdgeRadius: 0
 --- !u!1 &2164685607128632412
 GameObject:
@@ -1707,7 +1707,7 @@ GameObject:
   - component: {fileID: 3697938712108209939}
   - component: {fileID: 8655459156136510315}
   - component: {fileID: 5708671016925464688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1723,7 +1723,7 @@ Transform:
   m_GameObject: {fileID: 2164685607128632412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.2, y: 2.094, z: 0}
+  m_LocalPosition: {x: -21.2, y: 1, z: 0}
   m_LocalScale: {x: 1.5, y: 1.365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1886,7 +1886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4448480888632724237}
   - component: {fileID: 789909147622322533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1964,7 +1964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6959016679899457868}
   - component: {fileID: 3317173998232749107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2020,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 20.634907, y: 16.7351}
+  m_Offset: {x: 20.610107, y: 16.629753}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2030,7 +2030,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.9936275, y: 2.4150314}
+  m_Size: {x: 7.0432262, y: 2.2043304}
   m_EdgeRadius: 0
 --- !u!1 &2730367514808787916
 GameObject:
@@ -2042,7 +2042,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5637207146538721374}
   - component: {fileID: 5939621456339890300}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2098,7 +2098,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -31.21068, y: -0.92162323}
+  m_Offset: {x: -31.21068, y: -1.122468}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2108,7 +2108,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.604748, y: 8.29192}
+  m_Size: {x: 7.604748, y: 7.89023}
   m_EdgeRadius: 0
 --- !u!1 &2775299972903913641
 GameObject:
@@ -2120,7 +2120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5578728490578879170}
   - component: {fileID: 266066507519394123}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2176,7 +2176,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 14.043823, y: 17.264503}
+  m_Offset: {x: 14.003691, y: 17.159157}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2186,7 +2186,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.7289276, y: 1.3562241}
+  m_Size: {x: 6.8091936, y: 1.1455307}
   m_EdgeRadius: 0
 --- !u!1 &2905788209460138687
 GameObject:
@@ -2198,7 +2198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2126750824225558983}
   - component: {fileID: 8695407432230607229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2254,7 +2254,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 3.732463, y: 0.04232502}
+  m_Offset: {x: 3.7324638, y: -0.14424658}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2264,7 +2264,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 62.43538, y: 10.219816}
+  m_Size: {x: 62.43538, y: 9.846673}
   m_EdgeRadius: 0
 --- !u!1 &3581648364485179672
 GameObject:
@@ -2279,7 +2279,7 @@ GameObject:
   - component: {fileID: 3401423666646794975}
   - component: {fileID: 4221736005205932705}
   - component: {fileID: 6933825941528036118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2457,9 +2457,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1233658039780275772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RiverStage_1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2493,7 +2493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2679732760884049973}
   - component: {fileID: 5202767653431014418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2549,7 +2549,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -11.988758, y: 11.106733}
+  m_Offset: {x: -11.988758, y: 11.057123}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2559,7 +2559,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.0991669, y: 2.585103}
+  m_Size: {x: 2.0991669, y: 2.4858818}
   m_EdgeRadius: 0
 --- !u!1 &3914184685503245949
 GameObject:
@@ -2574,7 +2574,7 @@ GameObject:
   - component: {fileID: 3348033975729650451}
   - component: {fileID: 6537625080649396832}
   - component: {fileID: 7277748016370297772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2753,7 +2753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5243040623774585791}
   - component: {fileID: 8125659569538169645}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2809,7 +2809,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -21.532997, y: 5.8508363}
+  m_Offset: {x: -21.532997, y: 5.6642647}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2819,7 +2819,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 11.904461, y: 1.6065512}
+  m_Size: {x: 11.904461, y: 1.233408}
   m_EdgeRadius: 0
 --- !u!1 &5271712667501717662
 GameObject:
@@ -2831,7 +2831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8470168236583681587}
   - component: {fileID: 8065601340368280020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2909,7 +2909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2244006080932545514}
   - component: {fileID: 6196727900390036242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: River_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3018,7 +3018,7 @@ GameObject:
   - component: {fileID: 8999838965525430476}
   - component: {fileID: 739688667793140713}
   - component: {fileID: 8270884035390824704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3034,7 +3034,7 @@ Transform:
   m_GameObject: {fileID: 5443237622358549241}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.35, y: -0.612, z: 0}
+  m_LocalPosition: {x: -27.35, y: -1, z: 0}
   m_LocalScale: {x: 1.5, y: 1.365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3200,7 +3200,7 @@ GameObject:
   - component: {fileID: 2801973947693810879}
   - component: {fileID: 6070387946590761649}
   - component: {fileID: 7451730445051390133}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3216,7 +3216,7 @@ Transform:
   m_GameObject: {fileID: 5587912763475698636}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -26.08, y: 4.45, z: 0}
+  m_LocalPosition: {x: -26.08, y: 3, z: 0}
   m_LocalScale: {x: 1.3, y: 1.365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3382,7 +3382,7 @@ GameObject:
   - component: {fileID: 6566640245197657249}
   - component: {fileID: 6017086548714029164}
   - component: {fileID: 6824343522609973357}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3398,7 +3398,7 @@ Transform:
   m_GameObject: {fileID: 5619348051814404256}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.8, y: 9.88, z: 0}
+  m_LocalPosition: {x: -20.8, y: 7, z: 0}
   m_LocalScale: {x: 1.3, y: 1.365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3561,7 +3561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 928987630282478080}
   - component: {fileID: 8317125472674539772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3638,7 +3638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2500051117385818511}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3694,7 +3694,7 @@ GameObject:
   - component: {fileID: 7857421268120703701}
   - component: {fileID: 2025774817303602861}
   - component: {fileID: 2933907239542887278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3873,7 +3873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4454112371548063005}
   - component: {fileID: 3974299147809385733}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3929,7 +3929,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.05882263, y: 12.421318}
+  m_Offset: {x: 0.03929186, y: 12.0575075}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3939,7 +3939,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.5956726, y: 1.4915543}
+  m_Size: {x: 7.556611, y: 1.8222904}
   m_EdgeRadius: 0
 --- !u!1 &6697169154789116008
 GameObject:
@@ -3954,7 +3954,7 @@ GameObject:
   - component: {fileID: 7532118161890222260}
   - component: {fileID: 7150427601137367577}
   - component: {fileID: 1587734532963303376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_18 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4134,7 +4134,7 @@ GameObject:
   - component: {fileID: 8633827885104596750}
   - component: {fileID: 7051154001910655967}
   - component: {fileID: 4610203714563925724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R1Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4267,7 +4267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2599762340399672239}
   - component: {fileID: 81249092209980496}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4323,7 +4323,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -19.225834, y: 8.339294}
+  m_Offset: {x: -19.225834, y: 7.9506035}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4333,7 +4333,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.2900696, y: 3.551175}
+  m_Size: {x: 7.2900696, y: 3.7066498}
   m_EdgeRadius: 0
 --- !u!1 &7322279191928063319
 GameObject:
@@ -4345,7 +4345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3187163465736072993}
   - component: {fileID: 2480349762722017296}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4426,7 +4426,7 @@ GameObject:
   - component: {fileID: 7671143865307857392}
   - component: {fileID: 3658711690618383732}
   - component: {fileID: 2292682832592352488}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4608,7 +4608,7 @@ GameObject:
   - component: {fileID: 31570086277066119}
   - component: {fileID: 6251034923931355939}
   - component: {fileID: 6254048180277818980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_18 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4787,7 +4787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5678713633274668875}
   - component: {fileID: 4852709390003437913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4843,7 +4843,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -18.034819, y: 17.535564}
+  m_Offset: {x: -18.034819, y: 16.9603}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4853,7 +4853,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.8, y: 14.980202}
+  m_Size: {x: 4.799999, y: 15.6332035}
   m_EdgeRadius: 0
 --- !u!1 &8828991252879179199
 GameObject:
@@ -4868,7 +4868,7 @@ GameObject:
   - component: {fileID: 6257488016501486040}
   - component: {fileID: 8158371756139180174}
   - component: {fileID: 5222384413580886354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_18 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5050,7 +5050,7 @@ GameObject:
   - component: {fileID: 1679251211338339445}
   - component: {fileID: 7737870359305155632}
   - component: {fileID: 4390244305238194427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5066,7 +5066,7 @@ Transform:
   m_GameObject: {fileID: 8897489208843837383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 37, y: -3.5, z: 0}
+  m_LocalPosition: {x: 37.01, y: -3, z: 0}
   m_LocalScale: {x: 4.5, y: 1.365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5232,7 +5232,7 @@ GameObject:
   - component: {fileID: 3934945441300359596}
   - component: {fileID: 4477219048550540403}
   - component: {fileID: 3559885216988009079}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5248,7 +5248,7 @@ Transform:
   m_GameObject: {fileID: 8905996668388511552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.2, y: -3.06, z: 0}
+  m_LocalPosition: {x: -21.2, y: -3, z: 0}
   m_LocalScale: {x: 1.5, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5414,7 +5414,7 @@ GameObject:
   - component: {fileID: 2574550114769571013}
   - component: {fileID: 731587399526663975}
   - component: {fileID: 7539518816982194079}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5430,7 +5430,7 @@ Transform:
   m_GameObject: {fileID: 9013313950285562657}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.693, y: 7.155, z: 0}
+  m_LocalPosition: {x: -23.693, y: 5, z: 0}
   m_LocalScale: {x: 1.3, y: 1.365, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5596,7 +5596,7 @@ GameObject:
   - component: {fileID: 506214316799765095}
   - component: {fileID: 4792763661431068126}
   - component: {fileID: 2284495010152479640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

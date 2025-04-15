@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057089564377171834}
   - component: {fileID: 2472436382206446345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66,7 +66,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -31.812416, y: -8.85972}
+  m_Offset: {x: -31.812416, y: -9.098938}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.4503784, y: 17.273422}
+  m_Size: {x: 6.4503784, y: 16.794987}
   m_EdgeRadius: 0
 --- !u!1 &513053338986288494
 GameObject:
@@ -88,7 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1962528227982005576}
   - component: {fileID: 8123757817576339885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 31.178518, y: -8.85972}
+  m_Offset: {x: 31.178518, y: -8.975912}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -154,7 +154,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.5890083, y: 17.273422}
+  m_Size: {x: 7.5890083, y: 17.041039}
   m_EdgeRadius: 0
 --- !u!1 &1414603021540965436
 GameObject:
@@ -166,7 +166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5826203802889655814}
   - component: {fileID: 7103401980532477765}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.1071858, y: 0.25460923}
+  m_Offset: {x: 1.1071854, y: 0.11107862}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -232,7 +232,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 20.762497, y: 2.0828729}
+  m_Size: {x: 20.762497, y: 1.7958117}
   m_EdgeRadius: 0
 --- !u!1 &1886033529999646674
 GameObject:
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 5386347501437048118}
   - component: {fileID: 4828399638900507852}
   - component: {fileID: 8463910461025741893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8608958026814790970, guid: 3ac9131e89dd8a546ad7963e3957977f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -426,7 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709590272198786222}
   - component: {fileID: 3720823519272740091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +503,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752613877552114308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 9155501851771893537}
   - component: {fileID: 4548398644405749944}
   - component: {fileID: 8118251013013455107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R4Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,7 +604,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2660195087753647290, guid: 578bf11d25fdf3042b3a496ad6a3327c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -672,7 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5639654823416717372}
   - component: {fileID: 2809818079459685131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -20.220345, y: -0.5049181}
+  m_Offset: {x: -20.19984, y: -0.5801008}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -738,7 +738,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 14.929329, y: 0.563818}
+  m_Size: {x: 14.970338, y: 0.41345263}
   m_EdgeRadius: 0
 --- !u!1 &3761717702229901439
 GameObject:
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 2196710508605646479}
   - component: {fileID: 933419960219598472}
   - component: {fileID: 6908806314299571472}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8608958026814790970, guid: 3ac9131e89dd8a546ad7963e3957977f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -932,7 +932,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6397939261457166671}
   - component: {fileID: 3688928641787544972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +988,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 2.5899048, y: -8.85972}
+  m_Offset: {x: 2.5899048, y: -9.003251}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -998,7 +998,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 28.977303, y: 17.273422}
+  m_Size: {x: 28.977303, y: 16.98636}
   m_EdgeRadius: 0
 --- !u!1 &4901758399159128427
 GameObject:
@@ -1010,7 +1010,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6642096327170359372}
   - component: {fileID: 6973276230685403443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 3.841484, y: 5.191538}
+  m_Offset: {x: 3.841484, y: 5.075346}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1076,7 +1076,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 15.2939, y: 1.3233457}
+  m_Size: {x: 15.2939, y: 1.0909619}
   m_EdgeRadius: 0
 --- !u!1 &4958481595650208544
 GameObject:
@@ -1091,7 +1091,7 @@ GameObject:
   - component: {fileID: 7229640364510188875}
   - component: {fileID: 3313649615310178256}
   - component: {fileID: 326150959506434951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DownJump_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8608958026814790970, guid: 3ac9131e89dd8a546ad7963e3957977f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1270,7 +1270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8235656090002868596}
   - component: {fileID: 2822503036168829550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: River_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,7 +1335,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1828732665, guid: c7534d9dc73de2945acf092b539a9ff5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 6229393916251735127}
   - component: {fileID: 5056129054250592408}
   - component: {fileID: 6168319775603353727}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: R4End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 33643560008069212, guid: 0f7060e2583edc442bc6290ba4f19b48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1491,7 +1491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3969901569832523503}
   - component: {fileID: 2876699149952917546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sensor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1547,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 21.775568, y: -0.5049181}
+  m_Offset: {x: 21.775568, y: -0.60060513}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1557,7 +1557,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.558628, y: 0.563818}
+  m_Size: {x: 7.558628, y: 0.37244385}
   m_EdgeRadius: 0
 --- !u!1 &9157818399047859897
 GameObject:
@@ -1569,7 +1569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6943051379028855009}
   - component: {fileID: 5172188612828011796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +1664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1960581974431985492}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RiverStage_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
