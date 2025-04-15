@@ -213,6 +213,14 @@ PrefabInstance:
       propertyPath: cameraShake
       value: 
       objectReference: {fileID: 341951502}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.jumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683859902371945585, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: m_Mass
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5739177417593549659, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: m_LocalPosition.x
       value: -23.39
@@ -1095,6 +1103,10 @@ PrefabInstance:
     - target: {fileID: 6503906234465774250, guid: e4fc78640ac3de94488307548b03e2c8, type: 3}
       propertyPath: m_Name
       value: skill1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314970595884808780, guid: e4fc78640ac3de94488307548b03e2c8, type: 3}
+      propertyPath: jumpForce
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
