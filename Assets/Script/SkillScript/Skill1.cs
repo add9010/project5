@@ -14,7 +14,7 @@ public class Skill1 : MonoBehaviour
         }
 
         anim.SetTrigger("Skill1");
-        Debug.Log("🔥 Skill1 애니메이션 트리거 실행됨!");
+        Debug.Log("Skill1 실행됨!");
 
         // TODO: 나중에 PlayerManager에서 직접 애니메이터 주입받도록 수정
         // ex) SkillManager.Instance.RegisterPlayerAnimator(anim);
