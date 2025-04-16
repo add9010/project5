@@ -2,18 +2,25 @@ using UnityEngine;
 
 public class Skill1 : MonoBehaviour
 {
+    private PlayerManager pm;
+
+    public float jumpForce = 7.5f;
+
+    public void Initialize(PlayerManager playerManager)
+    {
+        this.pm = playerManager;
+    }
+
     public void Activate()
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player == null) return;
+        if (pm == null)
+        {
+            Debug.LogWarning("PlayerManager가 연결되지 않았습니다.");
+            return;
+        }
+        pm.playerStateController.ForceSetSkill();
+        pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
 
-        PlayerManager pm = player.GetComponent<PlayerManager>();
-        Animator anim = player.GetComponent<Animator>();
-        if (pm == null) return;
-        anim.SetTrigger("Skill1");
-        //pm.animator.SetTrigger("Skill1");
-        pm.playerMove.DoJump(); // <- 통일된 점프 방식 호출
-
-        Debug.Log("Skill1 점프 실행됨");
+        Debug.Log("Skill1 스킬 점프 실행됨!");
     }
 }

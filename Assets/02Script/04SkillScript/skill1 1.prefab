@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c966cdb53aaaf534fbaa56c19b95be8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 20
 --- !u!225 &5339893632054409577
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -115,3 +116,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 2a81b1f3da91e27489ac4f007018020c, type: 2}
+  wasDroppedOnSlot: 0

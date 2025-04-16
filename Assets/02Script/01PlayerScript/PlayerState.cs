@@ -1,61 +1,74 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStateController
 {
     private PlayerManager pm;
 
-    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AirAttack, Dash, Hurt, Dead, Dialog }
+    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AirAttack, Dash, Hurt, Dead, Dialog, Skill }
     private PlayerState currentState = PlayerState.Idle;
     private float jumpTimer = 0f;
-    private const float fallTransitionTime = 0.2f; // 점프 후 이 시간 지나면 Fall로 간주
+    private const float fallTransitionTime = 0.1f; // 점프 후 이 시간 지나면 Fall로 간주
+
+    private Dictionary<PlayerState, Func<bool>> stateTransitions;
 
     public PlayerStateController(PlayerManager manager)
     {
         this.pm = manager;
+        stateTransitions = new Dictionary<PlayerState, Func<bool>>
+        {
+            { PlayerState.Attack, () => pm.playerAttack.IsAttacking },
+            { PlayerState.Dash, () => pm.isDashing },
+            { PlayerState.Dialog, () => pm.isAction },
+            { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
+            { PlayerState.Jump, () => !pm.groundSensor.State() && jumpTimer < fallTransitionTime },
+            { PlayerState.Move, () => pm.groundSensor.State() && Mathf.Abs(pm.horizontalInput) > 0.1f },
+            { PlayerState.Idle, () => pm.groundSensor.State() && Mathf.Abs(pm.horizontalInput) <= 0.1f }
+        };
     }
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
-        // 공격이 최우선
-        if (isAttacking)
-        {
-            SetState(PlayerState.Attack); // 공중 공격도 이걸로 처리
-        }
-        else if (pm.isDashing)
-        {
-            SetState(PlayerState.Dash);
-        }
-        else if (pm.isAction)
-        {
-            SetState(PlayerState.Dialog);
-        }
-        else if (!isGrounded)
-        {
-            jumpTimer += Time.deltaTime;
-            if (jumpTimer >= fallTransitionTime)
-                SetState(PlayerState.Fall);
-            else
-                SetState(PlayerState.Jump);
-        }
-        else
-        {
-            jumpTimer = 0f; // 착지하면 초기화
+        var animState = pm.GetAnimator().GetCurrentAnimatorStateInfo(0);
 
-            if (Mathf.Abs(horizontalInput) > 0.1f)
-                SetState(PlayerState.Move);
-            else
-                SetState(PlayerState.Idle);
-        }
-
+        // 애니메이션 갱신은 항상 해야 함!
         UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
+
+        // 상태 전이 차단 조건
+        if (currentState == PlayerState.Skill)
+        {
+            // Skill1 애니메이션이 끝났는지 확인
+            if (animState.IsName("Skill1") && animState.normalizedTime >= 1.0f)
+            {
+                // 상태를 Idle로 복원
+                SetState(PlayerState.Idle);
+            }
+            return;
+        }
+
+        // 상태 전이 로직
+        pm.horizontalInput = horizontalInput;
+        jumpTimer = !isGrounded ? jumpTimer + Time.deltaTime : 0f;
+
+        foreach (var transition in stateTransitions)
+        {
+            if (transition.Value.Invoke())
+            {
+                SetState(transition.Key);
+                break;
+            }
+        }
     }
+
     private void SetState(PlayerState newState)
     {
         if (currentState == newState) return;
 
         // 상태 전환 로그도 있으면 디버그에 좋아
+#if UNITY_EDITOR
         Debug.Log($"상태 전환: {currentState} → {newState}");
+#endif
 
         currentState = newState;
     }
@@ -68,6 +81,11 @@ public class PlayerStateController
     {
         SetState(PlayerState.Dash);
         pm.GetAnimator().SetTrigger("Dash"); 
+    }
+    public void ForceSetSkill()
+    {
+        SetState(PlayerState.Skill);
+        pm.GetAnimator().SetTrigger("Skill1");
     }
     public void SetHurt()
     {
@@ -90,6 +108,7 @@ public class PlayerStateController
                 pm.GetAnimator().SetInteger("AnimState", 1);
                 break;
             case PlayerState.Jump:
+                if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Jump") == false)
                 pm.GetAnimator().SetTrigger("Jump");
                 break;
             case PlayerState.Attack:

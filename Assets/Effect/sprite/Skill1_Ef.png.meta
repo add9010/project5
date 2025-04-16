@@ -1,0 +1,485 @@
+fileFormatVersion: 2
+guid: 708a274ad2d5a3b4c898b75914915c93
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4437581411209820865
+    second: Skill1_Ef_0
+  - first:
+      213: -845921984901203880
+    second: Skill1_Ef_1
+  - first:
+      213: 1209903301678843178
+    second: Skill1_Ef_2
+  - first:
+      213: 8445670225122364138
+    second: Skill1_Ef_3
+  - first:
+      213: -4787575996714668346
+    second: Skill1_Ef_4
+  - first:
+      213: -4382620994999123973
+    second: Skill1_Ef_5
+  - first:
+      213: 7490488419575192564
+    second: Skill1_Ef_6
+  - first:
+      213: 4337979049588421403
+    second: Skill1_Ef_7
+  - first:
+      213: -5665602377811791002
+    second: Skill1_Ef_8
+  - first:
+      213: 160910230435516069
+    second: Skill1_Ef_9
+  - first:
+      213: -2549954315524293133
+    second: Skill1_Ef_10
+  - first:
+      213: -70988847927876589
+    second: Skill1_Ef_11
+  - first:
+      213: 7925072666790383214
+    second: Skill1_Ef_12
+  - first:
+      213: 1360987405929420808
+    second: Skill1_Ef_13
+  - first:
+      213: 7612488467383550758
+    second: Skill1_Ef_14
+  - first:
+      213: -386898357029156144
+    second: Skill1_Ef_15
+  - first:
+      213: -2990937892128475065
+    second: Skill1_Ef_16
+  - first:
+      213: 4200935924823147114
+    second: Skill1_Ef_17
+  - first:
+      213: -3158379127833829443
+    second: Skill1_Ef_18
+  - first:
+      213: 5836952219293628169
+    second: Skill1_Ef_19
+  - first:
+      213: 8570987071159015661
+    second: Skill1_Ef_20
+  - first:
+      213: 8139983119968932893
+    second: Skill1_Ef_21
+  - first:
+      213: 1642453751597944233
+    second: Skill1_Ef_22
+  - first:
+      213: -6376975023176734256
+    second: Skill1_Ef_23
+  - first:
+      213: -7679810604976945414
+    second: Skill1_Ef_24
+  - first:
+      213: 4851026410513778087
+    second: Skill1_Ef_25
+  - first:
+      213: 2640445857950753480
+    second: Skill1_Ef_26
+  - first:
+      213: -8768763344883504202
+    second: Skill1_Ef_27
+  - first:
+      213: 7762399597551376344
+    second: Skill1_Ef_28
+  - first:
+      213: -6158257171467703530
+    second: Skill1_Ef_29
+  - first:
+      213: 1320890596385049564
+    second: Skill1_Ef_30
+  - first:
+      213: -1741748398360204025
+    second: Skill1_Ef_31
+  - first:
+      213: 2623520015183381164
+    second: Skill1_Ef_32
+  - first:
+      213: -8702633517507266985
+    second: Skill1_Ef_33
+  - first:
+      213: 1473702080814642808
+    second: Skill1_Ef_34
+  - first:
+      213: -6700570997432318405
+    second: Skill1_Ef_35
+  - first:
+      213: -8731528452794260508
+    second: Skill1_Ef_36
+  - first:
+      213: -2525761577615694138
+    second: Skill1_Ef_37
+  - first:
+      213: -4250926017153726771
+    second: Skill1_Ef_38
+  - first:
+      213: 842669750451883685
+    second: Skill1_Ef_39
+  - first:
+      213: 1149788283287741696
+    second: Skill1_Ef_40
+  - first:
+      213: -3186898230325256308
+    second: Skill1_Ef_41
+  - first:
+      213: -2916573563762185869
+    second: Skill1_Ef_42
+  - first:
+      213: -6832426397112994345
+    second: Skill1_Ef_43
+  - first:
+      213: -7021024720910397216
+    second: Skill1_Ef_44
+  - first:
+      213: -982300189826703169
+    second: Skill1_Ef_45
+  - first:
+      213: -2809776730426345697
+    second: Skill1_Ef_46
+  - first:
+      213: -3036754149746664634
+    second: Skill1_Ef_47
+  - first:
+      213: -6981878179578790042
+    second: Skill1_Ef_48
+  - first:
+      213: -6233441094444790035
+    second: Skill1_Ef_49
+  - first:
+      213: -7797310783664465134
+    second: Skill1_Ef_50
+  - first:
+      213: -7457182443855486488
+    second: Skill1_Ef_51
+  - first:
+      213: 880601916550586311
+    second: Skill1_Ef_52
+  - first:
+      213: 5765991852618594847
+    second: Skill1_Ef_53
+  - first:
+      213: -7758266038802612471
+    second: Skill1_Ef_54
+  - first:
+      213: 6618047378426443148
+    second: Skill1_Ef_55
+  - first:
+      213: -742264948773206512
+    second: Skill1_Ef_56
+  - first:
+      213: -1866187297971897876
+    second: Skill1_Ef_57
+  - first:
+      213: -1238905856111214605
+    second: Skill1_Ef_58
+  - first:
+      213: -6684834013599829558
+    second: Skill1_Ef_59
+  - first:
+      213: -4620378887837209025
+    second: Skill1_Ef_60
+  - first:
+      213: -8257086470561012759
+    second: Skill1_Ef_61
+  - first:
+      213: -8060804866170439627
+    second: Skill1_Ef_62
+  - first:
+      213: 8631692105916082801
+    second: Skill1_Ef_63
+  - first:
+      213: -3046334800276053150
+    second: Skill1_Ef_64
+  - first:
+      213: -8376838402471411075
+    second: Skill1_Ef_65
+  - first:
+      213: 2243737470036715390
+    second: Skill1_Ef_66
+  - first:
+      213: -6072957270172835089
+    second: Skill1_Ef_67
+  - first:
+      213: -5958071059351473465
+    second: Skill1_Ef_68
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skill1_Ef_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a02e9b614231394abb0d1928618f127
+      internalID: -1280318205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill1_Ef_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199ddcc33e09516448f9fb528c7dd022
+      internalID: -1733449998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill1_Ef_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820534187f86bfe4d90540547246b718
+      internalID: -703962575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill1_Ef_3
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3645b789d8b3624d92be14f7013eb60
+      internalID: -295263983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill1_Ef_4
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38da10807c4d5ba4fbdbc0e1fc2b1f43
+      internalID: 1559065884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill1_Ef_5
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee36f03652116184da5e399a7fc9c395
+      internalID: -106401403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill1_Ef_6
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 600
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd695459b44394459e679cd20d247d2
+      internalID: -1093554856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0a735918d93475b40b4ec2afafdb8c8f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Skill1_Ef_0: -1280318205
+      Skill1_Ef_1: -1733449998
+      Skill1_Ef_2: -703962575
+      Skill1_Ef_3: -295263983
+      Skill1_Ef_4: 1559065884
+      Skill1_Ef_5: -106401403
+      Skill1_Ef_6: -1093554856
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
