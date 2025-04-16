@@ -181,27 +181,4 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
         return animator;
     }
-
-    //public void SetCharacterAttribute(string attribute)
-    //{
-    //    switch (attribute)
-    //    {
-    //        case "speed":
-    //            data.speed *= 1.3f;
-    //            Debug.Log("이동 속도 1.3배 증가");
-    //            break;
-    //        case "attack":
-    //            data.attackPower *= 1.5f;
-    //            Debug.Log("공격력 1.5배 증가");
-    //            break;
-    //        case "health":
-    //            data.maxHealth *= 1.3f;
-    //            Debug.Log("체력 1.3배 증가");
-    //            break;
-    //        case "random":
-    //            CanDoubleJump = true;
-    //            Debug.Log("축하합니다! 더블점프 해금");
-    //            break;
-    //    }
-    //}
 }
