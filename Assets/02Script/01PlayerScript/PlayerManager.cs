@@ -36,10 +36,13 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public PlayerDash playerDash { get; private set; }
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
-    
+    public float horizontalInput { get; set; }
+
+
     [Header("대화")]
     public DialogManager dialog;
     public PlayerDialog playerDialog { get; private set; }
+    public bool isGrounded => groundSensor != null && groundSensor.State();
     public bool isAction = false;
     public bool isDashing = false;
     private void Awake()
@@ -73,6 +76,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         //hpBar.position = hpBarPos;
         //UpdateHpUI(playerHealth.currentHealth);
         float inputX = playerMove.GetHorizontalInput();
+        horizontalInput = inputX;
         bool grounded = groundSensor != null && groundSensor.State();
         bool isAttacking = playerAttack.IsAttacking;
         playerAttack.UpdateAttackPosition();
@@ -82,7 +86,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
 
         // 상태 업데이트 (애니메이션 및 상태 판단)
-        playerStateController.UpdateState(inputX, grounded, isAttacking);
+        playerStateController.UpdateState(inputX, grounded, playerAttack.IsAttacking);
 
 
         // 점프 처리

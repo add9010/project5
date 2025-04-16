@@ -1,0 +1,494 @@
+fileFormatVersion: 2
+guid: f90f8332d5119154a9fce63316aadbdb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5763418098869887297
+    second: PY_Skill1_2_0
+  - first:
+      213: 1190225906333223079
+    second: PY_Skill1_2_1
+  - first:
+      213: 7188984415269195483
+    second: PY_Skill1_2_2
+  - first:
+      213: 5277258714183145142
+    second: PY_Skill1_2_3
+  - first:
+      213: -3314474725376540716
+    second: PY_Skill1_2_4
+  - first:
+      213: 7742503912689630111
+    second: PY_Skill1_2_5
+  - first:
+      213: 4401594781155438855
+    second: PY_Skill1_2_6
+  - first:
+      213: -538714920377099837
+    second: PY_Skill1_2_7
+  - first:
+      213: -1852189891302648077
+    second: PY_Skill1_2_8
+  - first:
+      213: 4867917912061304637
+    second: PY_Skill1_2_9
+  - first:
+      213: -2291251467177376157
+    second: PY_Skill1_2_10
+  - first:
+      213: -2691523038652089042
+    second: PY_Skill1_2_11
+  - first:
+      213: -5964218524561539420
+    second: PY_Skill1_2_12
+  - first:
+      213: -8549943950146632668
+    second: PY_Skill1_2_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PY_Skill1_2_0
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 51
+        width: 171
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141623b9936cbff40800000000000000
+      internalID: 5763418098869887297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_1
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 50
+        width: 176
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a8857dd728848010800000000000000
+      internalID: 1190225906333223079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_2
+      rect:
+        serializedVersion: 2
+        x: 1205
+        y: 51
+        width: 178
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde80ff9c3764c360800000000000000
+      internalID: 7188984415269195483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_3
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 50
+        width: 197
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b698b627d69c3940800000000000000
+      internalID: 5277258714183145142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_4
+      rect:
+        serializedVersion: 2
+        x: 2105
+        y: 49
+        width: 231
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dfbbe05cce9002d0800000000000000
+      internalID: -3314474725376540716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_5
+      rect:
+        serializedVersion: 2
+        x: 2586
+        y: 50
+        width: 306
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9bffeb7946e27b60800000000000000
+      internalID: 7742503912689630111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_6
+      rect:
+        serializedVersion: 2
+        x: 3118
+        y: 54
+        width: 323
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701bbfff12b951d30800000000000000
+      internalID: 4401594781155438855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_7
+      rect:
+        serializedVersion: 2
+        x: 3610
+        y: 58
+        width: 329
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c958b752a91688f0800000000000000
+      internalID: -538714920377099837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_8
+      rect:
+        serializedVersion: 2
+        x: 4092
+        y: 67
+        width: 292
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f616507b13bb46e0800000000000000
+      internalID: -1852189891302648077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_9
+      rect:
+        serializedVersion: 2
+        x: 4592
+        y: 67
+        width: 191
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3fdc28bc815e8340800000000000000
+      internalID: 4867917912061304637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_10
+      rect:
+        serializedVersion: 2
+        x: 5159
+        y: 71
+        width: 114
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366cccf1ee6d330e0800000000000000
+      internalID: -2291251467177376157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_11
+      rect:
+        serializedVersion: 2
+        x: 5697
+        y: 69
+        width: 118
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2dbc508e0ac5aad0800000000000000
+      internalID: -2691523038652089042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_12
+      rect:
+        serializedVersion: 2
+        x: 6216
+        y: 52
+        width: 107
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae74b80ad6da3da0800000000000000
+      internalID: -5964218524561539420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PY_Skill1_2_13
+      rect:
+        serializedVersion: 2
+        x: 6721
+        y: 54
+        width: 84
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4248202e64f785980800000000000000
+      internalID: -8549943950146632668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      PY_Skill1_2_0: 5763418098869887297
+      PY_Skill1_2_1: 1190225906333223079
+      PY_Skill1_2_10: -2291251467177376157
+      PY_Skill1_2_11: -2691523038652089042
+      PY_Skill1_2_12: -5964218524561539420
+      PY_Skill1_2_13: -8549943950146632668
+      PY_Skill1_2_2: 7188984415269195483
+      PY_Skill1_2_3: 5277258714183145142
+      PY_Skill1_2_4: -3314474725376540716
+      PY_Skill1_2_5: 7742503912689630111
+      PY_Skill1_2_6: 4401594781155438855
+      PY_Skill1_2_7: -538714920377099837
+      PY_Skill1_2_8: -1852189891302648077
+      PY_Skill1_2_9: 4867917912061304637
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
