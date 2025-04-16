@@ -135,6 +135,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -459,7 +472,21 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PY_Skill1_2_0: 5763418098869887297
+      PY_Skill1_2_1: 1190225906333223079
+      PY_Skill1_2_10: -2291251467177376157
+      PY_Skill1_2_11: -2691523038652089042
+      PY_Skill1_2_12: -5964218524561539420
+      PY_Skill1_2_13: -8549943950146632668
+      PY_Skill1_2_2: 7188984415269195483
+      PY_Skill1_2_3: 5277258714183145142
+      PY_Skill1_2_4: -3314474725376540716
+      PY_Skill1_2_5: 7742503912689630111
+      PY_Skill1_2_6: 4401594781155438855
+      PY_Skill1_2_7: -538714920377099837
+      PY_Skill1_2_8: -1852189891302648077
+      PY_Skill1_2_9: 4867917912061304637
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
