@@ -104,6 +104,18 @@ public class Wizard : Enemy
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Vector2 dir = (player.position - firePoint.position).normalized;
             projectile.GetComponent<Rigidbody2D>().linearVelocity = dir * 5f;
+            if (dir.x < 0)
+            {
+                Vector3 scale = projectile.transform.localScale;
+                scale.x = -Mathf.Abs(scale.x); // 왼쪽으로 쏠 때 반전
+                projectile.transform.localScale = scale;
+            }
+            else
+            {
+                Vector3 scale = projectile.transform.localScale;
+                scale.x = Mathf.Abs(scale.x); // 오른쪽이면 원래 방향
+                projectile.transform.localScale = scale;
+            }
         }
 
         yield return new WaitForSeconds(attackCooldown);

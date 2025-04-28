@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2472436382206446345}
   m_Layer: 8
   m_Name: Sensor
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 8123757817576339885}
   m_Layer: 8
   m_Name: Sensor (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 7103401980532477765}
   m_Layer: 8
   m_Name: Sensor (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 8463910461025741893}
   m_Layer: 8
   m_Name: DownJump_1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 3720823519272740091}
   m_Layer: 8
   m_Name: Sensor (7)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 1752613877552114308}
   m_Layer: 8
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -539,6 +539,7 @@ GameObject:
   - component: {fileID: 9155501851771893537}
   - component: {fileID: 4548398644405749944}
   - component: {fileID: 8118251013013455107}
+  - component: {fileID: 7557209823404962099}
   m_Layer: 8
   m_Name: R4Start
   m_TagString: Untagged
@@ -662,6 +663,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.65, y: 3.57}
   m_EdgeRadius: 0
+--- !u!114 &7557209823404962099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2661786360812006207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70117a1957de3194980778a9ab07778c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2801421401420614321
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +687,7 @@ GameObject:
   - component: {fileID: 2809818079459685131}
   m_Layer: 8
   m_Name: Sensor (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,7 +768,7 @@ GameObject:
   - component: {fileID: 6908806314299571472}
   m_Layer: 8
   m_Name: DownJump_2
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -934,7 +947,7 @@ GameObject:
   - component: {fileID: 3688928641787544972}
   m_Layer: 8
   m_Name: Sensor (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1012,7 +1025,7 @@ GameObject:
   - component: {fileID: 6973276230685403443}
   m_Layer: 8
   m_Name: Sensor (6)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1093,7 +1106,7 @@ GameObject:
   - component: {fileID: 326150959506434951}
   m_Layer: 8
   m_Name: DownJump_0
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1272,7 +1285,7 @@ GameObject:
   - component: {fileID: 2822503036168829550}
   m_Layer: 8
   m_Name: River_0
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1358,6 +1371,7 @@ GameObject:
   - component: {fileID: 6229393916251735127}
   - component: {fileID: 5056129054250592408}
   - component: {fileID: 6168319775603353727}
+  - component: {fileID: 6337492781102056799}
   m_Layer: 8
   m_Name: R4End
   m_TagString: Untagged
@@ -1481,6 +1495,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.48, y: 3.47}
   m_EdgeRadius: 0
+--- !u!114 &6337492781102056799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8252172762818737159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796cee014bf075d4caf14bb957fd44ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8421029162669878190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,7 +1519,7 @@ GameObject:
   - component: {fileID: 2876699149952917546}
   m_Layer: 8
   m_Name: Sensor (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1571,7 +1597,7 @@ GameObject:
   - component: {fileID: 5172188612828011796}
   m_Layer: 8
   m_Name: Platform_0
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
