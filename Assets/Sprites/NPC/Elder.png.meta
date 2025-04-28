@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: 6dff3f13aadbfa24082e35100093010b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7123529365577447762
+    second: Elder_0
+  - first:
+      213: -2260823320829027807
+    second: Elder_1
+  - first:
+      213: -1762719844917485708
+    second: Elder_2
+  - first:
+      213: 3468470363840274738
+    second: Elder_3
+  - first:
+      213: -2347877678123352160
+    second: Elder_4
+  - first:
+      213: 268164124097714829
+    second: Elder_5
+  - first:
+      213: 5407793362244893163
+    second: Elder_6
+  - first:
+      213: -2493468560705938510
+    second: Elder_7
+  - first:
+      213: -2705465176887376559
+    second: Elder_8
+  - first:
+      213: -3642759628167980487
+    second: Elder_9
+  - first:
+      213: 5943330918988557721
+    second: Elder_10
+  - first:
+      213: -5037859816547416541
+    second: Elder_11
+  - first:
+      213: -6762937109564806188
+    second: Elder_12
+  - first:
+      213: 543990554799094762
+    second: Elder_13
+  - first:
+      213: 3832506208209257260
+    second: Elder_14
+  - first:
+      213: -1745868836267980556
+    second: Elder_15
+  - first:
+      213: -1553205126538371638
+    second: Elder_16
+  - first:
+      213: -113875267668082611
+    second: Elder_17
+  - first:
+      213: -4903172520219692981
+    second: Elder_18
+  - first:
+      213: 8208326954928657661
+    second: Elder_19
+  - first:
+      213: -6161450624084485691
+    second: Elder_20
+  - first:
+      213: -7172228423051332457
+    second: Elder_21
+  - first:
+      213: -6914989847562466382
+    second: Elder_22
+  - first:
+      213: 5615283348826178360
+    second: Elder_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Elder_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 542
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea641b9b8c3242d90800000000000000
+      internalID: -7123529365577447762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_1
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 542
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a11160b21ff90e0800000000000000
+      internalID: -2260823320829027807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_2
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 542
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47f592de3af8987e0800000000000000
+      internalID: -1762719844917485708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_3
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 542
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2316bae4b6b722030800000000000000
+      internalID: 3468470363840274738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_4
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 542
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af736bf0b9aa6fd0800000000000000
+      internalID: -2347877678123352160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_5
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 542
+        width: 125
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a195e99d5b8b300800000000000000
+      internalID: 268164124097714829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_6
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 542
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9725749675c0b40800000000000000
+      internalID: 5407793362244893163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_7
+      rect:
+        serializedVersion: 2
+        x: 3699
+        y: 542
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb94841e8b656dd0800000000000000
+      internalID: -2493468560705938510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_8
+      rect:
+        serializedVersion: 2
+        x: 4199
+        y: 542
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 155407b71c1447ad0800000000000000
+      internalID: -2705465176887376559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_9
+      rect:
+        serializedVersion: 2
+        x: 4699
+        y: 542
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ad9e81b61527dc0800000000000000
+      internalID: -3642759628167980487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_10
+      rect:
+        serializedVersion: 2
+        x: 5199
+        y: 542
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99da8e05bf3fa7250800000000000000
+      internalID: 5943330918988557721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_11
+      rect:
+        serializedVersion: 2
+        x: 5699
+        y: 542
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3260a76403de51ab0800000000000000
+      internalID: -5037859816547416541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_12
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 42
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db251ac7883522a0800000000000000
+      internalID: -6762937109564806188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_13
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 42
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebb7f30784ac8700800000000000000
+      internalID: 543990554799094762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_14
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 42
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23cac3471ccf2530800000000000000
+      internalID: 3832506208209257260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_15
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 42
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f882dd1b8d65c7e0800000000000000
+      internalID: -1745868836267980556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_16
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 42
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd5d59aa28e17ae0800000000000000
+      internalID: -1553205126538371638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_17
+      rect:
+        serializedVersion: 2
+        x: 2699
+        y: 42
+        width: 125
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4001f12c0f6b6ef0800000000000000
+      internalID: -113875267668082611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_18
+      rect:
+        serializedVersion: 2
+        x: 3199
+        y: 42
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4039db229e64fbb0800000000000000
+      internalID: -4903172520219692981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_19
+      rect:
+        serializedVersion: 2
+        x: 3699
+        y: 42
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df459cc30e5d9e170800000000000000
+      internalID: 8208326954928657661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_20
+      rect:
+        serializedVersion: 2
+        x: 4199
+        y: 42
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c9d55a5d412e7aa0800000000000000
+      internalID: -6161450624084485691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_21
+      rect:
+        serializedVersion: 2
+        x: 4699
+        y: 42
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794b014df30277c90800000000000000
+      internalID: -7172228423051332457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_22
+      rect:
+        serializedVersion: 2
+        x: 5199
+        y: 42
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb4b9eee550900a0800000000000000
+      internalID: -6914989847562466382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Elder_23
+      rect:
+        serializedVersion: 2
+        x: 5699
+        y: 42
+        width: 125
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83343f7647e7ded40800000000000000
+      internalID: 5615283348826178360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
