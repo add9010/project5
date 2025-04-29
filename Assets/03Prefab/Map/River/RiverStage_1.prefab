@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6713423478088748958}
   m_Layer: 8
   m_Name: DownJump_14
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 5088937533209508194}
   m_Layer: 8
   m_Name: DownJump_18
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 2440627486388120182}
   m_Layer: 8
   m_Name: Sensor (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,7 +454,7 @@ GameObject:
   - component: {fileID: 8414973931363395766}
   m_Layer: 8
   m_Name: Sensor (13)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1935996371138347226}
   m_Layer: 8
   m_Name: Sensor (12)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 6156824649566098137}
   m_Layer: 8
   m_Name: DownJump_9
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -939,7 +939,7 @@ GameObject:
   - component: {fileID: 2481859967556774294}
   m_Layer: 8
   m_Name: Sensor (10)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 8955232342716590833}
   m_Layer: 8
   m_Name: DownJump_18 (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 1676860086311095417}
   m_Layer: 8
   m_Name: Sensor (8)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 4625435201060552084}
   m_Layer: 8
   m_Name: DownJump_17
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1462,7 +1462,7 @@ GameObject:
   - component: {fileID: 4553930940502987394}
   m_Layer: 8
   m_Name: DownJump_12
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1641,7 +1641,7 @@ GameObject:
   - component: {fileID: 2194919897970852987}
   m_Layer: 8
   m_Name: Sensor (18)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 5708671016925464688}
   m_Layer: 8
   m_Name: DownJump_4
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1901,7 +1901,7 @@ GameObject:
   - component: {fileID: 789909147622322533}
   m_Layer: 8
   m_Name: Sensor (7)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1982,7 +1982,7 @@ GameObject:
   - component: {fileID: 404683155860685039}
   m_Layer: 8
   m_Name: DownJump_18 (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 3317173998232749107}
   m_Layer: 8
   m_Name: Sensor (15)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 5939621456339890300}
   m_Layer: 8
   m_Name: Sensor
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2317,7 +2317,7 @@ GameObject:
   - component: {fileID: 266066507519394123}
   m_Layer: 8
   m_Name: Sensor (14)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2395,7 +2395,7 @@ GameObject:
   - component: {fileID: 8695407432230607229}
   m_Layer: 8
   m_Name: Sensor (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2476,7 +2476,7 @@ GameObject:
   - component: {fileID: 6933825941528036118}
   m_Layer: 8
   m_Name: DownJump_0
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2690,7 +2690,7 @@ GameObject:
   - component: {fileID: 5202767653431014418}
   m_Layer: 8
   m_Name: Sensor (6)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2771,7 +2771,7 @@ GameObject:
   - component: {fileID: 7277748016370297772}
   m_Layer: 8
   m_Name: DownJump_8
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2950,7 +2950,7 @@ GameObject:
   - component: {fileID: 8125659569538169645}
   m_Layer: 8
   m_Name: Sensor (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3028,7 +3028,7 @@ GameObject:
   - component: {fileID: 8065601340368280020}
   m_Layer: 8
   m_Name: Sensor (17)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3106,7 +3106,7 @@ GameObject:
   - component: {fileID: 6196727900390036242}
   m_Layer: 8
   m_Name: River_1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3215,7 +3215,7 @@ GameObject:
   - component: {fileID: 8270884035390824704}
   m_Layer: 8
   m_Name: DownJump_3
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3397,7 +3397,7 @@ GameObject:
   - component: {fileID: 7451730445051390133}
   m_Layer: 8
   m_Name: DownJump_5
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3579,7 +3579,7 @@ GameObject:
   - component: {fileID: 6824343522609973357}
   m_Layer: 8
   m_Name: DownJump_7
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3758,7 +3758,7 @@ GameObject:
   - component: {fileID: 8317125472674539772}
   m_Layer: 8
   m_Name: Sensor (11)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3835,7 +3835,7 @@ GameObject:
   - component: {fileID: 2500051117385818511}
   m_Layer: 8
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3892,7 +3892,7 @@ GameObject:
   - component: {fileID: 2933907239542887278}
   m_Layer: 8
   m_Name: DownJump_15
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4071,7 +4071,7 @@ GameObject:
   - component: {fileID: 3974299147809385733}
   m_Layer: 8
   m_Name: Sensor (9)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4152,7 +4152,7 @@ GameObject:
   - component: {fileID: 1587734532963303376}
   m_Layer: 8
   m_Name: DownJump_18 (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4478,7 +4478,7 @@ GameObject:
   - component: {fileID: 81249092209980496}
   m_Layer: 8
   m_Name: Sensor (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4556,7 +4556,7 @@ GameObject:
   - component: {fileID: 2480349762722017296}
   m_Layer: 8
   m_Name: Sensor (16)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4637,7 +4637,7 @@ GameObject:
   - component: {fileID: 2292682832592352488}
   m_Layer: 8
   m_Name: DownJump_10
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4819,7 +4819,7 @@ GameObject:
   - component: {fileID: 6254048180277818980}
   m_Layer: 8
   m_Name: DownJump_18 (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4998,7 +4998,7 @@ GameObject:
   - component: {fileID: 4852709390003437913}
   m_Layer: 8
   m_Name: Sensor (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5079,7 +5079,7 @@ GameObject:
   - component: {fileID: 5222384413580886354}
   m_Layer: 8
   m_Name: DownJump_18 (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5261,7 +5261,7 @@ GameObject:
   - component: {fileID: 4390244305238194427}
   m_Layer: 8
   m_Name: DownJump_16
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5443,7 +5443,7 @@ GameObject:
   - component: {fileID: 3559885216988009079}
   m_Layer: 8
   m_Name: DownJump_2
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5625,7 +5625,7 @@ GameObject:
   - component: {fileID: 7539518816982194079}
   m_Layer: 8
   m_Name: DownJump_6
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5807,7 +5807,7 @@ GameObject:
   - component: {fileID: 2284495010152479640}
   m_Layer: 8
   m_Name: DownJump_1
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
