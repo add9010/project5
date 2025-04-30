@@ -134,10 +134,10 @@ TextureImporter:
       name: Attack_Ef_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 105
-        width: 19
-        height: 21
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: Attack_Ef_1
       rect:
         serializedVersion: 2
-        x: 129
-        y: 83
-        width: 40
-        height: 44
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: Attack_Ef_2
       rect:
         serializedVersion: 2
-        x: 257
-        y: 44
-        width: 79
-        height: 82
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +200,10 @@ TextureImporter:
       name: Attack_Ef_3
       rect:
         serializedVersion: 2
-        x: 402
-        y: 10
-        width: 98
-        height: 97
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,10 +222,10 @@ TextureImporter:
       name: Attack_Ef_4
       rect:
         serializedVersion: 2
-        x: 559
-        y: 2
-        width: 79
-        height: 74
+        x: 512
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: Attack_Ef_5
       rect:
         serializedVersion: 2
-        x: 727
-        y: 2
-        width: 39
-        height: 35
+        x: 640
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: Attack_Ef_6
       rect:
         serializedVersion: 2
-        x: 873
-        y: 1
-        width: 22
-        height: 19
+        x: 768
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ebfeb09448ec2f241b7467a37e984d4e
     internalID: 0
     vertices: []
     indices: 
