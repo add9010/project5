@@ -150,10 +150,10 @@ TextureImporter:
       name: Left_Wield_0
       rect:
         serializedVersion: 2
-        x: 117
-        y: 119
-        width: 249
-        height: 247
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Left_Wield_1
       rect:
         serializedVersion: 2
-        x: 542
-        y: 119
-        width: 324
-        height: 249
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: Left_Wield_2
       rect:
         serializedVersion: 2
-        x: 1022
-        y: 119
-        width: 344
-        height: 249
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: Left_Wield_3
       rect:
         serializedVersion: 2
-        x: 1188
-        y: 364
-        width: 47
-        height: 10
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,10 +238,10 @@ TextureImporter:
       name: Left_Wield_4
       rect:
         serializedVersion: 2
-        x: 1499
-        y: 119
-        width: 367
-        height: 256
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: Left_Wield_5
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 364
-        width: 47
-        height: 10
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,55 +278,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Left_Wield_6
-      rect:
-        serializedVersion: 2
-        x: 1999
-        y: 119
-        width: 367
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 43dc800d805751a40800000000000000
-      internalID: 5338301614028016948
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Left_Wield_7
-      rect:
-        serializedVersion: 2
-        x: 2617
-        y: 119
-        width: 249
-        height: 247
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b70d3c37cb35885e0800000000000000
-      internalID: -1907182373330235269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4222e8a9024599f44bcd537070d40f45
     internalID: 0
     vertices: []
     indices: 
@@ -342,8 +298,6 @@ TextureImporter:
       Left_Wield_3: 7390274789313772716
       Left_Wield_4: 6053896894904649338
       Left_Wield_5: -3062549290971757810
-      Left_Wield_6: 5338301614028016948
-      Left_Wield_7: -1907182373330235269
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

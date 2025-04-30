@@ -53,7 +53,46 @@ public class DialogSystem : MonoBehaviour
                 hideDialogImage.color = Color.white;
         }
     }
+    void Start()
+    {
+        // 다른 오브젝트 찾아서 연결
+        if (panel == null)
+            panel = GameObject.Find("DialogPanel");
 
+        if (speakerNameText == null)
+            speakerNameText = GameObject.Find("speakerNameText").GetComponent<TextMeshProUGUI>();
+
+        if (sentenceText == null)
+            sentenceText = GameObject.Find("sentenceText").GetComponent<TextMeshProUGUI>();
+
+        if (portraitImage == null)
+            portraitImage = GameObject.Find("portraitImage").GetComponent<Image>();
+
+        if (optionsPanel == null)
+            optionsPanel = GameObject.Find("optionsPanel");
+
+        if (logPanel == null)
+            logPanel = GameObject.Find("LogPanel");
+
+        if (autoAdvanceIndicator == null)
+            autoAdvanceIndicator = GameObject.Find("Auto");
+
+        if (expandDialogButton == null)
+            expandDialogButton = GameObject.Find("Hide");
+
+        if (autoAdvanceImage == null && autoAdvanceIndicator != null)
+            autoAdvanceImage = autoAdvanceIndicator.GetComponent<Image>();
+
+        if (hideDialogImage == null && expandDialogButton != null)
+            hideDialogImage = expandDialogButton.GetComponent<Image>();
+
+        // 처음은 비활성화
+        if (panel != null)
+            panel.SetActive(false);
+
+        if (logPanel != null)
+            logPanel.SetActive(false);
+    }
     // ------------------- Public Methods -------------------
 
     // 대화 시작 진입점

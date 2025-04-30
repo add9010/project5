@@ -12,6 +12,7 @@ public class GameWorld
     private Dictionary<string, Trap> traps = new(); // 트랩 정보
     public Dictionary<string, Trap> GetTraps() => traps;
 
+    private BossState? previousBossState = null;
     private readonly object worldMutex;        // 플레이어의 월드는 서버의 월드와 동기화 됨
 
     public GameWorld()
@@ -97,6 +98,7 @@ public class GameWorld
             }
 
 
+
             ///// 트랩 정보 업데이트 /////
             int trapCount = packet.ReadByte();
             var updatedTrapIds = new HashSet<string>();
@@ -106,7 +108,7 @@ public class GameWorld
                 string trapId = packet.ReadString();
                 float trapX = packet.ReadFloat();
                 float trapY = packet.ReadFloat();
-                Debug.Log($"[Trap Sync] trapId: {trapId}, pos: ({trapX}, {trapY})");
+               // Debug.Log($"[Trap Sync] trapId: {trapId}, pos: ({trapX}, {trapY})");
                 if (traps.TryGetValue(trapId, out var trap))
                 {
                     trap.UpdatePosition(trapX, trapY);
@@ -122,11 +124,8 @@ public class GameWorld
                         newTrap.SpawnVisual(new Vector2(trapX, trapY));
                     });
                 }
-
-
                 updatedTrapIds.Add(trapId);
             }
-
             // 서버에 없는 트랩 제거
             var trapIdsToRemove = new List<string>();
             foreach (var kvp in traps)
@@ -147,16 +146,28 @@ public class GameWorld
             }
 
 
+
             //////// 보스 행동 업데이트 ///////
             // 보스 행동 여부 처리
             if (bossActed==1)
             {
                 BossState bossState = (BossState)packet.ReadByte();
-                BossManager.Instance?.ApplyBossState(bossState);
-                // Debug.Log($"[BossState] 보스 행동: {bossState}");
+                // 보스 상태가 이전과 동일한지 체크
+                if (previousBossState == null || previousBossState != bossState)
+                {
+                    // 상태가 다르면 업데이트 처리
+                    BossManager.Instance?.ApplyBossState(bossState);
+                    int bossHp = packet.ReadInt();
+                    BossManager.Instance?.UpdateBossHp(bossHp);
 
-                int bossHp = packet.ReadInt();
-                BossManager.Instance?.UpdateBossHp(bossHp);
+                    // 보스 상태 업데이트
+                    previousBossState = bossState;
+                }
+                else
+                {
+                    // 이전과 동일한 상태일 경우 아무 처리도 하지 않음
+                    Debug.Log("[BossState] 보스 상태 변경 없음.");
+                }
                 // Debug.Log($"[BossState] 보스 HP: {bossHp}");
             }
         }
