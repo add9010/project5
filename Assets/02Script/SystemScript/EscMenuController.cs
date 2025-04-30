@@ -10,6 +10,11 @@ public class EscMenuController : MonoBehaviour
 
     void Start()
     {
+        if (escPanel == null)
+            escPanel = GameObject.Find("ESC");
+
+        if (noticePanel == null)
+            noticePanel = GameObject.Find("Notice");
         escPanel.SetActive(false);
         noticePanel.SetActive(false);
     }

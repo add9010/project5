@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -11,6 +12,7 @@ public class Data
 
     // ?? 해금된 챕터 정보 (예제)
     public bool[] isUnlock = new bool[10];
+    public List<string> clearedStoryKeys = new List<string>();
 
     public Data()
     {
