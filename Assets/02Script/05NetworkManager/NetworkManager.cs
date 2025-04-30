@@ -30,7 +30,7 @@ public class NetworkClient : MonoBehaviour
 
     void Start()
     {
-        socket = ConnectToServer("113.198.230.111", 5000);
+        socket = ConnectToServer("127.0.0.1", 5000);
         if (socket == null) return;
 
         localPlayer = new Player(socket, playerName);
@@ -99,7 +99,7 @@ public class NetworkClient : MonoBehaviour
         }
     }
 
-        void ReceiveData(GameWorld gameWorld)
+    void ReceiveData(GameWorld gameWorld)
     {
         Player localPlayer = gameWorld.GetLocalPlayer();
         Packet recvPacket = new Packet();

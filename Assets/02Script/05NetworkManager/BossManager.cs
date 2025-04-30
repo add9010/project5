@@ -167,13 +167,13 @@ public class BossManager : MonoBehaviour
     private void PlayIdle()
     {
         Debug.Log("보스: 정지");
-       
+
     }
 
     private void PlayDeath()
     {
         Debug.Log("보스: 사망!");
-       _bodyAnimator.SetBool("isDead", true);
+        _bodyAnimator.SetBool("isDead", true);
         _leftHandAnimator.SetBool("LeftFistDown", false);
         _rightHandAnimator.SetBool("RightFistDown", false);
 
