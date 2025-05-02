@@ -1612,7 +1612,11 @@ PrefabInstance:
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1320417155}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: prfHpBar
+      value: 
+      objectReference: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: cameraShake
       value: 
@@ -1640,6 +1644,10 @@ PrefabInstance:
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: data.attackKnockbackThird
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3683859902371945585, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4097594023563100635, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: m_SortingOrder
@@ -1808,7 +1816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  knockbackForce: 0
+  knockbackForce: 30
 --- !u!114 &8714164903271325373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,7 +1830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
-  knockbackForce: 0
+  knockbackForce: 30
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

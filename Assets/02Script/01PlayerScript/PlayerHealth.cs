@@ -39,7 +39,7 @@ public class PlayerHealth : IDamageable, IKnockbackable
         pm.MarkAsDead();
 
         // 씬 리셋
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
     }
 
     public void Heal(float amount)
@@ -47,6 +47,6 @@ public class PlayerHealth : IDamageable, IKnockbackable
         if (isDead) return;
 
         currentHealth = Mathf.Min(currentHealth + amount, pm.data.maxHealth);
-        //pm.UpdateHpUI(currentHealth);
+        pm.UpdateHpUI(currentHealth);
     }
 }

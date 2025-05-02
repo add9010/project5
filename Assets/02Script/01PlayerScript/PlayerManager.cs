@@ -17,10 +17,10 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public CameraShake cameraShake;
 
     [Header("UI")]
-    //public GameObject prfHpBar;
-    ////public GameObject canvas;
-    //private RectTransform hpBar;
-    //private UnityEngine.UI.Image nowHpbar;
+    public GameObject prfHpBar;
+    public GameObject canvas;
+    private RectTransform hpBar;
+    private UnityEngine.UI.Image nowHpbar;
 
     [Header("공격 위치")]
     public Transform attackPos;
@@ -56,8 +56,8 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private void Start()
     {
-        //hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        //nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
+        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
         playerStateController = new PlayerStateController(this);  // 이렇게 수정
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
@@ -72,9 +72,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     {
         if (IsDead) return;
         // 체력바 UI 갱신
-        //Vector3 hpBarPos = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * data.heightOffset);
-        //hpBar.position = hpBarPos;
-        //UpdateHpUI(playerHealth.currentHealth);
+        UpdateHpUI(playerHealth.currentHealth);
         float inputX = playerMove.GetHorizontalInput();
         horizontalInput = inputX;
         bool grounded = groundSensor != null && groundSensor.State();
@@ -109,6 +107,17 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerDialog.HandleInput();
         playerDialog.HandleScan();
     }
+    private void LateUpdate()
+    {
+        if (hpBar != null)
+        {
+            // 카메라 흔들림을 무시하고 HP 바 위치 계산
+            Vector3 hpBarPos = Camera.main.transform.position + (transform.position - Camera.main.transform.position) + Vector3.up * data.heightOffset;
+            hpBar.position = Camera.main.WorldToScreenPoint(hpBarPos);
+        }
+    }
+
+
     public AnimType GetCurrentAnimState()
     {
         return playerStateController.GetAnimType();
@@ -129,11 +138,11 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         IsDead = false;
     }
 
-    //public void UpdateHpUI(float currentHealth)
-    //{
-    //    if (nowHpbar != null)
-    //        nowHpbar.fillAmount = currentHealth / data.maxHealth;
-    //}
+    public void UpdateHpUI(float currentHealth)
+    {
+        if (nowHpbar != null)
+            nowHpbar.fillAmount = currentHealth / data.maxHealth;
+    }
 
     public void StartAttackCoroutine(IEnumerator routine)
     {

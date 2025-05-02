@@ -35,18 +35,6 @@ public class PlayerStateController
         // 애니메이션 갱신은 항상 해야 함!
         UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
 
-        // 상태 전이 차단 조건
-        if (currentState == PlayerState.Skill)
-        {
-            // Skill1 애니메이션이 끝났는지 확인
-            if (animState.IsName("Skill1") && animState.normalizedTime >= 1.0f)
-            {
-                // 상태를 Idle로 복원
-                SetState(PlayerState.Idle);
-            }
-            return;
-        }
-
         // 상태 전이 로직
         pm.horizontalInput = horizontalInput;
         jumpTimer = !isGrounded ? jumpTimer + Time.deltaTime : 0f;

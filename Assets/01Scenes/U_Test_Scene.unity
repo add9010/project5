@@ -210,6 +210,14 @@ PrefabInstance:
       value: PY
       objectReference: {fileID: 0}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1228457619}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: prfHpBar
+      value: 
+      objectReference: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: cameraShake
       value: 
       objectReference: {fileID: 341951502}
@@ -1122,10 +1130,10 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 341951505}
   - {fileID: 630496787}
   - {fileID: 96729982}
   - {fileID: 1228457623}
-  - {fileID: 341951505}
   - {fileID: 104477923}
   - {fileID: 1624338648}
   - {fileID: 279922041}
