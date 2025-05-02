@@ -1722,6 +1722,10 @@ PrefabInstance:
       propertyPath: meteorSpawnStart.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2715107670233703455, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4952095094875234936, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.9
@@ -1766,11 +1770,59 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 6784269583289374607, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5615537493317606871, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8714164903271325373}
+    - targetCorrespondingSourceObject: {fileID: 1461719539302553843, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8714164903271325372}
   m_SourcePrefab: {fileID: 100100000, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+--- !u!1 &8714164903271325370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1461719539302553843, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+  m_PrefabInstance: {fileID: 8714164903271325369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8714164903271325371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5615537493317606871, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+  m_PrefabInstance: {fileID: 8714164903271325369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8714164903271325372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8714164903271325370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1ba788495e7264ebe2a2fd865d5ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  knockbackForce: 0
+--- !u!114 &8714164903271325373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8714164903271325371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1ba788495e7264ebe2a2fd865d5ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  knockbackForce: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
