@@ -10,8 +10,8 @@ public class Skill1 : MonoBehaviour
     [Header("소환할 오브젝트 프리팹")]
     public GameObject summonPrefab;
 
-    [Header("플레이어 위치 기준 소환 오프셋")]
-    public Vector2 spawnOffset = Vector2.zero;
+    [Header("플레이어 위치 기준 소환 오프셋 (XYZ)")]
+    public Vector3 spawnOffset = Vector3.zero;
 
     public void Initialize(PlayerManager playerManager)
     {
@@ -28,17 +28,19 @@ public class Skill1 : MonoBehaviour
 
         // 상태 및 점프
         pm.playerStateController.ForceSetSkill();
+        pm.playerStateController.LockSkillState(0.5f);
+
         pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
         Debug.Log("Skill1 스킬 점프 실행됨!");
 
         // 오브젝트 소환
         if (summonPrefab != null)
         {
-            Vector2 spawnPos = (Vector2)pm.transform.position + spawnOffset;
+            Vector3 spawnPos = pm.transform.position + spawnOffset;
             GameObject clone = Instantiate(summonPrefab, spawnPos, Quaternion.identity);
             Debug.Log("오브젝트 소환 완료: " + clone.name);
-            
-            Destroy(clone, 1f);
+
+            Destroy(clone, 0.5f);
         }
     }
 }

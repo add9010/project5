@@ -10,6 +10,8 @@ public class PlayerStateController
     private PlayerState currentState = PlayerState.Idle;
     private float jumpTimer = 0f;
     private const float fallTransitionTime = 0.1f; // 점프 후 이 시간 지나면 Fall로 간주
+    private float skillLockTimer = 0f;
+    private const float skillLockDuration = 0.5f; // Skill 애니메이션 길이에 맞춤
 
     private Dictionary<PlayerState, Func<bool>> stateTransitions;
 
@@ -30,6 +32,11 @@ public class PlayerStateController
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
+        if (skillLockTimer > 0f)
+        {
+            skillLockTimer -= Time.deltaTime;
+            return;
+        }
         var animState = pm.GetAnimator().GetCurrentAnimatorStateInfo(0);
 
         // 애니메이션 갱신은 항상 해야 함!
@@ -48,7 +55,10 @@ public class PlayerStateController
             }
         }
     }
-
+    public void LockSkillState(float duration)
+    {
+        skillLockTimer = duration;
+    }
     private void SetState(PlayerState newState)
     {
         if (currentState == newState) return;

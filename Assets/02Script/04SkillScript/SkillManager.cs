@@ -47,7 +47,7 @@ public class SkillManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             UseSkillFromSlot(activeSkillSlot);
         }
