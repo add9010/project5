@@ -80,10 +80,10 @@ public class PlayerStateController
         SetState(PlayerState.Dash);
         pm.GetAnimator().SetTrigger("Dash"); 
     }
-    public void ForceSetSkill()
+    public void ForceSetSkill(string triggerName)
     {
         SetState(PlayerState.Skill);
-        pm.GetAnimator().SetTrigger("Skill1");
+        pm.GetAnimator().SetTrigger(triggerName);
     }
     public void SetHurt()
     {
@@ -96,33 +96,31 @@ public class PlayerStateController
         pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);
         pm.GetAnimator().SetBool("Grounded", grounded);
 
+        if (currentState == PlayerState.Skill)
+            return;
+
         switch (currentState)
         {
             case PlayerState.Idle:
-            case PlayerState.Dialog: // 둘 다 0번 상태로 고정
+            case PlayerState.Dialog:
                 pm.GetAnimator().SetInteger("AnimState", 0);
                 break;
             case PlayerState.Move:
                 pm.GetAnimator().SetInteger("AnimState", 1);
                 break;
             case PlayerState.Jump:
-                if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Jump") == false)
-                pm.GetAnimator().SetTrigger("Jump");
-                break;
-            case PlayerState.Attack:
+                if (!pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+                    pm.GetAnimator().SetTrigger("Jump");
                 break;
             case PlayerState.Dash:
-//#warning 대쉬 문제의 원인
-
-              //  Debug.Log($">> 현재 애니메이션 상태:{pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash")}");
-                if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash") == false)
+                if (!pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash"))
                     pm.GetAnimator().SetTrigger("Dash");
                 break;
             case PlayerState.Hurt:
                 pm.GetAnimator().SetTrigger("Hurt");
                 break;
             case PlayerState.Fall:
-                pm.GetAnimator().SetInteger("AnimState", 4); // 예시: Fall 상태 애니메이션 인덱스
+                pm.GetAnimator().SetInteger("AnimState", 4);
                 break;
         }
     }

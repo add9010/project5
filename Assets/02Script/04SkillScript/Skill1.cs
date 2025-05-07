@@ -27,7 +27,7 @@ public class Skill1 : MonoBehaviour
         }
 
         // 상태 및 점프
-        pm.playerStateController.ForceSetSkill();
+        pm.playerStateController.ForceSetSkill("Skill1");
         pm.playerStateController.LockSkillState(0.5f);
 
         pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
