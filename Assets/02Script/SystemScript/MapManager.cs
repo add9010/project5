@@ -9,9 +9,13 @@ public class MapManager : MonoBehaviour
 
     public GameObject[] secretMaps;          // 비밀방 맵 리스트
     public Transform[] secretStartPoints;    // 비밀방 스타트 포인트 리스트
- 
+
+    public GameObject[] ShopMasp;           // 상점 맵 리스트
+    public Transform[] ShopStartPoints;      // 상점 스타트 포인트 리스트
+
     private int currentMapIndex = 0;
     private bool isInSecretRoom = false;     // 지금 SecretRoom 안에 있는지 체크
+    private bool isInShop = false; // 상점 안에 있는지 여부
 
     private int riverClearCount = 0;
     public GameObject golemPathEndPoint; // 골렘으로 가는 EndPoint 연결
@@ -39,16 +43,21 @@ public class MapManager : MonoBehaviour
 
         MovePlayerToStart();
     }
-
     public void GoToNextMap()
     {
         if (isInSecretRoom)
         {
-            // Secret방 클리어 후 → 다음 메인맵 이동
             foreach (var sMap in secretMaps)
                 sMap.SetActive(false);
 
-            isInSecretRoom = false; // 비밀방 빠져나왔으니 false로
+            isInSecretRoom = false;
+        }
+        else if (isInShop)
+        {
+            foreach (var shopMap in ShopMasp)
+                shopMap.SetActive(false);
+
+            isInShop = false;
         }
         else
         {
@@ -64,9 +73,9 @@ public class MapManager : MonoBehaviour
         else
         {
             Debug.Log("모든 맵 완료!");
-            // TODO: 보스전 or 엔딩 처리
         }
     }
+
 
     public void GoToSecretMap(int secretIndex)
     {
@@ -82,6 +91,23 @@ public class MapManager : MonoBehaviour
         else
         {
             Debug.LogWarning("비밀맵 인덱스 오류!");
+        }
+    }
+    public void GoToShopMap(int shopIndex)
+    {
+        foreach (var map in maps) map.SetActive(false);
+        foreach (var sMap in secretMaps) sMap.SetActive(false);
+        foreach (var shopMap in ShopMasp) shopMap.SetActive(false); // 상점 맵들 비활성화
+
+        if (shopIndex >= 0 && shopIndex < ShopMasp.Length)
+        {
+            ShopMasp[shopIndex].SetActive(true);
+            isInShop = true; // 상점으로 진입했음
+            MovePlayerToShopStart(shopIndex);
+        }
+        else
+        {
+            Debug.LogWarning("상점 인덱스 오류!");
         }
     }
 
@@ -102,7 +128,15 @@ public class MapManager : MonoBehaviour
             player.transform.position = secretStartPoints[secretIndex].position;
         }
     }
-  
+    private void MovePlayerToShopStart(int shopIndex)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null && ShopStartPoints.Length > shopIndex)
+        {
+            player.transform.position = ShopStartPoints[shopIndex].position;
+        }
+    }
+
     public void ClearRiverStage()
     {
         riverClearCount++;

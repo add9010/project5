@@ -10,10 +10,21 @@ public class DialogTrigger : MonoBehaviour
 
     private void Start()
     {
-        dataSet = DialogueLoader.LoadDialogFromJSON(jsonFileName);
+        string fileToLoad = jsonFileName;
+
+        if (GameManager.Instance.gameData.isQuestComplete[0])
+        {
+            fileToLoad = "NPC_QuestComplete";
+        }
+        else
+        {
+            fileToLoad = "NPC_BeforeQuest";
+        }
+
+        dataSet = DialogueLoader.LoadDialogFromJSON(fileToLoad);
         if (dataSet == null)
         {
-            Debug.LogError($"Dialogues/{jsonFileName}.json 파일을 찾을 수 없습니다!");
+            Debug.LogError($"Dialogues/{fileToLoad}.json 파일을 찾을 수 없습니다!");
         }
     }
 

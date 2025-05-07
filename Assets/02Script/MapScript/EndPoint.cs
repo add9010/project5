@@ -8,17 +8,26 @@ public class EndPoint : MonoBehaviour
     {
         if (playerInRange && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (IsRiverStage())
+            MapManager.Instance.GoToNextMap();
+
+            if (IsRiverStage4())
             {
-                if (MapManager.Instance != null)
+                MapManager.Instance.ClearRiverStage();
+
+                // 이 시점에 스토리 키 등록
+                StoryManager.Instance.SetProgress("RiverStage4Clear");
+                GameManager.Instance.gameData.clearedStoryKeys.Add("RiverStage4Clear");
+                GameManager.Instance.SaveGame();
+
+                GameObject villageSavePoint = GameObject.Find("Village_SavePoint");
+                if (villageSavePoint != null)
                 {
-                    MapManager.Instance.ClearRiverStage();
+                    villageSavePoint.SetActive(true);
                 }
             }
-
-            MapManager.Instance.GoToNextMap();
         }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,9 +45,10 @@ public class EndPoint : MonoBehaviour
         }
     }
 
-    private bool IsRiverStage()
+    private bool IsRiverStage4()
     {
         string currentMapName = MapManager.Instance.GetCurrentMapName();
-        return currentMapName.Contains("RiverStage");
+        return currentMapName.Contains("RiverStage_4");
     }
+
 }

@@ -10,8 +10,7 @@ public class Data
     public float playerY;
     public float playerZ;
 
-    // ?? 해금된 챕터 정보 (예제)
-    public bool[] isUnlock = new bool[10];
+    public bool[] isQuestComplete = new bool[10]; // ex) 각 퀘스트(스테이지) 완료 여부
     public List<string> clearedStoryKeys = new List<string>();
 
     public Data()
@@ -19,7 +18,7 @@ public class Data
         playerX = 0f;
         playerY = 0f;
         playerZ = 0f;
-        isUnlock = new bool[10]; // 모든 챕터 기본 잠금 상태
-        isUnlock[0] = true; // 0번 챕터만 기본 해금
+        isQuestComplete = new bool[10]; // 모든 챕터 기본 잠금 상태
+        isQuestComplete[0] = true; // 0번 챕터만 기본 해금
     }
 }
