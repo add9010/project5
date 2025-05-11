@@ -1,0 +1,55 @@
+{
+  "dialogues": [
+    {
+      "id": "ideer_after_stage1",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "왔구나, 소식은 들었어. 사람이 잡혀있었다면서?",
+        "그럼 내가 들었던게 비명소리였던건가?",
+        "여튼 다행이다, 늦기 전에 구출되서."
+      ],
+      "options": null
+    },
+    {
+      "id": "kairos_response",
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "이디어씨 덕분에 빠르게 구출할 수 있었어요."
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_followup",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "뭘, 난 무서워서 확인도 못 했는걸.",
+        "다 네 능력이 뛰어나서 그런거지.",
+        "참, 보수는 여기 있어."
+      ],
+      "options": null
+    },
+    {
+      "id": "kairos_thanks",
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "감사합니다."
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_closure",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "고생했어, 이제 정말 정식 용병이 되었네.",
+        "또 뭔가 부탁할 일이 생기면 말할게.",
+        "이제 벌목하러 가도 괜찮겠지?"
+      ],
+      "options": null
+    }
+  ]
+}

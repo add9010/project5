@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFileName: 
+  npcName: Tamu
   dialogSystem: {fileID: 0}
 --- !u!114 &6530153191241114556
 MonoBehaviour:
@@ -186,4 +186,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredStoryKey: RiverStage4Clear
-  oneTimeUse: 0

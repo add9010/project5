@@ -1,0 +1,15 @@
+{
+  "dialogues": [
+    {
+      "id": "neroban_before_quest",
+      "speakerName": "네로반",
+      "speakerPortraitPath": "Portraits/NerobanPortrait",
+      "sentences": [
+        "나도 예전엔 용병이 되고 싶었어",
+        "집안에서 반대가 심해 포기했지만",
+        "지금은 늦었겠지?"
+      ],
+      "options": null
+    }
+  ]
+}

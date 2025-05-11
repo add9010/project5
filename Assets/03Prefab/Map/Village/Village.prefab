@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6457564323451580232}
   - component: {fileID: 1748679483617363822}
   m_Layer: 0
-  m_Name: VillageG
+  m_Name: VillageGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -901,9 +901,9 @@ GameObject:
   - component: {fileID: 3545078735182610053}
   - component: {fileID: 2160930471507167589}
   - component: {fileID: 4410369970336527626}
-  - component: {fileID: 8116666251671816942}
+  - component: {fileID: 7750279996125757563}
   m_Layer: 0
-  m_Name: ToRiver
+  m_Name: ToCrossRoad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1025,7 +1025,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.48, y: 3.47}
   m_EdgeRadius: 0
---- !u!114 &8116666251671816942
+--- !u!114 &7750279996125757563
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1034,9 +1034,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5976026233956242008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796cee014bf075d4caf14bb957fd44ab, type: 3}
+  m_Script: {fileID: 11500000, guid: f381ba9d7f075964382bd103914d6d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 0
+  targetMapIndex: 1
+  sceneName: 
 --- !u!1 &8373726030806066107
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,14 @@
+{
+  "dialogues": [
+    {
+      "id": "oxton_after_stage1",
+      "speakerName": "옥스턴",
+      "speakerPortraitPath": "Portraits/OxtonPortrait",
+      "sentences": [
+        "네가 아주 훌륭한 일을 했단다.. 네가 자랑스럽구나.",
+        "잘 보살펴주렴."
+      ],
+      "options": null
+    }
+  ]
+}

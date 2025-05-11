@@ -1,0 +1,13 @@
+{
+  "dialogues": [
+    {
+      "id": "atti_after_stage1",
+      "speakerName": "아띠",
+      "speakerPortraitPath": "Portraits/AttiPortrait",
+      "sentences": [
+        "좋은 일을 하셨네요."
+      ],
+      "options": null
+    }
+  ]
+}

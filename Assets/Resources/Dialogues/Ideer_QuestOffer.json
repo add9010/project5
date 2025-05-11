@@ -1,0 +1,81 @@
+{
+  "dialogues": [
+    {
+      "id": "ideer_quest_offer",
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "안녕하세요, 이디어씨. 의뢰를 요청하셨다고..?"
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_2",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "맞아, 의뢰 때문에 온 거 맞니?"
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_3",
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "네."
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_4",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "좋아, 그럼 바로 의뢰 내용을 알려줄게.",
+        "며칠 전부터 숲에 벌목을 하러 가는데, 계속 숲 한 편에서 이상한 소리가 들려.",
+        "나는 숲으로 자주 다니니까.. 무섭기도 하고.",
+        "얼마간 아무런 소식도 없었으니 별 일 아니라고 생각하고 있지만, 한 번 확인은 했으면 해서..",
+        "괜찮다면 네가 한 번 확인해줄래?"
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_5",
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "네, 알겠어요."
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_6",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "보수는 약속할게. 몸 조심하고.",
+        "만약 위험한 일이 있다면 꼭 어른을 불러."
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_7",
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "걱정마세요, 다녀오겠습니다."
+      ],
+      "options": null
+    },
+    {
+      "id": "ideer_quest_offer_repeat",
+      "speakerName": "이디어",
+      "speakerPortraitPath": "Portraits/IdeerPortrait",
+      "sentences": [
+        "아직 안 갔니?"
+      ],
+      "options": null
+    }
+  ]
+}

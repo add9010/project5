@@ -25,7 +25,6 @@ public class MapManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -157,6 +156,16 @@ public class MapManager : MonoBehaviour
             return maps[currentMapIndex].name;
         }
         return "";
+    }
+    public void ForceMoveToMap(int mapIndex)
+    {
+        if (mapIndex >= 0 && mapIndex < maps.Length)
+        {
+            maps[currentMapIndex].SetActive(false);
+            currentMapIndex = mapIndex;
+            maps[currentMapIndex].SetActive(true);
+            MovePlayerToStart();
+        }
     }
 
 }

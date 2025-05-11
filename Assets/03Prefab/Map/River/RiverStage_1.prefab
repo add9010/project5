@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 970811036901893643}
   - component: {fileID: 90051187135763205}
   - component: {fileID: 1870076943907607705}
-  - component: {fileID: 8930783453420130966}
+  - component: {fileID: 5365127958795528266}
   m_Layer: 8
   m_Name: R1End
   m_TagString: Untagged
@@ -915,7 +915,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.48, y: 3.47}
   m_EdgeRadius: 0
---- !u!114 &8930783453420130966
+--- !u!114 &5365127958795528266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -924,9 +924,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 609104616461127721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796cee014bf075d4caf14bb957fd44ab, type: 3}
+  m_Script: {fileID: 11500000, guid: f381ba9d7f075964382bd103914d6d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 0
+  targetMapIndex: 3
+  sceneName: 
 --- !u!1 &1495383550577358722
 GameObject:
   m_ObjectHideFlags: 0

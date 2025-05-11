@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2367486707155060807}
   - component: {fileID: 903618824026982286}
   m_Layer: 0
-  m_Name: Nerovan
+  m_Name: Neroban
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,5 +170,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonFileName: 
+  npcName: Neroban
   dialogSystem: {fileID: 0}

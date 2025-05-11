@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class DialogTrigger : MonoBehaviour
 {
-    public string jsonFileName;
+    [Header("설정")]
+    public string npcName; // 예: Oxton, Neroban, Atti, Ideer
     public DialogSystem dialogSystem;
 
     private DialogueDataSet dataSet;
@@ -10,15 +11,35 @@ public class DialogTrigger : MonoBehaviour
 
     private void Start()
     {
-        string fileToLoad = jsonFileName;
+        string fileToLoad = "Default";
 
-        if (GameManager.Instance.gameData.isQuestComplete[0])
+        int stage = GameManager.Instance.gameData.currentStage;
+        var data = GameManager.Instance.gameData;
+
+        switch (npcName)
         {
-            fileToLoad = "NPC_QuestComplete";
-        }
-        else
-        {
-            fileToLoad = "NPC_BeforeQuest";
+            case "Oxton":
+                fileToLoad = (stage >= 1) ? "Oxton_AfterStage1" : "Oxton_BeforeQuest";
+                break;
+
+            case "Neroban":
+                fileToLoad = (stage >= 1) ? "Neroban_AfterStage1" : "Neroban_BeforeQuest";
+                break;
+
+            case "Atti":
+                fileToLoad = (stage >= 1) ? "Atti_AfterStage1" : "Atti_BeforeQuest";
+                break;
+
+            case "Ideer":
+                if (!data.IsQuestComplete("Quest001"))
+                    fileToLoad = "Ideer_QuestOffer";
+                else
+                    fileToLoad = "Ideer_AfterStage1";
+                break;
+
+            default:
+                Debug.LogWarning($"DialogTrigger: 알 수 없는 NPC 이름 '{npcName}'");
+                break;
         }
 
         dataSet = DialogueLoader.LoadDialogFromJSON(fileToLoad);
@@ -33,7 +54,6 @@ public class DialogTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = true;
-            // 예: 대화 가능 UI 프롬프트를 표시할 수 있음
         }
     }
 

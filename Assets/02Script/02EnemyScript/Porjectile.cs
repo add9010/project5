@@ -12,12 +12,13 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        rigid = GetComponent<Rigidbody2D>();
         Invoke(nameof(DestroyProjectile), lifetime);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (isExploding) return; // 중복 폭발 방지
+        if (isExploding) return;
 
         if (collision.CompareTag("Player"))
         {
@@ -34,22 +35,20 @@ public class Projectile : MonoBehaviour
             Explode();
         }
     }
+
     private void Explode()
     {
         if (isExploding) return;
 
         isExploding = true;
-        anim.SetTrigger("explode");     // 폭발 애니메이션 실행
+        anim.SetTrigger("explode");
     }
 
-    public void OnExplodeEnd()
-    {
-        Destroy(gameObject);
-    }
+    public void OnExplodeEnd() => Destroy(gameObject);
 
     private void DestroyProjectile()
     {
         if (!isExploding)
-            Explode(); // Lifetime 다 되어도 터뜨리고 삭제
+            Explode();
     }
 }
