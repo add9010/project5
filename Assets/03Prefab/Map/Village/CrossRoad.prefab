@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2518250547428990522}
   - component: {fileID: 1413626152981069404}
-  - component: {fileID: 2529850674784243295}
   - component: {fileID: 1701208663450199413}
+  - component: {fileID: 784554275502556588}
   m_Layer: 0
   m_Name: ToRiver
   m_TagString: Untagged
@@ -89,18 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2529850674784243295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818207408995590690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796cee014bf075d4caf14bb957fd44ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1701208663450199413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -147,6 +135,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.48, y: 3.47}
   m_EdgeRadius: 0
+--- !u!114 &784554275502556588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818207408995590690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f381ba9d7f075964382bd103914d6d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetType: 1
+  targetMapIndex: 2
+  sceneName: 
 --- !u!1 &3664381449613706809
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,8 +397,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4158737255585917006}
   - component: {fileID: 385360085689345637}
-  - component: {fileID: 5005091743932767060}
   - component: {fileID: 313332472694023001}
+  - component: {fileID: 9137478576668307159}
   m_Layer: 0
   m_Name: ToGolem
   m_TagString: Untagged
@@ -473,18 +476,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5005091743932767060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209143773356868152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 796cee014bf075d4caf14bb957fd44ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &313332472694023001
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -531,6 +522,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.48, y: 3.47}
   m_EdgeRadius: 0
+--- !u!114 &9137478576668307159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209143773356868152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f381ba9d7f075964382bd103914d6d53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetType: 1
+  targetMapIndex: 7
+  sceneName: 
 --- !u!1 &7448855963641344549
 GameObject:
   m_ObjectHideFlags: 0

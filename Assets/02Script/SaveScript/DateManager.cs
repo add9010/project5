@@ -20,7 +20,6 @@ public class DateManager : MonoBehaviour
 
     private string GameDateFileName = "GameData.json";
 
-    // 파일에서 데이터 불러오기
     public Data LoadData()
     {
         string filePath = Application.persistentDataPath + "/" + GameDateFileName;
@@ -28,17 +27,21 @@ public class DateManager : MonoBehaviour
         if (File.Exists(filePath))
         {
             string jsonData = File.ReadAllText(filePath);
-            return JsonUtility.FromJson<Data>(jsonData);
+            Data loaded = JsonUtility.FromJson<Data>(jsonData);
+            loaded.RestoreAfterLoad(); // 🔁 복원
+            return loaded;
         }
-        return new Data(); // 파일이 없으면 새로운 데이터 반환
+
+        return new Data();
     }
 
-    // 데이터를 파일에 저장
     public void SaveData(Data data)
     {
+        data.PrepareForSave(); // 🔁 변환
         string jsonData = JsonUtility.ToJson(data, true);
         string filePath = Application.persistentDataPath + "/" + GameDateFileName;
         File.WriteAllText(filePath, jsonData);
         Debug.Log("저장 완료!");
     }
+
 }

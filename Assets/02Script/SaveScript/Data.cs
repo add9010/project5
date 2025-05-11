@@ -1,25 +1,62 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-[System.Serializable]
+[Serializable]
 public class Data
 {
-    // ?? 플레이어 위치 저장
     public float playerX;
     public float playerY;
     public float playerZ;
-
-    // ?? 해금된 챕터 정보 (예제)
+    public string savedSceneName = "Stage1";
     public bool[] isUnlock = new bool[10];
-    public List<string> clearedStoryKeys = new List<string>();
+    public int currentStage = 0;
+    // 런타임용 구조
+    [NonSerialized] public Dictionary<string, bool> isQuestComplete = new Dictionary<string, bool>();
+    [NonSerialized] public HashSet<string> clearedStoryKeys = new HashSet<string>();
+
+    // 직렬화용 구조
+    public List<QuestEntry> questListSerialized = new List<QuestEntry>();
+    public List<string> clearedStoryKeysSerialized = new List<string>();
 
     public Data()
     {
-        playerX = 0f;
-        playerY = 0f;
-        playerZ = 0f;
-        isUnlock = new bool[10]; // 모든 챕터 기본 잠금 상태
-        isUnlock[0] = true; // 0번 챕터만 기본 해금
+        savedSceneName = "Stage1";
+        isUnlock[0] = true;
+    }
+
+    public void PrepareForSave()
+    {
+        questListSerialized = isQuestComplete
+            .Select(q => new QuestEntry(q.Key, q.Value)).ToList();
+
+        clearedStoryKeysSerialized = clearedStoryKeys.ToList();
+    }
+
+    public void RestoreAfterLoad()
+    {
+        isQuestComplete = questListSerialized
+            .ToDictionary(q => q.questKey, q => q.isComplete);
+
+        clearedStoryKeys = new HashSet<string>(clearedStoryKeysSerialized);
+    }
+
+    public bool IsQuestComplete(string questKey)
+    {
+        return isQuestComplete.ContainsKey(questKey) && isQuestComplete[questKey];
+    }
+}
+
+[Serializable]
+public class QuestEntry
+{
+    public string questKey;
+    public bool isComplete;
+
+    public QuestEntry(string key, bool complete)
+    {
+        questKey = key;
+        isComplete = complete;
     }
 }

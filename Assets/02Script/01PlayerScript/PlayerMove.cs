@@ -9,42 +9,59 @@ public class PlayerMove
         this.manager = manager;
     }
 
-    public float GetHorizontalInput()
+    public Vector2 GetInput()
     {
-        return Input.GetAxisRaw("Horizontal");
+        float x = 0f;
+        float y = 0f;
+
+        if (Input.GetKey(KeyCode.LeftArrow)) x = -1f;
+        else if (Input.GetKey(KeyCode.RightArrow)) x = 1f;
+
+        if (Input.GetKey(KeyCode.UpArrow)) y = 1f;
+        else if (Input.GetKey(KeyCode.DownArrow)) y = -1f;
+
+        return new Vector2(x, y);
     }
 
     public bool TryJump()
     {
-        // 스페이스바 눌렀고 땅에 닿아 있을 때
-        return Input.GetKeyDown(KeyCode.Space) && IsGrounded();
+        bool isJumpKey = Input.GetKeyDown(KeyCode.UpArrow);
+        return isJumpKey && IsGrounded();
     }
 
     public void DoJump()
     {
-        // 점프 힘만큼 수직 속도 설정
         manager.rb.linearVelocity = new Vector2(
             manager.rb.linearVelocity.x,
             manager.data.jumpForce
         );
     }
-    public void Move(float inputX)
+
+    public void Move(Vector2 input)
     {
         if (manager.isAction) return;
 
+        float moveX = input.x;
+
         manager.rb.linearVelocity = new Vector2(
-            inputX * manager.data.speed,
+            moveX * manager.data.speed,
             manager.rb.linearVelocity.y
         );
-        if (inputX > 0)
+
+        if (moveX > 0)
             manager.spriteRenderer.flipX = false;
-        else if (inputX < 0)
+        else if (moveX < 0)
             manager.spriteRenderer.flipX = true;
+
+        // ↑ 방향 입력 시 상호작용을 위한 디버깅 (추후 사용 가능)
+        if (input.y > 0)
+        {
+            Debug.Log("↑ 위 방향 입력 감지됨");
+        }
     }
 
     private bool IsGrounded()
     {
-        // 지상 센서가 있고 땅에 닿아 있는지 확인
         return manager.groundSensor != null && manager.groundSensor.State();
     }
 }

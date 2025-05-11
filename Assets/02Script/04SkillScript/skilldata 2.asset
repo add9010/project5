@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07cbc7f88c5cbeb4d905a19002fe509e, type: 3}
+  m_Name: skilldata 2
+  m_EditorClassIdentifier: 
+  skillName: Skill2Data
+  icon: {fileID: -370618961, guid: 75857c0c90471bf419989849c9ead4cd, type: 3}
+  skillLogicPrefab: {fileID: 2262073010084197820, guid: ec97937e4bae40945bea1518a88bb896, type: 3}

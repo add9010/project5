@@ -1,0 +1,15 @@
+{
+  "dialogues": [
+    {
+      "id": "neroban_after_stage1",
+      "speakerName": "네로반",
+      "speakerPortraitPath": "Portraits/NerobanPortrait",
+      "sentences": [
+        "세상이 흉흉하네… 부모님 말 듣길 잘했다.",
+        "너도 조심해.",
+        "오랜만에 부모님을 뵈러 갈까봐."
+      ],
+      "options": null
+    }
+  ]
+}

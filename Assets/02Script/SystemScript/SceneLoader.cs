@@ -40,6 +40,11 @@ public class SceneLoader : MonoBehaviour
     IEnumerator LoadNextScene()
     {
         yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene("Boss1"); // Floor1으로 이동
+
+        string nextScene = GameManager.Instance != null ? GameManager.Instance.nextSceneName : "Stage1";
+
+        Debug.Log($"[SceneLoader] 다음 씬: {nextScene}");  // ✅ 실제 값 출력
+        SceneManager.LoadScene(nextScene);
     }
+
 }

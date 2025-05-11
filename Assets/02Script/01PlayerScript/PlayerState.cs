@@ -10,6 +10,8 @@ public class PlayerStateController
     private PlayerState currentState = PlayerState.Idle;
     private float jumpTimer = 0f;
     private const float fallTransitionTime = 0.1f; // 점프 후 이 시간 지나면 Fall로 간주
+    private float skillLockTimer = 0f;
+    private const float skillLockDuration = 0.5f; // Skill 애니메이션 길이에 맞춤
 
     private Dictionary<PlayerState, Func<bool>> stateTransitions;
 
@@ -30,6 +32,11 @@ public class PlayerStateController
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
+        if (skillLockTimer > 0f)
+        {
+            skillLockTimer -= Time.deltaTime;
+            return;
+        }
         var animState = pm.GetAnimator().GetCurrentAnimatorStateInfo(0);
 
         // 애니메이션 갱신은 항상 해야 함!
@@ -48,7 +55,10 @@ public class PlayerStateController
             }
         }
     }
-
+    public void LockSkillState(float duration)
+    {
+        skillLockTimer = duration;
+    }
     private void SetState(PlayerState newState)
     {
         if (currentState == newState) return;
@@ -70,10 +80,10 @@ public class PlayerStateController
         SetState(PlayerState.Dash);
         pm.GetAnimator().SetTrigger("Dash"); 
     }
-    public void ForceSetSkill()
+    public void ForceSetSkill(string triggerName)
     {
         SetState(PlayerState.Skill);
-        pm.GetAnimator().SetTrigger("Skill1");
+        pm.GetAnimator().SetTrigger(triggerName);
     }
     public void SetHurt()
     {
@@ -86,33 +96,31 @@ public class PlayerStateController
         pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);
         pm.GetAnimator().SetBool("Grounded", grounded);
 
+        if (currentState == PlayerState.Skill)
+            return;
+
         switch (currentState)
         {
             case PlayerState.Idle:
-            case PlayerState.Dialog: // 둘 다 0번 상태로 고정
+            case PlayerState.Dialog:
                 pm.GetAnimator().SetInteger("AnimState", 0);
                 break;
             case PlayerState.Move:
                 pm.GetAnimator().SetInteger("AnimState", 1);
                 break;
             case PlayerState.Jump:
-                if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Jump") == false)
-                pm.GetAnimator().SetTrigger("Jump");
-                break;
-            case PlayerState.Attack:
+                if (!pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+                    pm.GetAnimator().SetTrigger("Jump");
                 break;
             case PlayerState.Dash:
-//#warning 대쉬 문제의 원인
-
-              //  Debug.Log($">> 현재 애니메이션 상태:{pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash")}");
-                if (pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash") == false)
+                if (!pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Dash"))
                     pm.GetAnimator().SetTrigger("Dash");
                 break;
             case PlayerState.Hurt:
                 pm.GetAnimator().SetTrigger("Hurt");
                 break;
             case PlayerState.Fall:
-                pm.GetAnimator().SetInteger("AnimState", 4); // 예시: Fall 상태 애니메이션 인덱스
+                pm.GetAnimator().SetInteger("AnimState", 4);
                 break;
         }
     }

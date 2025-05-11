@@ -1,296 +1,187 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Linq;
 
-public class Enemy : MonoBehaviour ,IDamageable, IKnockbackable
+[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
+public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 {
-    protected Rigidbody2D rigid;
-    protected SpriteRenderer spriteRenderer;
-    protected Transform player;
-    protected Animator anim;
-
-    protected RectTransform hpBar;
-    protected Image nowHpbar;
-   //public GameObject prfHpBar;
-   //public GameObject canvas;
-
-    public GameObject markPrefab;
-    public float markYOffset = 1f;
-    public float height = 1.7f;
-
     [Header("Enemy Stats")]
     public string enemyName = "Enemy";
     public float maxHp = 100f;
-    public float nowHp = 100f;
-    public float atkDmg = 10;
+    public float atkDmg = 10f;
     public float moveSpeed = 3f;
     public float detectionRange = 5f;
-
-    protected Vector3 patrolTarget;   
+    public float attackRange = 1.5f;
     public float patrolRange = 2f;
-    protected float patrolTimer = 0f;  
-    public float maxPatrolTime = 3f;   
+    public bool enablePatrol = true;
 
+    [Header("References")]
+    public GameObject markPrefab;
+    public float markYOffset = 1f;
 
-    protected bool isInDamageState = false;
-    protected bool isChasing = false;
-    protected bool isEnemyDead = false;
-    protected bool isTakingDamage = false;
+    [HideInInspector] public Animator anim;
+    [HideInInspector] public Rigidbody2D rigid;
+    [HideInInspector] public Transform player;
+
+    protected Vector2 patrolTarget;
+    protected float patrolTimer;
+    public float maxPatrolTime = 3f;
+
+    protected IEnemyState currentState;
 
     protected virtual void Awake()
     {
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    protected virtual void SetEnemyStatus
-        (string _enemyName, float _maxHp, float _atkDmg, float _moveSpeed )
-    {
-        enemyName = _enemyName;
-        maxHp = _maxHp;
-        nowHp = _maxHp;
-        atkDmg = _atkDmg;
-        moveSpeed = _moveSpeed;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     protected virtual void Start()
     {
-        
-      // hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-      //  nowHpbar = hpBar.transform.GetChild(0).GetComponent<Image>();
+        SetEnemyStatus(enemyName, maxHp, atkDmg, moveSpeed);
+        patrolTimer = 0f;
 
-        SetEnemyStatus("enemyName", maxHp, atkDmg, moveSpeed) ; 
-       
-        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        SwitchState(enablePatrol ? new PatrolState() : new IdleState());
+        IgnoreEnemyCollisions();
     }
 
     protected virtual void Update()
     {
-        
-        if (!isInDamageState && nowHp > 0 && player != null)
-            DetectAndChasePlayer();
+        currentState?.Update(this);
+    }
 
+    public void SwitchState(IEnemyState newState)
+    {
+        currentState?.Exit(this);
+        currentState = newState;
+        currentState.Enter(this);
+    }
 
-       
-        if (hpBar != null)
+    public void SetEnemyStatus(string name, float hp, float atk, float speed)
+    {
+        enemyName = name;
+        maxHp = hp;
+        nowHp = hp;
+        atkDmg = atk;
+        moveSpeed = speed;
+    }
+
+    // === 상태 검사 ===
+    public bool IsPlayerDetected() => player && Vector2.Distance(transform.position, player.position) <= detectionRange;
+    public bool IsPlayerInAttackRange() => player && Vector2.Distance(transform.position, player.position) <= attackRange;
+
+    // === 이동 관련 ===
+    public void Patrol()
+    {
+        if (Vector2.Distance(transform.position, patrolTarget) < 0.2f || patrolTimer >= maxPatrolTime)
         {
-            Vector3 _hpBarPos = Camera.main.WorldToScreenPoint
-                (new Vector3(transform.position.x, transform.position.y + height, 0));
-            hpBar.position = _hpBarPos;
-            nowHpbar.fillAmount = nowHp / maxHp; 
-        }
-    }
-
-    public void TakeDamage(float damage)
-    {
-        if (isTakingDamage || anim.GetBool("isDead")) return;
-
-        isTakingDamage = true;
-        nowHp -= damage;
-
-        if (nowHp <= 0)
-        {
-            HandleWhenDead();
-            return;
-        }
-
-        isInDamageState = true;
-        anim.SetBool("hit", true);
-
-        Invoke("ResumeChase", 0.5f);
-        StartCoroutine(EndDamage());
-    }
-    public void ApplyKnockback(Vector2 dir, float force)
-    {
-        rigid.linearVelocity = Vector2.zero;
-        rigid.AddForce(dir * force, ForceMode2D.Impulse);
-    }
-
-
-    private void ResumeChase()
-    {
-        isInDamageState = false;  
-    }
-
-    protected virtual IEnumerator EndDamage()
-    {
-        yield return new WaitForSeconds(0.5f);
-        isTakingDamage = false;
-    }
-
-    protected virtual void HandleWhenDead()
-    {
-        isEnemyDead = true;
-        nowHp = 0;
-        anim.SetBool("isDead", true);
-
-        if (hpBar != null) Destroy(hpBar.gameObject);
-
-
-        StartCoroutine(HandleDeath(0.8f)); 
-
-        Debug.Log($"[{GetType().Name}] {enemyName} is dead.");
-    }
-
-    protected virtual IEnumerator HandleDeath(float delay)
-    {
-        yield return new WaitForSeconds(delay); 
-        gameObject.SetActive(false); 
-        Debug.Log($"[{GetType().Name}] {enemyName} has died.");
-    }
-
-    protected bool IsOnPlatform()
-    {
-        int platformLayer = LayerMask.GetMask("Platform"); 
-        RaycastHit2D hitRight = Physics2D.Raycast(transform.position + new Vector3(0.8f, -1f, 0), Vector2.down, 10f, platformLayer);
-        RaycastHit2D hitLeft = Physics2D.Raycast(transform.position + new Vector3(-0.8f, -1f, 0), Vector2.down, 10f, platformLayer);
-        Debug.DrawRay(transform.position + new Vector3(0.8f, -1f, 0), Vector2.down * 10f, Color.red);
-        Debug.DrawRay(transform.position + new Vector3(-0.8f, -1f, 0), Vector2.down * 10f, Color.red);
-
-        if (hitRight.collider == null || !hitRight.collider.CompareTag("Platform") ||
-            hitLeft.collider == null || !hitLeft.collider.CompareTag("Platform"))
-        {
-            return false; 
-        }
-      
-        return true;
-    }
-
-    protected virtual void Patrol()
-    {
-        if (Vector2.Distance(transform.position, patrolTarget) < 0.2f)
-        {
-            patrolTimer = 0f;  
-            SetPatrolTarget(); 
+            patrolTimer = 0f;
+            SetPatrolTarget();
         }
         else
         {
-            patrolTimer += Time.deltaTime;  
+            patrolTimer += Time.deltaTime;
         }
 
-       
-        if (patrolTimer >= maxPatrolTime)
-        {
-            patrolTimer = 0f; 
-            SetPatrolTarget();  
-        }
-
-        if (!IsOnPlatform()) 
-        {
-            Vector3 reverseDirection = (transform.position - patrolTarget).normalized;
-            patrolTarget = transform.position + reverseDirection * patrolRange;
-            rigid.linearVelocity = Vector2.zero; 
-        }
-      
-        float adjustedMoveSpeed = moveSpeed * 0.7f;
-        transform.position = Vector2.MoveTowards(transform.position, patrolTarget, adjustedMoveSpeed * Time.deltaTime);
-        anim.SetBool("isWalk", true);
-        LookAtPatrolTarget();
+        transform.position = Vector2.MoveTowards(transform.position, patrolTarget, moveSpeed * 0.7f * Time.deltaTime);
+        LookAt(patrolTarget);
     }
 
-    
-    protected virtual void SetPatrolTarget()
+    public void SetPatrolTarget()
     {
-        float randomX = Random.Range(-patrolRange, patrolRange);
-        patrolTarget = new Vector2(transform.position.x + randomX, transform.position.y);
+        float randX = Random.Range(-patrolRange, patrolRange);
+        patrolTarget = new Vector2(transform.position.x + randX, transform.position.y);
     }
 
-   
-    protected virtual void LookAtPatrolTarget()
+    public void MoveToPlayer()
     {
-        Vector3 direction = patrolTarget - transform.position;
+        if (player == null) return;
+        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        LookAt(player.position);
+    }
 
-        if (direction.x > 0)
-            transform.rotation = Quaternion.Euler(0, 0, 0); 
-        else if (direction.x < 0)
+    public void LookAt(Vector2 target)
+    {
+        if (target.x > transform.position.x)
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        else
             transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
-    protected virtual void DetectAndChasePlayer()
+    public void StopMovement()
     {
-        if (player == null || isInDamageState) return;
+        rigid.linearVelocity = Vector2.zero;
+    }
 
-        PlayerManager playerManager = player.GetComponent<PlayerManager>();
-        if (playerManager != null && playerManager.IsDead)
+    // === 상태 처리 ===
+    protected float nowHp;
+
+    public void TakeDamage(float damage)
+    {
+        nowHp -= damage;
+        if (nowHp <= 0)
         {
-            isChasing = false;
-            return;
-        }
-
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (distanceToPlayer <= detectionRange)
-        {
-            if (!isChasing) SpawnMark();
-            isChasing = true;
-
-            if (!IsOnPlatform())
-            {
-                rigid.linearVelocity = Vector2.zero;
-                Debug.Log("플랫폼 위가 아님 - 정지");
-            }
-            else 
-            {
-                anim.SetBool("isWalk", true);
-                Vector3 direction = (player.position - transform.position).normalized;
-                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-                
-                Debug.Log("플레이어 추격");
-            }
-
-            LookAtPlayer();
+            SwitchState(new DeadState());
         }
         else
         {
-            Patrol();
-            isChasing = false;
+            SwitchState(new HurtState());
         }
     }
 
-    protected virtual void SpawnMark()
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        rigid.linearVelocity = Vector2.zero;
+        rigid.AddForce(direction * force, ForceMode2D.Impulse);
+    }
+
+    public void ReturnToDefaultState()
+    {
+        SwitchState(enablePatrol ? new PatrolState() : new IdleState());
+    }
+
+    public void Die()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public virtual void PerformAttack()
+    {
+        // 개별 적에서 오버라이드 (Thief, Wizard 등)
+        Debug.Log($"{enemyName} 공격 실행");
+    }
+
+    public void SpawnMark()
     {
         if (markPrefab != null)
         {
-           
-            Vector3 spawnPosition = transform.position + new Vector3(0, markYOffset, 0); 
-            GameObject markInstance = Instantiate(markPrefab, spawnPosition, Quaternion.identity);
-
-           
-            Mark markScript = markInstance.GetComponent<Mark>();
+            Vector3 pos = transform.position + new Vector3(0, markYOffset, 0);
+            GameObject marker = Instantiate(markPrefab, pos, Quaternion.identity);
+            Mark markScript = marker.GetComponent<Mark>();
             if (markScript != null)
             {
-                markScript.enemy = transform; 
+                markScript.enemy = transform;
             }
         }
     }
 
-    protected virtual void LookAtPlayer()
+    private void IgnoreEnemyCollisions()
     {
-        Vector3 direction = player.position - transform.position;
-
-        if (direction.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
-        else transform.rotation = Quaternion.Euler(0, 180, 0);
+        Collider2D myCol = GetComponent<Collider2D>();
+        foreach (Enemy other in FindObjectsByType<Enemy>(FindObjectsSortMode.None))
+        {
+            if (other != this)
+            {
+                Collider2D col = other.GetComponent<Collider2D>();
+                if (col) Physics2D.IgnoreCollision(myCol, col);
+            }
+        }
     }
 
-    protected virtual void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
-
-    //protected float GetAnimationClipLengthByTag(string tag)
-    //{
-    //    // 현재 Animator 상태 정보를 가져온다
-    //    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0); // Layer 0 기준
-    //    if (anim != null && stateInfo.IsTag(tag))
-    //    {
-    //        // 현재 애니메이션 상태가 해당 태그와 일치하면 해당 애니메이션의 길이를 반환
-    //        return stateInfo.length;
-    //    }
-
-    //    Debug.LogWarning($"Animation with tag '{tag}' not found!");
-    //    return 0f; // 태그를 찾지 못했을 경우 기본값 반환
-    //}
-
 }

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -198,14 +198,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64724e94c63a0ac45a98250b98f5d5e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
-  markYOffset: 1
-  height: 1.7
   enemyName: Enemy
-  maxHp: 100
-  nowHp: 100
-  atkDmg: 10
-  moveSpeed: 3
+  maxHp: 80
+  atkDmg: 9
+  moveSpeed: 3.5
   detectionRange: 3
+  attackRange: 1.5
   patrolRange: 2
+  enablePatrol: 1
+  markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
+  markYOffset: 1.2
+  anim: {fileID: 0}
+  rigid: {fileID: 0}
+  player: {fileID: 0}
   maxPatrolTime: 3

@@ -9,9 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7313363053831639669}
-  - component: {fileID: 403754549924613928}
   - component: {fileID: 3105990185125889265}
-  - component: {fileID: 3682485651417742028}
   m_Layer: 0
   m_Name: SystemManager
   m_TagString: Untagged
@@ -34,27 +32,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &403754549924613928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6865872782336603312}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b382c5831828b4a9ea00bb2c14d894, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  speakerNameText: {fileID: 0}
-  sentenceText: {fileID: 0}
-  portraitImage: {fileID: 0}
-  optionsPanel: {fileID: 0}
-  optionButtonPrefab: {fileID: 1099842910359455178, guid: 58dfb5f32fbbaab4ca5cbdf5cfcec7f3, type: 3}
-  logPanel: {fileID: 0}
-  autoAdvanceIndicator: {fileID: 0}
-  expandDialogButton: {fileID: 0}
 --- !u!114 &3105990185125889265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,17 +46,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escPanel: {fileID: 0}
   noticePanel: {fileID: 0}
---- !u!114 &3682485651417742028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6865872782336603312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17a90c2a13419a49918f05d9b5e7e75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maps: []
-  startPoints: []

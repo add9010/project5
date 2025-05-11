@@ -15,6 +15,7 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
 
     public void Equip(SkillData skill)
     {
+        Debug.Log("스킬 장착됨: " + skill.skillName); // ✅ 디버그 확인
         EquippedSkill = skill;
         iconImage.sprite = skill.icon;
         iconImage.enabled = true;

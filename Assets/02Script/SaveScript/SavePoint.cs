@@ -4,8 +4,7 @@ using UnityEngine;
 public class SavePoint : MonoBehaviour
 {
     public string requiredStoryKey;  // 이 오브젝트를 활성화하기 위한 조건 키
-    public bool oneTimeUse = false;  // 한 번만 저장 가능한지 여부
-
+  
     private bool isPlayerInRange = false;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -25,13 +24,14 @@ public class SavePoint : MonoBehaviour
             if (IsAvailable())
             {
                 GameManager.Instance.SaveGame();
-                if (oneTimeUse) gameObject.SetActive(false);
             }
         }
     }
 
     private bool IsAvailable()
     {
-        return StoryManager.Instance.HasProgress(requiredStoryKey);
+        // requiredStoryKey가 비어있으면 항상 true
+        return string.IsNullOrEmpty(requiredStoryKey) || StoryManager.Instance.HasProgress(requiredStoryKey);
     }
+
 }
