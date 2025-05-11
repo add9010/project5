@@ -5,9 +5,9 @@ public class SkillManager : MonoBehaviour
     public static SkillManager Instance { get; private set; }
 
     [Header("QWE 슬롯 연결")]
-    [SerializeField] private SkillEquipSlot slotQ;
-    [SerializeField] private SkillEquipSlot slotW;
-    [SerializeField] private SkillEquipSlot slotE;
+    [SerializeField] private SkillEquipSlot slotA;
+    [SerializeField] private SkillEquipSlot slotS;
+    [SerializeField] private SkillEquipSlot slotD;
 
     private void Awake()
     {
@@ -24,9 +24,9 @@ public class SkillManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) UseSkillFromSlot(slotQ);
-        if (Input.GetKeyDown(KeyCode.W)) UseSkillFromSlot(slotW);
-        if (Input.GetKeyDown(KeyCode.E)) UseSkillFromSlot(slotE);
+        if (Input.GetKeyDown(KeyCode.A)) UseSkillFromSlot(slotA);
+        if (Input.GetKeyDown(KeyCode.S)) UseSkillFromSlot(slotS);
+        if (Input.GetKeyDown(KeyCode.D)) UseSkillFromSlot(slotD);
     }
 
     private void UseSkillFromSlot(SkillEquipSlot slot)
@@ -59,7 +59,7 @@ public class SkillManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("⚠️ 알 수 없는 스킬 프리팹입니다.");
+            Debug.LogWarning(" 알 수 없는 스킬 프리팹입니다.");
         }
 
         Destroy(instance);

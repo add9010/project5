@@ -222,6 +222,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 341951502}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.dashForce
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: data.jumpForce
       value: 20
       objectReference: {fileID: 0}
@@ -307,9 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e49a11a0e744e040b5f72ccb6a61ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotQ: {fileID: 1867657204}
-  slotW: {fileID: 645646756}
-  slotE: {fileID: 376386258}
+  slotA: {fileID: 1867657204}
+  slotS: {fileID: 645646756}
+  slotD: {fileID: 376386258}
 --- !u!4 &279922041
 Transform:
   m_ObjectHideFlags: 0
