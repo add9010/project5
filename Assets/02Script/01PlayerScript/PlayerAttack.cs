@@ -25,10 +25,10 @@ public class PlayerAttack
 
     public bool TryAttack()
     {
-        bool mouseClicked = Input.GetMouseButtonDown(0);
+        bool zKeyPressed = Input.GetKeyDown(KeyCode.Z);
         bool readyToAttack = timeSinceAttack >= manager.data.attackDuration;
         bool notCurrentlyAttacking = !isAttacking;
-        return mouseClicked && readyToAttack && notCurrentlyAttacking;
+        return zKeyPressed && readyToAttack && notCurrentlyAttacking;
     }
 
     public void DoAttack()

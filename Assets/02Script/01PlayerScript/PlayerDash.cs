@@ -1,9 +1,16 @@
 using UnityEngine;
 using System.Collections;
+
 public class PlayerDash
 {
     private PlayerManager manager;
     private bool isDashing = false;
+    private bool dashCooldown = false;
+
+    private float lastLeftTime = -1f;
+    private float lastRightTime = -1f;
+    private float doubleTapThreshold = 0.25f; // 더블탭 최대 허용 시간
+    private float dashCooldownTime = 0.5f;     // 쿨타임 0.5초
 
     public PlayerDash(PlayerManager manager)
     {
@@ -12,27 +19,47 @@ public class PlayerDash
 
     public void TryDash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && IsGrounded() && !isDashing)
+        if (isDashing || dashCooldown || !IsGrounded()) return;
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            manager.StartAttackCoroutine(DashCoroutine());
+            if (Time.time - lastLeftTime <= doubleTapThreshold)
+                Dash(-1f); // 왼쪽 대시
+
+            lastLeftTime = Time.time;
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (Time.time - lastRightTime <= doubleTapThreshold)
+                Dash(1f); // 오른쪽 대시
+
+            lastRightTime = Time.time;
         }
     }
 
-    private IEnumerator DashCoroutine()
+    private void Dash(float direction)
+    {
+        manager.StartAttackCoroutine(DashCoroutine(direction));
+    }
+
+    private IEnumerator DashCoroutine(float direction)
     {
         isDashing = true;
-        manager.isDashing = true; // 상태 컨트롤러용
+        dashCooldown = true;
+        manager.isDashing = true;
 
-        manager.playerStateController.ForceSetDash(); // Dash 상태 고정
-
-        float direction = manager.spriteRenderer.flipX ? -1f : 1f;
+        manager.playerStateController.ForceSetDash();
         manager.rb.linearVelocity = new Vector2(direction * manager.data.dashForce, 0);
 
-        yield return new WaitForSeconds(manager.data.dashDuration); // <- 해당하는 기간동안 애니메이션 멈춤 // 조용히 해
-        
+        yield return new WaitForSeconds(manager.data.dashDuration);
 
-        isDashing = false; // <- 해당 값은 의심안해도 됨
-        manager.isDashing = false; // <- 해당 값이 true일 때, 애니메이션을 막는것으로 의심
+        isDashing = false;
+        manager.isDashing = false;
+
+        // 쿨타임 대기
+        yield return new WaitForSeconds(dashCooldownTime);
+        dashCooldown = false;
     }
 
     private bool IsGrounded()

@@ -73,7 +73,9 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         if (IsDead) return;
         // 체력바 UI 갱신
         UpdateHpUI(playerHealth.currentHealth);
-        float inputX = playerMove.GetHorizontalInput();
+        Vector2 input = playerMove.GetInput();
+        float inputX = input.x; 
+
         horizontalInput = inputX;
         bool grounded = groundSensor != null && groundSensor.State();
         bool isAttacking = playerAttack.IsAttacking;
@@ -92,9 +94,9 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         if (!isAction && !isDashing && playerMove.TryJump())
             playerMove.DoJump();
 
-        // 이동 처리 (대시 중에는 금지)
+        // 이동 처리
         if (!isAction && !isDashing)
-            playerMove.Move(inputX);
+            playerMove.Move(input);
 
         // 공격 처리
         if (!isAction && playerAttack.TryAttack())
