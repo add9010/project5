@@ -1,8 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-
 public class PlayerAttack
 {
     private PlayerManager manager;
@@ -83,16 +81,18 @@ public class PlayerAttack
             if (hitEnemies.Contains(col)) continue;
 
             GameObject target = col.gameObject;
-            if (NetworkClient.Instance.isConnected)
+            // 수정된 코드
+            // NullReferenceException 방지를 위해 Instance가 null이 아니고, isConnected가 true일 때만 진입
+            if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
             {
                 NetworkCombatManager.SendMonsterDamage((int)damage);
-                UnityEngine.Debug.Log($"데미지 전송: {damage}");
+                Debug.Log($"데미지 전송: {damage}");
             }
             else
             {
+                // 네트워크 연결이 없거나 Instance 자체가 없으면 로컬 처리
                 CombatManager.ApplyDamage(target, damage, knockback, manager.transform.position);
             }
-            hitEnemies.Add(col);
         }
     }
 

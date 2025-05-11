@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      OxtonPortrait_0: 138067648546794151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

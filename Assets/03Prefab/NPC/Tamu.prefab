@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 394953533583188733}
   - component: {fileID: -5953988490414999614}
   - component: {fileID: 6530153191241114556}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tamu
   m_TagString: Untagged
   m_Icon: {fileID: 0}

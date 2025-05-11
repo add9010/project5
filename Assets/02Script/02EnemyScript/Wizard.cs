@@ -10,6 +10,8 @@ public class Wizard : Enemy
     {
         base.Start();
         SetEnemyStatus("마법사", 100, 15, 3);
+        attackCooldown = 6f;
+        attackRange = 4f;    // 사거리도 조절 가능
     }
 
     public override void PerformAttack()

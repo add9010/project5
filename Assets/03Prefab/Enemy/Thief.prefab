@@ -125,7 +125,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -139,7 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &8560826248943235595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212,3 +212,5 @@ MonoBehaviour:
   rigid: {fileID: 0}
   player: {fileID: 0}
   maxPatrolTime: 3
+  prfHpBar: {fileID: 7735975493514810815, guid: 0658f2ea6717d704097945453d439bfc, type: 3}
+  uiCanvas: {fileID: 0}

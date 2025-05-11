@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IdeerPortrait_0: -5718326728625003470
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

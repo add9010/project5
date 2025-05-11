@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ✅ 씬 이동 시 파괴되지 않도록 함
         }
         else
         {
