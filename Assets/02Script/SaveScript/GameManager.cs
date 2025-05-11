@@ -4,20 +4,23 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
     public Data gameData = new Data();
+    public string nextSceneName = "Stage1"; // 기본값
 
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject); // ✅ 씬 이동 시 파괴되지 않도록 함
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // ✅ 중복 GameManager 방지
         }
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
@@ -26,15 +29,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // 데이터 저장하기
     public void SaveGame()
     {
-        SavePlayerPosition(); // 🔹 현재 플레이어 위치 저장
+        SavePlayerPosition();
         DateManager.Instance.SaveData(gameData);
-        Debug.Log($"GameManager: 데이터 저장 완료! 위치: {gameData.playerX}, {gameData.playerY}, {gameData.playerZ}");
     }
 
-    // 🔹 현재 플레이어 위치를 저장하는 함수
     private void SavePlayerPosition()
     {
         GameObject player = GameObject.FindWithTag("Player");
@@ -44,33 +44,28 @@ public class GameManager : MonoBehaviour
             gameData.playerX = player.transform.position.x;
             gameData.playerY = player.transform.position.y;
             gameData.playerZ = player.transform.position.z;
-            Debug.Log($"플레이어 위치 저장 완료: {gameData.playerX}, {gameData.playerY}, {gameData.playerZ}");
-        }
-        else
-        {
-            Debug.LogWarning("플레이어를 찾을 수 없습니다! 위치를 저장할 수 없습니다.");
+
+            gameData.savedSceneName = SceneManager.GetActiveScene().name; // ✅ 현재 씬 이름 저장
         }
     }
-    // 불러온 데이터를 게임에 적용하는 함수
+
     public void LoadGame()
     {
         gameData = DateManager.Instance.LoadData();
-        Debug.Log($"GameManager: 데이터 불러오기 완료! 위치: {gameData.playerX}, {gameData.playerY}, {gameData.playerZ}");
-
-        ApplyGameState(); // 🔹 불러온 데이터 기반으로 게임 상태 적용
+        nextSceneName = gameData.savedSceneName; // ✅ 저장된 씬으로 이동하도록 설정
+        ApplyGameState();
     }
 
-    // 🔹 불러온 데이터를 게임에 적용하는 함수 (플레이어 위치 복원)
     public void ApplyGameState()
     {
-        // ✅ 현재 씬이 "GameScene"이 아니면 실행하지 않음
-        if (SceneManager.GetActiveScene().name != "GameScene")
+        string currentScene = SceneManager.GetActiveScene().name;
+        if (currentScene != gameData.savedSceneName)
         {
-            Debug.LogWarning("🚨 현재 씬이 GameScene이 아닙니다! 플레이어 위치 복원을 건너뜁니다.");
+            Debug.LogWarning("현재 씬이 저장된 씬과 다릅니다. 복원 대기 중...");
             return;
         }
 
-        Invoke(nameof(DelayedApplyGameState), 0.5f); // 🚀 0.5초 뒤 실행 (플레이어 로딩 시간 확보)
+        Invoke(nameof(DelayedApplyGameState), 0.5f);
     }
 
     private void DelayedApplyGameState()
@@ -79,20 +74,21 @@ public class GameManager : MonoBehaviour
 
         if (player != null)
         {
-            player.transform.position = new Vector3(gameData.playerX, gameData.playerY, gameData.playerZ);
-            Debug.Log($"플레이어 위치 복원 완료: {gameData.playerX}, {gameData.playerY}, {gameData.playerZ}");
+            player.transform.position = new Vector3(
+                gameData.playerX,
+                gameData.playerY,
+                gameData.playerZ
+            );
         }
         else
         {
-            Debug.LogWarning(" 플레이어를 찾을 수 없습니다. 다시 시도합니다...");
-            Invoke(nameof(DelayedApplyGameState), 0.5f); // 🚀 0.5초 후 다시 시도
+            Debug.LogWarning("플레이어를 찾을 수 없습니다. 복원 재시도...");
+            Invoke(nameof(DelayedApplyGameState), 0.5f);
         }
     }
+
     public void ReturnToTitle()
     {
-        Debug.Log("타이틀 화면으로 이동");
-        SceneManager.LoadScene("TitleScene"); // "TitleScene"은 실제 타이틀 씬 이름으로 변경해야 함
+        SceneManager.LoadScene("TitleScene");
     }
-
-
 }

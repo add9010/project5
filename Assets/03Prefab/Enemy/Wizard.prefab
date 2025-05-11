@@ -199,21 +199,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a28f360040ae44fbde7e22d72222de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
-  markYOffset: 1
-  height: 1.7
   enemyName: Enemy
-  maxHp: 100
-  nowHp: 100
-  atkDmg: 10
-  moveSpeed: 3
+  maxHp: 85
+  atkDmg: 15
+  moveSpeed: 2
   detectionRange: 5
+  attackRange: 4
   patrolRange: 2
+  enablePatrol: 1
+  markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
+  markYOffset: 1.5
+  anim: {fileID: 0}
+  rigid: {fileID: 0}
+  player: {fileID: 0}
   maxPatrolTime: 3
   projectilePrefab: {fileID: 1097795716494991988, guid: ba2f50662476914448b683f29c02274d, type: 3}
   firePoint: {fileID: 9119864123255473837}
-  attackCooldown: 2
-  attackRange: 4
 --- !u!1 &2889821118227468119
 GameObject:
   m_ObjectHideFlags: 0

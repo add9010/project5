@@ -1,0 +1,13 @@
+{
+  "dialogues": [
+    {
+      "id": "oxton_before_quest",
+      "speakerName": "옥스턴",
+      "speakerPortraitPath": "Portraits/OxtonPortrait",
+      "sentences": [
+        "카이로스야.. 언제나 건강을 우선시 해야한다.."
+      ],
+      "options": null
+    }
+  ]
+}

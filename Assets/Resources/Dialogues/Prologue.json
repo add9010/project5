@@ -1,0 +1,274 @@
+
+{
+  "dialogues": [
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "그래, 늦지 않게 일어났군."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "일어나셨습니까? 스승님."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "그래, 나갈 준비를 해와라. 검을 패용하는 방법은 기억하고 있겠지?"
+      ],
+      "options": [
+        {
+          "optionText": "네",
+          "nextDialogueIndex": 4
+        },
+        {
+          "optionText": "아니오",
+          "nextDialogueIndex": 5
+        }
+      ]
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "그래, 갔다 와라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "까먹은건가… 네가 용병으로서 활동하려면 그런 실수는 안된다.",
+        "네 방 창고에 네가 쓸 검을 넣어 놓았다.",
+        "창고에서 네가 쓸 장비를 장착하면 된다.",
+        "장비는 꼭 거기서 교체해라. 혼자서는 관리가 어려워.",
+        "이제 기억했나?"
+      ],
+      "options": [
+        {
+          "optionText": "네",
+          "nextDialogueIndex": 4
+        },
+        {
+          "optionText": "아니오",
+          "nextDialogueIndex": 5
+        }
+      ]
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "놀랍군… 장난이 지나치다. 그만 갔다 와."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "잘했다. 든든해 보인다.",
+        "그럼 출발하기 전에... 다시 점검해볼까."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "점검이라면..?"
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "네 실력을 의심하는게 아니다.",
+        "네 안전을 위한 것이니 이해해라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "네 검술을 보여봐라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "잘했다.",
+        "기초가 되는 공격인 만큼 오랜 숙지가 필요하다.",
+        "다음은 대쉬를 사용해라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "잘했다.",
+        "검을 사용하게 된다면 상대와의 적절한 거리유지가 필요하다.",
+        "대쉬를 통해 상대의 공격을 회피하고, 접근해라.",
+        "좋아, 다음은 가드다.",
+        "내가 공격해줄테니, 막아봐라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "잘했다. 피할 수 없는 공격이라면, 가드를 통해 막아야 한다.",
+        "상대의 공격을 관찰하고, 적절한 타이밍에 가드를 성공한다면, 상대의 빈틈을 노릴 수 있을 거다."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "스읍… 여전히 강력한 공격이군요."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "이미 늙은 몸이다.",
+        "좋아, 훌륭하다. 그럼 이제 전수해줘도 되겠어."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "?"
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "세상에는 너보다 강력한 자들이 많다. 네 검술도 우스울 수준은 아니지만, 한참 부족하지."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "알고 있습니다."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "그래서 너에게 나의 비기 중 일부를 전수하려고 한다.",
+        "물론, 전부는 아니야. 네가 감당할 수 없는 기술도 있고, 네가 감당할 수 없는 힘이기도 하다.",
+        "정제되지 않은 힘은 독일 뿐이니까."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "네, 스승님이 늘 말하신 부분이니까요."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "그래, 인지하고 있으니 다행이다."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "그럼.. 오늘 전수해주시는 기술은..?"
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "상승 기류라는 기술이다. 바람을 응축해 회전하며 적을 베어내는 기술이지. 때에 따라서는 널 더욱 자유롭게 이동 시켜줄 기술이기도 하다."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "사용해봐라. 바람을 응축 시키고, 회전하며 벤다."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "흠.. 좋아. 아직 부족하지만, 이 정도면 합격점이다."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "수고했다. 걱정하지 않아도 되겠군.",
+        "용병 등록은 내가 이미 마쳐 놨다. 지금부터 활동할 수 있어. 의뢰에 따른 보수도 지급 될 거다.",
+        "마침 너에게 의뢰를 하고 싶다는 사람도 있어. 먼저 그에게 가봐라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "카이로스",
+      "speakerPortraitPath": "Portraits/KairosPortrait",
+      "sentences": [
+        "감사합니다, 스승님."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "다치지마라."
+      ],
+      "options": null
+    },
+    {
+      "speakerName": "스타이거",
+      "speakerPortraitPath": "Portraits/StaigerPortrait",
+      "sentences": [
+        "아직 안 갔나?",
+        "빨리 가 봐라."
+      ],
+      "options": null
+    }
+  ]
+}

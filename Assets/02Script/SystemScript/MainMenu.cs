@@ -15,11 +15,11 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
     {
         Debug.Log("새 게임 시작");
 
-        // 새로운 게임 데이터 생성 및 저장
-        GameManager.Instance.gameData = new Data(); // 새 게임 데이터 초기화
-        GameManager.Instance.SaveGame(); // 초기 데이터 저장
+        GameManager.Instance.gameData = new Data(); // 새 데이터 생성
+        GameManager.Instance.SaveGame();
 
-        // 씬 이동 (예: 로딩 씬 → 게임 씬)
+        GameManager.Instance.nextSceneName = "Stage1"; // ✅ 목적지 설정
+
         if (fadeManager != null)
         {
             fadeManager.RegisterCallback(() => SceneManager.LoadScene("Loding"));
@@ -31,36 +31,56 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
         }
     }
 
+
     public void OnClickLoad()
     {
         Debug.Log("불러오기");
 
-        // 🔹 저장된 데이터 불러오기
-        GameManager.Instance.LoadGame();
+        GameManager.Instance.LoadGame(); // 내부에서 nextSceneName 설정됨
 
-        // 🔹 씬 이동 후 일정 시간 뒤 ApplyGameState() 실행
         SceneManager.sceneLoaded += OnGameSceneLoaded;
 
         if (fadeManager != null)
         {
-            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Boss1"));
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Loding"));
             fadeManager.FadeOut();
         }
         else
         {
-            SceneManager.LoadScene("Boss1");
+            SceneManager.LoadScene("Loding");
         }
     }
+
+    public void OnClickBossDirect()
+    {
+        Debug.Log("보스 바로 가기");
+
+        GameManager.Instance.nextSceneName = "Boss1"; // 저장 ❌
+
+        if (fadeManager != null)
+        {
+            fadeManager.RegisterCallback(() => SceneManager.LoadScene("Loding"));
+            fadeManager.FadeOut();
+        }
+        else
+        {
+            SceneManager.LoadScene("Loding");
+        }
+    }
+
 
     // 🔹 씬이 로드된 후 실행
     private void OnGameSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Floor1") // GameScene이 로드될 때만 실행
+        // ✅ nextSceneName과 로드된 씬이 같을 때만 실행
+        if (GameManager.Instance != null &&
+            scene.name == GameManager.Instance.nextSceneName)
         {
-            SceneManager.sceneLoaded -= OnGameSceneLoaded; // 중복 실행 방지
-            Invoke(nameof(DelayedApplyGameState), 1.0f); //  1초 후 실행 (플레이어가 로드될 시간 확보)
+            SceneManager.sceneLoaded -= OnGameSceneLoaded;
+            Invoke(nameof(DelayedApplyGameState), 1.0f);
         }
     }
+
 
     // 🔹 1초 후 실행될 함수
     private void DelayedApplyGameState()

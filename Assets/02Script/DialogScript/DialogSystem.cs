@@ -126,16 +126,27 @@ public class DialogSystem : MonoBehaviour
 
         Dialogue dialogue = dialogues[currentDialogueIndex];
 
-        // UI 요소 업데이트
         speakerNameText.text = dialogue.speakerName;
         if (dialogue.speakerPortrait != null)
-        {
             portraitImage.sprite = dialogue.speakerPortrait;
-        }
+
         sentences.Clear();
-        foreach (var sentence in dialogue.sentences)
+
+        // ✅ 아띠는 랜덤 대사 한 줄만
+        if (dialogue.speakerName == "아띠")
         {
-            sentences.Enqueue(sentence);
+            if (dialogue.sentences != null && dialogue.sentences.Length > 0)
+            {
+                string randomLine = dialogue.sentences[Random.Range(0, dialogue.sentences.Length)];
+                sentences.Enqueue(randomLine);
+            }
+        }
+        else
+        {
+            foreach (var sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
         }
 
         sentenceText.text = "";
@@ -143,7 +154,6 @@ public class DialogSystem : MonoBehaviour
         DisplayNextSentence();
     }
 
-    // 다음 문장 출력 또는 선택지 표시
     public void DisplayNextSentence()
     {
         if (isTyping)
@@ -151,23 +161,35 @@ public class DialogSystem : MonoBehaviour
 
         if (sentences.Count == 0)
         {
-            // 선택지가 있는 경우 표시
-            if (dialogues[currentDialogueIndex].options != null &&
-                dialogues[currentDialogueIndex].options.Length > 0)
+            var currentDialogue = dialogues[currentDialogueIndex];
+
+            // 선택지 있는 경우
+            if (currentDialogue.options != null && currentDialogue.options.Length > 0)
             {
-                // 옵션이 있으면 자동 진행 모드를 중단하고, 자동 진행 UI 색상을 원래대로 복원
                 isAutoAdvance = false;
                 if (autoAdvanceImage != null)
-                {
                     autoAdvanceImage.color = Color.white;
-                }
-                ShowOptions(dialogues[currentDialogueIndex].options);
+                ShowOptions(currentDialogue.options);
+                return;
+            }
+
+            // ✅ 반복 대사 처리 (마지막 문장 반복)
+            if (currentDialogue.sentences != null && currentDialogue.sentences.Length == 1 &&
+                (currentDialogue.speakerName == "네로반" || currentDialogue.speakerName == "옥스턴" || currentDialogue.speakerName == "이디어"))
+            {
+                sentences.Enqueue(currentDialogue.sentences[0]);
+                DisplayNextSentence(); // 재귀 호출로 반복 유지
+                return;
+            }
+
+            currentDialogueIndex++;
+            if (currentDialogueIndex < dialogues.Length)
+            {
+                ShowCurrentDialogue();
             }
             else
             {
-                // 다음 대사로 넘어감
-                currentDialogueIndex++;
-                ShowCurrentDialogue();
+                EndDialogue();
             }
             return;
         }
@@ -176,6 +198,7 @@ public class DialogSystem : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
+
 
     // 문자를 한 글자씩 출력하는 효과 (스킵 기능 및 자동 진행 포함)
     IEnumerator TypeSentence(string sentence)
