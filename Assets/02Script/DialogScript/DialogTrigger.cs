@@ -11,7 +11,7 @@ public class DialogTrigger : MonoBehaviour
 
     private void Start()
     {
-        string fileToLoad = "Default";
+        string fileToLoad = null;
 
         int stage = GameManager.Instance.gameData.currentStage;
         var data = GameManager.Instance.gameData;
@@ -30,6 +30,10 @@ public class DialogTrigger : MonoBehaviour
                 fileToLoad = (stage >= 1) ? "Atti_AfterStage1" : "Atti_BeforeQuest";
                 break;
 
+            case "Tamyu":
+                fileToLoad = (stage >= 1) ? "Tamyu_AfterStage1" : "Tamyu_BeforeQuest";
+                break;
+
             case "Ideer":
                 if (!data.IsQuestComplete("Quest001"))
                     fileToLoad = "Ideer_QuestOffer";
@@ -42,10 +46,17 @@ public class DialogTrigger : MonoBehaviour
                 break;
         }
 
-        dataSet = DialogueLoader.LoadDialogFromJSON(fileToLoad);
-        if (dataSet == null)
+        if (!string.IsNullOrEmpty(fileToLoad))
         {
-            Debug.LogError($"Dialogues/{fileToLoad}.json 파일을 찾을 수 없습니다!");
+            dataSet = DialogueLoader.LoadDialogFromJSON(fileToLoad);
+            if (dataSet == null)
+            {
+                Debug.LogError($"Dialogues/{fileToLoad}.json 파일을 찾을 수 없습니다!");
+            }
+        }
+        else
+        {
+            Debug.LogError($"DialogTrigger: fileToLoad이 null입니다. NPC 이름 '{npcName}' 확인 필요.");
         }
     }
 

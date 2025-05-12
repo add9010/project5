@@ -1,0 +1,13 @@
+{
+  "dialogues": [
+    {
+      "speakerName": "타뮤",
+      "speakerPortraitPath": "Portraits/TamyuPortrait",
+      "sentences": [
+        "응...? 아직 준비가 안 된 것 같아.",
+        "조금만 기다려줘!"
+      ],
+      "options": []
+    }
+  ]
+}

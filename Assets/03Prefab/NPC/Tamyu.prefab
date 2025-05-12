@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -5953988490414999614}
   - component: {fileID: 6530153191241114556}
   m_Layer: 12
-  m_Name: Tamu
+  m_Name: Tamyu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Tamu
+  npcName: Tamyu
   dialogSystem: {fileID: 0}
 --- !u!114 &6530153191241114556
 MonoBehaviour:

@@ -7,6 +7,8 @@ public class Thief : Enemy
     {
         base.Start();
         SetEnemyStatus("좀도둑", 120, 10, 4);
+        attackCooldown = 1f;
+        attackRange = 3f;
     }
 
     public override void PerformAttack()
