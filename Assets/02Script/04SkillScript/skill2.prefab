@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051a319a2e6e1bd449220208403d34af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeTime: 0.3
-  dashSpeed: 15
+  chargeTime: 0.25
+  dashSpeed: 60
   dashDuration: 0.2
   hitBoxSize: {x: 1.5, y: 1}
+  hitEffectPrefab: {fileID: 484847720712570184, guid: 39610cbfd601fc240885eacd6f520232, type: 3}
+  fireEffectPrefab: {fileID: 1439059008238615594, guid: 23d64829f1098bf4a90940b9095365eb, type: 3}
 --- !u!225 &5666155195644959363
 CanvasGroup:
   m_ObjectHideFlags: 0

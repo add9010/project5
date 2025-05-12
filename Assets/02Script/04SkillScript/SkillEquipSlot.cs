@@ -5,20 +5,43 @@ using UnityEngine.UI;
 public class SkillEquipSlot : MonoBehaviour, IDropHandler
 {
     [SerializeField] private Image iconImage;
+    [SerializeField] private Image cooldownOverlay;
     public SkillData EquippedSkill { get; private set; }
+    private float cooldownTime;
+    private float lastUsedTime = -999f;
+
 
     private void Awake()
     {
         if (iconImage == null)
             iconImage = GetComponent<Image>(); // 또는 GetComponentInChildren<Image>()
+        if (cooldownOverlay == null)
+        {
+            cooldownOverlay = transform.parent.Find(name + " cool")?.GetComponent<Image>();
+        }
     }
+    private void Update()
+    {
+        if (EquippedSkill == null || cooldownTime <= 0f) return;
+
+        float remaining = Mathf.Clamp((lastUsedTime + cooldownTime - Time.time), 0f, cooldownTime);
+        float percent = remaining / cooldownTime;
+
+        if (cooldownOverlay != null)
+            cooldownOverlay.fillAmount = percent;
+    }
+
+
 
     public void Equip(SkillData skill)
     {
-        Debug.Log("스킬 장착됨: " + skill.skillName); // ✅ 디버그 확인
         EquippedSkill = skill;
+        cooldownTime = skill.cooldown;
         iconImage.sprite = skill.icon;
         iconImage.enabled = true;
+
+        if (cooldownOverlay != null)
+            cooldownOverlay.fillAmount = 0f;
     }
 
     public void Clear()
@@ -52,4 +75,17 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
             Debug.Log($"스킬 {draggedItem.skillData.skillName} 장착됨!");
         }
     }
+    public bool IsReady()
+    {
+        return Time.time >= lastUsedTime + cooldownTime;
+    }
+
+    public void MarkUsed()
+    {
+        lastUsedTime = Time.time;
+
+        if (cooldownOverlay != null)
+            cooldownOverlay.fillAmount = 1f;
+    }
+
 }

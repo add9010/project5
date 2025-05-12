@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class PlayerAttack
 {
-    private PlayerManager manager;
+    private PlayerManager pm;
     private float timeSinceAttack;
     private int attackCount;
     private bool isAttacking;
@@ -13,7 +13,7 @@ public class PlayerAttack
 
     public PlayerAttack(PlayerManager manager)
     {
-        this.manager = manager;
+        this.pm = manager;
     }
 
     public void Update()
@@ -24,14 +24,14 @@ public class PlayerAttack
     public bool TryAttack()
     {
         bool zKeyPressed = Input.GetKeyDown(KeyCode.Z);
-        bool readyToAttack = timeSinceAttack >= manager.data.attackDuration;
+        bool readyToAttack = timeSinceAttack >= pm.data.attackDuration;
         bool notCurrentlyAttacking = !isAttacking;
         return zKeyPressed && readyToAttack && notCurrentlyAttacking;
     }
 
     public void DoAttack()
     {
-        manager.StartCoroutine(AttackCoroutine());
+        pm.StartCoroutine(AttackCoroutine());
     }
 
     private IEnumerator AttackCoroutine()
@@ -50,31 +50,31 @@ public class PlayerAttack
 
         // 공격 애니메이션 트리거 (1, 2, 3 순환)
         string animationTrigger = "Attack" + (attackCount + 1);
-        manager.GetAnimator().SetTrigger(animationTrigger);
+        pm.GetAnimator().SetTrigger(animationTrigger);
 
         // 공격 애니메이션 절반 시간 대기
-        yield return new WaitForSeconds(manager.data.attackDuration / 2f);
+        yield return new WaitForSeconds(pm.data.attackDuration / 2f);
 
         PerformAttack();
 
         // 나머지 애니메이션 시간 대기
-        yield return new WaitForSeconds(manager.data.attackDuration / 2f);
+        yield return new WaitForSeconds(pm.data.attackDuration / 2f);
 
         isAttacking = false;
     }
 
     private void PerformAttack()
     {
-        float knockback = (attackCount == 3) ? manager.data.attackKnockbackThird : manager.data.attackKnockback;
-        float damage = (attackCount == 3) ? manager.data.attackPower * 1.5f : manager.data.attackPower;
+        float knockback = (attackCount == 3) ? pm.data.attackKnockbackThird : pm.data.attackKnockback;
+        float damage = (attackCount == 3) ? pm.data.attackPower * 1.5f : pm.data.attackPower;
 
         if (attackCount == 3)
-            manager.cameraShake.ShakeCamera();
+            pm.cameraController.Shake(0.1f, 0.3f);
 
-        Vector3 pos = manager.attackPos.position;
+        Vector3 pos = pm.attackPos.position;
 
         int enemyLayerMask = LayerMask.GetMask("Enemy");
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, manager.data.attackBoxSize, 0, enemyLayerMask);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, pm.data.attackBoxSize, 0, enemyLayerMask);
 
         foreach (Collider2D col in colliders)
         {
@@ -91,28 +91,28 @@ public class PlayerAttack
             else
             {
                 // 네트워크 연결이 없거나 Instance 자체가 없으면 로컬 처리
-                CombatManager.ApplyDamage(target, damage, knockback, manager.transform.position);
+                CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position);
             }
         }
     }
 
     public void UpdateAttackPosition()
     {
-        Vector3 offset = manager.data.attackBoxOffset;
+        Vector3 offset = pm.data.attackBoxOffset;
 
         // 반전된 스프라이트 방향 기준으로 x축 이동 반전
-        if (!manager.spriteRenderer.flipX)
+        if (!pm.spriteRenderer.flipX)
             offset.x *= -1;
 
-        manager.attackPos.localPosition = offset;
+        pm.attackPos.localPosition = offset;
     }
 
     public void DrawGizmos()
     {
-        if (manager == null || manager.attackPos == null) return;
+        if (pm == null || pm.attackPos == null) return;
 
         Gizmos.color = Color.cyan;
-        Vector3 pos = manager.attackPos.position;
-        Gizmos.DrawWireCube(pos, manager.data.attackBoxSize);
+        Vector3 pos = pm.attackPos.position;
+        Gizmos.DrawWireCube(pos, pm.data.attackBoxSize);
     }
 }
