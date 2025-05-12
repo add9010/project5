@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TamyuPortrait_0: -8119057747743378875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
