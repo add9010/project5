@@ -8,6 +8,9 @@ public class SkillManager : MonoBehaviour
     [SerializeField] private SkillEquipSlot slotA;
     [SerializeField] private SkillEquipSlot slotS;
     [SerializeField] private SkillEquipSlot slotD;
+    public void SetSlotA(SkillEquipSlot slot) => slotA = slot;
+    public void SetSlotS(SkillEquipSlot slot) => slotS = slot;
+    public void SetSlotD(SkillEquipSlot slot) => slotD = slot;
 
     private void Awake()
     {

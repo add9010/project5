@@ -32,6 +32,7 @@ public class PlayerStateController
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
+        if (pm.IsDead) return;
         if (skillLockTimer > 0f)
         {
             skillLockTimer -= Time.deltaTime;
@@ -90,7 +91,11 @@ public class PlayerStateController
         SetState(PlayerState.Hurt);
         pm.GetAnimator().SetTrigger("Hurt");
     }
-
+    public void ForceSetDead()
+    {
+        SetState(PlayerState.Dead);
+        pm.GetAnimator().SetTrigger("Dead");
+    }
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
         pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);

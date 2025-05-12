@@ -36,12 +36,10 @@ public class PlayerHealth : IDamageable, IKnockbackable
     private void Die()
     {
         Debug.Log("플레이어 사망");
-        pm.MarkAsDead();
-
-        // 씬 리셋
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        pm.MarkAsDead(); // 움직임 차단
+        pm.playerStateController.ForceSetDead(); // 죽음 애니메이션 출력
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
     }
-
     public void Heal(float amount)
     {
         if (isDead) return;
