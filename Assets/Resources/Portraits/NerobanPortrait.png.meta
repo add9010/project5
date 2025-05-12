@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      NerobanPortrait_0: -8095999609141175193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

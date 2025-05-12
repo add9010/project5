@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2689249335108112082}
   - component: {fileID: 3880157495691386271}
   - component: {fileID: 1605396604673823964}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ideer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

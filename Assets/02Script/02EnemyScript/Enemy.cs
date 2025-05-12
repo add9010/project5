@@ -13,12 +13,13 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public float moveSpeed = 3f;
     public float detectionRange = 5f;
     public float attackRange = 1.5f;
+    public float attackCooldown = 1f;
     public float patrolRange = 2f;
     public bool enablePatrol = true;
 
     [Header("References")]
     public GameObject markPrefab;
-    public float markYOffset = 1f;
+    public float markYOffset = 2.0f;
 
     [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody2D rigid;
@@ -48,6 +49,14 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected virtual void Update()
     {
+        if (!enablePatrol
+       && !(currentState is AttackState)
+       && IsPlayerInAttackRange())
+        {
+            SwitchState(new AttackState());
+            return;
+        }
+
         currentState?.Update(this);
     }
 

@@ -7,6 +7,8 @@ public class Bandit : Enemy
     {
         base.Start();
         SetEnemyStatus("산적", 100, 11, 4);
+        attackCooldown = 2f;
+        attackRange = 3f;
     }
 
     public override void PerformAttack()

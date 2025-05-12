@@ -25,7 +25,7 @@ public class PlayerMove
 
     public bool TryJump()
     {
-        bool isJumpKey = Input.GetKeyDown(KeyCode.UpArrow);
+        bool isJumpKey = Input.GetKeyDown(KeyCode.X);
         return isJumpKey && IsGrounded();
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7859488959821478198}
   - component: {fileID: 3107382722179118170}
   - component: {fileID: 5930478806001792773}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Oxton
   m_TagString: Untagged
   m_Icon: {fileID: 0}

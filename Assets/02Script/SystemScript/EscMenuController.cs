@@ -21,6 +21,8 @@ public class EscMenuController : MonoBehaviour
 
     void Update()
     {
+        escPanel.transform.SetAsLastSibling();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (noticePanel.activeSelf)

@@ -173,14 +173,28 @@ public class DialogSystem : MonoBehaviour
                 return;
             }
 
-            // ✅ 반복 대사 처리 (마지막 문장 반복)
-            if (currentDialogue.sentences != null && currentDialogue.sentences.Length == 1 &&
-                (currentDialogue.speakerName == "네로반" || currentDialogue.speakerName == "옥스턴" || currentDialogue.speakerName == "이디어"))
+            // 반복 조건이 아니라 그냥 다음 대사가 없는 경우 대화 종료
+            if (sentences.Count == 0)
             {
-                sentences.Enqueue(currentDialogue.sentences[0]);
-                DisplayNextSentence(); // 재귀 호출로 반복 유지
+                if (dialogues[currentDialogueIndex].options != null &&
+                    dialogues[currentDialogueIndex].options.Length > 0)
+                {
+                    ShowOptions(dialogues[currentDialogueIndex].options);
+                    return;
+                }
+
+                currentDialogueIndex++;
+                if (currentDialogueIndex < dialogues.Length)
+                {
+                    ShowCurrentDialogue();
+                }
+                else
+                {
+                    EndDialogue(); // ✅ 더 이상 대사가 없으면 종료!
+                }
                 return;
             }
+
 
             currentDialogueIndex++;
             if (currentDialogueIndex < dialogues.Length)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2975732155568136406}
   - component: {fileID: 5996404220655064556}
   - component: {fileID: 1833870768910707643}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Atty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
