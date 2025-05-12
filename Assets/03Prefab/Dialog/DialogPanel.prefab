@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2303283097426142195}
   m_Layer: 5
   m_Name: Log
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 895, y: 22.5}
-  m_SizeDelta: {x: -1590, y: -145}
+  m_AnchoredPosition: {x: 850, y: 22.5}
+  m_SizeDelta: {x: -1500, y: -145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &755532299230054984
 CanvasRenderer:
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8870220369921325077}
   m_Layer: 5
   m_Name: sentenceText
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 8406283735164038768}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 927104982420074059}
   m_Layer: 5
   m_Name: speakerNamePanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,8 +383,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -730, y: 100}
-  m_SizeDelta: {x: -1490, y: -100}
+  m_AnchoredPosition: {x: -692.5, y: 100}
+  m_SizeDelta: {x: -1415, y: -100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7664947049311296575
 CanvasRenderer:
@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 8531924298130114069}
   m_Layer: 5
   m_Name: optionsPanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 2372250123158418024}
   m_Layer: 5
   m_Name: DialogPanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,7 +598,7 @@ GameObject:
   - component: {fileID: 2294474394578123858}
   m_Layer: 5
   m_Name: Atuo
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 8049954685315030790}
   m_Layer: 5
   m_Name: Skip
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -870,7 +870,7 @@ GameObject:
   - component: {fileID: 2015694745523184820}
   m_Layer: 5
   m_Name: portraitImage
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -945,7 +945,7 @@ GameObject:
   - component: {fileID: 8452545186710831185}
   m_Layer: 5
   m_Name: Skip
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -967,8 +967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 895, y: -27.5}
-  m_SizeDelta: {x: -1590, y: -145}
+  m_AnchoredPosition: {x: 850, y: -27.5}
+  m_SizeDelta: {x: -1500, y: -145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8465760123876056099
 CanvasRenderer:
@@ -1021,7 +1021,7 @@ GameObject:
   - component: {fileID: 3298294214014376254}
   m_Layer: 5
   m_Name: speakerNameText
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,8 +1100,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 5712931547575884264}
   m_Layer: 5
   m_Name: Atuo
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1179,8 +1179,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 895, y: 72.5}
-  m_SizeDelta: {x: -1590, y: -145}
+  m_AnchoredPosition: {x: 850, y: 72.5}
+  m_SizeDelta: {x: -1500, y: -145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2402556674304486370
 CanvasRenderer:
@@ -1233,7 +1233,7 @@ GameObject:
   - component: {fileID: 1926714137724395831}
   m_Layer: 5
   m_Name: Hide
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,8 +1255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 895, y: -77.5}
-  m_SizeDelta: {x: -1590, y: -145}
+  m_AnchoredPosition: {x: 850, y: -77.5}
+  m_SizeDelta: {x: -1500, y: -145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &839572835011835793
 CanvasRenderer:
@@ -1309,7 +1309,7 @@ GameObject:
   - component: {fileID: 2689573946338534131}
   m_Layer: 5
   m_Name: Hide
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1445,7 +1445,7 @@ GameObject:
   - component: {fileID: 3349772039275452854}
   m_Layer: 5
   m_Name: LogPanel
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1467,8 +1467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43.707764, y: 388.67}
-  m_SizeDelta: {x: 1604.9917, y: 987.34}
+  m_AnchoredPosition: {x: 50, y: 429.7697}
+  m_SizeDelta: {x: 1820, y: 1059.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4472041442008751897
 CanvasRenderer:
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.74509805}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1521,7 +1521,7 @@ GameObject:
   - component: {fileID: 132630856887687130}
   m_Layer: 5
   m_Name: Log
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

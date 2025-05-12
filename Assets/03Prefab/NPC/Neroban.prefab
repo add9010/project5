@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2744161587659741396}
   - component: {fileID: 2367486707155060807}
   - component: {fileID: 903618824026982286}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Neroban
   m_TagString: Untagged
   m_Icon: {fileID: 0}
