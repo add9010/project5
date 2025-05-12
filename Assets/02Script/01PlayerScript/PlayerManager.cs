@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     [SerializeField] private Animator animator;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
-    public CameraShake cameraShake;
+    public CameraController cameraController;
 
     [Header("UI")]
     public GameObject prfHpBar;
@@ -64,8 +64,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
         playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
         playerDash = new PlayerDash(this);
-        Camera.main.GetComponent<CameraFollow>().target = transform;
-
+        Camera.main.GetComponent<CameraController>().target = transform;
     }
 
     private void Update()

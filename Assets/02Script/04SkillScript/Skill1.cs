@@ -13,6 +13,12 @@ public class Skill1 : MonoBehaviour
     [Header("플레이어 위치 기준 소환 오프셋 (XYZ)")]
     public Vector3 spawnOffset = Vector3.zero;
 
+    [Header("공격 박스 크기")]
+    public Vector2 attackBoxSize = new Vector2(2f, 1.5f);
+
+    [Header("피격 이펙트")]
+    public GameObject hitEffectPrefab;
+
     public void Initialize(PlayerManager playerManager)
     {
         this.pm = playerManager;
@@ -33,6 +39,24 @@ public class Skill1 : MonoBehaviour
         pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
         Debug.Log("Skill1 스킬 점프 실행됨!");
 
+        // 🧨 데미지 적용
+        Vector2 center = pm.transform.position;
+        Collider2D[] hits = Physics2D.OverlapBoxAll(center, attackBoxSize, 0, LayerMask.GetMask("Enemy"));
+
+        foreach (var col in hits)
+        {
+            CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower, 10f, pm.transform.position);
+
+            // 이펙트
+            if (hitEffectPrefab != null)
+            {
+                Vector3 spawnPos = col.transform.position;
+                spawnPos.z = 0f;
+                GameObject fx = GameObject.Instantiate(hitEffectPrefab, spawnPos, Quaternion.identity);
+                GameObject.Destroy(fx, 0.5f);
+            }
+        }
+
         // 오브젝트 소환
         if (summonPrefab != null)
         {
@@ -42,5 +66,13 @@ public class Skill1 : MonoBehaviour
 
             Destroy(clone, 0.5f);
         }
+    }
+
+    // Gizmo로 범위 확인
+    private void OnDrawGizmosSelected()
+    {
+        if (pm == null) return;
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, attackBoxSize);
     }
 }

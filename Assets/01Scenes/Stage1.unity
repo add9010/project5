@@ -1189,8 +1189,7 @@ GameObject:
   - component: {fileID: 515667098}
   - component: {fileID: 515667097}
   - component: {fileID: 515667096}
-  - component: {fileID: 515667095}
-  - component: {fileID: 515667094}
+  - component: {fileID: 515667099}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1198,35 +1197,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &515667094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515667093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e95ebfc5ccb6354a99fb9e0dfb6e6de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1833908967}
---- !u!114 &515667095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 515667093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5d1acb1e1c2eb54b94040088fcf0ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shakeDuration: 0.15
-  shakeAmount: 0.4
-  shakeReturnSpeed: 7
-  player: {fileID: 1833908967}
 --- !u!81 &515667096
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1305,6 +1275,20 @@ RectTransform:
   m_AnchoredPosition: {x: -25.27, y: 1.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &515667099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515667093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7dbd30614a2c7e448371a442fa512c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1833908967}
+  shakeAmount: 0.2
 --- !u!114 &552391938 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5971629030660698491, guid: 5026187f5b6057f489b64f7e1d751de0, type: 3}
@@ -3764,6 +3748,10 @@ PrefabInstance:
       propertyPath: data.dashForce
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 515667099}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: data.dashDuration
       value: 0.14

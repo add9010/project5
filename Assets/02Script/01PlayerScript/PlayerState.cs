@@ -32,7 +32,11 @@ public class PlayerStateController
 
     public void UpdateState(float horizontalInput, bool isGrounded, bool isAttacking)
     {
-        if (pm.IsDead) return;
+        if (pm.IsDead)
+        {
+            UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
+            return;
+        }
         if (skillLockTimer > 0f)
         {
             skillLockTimer -= Time.deltaTime;
@@ -40,10 +44,7 @@ public class PlayerStateController
         }
         var animState = pm.GetAnimator().GetCurrentAnimatorStateInfo(0);
 
-        // 애니메이션 갱신은 항상 해야 함!
         UpdateAnimator(horizontalInput, isGrounded, pm.rb.linearVelocity.y);
-
-        // 상태 전이 로직
         pm.horizontalInput = horizontalInput;
         jumpTimer = !isGrounded ? jumpTimer + Time.deltaTime : 0f;
 
@@ -88,6 +89,8 @@ public class PlayerStateController
     }
     public void SetHurt()
     {
+        if (currentState == PlayerState.Skill)
+            return;
         SetState(PlayerState.Hurt);
         pm.GetAnimator().SetTrigger("Hurt");
     }

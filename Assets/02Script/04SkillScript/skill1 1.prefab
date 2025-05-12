@@ -92,7 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 20
   summonPrefab: {fileID: 7547982962383253499, guid: c8b8aa90e0255284eb702a31ef7f966a, type: 3}
-  spawnOffset: {x: 0, y: 3, z: 0}
+  spawnOffset: {x: 0, y: 3, z: -0.5}
+  attackBoxSize: {x: 5, y: 5}
+  hitEffectPrefab: {fileID: 0}
 --- !u!225 &5339893632054409577
 CanvasGroup:
   m_ObjectHideFlags: 0

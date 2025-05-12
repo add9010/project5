@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 1669801263, guid: 427b1c3111ae9a3478eb8359bce88300, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -240,7 +240,9 @@ MonoBehaviour:
   animator: {fileID: 1315762131210481175}
   rb: {fileID: 3683859902371945585}
   spriteRenderer: {fileID: 4097594023563100635}
-  cameraShake: {fileID: 0}
+  cameraController: {fileID: 0}
+  prfHpBar: {fileID: 0}
+  canvas: {fileID: 0}
   attackPos: {fileID: 5553567924351009742}
   groundSensor: {fileID: 2142915325747246491}
   dialog: {fileID: 0}

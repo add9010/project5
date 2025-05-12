@@ -35,19 +35,27 @@ public class SkillManager : MonoBehaviour
     {
         if (slot == null || slot.EquippedSkill == null)
         {
-            Debug.LogWarning(" 장착된 스킬이 없습니다.");
+            Debug.LogWarning("장착된 스킬이 없습니다.");
+            return;
+        }
+
+        var pm = GameObject.FindWithTag("Player")?.GetComponent<PlayerManager>();
+        if (pm == null || pm.IsDead) return;
+
+        if (!slot.IsReady())
+        {
+            Debug.Log($"⏳ 스킬 '{slot.EquippedSkill.skillName}' 쿨타임 진행 중");
             return;
         }
 
         var prefab = slot.EquippedSkill.skillLogicPrefab;
         if (prefab == null)
         {
-            Debug.LogWarning("🟡 Skill Logic 프리팹이 없습니다.");
+            Debug.LogWarning("Skill Logic 프리팹이 없습니다.");
             return;
         }
 
         GameObject instance = Instantiate(prefab);
-        var pm = GameObject.FindWithTag("Player")?.GetComponent<PlayerManager>();
 
         if (instance.TryGetComponent(out Skill1 skill1))
         {
@@ -61,9 +69,12 @@ public class SkillManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning(" 알 수 없는 스킬 프리팹입니다.");
+            Debug.LogWarning("알 수 없는 스킬 프리팹입니다.");
         }
 
         Destroy(instance);
+
+        // ✅ 사용 후 쿨타임 갱신
+        slot.MarkUsed();
     }
 }
