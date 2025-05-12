@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5594894576333178853}
   - component: {fileID: 610955698501291540}
+  - component: {fileID: 5366063818115878993}
   m_Layer: 8
   m_Name: Sensor (7)
   m_TagString: Platform
@@ -63,7 +64,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 23.878067, y: -10.23561}
@@ -78,6 +79,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 18.517616, y: 14.553648}
   m_EdgeRadius: 0
+--- !u!251 &5366063818115878993
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35270754005853375}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &587301152284483124
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1175928687103648074}
   - component: {fileID: 2306358992330720962}
+  - component: {fileID: 8919835673477751460}
   m_Layer: 8
   m_Name: Sensor (22)
   m_TagString: Platform
@@ -141,7 +162,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -22.538885, y: -2.6650674}
@@ -156,6 +177,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 19.1068, y: 6.3639207}
   m_EdgeRadius: 0
+--- !u!251 &8919835673477751460
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587301152284483124}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &630795433948747119
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 145047319025028253}
   - component: {fileID: 8067684309450064890}
+  - component: {fileID: 897225774501790221}
   m_Layer: 8
   m_Name: Sensor (21)
   m_TagString: Platform
@@ -337,7 +378,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -32.924793, y: 0.014819145}
@@ -352,6 +393,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.183098, y: 35.002045}
   m_EdgeRadius: 0
+--- !u!251 &897225774501790221
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817490656552818766}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &915959100428090900
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3215863408614766221}
   - component: {fileID: 2952356893205769352}
+  - component: {fileID: 8135318682525706662}
   m_Layer: 8
   m_Name: Sensor (30)
   m_TagString: Platform
@@ -779,7 +840,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 36.234516, y: 11.541571}
@@ -794,6 +855,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.49012, y: 13.228218}
   m_EdgeRadius: 0
+--- !u!251 &8135318682525706662
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147969698371608676}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1224330575972835404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1264,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: -4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6519871754673146367}
@@ -1203,6 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6137501698378886460}
   - component: {fileID: 371302538716913910}
+  - component: {fileID: 5029897419494013608}
   m_Layer: 8
   m_Name: Sensor (29)
   m_TagString: Platform
@@ -1256,7 +1337,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -5.035667, y: 10.922684}
@@ -1271,6 +1352,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 13.954753, y: 3.9091835}
   m_EdgeRadius: 0
+--- !u!251 &5029897419494013608
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988439950546406184}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2075926569087600071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8801426204024379492}
   - component: {fileID: 4826493420116405908}
+  - component: {fileID: 3848094547694218879}
   m_Layer: 8
   m_Name: Sensor (9)
   m_TagString: Platform
@@ -1334,7 +1435,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 27.22855, y: 7.1649117}
@@ -1349,6 +1450,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 15.594719, y: 2.6574087}
   m_EdgeRadius: 0
+--- !u!251 &3848094547694218879
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075926569087600071}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2122279785039100040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,6 +1993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7342408021707852008}
   - component: {fileID: 4763870706537687854}
+  - component: {fileID: 7383410562187424536}
   m_Layer: 8
   m_Name: Sensor (13)
   m_TagString: Platform
@@ -1926,7 +2047,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 5.21354, y: 2.8372743}
@@ -1941,6 +2062,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.331627, y: 2.1659417}
   m_EdgeRadius: 0
+--- !u!251 &7383410562187424536
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2691421805914713267}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &2826498891407550226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1308178149217328432}
   - component: {fileID: 6131401118246669318}
+  - component: {fileID: 2017801032247261404}
   m_Layer: 8
   m_Name: Sensor (4)
   m_TagString: Platform
@@ -2599,7 +2740,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -1.945491, y: 3.0601687}
@@ -2614,6 +2755,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.3353145, y: 3.3629103}
   m_EdgeRadius: 0
+--- !u!251 &2017801032247261404
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3265388392984805986}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &3275148872375947394
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2531004145528191370}
   - component: {fileID: 8874446057258347276}
+  - component: {fileID: 3939021223378244325}
   m_Layer: 8
   m_Name: Sensor (14)
   m_TagString: Platform
@@ -2677,7 +2838,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 5.9554734, y: 3.2114115}
@@ -2692,6 +2853,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.8477602, y: 2.914216}
   m_EdgeRadius: 0
+--- !u!251 &3939021223378244325
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3275148872375947394}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &3319876091552184759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,6 +3064,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4003501718902242130}
   - component: {fileID: 4789301468340451440}
+  - component: {fileID: 7301388155503149776}
   m_Layer: 8
   m_Name: Sensor (1)
   m_TagString: Platform
@@ -2937,7 +3118,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 4.22559, y: -11.137206}
@@ -2952,6 +3133,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 23.224293, y: 12.750456}
   m_EdgeRadius: 0
+--- !u!251 &7301388155503149776
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547984445493167878}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &3659006521396980366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +3162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 394043287461723620}
   - component: {fileID: 3908766283130164842}
+  - component: {fileID: 3921690277185365144}
   m_Layer: 8
   m_Name: Sensor (3)
   m_TagString: Platform
@@ -3015,7 +3216,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -3.3269684, y: 2.5026836}
@@ -3030,6 +3231,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5862517, y: 4.4778805}
   m_EdgeRadius: 0
+--- !u!251 &3921690277185365144
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3659006521396980366}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &3732869548493487441
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,6 +3260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 600833996235751432}
   - component: {fileID: 5693761599199140741}
+  - component: {fileID: 3759453572863995641}
   m_Layer: 8
   m_Name: Sensor (23)
   m_TagString: Platform
@@ -3093,7 +3314,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -27.874668, y: -1.9698348}
@@ -3108,6 +3329,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8.435234, y: 7.754386}
   m_EdgeRadius: 0
+--- !u!251 &3759453572863995641
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732869548493487441}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &4075965276990072033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3664,6 +3904,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6837750320953538948}
   - component: {fileID: 7063236723789296685}
+  - component: {fileID: 30450933522248182}
   m_Layer: 8
   m_Name: Sensor (26)
   m_TagString: Platform
@@ -3717,7 +3958,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -21.554554, y: 8.405467}
@@ -3732,6 +3973,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.817795, y: 1.209826}
   m_EdgeRadius: 0
+--- !u!251 &30450933522248182
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4787305644179453667}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &4999437790526401483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3924,6 +4184,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8765136023268584872}
   - component: {fileID: 5689722861383167169}
+  - component: {fileID: 5372676351177858121}
   m_Layer: 8
   m_Name: Sensor (10)
   m_TagString: Platform
@@ -3977,7 +4238,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 11.935333, y: 1.6958388}
@@ -3992,6 +4253,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 14.868961, y: 2.2420375}
   m_EdgeRadius: 0
+--- !u!251 &5372676351177858121
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5017361828116003863}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5038055789620215967
 GameObject:
   m_ObjectHideFlags: 0
@@ -4184,6 +4464,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2204063755334916245}
   - component: {fileID: 1905851856477690909}
+  - component: {fileID: 22386453372618433}
   m_Layer: 8
   m_Name: Sensor (18)
   m_TagString: Platform
@@ -4237,7 +4518,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 18.55734, y: 16.573063}
@@ -4252,6 +4533,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.233616, y: 1.4300461}
   m_EdgeRadius: 0
+--- !u!251 &22386453372618433
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089737212053858640}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5135770544281451631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4444,6 +4744,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6134815519380835684}
   - component: {fileID: 8063136965432693752}
+  - component: {fileID: 2244287279266178209}
   m_Layer: 8
   m_Name: Sensor (24)
   m_TagString: Platform
@@ -4497,7 +4798,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -28.708946, y: -1.3143299}
@@ -4512,6 +4813,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.766678, y: 9.065395}
   m_EdgeRadius: 0
+--- !u!251 &2244287279266178209
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248539045565959014}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5299222158374833451
 GameObject:
   m_ObjectHideFlags: 0
@@ -4522,6 +4842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5058477501886408253}
   - component: {fileID: 3556327020373735744}
+  - component: {fileID: 1234398088565113610}
   m_Layer: 8
   m_Name: Sensor (15)
   m_TagString: Platform
@@ -4575,7 +4896,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 9.618963, y: 6.0481153}
@@ -4590,6 +4911,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.1342125, y: 8.587625}
   m_EdgeRadius: 0
+--- !u!251 &1234398088565113610
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299222158374833451}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5453332104519535979
 GameObject:
   m_ObjectHideFlags: 0
@@ -4600,6 +4940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058903206111178885}
   - component: {fileID: 3555242545437025430}
+  - component: {fileID: 2956889430451361168}
   m_Layer: 8
   m_Name: Sensor (2)
   m_TagString: Platform
@@ -4653,7 +4994,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -4.7101994, y: -8.516204}
@@ -4668,6 +5009,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 5.3527145, y: 17.99246}
   m_EdgeRadius: 0
+--- !u!251 &2956889430451361168
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5453332104519535979}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &5472330659085840138
 GameObject:
   m_ObjectHideFlags: 0
@@ -4678,6 +5038,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8922038875163463559}
   - component: {fileID: 5013478380156641665}
+  - component: {fileID: 1185594537192923490}
   m_Layer: 8
   m_Name: Sensor (25)
   m_TagString: Platform
@@ -4731,7 +5092,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -29.63261, y: -0.9865775}
@@ -4746,6 +5107,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.9193497, y: 9.720901}
   m_EdgeRadius: 0
+--- !u!251 &1185594537192923490
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5472330659085840138}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &6298030310553975235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4756,6 +5136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4197224756881446875}
   - component: {fileID: 6603938332531188794}
+  - component: {fileID: 4897488654919236310}
   m_Layer: 8
   m_Name: Sensor (27)
   m_TagString: Platform
@@ -4809,7 +5190,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -9.50702, y: 7.8984737}
@@ -4824,6 +5205,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 14.876932, y: 6.107895}
   m_EdgeRadius: 0
+--- !u!251 &4897488654919236310
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6298030310553975235}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &6335032284997930771
 GameObject:
   m_ObjectHideFlags: 0
@@ -4834,6 +5234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5060218926814924453}
   - component: {fileID: 4690604942115977520}
+  - component: {fileID: 3828350970293607761}
   m_Layer: 8
   m_Name: Sensor (17)
   m_TagString: Platform
@@ -4887,7 +5288,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 10.555404, y: 16.013517}
@@ -4902,6 +5303,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.222708, y: 2.263321}
   m_EdgeRadius: 0
+--- !u!251 &3828350970293607761
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6335032284997930771}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &6570721986067507812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,6 +5332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4395855334678048268}
   - component: {fileID: 6904287584136249710}
+  - component: {fileID: 3354590463179641318}
   m_Layer: 8
   m_Name: Sensor (28)
   m_TagString: Platform
@@ -4965,7 +5386,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -8.51022, y: 8.379686}
@@ -4980,6 +5401,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 12.883331, y: 7.0703216}
   m_EdgeRadius: 0
+--- !u!251 &3354590463179641318
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6570721986067507812}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &6805531497223792285
 GameObject:
   m_ObjectHideFlags: 0
@@ -4990,6 +5430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 464852888778610326}
   - component: {fileID: 188185147026385636}
+  - component: {fileID: 8151222365335937095}
   m_Layer: 8
   m_Name: Sensor (11)
   m_TagString: Platform
@@ -5043,7 +5484,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 7.5978746, y: 1.9177847}
@@ -5058,6 +5499,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.060318, y: 1.7981458}
   m_EdgeRadius: 0
+--- !u!251 &8151222365335937095
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6805531497223792285}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &6820382985482190017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,6 +5528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8405672319515764493}
   - component: {fileID: 1706056674659248385}
+  - component: {fileID: 7229758873942470506}
   m_Layer: 8
   m_Name: Sensor (19)
   m_TagString: Platform
@@ -5121,7 +5582,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 12.484534, y: 17.271868}
@@ -5136,6 +5597,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 21.313196, y: 0.48794937}
   m_EdgeRadius: 0
+--- !u!251 &7229758873942470506
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820382985482190017}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7141735933897006871
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,6 +5626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1680836418954485761}
   - component: {fileID: 5340803169539152924}
+  - component: {fileID: 5380724869742788628}
   m_Layer: 8
   m_Name: Sensor (8)
   m_TagString: Platform
@@ -5199,7 +5680,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 31.237253, y: -5.4819975}
@@ -5214,6 +5695,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 7.5773125, y: 24.060873}
   m_EdgeRadius: 0
+--- !u!251 &5380724869742788628
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7141735933897006871}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7239919228373784657
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,6 +6053,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8706033425715516156}
   - component: {fileID: 704424242933457009}
+  - component: {fileID: 7629318756693680975}
   m_Layer: 8
   m_Name: Sensor (20)
   m_TagString: Platform
@@ -5606,7 +6107,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -12.999367, y: 16.82016}
@@ -5621,6 +6122,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 44.03396, y: 1.391365}
   m_EdgeRadius: 0
+--- !u!251 &7629318756693680975
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7514813931136586559}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7776466705681029495
 GameObject:
   m_ObjectHideFlags: 0
@@ -5631,6 +6151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2414074415083517999}
   - component: {fileID: 6039144897398108134}
+  - component: {fileID: 7220316959293597017}
   m_Layer: 8
   m_Name: Sensor
   m_TagString: Platform
@@ -5684,7 +6205,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0.0128211975, y: -14.024963}
@@ -5699,6 +6220,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 70.02618, y: 6.9749413}
   m_EdgeRadius: 0
+--- !u!251 &7220316959293597017
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7776466705681029495}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &7963469980242387298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5709,6 +6249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5912713086295763905}
   - component: {fileID: 7992323683226878469}
+  - component: {fileID: 1955150656032397010}
   m_Layer: 8
   m_Name: Sensor (16)
   m_TagString: Platform
@@ -5762,7 +6303,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 6.4816823, y: 12.841661}
@@ -5777,6 +6318,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4.075263, y: 7.7333984}
   m_EdgeRadius: 0
+--- !u!251 &1955150656032397010
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963469980242387298}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &8225628850554528242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5787,6 +6347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6205322476324649875}
   - component: {fileID: 8543926761709683022}
+  - component: {fileID: 5267082460119140936}
   m_Layer: 8
   m_Name: Sensor (5)
   m_TagString: Platform
@@ -5840,7 +6401,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -2.106542, y: 2.6575406}
@@ -5855,6 +6416,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0132122, y: 4.1681666}
   m_EdgeRadius: 0
+--- !u!251 &5267082460119140936
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225628850554528242}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &8467955169529614940
 GameObject:
   m_ObjectHideFlags: 0
@@ -5865,6 +6445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7732510404771493561}
   - component: {fileID: 5654334687425805521}
+  - component: {fileID: 6128733329446606785}
   m_Layer: 8
   m_Name: Sensor (12)
   m_TagString: Platform
@@ -5918,7 +6499,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 4.8584266, y: 2.5265503}
@@ -5933,6 +6514,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6.041854, y: 1.5444937}
   m_EdgeRadius: 0
+--- !u!251 &6128733329446606785
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8467955169529614940}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &8636558729046341065
 GameObject:
   m_ObjectHideFlags: 0
@@ -6125,6 +6725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4596506164038735366}
   - component: {fileID: 5605679995357236091}
+  - component: {fileID: 5139936141865561566}
   m_Layer: 8
   m_Name: Sensor (6)
   m_TagString: Platform
@@ -6178,7 +6779,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -1.1092634, y: 2.6203747}
@@ -6193,3 +6794,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0008235, y: 2.483323}
   m_EdgeRadius: 0
+--- !u!251 &5139936141865561566
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8742014757604639680}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
