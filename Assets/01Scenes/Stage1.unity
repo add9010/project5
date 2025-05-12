@@ -1955,6 +1955,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5361017392147773872, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
   m_PrefabInstance: {fileID: 1206283482}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &853774703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+  m_PrefabInstance: {fileID: 1076464808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &865823045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2524,6 +2529,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8807404301520527383, guid: 9ee629c524df3bc43b7774d92b8666f3, type: 3}
   m_PrefabInstance: {fileID: 1037946063}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1076464808
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1120052252}
+    m_Modifications:
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 297.14337
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9956293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4080783301358422579, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310168473875228520, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: skillCanvasPrefab
+      value: 
+      objectReference: {fileID: 5944984986681722083, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+    - target: {fileID: 5276817197428583434, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
+      propertyPath: m_Name
+      value: SkillCanvasController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cc1bba7c49669ef45876eb80a4b7b898, type: 3}
 --- !u!1 &1107806028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8215050514021737056, guid: f1613692c75e3c24386474076bb0f08e, type: 3}
@@ -5892,6 +5958,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6941089138937725235, guid: 58a05a6d77608a5408f5cdfda8b1b24f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 920490672}
+    - targetCorrespondingSourceObject: {fileID: 6941089138937725235, guid: 58a05a6d77608a5408f5cdfda8b1b24f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 853774703}
     - targetCorrespondingSourceObject: {fileID: 6941089138937725235, guid: 58a05a6d77608a5408f5cdfda8b1b24f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1802495151}
