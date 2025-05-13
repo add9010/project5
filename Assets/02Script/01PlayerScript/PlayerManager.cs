@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
     public float horizontalInput { get; set; }
-
+    private AnimType currentAnimType = AnimType.Idle;
 
     [Header("대화")]
     public DialogManager dialog;
@@ -45,6 +45,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public bool isGrounded => groundSensor != null && groundSensor.State();
     public bool isAction = false;
     public bool isDashing = false;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -118,7 +119,10 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         }
     }
 
-
+    public void SetAnimType(AnimType type)
+    {
+        currentAnimType = type;
+    }
     public AnimType GetCurrentAnimState()
     {
         return playerStateController.GetAnimType();

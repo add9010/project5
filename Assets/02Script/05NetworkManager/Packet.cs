@@ -22,7 +22,9 @@ public enum AnimType : byte
     Attack = 0x03,
     Dash = 0x04,
     Hit = 0x05,
-    Die = 0x06
+    Dead = 0x06,
+    Skill1 = 0x07,
+    Skill2 = 0x08
 }
 
 [StructLayout(LayoutKind.Sequential, Pack = 4)]

@@ -28,7 +28,7 @@ public class Skill2 : MonoBehaviour
     {
         if (pm == null || pm.IsDead) return;
 
-        pm.playerStateController.ForceSetSkill("Skill2");
+        pm.playerStateController.ForceSetSkill("Skill2", AnimType.Skill2);
         pm.playerStateController.LockSkillState(0.5f);
 
         // 충돌 무시
