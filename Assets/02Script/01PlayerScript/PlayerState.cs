@@ -88,6 +88,7 @@ public class PlayerStateController
         SetState(PlayerState.Skill);
         pm.GetAnimator().SetTrigger(triggerName);
         pm.SetAnimType(animType); // 이 함수는 PlayerManager에 직접 추가 필요
+        currentSkillAnimType = animType;
     }
     public void SetHurt()
     {
