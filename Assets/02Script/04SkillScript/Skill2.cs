@@ -28,7 +28,7 @@ public class Skill2 : MonoBehaviour
     {
         if (pm == null || pm.IsDead) return;
 
-        pm.playerStateController.ForceSetSkill("Skill2");
+        pm.playerStateController.ForceSetSkill("Skill2", AnimType.Skill2);
         pm.playerStateController.LockSkillState(0.5f);
 
         // 충돌 무시
@@ -86,7 +86,15 @@ public class Skill2 : MonoBehaviour
                 if (hitEnemies.Contains(col)) continue;
 
                 // 데미지 + 카메라 흔들림
-                CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower * 1.2f, 10f, pm.transform.position);
+                if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
+                {
+                    NetworkCombatManager.SendMonsterDamage((int)(10f));
+                }
+                else
+                {
+                    CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower * 1.2f, 10f, pm.transform.position);
+                }
+
                 pm.cameraController.Shake(0.1f, 0.2f);
                 hitEnemies.Add(col);
 

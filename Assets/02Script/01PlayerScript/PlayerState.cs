@@ -12,6 +12,7 @@ public class PlayerStateController
     private const float fallTransitionTime = 0.1f; // 점프 후 이 시간 지나면 Fall로 간주
     private float skillLockTimer = 0f;
     private const float skillLockDuration = 0.5f; // Skill 애니메이션 길이에 맞춤
+    private AnimType currentSkillAnimType = AnimType.Idle;
 
     private Dictionary<PlayerState, Func<bool>> stateTransitions;
 
@@ -82,10 +83,12 @@ public class PlayerStateController
         SetState(PlayerState.Dash);
         pm.GetAnimator().SetTrigger("Dash"); 
     }
-    public void ForceSetSkill(string triggerName)
+    public void ForceSetSkill(string triggerName, AnimType animType)
     {
         SetState(PlayerState.Skill);
         pm.GetAnimator().SetTrigger(triggerName);
+        pm.SetAnimType(animType); // 이 함수는 PlayerManager에 직접 추가 필요
+        currentSkillAnimType = animType;
     }
     public void SetHurt()
     {
@@ -151,12 +154,13 @@ public class PlayerStateController
             case PlayerState.Hurt:
                 return AnimType.Hit;
             case PlayerState.Dead:
-                return AnimType.Die;
+                return AnimType.Dead;
+            case PlayerState.Skill:
+                return currentSkillAnimType;
             default:
                 return AnimType.Idle;
         }
+
     }
 
-
-
-}
+    }
