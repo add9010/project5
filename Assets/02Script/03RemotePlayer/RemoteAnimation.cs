@@ -37,8 +37,14 @@ public class RemoteAnimation : MonoBehaviour
             case AnimType.Hit:
                 animator.SetTrigger("Hit");
                 break;
-            case AnimType.Die:
-                animator.SetTrigger("Die");
+            case AnimType.Dead:
+                animator.SetTrigger("Dead");
+                break;
+            case AnimType.Skill1:
+                animator.SetTrigger("Skill1");
+                break;
+            case AnimType.Skill2:
+                animator.SetTrigger("Skill2");
                 break;
             default:
                 animator.SetInteger("AnimState", 0);
