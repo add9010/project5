@@ -63,7 +63,7 @@ public class GameWorld
                 float posX = packet.ReadFloat();
                 float posY = packet.ReadFloat();
                 AnimType animType = (AnimType)packet.ReadByte();
-
+                Debug.Log($"[Player Sync] {playerName} pos: ({posX}, {posY}), animType: {animType}");
                 if (playerName == myPlayerName) continue;
 
                 if (remotePlayers.TryGetValue(playerName, out var remotePlayer))

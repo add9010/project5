@@ -45,7 +45,14 @@ public class Skill1 : MonoBehaviour
 
         foreach (var col in hits)
         {
-            CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower, 10f, pm.transform.position);
+            if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
+            {
+                NetworkCombatManager.SendMonsterDamage((int)10f);
+            }
+            else
+            {
+                CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower, 10f, pm.transform.position);
+            }
 
             // 이펙트
             if (hitEffectPrefab != null)
