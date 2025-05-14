@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public float attackCooldown = 1f;
     public float patrolRange = 2f;
     public bool enablePatrol = true;
-
     [Header("References")]
     public GameObject markPrefab;
     public float markYOffset = 2.0f;
