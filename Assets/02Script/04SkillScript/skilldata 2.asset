@@ -15,4 +15,4 @@ MonoBehaviour:
   skillName: Skill2Data
   icon: {fileID: -370618961, guid: 75857c0c90471bf419989849c9ead4cd, type: 3}
   skillLogicPrefab: {fileID: 2262073010084197820, guid: ec97937e4bae40945bea1518a88bb896, type: 3}
-  cooldown: 5
+  cooldown: 1
