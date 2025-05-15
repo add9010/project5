@@ -598,13 +598,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thief
       objectReference: {fileID: 0}
+    - target: {fileID: 789575952036209399, guid: 8295ad6f9b119074395d4503d7905ed7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7684690844849222973, guid: 8295ad6f9b119074395d4503d7905ed7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.62521
+      value: -35.77
       objectReference: {fileID: 0}
     - target: {fileID: 7684690844849222973, guid: 8295ad6f9b119074395d4503d7905ed7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4857779
+      value: -2.62
       objectReference: {fileID: 0}
     - target: {fileID: 7684690844849222973, guid: 8295ad6f9b119074395d4503d7905ed7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -721,11 +725,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.41
+      value: -18.01
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.94
+      value: -1.27
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -763,6 +767,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bandit
       objectReference: {fileID: 0}
+    - target: {fileID: 9063185250209658424, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -778,11 +786,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.8437214
+      value: -7.86
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2593522
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.z
