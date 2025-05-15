@@ -39,7 +39,7 @@ public class Skill1 : MonoBehaviour
         pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
         Debug.Log("Skill1 스킬 점프 실행됨!");
 
-        // 🧨 데미지 적용
+        // 데미지 적용
         Vector2 center = pm.transform.position;
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, attackBoxSize, 0, LayerMask.GetMask("Enemy"));
 
