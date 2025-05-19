@@ -6,7 +6,7 @@ public class PlayerStateController
 {
     private PlayerManager pm;
 
-    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AirAttack, Dash, Hurt, Dead, Dialog, Skill }
+    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AirAttack, Dash, Hurt, Dead, Dialog, Skill, Parry }
     private PlayerState currentState = PlayerState.Idle;
     private float jumpTimer = 0f;
     private const float fallTransitionTime = 0.1f; // 점프 후 이 시간 지나면 Fall로 간주
@@ -102,12 +102,17 @@ public class PlayerStateController
         SetState(PlayerState.Dead);
         pm.GetAnimator().SetTrigger("Dead");
     }
+    public void ForceSetParry()
+    {
+        SetState(PlayerState.Parry);
+        pm.GetAnimator().SetTrigger("Parry");
+    }
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
         pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);
         pm.GetAnimator().SetBool("Grounded", grounded);
 
-        if (currentState == PlayerState.Skill)
+        if (currentState == PlayerState.Skill || currentState == PlayerState.Parry)
             return;
 
         switch (currentState)
@@ -156,6 +161,8 @@ public class PlayerStateController
                 return AnimType.Dead;
             case PlayerState.Skill:
                 return currentSkillAnimType;
+            //case PlayerState.Parry:
+                //return AnimType.Parry;
             default:
                 return AnimType.Idle;
         }

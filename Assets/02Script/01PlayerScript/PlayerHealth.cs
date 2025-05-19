@@ -20,9 +20,11 @@ public class PlayerHealth : IDamageable, IKnockbackable
 
     public void TakeDamage(float damage)
     {
+        currentHealth -= damage;
+        pm.UpdateHpUI(currentHealth);
+
         if (isDead || isInvincible) return;
 
-        currentHealth -= damage;
         pm.playerStateController.SetHurt();
 
         // 무적 상태 진입
@@ -46,6 +48,13 @@ public class PlayerHealth : IDamageable, IKnockbackable
     private void Die()
     {
         Debug.Log("플레이어 사망");
+
+        isInvincible = false;
+        invincibleTimer = 0f;
+
+        if (pm.spriteRenderer != null)
+            pm.spriteRenderer.enabled = true;
+
         pm.MarkAsDead();
         pm.playerStateController.ForceSetDead();
     }

@@ -17,18 +17,22 @@ public class AttackState : IEnemyState
     {
         timer += Time.deltaTime;
 
+        // ⏱️ 0.2초 ~ 0.5초 사이만 패링 가능
+        enemy.SetParryWindow(timer >= 0.2f && timer <= 0.5f);
+
         if (!hasAttacked && timer >= 0.3f)
         {
             hasAttacked = true;
-            enemy.PerformAttack(); // 개별 클래스(Thief/Wizard)에서 오버라이드된 공격 실행
+            enemy.PerformAttack();
         }
 
         if (timer >= enemy.attackCooldown)
         {
+            enemy.SetParryWindow(false); // 공격 끝나면 패링 종료
             if (enemy.IsPlayerInAttackRange())
-                enemy.SwitchState(new AttackState());       // 쿨다운 후 다시 AttackState → 연속 공격
+                enemy.SwitchState(new AttackState());
             else if (enemy.enablePatrol && enemy.IsPlayerDetected())
-                enemy.SwitchState(new ChaseState());        // 사정거리 밖이면서 순찰 활성 → 추격
+                enemy.SwitchState(new ChaseState());
             else
                 enemy.ReturnToDefaultState();
         }
