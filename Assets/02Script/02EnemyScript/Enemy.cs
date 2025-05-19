@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public GameObject markPrefab;
     public float markYOffset = 2.0f;
 
+    public float attackHitDelay = 0.3f; // 공격 히트 딜레이 (애니메이션과 맞춰야 함)
+
     [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody2D rigid;
     [HideInInspector] public Transform player;
@@ -187,9 +189,28 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
         }
     }
 
+    // Enemy.cs 내부에 추가
+    public bool IsParryWindow { get; private set; } = false;
+
+    public void SetParryWindow(bool isOpen)
+    {
+        IsParryWindow = isOpen;
+#if UNITY_EDITOR
+        if (isOpen) Debug.Log($"{enemyName}: 패링 타이밍 진입");
+#endif
+    }
+
+    // 상태 확인 메서드도 추가
+    public bool IsParryable()
+    {
+        return currentState is AttackState;
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, detectionRange);
     }
+
+
 }

@@ -7,7 +7,7 @@ public class HurtState : IEnemyState
 
     public void Enter(Enemy enemy)
     {
-        enemy.anim.SetTrigger("hit");
+        enemy.anim.SetBool("hit", true);
         enemy.StopMovement();
         timer = 0f;
     }
@@ -21,5 +21,8 @@ public class HurtState : IEnemyState
         }
     }
 
-    public void Exit(Enemy enemy) { }
+    public void Exit(Enemy enemy)
+    {
+        enemy.anim.SetBool("hit", false);
+    }
 }
