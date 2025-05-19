@@ -22,7 +22,7 @@ public class BossManager : MonoBehaviour
 
     [Header("Meteor Settings")]
     public GameObject meteorPrefab;      // 운석 프리팹
-    public Vector2 meteorSpawnStart = new Vector2(-25f, 10f);  // 시작 위치 (X축 기준)
+    public Vector2 meteorSpawnStart = new Vector2(-25f, 13f);  // 시작 위치 (X축 기준)
     public float meteorXSpacing = 4f;    // 운석 간 X 간격
     public int meteorCount = 6;          // 운석 개수
 
