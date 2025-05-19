@@ -3781,6 +3781,10 @@ PrefabInstance:
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.jumpForce
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1833908972}
