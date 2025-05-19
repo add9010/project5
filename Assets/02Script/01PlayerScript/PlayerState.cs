@@ -128,7 +128,6 @@ public class PlayerStateController
                     pm.GetAnimator().SetTrigger("Dash");
                 break;
             case PlayerState.Hurt:
-                pm.GetAnimator().SetTrigger("Hurt");
                 break;
             case PlayerState.Fall:
                 pm.GetAnimator().SetInteger("AnimState", 4);

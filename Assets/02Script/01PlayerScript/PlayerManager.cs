@@ -81,7 +81,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         bool isAttacking = playerAttack.IsAttacking;
         playerAttack.UpdateAttackPosition();
         playerAttack.Update();
-
+        playerHealth.Update();
         if (isAction)
             rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
 

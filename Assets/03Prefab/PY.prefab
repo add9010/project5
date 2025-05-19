@@ -225,7 +225,7 @@ MonoBehaviour:
   data:
     attackPower: 15
     speed: 12
-    jumpForce: 14
+    jumpForce: 16
     dashForce: 45
     dashDuration: 0.15
     attackKnockback: 15
@@ -237,6 +237,8 @@ MonoBehaviour:
     heightOffset: 1.7
     cameraFollowSpeed: 5
     cameraStopDistance: 2
+    attackForwardSpeed: 25
+    attackForwardDuration: 0.2
   animator: {fileID: 1315762131210481175}
   rb: {fileID: 3683859902371945585}
   spriteRenderer: {fileID: 4097594023563100635}

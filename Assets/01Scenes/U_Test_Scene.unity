@@ -334,6 +334,22 @@ PrefabInstance:
       propertyPath: cameraController
       value: 
       objectReference: {fileID: 341951506}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackDuration
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackKnockback
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackForwardSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackForwardDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3683859902371945585, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: m_Mass
       value: 0.1
@@ -974,6 +990,10 @@ PrefabInstance:
     - target: {fileID: 1594072362630560606, guid: 8b59e73723379964982546cb8795242d, type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594072362630560606, guid: 8b59e73723379964982546cb8795242d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4567421826933984992, guid: 8b59e73723379964982546cb8795242d, type: 3}
       propertyPath: m_LocalPosition.x

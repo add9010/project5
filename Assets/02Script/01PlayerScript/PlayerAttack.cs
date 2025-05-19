@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
 public class PlayerAttack
 {
     private PlayerManager pm;
     private float timeSinceAttack;
+    private float attackInputTimer = 0f;
+    private const float attackResetDelay = 0.5f;
+
     private int attackCount;
     private bool isAttacking;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
@@ -19,6 +23,21 @@ public class PlayerAttack
     public void Update()
     {
         timeSinceAttack += Time.deltaTime;
+
+        // 입력 없을 경우 카운트 초기화 타이머
+        if (!Input.GetKey(KeyCode.Z))
+        {
+            attackInputTimer += Time.deltaTime;
+            if (attackInputTimer >= attackResetDelay)
+            {
+                attackCount = 0;
+                attackInputTimer = 0f;
+            }
+        }
+        else
+        {
+            attackInputTimer = 0f;
+        }
     }
 
     public bool TryAttack()
@@ -36,29 +55,43 @@ public class PlayerAttack
 
     private IEnumerator AttackCoroutine()
     {
-        UnityEngine.Debug.Log("AttackCoroutine 시작!");
+        Debug.Log("AttackCoroutine 시작!");
         isAttacking = true;
         hitEnemies.Clear();
 
-        attackCount++;
-        if (attackCount >= 3)
-        {
-            attackCount = 0;
-        }
-
         timeSinceAttack = 0f;
 
-        // 공격 애니메이션 트리거 (1, 2, 3 순환)
         string animationTrigger = "Attack" + (attackCount + 1);
         pm.GetAnimator().SetTrigger(animationTrigger);
 
-        // 공격 애니메이션 절반 시간 대기
-        yield return new WaitForSeconds(pm.data.attackDuration / 2f);
+        attackCount++;
+        if (attackCount >= 3)
+            attackCount = 0;
 
+
+
+        // ▶ 공격 중 전진 지속
+        Vector2 direction = pm.spriteRenderer.flipX ? Vector2.left : Vector2.right;
+        float elapsed = 0f;
+        float moveDuration = pm.data.attackForwardDuration;
+
+        while (elapsed < moveDuration)
+        {
+            pm.rb.linearVelocity = direction * pm.data.attackForwardSpeed;
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // ▶ 정지
+        pm.rb.linearVelocity = Vector2.zero;
+
+        // ▶ 공격 판정
         PerformAttack();
 
-        // 나머지 애니메이션 시간 대기
-        yield return new WaitForSeconds(pm.data.attackDuration / 2f);
+        // ▶ 공격 애니메이션 잔여 시간 기다리기
+        float remain = Mathf.Max(0f, pm.data.attackDuration - moveDuration);
+        if (remain > 0f)
+            yield return new WaitForSeconds(remain);
 
         isAttacking = false;
     }
@@ -68,21 +101,19 @@ public class PlayerAttack
         float knockback = (attackCount == 3) ? pm.data.attackKnockbackThird : pm.data.attackKnockback;
         float damage = (attackCount == 3) ? pm.data.attackPower * 1.5f : pm.data.attackPower;
 
-        if (attackCount == 3)
-            pm.cameraController.Shake(0.1f, 0.3f);
-
         Vector3 pos = pm.attackPos.position;
-
         int enemyLayerMask = LayerMask.GetMask("Enemy");
         Collider2D[] colliders = Physics2D.OverlapBoxAll(pos, pm.data.attackBoxSize, 0, enemyLayerMask);
+
+        bool hitSomething = false;
 
         foreach (Collider2D col in colliders)
         {
             if (hitEnemies.Contains(col)) continue;
 
             GameObject target = col.gameObject;
-            // 수정된 코드
-            // NullReferenceException 방지를 위해 Instance가 null이 아니고, isConnected가 true일 때만 진입
+            hitSomething = true;
+
             if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
             {
                 NetworkCombatManager.SendMonsterDamage((int)damage);
@@ -90,17 +121,25 @@ public class PlayerAttack
             }
             else
             {
-                // 네트워크 연결이 없거나 Instance 자체가 없으면 로컬 처리
                 CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position);
             }
+
+            hitEnemies.Add(col);
+        }
+
+        // ▶ 적을 맞췄을 때만 카메라 흔들림
+        if (hitSomething)
+        {
+            if (attackCount == 3)
+                pm.cameraController.Shake(0.1f, 0.3f);
+            else
+                pm.cameraController.Shake(0.05f, 0.2f);
         }
     }
 
     public void UpdateAttackPosition()
     {
         Vector3 offset = pm.data.attackBoxOffset;
-
-        // 반전된 스프라이트 방향 기준으로 x축 이동 반전
         if (!pm.spriteRenderer.flipX)
             offset.x *= -1;
 

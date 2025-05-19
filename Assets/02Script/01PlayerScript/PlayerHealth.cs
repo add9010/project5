@@ -1,10 +1,16 @@
 using UnityEngine;
+using System.Collections;
 
 public class PlayerHealth : IDamageable, IKnockbackable
 {
     private PlayerManager pm;
     public float currentHealth { get; private set; }
     private bool isDead = false;
+
+    // 무적 관련
+    private bool isInvincible = false;
+    private float invincibleTime = 1f;
+    private float invincibleTimer = 0f;
 
     public PlayerHealth(PlayerManager manager)
     {
@@ -14,11 +20,15 @@ public class PlayerHealth : IDamageable, IKnockbackable
 
     public void TakeDamage(float damage)
     {
-        if (isDead) return;
+        if (isDead || isInvincible) return;
 
         currentHealth -= damage;
         pm.playerStateController.SetHurt();
-        // pm.UpdateHpUI(currentHealth);
+
+        // 무적 상태 진입
+        isInvincible = true;
+        invincibleTimer = invincibleTime;
+        pm.StartCoroutine(FlashWhileInvincible());
 
         if (currentHealth <= 0)
         {
@@ -36,15 +46,48 @@ public class PlayerHealth : IDamageable, IKnockbackable
     private void Die()
     {
         Debug.Log("플레이어 사망");
-        pm.MarkAsDead(); // 움직임 차단
-        pm.playerStateController.ForceSetDead(); // 죽음 애니메이션 출력
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
+        pm.MarkAsDead();
+        pm.playerStateController.ForceSetDead();
     }
+
     public void Heal(float amount)
     {
         if (isDead) return;
 
         currentHealth = Mathf.Min(currentHealth + amount, pm.data.maxHealth);
         pm.UpdateHpUI(currentHealth);
+    }
+
+    public void Update() // Update는 PlayerManager에서 호출 필요
+    {
+        if (isInvincible)
+        {
+            invincibleTimer -= Time.deltaTime;
+            if (invincibleTimer <= 0f)
+            {
+                isInvincible = false;
+                if (pm.spriteRenderer != null)
+                    pm.spriteRenderer.enabled = true; // 깜빡임 복구
+            }
+        }
+    }
+
+    private IEnumerator FlashWhileInvincible()
+    {
+        SpriteRenderer sr = pm.spriteRenderer;
+        while (isInvincible)
+        {
+            if (sr != null)
+            {
+                sr.enabled = false;
+                yield return new WaitForSeconds(0.1f);
+                sr.enabled = true;
+                yield return new WaitForSeconds(0.1f);
+            }
+            else
+            {
+                yield break;
+            }
+        }
     }
 }

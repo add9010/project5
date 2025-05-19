@@ -49,6 +49,8 @@ public class PlayerDash
         dashCooldown = true;
         manager.isDashing = true;
 
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
+
         manager.playerStateController.ForceSetDash();
         manager.rb.linearVelocity = new Vector2(direction * manager.data.dashForce, 0);
 
@@ -56,7 +58,7 @@ public class PlayerDash
 
         isDashing = false;
         manager.isDashing = false;
-
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
         // 쿨타임 대기
         yield return new WaitForSeconds(dashCooldownTime);
         dashCooldown = false;
