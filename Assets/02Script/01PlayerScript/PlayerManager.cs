@@ -37,6 +37,9 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
     public float horizontalInput { get; set; }
+
+    public PlayerParry playerParry { get; private set; }
+
     private AnimType currentAnimType = AnimType.Idle;
 
     [Header("대화")]
@@ -76,6 +79,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
         playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
         playerDash = new PlayerDash(this);
+        playerParry = new PlayerParry(this);
         Camera.main.GetComponent<CameraController>().target = transform;
         // 한 번 더 안전 장치
         //if (dialog == null && DialogManager.Instance != null)
@@ -98,7 +102,8 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         bool isAttacking = playerAttack.IsAttacking;
         playerAttack.UpdateAttackPosition();
         playerAttack.Update();
-
+        playerHealth.Update();
+        playerParry.Update();
         if (isAction)
             rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
 

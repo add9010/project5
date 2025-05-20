@@ -25,4 +25,9 @@ public class PlayerData
     public float cameraFollowSpeed = 5f;
     public float cameraStopDistance = 2f;
 
+    [Header("공격 전진 관련")]
+    public float attackForwardSpeed = 4f;
+    public float attackForwardDuration = 0.3f;
+
+
 }
