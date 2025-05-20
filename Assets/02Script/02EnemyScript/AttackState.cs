@@ -7,7 +7,7 @@ public class AttackState : IEnemyState
 
     public void Enter(Enemy enemy)
     {
-        enemy.anim.SetTrigger("attack");
+        enemy.anim.SetBool("attack", true);
         enemy.StopMovement();
         hasAttacked = false;
         timer = 0f;
@@ -17,22 +17,34 @@ public class AttackState : IEnemyState
     {
         timer += Time.deltaTime;
 
-        if (!hasAttacked && timer >= 0.3f)
+        // ⏱️ 패링 윈도우 설정
+        enemy.SetParryWindow(timer >= 0.2f && timer <= 0.5f);
+
+        if (!hasAttacked && timer >= enemy.attackHitDelay)
         {
             hasAttacked = true;
-            enemy.PerformAttack(); // 개별 클래스(Thief/Wizard)에서 오버라이드된 공격 실행
+            enemy.PerformAttack();
         }
 
         if (timer >= enemy.attackCooldown)
         {
-            if (enemy.IsPlayerInAttackRange())
-                enemy.SwitchState(new AttackState());       // 쿨다운 후 다시 AttackState → 연속 공격
-            else if (enemy.enablePatrol && enemy.IsPlayerDetected())
-                enemy.SwitchState(new ChaseState());        // 사정거리 밖이면서 순찰 활성 → 추격
+            enemy.SetParryWindow(false); // 공격 끝나면 패링 종료
+
+            // ◀ 여기서 자기 자신(AttackState)으로 전환하지 않음
+            if (enemy.enablePatrol && enemy.IsPlayerDetected())
+            {
+                enemy.SwitchState(new ChaseState());
+            }
             else
-                enemy.ReturnToDefaultState();
+            {
+                enemy.ReturnToDefaultState();  // 기본 상태(Idle)로 복귀
+            }
         }
     }
 
-    public void Exit(Enemy enemy) { }
+    public void Exit(Enemy enemy)
+    {
+        // 애니 Bool 리셋
+        enemy.anim.SetBool("attack", false);
+    }
 }

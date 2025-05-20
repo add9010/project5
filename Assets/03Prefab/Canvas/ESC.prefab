@@ -530,7 +530,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2002717670517351543}
         m_TargetAssemblyTypeName: EscMenuController, Assembly-CSharp
         m_MethodName: OnClickExit
         m_Mode: 1
@@ -689,6 +689,7 @@ GameObject:
   - component: {fileID: 325156728993740551}
   - component: {fileID: 1133081384657451752}
   - component: {fileID: 540951307146903649}
+  - component: {fileID: 2002717670517351543}
   m_Layer: 5
   m_Name: ESC
   m_TagString: Untagged
@@ -758,6 +759,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2002717670517351543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3070124198761056578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6062601791aa5fd4ea5b571c2b89e0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  escPanel: {fileID: 3070124198761056578}
+  noticePanel: {fileID: 4806683852207495353}
 --- !u!1 &3828789394133670107
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +894,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2002717670517351543}
         m_TargetAssemblyTypeName: EscMenuController, Assembly-CSharp
         m_MethodName: OnClickConfirm
         m_Mode: 1
@@ -1012,7 +1027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2002717670517351543}
         m_TargetAssemblyTypeName: EscMenuController, Assembly-CSharp
         m_MethodName: OnClickCancel
         m_Mode: 1
@@ -1632,7 +1647,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2002717670517351543}
         m_TargetAssemblyTypeName: EscMenuController, Assembly-CSharp
         m_MethodName: OnClickTitle
         m_Mode: 1
@@ -1765,7 +1780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2002717670517351543}
         m_TargetAssemblyTypeName: EscMenuController, Assembly-CSharp
         m_MethodName: OnClickOption
         m_Mode: 1

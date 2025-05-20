@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcName: Atti
-  dialogSystem: {fileID: 0}
+  dialogSystem: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}
