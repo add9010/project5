@@ -17,7 +17,7 @@ public class FlexibleEndPoint : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.UpArrow))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
            //RiverStage_4에서만 동작할 로직 추가
             if (IsRiverStage4())

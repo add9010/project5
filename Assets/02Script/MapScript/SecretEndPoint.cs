@@ -6,7 +6,7 @@ public class SecretEndPoint : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.UpArrow))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             MapManager.Instance.GoToNextMap();
         }

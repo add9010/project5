@@ -32,6 +32,10 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected IEnemyState currentState;
 
+    private float lastAttackTime = -999f;
+    public bool CanAttack() => Time.time - lastAttackTime >= attackCooldown;
+    public void RecordAttackTime() => lastAttackTime = Time.time;
+
     protected virtual void Awake()
     {
         anim = GetComponent<Animator>();
@@ -50,13 +54,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected virtual void Update()
     {
-        if (!enablePatrol
-       && !(currentState is AttackState)
-       && IsPlayerInAttackRange())
+        if (!(currentState is AttackState) && IsPlayerInAttackRange() && CanAttack())
         {
             SwitchState(new AttackState());
             return;
         }
+
 
         currentState?.Update(this);
     }

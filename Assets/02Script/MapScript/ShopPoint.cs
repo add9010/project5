@@ -9,7 +9,7 @@ public class ShopPoint : MonoBehaviour
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.UpArrow))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             if (isExit)
             {
