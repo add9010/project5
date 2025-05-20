@@ -200,22 +200,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Enemy
   maxHp: 100
-  nowHp: 0
   atkDmg: 11
   moveSpeed: 3
   detectionRange: 4
   attackRange: 1.5
-  defaultAttackCooldown: 1
-  enablePatrol: 1
+  attackCooldown: 0
   patrolRange: 2
-  maxPatrolTime: 3
-  prfHpBar: {fileID: 7735975493514810815, guid: 0658f2ea6717d704097945453d439bfc, type: 3}
-  worldCanvas: {fileID: 0}
-  hpBar: {fileID: 0}
-  nowHpbar: {fileID: 0}
-  hpBarHeightOffset: 2
+  enablePatrol: 1
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   markYOffset: 2
-  rigid: {fileID: 0}
+  attackHitDelay: 0.5
   anim: {fileID: 0}
+  rigid: {fileID: 0}
   player: {fileID: 0}
+  maxPatrolTime: 3

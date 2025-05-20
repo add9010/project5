@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1279009581576446715}
   - component: {fileID: 4224746963746867484}
   - component: {fileID: 3925091695332765335}
-  - component: {fileID: 7148218152520771034}
   - component: {fileID: 2171915959844992715}
+  - component: {fileID: 7148218152520771034}
   - component: {fileID: 1970209427060711564}
   m_Layer: 9
   m_Name: Wizard
@@ -114,6 +114,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &2171915959844992715
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859895025027972965}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 10
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!61 &7148218152520771034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -160,33 +187,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.2454544, y: 3.4743583}
   m_EdgeRadius: 0
---- !u!50 &2171915959844992715
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2859895025027972965}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &1970209427060711564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,25 +201,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Enemy
   maxHp: 85
-  nowHp: 0
   atkDmg: 15
   moveSpeed: 2
   detectionRange: 5
   attackRange: 4
-  defaultAttackCooldown: 1
-  enablePatrol: 1
+  attackCooldown: 0
   patrolRange: 2
-  maxPatrolTime: 3
-  prfHpBar: {fileID: 7735975493514810815, guid: 0658f2ea6717d704097945453d439bfc, type: 3}
-  worldCanvas: {fileID: 0}
-  hpBar: {fileID: 0}
-  nowHpbar: {fileID: 0}
-  hpBarHeightOffset: 1.7
+  enablePatrol: 1
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   markYOffset: 1
-  rigid: {fileID: 0}
+  attackHitDelay: 0.5
   anim: {fileID: 0}
+  rigid: {fileID: 0}
   player: {fileID: 0}
+  maxPatrolTime: 3
   projectilePrefab: {fileID: 1097795716494991988, guid: ba2f50662476914448b683f29c02274d, type: 3}
   firePoint: {fileID: 9119864123255473837}
 --- !u!1 &2889821118227468119

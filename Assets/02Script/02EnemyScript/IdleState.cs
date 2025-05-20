@@ -4,6 +4,7 @@ public class IdleState : IEnemyState
 {
     public void Enter(Enemy enemy)
     {
+        enemy.StopMovement();
         enemy.anim.SetBool("isWalk", false);
     }
 
