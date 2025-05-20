@@ -9,11 +9,12 @@ public class IdleState : IEnemyState
 
     public void Update(Enemy enemy)
     {
-        if (enemy.IsPlayerInAttackRange())
+        if (enemy.IsPlayerInAttackRange() && enemy.CanAttack())
         {
             enemy.SwitchState(new AttackState());
             return;
         }
+
         if (enemy.enablePatrol && enemy.IsPlayerDetected())
         {
             enemy.SwitchState(new ChaseState());
