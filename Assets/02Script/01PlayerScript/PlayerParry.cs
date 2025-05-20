@@ -12,7 +12,7 @@ public class PlayerParry
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             TryParry();
         }
