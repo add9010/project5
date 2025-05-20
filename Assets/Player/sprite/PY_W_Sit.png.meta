@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 427b1c3111ae9a3478eb8359bce88300
+guid: 64dd8b4628138c94980ff6e6cd410556
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7705868352335846906
-    second: PY_W_IDLE_0
-  - first:
-      213: 5590001150068292269
-    second: PY_W_IDLE_1
-  - first:
-      213: -755131721952629036
-    second: PY_W_IDLE_2
-  - first:
-      213: 8736730781288981521
-    second: PY_W_IDLE_3
-  - first:
-      213: -8876697364723857668
-    second: PY_W_IDLE_4
+      213: 3950363141443950918
+    second: PY_W_Sit_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,111 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PY_W_IDLE_0
+      name: PY_W_Sit_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 500
-        height: 500
+        x: 189
+        y: 50
+        width: 121
+        height: 143
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a5581f7eb7b83644ea8b32bc014b5eae
-      internalID: 1669801263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PY_W_IDLE_1
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e96681b09a62d4f4d89b2924ffabba5c
-      internalID: -689439511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PY_W_IDLE_2
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfc3eb46e8c6a96469d9a3ec47a5d91f
-      internalID: 1128921645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PY_W_IDLE_3
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1468b57ae598e8140995f180b49207e5
-      internalID: 167950320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PY_W_IDLE_4
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 0
-        width: 500
-        height: 500
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d265a13d37635264c943420ee5b1846d
-      internalID: 225388872
+      spriteID: 6491093e85282d630800000000000000
+      internalID: 3950363141443950918
       vertices: []
       indices: 
       edges: []
@@ -238,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5bcac64db246bfe40b84eb76c38133e3
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -248,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PY_W_IDLE_0: 1669801263
-      PY_W_IDLE_1: -689439511
-      PY_W_IDLE_2: 1128921645
-      PY_W_IDLE_3: 167950320
-      PY_W_IDLE_4: 225388872
+      PY_W_Sit_0: 3950363141443950918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

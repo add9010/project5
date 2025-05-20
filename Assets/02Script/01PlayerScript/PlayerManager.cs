@@ -37,10 +37,13 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public bool IsDead { get; private set; } = false;
     public bool CanDoubleJump { get; set; } = false;
     public float horizontalInput { get; set; }
+
+    public PlayerParry playerParry { get; private set; }
+
     private AnimType currentAnimType = AnimType.Idle;
 
     [Header("대화")]
-    public DialogManager dialog;
+    //public DialogManager dialog;
     public PlayerDialog playerDialog { get; private set; }
     public bool isGrounded => groundSensor != null && groundSensor.State();
     public bool isAction = false;
@@ -53,6 +56,17 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //if (DialogManager.Instance != null)
+        //{
+        //    dialog = DialogManager.Instance;
+        //}
+        //else
+        //{
+        //    // 혹시 예외 상황이라면 FindObjectOfType 로 후속 처리
+        //    dialog = FindObjectOfType<DialogManager>();
+        //    if (dialog == null)
+        //        Debug.LogError("PlayerManager: DialogManager를 찾을 수 없습니다!");
+        //}
     }
 
     private void Start()
@@ -65,7 +79,14 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
         playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
         playerDash = new PlayerDash(this);
+        playerParry = new PlayerParry(this);
         Camera.main.GetComponent<CameraController>().target = transform;
+        // 한 번 더 안전 장치
+        //if (dialog == null && DialogManager.Instance != null)
+        //    dialog = DialogManager.Instance;
+
+        // 이제 PlayerDialog 내부에서 dialog를 참조해도 null이 아닙니다.
+        playerDialog = new PlayerDialog(this);
     }
 
     private void Update()
@@ -81,7 +102,8 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         bool isAttacking = playerAttack.IsAttacking;
         playerAttack.UpdateAttackPosition();
         playerAttack.Update();
-
+        playerHealth.Update();
+        playerParry.Update();
         if (isAction)
             rb.linearVelocity = Vector2.zero; // ← 완전히 멈춤
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    public static MapManager Instance;
+    public static MapManager Instance { get; private set; }
 
     public GameObject[] maps;               // 메인 맵 리스트
     public Transform[] startPoints;          // 메인 맵 스타트 포인트 리스트

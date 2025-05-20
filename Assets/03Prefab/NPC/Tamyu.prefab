@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcName: Tamyu
-  dialogSystem: {fileID: 0}
+  dialogSystem: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}
 --- !u!114 &6530153191241114556
 MonoBehaviour:
   m_ObjectHideFlags: 0

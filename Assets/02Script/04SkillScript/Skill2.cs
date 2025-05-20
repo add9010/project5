@@ -51,13 +51,13 @@ public class Skill2 : MonoBehaviour
         Vector2 dir = pm.spriteRenderer.flipX ? Vector2.left : Vector2.right;
         float elapsed = 0f;
         float currentSpeed = dashSpeed;
-
+        Vector3 fireOffset = new Vector3(pm.spriteRenderer.flipX ? -2f : 2f, -0.5f, 0f);
         if (fireEffectPrefab != null)
         {
             // ▶ X축으로만 offset 적용 (방향 따라 1.5f 앞으로)
-            Vector3 spawnPos = pm.transform.position + new Vector3(pm.spriteRenderer.flipX ? -6f : 6f, 0f, 0f);
+            
 
-            fireEffectInstance = Instantiate(fireEffectPrefab, spawnPos, Quaternion.identity);
+            fireEffectInstance = Instantiate(fireEffectPrefab, pm.transform.position + fireOffset, Quaternion.identity);
 
             // ▶ 항상 반전된 상태로 시작
             Vector3 scale = fireEffectInstance.transform.localScale;
@@ -66,7 +66,7 @@ public class Skill2 : MonoBehaviour
                 scale.x *= -1;
             fireEffectInstance.transform.localScale = scale;
 
-            Destroy(fireEffectInstance, 0.8f);
+            Destroy(fireEffectInstance, 0.7f);
         }
         while (elapsed < dashDuration)
         {
@@ -75,8 +75,7 @@ public class Skill2 : MonoBehaviour
             // 불 이펙트 따라가게
             if (fireEffectInstance != null)
             {
-                Vector3 offset = dir * 0.8f;
-                fireEffectInstance.transform.position = pm.transform.position + (Vector3)offset;
+                fireEffectInstance.transform.position = pm.transform.position + fireOffset;
             }
 
             Vector2 boxCenter = (Vector2)pm.transform.position + dir * 0.8f;

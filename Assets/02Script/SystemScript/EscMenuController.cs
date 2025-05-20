@@ -1,13 +1,27 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 public class EscMenuController : MonoBehaviour
 {
-    public GameObject escPanel;     // ESC 메뉴 전체
-    public GameObject noticePanel;  // 경고창 (나가기 확인)
+    [Header("인게임 ESC 메뉴")]
+    public GameObject escPanel;
+    public GameObject noticePanel;
+
+    [Header("타이틀 씬 옵션 패널 (런타임 할당)")]
+    private GameObject optionPanel;
 
     private bool isMenuOpen = false;
+    private void Awake()
+    {
+        // 씬 로드 시마다 Option Panel을 찾아 연결
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     void Start()
     {
         if (escPanel == null)
@@ -18,6 +32,34 @@ public class EscMenuController : MonoBehaviour
         escPanel.SetActive(false);
         noticePanel.SetActive(false);
     }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "TitleScene")
+        {
+            // 1) 씬 내에 있는 "Main Menu Canvas"를 찾아서
+            var menuCanvas = GameObject.Find("Main Menu Canvas");
+            if (menuCanvas != null)
+            {
+                // 2) 그 자식 중 "Option" 오브젝트를 찾아서
+                var optTf = menuCanvas.transform.Find("Option");
+                optionPanel = optTf != null ? optTf.gameObject : null;
+            }
+            else
+            {
+                Debug.LogWarning("EscMenuController: Main Menu Canvas를 찾을 수 없습니다!");
+                optionPanel = null;
+            }
+        }
+        else
+        {
+            optionPanel = null;
+        }
+
+        // in-game ESC 메뉴는 항상 닫아 두기
+        if (escPanel != null) escPanel.SetActive(false);
+        if (noticePanel != null) noticePanel.SetActive(false);
+    }
+
 
     void Update()
     {
@@ -41,7 +83,20 @@ public class EscMenuController : MonoBehaviour
     // 버튼 함수들
     public void OnClickOption()
     {
-        Debug.Log("옵션 눌림 - 나중에 구현");
+        // in-game 메뉴 닫기
+        isMenuOpen = false;
+        escPanel.SetActive(false);
+        Time.timeScale = 1f;
+
+        if (optionPanel != null)
+        {
+            // 타이틀 씬의 옵션 창 토글
+            optionPanel.SetActive(!optionPanel.activeSelf);
+        }
+        else
+        {
+            Debug.LogWarning("EscMenuController: 현재 씬에 Option Panel이 없습니다.");
+        }
     }
 
     public void OnClickTitle()
