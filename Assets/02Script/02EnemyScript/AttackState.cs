@@ -7,7 +7,7 @@ public class AttackState : IEnemyState
 
     public void Enter(Enemy enemy)
     {
-        enemy.anim.SetTrigger("attack");
+        enemy.anim.SetBool("attack", true);
         enemy.StopMovement();
         hasAttacked = false;
         timer = 0f;
@@ -17,10 +17,10 @@ public class AttackState : IEnemyState
     {
         timer += Time.deltaTime;
 
-        // ⏱️ 0.2초 ~ 0.5초 사이만 패링 가능
+        // ⏱️ 패링 윈도우 설정
         enemy.SetParryWindow(timer >= 0.2f && timer <= 0.5f);
 
-        if (!hasAttacked && timer >= 0.3f)
+        if (!hasAttacked && timer >= enemy.attackHitDelay)
         {
             hasAttacked = true;
             enemy.PerformAttack();
@@ -29,14 +29,22 @@ public class AttackState : IEnemyState
         if (timer >= enemy.attackCooldown)
         {
             enemy.SetParryWindow(false); // 공격 끝나면 패링 종료
-            if (enemy.IsPlayerInAttackRange())
-                enemy.SwitchState(new AttackState());
-            else if (enemy.enablePatrol && enemy.IsPlayerDetected())
+
+            // ◀ 여기서 자기 자신(AttackState)으로 전환하지 않음
+            if (enemy.enablePatrol && enemy.IsPlayerDetected())
+            {
                 enemy.SwitchState(new ChaseState());
+            }
             else
-                enemy.ReturnToDefaultState();
+            {
+                enemy.ReturnToDefaultState();  // 기본 상태(Idle)로 복귀
+            }
         }
     }
 
-    public void Exit(Enemy enemy) { }
+    public void Exit(Enemy enemy)
+    {
+        // 애니 Bool 리셋
+        enemy.anim.SetBool("attack", false);
+    }
 }
