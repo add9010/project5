@@ -30,7 +30,7 @@ public class NetworkClient : MonoBehaviour
 
     void Start()
     {
-        socket = ConnectToServer("192.168.219.107", 8000);
+        socket = ConnectToServer("127.0.0.1", 5000);
         if (socket == null) return;
 
         localPlayer = new Player(socket, playerName);
