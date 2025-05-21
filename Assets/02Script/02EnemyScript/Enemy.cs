@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public float moveSpeed = 3f;
     public float detectionRange = 5f;
     public float attackRange = 1.5f;
-    public float attackCooldown = 1f;
+    public float attackCooldown = 0f;
     public float patrolRange = 2f;
     public bool enablePatrol = true;
     [Header("References")]
     public GameObject markPrefab;
     public float markYOffset = 2.0f;
 
-    public float attackHitDelay = 0.3f; // 공격 히트 딜레이 (애니메이션과 맞춰야 함)
+    public float attackHitDelay = 0.5f; // 공격 히트 딜레이 (애니메이션과 맞춰야 함)
 
     [HideInInspector] public Animator anim;
     [HideInInspector] public Rigidbody2D rigid;
@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     private float lastAttackTime = -999f;
     public bool CanAttack() => Time.time - lastAttackTime >= attackCooldown;
     public void RecordAttackTime() => lastAttackTime = Time.time;
+    private bool isEnemyDead = false;
 
     protected virtual void Awake()
     {
@@ -54,12 +55,14 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected virtual void Update()
     {
-        if (!(currentState is AttackState) && IsPlayerInAttackRange() && CanAttack())
+        if (!(currentState is AttackState)
+       && !(currentState is HurtState)   // ← 이 줄 추가
+       && IsPlayerInAttackRange()
+       && CanAttack())
         {
             SwitchState(new AttackState());
             return;
         }
-
 
         currentState?.Update(this);
     }
@@ -110,8 +113,17 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public void MoveToPlayer()
     {
         if (player == null) return;
-        transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-        LookAt(player.position);
+
+        // 현재 Y 유지, X만 플레이어 쪽으로
+        Vector2 current = rigid.position;
+        Vector2 target = new Vector2(player.position.x, current.y);
+        Vector2 nextPos = Vector2.MoveTowards(
+            current,
+            target,
+            moveSpeed * Time.fixedDeltaTime);
+
+        rigid.MovePosition(nextPos);
+        LookAt(new Vector2(player.position.x, current.y));
     }
 
     public void LookAt(Vector2 target)
@@ -154,6 +166,20 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
         SwitchState(enablePatrol ? new PatrolState() : new IdleState());
     }
 
+    public void HandleWhenDead()
+    {
+        if (isEnemyDead) return;
+        isEnemyDead = true;
+
+        anim.SetBool("isDead", true);
+
+        StartCoroutine(HandleDeathCoroutine(0.8f));
+    }
+    private IEnumerator HandleDeathCoroutine(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Die();
+    }
     public void Die()
     {
         gameObject.SetActive(false);
