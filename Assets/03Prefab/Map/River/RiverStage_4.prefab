@@ -1609,7 +1609,7 @@ GameObject:
   - component: {fileID: 6229393916251735127}
   - component: {fileID: 5056129054250592408}
   - component: {fileID: 6168319775603353727}
-  - component: {fileID: 409541129735128368}
+  - component: {fileID: 7264752721853359729}
   m_Layer: 8
   m_Name: R4End
   m_TagString: Untagged
@@ -1733,7 +1733,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.48, y: 3.47}
   m_EdgeRadius: 0
---- !u!114 &409541129735128368
+--- !u!114 &7264752721853359729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1745,9 +1745,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f381ba9d7f075964382bd103914d6d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetType: 0
-  targetMapIndex: 6
-  sceneName: 
+  targetType: 2
+  requiredStoryKey: 
+  targetMapIndex: -1
+  sceneName: VillageStage
 --- !u!1 &8421029162669878190
 GameObject:
   m_ObjectHideFlags: 0
