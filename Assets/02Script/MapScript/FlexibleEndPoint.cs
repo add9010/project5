@@ -3,9 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class FlexibleEndPoint : MonoBehaviour
 {
-    public enum TargetType { NextInOrder, FixedMapIndex, LoadScene }
+    public enum TargetType { NextInOrder, FixedMapIndex, LoadScene, LoadSceneWithCondition }
 
     public TargetType targetType = TargetType.NextInOrder;
+    public string requiredStoryKey;
 
     [Header("Only for FixedMapIndex")]
     public int targetMapIndex = -1;
@@ -35,7 +36,7 @@ public class FlexibleEndPoint : MonoBehaviour
                 }
             }
 
-           //공통 이동 처리
+            //공통 이동 처리
             switch (targetType)
             {
                 case TargetType.NextInOrder:
@@ -47,10 +48,17 @@ public class FlexibleEndPoint : MonoBehaviour
                     break;
 
                 case TargetType.LoadScene:
-                    if (!string.IsNullOrEmpty(sceneName))
-                        SceneManager.LoadScene(sceneName);
+                    SceneManager.LoadScene(sceneName);
+                    break;
+
+                case TargetType.LoadSceneWithCondition:
+                    if (StoryManager.Instance.HasProgress(requiredStoryKey))
+                        GameManager.Instance.LoadSceneWithFade(sceneName);
+                    else
+                        Debug.Log("조건 미달: 이동 불가");
                     break;
             }
+
         }
     }
 

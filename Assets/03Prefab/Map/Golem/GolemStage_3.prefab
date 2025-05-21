@@ -1247,6 +1247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4143512277679451365}
+  - component: {fileID: 3529530381728743184}
   m_Layer: 8
   m_Name: GolemStage_3
   m_TagString: Platform
@@ -1273,6 +1274,19 @@ Transform:
   - {fileID: 2524593388723664616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3529530381728743184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423211861396561451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa422e893a0dbb4abae1d1c8960ba54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPoint: {fileID: 2122279785039100040}
 --- !u!1 &1988439950546406184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,7 +1631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetType: 2
-  targetMapIndex: 0
+  requiredStoryKey: 
+  targetMapIndex: -1
   sceneName: Boss1
 --- !u!1 &2524227311525561553
 GameObject:

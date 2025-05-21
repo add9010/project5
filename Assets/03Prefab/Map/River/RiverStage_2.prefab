@@ -246,7 +246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetType: 0
-  targetMapIndex: 4
+  requiredStoryKey: 
+  targetMapIndex: 2
   sceneName: 
 --- !u!1 &577352582045819760
 GameObject:
@@ -439,6 +440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4098363583158394176}
+  - component: {fileID: 3824578542813563236}
   m_Layer: 8
   m_Name: RiverStage_2
   m_TagString: Untagged
@@ -466,6 +468,19 @@ Transform:
   - {fileID: 2054541226427156764}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3824578542813563236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109483184914777725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa422e893a0dbb4abae1d1c8960ba54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPoint: {fileID: 514987498038247319}
 --- !u!1 &1315949127359882878
 GameObject:
   m_ObjectHideFlags: 0

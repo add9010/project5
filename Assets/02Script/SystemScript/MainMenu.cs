@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
         GameManager.Instance.gameData = new Data(); // 새 데이터 생성
         GameManager.Instance.SaveGame();
 
-        GameManager.Instance.nextSceneName = "Stage1"; // ✅ 목적지 설정
+        GameManager.Instance.nextSceneName = "VillageStage"; // ✅ 목적지 설정
 
         if (fadeManager != null)
         {

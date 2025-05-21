@@ -91,4 +91,18 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
+
+    public void LoadSceneWithFade(string sceneName)
+    {
+        FadeManager fade = FindAnyObjectByType<FadeManager>();
+        if (fade != null)
+        {
+            fade.RegisterCallback(() => SceneManager.LoadScene(sceneName));
+            fade.FadeOut();
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+    }
 }
