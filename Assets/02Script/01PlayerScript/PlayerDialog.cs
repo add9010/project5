@@ -14,12 +14,12 @@ public class PlayerDialog
 
     public void HandleInput()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
             dirVec = Vector3.left;
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
             dirVec = Vector3.right;
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) && scanObject != null)
+        if (Input.GetKeyDown(KeyCode.F) && scanObject != null)
         {
             DialogTrigger dt = scanObject.GetComponent<DialogTrigger>();
             if (dt != null)

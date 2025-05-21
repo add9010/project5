@@ -30,7 +30,7 @@ public class ChaseState : IEnemyState
             return;
         }
 
-        if (enemy.IsPlayerInAttackRange())
+        if (enemy.IsPlayerInAttackRange() && enemy.CanAttack())
         {
             enemy.SwitchState(new AttackState());
             return;

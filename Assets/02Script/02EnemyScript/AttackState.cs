@@ -7,7 +7,8 @@ public class AttackState : IEnemyState
 
     public void Enter(Enemy enemy)
     {
-        enemy.anim.SetBool("attack", true);
+        enemy.RecordAttackTime();
+        enemy.anim.SetTrigger("attack");
         enemy.StopMovement();
         hasAttacked = false;
         timer = 0f;
@@ -24,6 +25,7 @@ public class AttackState : IEnemyState
         {
             hasAttacked = true;
             enemy.PerformAttack();
+            enemy.RecordAttackTime();
         }
 
         if (timer >= enemy.attackCooldown)
@@ -44,7 +46,6 @@ public class AttackState : IEnemyState
 
     public void Exit(Enemy enemy)
     {
-        // 애니 Bool 리셋
-        enemy.anim.SetBool("attack", false);
+        enemy.SetParryWindow(false);
     }
 }
