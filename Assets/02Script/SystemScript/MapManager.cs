@@ -10,16 +10,14 @@ public class MapManager : MonoBehaviour
     public GameObject[] secretMaps;          // 비밀방 맵 리스트
     public Transform[] secretStartPoints;    // 비밀방 스타트 포인트 리스트
 
-    public GameObject[] ShopMasp;           // 상점 맵 리스트
+    public GameObject[] ShopMaps;           // 상점 맵 리스트
     public Transform[] ShopStartPoints;      // 상점 스타트 포인트 리스트
 
     private int currentMapIndex = 0;
     private bool isInSecretRoom = false;     // 지금 SecretRoom 안에 있는지 체크
     private bool isInShop = false; // 상점 안에 있는지 여부
 
-    private int riverClearCount = 0;
-    public GameObject golemPathEndPoint; // 골렘으로 가는 EndPoint 연결
-
+  
     private void Awake()
     {
         if (Instance == null)
@@ -37,8 +35,10 @@ public class MapManager : MonoBehaviour
         for (int i = 0; i < maps.Length; i++)
             maps[i].SetActive(i == currentMapIndex);
 
-        for (int i = 0; i < secretMaps.Length; i++)
-            secretMaps[i].SetActive(false);
+        foreach (var sMap in secretMaps)
+            sMap.SetActive(false);
+        foreach (var shopMap in ShopMaps)
+            shopMap.SetActive(false);
 
         MovePlayerToStart();
     }
@@ -53,7 +53,7 @@ public class MapManager : MonoBehaviour
         }
         else if (isInShop)
         {
-            foreach (var shopMap in ShopMasp)
+            foreach (var shopMap in ShopMaps)
                 shopMap.SetActive(false);
 
             isInShop = false;
@@ -96,11 +96,11 @@ public class MapManager : MonoBehaviour
     {
         foreach (var map in maps) map.SetActive(false);
         foreach (var sMap in secretMaps) sMap.SetActive(false);
-        foreach (var shopMap in ShopMasp) shopMap.SetActive(false); // 상점 맵들 비활성화
+        foreach (var shopMap in ShopMaps) shopMap.SetActive(false); // 상점 맵들 비활성화
 
-        if (shopIndex >= 0 && shopIndex < ShopMasp.Length)
+        if (shopIndex >= 0 && shopIndex < ShopMaps.Length)
         {
-            ShopMasp[shopIndex].SetActive(true);
+            ShopMaps[shopIndex].SetActive(true);
             isInShop = true; // 상점으로 진입했음
             MovePlayerToShopStart(shopIndex);
         }
@@ -138,16 +138,9 @@ public class MapManager : MonoBehaviour
 
     public void ClearRiverStage()
     {
-        riverClearCount++;
-
-        if (riverClearCount >= 4) // RiverStage_1 ~ RiverStage_4 모두 완료했을 때
-        {
-            if (golemPathEndPoint != null)
-            {
-                golemPathEndPoint.SetActive(true); // 골렘 방향 EndPoint 열기
-                Debug.Log("골렘 스테이지 진입 경로 오픈!");
-            }
-        }
+        StoryManager.Instance.SetProgress("RiverStage4Clear");
+        GameManager.Instance.gameData.clearedStoryKeys.Add("RiverStage4Clear");
+        GameManager.Instance.SaveGame();
     }
     public string GetCurrentMapName()
     {

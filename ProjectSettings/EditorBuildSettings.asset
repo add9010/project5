@@ -15,6 +15,18 @@ EditorBuildSettings:
     path: Assets/01Scenes/Stage1.unity
     guid: 1ff2ec229987384438ce76ebb2934dd7
   - enabled: 1
+    path: Assets/01Scenes/VillageStage.unity
+    guid: f69cd1be14ccdac4b9a33185b765d90c
+  - enabled: 1
+    path: Assets/01Scenes/SelectScene.unity
+    guid: b7443e1070cbf0c47996f59dff3ee69e
+  - enabled: 1
+    path: Assets/01Scenes/RiverStage.unity
+    guid: 7dc3118d6e9f7794e869183e0c2d7e00
+  - enabled: 1
+    path: Assets/01Scenes/GolemStage.unity
+    guid: e20bf461ce5d10b47b61555de3706892
+  - enabled: 1
     path: Assets/01Scenes/Boss1.unity
     guid: 9539387b886651f4999f064f682d5aac
   m_configObjects: {}

@@ -183,6 +183,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public void Die()
     {
         gameObject.SetActive(false);
+        // 사망 시 부모 맵에 알림-0521추가 맵안에 있는 적이 다 죽어야 출구가 열림
+        MapEnemyController map = GetComponentInParent<MapEnemyController>();
+        if (map != null)
+        {
+            map.OnEnemyDied();
+        }
     }
 
     public virtual void PerformAttack()
