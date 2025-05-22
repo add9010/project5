@@ -10,7 +10,7 @@ public class PlayerAttack
     private const float attackResetDelay = 0.5f;
     private int attackCount;
     private bool isAttacking;
-    //public int CurrentCombo => attackCount;
+    public int CurrentCombo => attackCount;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
 
     public bool IsAttacking => isAttacking;

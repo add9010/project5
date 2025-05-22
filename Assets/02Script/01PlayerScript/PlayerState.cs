@@ -21,8 +21,8 @@ public class PlayerStateController
         this.pm = manager;
         stateTransitions = new Dictionary<PlayerState, Func<bool>>
         {
-            //{ PlayerState.Attack, () => pm.playerAttack.IsAttacking && pm.isGrounded }, // 지상 공격
-            //{ PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded }, // ✅ 공중 공격 추가
+            { PlayerState.Attack, () => pm.playerAttack.IsAttacking && pm.isGrounded }, // 지상 공격
+            { PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded }, // 공중 공격
             { PlayerState.Dash, () => pm.isDashing },
             { PlayerState.Dialog, () => pm.isAction },
             { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
@@ -135,21 +135,10 @@ public class PlayerStateController
                 break;
             case PlayerState.Hurt:
                 break;
-            //case PlayerState.Attack:
-            //    if (!pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Attack1") &&
-            //        !pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Attack2") &&
-            //        !pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
-            //    {
-            //        pm.GetAnimator().SetTrigger("Attack" + (pm.playerAttack.CurrentCombo + 1));
-            //    }
-            //    break;
-
-            //case PlayerState.AttackJP:
-            //    if (!pm.GetAnimator().GetCurrentAnimatorStateInfo(0).IsName("AttackJP"))
-            //    {
-            //        pm.GetAnimator().SetTrigger("AttackJP");
-            //    }
-            //    break;
+            case PlayerState.Attack:
+                break;
+            case PlayerState.AttackJP:
+                break;
 
             case PlayerState.Fall:
                 pm.GetAnimator().SetInteger("AnimState", 4);
