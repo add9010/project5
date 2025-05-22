@@ -8,9 +8,9 @@ public class PlayerAttack
     private float timeSinceAttack;
     private float attackInputTimer = 0f;
     private const float attackResetDelay = 0.5f;
-
     private int attackCount;
     private bool isAttacking;
+    //public int CurrentCombo => attackCount;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
 
     public bool IsAttacking => isAttacking;
@@ -58,38 +58,41 @@ public class PlayerAttack
         Debug.Log("AttackCoroutine 시작!");
         isAttacking = true;
         hitEnemies.Clear();
-
         timeSinceAttack = 0f;
 
-        string animationTrigger = "Attack" + (attackCount + 1);
+        bool isAir = !pm.isGrounded;
+        string animationTrigger = isAir ? "AttackJP" : "Attack" + (attackCount + 1);
         pm.GetAnimator().SetTrigger(animationTrigger);
 
-        attackCount++;
-        if (attackCount >= 3)
-            attackCount = 0;
-
-
-
-        // ▶ 공격 중 전진 지속
-        Vector2 direction = pm.spriteRenderer.flipX ? Vector2.left : Vector2.right;
-        float elapsed = 0f;
-        float moveDuration = pm.data.attackForwardDuration;
-
-        while (elapsed < moveDuration)
+        if (!isAir)
         {
-            pm.rb.linearVelocity = direction * pm.data.attackForwardSpeed;
-            elapsed += Time.deltaTime;
-            yield return null;
+            attackCount++;
+            if (attackCount >= 3)
+                attackCount = 0;
+
+            // 지상에서만 전진 이동
+            Vector2 direction = pm.spriteRenderer.flipX ? Vector2.left : Vector2.right;
+            float elapsed = 0f;
+            float moveDuration = pm.data.attackForwardDuration;
+
+            while (elapsed < moveDuration)
+            {
+                Vector2 velocity = pm.rb.linearVelocity;
+                velocity.x = direction.x * pm.data.attackForwardSpeed;
+                pm.rb.linearVelocity = velocity;
+
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            pm.rb.linearVelocity = new Vector2(0f, pm.rb.linearVelocity.y); // x축 멈춤
         }
 
-        // ▶ 정지
-        pm.rb.linearVelocity = Vector2.zero;
+        // 공중일 때는 전진 이동 없음
 
-        // ▶ 공격 판정
         PerformAttack();
 
-        // ▶ 공격 애니메이션 잔여 시간 기다리기
-        float remain = Mathf.Max(0f, pm.data.attackDuration - moveDuration);
+        float remain = Mathf.Max(0f, pm.data.attackDuration - pm.data.attackForwardDuration);
         if (remain > 0f)
             yield return new WaitForSeconds(remain);
 

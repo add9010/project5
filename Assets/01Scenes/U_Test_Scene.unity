@@ -347,8 +347,20 @@ PrefabInstance:
       value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackBoxSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackBoxSize.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: data.attackKnockback
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: data.attackBoxOffset.y
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: data.attackForwardSpeed

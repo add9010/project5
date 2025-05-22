@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      EquipButton_0: 6039714939892306893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
