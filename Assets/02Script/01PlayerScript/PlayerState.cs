@@ -21,8 +21,8 @@ public class PlayerStateController
         this.pm = manager;
         stateTransitions = new Dictionary<PlayerState, Func<bool>>
         {
-            { PlayerState.Attack, () => pm.playerAttack.IsAttacking && pm.isGrounded }, // 지상 공격
-            { PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded }, // 공중 공격
+            { PlayerState.Attack, () => pm.playerAttack.IsAttacking && pm.isGrounded },
+            { PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded },
             { PlayerState.Dash, () => pm.isDashing },
             { PlayerState.Dialog, () => pm.isAction },
             { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },

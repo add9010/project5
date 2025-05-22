@@ -45,6 +45,7 @@ public class PlayerAttack
         bool zKeyPressed = Input.GetKeyDown(KeyCode.Z);
         bool readyToAttack = timeSinceAttack >= pm.data.attackDuration;
         bool notCurrentlyAttacking = !isAttacking;
+        bool notDashing = !pm.isDashing; 
         return zKeyPressed && readyToAttack && notCurrentlyAttacking;
     }
 
