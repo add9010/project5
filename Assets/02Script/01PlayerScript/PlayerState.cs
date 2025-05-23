@@ -6,7 +6,7 @@ public class PlayerStateController
 {
     private PlayerManager pm;
 
-    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AirAttack, Dash, Hurt, Dead, Dialog, Skill, Parry }
+    private enum PlayerState { Idle, Move, Jump, Fall, Attack, AttackJP, Dash, Hurt, Dead, Dialog, Skill, Parry }
     private PlayerState currentState = PlayerState.Idle;
     private float jumpTimer = 0f;
     private const float fallTransitionTime = 0.1f; // 점프 후 이 시간 지나면 Fall로 간주
@@ -21,7 +21,8 @@ public class PlayerStateController
         this.pm = manager;
         stateTransitions = new Dictionary<PlayerState, Func<bool>>
         {
-            { PlayerState.Attack, () => pm.playerAttack.IsAttacking },
+            { PlayerState.Attack, () => pm.playerAttack.IsAttacking && pm.isGrounded },
+            { PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded },
             { PlayerState.Dash, () => pm.isDashing },
             { PlayerState.Dialog, () => pm.isAction },
             { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
@@ -134,6 +135,11 @@ public class PlayerStateController
                 break;
             case PlayerState.Hurt:
                 break;
+            case PlayerState.Attack:
+                break;
+            case PlayerState.AttackJP:
+                break;
+
             case PlayerState.Fall:
                 pm.GetAnimator().SetInteger("AnimState", 4);
                 break;
@@ -162,7 +168,9 @@ public class PlayerStateController
             case PlayerState.Skill:
                 return currentSkillAnimType;
             //case PlayerState.Parry:
-                //return AnimType.Parry;
+            //return AnimType.Parry;
+            //case PlayerState.Attack:
+               // return pm.isGrounded ? AnimType.Attack : AnimType.AttackJP;
             default:
                 return AnimType.Idle;
         }

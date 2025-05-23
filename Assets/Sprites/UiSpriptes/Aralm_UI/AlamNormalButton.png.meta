@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AlamNormalButton_0: 1400836835508877503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
