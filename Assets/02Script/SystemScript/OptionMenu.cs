@@ -7,6 +7,26 @@ using TMPro;
 
 public class OptionMenu : MonoBehaviour
 {
+    // 싱글톤 패턴
+    public static OptionMenu Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (optionPanel == null)
+            Debug.LogError("OptionMenu: optionPanel이 할당되지 않았습니다!");
+        else
+            optionPanel.SetActive(false);
+    }
+    
     // ------------------ 옵션 설정 관련 변수 ------------------
     [Header("옵션창")]
     public GameObject optionPanel;
@@ -114,8 +134,23 @@ public class OptionMenu : MonoBehaviour
     }
 
     // ------------------ 옵션창 열고 닫기 ------------------
-    public void OpenOption() => optionPanel?.SetActive(true);
-    public void CloseOption() => optionPanel?.SetActive(false);
+    public void OpenOption()
+    {
+        if (optionPanel != null)
+        {
+            optionPanel.SetActive(true);
+            Time.timeScale = 0f;  // 열 때 일시정지
+        }
+    }
+
+    public void CloseOption()
+    {
+        if (optionPanel != null)
+        {
+            optionPanel.SetActive(false);
+            Time.timeScale = 1f;  // 닫을 때 다시 재개
+        }
+    }
     public void TryCloseOption() => warningPopup.SetActive(true);
 
     public void ConfirmCloseOption()
@@ -142,6 +177,7 @@ public class OptionMenu : MonoBehaviour
 
         optionPanel.SetActive(false);
         warningPopup.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void CancelCloseOption() => warningPopup.SetActive(false);
