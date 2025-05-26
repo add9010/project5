@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      JumpPad_Cave_0017_0: -3083736833279100835
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

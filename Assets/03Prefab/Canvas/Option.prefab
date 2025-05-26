@@ -611,7 +611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3470411384501865242, guid: 9fd0a5016231f2a42ad092a3affb27dc, type: 3}
+  m_Sprite: {fileID: 5653091122380883740, guid: e98a13d01ce14fd4c8c863b1032bf4ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1159,7 +1159,7 @@ RectTransform:
   m_Father: {fileID: 9215674303702990924}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1234,7 +1234,7 @@ RectTransform:
   m_Father: {fileID: 4350231718196105392}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1631,7 +1631,7 @@ RectTransform:
   m_Father: {fileID: 3789399383568672464}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2320,7 +2320,7 @@ RectTransform:
   m_Father: {fileID: 2801340894259138242}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 2.5, y: 0}
   m_SizeDelta: {x: 5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3593,7 +3593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4354078248236370717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3739,8 +3739,8 @@ MonoBehaviour:
   masterMuteIcon: {fileID: 4640952497321350267}
   bgmMuteIcon: {fileID: 4692053228652948683}
   sfxMuteIcon: {fileID: 336806528701140957}
-  muteOnSprite: {fileID: -3534288053459477036, guid: 13342751a97dbcf48baaedcece16ae0e, type: 3}
-  muteOffSprite: {fileID: 2031635209395289019, guid: 9641766acdb59f74f82d6ac74cd4ba2a, type: 3}
+  muteOnSprite: {fileID: 4960894008110156641, guid: 1950b46114fd1bb4e9c0d15f110fc556, type: 3}
+  muteOffSprite: {fileID: -4938293001155942851, guid: d1ed76e634f84124197de70671187de9, type: 3}
   audioMixer: {fileID: 24100000, guid: bdd663eb9152468409599302bd76d8c4, type: 2}
   masterParam: MasterVolume
   bgmParam: BGMVolume
@@ -4462,7 +4462,7 @@ RectTransform:
   m_Father: {fileID: 749511421423141624}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4810,7 +4810,7 @@ RectTransform:
   m_Father: {fileID: 6666633167864005395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

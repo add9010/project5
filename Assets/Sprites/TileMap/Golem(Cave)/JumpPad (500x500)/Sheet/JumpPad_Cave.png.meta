@@ -722,7 +722,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      JumpPad_Cave_0: 6818194710181101392
+      JumpPad_Cave_1: 7408830794222826359
+      JumpPad_Cave_10: -3628333117821293282
+      JumpPad_Cave_11: 1543963523799498680
+      JumpPad_Cave_12: -8393398798362954895
+      JumpPad_Cave_13: 6596469687243775737
+      JumpPad_Cave_14: -6577840207017936618
+      JumpPad_Cave_15: -3281317257746483520
+      JumpPad_Cave_16: -4959851408234780318
+      JumpPad_Cave_17: 544037336167258036
+      JumpPad_Cave_18: -8599936178731869286
+      JumpPad_Cave_19: 5717959665621620714
+      JumpPad_Cave_2: 9102320930685202385
+      JumpPad_Cave_20: 3830863269853823204
+      JumpPad_Cave_21: 3487541371449518033
+      JumpPad_Cave_22: -6425931227969126746
+      JumpPad_Cave_23: -3212730878793133578
+      JumpPad_Cave_3: 144098313290674821
+      JumpPad_Cave_4: 1373150711374799705
+      JumpPad_Cave_5: 1399298435442450925
+      JumpPad_Cave_6: -2201311462038168474
+      JumpPad_Cave_7: -2494262610970114063
+      JumpPad_Cave_8: 8466542114682256566
+      JumpPad_Cave_9: 1647670648149154028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

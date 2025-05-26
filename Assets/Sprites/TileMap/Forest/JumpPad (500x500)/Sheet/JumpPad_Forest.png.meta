@@ -722,7 +722,31 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      JumpPad_Forest_0: -6927264482462495427
+      JumpPad_Forest_1: 1534924193326073125
+      JumpPad_Forest_10: -607446581193837519
+      JumpPad_Forest_11: -7929702302576276852
+      JumpPad_Forest_12: -4143961124017397938
+      JumpPad_Forest_13: 3252402466966112724
+      JumpPad_Forest_14: -1208612789626208144
+      JumpPad_Forest_15: 5067086389815432031
+      JumpPad_Forest_16: -780022960262174536
+      JumpPad_Forest_17: 1682276017402880434
+      JumpPad_Forest_18: -3212692213656797369
+      JumpPad_Forest_19: 1250198200789037737
+      JumpPad_Forest_2: -6579996336622705660
+      JumpPad_Forest_20: -6818534531899147191
+      JumpPad_Forest_21: -8367956767539268421
+      JumpPad_Forest_22: -1567042051058790697
+      JumpPad_Forest_23: 8906989674880595663
+      JumpPad_Forest_3: 584396905373439613
+      JumpPad_Forest_4: 1150177235416937431
+      JumpPad_Forest_5: 8067523689587958538
+      JumpPad_Forest_6: 2445499189939917081
+      JumpPad_Forest_7: -8255546671886043991
+      JumpPad_Forest_8: -5940486076757608223
+      JumpPad_Forest_9: 3113748471690006200
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
