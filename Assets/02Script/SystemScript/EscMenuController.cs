@@ -88,14 +88,17 @@ public class EscMenuController : MonoBehaviour
         escPanel.SetActive(false);
         Time.timeScale = 1f;
 
-        if (optionPanel != null)
+        // 이제 언제나 퍼시스트된 OptionMenu를 열고 닫습니다.
+        if (OptionMenu.Instance != null)
         {
-            // 타이틀 씬의 옵션 창 토글
-            optionPanel.SetActive(!optionPanel.activeSelf);
+            if (OptionMenu.Instance.gameObject.activeSelf)
+                OptionMenu.Instance.CloseOption();
+            else
+                OptionMenu.Instance.OpenOption();
         }
         else
         {
-            Debug.LogWarning("EscMenuController: 현재 씬에 Option Panel이 없습니다.");
+            Debug.LogError("EscMenuController: OptionMenu.Instance가 없습니다!");
         }
     }
 

@@ -3,9 +3,12 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 
 public class DialogSystem : MonoBehaviour
 {
+    public static DialogSystem Instance { get; private set; }
+
     [Header("UI 속성")]
     public GameObject panel;                         // 전체 대화 패널
     public TextMeshProUGUI speakerNameText;          // 말하는 캐릭터 이름
@@ -15,6 +18,7 @@ public class DialogSystem : MonoBehaviour
     public Button optionButtonPrefab;                // 선택지 버튼 프리팹
 
     public GameObject logPanel;                      // 로그 창 패널
+    public TextMeshProUGUI logText;
     public GameObject autoAdvanceIndicator;          // 우상단 자동 진행 표시 UI
     public GameObject expandDialogButton;            // 대화창 숨김/펼치기 상태 표시용 UI
 
@@ -38,6 +42,17 @@ public class DialogSystem : MonoBehaviour
 
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+
         // autoAdvanceIndicator에서 Image 컴포넌트 가져오기
         if (autoAdvanceIndicator != null)
         {
@@ -304,7 +319,14 @@ public class DialogSystem : MonoBehaviour
         // Space 키: 선택지가 떠있지 않을 때 대화 진행
         if (Input.GetKeyDown(KeyCode.Space) && panel.activeSelf && !optionsPanel.activeSelf)
         {
-            DisplayNextSentence();
+            if (isTyping)
+            {
+                isSkipRequested = true;
+            }
+            else
+            {
+                DisplayNextSentence();
+            }
         }
 
         // 숫자키로 선택지 고르기 (1~9)
@@ -323,20 +345,30 @@ public class DialogSystem : MonoBehaviour
         // 스킵 기능: '.' 키 (문장 타이핑 중)
         if (Input.GetKeyDown(KeyCode.Period))
         {
-            if (isTyping)
-            {
-                isSkipRequested = true;
-            }
-            else
-            {
-                DisplayNextSentence();
-            }
+            EndDialogue();
+            return;
         }
 
         // 로그 패널 토글: ',' 키
         if (Input.GetKeyDown(KeyCode.Comma))
         {
-            logPanel.SetActive(!logPanel.activeSelf);
+            // 이미 열려 있으면 닫기
+            if (logPanel.activeSelf)
+            {
+                logPanel.SetActive(false);
+            }
+            else
+            {
+                // 열려 있지 않으면 전체 대사 조합 후 열기
+                var sb = new StringBuilder();
+                for (int i = 0; i < dialogues.Length; i++)
+                {
+                    foreach (var sentence in dialogues[i].sentences)
+                        sb.AppendLine(sentence);
+                }
+                logText.text = sb.ToString();
+                logPanel.SetActive(true);
+            }
         }
 
         // 자동 진행 토글: M 키 → 색상 변경만 (항상 활성 상태)
