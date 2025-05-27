@@ -9,8 +9,10 @@ public class PlayerDash
 
     private float lastLeftTime = -1f;
     private float lastRightTime = -1f;
-    private float doubleTapThreshold = 0.25f; // 더블탭 최대 허용 시간
-    private float dashCooldownTime = 0.5f;     // 쿨타임 0.5초
+    private float doubleTapThreshold = 0.25f;
+    private float dashCooldownTime = 0.5f;
+
+    private float dashLastUsedTime = -999f; // ✅ 추가
 
     public PlayerDash(PlayerManager manager)
     {
@@ -24,7 +26,7 @@ public class PlayerDash
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (Time.time - lastLeftTime <= doubleTapThreshold)
-                Dash(-1f); // 왼쪽 대시
+                Dash(-1f);
 
             lastLeftTime = Time.time;
         }
@@ -32,7 +34,7 @@ public class PlayerDash
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (Time.time - lastRightTime <= doubleTapThreshold)
-                Dash(1f); // 오른쪽 대시
+                Dash(1f);
 
             lastRightTime = Time.time;
         }
@@ -49,6 +51,8 @@ public class PlayerDash
         dashCooldown = true;
         manager.isDashing = true;
 
+        dashLastUsedTime = Time.time; // ✅ 추가
+
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
 
         manager.playerStateController.ForceSetDash();
@@ -59,7 +63,7 @@ public class PlayerDash
         isDashing = false;
         manager.isDashing = false;
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), false);
-        // 쿨타임 대기
+
         yield return new WaitForSeconds(dashCooldownTime);
         dashCooldown = false;
     }
@@ -68,4 +72,9 @@ public class PlayerDash
     {
         return manager.groundSensor != null && manager.groundSensor.State();
     }
+
+    // ✅ 쿨타임용 Getter
+    public float GetLastUsedTime() => dashLastUsedTime;
+    public float GetCooldownDuration() => dashCooldownTime;
+    public bool IsCoolingDown() => Time.time < dashLastUsedTime + dashCooldownTime;
 }

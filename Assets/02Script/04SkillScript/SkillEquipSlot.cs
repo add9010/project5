@@ -87,5 +87,8 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
         if (cooldownOverlay != null)
             cooldownOverlay.fillAmount = 1f;
     }
-
+    public float GetLastUsedTime()
+    {
+        return lastUsedTime;
+    }
 }
