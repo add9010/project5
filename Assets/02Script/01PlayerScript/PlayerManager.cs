@@ -17,10 +17,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public CameraController cameraController;
 
     [Header("UI")]
-    public GameObject prfHpBar;
-    public GameObject canvas;
-    private RectTransform hpBar;
-    private UnityEngine.UI.Image nowHpbar;
+    public UnityEngine.UI.Image hpbar; 
 
     [Header("공격 위치")]
     public Transform attackPos;
@@ -71,8 +68,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private void Start()
     {
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
+
         playerStateController = new PlayerStateController(this);  // 이렇게 수정
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
@@ -131,15 +127,6 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerDialog.HandleInput();
         playerDialog.HandleScan();
     }
-    private void LateUpdate()
-    {
-        if (hpBar != null)
-        {
-            // 카메라 흔들림을 무시하고 HP 바 위치 계산
-            Vector3 hpBarPos = Camera.main.transform.position + (transform.position - Camera.main.transform.position) + Vector3.up * data.heightOffset;
-            hpBar.position = Camera.main.WorldToScreenPoint(hpBarPos);
-        }
-    }
 
     public void SetAnimType(AnimType type)
     {
@@ -167,8 +154,8 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     public void UpdateHpUI(float currentHealth)
     {
-        if (nowHpbar != null)
-            nowHpbar.fillAmount = currentHealth / data.maxHealth;
+        if (hpbar != null)
+            hpbar.fillAmount = currentHealth / data.maxHealth;
     }
 
     public void StartAttackCoroutine(IEnumerator routine)
