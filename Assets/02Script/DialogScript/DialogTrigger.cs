@@ -4,10 +4,11 @@ public class DialogTrigger : MonoBehaviour
 {
     [Header("설정")]
     public string npcName; // 예: Oxton, Neroban, Atti, Ideer
-    public DialogSystem dialogSystem;
+    //public DialogSystem dialogSystem;
 
     private DialogueDataSet dataSet;
     private bool isPlayerInRange = false;
+  
 
     private void Start()
     {
@@ -78,28 +79,28 @@ public class DialogTrigger : MonoBehaviour
 
     public void TryStartDialogue()
     {
-        // 범위 밖이거나 데이터 없으면 바로 리턴
-        if (!isPlayerInRange || dataSet == null)
+        if (!isPlayerInRange)
             return;
 
-        // dialogSystem이 Inspector에 할당되지 않았으면 씬에서 찾아보기
-        if (dialogSystem == null)
+        // 싱글톤으로 접근
+        var ds = DialogSystem.Instance;
+        if (ds == null)
         {
-            dialogSystem = Object.FindAnyObjectByType<DialogSystem>();
-            if (dialogSystem == null)
-            {
-                Debug.LogError("DialogTrigger: DialogSystem 인스턴스를 찾을 수 없습니다!");
-                return;
-            }
+            Debug.LogError("DialogSystem 싱글톤 인스턴스를 찾을 수 없습니다!");
+            return;
         }
 
-        // 이제 안전하게 대화 시작
-        dialogSystem.StartDialogue(dataSet.dialogues);
+        // 이미 대화 중이면 중복 진입 방지
+        if (ds.panel.activeSelf)
+            return;
 
-        // PlayerManager.Instance에도 방어 코드
-        if (PlayerManager.Instance != null)
-            PlayerManager.Instance.isAction = true;
-        else
-            Debug.LogWarning("DialogTrigger: PlayerManager.Instance가 null입니다.");
+        if (dataSet == null)
+        {
+            Debug.LogError($"{npcName}의 DialogueDataSet이 null입니다!");
+            return;
+        }
+
+        ds.StartDialogue(dataSet.dialogues);
+        PlayerManager.Instance.isAction = true;
     }
 }

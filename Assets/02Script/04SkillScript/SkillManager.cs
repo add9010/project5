@@ -11,7 +11,9 @@ public class SkillManager : MonoBehaviour
     public void SetSlotA(SkillEquipSlot slot) => slotA = slot;
     public void SetSlotS(SkillEquipSlot slot) => slotS = slot;
     public void SetSlotD(SkillEquipSlot slot) => slotD = slot;
-
+    public SkillEquipSlot GetSlotA() => slotA;
+    public SkillEquipSlot GetSlotS() => slotS;
+    public SkillEquipSlot GetSlotD() => slotD;
     private void Awake()
     {
         if (Instance == null)

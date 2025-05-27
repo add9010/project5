@@ -17,10 +17,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public CameraController cameraController;
 
     [Header("UI")]
-    public GameObject prfHpBar;
-    public GameObject canvas;
-    private RectTransform hpBar;
-    private UnityEngine.UI.Image nowHpbar;
+    public UnityEngine.UI.Image hpbar; 
 
     [Header("공격 위치")]
     public Transform attackPos;
@@ -71,22 +68,38 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private void Start()
     {
-        hpBar = Instantiate(prfHpBar, canvas.transform).GetComponent<RectTransform>();
-        nowHpbar = hpBar.transform.GetChild(0).GetComponent<UnityEngine.UI.Image>();
-        playerStateController = new PlayerStateController(this);  // 이렇게 수정
+        playerStateController = new PlayerStateController(this);
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
-        playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
-        playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
+        playerMove = new PlayerMove(this);
+        playerDialog = new PlayerDialog(this);
         playerDash = new PlayerDash(this);
         playerParry = new PlayerParry(this);
-        Camera.main.GetComponent<CameraController>().target = transform;
-        // 한 번 더 안전 장치
-        //if (dialog == null && DialogManager.Instance != null)
-        //    dialog = DialogManager.Instance;
 
-        // 이제 PlayerDialog 내부에서 dialog를 참조해도 null이 아닙니다.
-        playerDialog = new PlayerDialog(this);
+        Camera.main.GetComponent<CameraController>().target = transform;
+
+        // ✅ PYCanvas에서 HP바 자동 연결
+        if (hpbar == null)
+        {
+            GameObject foundCanvas = GameObject.Find("PYCanvas");
+            if (foundCanvas != null)
+            {
+                var foundHp = foundCanvas.transform.Find("hpbar") ?? foundCanvas.transform.Find("hpbar2/hpbar");
+                if (foundHp != null)
+                {
+                    hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
+                    Debug.Log("✅ PYCanvas에서 HP바 자동 연결 완료");
+                }
+                else
+                {
+                    Debug.LogWarning("⚠️ PYCanvas 안에서 hpbar 찾기 실패");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("⚠️ PYCanvas 자체를 찾을 수 없음");
+            }
+        }
     }
 
     private void Update()
@@ -131,15 +144,6 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerDialog.HandleInput();
         playerDialog.HandleScan();
     }
-    private void LateUpdate()
-    {
-        if (hpBar != null)
-        {
-            // 카메라 흔들림을 무시하고 HP 바 위치 계산
-            Vector3 hpBarPos = Camera.main.transform.position + (transform.position - Camera.main.transform.position) + Vector3.up * data.heightOffset;
-            hpBar.position = Camera.main.WorldToScreenPoint(hpBarPos);
-        }
-    }
 
     public void SetAnimType(AnimType type)
     {
@@ -167,8 +171,8 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     public void UpdateHpUI(float currentHealth)
     {
-        if (nowHpbar != null)
-            nowHpbar.fillAmount = currentHealth / data.maxHealth;
+        if (hpbar != null)
+            hpbar.fillAmount = currentHealth / data.maxHealth;
     }
 
     public void StartAttackCoroutine(IEnumerator routine)
