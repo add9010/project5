@@ -6,7 +6,15 @@ public class SkillCanvasController : MonoBehaviour
     [SerializeField] private GameObject skillCanvasPrefab;
 
     private GameObject skillCanvasInstance;
-
+    private void Start()
+    {
+        if (skillCanvasInstance == null)
+        {
+            skillCanvasInstance = Instantiate(skillCanvasPrefab);
+            skillCanvasInstance.SetActive(false); // 눈에는 안 보임
+            AutoAssignSlots();
+        }
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -41,6 +49,16 @@ public class SkillCanvasController : MonoBehaviour
             if (name.Contains("A")) SkillManager.Instance.SetSlotA(slot);
             else if (name.Contains("S")) SkillManager.Instance.SetSlotS(slot);
             else if (name.Contains("D")) SkillManager.Instance.SetSlotD(slot);
+        }
+
+        // ✅ 플레이어가 있는 씬에서만 복원
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            SkillManager.Instance.RestoreEquippedSkills();
+        }
+        else
+        {
+            Debug.Log("[SkillCanvasController] 플레이어가 없어 스킬 복원 생략됨");
         }
     }
 }
