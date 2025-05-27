@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6941089138937725235}
   - component: {fileID: 321361395095631339}
+  - component: {fileID: 4496427670322750493}
   m_Layer: 0
   m_Name: ManagersContainer
   m_TagString: Untagged
@@ -54,6 +55,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9185761ab23d7ed4a837a3d8e38bfc0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4496427670322750493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415276881534195052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed90986a2dfa75c40b28fae9c95d9735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCanvas: {fileID: 7274874157871667205}
 --- !u!1001 &316700219979788509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -127,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 8007865794008478140, guid: 65436d93007fe0947bab90373ddb55d5, type: 3}
       propertyPath: m_Name
       value: PYCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007865794008478140, guid: 65436d93007fe0947bab90373ddb55d5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8103798335337788726, guid: 65436d93007fe0947bab90373ddb55d5, type: 3}
       propertyPath: m_Pivot.x
@@ -213,6 +231,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65436d93007fe0947bab90373ddb55d5, type: 3}
+--- !u!1 &7274874157871667205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8007865794008478140, guid: 65436d93007fe0947bab90373ddb55d5, type: 3}
+  m_PrefabInstance: {fileID: 852354623854111161}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8908777183343385743 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8103798335337788726, guid: 65436d93007fe0947bab90373ddb55d5, type: 3}

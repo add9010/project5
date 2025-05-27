@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using System.Runtime.CompilerServices;
-
 public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 {
     public static PlayerManager Instance;
@@ -100,6 +99,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
                 Debug.LogWarning("⚠️ PYCanvas 자체를 찾을 수 없음");
             }
         }
+        StartCoroutine(WaitForPYCanvas());
     }
 
     private void Update()
@@ -212,6 +212,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         }
     }
 
+
     public Animator GetAnimator(
         [CallerFilePath] string file = "",
         [CallerLineNumber] int line = 0,
@@ -221,4 +222,31 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
         return animator;
     }
+
+    private IEnumerator WaitForPYCanvas()
+    {
+        // PYCanvas가 존재하고 활성화될 때까지 대기
+        yield return new WaitUntil(() =>
+        {
+            GameObject canvas = GameObject.Find("PYCanvas");
+            return canvas != null && canvas.activeInHierarchy;
+        });
+
+        GameObject foundCanvas = GameObject.Find("PYCanvas");
+        if (foundCanvas != null)
+        {
+            var foundHp = foundCanvas.transform.Find("hpbar") ?? foundCanvas.transform.Find("hpbar2/hpbar");
+            if (foundHp != null)
+            {
+                hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
+                Debug.Log("✅ 지연 후 PYCanvas에서 HP바 자동 연결 완료");
+            }
+            else
+            {
+                Debug.LogWarning("⚠️ PYCanvas 내부에서 hpbar 찾기 실패");
+            }
+        }
+    }
+
+
 }
