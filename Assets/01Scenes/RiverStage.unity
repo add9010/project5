@@ -622,11 +622,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.84
+      value: -9.33
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.74
+      value: -6.17
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -661,9 +661,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: enablePatrol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: detectionRange
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2859895025027972965, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_Name
       value: Wizard
@@ -688,11 +700,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.463074
+      value: -4.43
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.1130123
+      value: -15.36
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -727,9 +739,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
+    - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: detectionRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9063185250209658424, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_Name
       value: Bandit (1)
@@ -1109,11 +1129,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.250366
+      value: 7.26
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.145693
+      value: -15.39
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1148,9 +1168,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
+    - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: detectionRange
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9063185250209658424, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_Name
       value: Bandit
@@ -1332,11 +1360,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.78
+      value: 29.59
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.78
+      value: -16.29
       objectReference: {fileID: 0}
     - target: {fileID: 3498178644370848653, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1371,12 +1399,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
     - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: enablePatrol
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765320758320741173, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
+      propertyPath: detectionRange
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9063185250209658424, guid: 68f679a68369b1a48be609e788e9c27d, type: 3}
       propertyPath: m_Name
@@ -2292,11 +2328,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.01
+      value: -37.94
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.64
+      value: -3.77
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2331,9 +2367,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: enablePatrol
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: detectionRange
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2859895025027972965, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_Name
       value: Wizard (1)
@@ -2518,11 +2566,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.84
+      value: 16.13
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.28
+      value: -4.03
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2557,12 +2605,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
     - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: enablePatrol
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: detectionRange
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2859895025027972965, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_Name
@@ -2635,7 +2691,10 @@ PrefabInstance:
       value: RiverStage_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6054590362126986388, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
+    - {fileID: 5397007662954490004, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
+    - {fileID: 8461557752272982989, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1233658039780275772, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
       insertIndex: 0
@@ -2951,11 +3010,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.94
+      value: -2.38
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.24
+      value: -3.03
       objectReference: {fileID: 0}
     - target: {fileID: 1279009581576446715, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2990,12 +3049,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: patrolRange
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: worldCanvas
       value: 
       objectReference: {fileID: 699821990}
     - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: enablePatrol
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970209427060711564, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
+      propertyPath: detectionRange
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2859895025027972965, guid: 3fdfefd20232c9d478ff2bf2f7df13ab, type: 3}
       propertyPath: m_Name
