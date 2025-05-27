@@ -15,7 +15,7 @@ public class PatrolState : IEnemyState
             enemy.SwitchState(new ChaseState());
             return;
         }
-
+        enemy.anim.SetBool("isWalk", true);
         enemy.Patrol();
     }
 
