@@ -72,6 +72,12 @@ public class SkillManager : MonoBehaviour
             return;
         }
 
+        if (!pm.TryUseMana(slot.EquippedSkill.manaCost)) // 💡 마나 체크
+        {
+            Debug.Log($"❌ 마나 부족: 스킬 '{slot.EquippedSkill.skillName}'");
+            return;
+        }
+
         var prefab = slot.EquippedSkill.skillLogicPrefab;
         if (prefab == null)
         {

@@ -141,10 +141,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 4975741955291382485, guid: 85b5f7ab2ef6e7a4682c244ffb3eda68, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1575,6 +1575,10 @@ MonoBehaviour:
     trackedSlot: {fileID: 0}
   dashCooldownOverlay: {fileID: 7006866114893210891}
   parryCooldownOverlay: {fileID: 3030258329639756351}
+  manaIcons:
+  - {fileID: 5188212140515455490}
+  - {fileID: 2980656356152277931}
+  - {fileID: 7326874170652299627}
 --- !u!1 &8095970573203267449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,10 +1645,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 4975741955291382485, guid: 85b5f7ab2ef6e7a4682c244ffb3eda68, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1791,10 +1795,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 4975741955291382485, guid: 85b5f7ab2ef6e7a4682c244ffb3eda68, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0

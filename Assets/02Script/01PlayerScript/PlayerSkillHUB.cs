@@ -22,6 +22,9 @@ public class PlayerSkillHUD : MonoBehaviour
     [Header("패링 쿨타임 HUD")]
     public Image parryCooldownOverlay;
 
+    [Header("마나 HUD")]
+    public Image[] manaIcons; 
+
     private PlayerDash dash;
     private PlayerParry parry;
     private bool dashInit = false;
@@ -63,7 +66,7 @@ public class PlayerSkillHUD : MonoBehaviour
         UpdateSkillSlot(slot1);
         UpdateSkillSlot(slot2);
         UpdateSkillSlot(slot3);
-
+        UpdateManaUI();
         // ✅ Dash & Parry 안전 연결
         if (!dashInit || !parryInit)
         {
@@ -123,4 +126,30 @@ public class PlayerSkillHUD : MonoBehaviour
         if (slot.cooldownOverlay != null)
             slot.cooldownOverlay.fillAmount = percent;
     }
+    private void UpdateManaUI()
+    {
+        var pm = PlayerManager.Instance;
+        if (pm == null || manaIcons == null || manaIcons.Length == 0) return;
+
+        int current = pm.currentMana;
+        int max = pm.data.maxMana;
+        float progress = pm.GetManaRechargeProgress(); // float 0~1
+
+        for (int i = 0; i < manaIcons.Length; i++)
+        {
+            if (i < current)
+            {
+                manaIcons[i].fillAmount = 1f; // 충전 완료
+            }
+            else if (i == current && current < max)
+            {
+                manaIcons[i].fillAmount = progress; // 현재 충전중인 마나
+            }
+            else
+            {
+                manaIcons[i].fillAmount = 0f; // 아직 비어 있음
+            }
+        }
+    }
+
 }
