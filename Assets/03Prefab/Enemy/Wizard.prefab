@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2171915959844992715}
   - component: {fileID: 7148218152520771034}
   - component: {fileID: 1970209427060711564}
+  - component: {fileID: 1863181109599565819}
   m_Layer: 9
   m_Name: Wizard
   m_TagString: Enemy
@@ -139,7 +140,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &7148218152520771034
 BoxCollider2D:
@@ -210,13 +211,35 @@ MonoBehaviour:
   enablePatrol: 1
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   markYOffset: 1
+  maxStagger: 50
+  staggerRecoverTime: 1.5
+  stunDuration: 3
   attackHitDelay: 0.5
+  fallGravity: 10
   anim: {fileID: 0}
   rigid: {fileID: 0}
   player: {fileID: 0}
   maxPatrolTime: 3
   projectilePrefab: {fileID: 1097795716494991988, guid: ba2f50662476914448b683f29c02274d, type: 3}
   firePoint: {fileID: 9119864123255473837}
+--- !u!114 &1863181109599565819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859895025027972965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff21884068777442943be7cc34b2e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  offsetX: 0.6
+  offsetY: 0.2
+  rayDistance: 1
 --- !u!1 &2889821118227468119
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4622916757676382793}
   - component: {fileID: 5289912127759939417}
   - component: {fileID: 7765320758320741173}
+  - component: {fileID: 6991938532415040124}
   m_Layer: 9
   m_Name: Bandit
   m_TagString: Enemy
@@ -138,7 +139,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &5289912127759939417
 BoxCollider2D:
@@ -209,8 +210,30 @@ MonoBehaviour:
   enablePatrol: 1
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   markYOffset: 2
+  maxStagger: 50
+  staggerRecoverTime: 1.5
+  stunDuration: 3
   attackHitDelay: 0.5
+  fallGravity: 10
   anim: {fileID: 0}
   rigid: {fileID: 0}
   player: {fileID: 0}
   maxPatrolTime: 3
+--- !u!114 &6991938532415040124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063185250209658424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff21884068777442943be7cc34b2e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1280
+  offsetX: 0
+  offsetY: 0
+  rayDistance: 1
