@@ -20,6 +20,17 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public GameObject markPrefab;
     public float markYOffset = 2.0f;
 
+    [Header("Stagger")]
+    public float maxStagger = 50f;
+    public float staggerRecoverTime = 1.5f;
+    public float stunDuration = 3f;
+
+    private float currentStagger;
+    private float stunTimer;
+    private bool isStunned = false;
+
+
+
     public float attackHitDelay = 0.5f; // 공격 히트 딜레이 (애니메이션과 맞춰야 함)
 
     [HideInInspector] public Animator anim;
@@ -37,6 +48,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public void RecordAttackTime() => lastAttackTime = Time.time;
     private bool isEnemyDead = false;
 
+
     protected virtual void Awake()
     {
         anim = GetComponent<Animator>();
@@ -51,14 +63,26 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
         SwitchState(enablePatrol ? new PatrolState() : new IdleState());
         IgnoreEnemyCollisions();
+        currentStagger = maxStagger;
     }
 
     protected virtual void Update()
     {
+        if (isStunned)
+        {
+            stunTimer -= Time.deltaTime;
+            if (stunTimer <= 0f)
+            {
+                isStunned = false;
+                currentStagger = maxStagger;
+            }
+            return;
+        }
+
         if (!(currentState is AttackState)
-       && !(currentState is HurtState)   // ← 이 줄 추가
-       && IsPlayerInAttackRange()
-       && CanAttack())
+            && !(currentState is HurtState)
+            && IsPlayerInAttackRange()
+            && CanAttack())
         {
             SwitchState(new AttackState());
             return;
@@ -231,7 +255,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     {
         IsParryWindow = isOpen;
 #if UNITY_EDITOR
-        if (isOpen) Debug.Log($"{enemyName}: 패링 타이밍 진입");
+        //if (isOpen) Debug.Log($"{enemyName}: 패링 타이밍 진입");
 #endif
     }
 
@@ -239,6 +263,29 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     public bool IsParryable()
     {
         return currentState is AttackState;
+    }
+
+    public void ReduceStagger(float amount)
+    {
+        if (isStunned)
+        {
+            Debug.Log($"{enemyName} 이미 스턴 중 → 경직도 무시");
+            return;
+        }
+
+        currentStagger -= amount;
+        Debug.Log($"{enemyName} 경직도 감소: {amount} → 현재 {currentStagger}");
+
+        if (currentStagger <= 0)
+        {
+            EnterStun();
+        }
+    }
+    private void EnterStun()
+    {
+        isStunned = true;
+        stunTimer = stunDuration;
+        StopMovement();
     }
 
     private void OnDrawGizmosSelected()
