@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     #endregion
 
     #region ▒ 런타임 상태 변수 ▒
-    private float currentStagger;
+    public float currentStagger;
     private float stunTimer;
     private bool isStunned = false;
 
@@ -77,14 +77,9 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     protected virtual void Update()
     {
         // 스턴 처리
-        if (isStunned)
+        if (currentState is StaggerState)
         {
-            stunTimer -= Time.deltaTime;
-            if (stunTimer <= 0f)
-            {
-                isStunned = false;
-                currentStagger = maxStagger;
-            }
+            currentState.Update(this);
             return;
         }
 
@@ -277,11 +272,14 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     public void ReduceStagger(float amount)
     {
-        if (isStunned) return;
+        if (currentState is StaggerState) return;
 
         currentStagger -= amount;
         if (currentStagger <= 0f)
-            EnterStun();
+        {
+            // StaggerState 진입
+            SwitchState(new StaggerState());
+        }
     }
 
     private void EnterStun()
