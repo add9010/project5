@@ -68,21 +68,38 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private void Start()
     {
-
-        playerStateController = new PlayerStateController(this);  // 이렇게 수정
+        playerStateController = new PlayerStateController(this);
         playerAttack = new PlayerAttack(this);
         playerHealth = new PlayerHealth(this);
-        playerMove = new PlayerMove(this); // ⬅️ 모듈화된 이동 클래스 사용
-        playerDialog = new PlayerDialog(this);// 대화창    if (Camera.main != null)
+        playerMove = new PlayerMove(this);
+        playerDialog = new PlayerDialog(this);
         playerDash = new PlayerDash(this);
         playerParry = new PlayerParry(this);
-        Camera.main.GetComponent<CameraController>().target = transform;
-        // 한 번 더 안전 장치
-        //if (dialog == null && DialogManager.Instance != null)
-        //    dialog = DialogManager.Instance;
 
-        // 이제 PlayerDialog 내부에서 dialog를 참조해도 null이 아닙니다.
-        playerDialog = new PlayerDialog(this);
+        Camera.main.GetComponent<CameraController>().target = transform;
+
+        // ✅ PYCanvas에서 HP바 자동 연결
+        if (hpbar == null)
+        {
+            GameObject foundCanvas = GameObject.Find("PYCanvas");
+            if (foundCanvas != null)
+            {
+                var foundHp = foundCanvas.transform.Find("hpbar") ?? foundCanvas.transform.Find("hpbar2/hpbar");
+                if (foundHp != null)
+                {
+                    hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
+                    Debug.Log("✅ PYCanvas에서 HP바 자동 연결 완료");
+                }
+                else
+                {
+                    Debug.LogWarning("⚠️ PYCanvas 안에서 hpbar 찾기 실패");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("⚠️ PYCanvas 자체를 찾을 수 없음");
+            }
+        }
     }
 
     private void Update()
