@@ -7,22 +7,21 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
     [SerializeField] private Image iconImage;
     [SerializeField] private Image cooldownOverlay;
     public SkillData EquippedSkill { get; private set; }
+
     private float cooldownTime;
     private float lastUsedTime = -999f;
-
 
     private void Awake()
     {
         if (iconImage == null)
-            iconImage = GetComponent<Image>(); // 또는 GetComponentInChildren<Image>()
+            iconImage = GetComponent<Image>();
         if (cooldownOverlay == null)
-        {
             cooldownOverlay = transform.parent.Find(name + " cool")?.GetComponent<Image>();
-        }
     }
+
     private void Update()
     {
-        if (EquippedSkill == null || cooldownTime <= 0f) return;
+        if (!Application.isPlaying || EquippedSkill == null) return;
 
         float remaining = Mathf.Clamp((lastUsedTime + cooldownTime - Time.time), 0f, cooldownTime);
         float percent = remaining / cooldownTime;
@@ -31,18 +30,36 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
             cooldownOverlay.fillAmount = percent;
     }
 
+   public void Equip(SkillData skill)
+{
+    // 💡 안전하게 iconImage가 null일 경우 대비
+    if (iconImage == null)
+        iconImage = GetComponent<Image>();
 
+    EquippedSkill = skill;
+    cooldownTime = skill.cooldown;
 
-    public void Equip(SkillData skill)
+    if (iconImage != null)
     {
-        EquippedSkill = skill;
-        cooldownTime = skill.cooldown;
         iconImage.sprite = skill.icon;
         iconImage.enabled = true;
-
-        if (cooldownOverlay != null)
-            cooldownOverlay.fillAmount = 0f;
     }
+
+    if (cooldownOverlay != null)
+        cooldownOverlay.fillAmount = 0f;
+
+    var dragItem = GetComponentInChildren<SkillDragItem>();
+    if (dragItem != null)
+        dragItem.isLocked = true;
+
+    // 저장
+    if (SkillManager.Instance != null)
+    {
+        if (gameObject.name.Contains("A")) SkillManager.Instance.SaveSlotData('A', skill);
+        if (gameObject.name.Contains("S")) SkillManager.Instance.SaveSlotData('S', skill);
+        if (gameObject.name.Contains("D")) SkillManager.Instance.SaveSlotData('D', skill);
+    }
+}
 
     public void Clear()
     {
@@ -54,27 +71,12 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         SkillDragItem draggedItem = eventData.pointerDrag?.GetComponent<SkillDragItem>();
+        if (draggedItem == null) return;
 
-        if (draggedItem != null)
-        {
-            Equip(draggedItem.skillData);
-
-            // UI 정확하게 정렬
-            RectTransform dragRect = draggedItem.GetComponent<RectTransform>();
-            RectTransform slotRect = this.GetComponent<RectTransform>();
-
-            draggedItem.transform.SetParent(this.transform, false); // 부모 변경 (레이아웃 영향 방지)
-            dragRect.anchorMin = new Vector2(0.5f, 0.5f);
-            dragRect.anchorMax = new Vector2(0.5f, 0.5f);
-            dragRect.pivot = new Vector2(0.5f, 0.5f); // 가운데 기준
-            dragRect.anchoredPosition = Vector2.zero; // 정확히 중앙 위치
-            dragRect.localScale = Vector3.one; // 크기 초기화
-
-            draggedItem.wasDroppedOnSlot = true;
-
-            Debug.Log($"스킬 {draggedItem.skillData.skillName} 장착됨!");
-        }
+        Equip(draggedItem.skillData);
+        Destroy(draggedItem.gameObject);
     }
+
     public bool IsReady()
     {
         return Time.time >= lastUsedTime + cooldownTime;
@@ -87,8 +89,6 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
         if (cooldownOverlay != null)
             cooldownOverlay.fillAmount = 1f;
     }
-    public float GetLastUsedTime()
-    {
-        return lastUsedTime;
-    }
+
+    public float GetLastUsedTime() => lastUsedTime;
 }

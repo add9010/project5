@@ -212,7 +212,14 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         }
     }
 
-
+    private void OnDestroy()
+    {
+        if (SkillManager.Instance != null)
+        {
+            SkillManager.Instance.SaveEquippedSkills();
+            Debug.Log("🧠 Player 사라짐 → 스킬 자동 저장");
+        }
+    }
     public Animator GetAnimator(
         [CallerFilePath] string file = "",
         [CallerLineNumber] int line = 0,
