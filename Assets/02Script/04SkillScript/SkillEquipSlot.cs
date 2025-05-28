@@ -18,7 +18,26 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
         if (cooldownOverlay == null)
             cooldownOverlay = transform.parent.Find(name + " cool")?.GetComponent<Image>();
     }
+    private void Start()
+    {
+        if (SkillManager.Instance == null) return;
 
+        if (name.Contains("A"))
+        {
+            SkillManager.Instance.SetSlotA(this);
+            Debug.Log($"[Slot] {name} → SkillManager.SetSlotA 등록");
+        }
+        else if (name.Contains("S"))
+        {
+            SkillManager.Instance.SetSlotS(this);
+            Debug.Log($"[Slot] {name} → SkillManager.SetSlotS 등록");
+        }
+        else if (name.Contains("D"))
+        {
+            SkillManager.Instance.SetSlotD(this);
+            Debug.Log($"[Slot] {name} → SkillManager.SetSlotD 등록");
+        }
+    }
     private void Update()
     {
         if (!Application.isPlaying || EquippedSkill == null) return;
