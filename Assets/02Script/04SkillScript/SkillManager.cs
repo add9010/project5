@@ -14,6 +14,7 @@ public class SkillManager : MonoBehaviour
     private SkillData savedSlotS;
     private SkillData savedSlotD;
 
+    [SerializeField] private GameObject skillCanvasPrefab;
     private void Awake()
     {
         if (Instance == null)
@@ -25,7 +26,14 @@ public class SkillManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void Start()
+    {
+        if (Object.FindFirstObjectByType<SkillCanvasController>() == null)
+        {
+            Instantiate(skillCanvasPrefab, transform); // 혹은 원하는 위치에 생성
+            Debug.Log("🧠 SkillCanvas 자동 생성됨");
+        }
+    }
     public void SetSlotA(SkillEquipSlot slot)
     {
         slotA = slot;

@@ -346,6 +346,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+--- !u!114 &667175072234769717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1732616229694744404, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+  m_PrefabInstance: {fileID: 1245585555157461601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3624e5d45661424a95ad4457ae3d018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4427607687513515590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3187194819186035751, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+  m_PrefabInstance: {fileID: 1245585555157461601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3624e5d45661424a95ad4457ae3d018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4884682860670578306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5944984986681722083, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
@@ -356,6 +378,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6250497585758145478, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
   m_PrefabInstance: {fileID: 1245585555157461601}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8836279222389748618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7776010476578675179, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+  m_PrefabInstance: {fileID: 1245585555157461601}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3624e5d45661424a95ad4457ae3d018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3637280517019768911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -700,6 +733,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8252603127511153491, guid: 20584272cb8c3fe4a966393702c55fa0, type: 3}
+      propertyPath: slotA
+      value: 
+      objectReference: {fileID: 4427607687513515590}
+    - target: {fileID: 8252603127511153491, guid: 20584272cb8c3fe4a966393702c55fa0, type: 3}
+      propertyPath: slotD
+      value: 
+      objectReference: {fileID: 8836279222389748618}
+    - target: {fileID: 8252603127511153491, guid: 20584272cb8c3fe4a966393702c55fa0, type: 3}
+      propertyPath: slotS
+      value: 
+      objectReference: {fileID: 667175072234769717}
+    - target: {fileID: 8252603127511153491, guid: 20584272cb8c3fe4a966393702c55fa0, type: 3}
+      propertyPath: skillCanvasPrefab
+      value: 
+      objectReference: {fileID: 4884682860670578306}
     - target: {fileID: 8552454128734962059, guid: 20584272cb8c3fe4a966393702c55fa0, type: 3}
       propertyPath: m_Name
       value: SkillManager
