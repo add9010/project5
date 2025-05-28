@@ -1,0 +1,780 @@
+fileFormatVersion: 2
+guid: 9018a0842e5fe8d4caa45d49a74e6b3b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2748808463077380397
+    second: DownJump_0
+  - first:
+      213: -8608958026814790970
+    second: DownJump_1
+  - first:
+      213: -265420117980479593
+    second: DownJump_2
+  - first:
+      213: 5541138743434102696
+    second: DownJump_3
+  - first:
+      213: 5318338106888219220
+    second: DownJump_4
+  - first:
+      213: -8044807932081738188
+    second: DownJump_5
+  - first:
+      213: -24789856889361019
+    second: DownJump_6
+  - first:
+      213: 2842260935623242569
+    second: DownJump_7
+  - first:
+      213: 5945059519781040030
+    second: DownJump_8
+  - first:
+      213: -549257851805617566
+    second: DownJump_9
+  - first:
+      213: 6907480604136875320
+    second: DownJump_10
+  - first:
+      213: 2132040233695786863
+    second: DownJump_11
+  - first:
+      213: -5361522644608557946
+    second: DownJump_12
+  - first:
+      213: -3478822366645391481
+    second: DownJump_13
+  - first:
+      213: 2018516812246527103
+    second: DownJump_14
+  - first:
+      213: 2817213933147514112
+    second: DownJump_15
+  - first:
+      213: -6999034607825192967
+    second: DownJump_16
+  - first:
+      213: -4779037071906690957
+    second: DownJump_17
+  - first:
+      213: 6589624883783757271
+    second: DownJump_18
+  - first:
+      213: -8395465820515358291
+    second: DownJump_19
+  - first:
+      213: 2562206076600077048
+    second: DownJump_20
+  - first:
+      213: -1314845440789507542
+    second: DownJump_21
+  - first:
+      213: -1757152708744635582
+    second: DownJump_22
+  - first:
+      213: -7515832469526918702
+    second: DownJump_23
+  - first:
+      213: 8552229986543704400
+    second: DownJump_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DownJump_0
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 2627
+        width: 474
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d21905dbbbab52620800000000000000
+      internalID: 2748808463077380397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_1
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 2478
+        width: 420
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2e47d6946d68880800000000000000
+      internalID: -8608958026814790970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_2
+      rect:
+        serializedVersion: 2
+        x: 4821
+        y: 2409
+        width: 161
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ff7871fc9015cf0800000000000000
+      internalID: -265420117980479593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_3
+      rect:
+        serializedVersion: 2
+        x: 3787
+        y: 2386
+        width: 442
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a74b85345416ec40800000000000000
+      internalID: 5541138743434102696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_4
+      rect:
+        serializedVersion: 2
+        x: 4771
+        y: 2247
+        width: 210
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45aee7894588ec940800000000000000
+      internalID: 5318338106888219220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_5
+      rect:
+        serializedVersion: 2
+        x: 3576
+        y: 2196
+        width: 385
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ee50a1fc91b5090800000000000000
+      internalID: -8044807932081738188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_6
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 2105
+        width: 307
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58da31aa1cde7aff0800000000000000
+      internalID: -24789856889361019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_7
+      rect:
+        serializedVersion: 2
+        x: 6370
+        y: 2114
+        width: 313
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943fac2134db17720800000000000000
+      internalID: 2842260935623242569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_8
+      rect:
+        serializedVersion: 2
+        x: 4575
+        y: 2083
+        width: 250
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f6a1d8228118250800000000000000
+      internalID: 5945059519781040030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_9
+      rect:
+        serializedVersion: 2
+        x: 3829
+        y: 1987
+        width: 397
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2623805d4e4a068f0800000000000000
+      internalID: -549257851805617566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_10
+      rect:
+        serializedVersion: 2
+        x: 2325
+        y: 1929
+        width: 409
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835aa76130d4cdf50800000000000000
+      internalID: 6907480604136875320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_11
+      rect:
+        serializedVersion: 2
+        x: 6303
+        y: 1914
+        width: 382
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f673748eb47869d10800000000000000
+      internalID: 2132040233695786863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_12
+      rect:
+        serializedVersion: 2
+        x: 4755
+        y: 1876
+        width: 223
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68cd4e0bf8b0895b0800000000000000
+      internalID: -5361522644608557946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_13
+      rect:
+        serializedVersion: 2
+        x: 4602
+        y: 1680
+        width: 373
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fea673d7db8bfc0800000000000000
+      internalID: -3478822366645391481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_14
+      rect:
+        serializedVersion: 2
+        x: 4209
+        y: 1507
+        width: 308
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7cab1f9856330c10800000000000000
+      internalID: 2018516812246527103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_15
+      rect:
+        serializedVersion: 2
+        x: 5584
+        y: 964
+        width: 215
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005e98d5521c81720800000000000000
+      internalID: 2817213933147514112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_16
+      rect:
+        serializedVersion: 2
+        x: 6377
+        y: 942
+        width: 227
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7f9ed4b1f6ede90800000000000000
+      internalID: -6999034607825192967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_17
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 897
+        width: 240
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37824908a137dadb0800000000000000
+      internalID: -4779037071906690957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_18
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 851
+        width: 261
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd61012bec037b50800000000000000
+      internalID: 6589624883783757271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_19
+      rect:
+        serializedVersion: 2
+        x: 5510
+        y: 791
+        width: 203
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9af3c31505d7b80800000000000000
+      internalID: -8395465820515358291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_20
+      rect:
+        serializedVersion: 2
+        x: 6472
+        y: 743
+        width: 218
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa481df9d8ce8320800000000000000
+      internalID: 2562206076600077048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_21
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 721
+        width: 209
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a221337b90bb0cde0800000000000000
+      internalID: -1314845440789507542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_22
+      rect:
+        serializedVersion: 2
+        x: 3223
+        y: 639
+        width: 202
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b1923dbe65d97e0800000000000000
+      internalID: -1757152708744635582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_23
+      rect:
+        serializedVersion: 2
+        x: 3481
+        y: 358
+        width: 179
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d94086803662b790800000000000000
+      internalID: -7515832469526918702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DownJump_24
+      rect:
+        serializedVersion: 2
+        x: 4292
+        y: 341
+        width: 332
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05991617cdf9fa670800000000000000
+      internalID: 8552229986543704400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      DownJump_0: 2748808463077380397
+      DownJump_1: -8608958026814790970
+      DownJump_10: 6907480604136875320
+      DownJump_11: 2132040233695786863
+      DownJump_12: -5361522644608557946
+      DownJump_13: -3478822366645391481
+      DownJump_14: 2018516812246527103
+      DownJump_15: 2817213933147514112
+      DownJump_16: -6999034607825192967
+      DownJump_17: -4779037071906690957
+      DownJump_18: 6589624883783757271
+      DownJump_19: -8395465820515358291
+      DownJump_2: -265420117980479593
+      DownJump_20: 2562206076600077048
+      DownJump_21: -1314845440789507542
+      DownJump_22: -1757152708744635582
+      DownJump_23: -7515832469526918702
+      DownJump_24: 8552229986543704400
+      DownJump_3: 5541138743434102696
+      DownJump_4: 5318338106888219220
+      DownJump_5: -8044807932081738188
+      DownJump_6: -24789856889361019
+      DownJump_7: 2842260935623242569
+      DownJump_8: 5945059519781040030
+      DownJump_9: -549257851805617566
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
