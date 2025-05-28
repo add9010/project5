@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     #region ▒ 런타임 상태 변수 ▒
     public float currentStagger;
     private float stunTimer;
-    private bool isStunned = false;
+    //private bool isStunned = false;
 
     protected bool isChasing = false;
     protected bool isInDamageState = false;
@@ -284,7 +284,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     private void EnterStun()
     {
-        isStunned = true;
+        //isStunned = true;
         stunTimer = stunDuration;
         StopMovement();
     }

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4481620526728212354}
   - component: {fileID: 7142331187514721160}
   - component: {fileID: 2689249335108112082}
-  - component: {fileID: 3880157495691386271}
   - component: {fileID: 1605396604673823964}
+  - component: {fileID: 8769557589574812898}
   m_Layer: 12
   m_Name: Ideer
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1411436131, guid: ff21b28adce5b1f4f8a2a6517dbb5a36, type: 3}
+  m_Sprite: {fileID: 637208553508324211, guid: 2e006a2cd6d7e754190230bd249fe7c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &3880157495691386271
+--- !u!114 &1605396604673823964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064691370692369448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Ideer
+--- !u!61 &8769557589574812898
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,33 +155,19 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.09436488, y: -0.53080094}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.004888, y: 5}
+    oldSize: {x: 0.78, y: 2.87}
     newSize: {x: 5.004888, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1642454, y: 3.0796793}
+  m_Size: {x: 0.78, y: 2.87}
   m_EdgeRadius: 0
---- !u!114 &1605396604673823964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1064691370692369448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcName: Ideer
-  dialogSystem: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}
