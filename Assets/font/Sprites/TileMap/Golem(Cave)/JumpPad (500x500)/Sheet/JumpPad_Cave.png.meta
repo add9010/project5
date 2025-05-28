@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 927a96103384f5c4a889a1e745577383
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6818194710181101392
+    second: JumpPad_Cave_0
+  - first:
+      213: 7408830794222826359
+    second: JumpPad_Cave_1
+  - first:
+      213: 9102320930685202385
+    second: JumpPad_Cave_2
+  - first:
+      213: 144098313290674821
+    second: JumpPad_Cave_3
+  - first:
+      213: 1373150711374799705
+    second: JumpPad_Cave_4
+  - first:
+      213: 1399298435442450925
+    second: JumpPad_Cave_5
+  - first:
+      213: -2201311462038168474
+    second: JumpPad_Cave_6
+  - first:
+      213: -2494262610970114063
+    second: JumpPad_Cave_7
+  - first:
+      213: 8466542114682256566
+    second: JumpPad_Cave_8
+  - first:
+      213: 1647670648149154028
+    second: JumpPad_Cave_9
+  - first:
+      213: -3628333117821293282
+    second: JumpPad_Cave_10
+  - first:
+      213: 1543963523799498680
+    second: JumpPad_Cave_11
+  - first:
+      213: -8393398798362954895
+    second: JumpPad_Cave_12
+  - first:
+      213: 6596469687243775737
+    second: JumpPad_Cave_13
+  - first:
+      213: -6577840207017936618
+    second: JumpPad_Cave_14
+  - first:
+      213: -3281317257746483520
+    second: JumpPad_Cave_15
+  - first:
+      213: -4959851408234780318
+    second: JumpPad_Cave_16
+  - first:
+      213: 544037336167258036
+    second: JumpPad_Cave_17
+  - first:
+      213: -8599936178731869286
+    second: JumpPad_Cave_18
+  - first:
+      213: 5717959665621620714
+    second: JumpPad_Cave_19
+  - first:
+      213: 3830863269853823204
+    second: JumpPad_Cave_20
+  - first:
+      213: 3487541371449518033
+    second: JumpPad_Cave_21
+  - first:
+      213: -6425931227969126746
+    second: JumpPad_Cave_22
+  - first:
+      213: -3212730878793133578
+    second: JumpPad_Cave_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JumpPad_Cave_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 614
+        width: 454
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05fbacde6f71f9e50800000000000000
+      internalID: 6818194710181101392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_1
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 614
+        width: 454
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77370aa8a5471d660800000000000000
+      internalID: 7408830794222826359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_2
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 614
+        width: 454
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df281909a0f15e70800000000000000
+      internalID: 9102320930685202385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_3
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 614
+        width: 454
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5827c6807a0fff100800000000000000
+      internalID: 144098313290674821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_4
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 614
+        width: 454
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 953e196fb496e0310800000000000000
+      internalID: 1373150711374799705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_5
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1ae43638e4b6310800000000000000
+      internalID: 1399298435442450925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_6
+      rect:
+        serializedVersion: 2
+        x: 3023
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c183963ee5371e0800000000000000
+      internalID: -2201311462038168474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_7
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f78698de59926dd0800000000000000
+      internalID: -2494262610970114063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_8
+      rect:
+        serializedVersion: 2
+        x: 4023
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc358512333f7570800000000000000
+      internalID: 8466542114682256566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_9
+      rect:
+        serializedVersion: 2
+        x: 4523
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce894c989b3bdd610800000000000000
+      internalID: 1647670648149154028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_10
+      rect:
+        serializedVersion: 2
+        x: 5023
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1de979c04295adc0800000000000000
+      internalID: -3628333117821293282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_11
+      rect:
+        serializedVersion: 2
+        x: 5523
+        y: 614
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfba3605a24d6510800000000000000
+      internalID: 1543963523799498680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_12
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 173b2655348a48b80800000000000000
+      internalID: -8393398798362954895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_13
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fe1ccf1b3e5b8b50800000000000000
+      internalID: 6596469687243775737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_14
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 619f96fbe21d6b4a0800000000000000
+      internalID: -6577840207017936618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_15
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c679a8d65b6672d0800000000000000
+      internalID: -3281317257746483520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_16
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269e1713c611b2bb0800000000000000
+      internalID: -4959851408234780318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_17
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b79cc6231fcc8700800000000000000
+      internalID: 544037336167258036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_18
+      rect:
+        serializedVersion: 2
+        x: 3023
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9b18af1c93e6a880800000000000000
+      internalID: -8599936178731869286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_19
+      rect:
+        serializedVersion: 2
+        x: 3523
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7536555064a5f40800000000000000
+      internalID: 5717959665621620714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_20
+      rect:
+        serializedVersion: 2
+        x: 4023
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e08abed8d5f92530800000000000000
+      internalID: 3830863269853823204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_21
+      rect:
+        serializedVersion: 2
+        x: 4523
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d72ab8466c366030800000000000000
+      internalID: 3487541371449518033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_22
+      rect:
+        serializedVersion: 2
+        x: 5023
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae7fcd189182d6a0800000000000000
+      internalID: -6425931227969126746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JumpPad_Cave_23
+      rect:
+        serializedVersion: 2
+        x: 5523
+        y: 114
+        width: 454
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f15b9a99461a63d0800000000000000
+      internalID: -3212730878793133578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      JumpPad_Cave_0: 6818194710181101392
+      JumpPad_Cave_1: 7408830794222826359
+      JumpPad_Cave_10: -3628333117821293282
+      JumpPad_Cave_11: 1543963523799498680
+      JumpPad_Cave_12: -8393398798362954895
+      JumpPad_Cave_13: 6596469687243775737
+      JumpPad_Cave_14: -6577840207017936618
+      JumpPad_Cave_15: -3281317257746483520
+      JumpPad_Cave_16: -4959851408234780318
+      JumpPad_Cave_17: 544037336167258036
+      JumpPad_Cave_18: -8599936178731869286
+      JumpPad_Cave_19: 5717959665621620714
+      JumpPad_Cave_2: 9102320930685202385
+      JumpPad_Cave_20: 3830863269853823204
+      JumpPad_Cave_21: 3487541371449518033
+      JumpPad_Cave_22: -6425931227969126746
+      JumpPad_Cave_23: -3212730878793133578
+      JumpPad_Cave_3: 144098313290674821
+      JumpPad_Cave_4: 1373150711374799705
+      JumpPad_Cave_5: 1399298435442450925
+      JumpPad_Cave_6: -2201311462038168474
+      JumpPad_Cave_7: -2494262610970114063
+      JumpPad_Cave_8: 8466542114682256566
+      JumpPad_Cave_9: 1647670648149154028
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
