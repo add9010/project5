@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class InventoryUIManager : MonoBehaviour
 {
     public static InventoryUIManager Instance { get; private set; }
@@ -12,9 +12,9 @@ public class InventoryUIManager : MonoBehaviour
     public GameObject itemSlotPrefab;     // 슬롯 프리팹
 
     [Header("Detail Panel")]
-    public Text itemNameText;
+    public TMP_Text itemNameText;
     public Image itemIconImage;
-    public Text itemDescText;
+    public TMP_Text itemDescText;
     public Button equipButton;
 
     private InventoryData inventory;
@@ -89,7 +89,7 @@ public class InventoryUIManager : MonoBehaviour
         if (isOn) RefreshAll();
     }
 
-    void RefreshAll()
+    public void RefreshAll()
     {
         RefreshEquipped();
         RefreshStorage();
