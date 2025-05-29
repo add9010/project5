@@ -69,7 +69,7 @@ public class PlayerStateController
 
         // 상태 전환 로그도 있으면 디버그에 좋아
 #if UNITY_EDITOR
-        Debug.Log($"상태 전환: {currentState} → {newState}");
+        //Debug.Log($"상태 전환: {currentState} → {newState}");
 #endif
 
         currentState = newState;

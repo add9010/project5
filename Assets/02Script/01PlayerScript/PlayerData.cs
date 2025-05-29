@@ -16,6 +16,10 @@ public class PlayerData
     [Header("체력")]
     public float maxHealth = 100.0f;
 
+    [Header("마나")]
+    public int maxMana = 3;       // 기본 최대 마나
+    public float manaRechargeTime = 20f;  // 마나 1 충전에 걸리는 시간
+
     [Header("기타")]
     public Vector2 attackBoxSize = new Vector2(1.5f, 1.5f);
     public Vector2 attackBoxOffset = new Vector2(1.0f, 0f);

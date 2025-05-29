@@ -9,5 +9,7 @@ public class SkillData : ScriptableObject
 
     [Header("스킬 쿨타임")]
     public float cooldown = 1.0f; // 스킬마다 개별 설정 가능
+    public int manaCost = 1; // 추가
+
 
 }

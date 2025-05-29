@@ -14,7 +14,7 @@ public class PlayerAttack
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
 
     public bool IsAttacking => isAttacking;
-
+    float staggerDamage = 10f;
     public PlayerAttack(PlayerManager manager)
     {
         this.pm = manager;
@@ -125,7 +125,7 @@ public class PlayerAttack
             }
             else
             {
-                CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position);
+                CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position, staggerDamage);
             }
 
             hitEnemies.Add(col);
