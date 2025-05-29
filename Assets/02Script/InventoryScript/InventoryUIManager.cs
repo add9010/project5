@@ -68,24 +68,17 @@ public class InventoryUIManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && CanOpenInventory())
+        if (Input.GetKeyDown(KeyCode.E))
             ToggleInventoryUI();
     }
 
-    bool CanOpenInventory()
-    {
-        if (Camera.main == null) return false;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 3f))
-            return hit.collider.CompareTag("InventoryTrigger");
-        return false;
-    }
-
-    public void ToggleInventoryUI()
+    void ToggleInventoryUI()
     {
         if (inventoryUI == null) return;
 
         bool isOn = !inventoryUI.activeSelf;
         inventoryUI.SetActive(isOn);
+        Debug.Log("인벤토리 UI " + (isOn ? "열림" : "닫힘"));
         if (isOn) RefreshAll();
     }
 
