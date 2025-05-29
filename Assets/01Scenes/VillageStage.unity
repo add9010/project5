@@ -3771,10 +3771,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tamu
       objectReference: {fileID: 0}
-    - target: {fileID: 6655703426442809009, guid: e432792f9d12b29479d250ad58a46ab7, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2802105757156905366, guid: e1fca576c80288349b3b5b2bc9297270, type: 3}
     - target: {fileID: 6708382047525816601, guid: e432792f9d12b29479d250ad58a46ab7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.703
