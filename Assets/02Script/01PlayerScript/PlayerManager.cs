@@ -24,6 +24,9 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     [Header("센서")]
     public PlayerSensor groundSensor;
 
+    [Header("마나 상태")]
+    public int currentMana { get; private set; }
+    private float manaTimer = 0f;
 
     public PlayerHealth playerHealth { get; private set; }
     public PlayerMove playerMove { get; private set; }
@@ -44,6 +47,11 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public bool isGrounded => groundSensor != null && groundSensor.State();
     public bool isAction = false;
     public bool isDashing = false;
+
+    private float staggerTimer = 0f;
+    private bool isStaggered = false;
+
+
 
     private void Awake()
     {
@@ -74,7 +82,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerDialog = new PlayerDialog(this);
         playerDash = new PlayerDash(this);
         playerParry = new PlayerParry(this);
-
+        currentMana = data.maxMana;
         Camera.main.GetComponent<CameraController>().target = transform;
 
         // ✅ PYCanvas에서 HP바 자동 연결
@@ -105,6 +113,18 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private void Update()
     {
         if (IsDead) return;
+
+        if (isStaggered)
+        {
+            staggerTimer -= Time.deltaTime;
+            if (staggerTimer <= 0f)
+            {
+                isStaggered = false;
+            }
+            return;
+        }
+
+
         // 체력바 UI 갱신
         UpdateHpUI(playerHealth.currentHealth);
         Vector2 input = playerMove.GetInput();
@@ -143,6 +163,8 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         // 대화 시스템
         playerDialog.HandleInput();
         playerDialog.HandleScan();
+        UpdateManaRecharge();
+
     }
 
     public void SetAnimType(AnimType type)
@@ -254,6 +276,41 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             }
         }
     }
+    public void ApplyStagger(float duration)
+    {
+        isStaggered = true;
+        staggerTimer = duration;
+        rb.linearVelocity = Vector2.zero;
+    }
 
+    private void UpdateManaRecharge()
+    {
+        if (currentMana < data.maxMana)
+        {
+            manaTimer += Time.deltaTime;
+            if (manaTimer >= data.manaRechargeTime)
+            {
+                currentMana++;
+                manaTimer = 0f;
+                Debug.Log($"마나 회복됨: 현재 마나 {currentMana}/{data.maxMana}");
+                // UI 갱신 추가 예정
+            }
+        }
+    }
+    public bool TryUseMana(int amount)
+    {
+        if (currentMana >= amount)
+        {
+            currentMana -= amount;
+            Debug.Log($"마나 {amount} 소모됨. 현재 마나: {currentMana}/{data.maxMana}");
+            return true;
+        }
+        Debug.Log("마나 부족!");
+        return false;
+    }
+    public float GetManaRechargeProgress()
+    {
+        return Mathf.Clamp01(manaTimer / data.manaRechargeTime);
+    }
 
 }

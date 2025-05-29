@@ -12,6 +12,8 @@ TagManager:
   - FxTemporaire
   - Wall
   - UI
+  - Box
+  - Object
   layers:
   - Default
   - TransparentFX

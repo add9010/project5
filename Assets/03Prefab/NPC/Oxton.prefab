@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 918484536593909120}
   - component: {fileID: 5608403806329982451}
   - component: {fileID: 7859488959821478198}
-  - component: {fileID: 3107382722179118170}
   - component: {fileID: 5930478806001792773}
+  - component: {fileID: 5939816779151509226}
   m_Layer: 12
   m_Name: Oxton
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1140677908, guid: 6dff3f13aadbfa24082e35100093010b, type: 3}
+  m_Sprite: {fileID: -6169909789526298904, guid: 99937efb45969594f850ffb1012bd85b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &3107382722179118170
+--- !u!114 &5930478806001792773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5695544330526615346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Oxton
+--- !u!61 &5939816779151509226
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,29 +159,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.074970484, y: -0.82906497}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.004888, y: 5}
+    oldSize: {x: 0.93, y: 2.06}
     newSize: {x: 5.004888, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2046659, y: 2.5028121}
+  m_Size: {x: 0.93, y: 2.06}
   m_EdgeRadius: 0
---- !u!114 &5930478806001792773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5695544330526615346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcName: Oxton
-  dialogSystem: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}

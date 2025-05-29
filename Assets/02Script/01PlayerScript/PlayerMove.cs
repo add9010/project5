@@ -56,7 +56,7 @@ public class PlayerMove
         // ↑ 방향 입력 시 상호작용을 위한 디버깅 (추후 사용 가능)
         if (input.y > 0)
         {
-            Debug.Log("↑ 위 방향 입력 감지됨");
+            //Debug.Log("↑ 위 방향 입력 감지됨");
         }
     }
 

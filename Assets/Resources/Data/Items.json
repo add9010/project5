@@ -1,0 +1,14 @@
+[
+    {
+        "itemName": "강철 검",
+        "description": "단단한 철로 만들어진 검입니다.",
+        "type": "Weapon",
+        "iconPath": "Icons/IronSword"
+    },
+    {
+        "itemName": "천 갑옷",
+        "description": "얇은 방어구입니다.",
+        "type": "Armor",
+        "iconPath": "Icons/ClothArmor"
+    }
+]

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 5150808926511780456}
   - component: {fileID: 3653977783517363783}
   - component: {fileID: 2744161587659741396}
-  - component: {fileID: 2367486707155060807}
   - component: {fileID: 903618824026982286}
+  - component: {fileID: 8856050243348342296}
   m_Layer: 12
   m_Name: Neroban
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 230111464, guid: 6fa18b421fc86e141b817e8e8337debb, type: 3}
+  m_Sprite: {fileID: -3494418204548757110, guid: 54880cdf7d4334e4896e1e44520fbc44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -112,7 +112,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &2367486707155060807
+--- !u!114 &903618824026982286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4753598946896407883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Neroban
+--- !u!61 &8856050243348342296
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,29 +159,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0188725, y: -0.54495597}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.004888, y: 5}
+    oldSize: {x: 1.08, y: 2.7}
     newSize: {x: 5.004888, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.97551584, y: 3.0324965}
+  m_Size: {x: 1.08, y: 2.7}
   m_EdgeRadius: 0
---- !u!114 &903618824026982286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4753598946896407883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ddb8c35e24b10b4ea274d1a96f56792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  npcName: Neroban
-  dialogSystem: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}

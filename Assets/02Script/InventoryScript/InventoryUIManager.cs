@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class InventoryUIManager : MonoBehaviour
 {
     public static InventoryUIManager Instance { get; private set; }
@@ -12,9 +12,9 @@ public class InventoryUIManager : MonoBehaviour
     public GameObject itemSlotPrefab;     // 슬롯 프리팹
 
     [Header("Detail Panel")]
-    public Text itemNameText;
+    public TMP_Text itemNameText;
     public Image itemIconImage;
-    public Text itemDescText;
+    public TMP_Text itemDescText;
     public Button equipButton;
 
     private InventoryData inventory;
@@ -68,28 +68,21 @@ public class InventoryUIManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && CanOpenInventory())
+        if (Input.GetKeyDown(KeyCode.E))
             ToggleInventoryUI();
     }
 
-    bool CanOpenInventory()
-    {
-        if (Camera.main == null) return false;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out var hit, 3f))
-            return hit.collider.CompareTag("InventoryTrigger");
-        return false;
-    }
-
-    public void ToggleInventoryUI()
+    void ToggleInventoryUI()
     {
         if (inventoryUI == null) return;
 
         bool isOn = !inventoryUI.activeSelf;
         inventoryUI.SetActive(isOn);
+        Debug.Log("인벤토리 UI " + (isOn ? "열림" : "닫힘"));
         if (isOn) RefreshAll();
     }
 
-    void RefreshAll()
+    public void RefreshAll()
     {
         RefreshEquipped();
         RefreshStorage();
