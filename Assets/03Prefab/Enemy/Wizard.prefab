@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4224746963746867484}
   - component: {fileID: 3925091695332765335}
   - component: {fileID: 2171915959844992715}
-  - component: {fileID: 7148218152520771034}
   - component: {fileID: 1970209427060711564}
   m_Layer: 9
   m_Name: Wizard
@@ -140,53 +139,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!61 &7148218152520771034
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2859895025027972965}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.032150447, y: -0.29863083}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.004888, y: 5}
-    newSize: {x: 5.004888, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.2454544, y: 3.4743583}
-  m_EdgeRadius: 0
+  m_Constraints: 6
 --- !u!114 &1970209427060711564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +170,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   rigid: {fileID: 0}
   player: {fileID: 0}
+  currentStagger: 0
   maxPatrolTime: 3
   projectilePrefab: {fileID: 1097795716494991988, guid: ba2f50662476914448b683f29c02274d, type: 3}
   firePoint: {fileID: 9119864123255473837}
