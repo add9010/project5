@@ -7,7 +7,7 @@ public class Thief : Enemy
     {
         base.Start();
         SetEnemyStatus("좀도둑", 75, 10, 4);
-        attackCooldown = 3f;
+        attackCooldown = 2f;
         attackRange = 2f;
     }
 

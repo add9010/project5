@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WIND_SHOT_0: -5464462460303273418
+      WIND_SHOT_1: -3542512049378745500
+      WIND_SHOT_2: -1207684716882462449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

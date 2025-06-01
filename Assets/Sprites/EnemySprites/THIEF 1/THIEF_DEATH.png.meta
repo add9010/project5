@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      THIEF_DEATH_0: 1972558305124386121
+      THIEF_DEATH_1: 8975452409635190671
+      THIEF_DEATH_2: 4828553742736228490
+      THIEF_DEATH_3: -7445110319103839101
+      THIEF_DEATH_4: 8137595564546049297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CLERIC_MOVE_0: -8329236029991410084
+      CLERIC_MOVE_1: -224906745272725918
+      CLERIC_MOVE_2: -2517500936368877190
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

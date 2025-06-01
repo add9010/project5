@@ -82,7 +82,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
             currentState.Update(this);
             return;
         }
-
+        // 공격 중인 상태라면 공격 상태 업데이트
+        if (currentState is AttackState)
+        {
+            currentState.Update(this);
+            return;
+        }
         // 공격 상태 전환
         if (!(currentState is AttackState)
             && !(currentState is HurtState)

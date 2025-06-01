@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WIND_FORCE_0: 1356769544637109151
+      WIND_FORCE_1: -2837152383995577167
+      WIND_FORCE_2: -1671719215857425354
+      WIND_FORCE_3: 180885015834796498
+      WIND_FORCE_4: 2679419268737107555
+      WIND_FORCE_5: 4329521815082671046
+      WIND_FORCE_6: -8203782455480159487
+      WIND_FORCE_7: 2282152061140422982
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

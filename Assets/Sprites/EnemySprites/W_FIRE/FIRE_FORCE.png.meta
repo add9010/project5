@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FIRE_FORCE_0: -7109626968060893383
+      FIRE_FORCE_1: 135945799930529041
+      FIRE_FORCE_2: 6350280752033864826
+      FIRE_FORCE_3: -887360824537812912
+      FIRE_FORCE_4: 4067047296100931924
+      FIRE_FORCE_5: -3680436050245722357
+      FIRE_FORCE_6: -5628672157401903360
+      FIRE_FORCE_7: -853655664022117077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

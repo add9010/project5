@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CLERIC_SHOT_0: -4235398973497443699
+      CLERIC_SHOT_1: 7883183082586243192
+      CLERIC_SHOT_2: -2533771331397284255
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

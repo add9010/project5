@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CLERIC_DEATH_0: -2630525267539598694
+      CLERIC_DEATH_1: 394224001622550535
+      CLERIC_DEATH_2: -6533058875037972588
+      CLERIC_DEATH_3: 2755207364750662592
+      CLERIC_DEATH_4: 7196008717305003010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

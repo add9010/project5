@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BANDIT_DEATH_0: -8934234781791531351
+      BANDIT_DEATH_1: 3025491902600818533
+      BANDIT_DEATH_2: 2472658554248413107
+      BANDIT_DEATH_3: 1283463223588498826
+      BANDIT_DEATH_4: 6015537789196944510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

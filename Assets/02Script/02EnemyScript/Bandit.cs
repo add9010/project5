@@ -7,7 +7,7 @@ public class Bandit : Enemy
     {
         base.Start();
         SetEnemyStatus("산적", 90, 10, 3);
-        attackCooldown = 5f;
+        attackCooldown = 3f;
         attackRange = 3f;
     }
 

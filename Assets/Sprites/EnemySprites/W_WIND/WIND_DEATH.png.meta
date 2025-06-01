@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      WIND_DEATH_0: -346833066701491619
+      WIND_DEATH_1: -1332407761547104407
+      WIND_DEATH_2: 8652406223400361847
+      WIND_DEATH_3: 8950846339583584334
+      WIND_DEATH_4: 5015468326525052715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

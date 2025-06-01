@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medival_house_Main_0: 6764055952572810076
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      STONE_FORCE_0: -9200886622252478819
+      STONE_FORCE_1: 6879616767491025492
+      STONE_FORCE_2: -5451132981341120838
+      STONE_FORCE_3: -2189083187739936988
+      STONE_FORCE_4: -5329191011673403411
+      STONE_FORCE_5: 5481942983837844380
+      STONE_FORCE_6: -3901844289502314069
+      STONE_FORCE_7: 418590540399414344
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

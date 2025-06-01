@@ -158,7 +158,7 @@ MonoBehaviour:
   moveSpeed: 3
   detectionRange: 4
   attackRange: 3
-  attackCooldown: 5
+  attackCooldown: 3
   patrolRange: 2
   enablePatrol: 1
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}

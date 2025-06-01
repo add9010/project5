@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      medival_shop_0: -9164024639643174799
+      medival_shop_1: 522015821012502050
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

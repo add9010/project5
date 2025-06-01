@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Forest_JumpPad_Idle_0: 2856040894696596047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

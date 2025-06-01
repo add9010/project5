@@ -172,7 +172,8 @@ PrefabInstance:
       value: RiverStage_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4531542694423759365, guid: f1613692c75e3c24386474076bb0f08e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1613692c75e3c24386474076bb0f08e, type: 3}
@@ -238,7 +239,8 @@ PrefabInstance:
       value: RiverStage_4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2764854760721524909, guid: 3c46a586649744e4783c20300a083751, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c46a586649744e4783c20300a083751, type: 3}
@@ -1497,7 +1499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3339673506830659037, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
       propertyPath: m_SurfaceArc
-      value: 180
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 3630300167406755329, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
       propertyPath: m_Name
@@ -1505,15 +1507,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5127113644745477646, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
       propertyPath: m_SurfaceArc
-      value: 180
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6047224982486773269, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
       propertyPath: m_SurfaceArc
-      value: 180
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 9139430019790595408, guid: c7de8096f53927a4b8ec1113efd74558, type: 3}
       propertyPath: m_SurfaceArc
-      value: 180
+      value: 160
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
