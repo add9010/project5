@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 7004126204076104432}
   - component: {fileID: 7053274346828779829}
   - component: {fileID: 7347642778104080871}
+  - component: {fileID: 501655047547086533}
   m_Layer: 0
   m_Name: River_2SG
   m_TagString: Untagged
@@ -11739,13 +11740,32 @@ TilemapCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!251 &501655047547086533
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439374160265042078}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &6474237261737430654
 GameObject:
   m_ObjectHideFlags: 0
@@ -12055,6 +12075,10 @@ PrefabInstance:
     - target: {fileID: 1246785203154884306, guid: 74aafdaf1de340346aad962315a354b1, type: 3}
       propertyPath: m_Name
       value: F_JumpPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 2785519309863475729, guid: 74aafdaf1de340346aad962315a354b1, type: 3}
+      propertyPath: jumpVelocity
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4720755881048975456, guid: 74aafdaf1de340346aad962315a354b1, type: 3}
       propertyPath: m_Size.x

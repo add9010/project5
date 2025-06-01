@@ -282,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GolemStage_2S
       objectReference: {fileID: 0}
+    - target: {fileID: 765147995615439760, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
+      propertyPath: jumpVelocity
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 834244263172571085, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data
       value: 
@@ -7106,6 +7110,14 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[1758].second.m_TileSpriteIndex
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1388445040454243559, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2212258689132982915, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
+      propertyPath: jumpVelocity
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 2702004437270843193, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
       propertyPath: m_Size.x
       value: 341
@@ -8153,15 +8165,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6918336898127395992, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
-      propertyPath: m_SortingOrder
+    - target: {fileID: 6999738599430670043, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5427459224818858675, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
-    - {fileID: 25706585338219643, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
-    - {fileID: 2962237597483231391, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
@@ -8196,6 +8205,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Platform
       objectReference: {fileID: 0}
+    - target: {fileID: 2199525533879250084, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
+      propertyPath: jumpVelocity
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2562002884064478095, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -8203,6 +8216,10 @@ PrefabInstance:
     - target: {fileID: 2713967958218872423, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
       propertyPath: m_Name
       value: GolemStage_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3627410357059557952, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077648998477585220, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8243,6 +8260,10 @@ PrefabInstance:
     - target: {fileID: 4077648998477585220, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5522743095594848902, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5598339253619653364, guid: c6f0ae7d42f9df949b7495d9587428b0, type: 3}
       propertyPath: m_IsTrigger
@@ -9115,6 +9136,10 @@ PrefabInstance:
     - target: {fileID: 3275148872375947394, guid: 2b722c8f8ce1e3944bf4966f7695a260, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3529530381728743184, guid: 2b722c8f8ce1e3944bf4966f7695a260, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3547984445493167878, guid: 2b722c8f8ce1e3944bf4966f7695a260, type: 3}
       propertyPath: m_Layer
