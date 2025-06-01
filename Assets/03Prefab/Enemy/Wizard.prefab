@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3925091695332765335}
   - component: {fileID: 2171915959844992715}
   - component: {fileID: 1970209427060711564}
+  - component: {fileID: 6593366945067146832}
   m_Layer: 9
   m_Name: Wizard
   m_TagString: Enemy
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1496088564, guid: 085b3fb3462d9504e994630ed5e7078d, type: 3}
+  m_Sprite: {fileID: 4885791765803631716, guid: e51f1ed5a6c2af848b61d4e48bde35da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,7 +140,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!114 &1970209427060711564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,17 +154,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Enemy
-  maxHp: 85
+  maxHp: 60
   atkDmg: 15
-  moveSpeed: 2
+  moveSpeed: 3
   detectionRange: 5
   attackRange: 4
-  attackCooldown: 0
+  attackCooldown: 6
   patrolRange: 2
   enablePatrol: 1
   markPrefab: {fileID: 7293109317121034979, guid: bfcfbc0de797a7e42abee44bac5e2372, type: 3}
   markYOffset: 1
-  maxStagger: 50
+  maxStagger: 30
   staggerRecoverTime: 1.5
   stunDuration: 3
   attackHitDelay: 0.5
@@ -174,6 +175,52 @@ MonoBehaviour:
   maxPatrolTime: 3
   projectilePrefab: {fileID: 1097795716494991988, guid: ba2f50662476914448b683f29c02274d, type: 3}
   firePoint: {fileID: 9119864123255473837}
+--- !u!61 &6593366945067146832
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2859895025027972965}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9, y: 2.37}
+    newSize: {x: 5.004888, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.9, y: 2.37}
+  m_EdgeRadius: 0
 --- !u!1 &2889821118227468119
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 2889821118227468119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

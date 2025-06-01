@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected Vector2 patrolTarget;
     protected float patrolTimer;
-    public float maxPatrolTime = 3f;
+    public float maxPatrolTime = 5f;
 
     private float lastAttackTime = -999f;
 
