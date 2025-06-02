@@ -51,7 +51,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private float staggerTimer = 0f;
     private bool isStaggered = false;
 
-
+    public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
 
     private void Awake()
     {
