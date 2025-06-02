@@ -208,7 +208,7 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.77}
-  m_Size: {x: 1.03, y: 2.37}
+  m_Size: {x: 1, y: 2.37}
   m_Direction: 0
 --- !u!114 &3280658155230605344
 MonoBehaviour:
@@ -225,29 +225,29 @@ MonoBehaviour:
   data:
     attackPower: 15
     speed: 12
-    jumpForce: 20
+    jumpForce: 16
     dashForce: 40
     dashDuration: 0.15
     attackKnockback: 100
     attackKnockbackThird: 800
     attackDuration: 0.35
     maxHealth: 100
-    attackBoxSize: {x: 1.5, y: 1.5}
-    attackBoxOffset: {x: 1, y: 0}
+    maxMana: 3
+    manaRechargeTime: 20
+    attackBoxSize: {x: 1.65, y: 2}
+    attackBoxOffset: {x: 1.2, y: -0.75}
     heightOffset: 1.7
     cameraFollowSpeed: 5
     cameraStopDistance: 2
     attackForwardSpeed: 15
     attackForwardDuration: 0.2
-  animator: {fileID: 0}
-  rb: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  animator: {fileID: 1315762131210481175}
+  rb: {fileID: 3683859902371945585}
+  spriteRenderer: {fileID: 4097594023563100635}
   cameraController: {fileID: 0}
-  prfHpBar: {fileID: 7735975493514810815, guid: 5f5b06d88e6e3274fb64245041f4c756, type: 3}
-  canvas: {fileID: 0}
-  attackPos: {fileID: 0}
-  groundSensor: {fileID: 0}
-  dialog: {fileID: 0}
+  hpbar: {fileID: 0}
+  attackPos: {fileID: 5553567924351009742}
+  groundSensor: {fileID: 2142915325747246491}
   isAction: 0
   isDashing: 0
 --- !u!1 &2811674562754187116
