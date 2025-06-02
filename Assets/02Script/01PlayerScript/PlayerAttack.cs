@@ -127,6 +127,24 @@ public class PlayerAttack
             {
                 CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position, staggerDamage);
             }
+            if (pm.hitEffectPrefab != null)
+            {
+                Vector3 hitPos = col.bounds.center; // 적 중심 위치
+
+                // ▶ x 방향: 플레이어 방향 기준 0.5 ~ 1.5f 앞쪽
+                float xOffset = 1f;
+                if (pm.spriteRenderer.flipX)
+                    xOffset *= -1f;
+
+                // ▶ y 방향: 살짝 위아래 -0.2 ~ 0.2f
+                float yOffset = Random.Range(-0.5f, 0f);
+
+                hitPos.x += xOffset;
+                hitPos.y += yOffset;
+
+                GameObject effect = GameObject.Instantiate(pm.hitEffectPrefab, hitPos, Quaternion.identity);
+                GameObject.Destroy(effect, 0.5f);
+            }
 
             hitEnemies.Add(col);
         }
