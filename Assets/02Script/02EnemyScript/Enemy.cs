@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected Vector2 patrolTarget;
     protected float patrolTimer;
-    public float maxPatrolTime = 3f;
+    public float maxPatrolTime = 5f;
 
     private float lastAttackTime = -999f;
 
@@ -82,7 +82,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
             currentState.Update(this);
             return;
         }
-
+        // 공격 중인 상태라면 공격 상태 업데이트
+        if (currentState is AttackState)
+        {
+            currentState.Update(this);
+            return;
+        }
         // 공격 상태 전환
         if (!(currentState is AttackState)
             && !(currentState is HurtState)
@@ -171,10 +176,11 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     protected virtual void HandleChaseBehavior(float distanceToPlayer)
     {
         anim.SetBool("isWalk", true);
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            player.position,
-            moveSpeed * Time.deltaTime);
+        Vector3 targetPos = new Vector3(player.position.x,
+            transform.position.y,
+            transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position,
+            targetPos, moveSpeed*Time.deltaTime);
         Debug.Log("플레이어 추적 중");
     }
 

@@ -6,8 +6,8 @@ public class Bandit : Enemy
     protected override void Start()
     {
         base.Start();
-        SetEnemyStatus("산적", 100, 11, 4);
-        attackCooldown = 5f;
+        SetEnemyStatus("산적", 90, 10, 3);
+        attackCooldown = 3f;
         attackRange = 3f;
     }
 
