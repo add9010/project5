@@ -156,7 +156,7 @@ MonoBehaviour:
   maxHp: 75
   atkDmg: 10
   moveSpeed: 4
-  detectionRange: 3
+  detectionRange: 5
   attackRange: 2
   attackCooldown: 2
   patrolRange: 5

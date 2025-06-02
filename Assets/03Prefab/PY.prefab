@@ -158,7 +158,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDamping: 0.5
   m_AngularDamping: 0.05
   m_GravityScale: 3
@@ -225,21 +225,21 @@ MonoBehaviour:
   data:
     attackPower: 15
     speed: 12
-    jumpForce: 16
-    dashForce: 40
+    jumpForce: 20
+    dashForce: 60
     dashDuration: 0.15
-    attackKnockback: 100
+    attackKnockback: 80
     attackKnockbackThird: 800
     attackDuration: 0.35
     maxHealth: 100
     maxMana: 3
-    manaRechargeTime: 20
-    attackBoxSize: {x: 1.65, y: 2}
+    manaRechargeTime: 1
+    attackBoxSize: {x: 2, y: 2}
     attackBoxOffset: {x: 1.2, y: -0.75}
     heightOffset: 1.7
     cameraFollowSpeed: 5
     cameraStopDistance: 2
-    attackForwardSpeed: 15
+    attackForwardSpeed: 10
     attackForwardDuration: 0.2
   animator: {fileID: 1315762131210481175}
   rb: {fileID: 3683859902371945585}
@@ -250,6 +250,7 @@ MonoBehaviour:
   groundSensor: {fileID: 2142915325747246491}
   isAction: 0
   isDashing: 0
+  hitEffectPrefab: {fileID: 2673998446994267809, guid: de247158b545d804da8f3e335f2eff97, type: 3}
 --- !u!1 &2811674562754187116
 GameObject:
   m_ObjectHideFlags: 0
