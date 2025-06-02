@@ -176,10 +176,11 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
     protected virtual void HandleChaseBehavior(float distanceToPlayer)
     {
         anim.SetBool("isWalk", true);
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            player.position,
-            moveSpeed * Time.deltaTime);
+        Vector3 targetPos = new Vector3(player.position.x,
+            transform.position.y,
+            transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position,
+            targetPos, moveSpeed*Time.deltaTime);
         Debug.Log("플레이어 추적 중");
     }
 

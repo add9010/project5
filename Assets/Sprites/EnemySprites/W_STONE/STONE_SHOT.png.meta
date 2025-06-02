@@ -122,10 +122,10 @@ TextureImporter:
       name: STONE_SHOT_0
       rect:
         serializedVersion: 2
-        x: 203
-        y: 67
-        width: 105
-        height: 237
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: STONE_SHOT_1
       rect:
         serializedVersion: 2
-        x: 701
-        y: 67
-        width: 107
-        height: 237
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: STONE_SHOT_2
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 67
-        width: 108
-        height: 237
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f43bee56e90da9046b1d4dc71cd6bb8f
     internalID: 0
     vertices: []
     indices: 

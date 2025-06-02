@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3925091695332765335}
   - component: {fileID: 2171915959844992715}
   - component: {fileID: 1970209427060711564}
-  - component: {fileID: 6593366945067146832}
+  - component: {fileID: 724211485167472979}
   m_Layer: 9
   m_Name: W_STONE
   m_TagString: Enemy
@@ -167,7 +167,7 @@ MonoBehaviour:
   maxStagger: 30
   staggerRecoverTime: 1.5
   stunDuration: 3
-  attackHitDelay: 3
+  attackHitDelay: 2
   anim: {fileID: 0}
   rigid: {fileID: 0}
   player: {fileID: 0}
@@ -176,8 +176,8 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1097795716494991988, guid: 2678359ae8ceaac4b8ad934f3e857e2c, type: 3}
   firePoint: {fileID: 9119864123255473837}
   chargeCirclePrefab: {fileID: 5035347237905171857, guid: a0f1b37e6ab12854fb4c94843dcf81f6, type: 3}
---- !u!61 &6593366945067146832
-BoxCollider2D:
+--- !u!70 &724211485167472979
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -210,18 +210,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9, y: 2.37}
-    newSize: {x: 5.004888, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.9, y: 2.37}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.007426992, y: -0.57336545}
+  m_Size: {x: 0.42764178, y: 2.061036}
+  m_Direction: 0
 --- !u!1 &2889821118227468119
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +238,7 @@ Transform:
   m_GameObject: {fileID: 2889821118227468119}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.8, y: 0.7, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

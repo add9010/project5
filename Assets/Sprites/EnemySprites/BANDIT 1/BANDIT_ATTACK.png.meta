@@ -134,10 +134,10 @@ TextureImporter:
       name: BANDIT_ATTACK_0
       rect:
         serializedVersion: 2
-        x: 164
-        y: 45
-        width: 172
-        height: 287
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: BANDIT_ATTACK_1
       rect:
         serializedVersion: 2
-        x: 663
-        y: 42
-        width: 172
-        height: 345
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: BANDIT_ATTACK_2
       rect:
         serializedVersion: 2
-        x: 1131
-        y: 24
-        width: 339
-        height: 363
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +200,10 @@ TextureImporter:
       name: BANDIT_ATTACK_3
       rect:
         serializedVersion: 2
-        x: 1631
-        y: 24
-        width: 334
-        height: 314
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,10 +222,10 @@ TextureImporter:
       name: BANDIT_ATTACK_4
       rect:
         serializedVersion: 2
-        x: 2131
-        y: 24
-        width: 317
-        height: 279
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: BANDIT_ATTACK_5
       rect:
         serializedVersion: 2
-        x: 2631
-        y: 24
-        width: 201
-        height: 279
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +266,10 @@ TextureImporter:
       name: BANDIT_ATTACK_6
       rect:
         serializedVersion: 2
-        x: 3133
-        y: 37
-        width: 180
-        height: 266
+        x: 3000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 24d56463652cce04eaa8996a91718d33
     internalID: 0
     vertices: []
     indices: 

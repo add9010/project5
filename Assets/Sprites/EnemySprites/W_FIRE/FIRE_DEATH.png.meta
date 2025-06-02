@@ -128,10 +128,10 @@ TextureImporter:
       name: FIRE_DEATH_0
       rect:
         serializedVersion: 2
-        x: 208
-        y: 72
-        width: 89
-        height: 233
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: FIRE_DEATH_1
       rect:
         serializedVersion: 2
-        x: 700
-        y: 65
-        width: 104
-        height: 248
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: FIRE_DEATH_2
       rect:
         serializedVersion: 2
-        x: 1181
-        y: 51
-        width: 140
-        height: 278
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: FIRE_DEATH_3
       rect:
         serializedVersion: 2
-        x: 1651
-        y: 23
-        width: 198
-        height: 334
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: FIRE_DEATH_4
       rect:
         serializedVersion: 2
-        x: 2041
+        x: 2000
         y: 0
-        width: 404
-        height: 445
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 81deb16f6f416de46835482e5e9eebf3
     internalID: 0
     vertices: []
     indices: 

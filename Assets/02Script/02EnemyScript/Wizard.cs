@@ -18,7 +18,7 @@ public class Wizard : Enemy
         attackCooldown = 5f;
 
         // Wizard만 3초 차지
-        attackHitDelay = 3f;
+        attackHitDelay = 2f;
     }
 
     // PerformAttack()가 호출되는 시점은 AttackState.Update()에서
@@ -51,7 +51,7 @@ public class Wizard : Enemy
             {
                 // dir.x < 0 => 적(마법사)이 플레이어보다 오른쪽에 있는 상황 (왼쪽 발사)
                 // 그러면 스프라이트를 flipX = true 해서 좌우 반전
-                sr.flipX = (dir.x > 0f);
+                sr.flipX = (dir.x < 0f);
             }
         }
 
@@ -81,7 +81,7 @@ public class Wizard : Enemy
             // 투사체도 같은 논리로 flip 처리 (생략 가능)
             SpriteRenderer srProj = proj.GetComponent<SpriteRenderer>();
             if (srProj != null)
-                srProj.flipX = (dir.x > 0f);
+                srProj.flipX = (dir.x < 0f);
 
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             if (rb != null)

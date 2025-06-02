@@ -128,10 +128,10 @@ TextureImporter:
       name: BANDIT_DEATH_0
       rect:
         serializedVersion: 2
-        x: 163
-        y: 45
-        width: 172
-        height: 277
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: BANDIT_DEATH_1
       rect:
         serializedVersion: 2
-        x: 656
-        y: 37
-        width: 187
-        height: 293
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: BANDIT_DEATH_2
       rect:
         serializedVersion: 2
-        x: 1145
-        y: 21
-        width: 212
-        height: 324
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,10 +194,10 @@ TextureImporter:
       name: BANDIT_DEATH_3
       rect:
         serializedVersion: 2
-        x: 1628
+        x: 1500
         y: 0
-        width: 250
-        height: 369
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: BANDIT_DEATH_4
       rect:
         serializedVersion: 2
-        x: 2027
+        x: 2000
         y: 0
-        width: 460
-        height: 466
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d3671d8235edbcd48807e7bfb0eb83d5
     internalID: 0
     vertices: []
     indices: 

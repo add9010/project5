@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6274677004048134273}
   - component: {fileID: 4622916757676382793}
   - component: {fileID: 7765320758320741173}
-  - component: {fileID: 1866438075895430941}
+  - component: {fileID: 1518066304531824438}
   m_Layer: 9
   m_Name: Bandit
   m_TagString: Enemy
@@ -172,8 +172,8 @@ MonoBehaviour:
   player: {fileID: 0}
   currentStagger: 0
   maxPatrolTime: 3
---- !u!61 &1866438075895430941
-BoxCollider2D:
+--- !u!70 &1518066304531824438
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -206,15 +206,6 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.72, y: 2.87}
-    newSize: {x: 5.004888, y: 5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1.72, y: 2.87}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0.013986766, y: -0.70982707}
+  m_Size: {x: 0.8388351, y: 2.4154308}
+  m_Direction: 0

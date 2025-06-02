@@ -122,10 +122,10 @@ TextureImporter:
       name: THIEF_IDLE_0
       rect:
         serializedVersion: 2
-        x: 205
-        y: 48
-        width: 131
-        height: 221
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: THIEF_IDLE_1
       rect:
         serializedVersion: 2
-        x: 705
-        y: 48
-        width: 131
-        height: 220
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: THIEF_IDLE_2
       rect:
         serializedVersion: 2
-        x: 1205
-        y: 48
-        width: 131
-        height: 219
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 154f9b6e27ac1bf4cac5b3eb59f787e2
     internalID: 0
     vertices: []
     indices: 

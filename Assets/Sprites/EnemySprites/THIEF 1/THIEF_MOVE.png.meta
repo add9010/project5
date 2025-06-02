@@ -125,10 +125,10 @@ TextureImporter:
       name: THIEF_MOVE_0
       rect:
         serializedVersion: 2
-        x: 194
-        y: 58
-        width: 142
-        height: 212
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: THIEF_MOVE_1
       rect:
         serializedVersion: 2
-        x: 707
-        y: 56
-        width: 129
-        height: 217
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: THIEF_MOVE_2
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 56
-        width: 136
-        height: 214
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: THIEF_MOVE_3
       rect:
         serializedVersion: 2
-        x: 1706
-        y: 56
-        width: 130
-        height: 217
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 72e0a259d1c215f4fbb05fb35a5a75e9
     internalID: 0
     vertices: []
     indices: 

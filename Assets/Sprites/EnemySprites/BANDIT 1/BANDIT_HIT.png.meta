@@ -116,10 +116,10 @@ TextureImporter:
       name: BANDIT_HIT_0
       rect:
         serializedVersion: 2
-        x: 163
-        y: 45
-        width: 185
-        height: 277
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9a50ec13e9b551944842f5b92a89ed61
     internalID: 0
     vertices: []
     indices: 

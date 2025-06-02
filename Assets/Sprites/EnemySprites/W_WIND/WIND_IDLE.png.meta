@@ -122,10 +122,10 @@ TextureImporter:
       name: WIND_IDLE_0
       rect:
         serializedVersion: 2
-        x: 203
-        y: 67
-        width: 90
-        height: 237
+        x: 0
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,10 +144,10 @@ TextureImporter:
       name: WIND_IDLE_1
       rect:
         serializedVersion: 2
-        x: 702
-        y: 68
-        width: 92
-        height: 237
+        x: 500
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,10 +166,10 @@ TextureImporter:
       name: WIND_IDLE_2
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 70
-        width: 93
-        height: 237
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 119475357b0500149806a38c76442b7e
     internalID: 0
     vertices: []
     indices: 
