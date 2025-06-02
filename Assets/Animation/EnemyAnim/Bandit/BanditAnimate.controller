@@ -407,7 +407,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5997a9423944c174daa03e90c6feaa75, type: 2}
+  m_Motion: {fileID: 7400000, guid: c5aea3aac4105f64bbdd673c155e67a3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -490,7 +490,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 28d317d25ef9f8c42913d232930bba94, type: 2}
+  m_Motion: {fileID: 7400000, guid: 56aa8607f69785a42a988560faff3a9b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -504,7 +504,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BanditDeath
-  m_Speed: 0.3
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -516,7 +516,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 28d317d25ef9f8c42913d232930bba94, type: 2}
+  m_Motion: {fileID: 7400000, guid: c3c6e8cdddcc9034ebfef8d824a233e0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -721,7 +721,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ce69ae6688cca3948814bccd43a955c8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9e383e35d61a4c04ebab9da94d39f386, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -751,7 +751,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: be002712990b7574580f0ca214f876f1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 56aa8607f69785a42a988560faff3a9b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

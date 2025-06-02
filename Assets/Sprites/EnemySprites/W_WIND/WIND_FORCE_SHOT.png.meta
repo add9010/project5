@@ -1,0 +1,520 @@
+fileFormatVersion: 2
+guid: 942f02151864cec4f962945332a4f0f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3374209386896640403
+    second: WIND_FORCE_SHOT_0
+  - first:
+      213: 7691481500596650992
+    second: WIND_FORCE_SHOT_1
+  - first:
+      213: 8457900570795744149
+    second: WIND_FORCE_SHOT_2
+  - first:
+      213: -1879958445740754096
+    second: WIND_FORCE_SHOT_3
+  - first:
+      213: -3065357135834800001
+    second: WIND_FORCE_SHOT_4
+  - first:
+      213: 7856886691907326351
+    second: WIND_FORCE_SHOT_5
+  - first:
+      213: -2705524487999606522
+    second: WIND_FORCE_SHOT_6
+  - first:
+      213: 7754536203858601424
+    second: WIND_FORCE_SHOT_7
+  - first:
+      213: -564772388575844726
+    second: WIND_FORCE_SHOT_8
+  - first:
+      213: 7519696363142272187
+    second: WIND_FORCE_SHOT_9
+  - first:
+      213: -928819391175531752
+    second: WIND_FORCE_SHOT_10
+  - first:
+      213: -1351881998867426636
+    second: WIND_FORCE_SHOT_11
+  - first:
+      213: -6721029206900244226
+    second: WIND_FORCE_SHOT_12
+  - first:
+      213: 1180045557965026914
+    second: WIND_FORCE_SHOT_13
+  - first:
+      213: -3757176100562321709
+    second: WIND_FORCE_SHOT_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_0
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 40
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39943cf5f8993de20800000000000000
+      internalID: 3374209386896640403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_1
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 32
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f34d8f6ca1adba60800000000000000
+      internalID: 7691481500596650992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_2
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 22
+        width: 56
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b9adbd1cf706570800000000000000
+      internalID: 8457900570795744149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_3
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 17
+        width: 56
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b702901cb09e5e0800000000000000
+      internalID: -1879958445740754096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_4
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 22
+        width: 52
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70abd80de9a575d0800000000000000
+      internalID: -3065357135834800001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_5
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 61
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8151a791d4490d60800000000000000
+      internalID: 7856886691907326351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_6
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 51
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601b9a900db047ad0800000000000000
+      internalID: -2705524487999606522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_7
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 55
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5e5e49795ad9b60800000000000000
+      internalID: 7754536203858601424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_8
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a86ecff31868928f0800000000000000
+      internalID: -564772388575844726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_9
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 47
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb454ef40045b5860800000000000000
+      internalID: 7519696363142272187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_10
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 36
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813ec705fab2c13f0800000000000000
+      internalID: -928819391175531752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_11
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 36
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2134f0c762d3de0800000000000000
+      internalID: -1351881998867426636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_12
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 24
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef08fadbb8b1ab2a0800000000000000
+      internalID: -6721029206900244226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_13
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 17
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 266784dce2d506010800000000000000
+      internalID: 1180045557965026914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WIND_FORCE_SHOT_14
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 18
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de356f2e34dbdbc0800000000000000
+      internalID: -3757176100562321709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      WIND_FORCE_SHOT_0: 3374209386896640403
+      WIND_FORCE_SHOT_1: 7691481500596650992
+      WIND_FORCE_SHOT_10: -928819391175531752
+      WIND_FORCE_SHOT_11: -1351881998867426636
+      WIND_FORCE_SHOT_12: -6721029206900244226
+      WIND_FORCE_SHOT_13: 1180045557965026914
+      WIND_FORCE_SHOT_14: -3757176100562321709
+      WIND_FORCE_SHOT_2: 8457900570795744149
+      WIND_FORCE_SHOT_3: -1879958445740754096
+      WIND_FORCE_SHOT_4: -3065357135834800001
+      WIND_FORCE_SHOT_5: 7856886691907326351
+      WIND_FORCE_SHOT_6: -2705524487999606522
+      WIND_FORCE_SHOT_7: 7754536203858601424
+      WIND_FORCE_SHOT_8: -564772388575844726
+      WIND_FORCE_SHOT_9: 7519696363142272187
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

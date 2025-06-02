@@ -6,9 +6,9 @@ public class Thief : Enemy
     protected override void Start()
     {
         base.Start();
-        SetEnemyStatus("좀도둑", 120, 10, 4);
-        attackCooldown = 3f;
-        attackRange = 3f;
+        SetEnemyStatus("좀도둑", 75, 10, 4);
+        attackCooldown = 2f;
+        attackRange = 2f;
     }
 
     public override void PerformAttack()
