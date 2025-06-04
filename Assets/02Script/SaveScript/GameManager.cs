@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public Data gameData = new Data();
-    public string nextSceneName = "Stage1"; // 기본값
+    public string nextSceneName = "VillageStage"; // 기본값
 
     private void Awake()
     {
@@ -17,7 +17,37 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // ✅ 중복 GameManager 방지
+            Destroy(gameObject); 
+        }
+    }
+    private void Start()
+    {
+        // “Loding” 씬이 로드될 때 실행될 콜백 등록
+        SceneManager.sceneLoaded += OnAnySceneLoaded;
+    }
+    private void OnDestroy()
+    {
+        // 혹시 GameManager가 파괴될 때 콜백 해제
+        SceneManager.sceneLoaded -= OnAnySceneLoaded;
+    }
+    private void OnAnySceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 1) 만약 현재 로드된 씬이 “Loding” 씬이라면, 다음에 지정해 둔 nextSceneName 씬으로 바로 이동
+        if (scene.name == "Loding")
+        {
+            // Loding 씬이 완전히 열린 직후 → 즉시 nextSceneName 씬을 로드
+            // FadeManager나 로딩 화면이 끝났을 때 호출하고 싶다면, 
+            // Loding 씬 안에 간단한 스크립트(예: LodingController)가 있어서 
+            // “Loding 애니메이션이 끝나면 GameManager.Instance.LoadTargetScene() 호출” 형태로 만들어도 됩니다.
+            SceneManager.LoadScene(nextSceneName);
+            return;
+        }
+
+        // 2) 만약 현재 로드된 씬이 “nextSceneName”이라면, 그 씬에서 플레이어 위치를 복원
+        if (scene.name == nextSceneName)
+        {
+            // 복원(지연을 주고 싶다면 Invoke로도 지연 가능)
+            ApplyGameState();
         }
     }
 
@@ -32,7 +62,7 @@ public class GameManager : MonoBehaviour
     public void SaveGame()
     {
         SavePlayerPosition();
-        DateManager.Instance.SaveData(gameData);
+        DataManager.Instance.SaveData(gameData);
     }
 
     private void SavePlayerPosition()
@@ -51,9 +81,27 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
-        gameData = DateManager.Instance.LoadData();
+        gameData = DataManager.Instance.LoadData();
         nextSceneName = gameData.savedSceneName; // ✅ 저장된 씬으로 이동하도록 설정
         ApplyGameState();
+
+        if (SceneManager.GetActiveScene().name != nextSceneName)
+        {
+            SceneManager.sceneLoaded += OnSceneLoadedForLoad;
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            ApplyGameState();
+        }
+    }
+    private void OnSceneLoadedForLoad(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == nextSceneName)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoadedForLoad;
+            Invoke(nameof(DelayedApplyGameState), 1.0f);
+        }
     }
 
     public void ApplyGameState()

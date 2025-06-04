@@ -17,7 +17,10 @@ public class MapManager : MonoBehaviour
     private bool isInSecretRoom = false;     // 지금 SecretRoom 안에 있는지 체크
     private bool isInShop = false; // 상점 안에 있는지 여부
 
-  
+    private int previousMapIndex;           // 상점 입장 전, 활성화되어 있던 메인 맵 인덱스
+    private Vector3 previousPlayerPosition; // 상점 입장 전, 플레이어가 있던 월드 좌표
+    private bool hasPreviousState = false;  // “이전 맵/위치 정보가 저장되어 있는지” 여부
+
     private void Awake()
     {
         if (Instance == null)
@@ -92,6 +95,19 @@ public class MapManager : MonoBehaviour
             Debug.LogWarning("비밀맵 인덱스 오류!");
         }
     }
+
+    public void SaveMapState()
+    {
+        previousMapIndex = currentMapIndex;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+            previousPlayerPosition = player.transform.position;
+        else
+            previousPlayerPosition = Vector3.zero;
+
+        hasPreviousState = true;
+    }
     public void GoToShopMap(int shopIndex)
     {
         foreach (var map in maps) map.SetActive(false);
@@ -109,7 +125,28 @@ public class MapManager : MonoBehaviour
             Debug.LogWarning("상점 인덱스 오류!");
         }
     }
+    public void ReturnToPreviousMap()
+    {
+        if (!hasPreviousState)
+        {
+            Debug.LogWarning("이전 맵 상태가 저장되어 있지 않습니다. SaveMapState()를 먼저 호출해야 합니다.");
+            return;
+        }
 
+        // 현재 활성화된 상점맵들 비활성화
+        foreach (var shopMap in ShopMaps)
+            shopMap.SetActive(false);
+        isInShop = false;
+
+        // 이전에 저장된 메인맵 인덱스를 활성화
+        maps[previousMapIndex].SetActive(true);
+        currentMapIndex = previousMapIndex;
+
+        // 플레이어를 저장된 위치로 이동
+        MovePlayerToPosition(previousPlayerPosition);
+
+        hasPreviousState = false;
+    }
     private void MovePlayerToStart()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -135,7 +172,14 @@ public class MapManager : MonoBehaviour
             player.transform.position = ShopStartPoints[shopIndex].position;
         }
     }
-
+    private void MovePlayerToPosition(Vector3 worldPos)
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            player.transform.position = worldPos;
+        }
+    }
     public void ClearRiverStage()
     {
         StoryManager.Instance.SetProgress("RiverStage4Clear");
