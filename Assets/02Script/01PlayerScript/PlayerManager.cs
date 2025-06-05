@@ -21,6 +21,14 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     [Header("공격 위치")]
     public Transform attackPos;
 
+    [Header("공격 사운드")]
+    public AudioClip attackSFX1;  // 1~2타용
+    public AudioClip attackSFX3;  // 3타용
+
+    [Header("이동 사운드")]
+    public AudioClip walkSFX;
+    private float walkSFXTimer = 0f;
+    private float walkStartBuffer = 0f;
     [Header("센서")]
     public PlayerSensor groundSensor;
 
@@ -51,8 +59,9 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private float staggerTimer = 0f;
     private bool isStaggered = false;
 
-    public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
 
+
+    public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -152,7 +161,31 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         // 이동 처리
         if (!isAction && !isDashing)
             playerMove.Move(input);
+        //  걷기 사운드 처리
+        bool isWalking = !isAction && !isDashing && isGrounded && Mathf.Abs(rb.linearVelocity.x) > 0.1f;
 
+        if (isWalking)
+        {
+            // 걸음 시작 시 약간의 지연 시간 부여
+            walkStartBuffer += Time.deltaTime;
+
+            if (walkStartBuffer >= 0.13f) // 0.15초 이상 연속으로 걷고 있어야 발소리 발생
+            {
+                walkSFXTimer -= Time.deltaTime;
+
+                if (walkSFXTimer <= 0f)
+                {
+                    if (walkSFX != null)
+                        SoundManager.Instance.PlaySFX(walkSFX);
+                    walkSFXTimer = 0.4f;
+                }
+            }
+        }
+        else
+        {
+            walkSFXTimer = 0f;
+            walkStartBuffer = 0f;
+        }
         // 공격 처리
         if (!isAction && playerAttack.TryAttack())
             playerAttack.DoAttack();
@@ -164,6 +197,9 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         playerDialog.HandleInput();
         playerDialog.HandleScan();
         UpdateManaRecharge();
+
+
+
 
     }
 

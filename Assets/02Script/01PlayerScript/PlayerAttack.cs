@@ -65,6 +65,14 @@ public class PlayerAttack
         string animationTrigger = isAir ? "AttackJP" : "Attack" + (attackCount + 1);
         pm.GetAnimator().SetTrigger(animationTrigger);
 
+        // 💥 사운드 재생 (공격 즉시)
+        if (!isAir)
+        {
+            AudioClip clipToPlay = (attackCount == 2) ? pm.attackSFX3 : pm.attackSFX1;
+            if (clipToPlay != null)
+                SoundManager.Instance.PlaySFX(clipToPlay);
+        }
+
         if (!isAir)
         {
             attackCount++;
@@ -88,8 +96,6 @@ public class PlayerAttack
 
             pm.rb.linearVelocity = new Vector2(0f, pm.rb.linearVelocity.y); // x축 멈춤
         }
-
-        // 공중일 때는 전진 이동 없음
 
         PerformAttack();
 
@@ -148,7 +154,6 @@ public class PlayerAttack
 
             hitEnemies.Add(col);
         }
-
         // ▶ 적을 맞췄을 때만 카메라 흔들림
         if (hitSomething)
         {
