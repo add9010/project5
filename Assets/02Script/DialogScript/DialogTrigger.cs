@@ -12,8 +12,44 @@ public class DialogTrigger : MonoBehaviour
 
     private void Start()
     {
-        string fileToLoad = null;
+        
+    }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+        }
+    }
+
+    public void TryStartDialogue()
+    {
+        if (!isPlayerInRange)
+            return;
+
+        // DialogSystem 싱글톤 참조
+        var ds = DialogSystem.Instance;
+        if (ds == null)
+        {
+            Debug.LogError("DialogSystem 싱글톤 인스턴스를 찾을 수 없습니다!");
+            return;
+        }
+
+        // 이미 대화창이 열려 있으면 중복 진입 방지
+        if (ds.panel.activeSelf)
+            return;
+
+        // ── 여기부터 "로드 시점"을 Start()가 아니라, 이 메서드가 호출될 때로 옮깁니다. ──
+        string fileToLoad = null;
         int stage = GameManager.Instance.gameData.currentStage;
         var data = GameManager.Instance.gameData;
 
@@ -47,58 +83,21 @@ public class DialogTrigger : MonoBehaviour
                 break;
         }
 
-        if (!string.IsNullOrEmpty(fileToLoad))
-        {
-            dataSet = DialogueLoader.LoadDialogFromJSON(fileToLoad);
-            if (dataSet == null)
-            {
-                Debug.LogError($"Dialogues/{fileToLoad}.json 파일을 찾을 수 없습니다!");
-            }
-        }
-        else
+        if (string.IsNullOrEmpty(fileToLoad))
         {
             Debug.LogError($"DialogTrigger: fileToLoad이 null입니다. NPC 이름 '{npcName}' 확인 필요.");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInRange = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerInRange = false;
-        }
-    }
-
-    public void TryStartDialogue()
-    {
-        if (!isPlayerInRange)
-            return;
-
-        // 싱글톤으로 접근
-        var ds = DialogSystem.Instance;
-        if (ds == null)
-        {
-            Debug.LogError("DialogSystem 싱글톤 인스턴스를 찾을 수 없습니다!");
             return;
         }
 
-        // 이미 대화 중이면 중복 진입 방지
-        if (ds.panel.activeSelf)
-            return;
-
+        // 매번 최신 파일을 불러오도록
+        dataSet = DialogueLoader.LoadDialogFromJSON(fileToLoad);
         if (dataSet == null)
         {
-            Debug.LogError($"{npcName}의 DialogueDataSet이 null입니다!");
+            Debug.LogError($"Dialogues/{fileToLoad}.json 파일을 찾을 수 없습니다!");
             return;
         }
+
+        // ── 여기까지가 새로운 로드 시점 ──
 
         ds.StartDialogue(dataSet.dialogues);
         PlayerManager.Instance.isAction = true;

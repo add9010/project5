@@ -36,9 +36,12 @@ public class MainMenu : MonoBehaviour//,IPointerEnterHandler,IPointerExitHandler
     {
         Debug.Log("불러오기");
 
-        GameManager.Instance.LoadGame(); // 내부에서 nextSceneName 설정됨
+        Data loadedData = DataManager.Instance.LoadData();
+        string savedScene = loadedData.savedSceneName;
 
-        SceneManager.sceneLoaded += OnGameSceneLoaded;
+        GameManager.Instance.gameData = loadedData;
+        GameManager.Instance.nextSceneName = savedScene;
+
 
         if (fadeManager != null)
         {

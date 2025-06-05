@@ -21,23 +21,41 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(AudioClip clip)
     {
-        Debug.Log("PlayBGM 호출됨"); // 확인용 로그
-
         if (clip == null)
         {
-            Debug.LogWarning("BGM 클립이 null입니다!");
+            Debug.LogWarning("클립이 null입니다.");
+            return;
+        }
+
+        if (!bgmSource.gameObject.activeInHierarchy || !bgmSource.enabled)
+        {
+            Debug.LogError("bgmSource가 비활성화되어 있습니다!");
             return;
         }
 
         bgmSource.clip = clip;
         bgmSource.loop = true;
         bgmSource.Play();
-
-        Debug.Log("BGM 재생 시작: " + clip.name);
     }
     public void PlaySFX(AudioClip clip)
     {
-        if (clip == null) return;
+        if (clip == null || sfxSource == null) return;
         sfxSource.PlayOneShot(clip);
     }
+    public void StopBGM()
+    {
+        if (bgmSource == null)
+        {
+            Debug.LogWarning("bgmSource가 null입니다. 이미 제거된 상태입니다.");
+            return;
+        }
+
+        if (bgmSource.isPlaying)
+        {
+            bgmSource.Stop();
+            Debug.Log("BGM 정지됨");
+        }
+    }
+
+
 }

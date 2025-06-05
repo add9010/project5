@@ -1,18 +1,17 @@
 using System.IO;
 using UnityEngine;
 
-public class DateManager : MonoBehaviour
+public class DataManager : MonoBehaviour
 {
-    private static DateManager instance;
-    public static DateManager Instance
+    private static DataManager instance;
+    public static DataManager Instance
     {
         get
         {
             if (instance == null)
             {
                 GameObject container = new GameObject("DateManager");
-                instance = container.AddComponent<DateManager>();
-                DontDestroyOnLoad(container); // 씬이 변경되어도 유지
+                instance = container.AddComponent<DataManager>();
             }
             return instance;
         }
