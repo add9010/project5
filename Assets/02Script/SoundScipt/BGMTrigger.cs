@@ -3,14 +3,25 @@ using UnityEngine;
 public class BGMTrigger : MonoBehaviour
 {
     public AudioClip bgmClip;
-    private bool hasPlayed = false;
-
-    private void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if (other.CompareTag("Player") && !hasPlayed)
+        // 이거 한 줄이면 로딩 시 클립이 메모리에 올라감
+        AudioClip preload = bgmClip;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
         {
-            SoundManager.Instance.PlayBGM(bgmClip); // 여기에 Clip만 넘김
-            hasPlayed = true;
+            SoundManager.Instance.PlayBGM(bgmClip);
+            Debug.Log("배경음 재생 시작됨: " + bgmClip.name);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            SoundManager.Instance.StopBGM();
+            Debug.Log("플레이어가 지역에서 나감 → BGM 정지");
         }
     }
 }
