@@ -5802,6 +5802,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410528736}
     m_Modifications:
+    - target: {fileID: 213462984708492887, guid: 9a5a1b58e62c79f478a9b2d63ce93726, type: 3}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     - target: {fileID: 5392004245433256492, guid: 9a5a1b58e62c79f478a9b2d63ce93726, type: 3}
       propertyPath: m_Name
       value: CrossRoad

@@ -13,5 +13,5 @@ AssetOrigin:
   productId: 207981
   packageName: Stylized Element Splash Package vol.3
   packageVersion: 1.2
-  assetPath: Assets/VFX_Klaus/Shaders/Fx_dissolve_particle_apb.shadergraph
+  assetPath: Assets/Source/VFX_Klaus/Shaders/Fx_dissolve_particle_apb.shadergraph
   uploadId: 559835
