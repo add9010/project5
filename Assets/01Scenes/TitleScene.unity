@@ -2104,6 +2104,14 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 5294956109493335039, guid: 963818ced17eaf040a06e71402085f1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5294956109493335039, guid: 963818ced17eaf040a06e71402085f1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5315060821845598249, guid: 963818ced17eaf040a06e71402085f1f, type: 3}
       propertyPath: m_RenderMode
       value: 0
