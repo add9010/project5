@@ -591,9 +591,9 @@ GameObject:
   - component: {fileID: 6921189606134194133}
   - component: {fileID: 2768724700030430754}
   - component: {fileID: 731509556395987254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: House_Platform_0
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

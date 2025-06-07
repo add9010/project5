@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 7592397554474003752}
   - component: {fileID: 3453748484110518284}
   - component: {fileID: 8569375855218682697}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CrossG
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
