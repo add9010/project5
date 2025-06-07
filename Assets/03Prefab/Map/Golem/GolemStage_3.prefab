@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2166441143689732438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,9 +46,9 @@ GameObject:
   - component: {fileID: 1592059270165342186}
   - component: {fileID: 8083750692582377043}
   - component: {fileID: 6163023544588653680}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Golem_G3
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29651,9 +29651,9 @@ GameObject:
   - component: {fileID: 1933361226514309906}
   - component: {fileID: 5174971858072405426}
   - component: {fileID: 4703722464579925555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29982,9 +29982,9 @@ GameObject:
   - component: {fileID: 7650008466340957360}
   - component: {fileID: 7699167557748954050}
   - component: {fileID: 2960545839413018399}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

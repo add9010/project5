@@ -317,9 +317,9 @@ GameObject:
   - component: {fileID: 1270029244459968395}
   - component: {fileID: 8596101473188340133}
   - component: {fileID: 2517576514072173725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1809,9 +1809,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 520622248532518468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

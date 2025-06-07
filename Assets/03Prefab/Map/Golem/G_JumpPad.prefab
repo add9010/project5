@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8474288783781451876}
   - component: {fileID: 6718470190077735531}
   - component: {fileID: 234323151760260219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: G_JumpPad
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

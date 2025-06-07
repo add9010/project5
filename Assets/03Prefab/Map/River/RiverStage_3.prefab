@@ -274,9 +274,9 @@ GameObject:
   - component: {fileID: 8398810650027906359}
   - component: {fileID: 1169453641870765187}
   - component: {fileID: 2953992524300640073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (6)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1255,6 +1255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  damageInterval: 2.5
 --- !u!1 &2799777359355914002
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,9 +2585,9 @@ GameObject:
   - component: {fileID: 1006720486060202428}
   - component: {fileID: 5429543222791169025}
   - component: {fileID: 440970229687134864}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (4)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2992,9 +2993,9 @@ GameObject:
   - component: {fileID: 3394449343034726428}
   - component: {fileID: 1107499327667473957}
   - component: {fileID: 4467456818210964373}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (1)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3547,9 +3548,9 @@ GameObject:
   - component: {fileID: 8397828023462405904}
   - component: {fileID: 2796084001327422871}
   - component: {fileID: 1279459369627114507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (5)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3868,9 +3869,9 @@ GameObject:
   - component: {fileID: 3570910880034265119}
   - component: {fileID: 3247917391878156229}
   - component: {fileID: 2350110763241268389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (2)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4286,9 +4287,9 @@ GameObject:
   - component: {fileID: 9115794905973211155}
   - component: {fileID: 5914212412740681552}
   - component: {fileID: 3680928118825639734}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (3)
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4608,9 +4609,9 @@ GameObject:
   - component: {fileID: 4590187251066831800}
   - component: {fileID: 6588950795364485505}
   - component: {fileID: 4366907585308448178}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: River_3G
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8853,9 +8854,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6878862772400911761}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
