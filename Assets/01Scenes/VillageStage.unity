@@ -328,7 +328,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 908.6
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 7.15
   m_Depth: -1
   m_CullingMask:
@@ -1126,6 +1126,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 699821987}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: walkSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 671b6b5eab40d6d43b4d2dd23fc473f0, type: 3}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 1833908971}
@@ -1137,6 +1141,14 @@ PrefabInstance:
       propertyPath: attackPos
       value: 
       objectReference: {fileID: 442218555}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: attackSFX1
+      value: 
+      objectReference: {fileID: 8300000, guid: 790e6f57ee097514088972f68c6b40aa, type: 3}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: attackSFX3
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d6adb6a365048b4cbbe09ca6b0ff2b0, type: 3}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: groundSensor
       value: 
@@ -1153,6 +1165,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1833908972}
+    - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
+      propertyPath: hitEffectPrefab
+      value: 
+      objectReference: {fileID: 7234569861036799096, guid: 4e0efb20d8c2b7e4eba7a562212ed682, type: 3}
     - target: {fileID: 3280658155230605344, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: cameraController
       value: 
@@ -1239,7 +1255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6839034419398691151, guid: 9a1a8b3ed1b03434f832d399d33b5044, type: 3}
       propertyPath: m_Offset.y
-      value: -1.9
+      value: -2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
