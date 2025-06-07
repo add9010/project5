@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vilage_02_0: -7034391827204320051
+      Vilage_02_1: 6941757394474328810
+      Vilage_02_2: 8423615123950305885
+      Vilage_02_3: 3408134438850847917
+      Vilage_02_4: -7091134040324560597
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

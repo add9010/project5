@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vilage_04_0: -6533772085979652063
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
