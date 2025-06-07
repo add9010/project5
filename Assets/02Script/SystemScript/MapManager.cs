@@ -44,7 +44,6 @@ public class MapManager : MonoBehaviour
         MovePlayerToStart();
 
         SaveMapState();
-        isInShop = true;
     }
     public void GoToNextMap()
     {
@@ -111,6 +110,8 @@ public class MapManager : MonoBehaviour
     }
     public void GoToShopMap(int shopIndex)
     {
+        SaveMapState();            // 진입 전 상태 저장
+        isInShop = true;
         foreach (var map in maps) map.SetActive(false);
         foreach (var sMap in secretMaps) sMap.SetActive(false);
         foreach (var shopMap in ShopMaps) shopMap.SetActive(false); // 상점 맵들 비활성화

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerJump
+  m_Name: PY_JUMP1
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1934525604, guid: d58dcc13506bb504dab142d13cebd586, type: 3}
+      value: {fileID: 974900913799793235, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
     - time: 0.083333336
-      value: {fileID: 2079757600, guid: d58dcc13506bb504dab142d13cebd586, type: 3}
+      value: {fileID: 417570104817842076, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
     - time: 0.16666667
-      value: {fileID: 866942761, guid: d58dcc13506bb504dab142d13cebd586, type: 3}
+      value: {fileID: -805803741011668939, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
+    - time: 0.25
+      value: {fileID: 6447762615807100962, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1934525604, guid: d58dcc13506bb504dab142d13cebd586, type: 3}
-    - {fileID: 2079757600, guid: d58dcc13506bb504dab142d13cebd586, type: 3}
-    - {fileID: 866942761, guid: d58dcc13506bb504dab142d13cebd586, type: 3}
+    - {fileID: 974900913799793235, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
+    - {fileID: 417570104817842076, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
+    - {fileID: -805803741011668939, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
+    - {fileID: 6447762615807100962, guid: c1013d4be8e92164ab9572795970f6b5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 0.33333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
