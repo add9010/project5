@@ -40,10 +40,11 @@ public class MapManager : MonoBehaviour
 
         foreach (var sMap in secretMaps)
             sMap.SetActive(false);
-        foreach (var shopMap in ShopMaps)
-            shopMap.SetActive(false);
 
         MovePlayerToStart();
+
+        SaveMapState();
+        isInShop = true;
     }
     public void GoToNextMap()
     {
