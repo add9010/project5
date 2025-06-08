@@ -58,7 +58,7 @@ public class PlayerAttack
 
     private IEnumerator AttackCoroutine()
     {
-        Debug.Log("AttackCoroutine 시작!");
+        //Debug.Log("AttackCoroutine 시작!");
         isAttacking = true;
         hitEnemies.Clear();
         timeSinceAttack = 0f;

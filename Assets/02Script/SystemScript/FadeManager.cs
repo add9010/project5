@@ -17,14 +17,14 @@ public class FadeManager : MonoBehaviour
     {
         if (!panel)
         {
-            Debug.LogError("Panel 오브젝트를 찾을 수 없습니다.");
+            //Debug.LogError("Panel 오브젝트를 찾을 수 없습니다.");
             throw new MissingComponentException();
         }
 
         panelImage = panel.GetComponent<Image>(); // Image 컴포넌트 가져오기
         if (panelImage == null)
         {
-            Debug.LogError("Panel에 Image 컴포넌트가 없습니다!");
+            //Debug.LogError("Panel에 Image 컴포넌트가 없습니다!");
             throw new MissingComponentException();
         }
 
@@ -42,7 +42,7 @@ public class FadeManager : MonoBehaviour
     public void FadeOut()
     {
         panel.SetActive(true); // 패널 활성화
-        Debug.Log("FadeCanvasController_ Fade Out 시작");
+        //Debug.Log("FadeCanvasController_ Fade Out 시작");
         StartCoroutine(CoFadeOut());
     }
 
