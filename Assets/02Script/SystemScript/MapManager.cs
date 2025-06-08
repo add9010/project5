@@ -41,8 +41,6 @@ public class MapManager : MonoBehaviour
         foreach (var sMap in secretMaps)
             sMap.SetActive(false);
 
-        MovePlayerToStart();
-
         SaveMapState();
     }
     public void GoToNextMap()
@@ -206,5 +204,32 @@ public class MapManager : MonoBehaviour
             MovePlayerToStart();
         }
     }
+    public void ReturnToPreviousMapAt(Vector3 exitPos)
+    {
+        if (!hasPreviousState)
+        {
+            Debug.LogWarning("이전 맵 상태가 없습니다.");
+            return;
+        }
 
+        // ── 상점(집) 비활성화
+        foreach (var shopMap in ShopMaps)
+            shopMap.SetActive(false);
+        isInShop = false;
+
+        // ── 이전 메인맵 켜기
+        maps[previousMapIndex].SetActive(true);
+        currentMapIndex = previousMapIndex;
+
+        // ── 지정된 문 위치로 순간이동
+        MovePlayerToPosition(exitPos);
+
+        hasPreviousState = false;
+    }
+    public void SaveMapState(Vector3 exitPos)
+    {
+        previousMapIndex = currentMapIndex;
+        previousPlayerPosition = exitPos;
+        hasPreviousState = true;
+    }
 }
