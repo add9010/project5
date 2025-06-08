@@ -33,11 +33,16 @@ public class Skill1 : MonoBehaviour
         }
 
         // 상태 및 점프
-        pm.playerStateController.ForceSetSkill("Skill1",AnimType.Skill1);
+        pm.playerStateController.ForceSetSkill("Skill1", AnimType.Skill1);
         pm.playerStateController.LockSkillState(0.5f);
-
         pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
         Debug.Log("Skill1 스킬 점프 실행됨!");
+
+        //사운드
+        if (pm.skill1SFX != null)
+        {
+            SoundManager.Instance.PlaySFX(pm.skill1SFX);
+        }
 
         // 데미지 적용
         Vector2 center = pm.transform.position;

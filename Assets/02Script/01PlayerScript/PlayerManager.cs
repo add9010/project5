@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     [Header("공격 사운드")]
     public AudioClip attackSFX1;  // 1~2타용
     public AudioClip attackSFX3;  // 3타용
+    public AudioClip jumpAttackSFX; // 점프 공격 사운드 추가
 
     [Header("이동 사운드")]
     public AudioClip walkSFX;
@@ -38,6 +39,16 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     [Header("패링 사운드")]
     public AudioClip parrySuccessSFX;
     public AudioClip parryFailSFX; // (선택사항)
+
+    [Header("스킬 사운드")]
+    public AudioClip skill1SFX;
+
+    [Header("스킬 사운드")]
+    public AudioClip skill2SFX;
+
+    [Header("공격 히트 사운드")]
+    public AudioClip skillHitSFX;
+
 
     [Header("센서")]
     public PlayerSensor groundSensor;
