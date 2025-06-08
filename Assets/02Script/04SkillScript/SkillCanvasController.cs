@@ -2,19 +2,21 @@ using UnityEngine;
 
 public class SkillCanvasController : MonoBehaviour
 {
-    [Header("스킬 캔버스 프리팹")]
     [SerializeField] private GameObject skillCanvasPrefab;
-
     private GameObject skillCanvasInstance;
+
     private void Start()
     {
+        // 1회만 생성
         if (skillCanvasInstance == null)
         {
             skillCanvasInstance = Instantiate(skillCanvasPrefab);
-            skillCanvasInstance.SetActive(false); // 눈에는 안 보임
+            DontDestroyOnLoad(skillCanvasInstance); // ✅ 유지되도록 함
+            skillCanvasInstance.SetActive(false);
             AutoAssignSlots();
         }
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.K))
@@ -27,12 +29,16 @@ public class SkillCanvasController : MonoBehaviour
     {
         if (skillCanvasInstance == null)
         {
-            skillCanvasInstance = Instantiate(skillCanvasPrefab);
-            AutoAssignSlots();
+            Debug.LogError("SkillCanvasInstance가 존재하지 않습니다.");
+            return;
         }
-        else
+
+        bool nowActive = !skillCanvasInstance.activeSelf;
+        skillCanvasInstance.SetActive(nowActive);
+
+        if (nowActive)
         {
-            skillCanvasInstance.SetActive(!skillCanvasInstance.activeSelf);
+            AutoAssignSlots();
         }
     }
 
@@ -40,7 +46,7 @@ public class SkillCanvasController : MonoBehaviour
     {
         if (skillCanvasInstance == null) return;
 
-        SkillEquipSlot[] slots = skillCanvasInstance.GetComponentsInChildren<SkillEquipSlot>();
+        var slots = skillCanvasInstance.GetComponentsInChildren<SkillEquipSlot>(true);
 
         foreach (var slot in slots)
         {
@@ -51,14 +57,6 @@ public class SkillCanvasController : MonoBehaviour
             else if (name.Contains("D")) SkillManager.Instance.SetSlotD(slot);
         }
 
-        // ✅ 플레이어가 있는 씬에서만 복원
-        if (GameObject.FindWithTag("Player") != null)
-        {
-            SkillManager.Instance.RestoreEquippedSkills();
-        }
-        else
-        {
-            Debug.Log("[SkillCanvasController] 플레이어가 없어 스킬 복원 생략됨");
-        }
+        SkillManager.Instance.RestoreEquippedSkills();
     }
 }

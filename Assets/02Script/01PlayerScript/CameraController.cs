@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject); 
+
         cam = GetComponent<Camera>();
 
         if (target == null)

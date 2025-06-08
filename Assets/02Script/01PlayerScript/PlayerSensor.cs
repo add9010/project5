@@ -28,7 +28,7 @@ public class PlayerSensor : MonoBehaviour {
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Ground") || other.CompareTag("Platform"))
-            m_ColCount--;
+            m_ColCount = Mathf.Max(0, m_ColCount - 1); // 음수 방지
     }
 
     void Update()
