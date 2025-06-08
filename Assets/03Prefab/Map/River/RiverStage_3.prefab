@@ -799,7 +799,6 @@ GameObject:
   - component: {fileID: 3296149784352405989}
   - component: {fileID: 3793559561679329302}
   - component: {fileID: 2592104222524118405}
-  - component: {fileID: 7948882386276198555}
   - component: {fileID: 6873031998511743404}
   m_Layer: 0
   m_Name: Trap
@@ -1216,32 +1215,13 @@ TilemapCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!251 &7948882386276198555
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2420390264113506808}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!114 &6873031998511743404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2585,6 +2565,7 @@ GameObject:
   - component: {fileID: 1006720486060202428}
   - component: {fileID: 5429543222791169025}
   - component: {fileID: 440970229687134864}
+  - component: {fileID: 131016275471671519}
   m_Layer: 8
   m_Name: Platform (4)
   m_TagString: Platform
@@ -2806,6 +2787,20 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &131016275471671519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4940415235361435472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd462f6d0cbe05438b40e846579c5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableDelay: 2
+  reenableDelay: 5
 --- !u!1 &5250535418224306753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,6 +3543,7 @@ GameObject:
   - component: {fileID: 8397828023462405904}
   - component: {fileID: 2796084001327422871}
   - component: {fileID: 1279459369627114507}
+  - component: {fileID: 6246928050837329447}
   m_Layer: 8
   m_Name: Platform (5)
   m_TagString: Platform
@@ -3769,6 +3765,20 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &6246928050837329447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6658515390471790549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd462f6d0cbe05438b40e846579c5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableDelay: 2
+  reenableDelay: 5
 --- !u!1 &6692624091745695542
 GameObject:
   m_ObjectHideFlags: 0

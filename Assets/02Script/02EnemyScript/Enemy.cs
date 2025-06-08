@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     [Header("References")]
     public GameObject markPrefab;
-    public float markYOffset = 2.0f;
+    public float markYOffset = 1f;
 
     [Header("Stagger")]
     public float maxStagger = 50f;

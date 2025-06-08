@@ -15,7 +15,7 @@ public class Mark : MonoBehaviour
             return;
         }
 
-        transform.position = enemy.position + new Vector3(0, 2f, 0);
+        transform.position = enemy.position + new Vector3(0, 1f, 0);
     }
 
     private void Start()
