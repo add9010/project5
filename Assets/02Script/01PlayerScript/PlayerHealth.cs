@@ -80,7 +80,32 @@ public class PlayerHealth : IDamageable, IKnockbackable
             }
         }
     }
+    public void Reset()
+    {
+        currentHealth = pm.data.maxHealth;
+        isDead = false;
+        isInvincible = false;
+        invincibleTimer = 0f;
 
+        if (pm.spriteRenderer != null)
+            pm.spriteRenderer.enabled = true;
+
+        pm.UpdateHpUI(currentHealth);
+    }
+    public void ResetHealth()
+    {
+        currentHealth = pm.data.maxHealth;
+        isDead = false;                // ✅ 이 라인 중요!
+        isInvincible = false;
+        invincibleTimer = 0f;
+
+        pm.UpdateHpUI(currentHealth);
+
+        if (pm.spriteRenderer != null)
+            pm.spriteRenderer.enabled = true;
+
+        Debug.Log("[PlayerHealth] 상태 초기화됨");
+    }
     private IEnumerator FlashWhileInvincible()
     {
         SpriteRenderer sr = pm.spriteRenderer;

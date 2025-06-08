@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            TryResetPlayerState();
             ReturnToTitle();
         }
     }
@@ -152,5 +154,14 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName);
         }
+    }
+    private void TryResetPlayerState()
+    {
+        var player = GameObject.FindWithTag("Player");
+        if (player == null) return;
+
+        var pm = player.GetComponent<PlayerManager>();
+        if (pm != null)
+            pm.ResetAllPlayerState();
     }
 }
