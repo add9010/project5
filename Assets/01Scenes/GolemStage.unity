@@ -1102,7 +1102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 765147995615439760, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
       propertyPath: jumpVelocity
-      value: 35
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 834244263172571085, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_Data
@@ -7934,7 +7934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2212258689132982915, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
       propertyPath: jumpVelocity
-      value: 45
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2702004437270843193, guid: 693fc6458edbf054fbde42047a40681f, type: 3}
       propertyPath: m_Size.x
@@ -9247,9 +9247,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1410528736}
     m_Modifications:
+    - target: {fileID: 1111709827073503418, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
+      propertyPath: jumpVelocity
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562062566640397169, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
+      propertyPath: jumpVelocity
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3361617115033127400, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
       propertyPath: m_Name
       value: GolemStage_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192076206913660772, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
+      propertyPath: jumpVelocity
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6348310300798192981, guid: 77ab8816098931242b23fcedb999c8ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9914,7 +9926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5373224560779917246, guid: 963818ced17eaf040a06e71402085f1f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8160240914790350526, guid: 963818ced17eaf040a06e71402085f1f, type: 3}
       propertyPath: m_Pivot.x

@@ -3,42 +3,44 @@ using UnityEngine;
 
 public class ShopPoint : MonoBehaviour
 {
-    public int shopIndex;
-    public bool isExit = false; // 출구인가? (false면 입구)
+    [Header("상점 설정")]
+    public int shopIndex;             // 몇 번 상점(ShopMaps index)
+    public bool isExit = false;       // 출구 트리거인가?
+    public Transform doorPoint;       // 문 위치를 드래그해서 할당
 
     private bool playerInRange = false;
 
     private void Update()
     {
-        if (playerInRange && Input.GetKeyDown(KeyCode.F))
+        if (!playerInRange || Input.GetKeyDown(KeyCode.F) == false) return;
+
+        if (isExit)
         {
-            if (isExit)
-            {
-                // ── “출구”일 때: 이전 맵으로 돌아가기
-                MapManager.Instance.ReturnToPreviousMap();
-            }
+            // 출구: doorPoint 위치로 복귀
+            if (doorPoint != null)
+                MapManager.Instance.ReturnToPreviousMapAt(doorPoint.position);
             else
-            {
-                // ── “입구”일 때: 현재 맵 상태(인덱스+플레이어 위치) 저장 후 상점으로 이동
+                MapManager.Instance.ReturnToPreviousMap();
+        }
+        else
+        {
+            // 입구: 문 위치를 저장 후 상점 진입
+            if (doorPoint != null)
+                MapManager.Instance.SaveMapState(doorPoint.position);
+            else
                 MapManager.Instance.SaveMapState();
-                MapManager.Instance.GoToShopMap(shopIndex);
-            }
+
+            MapManager.Instance.GoToShopMap(shopIndex);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
-        {
-            playerInRange = true;
-        }
+        if (other.CompareTag("Player")) playerInRange = true;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (collision.CompareTag("Player"))
-        {
-            playerInRange = false;
-        }
+        if (other.CompareTag("Player")) playerInRange = false;
     }
 }
