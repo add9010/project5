@@ -13,7 +13,6 @@ public class DialogSystem : MonoBehaviour
     public GameObject panel;                         // 전체 대화 패널
     public TextMeshProUGUI speakerNameText;          // 말하는 캐릭터 이름
     public TextMeshProUGUI sentenceText;             // 대사 본문
-    public Image portraitImage;                      // 캐릭터 초상화
     public GameObject optionsPanel;                  // 선택지 버튼들을 담는 패널
     public Button optionButtonPrefab;                // 선택지 버튼 프리팹
 
@@ -80,9 +79,6 @@ public class DialogSystem : MonoBehaviour
         if (sentenceText == null)
             sentenceText = GameObject.Find("sentenceText").GetComponent<TextMeshProUGUI>();
 
-        if (portraitImage == null)
-            portraitImage = GameObject.Find("portraitImage").GetComponent<Image>();
-
         if (optionsPanel == null)
             optionsPanel = GameObject.Find("optionsPanel");
 
@@ -142,8 +138,6 @@ public class DialogSystem : MonoBehaviour
         Dialogue dialogue = dialogues[currentDialogueIndex];
 
         speakerNameText.text = dialogue.speakerName;
-        if (dialogue.speakerPortrait != null)
-            portraitImage.sprite = dialogue.speakerPortrait;
 
         sentences.Clear();
 
