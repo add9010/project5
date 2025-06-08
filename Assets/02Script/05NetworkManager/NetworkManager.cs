@@ -18,7 +18,7 @@ public class NetworkClient : MonoBehaviour
     public string playerName; // 인스펙터에서 설정 가능
     private Socket socket;
     private Player localPlayer;
-    private GameWorld gameWorld;
+    public GameWorld gameWorld;
 
     private Thread recvThread;
     public bool isConnected = false;

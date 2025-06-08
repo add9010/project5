@@ -70,7 +70,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private bool isStaggered = false;
     private static bool reconnected = false;
     [SerializeField] private string[] visibleInScenes = { "VillageStage", "RiverStage", "Boss1", "GolemStage" }; // 원하는 씬만 보여지게
-
+    public bool canControl = true;
     public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
     private void Awake()
     {
@@ -388,10 +388,24 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             cameraController = cam;
             cam.target = transform;
         }
-        else
-        {
-            Debug.LogWarning("📷 씬 로딩 후 CameraController 연결 실패");
-        }
+       
+        ResetAllPlayerState();
     }
+    public void ResetAllPlayerState()
+    {
+        Debug.Log("[PlayerManager] 상태 초기화 시도");
 
+        // 체력, 상태 초기화
+        playerHealth?.ResetHealth();
+        playerStateController?.ForceSetIdle();
+
+        // 컨트롤 관련 상태
+        isDashing = false;
+        isAction = false;
+        IsDead = false;
+        canControl = true;
+
+        rb.linearVelocity = Vector2.zero;
+        Debug.Log($"[PlayerManager] 상태 초기화 완료 → IsDead: {IsDead}, canControl: {canControl}");
+    }
 }
