@@ -12913,7 +12913,6 @@ GameObject:
   - component: {fileID: 2084610299647496274}
   - component: {fileID: 4514114255092423682}
   - component: {fileID: 7385196816626020221}
-  - component: {fileID: 5074897500398208561}
   - component: {fileID: 7198673818293416750}
   m_Layer: 8
   m_Name: Trap
@@ -13778,32 +13777,13 @@ TilemapCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!251 &5074897500398208561
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7755014833284357876}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!114 &7198673818293416750
 MonoBehaviour:
   m_ObjectHideFlags: 0
