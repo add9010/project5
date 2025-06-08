@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3845743426801665391}
   - component: {fileID: 3280658155230605344}
   m_Layer: 10
-  m_Name: PY
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 2162020530824157556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.39, y: -1.85, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 1669801263, guid: 427b1c3111ae9a3478eb8359bce88300, type: 3}
+  m_Sprite: {fileID: -917402238, guid: 80fed6d8595f037499278501b8343066, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,12 +244,20 @@ MonoBehaviour:
   animator: {fileID: 1315762131210481175}
   rb: {fileID: 3683859902371945585}
   spriteRenderer: {fileID: 4097594023563100635}
-  cameraController: {fileID: 0}
+  cameraController: {fileID: 1148751210464887968, guid: e67a55e36b3b14b4cb8a691307a0c390, type: 3}
   hpbar: {fileID: 0}
   attackPos: {fileID: 5553567924351009742}
+  attackSFX1: {fileID: 8300000, guid: 790e6f57ee097514088972f68c6b40aa, type: 3}
+  attackSFX3: {fileID: 8300000, guid: 1d6adb6a365048b4cbbe09ca6b0ff2b0, type: 3}
+  walkSFX: {fileID: 8300000, guid: 888f11ab7b4960f45be6f17938db04a6, type: 3}
   groundSensor: {fileID: 2142915325747246491}
   isAction: 0
   isDashing: 0
+  visibleInScenes:
+  - VillageStage
+  - RiverStage
+  - Boss1
+  - GolemStage
   hitEffectPrefab: {fileID: 2673998446994267809, guid: de247158b545d804da8f3e335f2eff97, type: 3}
 --- !u!1 &2811674562754187116
 GameObject:

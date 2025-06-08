@@ -25,8 +25,8 @@ public class PlayerStateController
             { PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded },
             { PlayerState.Dash, () => pm.isDashing },
             { PlayerState.Dialog, () => pm.isAction },
-            { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
             { PlayerState.Jump, () => !pm.groundSensor.State() && jumpTimer < fallTransitionTime },
+            { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
             { PlayerState.Move, () => pm.groundSensor.State() && Mathf.Abs(pm.horizontalInput) > 0.1f },
             { PlayerState.Idle, () => pm.groundSensor.State() && Mathf.Abs(pm.horizontalInput) <= 0.1f }
         };

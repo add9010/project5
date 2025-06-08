@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 36148445883821584}
   - component: {fileID: 4489257640738119630}
   - component: {fileID: 433011146069099881}
+  - component: {fileID: -7184573842737120523}
   m_Layer: 0
   m_Name: Attack_Ef
   m_TagString: Untagged
@@ -110,3 +111,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7184573842737120523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484847720712570184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0.3773585, g: 0.0017799971, b: 0.0017799971, a: 1}
+  glowBrightness: 1.61
+  outlineWidth: 1
+  alphaThreshold: 0.117
+  drawOutside: 0
+  enableInstancing: 0
