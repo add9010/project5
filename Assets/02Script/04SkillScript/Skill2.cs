@@ -28,6 +28,9 @@ public class Skill2 : MonoBehaviour
     {
         if (pm == null || pm.IsDead) return;
 
+        if (pm.skill2SFX != null)
+            SoundManager.Instance.PlaySFX(pm.skill2SFX);
+
         pm.playerStateController.ForceSetSkill("Skill2", AnimType.Skill2);
         pm.playerStateController.LockSkillState(0.5f);
 
@@ -83,6 +86,9 @@ public class Skill2 : MonoBehaviour
             foreach (var col in hits)
             {
                 if (hitEnemies.Contains(col)) continue;
+
+                if (pm.skillHitSFX != null)
+                    SoundManager.Instance.PlaySFX(pm.skillHitSFX, 0.5f);
 
                 // 데미지 + 카메라 흔들림
                 if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)

@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      S_SMASH_R_HAND_0: 4370580924441401337
+      S_SMASH_R_HAND_1: -6654822646106895113
+      S_SMASH_R_HAND_2: 3704893031522910421
+      S_SMASH_R_HAND_3: -314798961383057106
+      S_SMASH_R_HAND_4: 8148108078448430983
+      S_SMASH_R_HAND_5: -6195767205633851796
+      S_SMASH_R_HAND_6: 2715507107828406365
+      S_SMASH_R_HAND_7: -2983071604515341528
+      S_SMASH_R_HAND_8: 8103779279557701211
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -249,10 +249,14 @@ MonoBehaviour:
   attackPos: {fileID: 5553567924351009742}
   attackSFX1: {fileID: 8300000, guid: 790e6f57ee097514088972f68c6b40aa, type: 3}
   attackSFX3: {fileID: 8300000, guid: 1d6adb6a365048b4cbbe09ca6b0ff2b0, type: 3}
+  jumpAttackSFX: {fileID: 8300000, guid: ec5ec78dda7420049adf3ebb05c81490, type: 3}
   walkSFX: {fileID: 8300000, guid: 888f11ab7b4960f45be6f17938db04a6, type: 3}
   dashSFX: {fileID: 8300000, guid: 7b97b2e3b71911f4a956f6ab6d66542a, type: 3}
   parrySuccessSFX: {fileID: 8300000, guid: 17de769d2dcae7a4f9cd6c81c03ce9c8, type: 3}
   parryFailSFX: {fileID: 8300000, guid: 9857cb42a7093a243ae87bd4b7daf68e, type: 3}
+  skill1SFX: {fileID: 8300000, guid: ec90b2c12ed005e498e4740819b9015e, type: 3}
+  skill2SFX: {fileID: 8300000, guid: ece8bcf2b7fe8fc448fb20fca06db702, type: 3}
+  skillHitSFX: {fileID: 8300000, guid: 06bd954e4bf46fa48b82b36e497eea37, type: 3}
   groundSensor: {fileID: 2142915325747246491}
   isAction: 0
   isDashing: 0
@@ -262,7 +266,8 @@ MonoBehaviour:
   - Boss1
   - GolemStage
   - U_Test_Scene
-  hitEffectPrefab: {fileID: 2673998446994267809, guid: de247158b545d804da8f3e335f2eff97, type: 3}
+  canControl: 1
+  hitEffectPrefab: {fileID: 3244140741868493841, guid: 46b61518ff3186443a2261c66eb60ecd, type: 3}
 --- !u!1 &2811674562754187116
 GameObject:
   m_ObjectHideFlags: 0

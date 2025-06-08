@@ -66,7 +66,12 @@ public class PlayerAttack
         pm.GetAnimator().SetTrigger(animationTrigger);
 
         // 💥 사운드 재생 (공격 즉시)
-        if (!isAir)
+        if (isAir)
+        {
+            if (pm.jumpAttackSFX != null)
+                SoundManager.Instance.PlaySFX(pm.jumpAttackSFX);
+        }
+        else
         {
             AudioClip clipToPlay = (attackCount == 2) ? pm.attackSFX3 : pm.attackSFX1;
             if (clipToPlay != null)

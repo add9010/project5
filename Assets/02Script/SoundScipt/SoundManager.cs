@@ -37,10 +37,10 @@ public class SoundManager : MonoBehaviour
         bgmSource.loop = true;
         bgmSource.Play();
     }
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volume = 1f)
     {
-        if (clip == null || sfxSource == null) return;
-        sfxSource.PlayOneShot(clip);
+        if (sfxSource != null && clip != null)
+            sfxSource.PlayOneShot(clip, volume);
     }
     public void StopBGM()
     {
