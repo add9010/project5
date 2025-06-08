@@ -5053,7 +5053,7 @@ Animator:
   m_GameObject: {fileID: 1131571452}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ade0c6f0bdd9d9646b7a37e6e885eab0, type: 2}
+  m_Controller: {fileID: 9100000, guid: a11cedfecc1f69f489084428992a1f99, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5340,7 +5340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e582bc5d31319464680f4ea95da3437f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: Usik3
+  playerName: Usik4
   isConnected: 0
 --- !u!1 &1897824529
 GameObject:
@@ -5627,7 +5627,7 @@ PrefabInstance:
       objectReference: {fileID: 3517658604218315212, guid: 073132e8d1e327b47888f92b6b7f3556, type: 3}
     - target: {fileID: 1685734853704373340, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
       propertyPath: meteorXSpacing
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1685734853704373340, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
       propertyPath: meteorSpawnStart.x

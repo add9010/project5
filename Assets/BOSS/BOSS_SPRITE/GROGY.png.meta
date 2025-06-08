@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GROGY_0: -7464986948740494721
+      GROGY_1: 4082614028060830122
+      GROGY_2: 7608261978788944029
+      GROGY_3: -3709929012765440050
+      GROGY_4: 2663168532206853357
+      GROGY_5: 4572956178815823428
+      GROGY_6: 2627715680073190908
+      GROGY_7: 3650024077578138319
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
