@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerAttack
 {
@@ -210,7 +211,14 @@ public class PlayerAttack
 
         pm.attackPos.localPosition = offset;
     }
-
+    public void ResetAttack()
+    {
+        attackCount = 0;
+        timeSinceAttack = 0f;
+        attackInputTimer = 0f;
+        isAttacking = false;
+        hitEnemies.Clear();
+    }
     public void DrawGizmos()
     {
         if (pm == null || pm.attackPos == null) return;
