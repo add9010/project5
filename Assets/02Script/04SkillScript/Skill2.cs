@@ -35,7 +35,7 @@ public class Skill2 : MonoBehaviour
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
 
         // 카메라 줌인
-        pm.cameraController.ZoomIn(6f, 0.1f);
+        pm.cameraController.ZoomIn(6f, 5f);
 
         pm.StartAttackCoroutine(DashRoutine());
     }

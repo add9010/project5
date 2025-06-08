@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using System.Runtime.CompilerServices;
 using UnityEngine.SceneManagement;
+using System.Linq;
 public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 {
     public static PlayerManager Instance;
@@ -67,7 +68,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private float staggerTimer = 0f;
     private bool isStaggered = false;
-
+    private static bool reconnected = false;
     [SerializeField] private string[] visibleInScenes = { "VillageStage", "RiverStage", "Boss1", "GolemStage" }; // 원하는 씬만 보여지게
 
     public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
@@ -154,6 +155,17 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private void Update()
     {
         if (IsDead) return;
+
+
+        if (!reconnected)
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                Debug.Log("✅ PlayerManager 재연결됨");
+            }
+            reconnected = true;
+        }
 
         if (isStaggered)
         {
@@ -367,19 +379,19 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        bool shouldBeVisible = false;
+        gameObject.SetActive(visibleInScenes.Contains(scene.name));
 
-        foreach (string sceneName in visibleInScenes)
+        // 카메라 재연결
+        var cam = Camera.main?.GetComponent<CameraController>();
+        if (cam != null)
         {
-            if (scene.name == sceneName)
-            {
-                shouldBeVisible = true;
-                break;
-            }
+            cameraController = cam;
+            cam.target = transform;
         }
-
-        gameObject.SetActive(shouldBeVisible);
-        Debug.Log($"[PlayerManager] 씬: {scene.name} → {(shouldBeVisible ? "활성화" : "비활성화")}");
+        else
+        {
+            Debug.LogWarning("📷 씬 로딩 후 CameraController 연결 실패");
+        }
     }
 
 }

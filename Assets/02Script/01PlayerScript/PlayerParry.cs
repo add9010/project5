@@ -38,7 +38,7 @@ public class PlayerParry
             if (enemy.IsParryable() && enemy.IsParryWindow)
             {
                 Vector2 dir = (enemy.transform.position - pm.transform.position).normalized;
-                CombatManager.ApplyDamage(enemy.gameObject, 0, 80f, pm.transform.position);
+                CombatManager.ApplyDamage(enemy.gameObject, 0, 200f, pm.transform.position);
 
                 pm.playerStateController.ForceSetParry();
                 pm.cameraController.Shake(0.1f, 0.3f);
