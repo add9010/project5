@@ -22,9 +22,9 @@ public class BossManager : MonoBehaviour
 
     [Header("Meteor Settings")]
     public GameObject meteorPrefab;      // 운석 프리팹
-    public Vector2 meteorSpawnStart = new Vector2(-25f, 13f);  // 시작 위치 (X축 기준)
-    public float meteorXSpacing = 4f;    // 운석 간 X 간격
-    public int meteorCount = 6;          // 운석 개수
+    public Vector2 meteorSpawnStart = new Vector2(-15f, 13f);  // 시작 위치 (X축 기준)
+    public float meteorXSpacing = 5f;    // 운석 간 X 간격
+    public int meteorCount = 20;          // 운석 개수
 
 
     [Header("Boss HP Bar")]
@@ -133,6 +133,8 @@ public class BossManager : MonoBehaviour
         _leftHandAnimator.SetBool("LeftFistDown", true);
         _rightHandAnimator.SetBool("RightFistDown", true);
 
+        //BossCameraController.Instance?.Shake(0.3f, 0.4f);
+
         Invoke("ResetLeftFistDown", 0.2f);
         Invoke("ResetRightFistDown", 0.2f);
     }
@@ -142,6 +144,7 @@ public class BossManager : MonoBehaviour
         Debug.Log("보스: 왼손 내려치기!");
         _leftHandAnimator.SetBool("LeftFistDown", true);
 
+       // BossCameraController.Instance?.Shake(0.15f, 0.2f);
         Invoke("ResetLeftFistDown", 0.2f);
     }
 
@@ -161,6 +164,7 @@ public class BossManager : MonoBehaviour
         Debug.Log("보스: 오른손 내려치기!");
         _rightHandAnimator.SetBool("RightFistDown", true);
 
+       // BossCameraController.Instance?.Shake(0.15f, 0.2f);
         Invoke("ResetRightFistDown", 0.2f);
     }
 

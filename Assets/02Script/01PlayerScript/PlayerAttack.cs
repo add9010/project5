@@ -126,13 +126,27 @@ public class PlayerAttack
 
             if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
             {
-                NetworkCombatManager.SendMonsterDamage((int)damage);
-                Debug.Log($"데미지 전송: {damage}");
+                if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
+                {
+                    TrapVisual tv = target.GetComponent<TrapVisual>();
+                    if (tv != null && !string.IsNullOrEmpty(tv.trapId))  // trapId가 있다고 가정
+                    {
+                        NetworkCombatManager.SendTrapDamage(tv.trapId, (int)damage);
+                       // Debug.Log($"트랩 데미지 전송: {damage} to trap {tv.trapId}");
+                    }
+                    else
+                    {
+                        NetworkCombatManager.SendMonsterDamage((int)damage);
+                       // Debug.Log($"몬스터 데미지 전송: {damage}");
+                    }
+                }
+
             }
             else
             {
                 CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position, staggerDamage);
             }
+
             if (pm.hitEffectPrefab != null)
             {
                 Vector3 hitPos = col.bounds.center; // 적 중심 위치
@@ -143,7 +157,7 @@ public class PlayerAttack
                     xOffset *= -1f;
 
                 // ▶ y 방향: 살짝 위아래 -0.2 ~ 0.2f
-                float yOffset = Random.Range(-0.5f, 0f);
+                float yOffset = UnityEngine.Random.Range(-0.5f, 0f);
 
                 hitPos.x += xOffset;
                 hitPos.y += yOffset;
@@ -154,6 +168,7 @@ public class PlayerAttack
 
             hitEnemies.Add(col);
         }
+
         // ▶ 적을 맞췄을 때만 카메라 흔들림
         if (hitSomething)
         {
@@ -163,6 +178,7 @@ public class PlayerAttack
                 pm.cameraController.Shake(0.05f, 0.2f);
         }
     }
+
 
     public void UpdateAttackPosition()
     {
