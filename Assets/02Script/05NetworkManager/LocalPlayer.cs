@@ -1,5 +1,6 @@
 using System;
 using System.Net.Sockets;
+using UnityEngine;
 
 public class Player
 {
@@ -70,6 +71,22 @@ public class Player
         };
    
         packet.Write(damage);
+        session.SendData(packet);
+    }
+
+    public void SendTrapDamage(string trapId, int damage)
+    {
+        Debug.Log($"[SendTrapDamage] TrapID: {trapId}, Damage: {damage}");
+        Packet packet = new Packet
+        {
+            Header = new PacketHeader
+            {
+                Type = PacketType.TrapUpdate,
+            }
+        };
+
+        packet.WriteString(trapId);  // 어떤 트랩을 공격했는지
+        packet.Write(damage);        // 얼마만큼 피해를 입혔는지
         session.SendData(packet);
     }
 

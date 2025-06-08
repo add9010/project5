@@ -14,6 +14,15 @@ public static class NetworkCombatManager
     // 플레이어가 몬스터에게 데미지를 입힐 때 호출
     public static void SendMonsterDamage(int damage)
     {
-            _currentPlayer.SendMonsterDamage(damage);
+       
+
+        _currentPlayer.SendMonsterDamage(damage);
+    }
+
+    // 플레이어가 트랩에게 데미지를 입힐 때 호출
+    public static void SendTrapDamage(string trapId, int damage)
+    {
+       
+        _currentPlayer.SendTrapDamage(trapId, damage);
     }
 }
