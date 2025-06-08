@@ -158,9 +158,9 @@ public class PlayerAttack
         if (hitSomething)
         {
             if (attackCount == 3)
-                pm.cameraController.Shake(0.1f, 0.3f);
+                pm.cameraController.Shake(0.2f, 0.1f);
             else
-                pm.cameraController.Shake(0.05f, 0.2f);
+                pm.cameraController.Shake(0.1f, 0.2f);
         }
     }
 

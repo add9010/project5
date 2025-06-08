@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3594599734859843677}
   - component: {fileID: 8631452153918893780}
   - component: {fileID: 1148751210464887968}
-  - component: {fileID: -7371888601645704752}
   m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -73,7 +72,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 908.6
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 7.15
   m_Depth: -1
   m_CullingMask:
@@ -112,19 +111,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   shakeAmount: 0.2
---- !u!114 &-7371888601645704752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8549657907879129834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b900c61198415e479e486d56de26785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inactiveScenes:
-  - TitleScene
-  - Loding
-  - SelectScene

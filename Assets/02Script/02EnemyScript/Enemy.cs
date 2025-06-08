@@ -76,8 +76,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected virtual void Update()
     {
-        // 스턴 처리
-        if (currentState is StaggerState)
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        }
+            // 스턴 처리
+            if (currentState is StaggerState)
         {
             currentState.Update(this);
             return;
