@@ -51,10 +51,13 @@ public class PlayerDash
         dashCooldown = true;
         manager.isDashing = true;
 
-        dashLastUsedTime = Time.time; // ✅ 추가
+        // 🎵 대시 사운드 재생
+        if (manager.dashSFX != null)
+            SoundManager.Instance.PlaySFX(manager.dashSFX);
+
+        dashLastUsedTime = Time.time;
 
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"), true);
-
         manager.playerStateController.ForceSetDash();
         manager.rb.linearVelocity = new Vector2(direction * manager.data.dashForce, 0);
 

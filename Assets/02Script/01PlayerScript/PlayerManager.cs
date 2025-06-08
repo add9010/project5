@@ -2,10 +2,12 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using System.Runtime.CompilerServices;
+using UnityEngine.SceneManagement;
+using System.Linq;
 public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 {
     public static PlayerManager Instance;
-    
+
     [Header("데이터")]
     public PlayerData data;
 
@@ -16,7 +18,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public CameraController cameraController;
 
     [Header("UI")]
-    public UnityEngine.UI.Image hpbar; 
+    public UnityEngine.UI.Image hpbar;
 
     [Header("공격 위치")]
     public Transform attackPos;
@@ -29,6 +31,14 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public AudioClip walkSFX;
     private float walkSFXTimer = 0f;
     private float walkStartBuffer = 0f;
+
+    [Header("대시 사운드")]
+    public AudioClip dashSFX;
+
+    [Header("패링 사운드")]
+    public AudioClip parrySuccessSFX;
+    public AudioClip parryFailSFX; // (선택사항)
+
     [Header("센서")]
     public PlayerSensor groundSensor;
 
@@ -58,17 +68,40 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private float staggerTimer = 0f;
     private bool isStaggered = false;
-
-
+    private static bool reconnected = false;
+    [SerializeField] private string[] visibleInScenes = { "VillageStage", "RiverStage", "Boss1", "GolemStage" }; // 원하는 씬만 보여지게
 
     public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);  // 💡 씬 전환 시 파괴되지 않음
+        }
+        else
+        {
+            Destroy(gameObject);  // 중복 생성 방지
+        }
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (attackPos == null)
+        {
+            Transform found = transform.Find("melee");
+            if (found != null)
+            {
+                attackPos = found;
+            }
+            else
+            {
+                Debug.LogError("⚠️ PlayerManager: 'melee' 오브젝트를 찾을 수 없습니다!");
+            }
+        }
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
+        gameObject.SetActive(false); // 시작 시 꺼둔다
         //if (DialogManager.Instance != null)
         //{
         //    dialog = DialogManager.Instance;
@@ -123,6 +156,17 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     {
         if (IsDead) return;
 
+
+        if (!reconnected)
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                Debug.Log("✅ PlayerManager 재연결됨");
+            }
+            reconnected = true;
+        }
+
         if (isStaggered)
         {
             staggerTimer -= Time.deltaTime;
@@ -137,7 +181,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         // 체력바 UI 갱신
         UpdateHpUI(playerHealth.currentHealth);
         Vector2 input = playerMove.GetInput();
-        float inputX = input.x; 
+        float inputX = input.x;
 
         horizontalInput = inputX;
         bool grounded = groundSensor != null && groundSensor.State();
@@ -238,21 +282,6 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         StartCoroutine(routine); // 이건 MonoBehaviour라 가능함
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            playerStateController.SetGrounded(true);
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            playerStateController.SetGrounded(false);
-        }
-    }
     public void TakeDamage(float damage)
     {
         if (playerHealth != null)
@@ -304,11 +333,11 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             if (foundHp != null)
             {
                 hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
-                Debug.Log("✅ 지연 후 PYCanvas에서 HP바 자동 연결 완료");
+                Debug.Log(" 지연 후 PYCanvas에서 HP바 자동 연결 완료");
             }
             else
             {
-                Debug.LogWarning("⚠️ PYCanvas 내부에서 hpbar 찾기 실패");
+                Debug.LogWarning(" PYCanvas 내부에서 hpbar 찾기 실패");
             }
         }
     }
@@ -347,6 +376,22 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public float GetManaRechargeProgress()
     {
         return Mathf.Clamp01(manaTimer / data.manaRechargeTime);
+    }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        gameObject.SetActive(visibleInScenes.Contains(scene.name));
+
+        // 카메라 재연결
+        var cam = Camera.main?.GetComponent<CameraController>();
+        if (cam != null)
+        {
+            cameraController = cam;
+            cam.target = transform;
+        }
+        else
+        {
+            Debug.LogWarning("📷 씬 로딩 후 CameraController 연결 실패");
+        }
     }
 
 }

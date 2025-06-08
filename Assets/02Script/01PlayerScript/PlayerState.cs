@@ -25,8 +25,8 @@ public class PlayerStateController
             { PlayerState.AttackJP, () => pm.playerAttack.IsAttacking && !pm.isGrounded },
             { PlayerState.Dash, () => pm.isDashing },
             { PlayerState.Dialog, () => pm.isAction },
-            { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
             { PlayerState.Jump, () => !pm.groundSensor.State() && jumpTimer < fallTransitionTime },
+            { PlayerState.Fall, () => !pm.groundSensor.State() && jumpTimer >= fallTransitionTime },
             { PlayerState.Move, () => pm.groundSensor.State() && Mathf.Abs(pm.horizontalInput) > 0.1f },
             { PlayerState.Idle, () => pm.groundSensor.State() && Mathf.Abs(pm.horizontalInput) <= 0.1f }
         };
@@ -108,6 +108,11 @@ public class PlayerStateController
         SetState(PlayerState.Parry);
         pm.GetAnimator().SetTrigger("Parry");
     }
+    public void ForceSetIdle()
+    {
+        SetState(PlayerState.Idle);
+    }
+
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
         pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);

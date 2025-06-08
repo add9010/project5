@@ -20,5 +20,15 @@ public static class BootStrapper
         // Instantiate + 파괴되지 않도록
         var go = Object.Instantiate(prefab);
         Object.DontDestroyOnLoad(go);
+
+        if (Object.FindAnyObjectByType<PlayerManager>() == null)
+        {
+            var playerPrefab = Resources.Load<GameObject>("Player");
+            if (playerPrefab != null)
+            {
+                var player = Object.Instantiate(playerPrefab);
+                Object.DontDestroyOnLoad(player);
+            }
+        }
     }
 }
