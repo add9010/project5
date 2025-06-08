@@ -423,7 +423,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         // 체력, 상태 초기화
         playerHealth?.ResetHealth();
         playerStateController?.ForceSetIdle();
-
+        playerAttack?.ResetAttack();
         // 컨트롤 관련 상태
         isDashing = false;
         isAction = false;
