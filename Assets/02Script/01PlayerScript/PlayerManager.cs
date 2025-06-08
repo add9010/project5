@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using System.Runtime.CompilerServices;
 using UnityEngine.SceneManagement;
+using System.Linq;
 public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 {
     public static PlayerManager Instance;
@@ -30,6 +31,14 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public AudioClip walkSFX;
     private float walkSFXTimer = 0f;
     private float walkStartBuffer = 0f;
+
+    [Header("대시 사운드")]
+    public AudioClip dashSFX;
+
+    [Header("패링 사운드")]
+    public AudioClip parrySuccessSFX;
+    public AudioClip parryFailSFX; // (선택사항)
+
     [Header("센서")]
     public PlayerSensor groundSensor;
 
@@ -59,7 +68,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
 
     private float staggerTimer = 0f;
     private bool isStaggered = false;
-
+    private static bool reconnected = false;
     [SerializeField] private string[] visibleInScenes = { "VillageStage", "RiverStage", "Boss1", "GolemStage" }; // 원하는 씬만 보여지게
 
     public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
@@ -146,6 +155,17 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private void Update()
     {
         if (IsDead) return;
+
+
+        if (!reconnected)
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                Debug.Log("✅ PlayerManager 재연결됨");
+            }
+            reconnected = true;
+        }
 
         if (isStaggered)
         {
@@ -313,11 +333,11 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             if (foundHp != null)
             {
                 hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
-                Debug.Log("✅ 지연 후 PYCanvas에서 HP바 자동 연결 완료");
+                Debug.Log(" 지연 후 PYCanvas에서 HP바 자동 연결 완료");
             }
             else
             {
-                Debug.LogWarning("⚠️ PYCanvas 내부에서 hpbar 찾기 실패");
+                Debug.LogWarning(" PYCanvas 내부에서 hpbar 찾기 실패");
             }
         }
     }
@@ -359,19 +379,19 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        bool shouldBeVisible = false;
+        gameObject.SetActive(visibleInScenes.Contains(scene.name));
 
-        foreach (string sceneName in visibleInScenes)
+        // 카메라 재연결
+        var cam = Camera.main?.GetComponent<CameraController>();
+        if (cam != null)
         {
-            if (scene.name == sceneName)
-            {
-                shouldBeVisible = true;
-                break;
-            }
+            cameraController = cam;
+            cam.target = transform;
         }
-
-        gameObject.SetActive(shouldBeVisible);
-        Debug.Log($"[PlayerManager] 씬: {scene.name} → {(shouldBeVisible ? "활성화" : "비활성화")}");
+        else
+        {
+            Debug.LogWarning("📷 씬 로딩 후 CameraController 연결 실패");
+        }
     }
 
 }

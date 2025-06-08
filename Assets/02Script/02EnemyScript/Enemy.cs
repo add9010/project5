@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     [Header("References")]
     public GameObject markPrefab;
-    public float markYOffset = 2.0f;
+    public float markYOffset = 1f;
 
     [Header("Stagger")]
     public float maxStagger = 50f;
@@ -76,8 +76,12 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
 
     protected virtual void Update()
     {
-        // 스턴 처리
-        if (currentState is StaggerState)
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        }
+            // 스턴 처리
+            if (currentState is StaggerState)
         {
             currentState.Update(this);
             return;
