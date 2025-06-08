@@ -78,7 +78,11 @@ public class FadeManager : MonoBehaviour
         panelImage.color = new Color(0f, 0f, 0f, 1f);
         onCompleteCallback?.Invoke();
     }
-
+    public void FadeOut(Action callback)
+    {
+        RegisterCallback(callback); // 콜백 등록
+        FadeOut();                  // 기존 페이드아웃 호출
+    }
     public void RegisterCallback(Action callback) // 페이드 아웃 완료 후 실행할 콜백 등록
     {
         onCompleteCallback = callback;

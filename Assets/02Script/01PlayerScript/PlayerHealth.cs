@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using static UnityEngine.Object;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : IDamageable, IKnockbackable
 {
@@ -59,15 +60,19 @@ public class PlayerHealth : IDamageable, IKnockbackable
         pm.MarkAsDead();
         pm.playerStateController.ForceSetDead();
 
-
-        FadeManager fade = FindFirstObjectByType<FadeManager>();
+        // ✅ 페이드 아웃 + 타이틀 전환
+        var fade = UnityEngine.Object.FindFirstObjectByType<FadeManager>();
         if (fade != null)
         {
-            fade.FadeOut();
+            fade.FadeOut(() =>
+            {
+                SceneManager.LoadScene("TitleScene"); // 🔁 여기에 원하는 씬 이름
+            });
         }
         else
         {
-            //Debug.LogWarning("❌ FadeManager를 찾을 수 없습니다.");
+            //Debug.LogWarning("❌ FadeManager를 찾을 수 없습니다. 바로 타이틀로 전환합니다.");
+            SceneManager.LoadScene("TitleScene");
         }
     }
 
