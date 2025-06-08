@@ -30,6 +30,14 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public AudioClip walkSFX;
     private float walkSFXTimer = 0f;
     private float walkStartBuffer = 0f;
+
+    [Header("대시 사운드")]
+    public AudioClip dashSFX;
+
+    [Header("패링 사운드")]
+    public AudioClip parrySuccessSFX;
+    public AudioClip parryFailSFX; // (선택사항)
+
     [Header("센서")]
     public PlayerSensor groundSensor;
 
@@ -313,11 +321,11 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             if (foundHp != null)
             {
                 hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
-                Debug.Log("✅ 지연 후 PYCanvas에서 HP바 자동 연결 완료");
+                Debug.Log(" 지연 후 PYCanvas에서 HP바 자동 연결 완료");
             }
             else
             {
-                Debug.LogWarning("⚠️ PYCanvas 내부에서 hpbar 찾기 실패");
+                Debug.LogWarning(" PYCanvas 내부에서 hpbar 찾기 실패");
             }
         }
     }

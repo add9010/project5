@@ -26,6 +26,8 @@ public class PlayerParry
         if (IsCoolingDown()) return; // ✅ 쿨타임 체크
         lastUsedTime = Time.time;
 
+        bool parried = false; // 패링 성공 여부
+
         Collider2D[] enemies = Physics2D.OverlapCircleAll(pm.transform.position, parryRange, LayerMask.GetMask("Enemy"));
 
         foreach (var col in enemies)
@@ -41,11 +43,20 @@ public class PlayerParry
                 pm.playerStateController.ForceSetParry();
                 pm.cameraController.Shake(0.1f, 0.3f);
                 Debug.Log($"패링 성공! {enemy.enemyName} 넉백됨");
+
+                parried = true;
+                break;
             }
-            else
-            {
-                Debug.Log($" 패링 실패: {enemy.enemyName} 상태 아님 또는 타이밍 아님");
-            }
+        }
+
+        // 🎵 사운드 재생
+        if (parried && pm.parrySuccessSFX != null)
+        {
+            SoundManager.Instance.PlaySFX(pm.parrySuccessSFX);
+        }
+        else if (!parried && pm.parryFailSFX != null)
+        {
+            SoundManager.Instance.PlaySFX(pm.parryFailSFX);
         }
     }
 

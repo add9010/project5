@@ -250,6 +250,9 @@ MonoBehaviour:
   attackSFX1: {fileID: 8300000, guid: 790e6f57ee097514088972f68c6b40aa, type: 3}
   attackSFX3: {fileID: 8300000, guid: 1d6adb6a365048b4cbbe09ca6b0ff2b0, type: 3}
   walkSFX: {fileID: 8300000, guid: 888f11ab7b4960f45be6f17938db04a6, type: 3}
+  dashSFX: {fileID: 8300000, guid: 7b97b2e3b71911f4a956f6ab6d66542a, type: 3}
+  parrySuccessSFX: {fileID: 8300000, guid: 17de769d2dcae7a4f9cd6c81c03ce9c8, type: 3}
+  parryFailSFX: {fileID: 8300000, guid: 9857cb42a7093a243ae87bd4b7daf68e, type: 3}
   groundSensor: {fileID: 2142915325747246491}
   isAction: 0
   isDashing: 0
@@ -258,6 +261,7 @@ MonoBehaviour:
   - RiverStage
   - Boss1
   - GolemStage
+  - U_Test_Scene
   hitEffectPrefab: {fileID: 2673998446994267809, guid: de247158b545d804da8f3e335f2eff97, type: 3}
 --- !u!1 &2811674562754187116
 GameObject:

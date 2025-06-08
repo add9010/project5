@@ -108,6 +108,11 @@ public class PlayerStateController
         SetState(PlayerState.Parry);
         pm.GetAnimator().SetTrigger("Parry");
     }
+    public void ForceSetIdle()
+    {
+        SetState(PlayerState.Idle);
+    }
+
     private void UpdateAnimator(float horizontal, bool grounded, float verticalVelocity)
     {
         pm.GetAnimator().SetFloat("AirSpeedY", verticalVelocity);
