@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         if (currentScene != gameData.savedSceneName)
         {
-            Debug.LogWarning("현재 씬이 저장된 씬과 다릅니다. 복원 대기 중...");
+            //Debug.LogWarning("현재 씬이 저장된 씬과 다릅니다. 복원 대기 중...");
             return;
         }
 

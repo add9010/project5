@@ -13,7 +13,7 @@ public class BGMTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SoundManager.Instance.PlayBGM(bgmClip);
-            Debug.Log("배경음 재생 시작됨: " + bgmClip.name);
+            //Debug.Log("배경음 재생 시작됨: " + bgmClip.name);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -21,7 +21,7 @@ public class BGMTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SoundManager.Instance.StopBGM();
-            Debug.Log("플레이어가 지역에서 나감 → BGM 정지");
+            //Debug.Log("플레이어가 지역에서 나감 → BGM 정지");
         }
     }
 }

@@ -45,11 +45,11 @@ public class PlayerSkillHUD : MonoBehaviour
         {
             dash = pm.playerDash;
             parry = pm.playerParry;
-            Debug.Log("[HUD] Dash & Parry 연결 성공");
+            //Debug.Log("[HUD] Dash & Parry 연결 성공");
         }
         else
         {
-            Debug.LogWarning("[HUD] PlayerManager.Instance == null");
+           // Debug.LogWarning("[HUD] PlayerManager.Instance == null");
         }
     }
 
@@ -77,13 +77,13 @@ public class PlayerSkillHUD : MonoBehaviour
                 {
                     dash = pm.playerDash;
                     dashInit = true;
-                    Debug.Log("✅ Dash 연결 성공");
+                    //Debug.Log("✅ Dash 연결 성공");
                 }
                 if (!parryInit && pm.playerParry != null)
                 {
                     parry = pm.playerParry;
                     parryInit = true;
-                    Debug.Log("✅ Parry 연결 성공");
+                   // Debug.Log("✅ Parry 연결 성공");
                 }
             }
         }

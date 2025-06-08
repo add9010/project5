@@ -57,6 +57,10 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     public int currentMana { get; private set; }
     private float manaTimer = 0f;
 
+    [Header("공격 이펙트")]
+    public GameObject hitEffectPrefab;     // 피격 중심 이펙트 (기존)
+    public GameObject slashEffectPrefab;   // 베기 이펙트 (추가)
+
     public PlayerHealth playerHealth { get; private set; }
     public PlayerMove playerMove { get; private set; }
     public PlayerAttack playerAttack { get; private set; }
@@ -82,7 +86,6 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
     private static bool reconnected = false;
     [SerializeField] private string[] visibleInScenes = { "VillageStage", "RiverStage", "Boss1", "GolemStage" }; // 원하는 씬만 보여지게
     public bool canControl = true;
-    public GameObject hitEffectPrefab; // 이펙트 프리팹을 인스펙터에서 할당
     private void Awake()
     {
         if (Instance == null)
@@ -107,7 +110,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             }
             else
             {
-                Debug.LogError("⚠️ PlayerManager: 'melee' 오브젝트를 찾을 수 없습니다!");
+                //Debug.LogError("⚠️ PlayerManager: 'melee' 오브젝트를 찾을 수 없습니다!");
             }
         }
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -148,16 +151,16 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
                 if (foundHp != null)
                 {
                     hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
-                    Debug.Log("✅ PYCanvas에서 HP바 자동 연결 완료");
+                    //Debug.Log("✅ PYCanvas에서 HP바 자동 연결 완료");
                 }
                 else
                 {
-                    Debug.LogWarning("⚠️ PYCanvas 안에서 hpbar 찾기 실패");
+                    //Debug.LogWarning("⚠️ PYCanvas 안에서 hpbar 찾기 실패");
                 }
             }
             else
             {
-                Debug.LogWarning("⚠️ PYCanvas 자체를 찾을 수 없음");
+                //Debug.LogWarning("⚠️ PYCanvas 자체를 찾을 수 없음");
             }
         }
         StartCoroutine(WaitForPYCanvas());
@@ -315,7 +318,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         if (SkillManager.Instance != null)
         {
             SkillManager.Instance.SaveEquippedSkills();
-            Debug.Log("🧠 Player 사라짐 → 스킬 자동 저장");
+            //Debug.Log("🧠 Player 사라짐 → 스킬 자동 저장");
         }
     }
     public Animator GetAnimator(
@@ -344,11 +347,11 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             if (foundHp != null)
             {
                 hpbar = foundHp.GetComponent<UnityEngine.UI.Image>();
-                Debug.Log(" 지연 후 PYCanvas에서 HP바 자동 연결 완료");
+                //Debug.Log(" 지연 후 PYCanvas에서 HP바 자동 연결 완료");
             }
             else
             {
-                Debug.LogWarning(" PYCanvas 내부에서 hpbar 찾기 실패");
+                //Debug.LogWarning(" PYCanvas 내부에서 hpbar 찾기 실패");
             }
         }
     }
@@ -368,7 +371,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
             {
                 currentMana++;
                 manaTimer = 0f;
-                Debug.Log($"마나 회복됨: 현재 마나 {currentMana}/{data.maxMana}");
+                //Debug.Log($"마나 회복됨: 현재 마나 {currentMana}/{data.maxMana}");
                 // UI 갱신 추가 예정
             }
         }
@@ -378,7 +381,7 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         if (currentMana >= amount)
         {
             currentMana -= amount;
-            Debug.Log($"마나 {amount} 소모됨. 현재 마나: {currentMana}/{data.maxMana}");
+           // Debug.Log($"마나 {amount} 소모됨. 현재 마나: {currentMana}/{data.maxMana}");
             return true;
         }
         Debug.Log("마나 부족!");
@@ -402,9 +405,20 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
        
         ResetAllPlayerState();
     }
+    public void AddMana(int amount)
+    {
+        int prevMana = currentMana;
+        currentMana = Mathf.Min(currentMana + amount, data.maxMana);
+
+        if (currentMana != prevMana)
+        {
+            //Debug.Log($"💠 마나 {amount} 회복됨: {prevMana} → {currentMana}");
+            // UI 갱신 등 필요하면 여기에 추가
+        }
+    }
     public void ResetAllPlayerState()
     {
-        Debug.Log("[PlayerManager] 상태 초기화 시도");
+        //Debug.Log("[PlayerManager] 상태 초기화 시도");
 
         // 체력, 상태 초기화
         playerHealth?.ResetHealth();
@@ -417,6 +431,5 @@ public class PlayerManager : MonoBehaviour, IDamageable, IKnockbackable
         canControl = true;
 
         rb.linearVelocity = Vector2.zero;
-        Debug.Log($"[PlayerManager] 상태 초기화 완료 → IsDead: {IsDead}, canControl: {canControl}");
     }
 }

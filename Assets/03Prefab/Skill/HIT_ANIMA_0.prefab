@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 632043238132007979}
   - component: {fileID: 8217329359814154951}
   - component: {fileID: 6144459389102370141}
+  - component: {fileID: -7931300549457875852}
   m_Layer: 0
   m_Name: HIT_ANIMA_0
   m_TagString: Untagged
@@ -76,9 +77,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 10
   m_Sprite: {fileID: 7805687684109238714, guid: 002100a7fa40ab84db2435564c2c207d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.764151, g: 0.11894804, b: 0.11894804, a: 0.6745098}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -110,3 +111,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7931300549457875852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3244140741868493841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f6d3c6e4250e84192f5b34ce9e71bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glowColor: {r: 0.254717, g: 0.0012014981, b: 0.0012014981, a: 1}
+  glowBrightness: 4.3
+  outlineWidth: 1
+  alphaThreshold: 0.441
+  drawOutside: 1
+  enableInstancing: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using static UnityEngine.Object;
 
 public class PlayerHealth : IDamageable, IKnockbackable
 {
@@ -47,7 +48,7 @@ public class PlayerHealth : IDamageable, IKnockbackable
 
     private void Die()
     {
-        Debug.Log("플레이어 사망");
+        //Debug.Log("플레이어 사망");
 
         isInvincible = false;
         invincibleTimer = 0f;
@@ -57,6 +58,17 @@ public class PlayerHealth : IDamageable, IKnockbackable
 
         pm.MarkAsDead();
         pm.playerStateController.ForceSetDead();
+
+
+        FadeManager fade = FindFirstObjectByType<FadeManager>();
+        if (fade != null)
+        {
+            fade.FadeOut();
+        }
+        else
+        {
+            //Debug.LogWarning("❌ FadeManager를 찾을 수 없습니다.");
+        }
     }
 
     public void Heal(float amount)
@@ -104,7 +116,7 @@ public class PlayerHealth : IDamageable, IKnockbackable
         if (pm.spriteRenderer != null)
             pm.spriteRenderer.enabled = true;
 
-        Debug.Log("[PlayerHealth] 상태 초기화됨");
+        //Debug.Log("[PlayerHealth] 상태 초기화됨");
     }
     private IEnumerator FlashWhileInvincible()
     {
