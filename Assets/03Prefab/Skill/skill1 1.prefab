@@ -93,8 +93,8 @@ MonoBehaviour:
   jumpForce: 20
   summonPrefab: {fileID: 7547982962383253499, guid: c8b8aa90e0255284eb702a31ef7f966a, type: 3}
   spawnOffset: {x: 0, y: 3, z: -0.5}
-  attackBoxSize: {x: 5, y: 5}
-  hitEffectPrefab: {fileID: 0}
+  attackBoxSize: {x: 9, y: 6}
+  hitEffectPrefab: {fileID: 2673998446994267809, guid: 6e2e6f90dfca1aa47a445f5e951931d7, type: 3}
 --- !u!225 &5339893632054409577
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -120,4 +120,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillData: {fileID: 11400000, guid: 2a81b1f3da91e27489ac4f007018020c, type: 2}
-  wasDroppedOnSlot: 0
+  isLocked: 0

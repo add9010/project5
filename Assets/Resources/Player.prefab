@@ -229,11 +229,11 @@ MonoBehaviour:
     dashForce: 60
     dashDuration: 0.15
     attackKnockback: 80
-    attackKnockbackThird: 800
+    attackKnockbackThird: 100
     attackDuration: 0.35
     maxHealth: 100
     maxMana: 3
-    manaRechargeTime: 1
+    manaRechargeTime: 5
     attackBoxSize: {x: 2, y: 2}
     attackBoxOffset: {x: 1.2, y: -0.75}
     heightOffset: 1.7
@@ -258,6 +258,8 @@ MonoBehaviour:
   skill2SFX: {fileID: 8300000, guid: ece8bcf2b7fe8fc448fb20fca06db702, type: 3}
   skillHitSFX: {fileID: 8300000, guid: 06bd954e4bf46fa48b82b36e497eea37, type: 3}
   groundSensor: {fileID: 2142915325747246491}
+  hitEffectPrefab: {fileID: 2673998446994267809, guid: de247158b545d804da8f3e335f2eff97, type: 3}
+  slashEffectPrefab: {fileID: 484847720712570184, guid: 103fe598dacf42546a74f46c36a0be2b, type: 3}
   isAction: 0
   isDashing: 0
   visibleInScenes:
@@ -267,7 +269,6 @@ MonoBehaviour:
   - GolemStage
   - U_Test_Scene
   canControl: 1
-  hitEffectPrefab: {fileID: 3244140741868493841, guid: 46b61518ff3186443a2261c66eb60ecd, type: 3}
 --- !u!1 &2811674562754187116
 GameObject:
   m_ObjectHideFlags: 0

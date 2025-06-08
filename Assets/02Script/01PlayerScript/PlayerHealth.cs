@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using static UnityEngine.Object;
 
 public class PlayerHealth : IDamageable, IKnockbackable
 {
@@ -57,6 +58,17 @@ public class PlayerHealth : IDamageable, IKnockbackable
 
         pm.MarkAsDead();
         pm.playerStateController.ForceSetDead();
+
+
+        FadeManager fade = FindFirstObjectByType<FadeManager>();
+        if (fade != null)
+        {
+            fade.FadeOut();
+        }
+        else
+        {
+            Debug.LogWarning("❌ FadeManager를 찾을 수 없습니다.");
+        }
     }
 
     public void Heal(float amount)

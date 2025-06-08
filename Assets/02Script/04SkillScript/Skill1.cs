@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Skill1 : MonoBehaviour
@@ -48,6 +50,8 @@ public class Skill1 : MonoBehaviour
         Vector2 center = pm.transform.position;
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, attackBoxSize, 0, LayerMask.GetMask("Enemy"));
 
+        List<Transform> delayedHitTargets = new(); // 추가
+
         foreach (var col in hits)
         {
             if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
@@ -57,17 +61,23 @@ public class Skill1 : MonoBehaviour
             else
             {
                 CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower, 10f, pm.transform.position);
+
+                Rigidbody2D enemyRb = col.GetComponent<Rigidbody2D>();
+                if (enemyRb != null)
+                {
+                    enemyRb.linearVelocity = new Vector2(enemyRb.linearVelocity.x, 10f);
+                }
             }
 
-            // 이펙트
-            if (hitEffectPrefab != null)
-            {
-                Vector3 spawnPos = col.transform.position;
-                spawnPos.z = 0f;
-                GameObject fx = GameObject.Instantiate(hitEffectPrefab, spawnPos, Quaternion.identity);
-                GameObject.Destroy(fx, 0.5f);
-            }
+            delayedHitTargets.Add(col.transform); // 이펙트용 저장
         }
+
+        // ⏱️ 딜레이 이펙트 실행
+        if (hitEffectPrefab != null && delayedHitTargets.Count > 0)
+        {
+            pm.StartCoroutine(DelayedHitEffects(delayedHitTargets));
+        }
+    
 
         // 오브젝트 소환
         if (summonPrefab != null)
@@ -79,11 +89,25 @@ public class Skill1 : MonoBehaviour
             Destroy(clone, 0.5f);
         }
     }
-
-    // Gizmo로 범위 확인
-    private void OnDrawGizmosSelected()
+    private IEnumerator DelayedHitEffects(List<Transform> targets)
     {
-        if (pm == null) return;
+        yield return new WaitForSeconds(0.3f); // 딜레이 후 현재 위치 기준
+
+        foreach (Transform t in targets)
+        {
+            if (t == null) continue;
+
+            Vector3 pos = t.position; // ✅ 현재 위치 기준
+            pos.y += 0.2f; // 약간 위로만
+            pos.z = 0f;
+
+            GameObject fx = Instantiate(hitEffectPrefab, pos, Quaternion.identity);
+            Destroy(fx, 0.5f);
+        }
+    }
+    // Gizmo로 범위 확인
+    private void OnDrawGizmos()
+    {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, attackBoxSize);
     }

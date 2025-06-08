@@ -44,8 +44,11 @@ public class PlayerParry
                 pm.cameraController.Shake(0.1f, 0.3f);
                 Debug.Log($"패링 성공! {enemy.enemyName} 넉백됨");
 
+                // ✅ 마나 회복은 여기서
+                pm.AddMana(1);
+
                 parried = true;
-                break;
+                break; // 이 뒤에서는 enemy를 사용할 수 없음
             }
         }
 

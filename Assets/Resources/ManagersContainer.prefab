@@ -342,6 +342,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 9136023448957503973, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+      propertyPath: attackBoxSize.x
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136023448957503973, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+      propertyPath: attackBoxSize.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136023448957503973, guid: aa60b99ac843dcb4cac1f348a9776694, type: 3}
+      propertyPath: hitEffectPrefab
+      value: 
+      objectReference: {fileID: 2673998446994267809, guid: 6e2e6f90dfca1aa47a445f5e951931d7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -648,6 +660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9202808757487405576, guid: 5026187f5b6057f489b64f7e1d751de0, type: 3}
+      propertyPath: m_fontSize
+      value: 57
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -716,17 +732,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9159888576025135380, guid: 5026187f5b6057f489b64f7e1d751de0, type: 3}
   m_PrefabInstance: {fileID: 3637280517019768911}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6240160599961179326 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7269854725791190257, guid: 5026187f5b6057f489b64f7e1d751de0, type: 3}
-  m_PrefabInstance: {fileID: 3637280517019768911}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6964055606065457460 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5971629030660698491, guid: 5026187f5b6057f489b64f7e1d751de0, type: 3}
@@ -916,10 +921,6 @@ PrefabInstance:
       propertyPath: sentenceText
       value: 
       objectReference: {fileID: 3925437792738134047}
-    - target: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}
-      propertyPath: portraitImage
-      value: 
-      objectReference: {fileID: 6240160599961179326}
     - target: {fileID: 1320729731192691552, guid: 45299d790b389754bbb4ce8d306fad18, type: 3}
       propertyPath: speakerNameText
       value: 
