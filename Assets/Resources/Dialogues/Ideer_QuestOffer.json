@@ -67,15 +67,6 @@
         "걱정마세요, 다녀오겠습니다."
       ],
       "options": null
-    },
-    {
-      "id": "ideer_quest_offer_repeat",
-      "speakerName": "이디어",
-      "speakerPortraitPath": "Portraits/IdeerPortrait",
-      "sentences": [
-        "아직 안 갔니?"
-      ],
-      "options": null
     }
   ]
 }
