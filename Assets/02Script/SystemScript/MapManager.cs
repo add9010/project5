@@ -198,7 +198,7 @@ public class MapManager : MonoBehaviour
     {
         if (mapIndex >= 0 && mapIndex < maps.Length)
         {
-            maps[currentMapIndex].SetActive(false);
+            //maps[currentMapIndex].SetActive(false);
             currentMapIndex = mapIndex;
             maps[currentMapIndex].SetActive(true);
             MovePlayerToStart();
