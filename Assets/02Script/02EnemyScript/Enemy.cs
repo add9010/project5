@@ -185,7 +185,7 @@ public class Enemy : MonoBehaviour, IDamageable, IKnockbackable
             transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position,
             targetPos, moveSpeed*Time.deltaTime);
-        Debug.Log("플레이어 추적 중");
+        //Debug.Log("플레이어 추적 중");
     }
 
     public bool IsPlayerDetected() => player && Vector2.Distance(transform.position, player.position) <= detectionRange;

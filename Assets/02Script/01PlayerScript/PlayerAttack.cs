@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class PlayerAttack
 {
@@ -12,12 +13,14 @@ public class PlayerAttack
     private bool isAttacking;
     public int CurrentCombo => attackCount;
     private HashSet<Collider2D> hitEnemies = new HashSet<Collider2D>();
+    private GameObject slashEffectPrefab;
 
     public bool IsAttacking => isAttacking;
     float staggerDamage = 10f;
     public PlayerAttack(PlayerManager manager)
     {
         this.pm = manager;
+        this.slashEffectPrefab = pm.slashEffectPrefab;
     }
 
     public void Update()
@@ -56,17 +59,23 @@ public class PlayerAttack
 
     private IEnumerator AttackCoroutine()
     {
-        Debug.Log("AttackCoroutine 시작!");
+        //Debug.Log("AttackCoroutine 시작!");
         isAttacking = true;
         hitEnemies.Clear();
         timeSinceAttack = 0f;
 
         bool isAir = !pm.isGrounded;
+
         string animationTrigger = isAir ? "AttackJP" : "Attack" + (attackCount + 1);
         pm.GetAnimator().SetTrigger(animationTrigger);
 
-        // 💥 사운드 재생 (공격 즉시)
-        if (!isAir)
+        // 💥 사운드 재생
+        if (isAir)
+        {
+            if (pm.jumpAttackSFX != null)
+                SoundManager.Instance.PlaySFX(pm.jumpAttackSFX);
+        }
+        else
         {
             AudioClip clipToPlay = (attackCount == 2) ? pm.attackSFX3 : pm.attackSFX1;
             if (clipToPlay != null)
@@ -76,8 +85,6 @@ public class PlayerAttack
         if (!isAir)
         {
             attackCount++;
-            if (attackCount >= 3)
-                attackCount = 0;
 
             // 지상에서만 전진 이동
             Vector2 direction = pm.spriteRenderer.flipX ? Vector2.left : Vector2.right;
@@ -97,7 +104,14 @@ public class PlayerAttack
             pm.rb.linearVelocity = new Vector2(0f, pm.rb.linearVelocity.y); // x축 멈춤
         }
 
+        //  PerformAttack 시점에서 attackCount == 3일 수 있음
         PerformAttack();
+
+        // PerformAttack 이후에만 초기화
+        if (!isAir && attackCount >= 3)
+        {
+            attackCount = 0;
+        }
 
         float remain = Mathf.Max(0f, pm.data.attackDuration - pm.data.attackForwardDuration);
         if (remain > 0f)
@@ -147,23 +161,32 @@ public class PlayerAttack
                 CombatManager.ApplyDamage(target, damage, knockback, pm.transform.position, staggerDamage);
             }
 
+            //  타격 이펙트 (기존 hitEffectPrefab)
             if (pm.hitEffectPrefab != null)
             {
-                Vector3 hitPos = col.bounds.center; // 적 중심 위치
-
-                // ▶ x 방향: 플레이어 방향 기준 0.5 ~ 1.5f 앞쪽
-                float xOffset = 1f;
-                if (pm.spriteRenderer.flipX)
-                    xOffset *= -1f;
-
-                // ▶ y 방향: 살짝 위아래 -0.2 ~ 0.2f
-                float yOffset = UnityEngine.Random.Range(-0.5f, 0f);
-
+                Vector3 hitPos = col.bounds.center;
+                float xOffset = 1f * (pm.spriteRenderer.flipX ? -1f : 1f);
+                float yOffset = UnityEngine.Random.Range(-0.5f, 0.5f);
                 hitPos.x += xOffset;
                 hitPos.y += yOffset;
 
-                GameObject effect = GameObject.Instantiate(pm.hitEffectPrefab, hitPos, Quaternion.identity);
-                GameObject.Destroy(effect, 0.5f);
+                Quaternion randomRot = Quaternion.Euler(0f, 0f, Random.Range(-30f, 30f));
+                var effect1 = GameObject.Instantiate(pm.hitEffectPrefab, hitPos, randomRot);
+                GameObject.Destroy(effect1, 0.5f);
+            }
+
+            //  베기 이펙트 (추가 slashEffectPrefab)
+            if (attackCount == 3 && pm.slashEffectPrefab != null)
+            {
+                Vector3 hitPos = col.bounds.center;
+                float xOffset = 0.5f * (pm.spriteRenderer.flipX ? -1f : 1f);
+                float yOffset = UnityEngine.Random.Range(-0.2f, 0.3f);
+                hitPos.x += xOffset;
+                hitPos.y += yOffset;
+
+                Quaternion randomRot = Quaternion.Euler(0f, 0f, Random.Range(-45f, 45f));
+                var effect2 = GameObject.Instantiate(pm.slashEffectPrefab, hitPos, randomRot);
+                GameObject.Destroy(effect2, 0.5f);
             }
 
             hitEnemies.Add(col);
@@ -173,9 +196,9 @@ public class PlayerAttack
         if (hitSomething)
         {
             if (attackCount == 3)
-                pm.cameraController.Shake(0.2f, 0.1f);
+                pm.cameraController.Shake(0.25f, 0.15f); 
             else
-                pm.cameraController.Shake(0.1f, 0.2f);
+                pm.cameraController.Shake(0.12f, 0.08f);
         }
     }
 
@@ -188,7 +211,14 @@ public class PlayerAttack
 
         pm.attackPos.localPosition = offset;
     }
-
+    public void ResetAttack()
+    {
+        attackCount = 0;
+        timeSinceAttack = 0f;
+        attackInputTimer = 0f;
+        isAttacking = false;
+        hitEnemies.Clear();
+    }
     public void DrawGizmos()
     {
         if (pm == null || pm.attackPos == null) return;

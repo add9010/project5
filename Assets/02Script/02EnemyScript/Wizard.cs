@@ -18,7 +18,7 @@ public class Wizard : Enemy
         attackCooldown = 5f;
 
         // Wizard만 3초 차지
-        attackHitDelay = 2f;
+        attackHitDelay = 1f;
     }
 
     // PerformAttack()가 호출되는 시점은 AttackState.Update()에서

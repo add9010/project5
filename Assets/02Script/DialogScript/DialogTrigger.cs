@@ -52,31 +52,39 @@ public class DialogTrigger : MonoBehaviour
         string fileToLoad = null;
         int stage = GameManager.Instance.gameData.currentStage;
         var data = GameManager.Instance.gameData;
-
+        bool riverCleared = StoryManager.Instance.HasProgress("RiverStage4Clear");
+        bool accepted = StoryManager.Instance.HasProgress("Quest001Accepted");
+        bool completed = StoryManager.Instance.HasProgress("Quest001Completed");
         switch (npcName)
         {
             case "Oxton":
-                fileToLoad = (stage >= 1) ? "Oxton_AfterStage1" : "Oxton_BeforeQuest";
+                fileToLoad = riverCleared ? "Oxton_AfterStage1" : "Oxton_BeforeQuest";
                 break;
 
             case "Neroban":
-                fileToLoad = (stage >= 1) ? "Neroban_AfterStage1" : "Neroban_BeforeQuest";
+                fileToLoad = riverCleared ? "Neroban_AfterStage1" : "Neroban_BeforeQuest";
                 break;
 
             case "Atti":
-                fileToLoad = (stage >= 1) ? "Atti_AfterStage1" : "Atti_BeforeQuest";
+                fileToLoad = riverCleared ? "Atti_AfterStage1" : "Atti_BeforeQuest";
+                break;
+
+            case "Steiger":
+                fileToLoad = "Prologue";
                 break;
 
             case "Tamyu":
-                fileToLoad = (stage >= 1) ? "Tamyu_AfterStage1" : "Tamyu_BeforeQuest";
+                fileToLoad = riverCleared ? "Tamyu_AfterStage1" : "Tamyu_BeforeQuest";
                 break;
 
             case "Ideer":
-                if (!data.IsQuestComplete("Quest001"))
+                if (!accepted)
                     fileToLoad = "Ideer_QuestOffer";
+                else if (!completed)
+                    fileToLoad = "Ideer_QuestRepeat";
                 else
                     fileToLoad = "Ideer_AfterStage1";
-                break;
+                    break;
 
             default:
                 Debug.LogWarning($"DialogTrigger: 알 수 없는 NPC 이름 '{npcName}'");
@@ -101,5 +109,11 @@ public class DialogTrigger : MonoBehaviour
 
         ds.StartDialogue(dataSet.dialogues);
         PlayerManager.Instance.isAction = true;
+
+        if(npcName == "Ideer"&&fileToLoad=="Ideer_QuestOffer")
+        {
+            StoryManager.Instance.SetProgress("Quest001Accepted");
+            GameManager.Instance.SaveGame();
+        }
     }
 }

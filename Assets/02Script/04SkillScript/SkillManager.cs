@@ -67,7 +67,7 @@ public class SkillManager : MonoBehaviour
     {
         if (slot == null || slot.EquippedSkill == null)
         {
-            Debug.LogWarning("장착된 스킬이 없습니다.");
+            //Debug.LogWarning("장착된 스킬이 없습니다.");
             return;
         }
 

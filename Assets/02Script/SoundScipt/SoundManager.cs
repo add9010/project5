@@ -23,13 +23,13 @@ public class SoundManager : MonoBehaviour
     {
         if (clip == null)
         {
-            Debug.LogWarning("클립이 null입니다.");
+            //Debug.LogWarning("클립이 null입니다.");
             return;
         }
 
         if (!bgmSource.gameObject.activeInHierarchy || !bgmSource.enabled)
         {
-            Debug.LogError("bgmSource가 비활성화되어 있습니다!");
+            //Debug.LogError("bgmSource가 비활성화되어 있습니다!");
             return;
         }
 
@@ -37,23 +37,23 @@ public class SoundManager : MonoBehaviour
         bgmSource.loop = true;
         bgmSource.Play();
     }
-    public void PlaySFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip, float volume = 1f)
     {
-        if (clip == null || sfxSource == null) return;
-        sfxSource.PlayOneShot(clip);
+        if (sfxSource != null && clip != null)
+            sfxSource.PlayOneShot(clip, volume);
     }
     public void StopBGM()
     {
         if (bgmSource == null)
         {
-            Debug.LogWarning("bgmSource가 null입니다. 이미 제거된 상태입니다.");
+            //Debug.LogWarning("bgmSource가 null입니다. 이미 제거된 상태입니다.");
             return;
         }
 
         if (bgmSource.isPlaying)
         {
             bgmSource.Stop();
-            Debug.Log("BGM 정지됨");
+            //Debug.Log("BGM 정지됨");
         }
     }
 

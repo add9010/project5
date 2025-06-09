@@ -42,13 +42,13 @@ public class PYCanvasActivator : MonoBehaviour
 
         if (targetCanvas == null)
         {
-            Debug.LogWarning("[PYCanvasActivator] PYCanvas를 찾을 수 없습니다.");
+            //Debug.LogWarning("[PYCanvasActivator] PYCanvas를 찾을 수 없습니다.");
             yield break;
         }
 
         bool playerExists = GameObject.FindGameObjectWithTag("Player") != null;
         targetCanvas.SetActive(playerExists);
 
-        Debug.Log($"[PYCanvasActivator] Player {(playerExists ? "존재" : "부재")} → PYCanvas {(playerExists ? "활성화" : "비활성화")}");
+        //Debug.Log($"[PYCanvasActivator] Player {(playerExists ? "존재" : "부재")} → PYCanvas {(playerExists ? "활성화" : "비활성화")}");
     }
 }
