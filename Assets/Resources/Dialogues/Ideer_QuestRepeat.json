@@ -1,0 +1,12 @@
+{
+  "dialogues": [
+    {
+      "id": "ideer_quest_offer_repeat",
+      "speakerName": "이디어",
+      "sentences": [
+        "아직 안 갔니?"
+      ],
+      "options": null
+    }
+  ]
+}
