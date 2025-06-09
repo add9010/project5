@@ -71,7 +71,7 @@ public class BossManager : MonoBehaviour
         MainThreadDispatcher.RunOnMainThread(() =>
         {
             nowHp = newHp;
-
+            Debug.Log($"보스 HP 업데이트: {nowHp}/{maxHp}");
             if (nowHp <= 0)
             {
                 nowHp = 0;

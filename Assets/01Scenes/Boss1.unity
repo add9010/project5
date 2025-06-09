@@ -5675,6 +5675,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1685734853704373340, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+      propertyPath: maxHp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685734853704373340, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
+      propertyPath: nowHp
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685734853704373340, guid: 5f9b6733e01afc642a1de51f3ad25a44, type: 3}
       propertyPath: canvas
       value: 
       objectReference: {fileID: 549755431}

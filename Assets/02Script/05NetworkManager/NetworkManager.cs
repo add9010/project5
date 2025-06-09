@@ -24,7 +24,7 @@ public class NetworkClient : MonoBehaviour
     public bool isConnected = false;
 
     private float x = 0, y = 0;
-    private float sendInterval = 0.03f; // 초
+    private float sendInterval = 0.02f; // 초
     private float timer = 0f;
 
 

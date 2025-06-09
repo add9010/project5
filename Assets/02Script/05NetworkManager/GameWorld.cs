@@ -156,10 +156,11 @@ public class GameWorld
                 if (previousBossState == null || previousBossState != bossState)
                 {
                     BossManager.Instance?.ApplyBossState(bossState);
-                    int bossHp = packet.ReadInt();
-                    BossManager.Instance?.UpdateBossHp(bossHp);
                     previousBossState = bossState;
+                    //Debug.Log($"Boss state updated: {bossState}, HP: {bossHp}");
                 }
+                int bossHp = packet.ReadInt();
+                BossManager.Instance?.UpdateBossHp(bossHp);
             }
         }
     }
