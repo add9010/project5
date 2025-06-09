@@ -53,7 +53,6 @@ public class FlexibleEndPoint : MonoBehaviour
                     StoryManager.Instance.SetProgress("Quest001Completed");
                     Debug.Log("Ideer 퀘스트 완료 처리됨.");
                 }
-                GameManager.Instance.SaveGame();
 
                 GameObject villageSavePoint = GameObject.Find("Village_SavePoint");
                 if (villageSavePoint != null)
@@ -84,7 +83,7 @@ public class FlexibleEndPoint : MonoBehaviour
                         Debug.Log("조건 미달: 이동 불가");
                     break;
             }
-
+            GameManager.Instance.SaveGame();
         }
     }
 
