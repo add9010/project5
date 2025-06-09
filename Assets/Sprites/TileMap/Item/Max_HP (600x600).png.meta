@@ -121,11 +121,21 @@ TextureImporter:
         width: 600
         height: 600
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 214, y: 104}
+        - {x: 109, y: 174}
+        - {x: 8, y: 124}
+        - {x: -85, y: 174}
+        - {x: -196, y: 121}
+        - {x: -221, y: 54}
+        - {x: -168, y: -111}
+        - {x: 2, y: -206}
+        - {x: 171, y: -111}
+        - {x: 228, y: 36}
       tessellationDetail: 0
       bones: []
       spriteID: 5b2d02bb7664f874792ce8885e0d3214
