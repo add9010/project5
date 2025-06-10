@@ -1,55 +1,71 @@
-// TrapTile.cs
 using UnityEngine;
+using System.Collections.Generic;
 
 public class TrapTile : MonoBehaviour
 {
     [Header("트랩 기본 설정")]
-    [Tooltip("트랩에 밟혔을 때 한 번 입힐 데미지")]
     public float damage = 10f;
-
-    [Tooltip("계속 머무를 때 데미지를 입힐 간격(초 단위)")]
     public float damageInterval = 2.5f;
 
-    // 플레이어가 트리거 안에 있는 상태에서 타이머 역할을 할 변수
-    private float damageTimer = 0f;
+    // 트랩 안에 있는 오브젝트별 타이머 관리
+    private Dictionary<Collider2D, float> damageTimers = new();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 플레이어가 처음 트랩에 들어올 때 즉시 데미지 입히고 타이머 초기화
         if (collision.CompareTag("Player"))
         {
             PlayerManager player = collision.GetComponent<PlayerManager>();
             if (player != null)
             {
                 player.playerHealth.TakeDamage(damage);
-                damageTimer = 0f;
+                damageTimers[collision] = 0f;
+            }
+        }
+        else if (collision.CompareTag("Enemy"))
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                damageTimers[collision] = 0f;
             }
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        // 플레이어가 트랩 안에 머무르는 동안 damageInterval마다 데미지 반복
-        if (collision.CompareTag("Player"))
-        {
-            PlayerManager player = collision.GetComponent<PlayerManager>();
-            if (player == null) return;
+        if (!damageTimers.ContainsKey(collision)) return;
 
-            damageTimer += Time.deltaTime;
-            if (damageTimer >= damageInterval)
+        damageTimers[collision] += Time.deltaTime;
+
+        if (damageTimers[collision] >= damageInterval)
+        {
+            if (collision.CompareTag("Player"))
             {
-                player.playerHealth.TakeDamage(damage);
-                damageTimer = 0f;
+                PlayerManager player = collision.GetComponent<PlayerManager>();
+                if (player != null)
+                {
+                    player.playerHealth.TakeDamage(damage);
+                }
             }
+            else if (collision.CompareTag("Enemy"))
+            {
+                Enemy enemy = collision.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                }
+            }
+
+            damageTimers[collision] = 0f; // 타이머 초기화
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // 플레이어가 트랩을 벗어나면 타이머 초기화
-        if (collision.CompareTag("Player"))
+        if (damageTimers.ContainsKey(collision))
         {
-            damageTimer = 0f;
+            damageTimers.Remove(collision);
         }
     }
 }

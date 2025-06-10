@@ -35,8 +35,8 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < maps.Length; i++)
-            maps[i].SetActive(i == currentMapIndex);
+        //for (int i = 0; i < maps.Length; i++)
+           // maps[i].SetActive(i == currentMapIndex);
 
         foreach (var sMap in secretMaps)
             sMap.SetActive(false);
@@ -61,13 +61,13 @@ public class MapManager : MonoBehaviour
         }
         else
         {
-            maps[currentMapIndex].SetActive(false);
+           // maps[currentMapIndex].SetActive(false);
             currentMapIndex++;
         }
 
         if (currentMapIndex < maps.Length)
         {
-            maps[currentMapIndex].SetActive(true);
+            //maps[currentMapIndex].SetActive(true);
             MovePlayerToStart();
         }
         else
@@ -79,7 +79,7 @@ public class MapManager : MonoBehaviour
 
     public void GoToSecretMap(int secretIndex)
     {
-        foreach (var map in maps) map.SetActive(false);
+        //foreach (var map in maps) map.SetActive(false);
         foreach (var sMap in secretMaps) sMap.SetActive(false);
 
         if (secretIndex >= 0 && secretIndex < secretMaps.Length)
@@ -110,8 +110,8 @@ public class MapManager : MonoBehaviour
     {
         SaveMapState();            // 진입 전 상태 저장
         isInShop = true;
-        foreach (var map in maps) map.SetActive(false);
-        foreach (var sMap in secretMaps) sMap.SetActive(false);
+        //foreach (var map in maps) map.SetActive(false);
+       // foreach (var sMap in secretMaps) sMap.SetActive(false);
         foreach (var shopMap in ShopMaps) shopMap.SetActive(false); // 상점 맵들 비활성화
 
         if (shopIndex >= 0 && shopIndex < ShopMaps.Length)
@@ -198,7 +198,7 @@ public class MapManager : MonoBehaviour
     {
         if (mapIndex >= 0 && mapIndex < maps.Length)
         {
-            maps[currentMapIndex].SetActive(false);
+            //maps[currentMapIndex].SetActive(false);
             currentMapIndex = mapIndex;
             maps[currentMapIndex].SetActive(true);
             MovePlayerToStart();

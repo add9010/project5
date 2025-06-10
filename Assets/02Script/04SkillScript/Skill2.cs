@@ -87,17 +87,30 @@ public class Skill2 : MonoBehaviour
             {
                 if (hitEnemies.Contains(col)) continue;
 
+                GameObject target = col.gameObject;
+
                 if (pm.skillHitSFX != null)
                     SoundManager.Instance.PlaySFX(pm.skillHitSFX, 0.5f);
 
-                // 데미지 + 카메라 흔들림
+                float finalDamage = pm.data.attackPower * 1.2f;
+
                 if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
                 {
-                    NetworkCombatManager.SendMonsterDamage((int)(10f));
+                    TrapVisual tv = target.GetComponent<TrapVisual>();
+                    if (tv != null && !string.IsNullOrEmpty(tv.trapId))
+                    {
+                        NetworkCombatManager.SendTrapDamage(tv.trapId, (int)finalDamage);
+                        // Debug.Log($"트랩 데미지 전송: {finalDamage} → {tv.trapId}");
+                    }
+                    else
+                    {
+                        NetworkCombatManager.SendMonsterDamage((int)finalDamage);
+                        // Debug.Log($"몬스터 데미지 전송: {finalDamage}");
+                    }
                 }
                 else
                 {
-                    CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower * 1.2f, 10f, pm.transform.position);
+                    CombatManager.ApplyDamage(target, finalDamage, 10f, pm.transform.position);
                 }
 
                 pm.cameraController.Shake(0.1f, 0.2f);
@@ -113,6 +126,7 @@ public class Skill2 : MonoBehaviour
                     Destroy(fx, 0.5f);
                 }
             }
+
 
             currentSpeed -= 30f * Time.deltaTime;
             currentSpeed = Mathf.Max(0f, currentSpeed);

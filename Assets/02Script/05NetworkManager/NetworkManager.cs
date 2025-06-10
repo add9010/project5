@@ -24,13 +24,13 @@ public class NetworkClient : MonoBehaviour
     public bool isConnected = false;
 
     private float x = 0, y = 0;
-    private float sendInterval = 0.03f; // 초
+    private float sendInterval = 0.02f; // 초
     private float timer = 0f;
 
 
     void Start()
     {
-        socket = ConnectToServer("127.0.0.1", 5000);
+        socket = ConnectToServer("113.198.230.108", 5000);
         if (socket == null) return;
 
         localPlayer = new Player(socket, playerName);
