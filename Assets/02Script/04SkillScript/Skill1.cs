@@ -54,13 +54,26 @@ public class Skill1 : MonoBehaviour
 
         foreach (var col in hits)
         {
+            GameObject target = col.gameObject;
+            delayedHitTargets.Add(col.transform); // 이펙트용 저장
+
             if (NetworkClient.Instance != null && NetworkClient.Instance.isConnected)
             {
-                NetworkCombatManager.SendMonsterDamage((int)10f);
+                TrapVisual tv = target.GetComponent<TrapVisual>();
+                if (tv != null && !string.IsNullOrEmpty(tv.trapId))
+                {
+                    NetworkCombatManager.SendTrapDamage(tv.trapId, (int)10f);
+                    // Debug.Log($"트랩 데미지 전송: 10 to trap {tv.trapId}");
+                }
+                else
+                {
+                    NetworkCombatManager.SendMonsterDamage((int)10f);
+                    // Debug.Log("몬스터 데미지 전송: 10");
+                }
             }
             else
             {
-                CombatManager.ApplyDamage(col.gameObject, pm.data.attackPower, 10f, pm.transform.position);
+                CombatManager.ApplyDamage(target, pm.data.attackPower, 10f, pm.transform.position);
 
                 Rigidbody2D enemyRb = col.GetComponent<Rigidbody2D>();
                 if (enemyRb != null)
@@ -68,8 +81,6 @@ public class Skill1 : MonoBehaviour
                     enemyRb.linearVelocity = new Vector2(enemyRb.linearVelocity.x, 10f);
                 }
             }
-
-            delayedHitTargets.Add(col.transform); // 이펙트용 저장
         }
 
         // ⏱️ 딜레이 이펙트 실행
