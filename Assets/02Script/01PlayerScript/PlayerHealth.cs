@@ -60,20 +60,7 @@ public class PlayerHealth : IDamageable, IKnockbackable
         pm.MarkAsDead();
         pm.playerStateController.ForceSetDead();
 
-        // ✅ 페이드 아웃 + 타이틀 전환
-        var fade = UnityEngine.Object.FindFirstObjectByType<FadeManager>();
-        if (fade != null)
-        {
-            fade.FadeOut(() =>
-            {
-                SceneManager.LoadScene("TitleScene"); // 🔁 여기에 원하는 씬 이름
-            });
-        }
-        else
-        {
-            //Debug.LogWarning("❌ FadeManager를 찾을 수 없습니다. 바로 타이틀로 전환합니다.");
-            SceneManager.LoadScene("TitleScene");
-        }
+        
     }
 
     public void Heal(float amount)
