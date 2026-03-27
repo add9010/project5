@@ -51,7 +51,6 @@ public class SkillEquipSlot : MonoBehaviour, IDropHandler
 
    public void Equip(SkillData skill)
 {
-    // 💡 안전하게 iconImage가 null일 경우 대비
     if (iconImage == null)
         iconImage = GetComponent<Image>();
 
