@@ -30,8 +30,7 @@ public class SkillManager : MonoBehaviour
     {
         if (Object.FindFirstObjectByType<SkillCanvasController>() == null)
         {
-            Instantiate(skillCanvasPrefab, transform); // 혹은 원하는 위치에 생성
-            Debug.Log("🧠 SkillCanvas 자동 생성됨");
+            Instantiate(skillCanvasPrefab, transform);
         }
     }
     public void SetSlotA(SkillEquipSlot slot)
@@ -76,20 +75,18 @@ public class SkillManager : MonoBehaviour
 
         if (!slot.IsReady())
         {
-            Debug.Log($"⏳ 스킬 '{slot.EquippedSkill.skillName}' 쿨타임 진행 중");
             return;
         }
 
-        if (!pm.TryUseMana(slot.EquippedSkill.manaCost)) // 💡 마나 체크
+        if (!pm.TryUseMana(slot.EquippedSkill.manaCost)) // 마나 
         {
-            Debug.Log($"❌ 마나 부족: 스킬 '{slot.EquippedSkill.skillName}'");
             return;
         }
 
         var prefab = slot.EquippedSkill.skillLogicPrefab;
         if (prefab == null)
         {
-            Debug.LogWarning("Skill Logic 프리팹이 없습니다.");
+            Debug.LogWarning("프리팹 추가해주세요.");
             return;
         }
 
@@ -104,10 +101,6 @@ public class SkillManager : MonoBehaviour
         {
             skill2.Initialize(pm);
             skill2.Activate();
-        }
-        else
-        {
-            Debug.LogWarning("알 수 없는 스킬 프리팹입니다.");
         }
 
         Destroy(instance);
@@ -130,7 +123,7 @@ public class SkillManager : MonoBehaviour
         if (slotD != null && savedSlotD != null) slotD.Equip(savedSlotD);
     }
 
-    // 슬롯이 전부 연결됐을 때 자동 복원 시도
+   
     private void TryAutoRestore()
     {
         if (slotA != null && slotS != null && slotD != null)
@@ -139,7 +132,7 @@ public class SkillManager : MonoBehaviour
         }
     }
 
-    // 슬롯 키 기반 저장 (Equip에서 호출됨)
+    // 슬롯 키 기반 저장
     public void SaveSlotData(char key, SkillData skill)
     {
         switch (key)
