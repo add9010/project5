@@ -5,8 +5,8 @@ public class PlayerParry
     private PlayerManager pm;
     private float parryRange = 2f;
 
-    private float parryCooldown = 1.2f; //  쿨타임 시간
-    private float lastUsedTime = -999f; //  마지막 시도 시간
+    private float parryCooldown = 1.2f;
+    private float lastUsedTime = -999f; 
 
     public PlayerParry(PlayerManager manager)
     {
@@ -23,10 +23,10 @@ public class PlayerParry
 
     private void TryParry()
     {
-        if (IsCoolingDown()) return; // ✅ 쿨타임 체크
+        if (IsCoolingDown()) return;
         lastUsedTime = Time.time;
 
-        bool parried = false; // 패링 성공 여부
+        bool parried = false
 
         Collider2D[] enemies = Physics2D.OverlapCircleAll(pm.transform.position, parryRange, LayerMask.GetMask("Enemy"));
 
@@ -42,17 +42,15 @@ public class PlayerParry
 
                 pm.playerStateController.ForceSetParry();
                 pm.cameraController.Shake(0.1f, 0.3f);
-                Debug.Log($"패링 성공! {enemy.enemyName} 넉백됨");
 
-                // ✅ 마나 회복은 여기서
                 pm.AddMana(1);
 
                 parried = true;
-                break; // 이 뒤에서는 enemy를 사용할 수 없음
+                break; 
             }
         }
 
-        // 🎵 사운드 재생
+    
         if (parried && pm.parrySuccessSFX != null)
         {
             SoundManager.Instance.PlaySFX(pm.parrySuccessSFX);
@@ -63,7 +61,6 @@ public class PlayerParry
         }
     }
 
-    // ✅ 쿨타임용 Getter
     public float GetLastUsedTime() => lastUsedTime;
     public float GetCooldownDuration() => parryCooldown;
     public bool IsCoolingDown() => Time.time < lastUsedTime + parryCooldown;
