@@ -12,7 +12,7 @@ public class PlayerDash
     private float doubleTapThreshold = 0.25f;
     private float dashCooldownTime = 0.5f;
 
-    private float dashLastUsedTime = -999f; // ✅ 추가
+    private float dashLastUsedTime = -999f;
 
     public PlayerDash(PlayerManager manager)
     {
@@ -51,7 +51,6 @@ public class PlayerDash
         dashCooldown = true;
         manager.isDashing = true;
 
-        // 🎵 대시 사운드 재생
         if (manager.dashSFX != null)
             SoundManager.Instance.PlaySFX(manager.dashSFX);
 
@@ -76,7 +75,6 @@ public class PlayerDash
         return manager.groundSensor != null && manager.groundSensor.State();
     }
 
-    // ✅ 쿨타임용 Getter
     public float GetLastUsedTime() => dashLastUsedTime;
     public float GetCooldownDuration() => dashCooldownTime;
     public bool IsCoolingDown() => Time.time < dashLastUsedTime + dashCooldownTime;
