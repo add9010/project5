@@ -108,7 +108,7 @@ public class Skill1 : MonoBehaviour
         {
             if (t == null) continue;
 
-            Vector3 pos = t.position; // ✅ 현재 위치 기준
+            Vector3 pos = t.position;
             pos.y += 0.2f; // 약간 위로만
             pos.z = 0f;
 
