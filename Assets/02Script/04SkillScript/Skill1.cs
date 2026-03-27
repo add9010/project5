@@ -30,15 +30,12 @@ public class Skill1 : MonoBehaviour
     {
         if (pm == null)
         {
-            Debug.LogWarning("PlayerManager가 연결되지 않았습니다.");
             return;
         }
 
-        // 상태 및 점프
         pm.playerStateController.ForceSetSkill("Skill1", AnimType.Skill1);
         pm.playerStateController.LockSkillState(0.5f);
         pm.rb.linearVelocity = new Vector2(pm.rb.linearVelocity.x, jumpForce);
-        Debug.Log("Skill1 스킬 점프 실행됨!");
 
         //사운드
         if (pm.skill1SFX != null)
@@ -46,7 +43,6 @@ public class Skill1 : MonoBehaviour
             SoundManager.Instance.PlaySFX(pm.skill1SFX);
         }
 
-        // 데미지 적용
         Vector2 center = pm.transform.position;
         Collider2D[] hits = Physics2D.OverlapBoxAll(center, attackBoxSize, 0, LayerMask.GetMask("Enemy"));
 
@@ -83,40 +79,37 @@ public class Skill1 : MonoBehaviour
             }
         }
 
-        // ⏱️ 딜레이 이펙트 실행
         if (hitEffectPrefab != null && delayedHitTargets.Count > 0)
         {
             pm.StartCoroutine(DelayedHitEffects(delayedHitTargets));
         }
     
 
-        // 오브젝트 소환
         if (summonPrefab != null)
         {
             Vector3 spawnPos = pm.transform.position + spawnOffset;
             GameObject clone = Instantiate(summonPrefab, spawnPos, Quaternion.identity);
-            Debug.Log("오브젝트 소환 완료: " + clone.name);
 
             Destroy(clone, 0.5f);
         }
     }
     private IEnumerator DelayedHitEffects(List<Transform> targets)
     {
-        yield return new WaitForSeconds(0.3f); // 딜레이 후 현재 위치 기준
+        yield return new WaitForSeconds(0.3f); 
 
         foreach (Transform t in targets)
         {
             if (t == null) continue;
 
             Vector3 pos = t.position;
-            pos.y += 0.2f; // 약간 위로만
+            pos.y += 0.2f;
             pos.z = 0f;
 
             GameObject fx = Instantiate(hitEffectPrefab, pos, Quaternion.identity);
             Destroy(fx, 0.5f);
         }
     }
-    // Gizmo로 범위 확인
+    // Gizmo 범위
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
