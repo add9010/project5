@@ -77,7 +77,6 @@ public class PlayerSkillHUD : MonoBehaviour
                 {
                     dash = pm.playerDash;
                     dashInit = true;
-                    //Debug.Log("✅ Dash 연결 성공");
                 }
                 if (!parryInit && pm.playerParry != null)
                 {
