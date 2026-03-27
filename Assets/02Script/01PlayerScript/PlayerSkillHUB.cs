@@ -67,7 +67,7 @@ public class PlayerSkillHUD : MonoBehaviour
         UpdateSkillSlot(slot2);
         UpdateSkillSlot(slot3);
         UpdateManaUI();
-        // ✅ Dash & Parry 안전 연결
+        
         if (!dashInit || !parryInit)
         {
             var pm = PlayerManager.Instance;
@@ -83,12 +83,11 @@ public class PlayerSkillHUD : MonoBehaviour
                 {
                     parry = pm.playerParry;
                     parryInit = true;
-                   // Debug.Log("✅ Parry 연결 성공");
                 }
             }
         }
 
-        // Dash 쿨타임
+        // Dash
         if (dashCooldownOverlay != null && dash != null)
         {
             float duration = dash.GetCooldownDuration();
@@ -96,7 +95,7 @@ public class PlayerSkillHUD : MonoBehaviour
             dashCooldownOverlay.fillAmount = remain / duration;
         }
 
-        // Parry 쿨타임
+        // Parry
         if (parryCooldownOverlay != null && parry != null)
         {
             float duration = parry.GetCooldownDuration();
@@ -139,7 +138,7 @@ public class PlayerSkillHUD : MonoBehaviour
         {
             if (i < current)
             {
-                manaIcons[i].fillAmount = 1f; // 충전 완료
+                manaIcons[i].fillAmount = 1f;
             }
             else if (i == current && current < max)
             {
@@ -147,7 +146,7 @@ public class PlayerSkillHUD : MonoBehaviour
             }
             else
             {
-                manaIcons[i].fillAmount = 0f; // 아직 비어 있음
+                manaIcons[i].fillAmount = 0f;
             }
         }
     }
