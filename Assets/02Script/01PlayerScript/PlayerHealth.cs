@@ -80,7 +80,7 @@ public class PlayerHealth : IDamageable, IKnockbackable
             {
                 isInvincible = false;
                 if (pm.spriteRenderer != null)
-                    pm.spriteRenderer.enabled = true; // 깜빡임 복구
+                    pm.spriteRenderer.enabled = true;
             }
         }
     }
@@ -99,7 +99,7 @@ public class PlayerHealth : IDamageable, IKnockbackable
     public void ResetHealth()
     {
         currentHealth = pm.data.maxHealth;
-        isDead = false;                // ✅ 이 라인 중요!
+        isDead = false;           
         isInvincible = false;
         invincibleTimer = 0f;
 
@@ -108,7 +108,6 @@ public class PlayerHealth : IDamageable, IKnockbackable
         if (pm.spriteRenderer != null)
             pm.spriteRenderer.enabled = true;
 
-        //Debug.Log("[PlayerHealth] 상태 초기화됨");
     }
     private IEnumerator FlashWhileInvincible()
     {
