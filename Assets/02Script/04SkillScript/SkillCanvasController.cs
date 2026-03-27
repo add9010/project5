@@ -7,11 +7,10 @@ public class SkillCanvasController : MonoBehaviour
 
     private void Start()
     {
-        // 1회만 생성
         if (skillCanvasInstance == null)
         {
             skillCanvasInstance = Instantiate(skillCanvasPrefab);
-            DontDestroyOnLoad(skillCanvasInstance); // ✅ 유지되도록 함
+            DontDestroyOnLoad(skillCanvasInstance); 
             skillCanvasInstance.SetActive(false);
             AutoAssignSlots();
         }
